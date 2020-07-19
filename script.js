@@ -51,3 +51,53 @@ function LootGen(){
 	}
 	document.getElementById('résultat_aff2').innerHTML = "Item: "+Nbre+"<br><div style='margin-left:50px;'>"+Item+"</div>";		
 }
+
+function ContractGen(){
+	var langue = document.getElementById('langue_choisi').value;
+	var Monster = ['Specter','Cursed One','Hybrid','Insectoid','Elementa','Relict','Ogroid','Draconid','Necrophage','Vampire'];
+	var MDifficulty = ['Easy','Medium','Hard'];
+	var MComplexity = ['Simple','Difficult','Complex'];
+	if(langue == "1"){
+		var Location = ['A Forest','A building','An Abandoned Building','A Coast','The Mountains','The City','A Graveyard','A Hamlet','Along the River','A Cave'];
+		var Twisted = ["The Monster Is Fake","It Is All A Curse","The Monster Is Already Dead","It Isn’t What You Think","EmployerWants It Caught","The Employer Is To Blame For It All","The Monster Is Harmless","It Is A Trap For You","It Was More Than You Were Told","A Mage Is Behind It All"];
+		var Employer = ["A Peasant or Ealdorman","A Guard or Witch Hunter","A Merchant","A Scholar or Noble","A Mage","A King, Queen, Duke or Duchess"];
+		var Pay = ["The Employer is unable to, or tries not to Pay","The Employer Offers a Trade","The Employer Pays less than Agreed","The Employer pays Exactly as Agreed","The Employer Pays More than Agreed","The Employer tries to have you killed","The Employer is nowhere to be found"];
+		var Complication = ["Bandits are hunting the monster","A Witcher is already hunting it","It can't be killed normally","The Employer has died","Monster has trapped hostages","Extra Twist. Roll on Twist Table"];
+
+		var Twist = ['There is a twist: ','No twist.'];
+	}else{
+		var Location = ['une forêt','un batiment','un batiment abandonné','la côte','les montagnes','en ville','un cimetierre','un hameau','le long de la rivière','une grotte'];
+		var Twisted = ["Le monstre est faux", "C'est une malédiction", "Le monstre est déjà mort", "Ce n'est pas ce que vous pensez", "L'employeur veut qu'il soit attrapé", "L'employeur est à blâmer pour tout cela","Le monstre est inoffensif","C'est un piège","C'était plus que ce qu'on vous aviez dit","Un mage est derrière tout cela"];
+		var Employer = ["Un paysan ou un Ealdorman", "Un garde ou un chasseur de sorcières", "Un marchand", "Un érudit ou un noble", "Un mage", "Un roi, une reine, un duc ou une duchesse"];
+		var Pay = ["L'Employeur ne peut pas ou essaie de ne pas payer", "L'Employeur propose un échange", "L'Employeur paie moins que convenu", "L'Employeur paie exactement comme convenu", "L'Employeur paie plus que convenu "," L'Employeur essaie de vous faire tuer "," L'Employeur est introuvable "];
+		var Complication = ["Des bandits chassent le monstre", "Un sorceleur le chasse déjà", "Il ne peut pas être tué normalement", "L'Employeur est mort", "Le monstre a piégé des otages", "Extra Twist. sur Twist Table "];
+		var Twist = ["Il y a un retournement de situation: ","Il n'y a pas de retournement de situation."];
+	}
+	var Rand1 = Math.floor(Math.random() * Math.floor(10));
+	var Rand2 = Math.floor(Math.random() * Math.floor(10));
+	var Rand3 = Math.floor(Math.random() * Math.floor(10));
+	var Rand4 = Math.floor(Math.random() * Math.floor(10));
+	var Rand5 = Math.floor(Math.random() * Math.floor(10));
+	var Rand6 = Math.floor(Math.random() * Math.floor(10));
+	var Rand7 = Math.floor(Math.random() * Math.floor(6));
+	var Rand8 = Math.floor(Math.random() * Math.floor(10));
+	var Rand9 = Math.floor(Math.random() * Math.floor(8));
+	
+	var El1 = Monster[Rand1];
+	if(Rand2 < 4){var El2 = MDifficulty[0];}else if(Rand2 > 7){var El2 = MDifficulty[2];}else{var El2 = MDifficulty[1];}
+	if(Rand3 < 4){var El3 = MComplexity[0];}else if(Rand3 > 7){var El3 = MComplexity[2];}else{var El3 = MComplexity[1];}
+	var El4 = Location[Rand4];
+	if(Rand5 < 4){var El5 = Twist[0]+Twisted[Rand6];}else{var El5 = Twist[1];}
+	var El7 = Employer[Rand7];
+	var El8 = Pay[Rand8];
+	if(Rand8 < 7 && Rand8 > 2){var El8 = Pay[3];}if(Rand8 == 7){var El8 = Pay[4];}if(Rand8 == 8){var El8 = Pay[5];}if(Rand8 == 9){var El8 = Pay[6];}
+	if(Rand9 < 2){var El9 = Complication[0];}if(Rand9 < 4){var El9 = Complication[1];}if(Rand9 == 4){var El9 = Complication[2];}if(Rand9 == 5){var El9 = Complication[3];}if(Rand9 > 5){var El9 = Complication[4];}
+
+	
+    if(langue == "1"){       
+		document.getElementById('résultat_aff3').innerHTML = "Monster: "+El1+" ["+El2+" - "+El3+"]<br>Location: "+El4+"<br>"+El5+"<br>Employer: "+El7+". "+El8+".<br>Complication (Optionally): "+El9;
+	}else{
+		document.getElementById('résultat_aff3').innerHTML = "Monstre: "+El1+" ["+El2+" - "+El3+"]<br>Localisation: "+El4+"<br>"+El5+"<br>Employeur: "+El7+". "+El8+".<br>Complication (Optionnel): "+El9;
+	}
+	
+}
