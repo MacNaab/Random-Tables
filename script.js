@@ -227,3 +227,50 @@ function WitcherGen(){
 		document.getElementById('résultat_aff5').innerHTML = "<b>Quand est-il devenu un Witcher?</b> "+El1+"<br><b>Ecole:</b> "+El2+"<br><b>Entrainement:</b> "+El3+"<br><b>Epreuve:</b> "+El4+"<br><b>Evenement le plus important:</b> "+El5+"<br><b>Qui est-il maintenant:</b> "+El6;
 	}
 }
+
+function BasicGen(){
+	var langue = document.getElementById('langue_choisi').value;
+	if(langue == "1"){
+		var Race = ['Human','Aen Seidhe','Dwarf'];
+		var Gender = ['Female','Male'];
+		var Age = ['Child','Teen','Young adult','Adult','Elder'];
+		var Personality = ["Shy","Rebellious","Arrogant","Headstrong","Friendly","Secretive","Nervous","Flirtatious","Eccentric","Aloof"];
+		var History = ["Lost everything","Family was killed","Fought in the Northern War","Thinks they have magic","Almost died","Saved by a witcher","Used to be a priest","Once ruled a small town","Lived as a bandit","Killed a dangerous monster"];
+		var Standing = ["Slave ","Slave ","Poor","Poor ","Poor ","Average ","Well to do ","Well to do ","Rich  ","Nobility"];
+		var Romance = ["None","None","None","Uninterested in love","Debauchery ","Playboy ","Interested in a player ","A dedicated lover ","Married ","Star-crossed lovers"];
+		var Secret = ["Is secretly a mage","Found a lost treasure","Is a wanted criminal","Is a secret service agent","Has a secret life","Has a Secret Profession","Is a cross-dresser","Is a deserter","Has a secret lover","Has a hex or curse of your choice"];
+	}else{
+		var Race = ['Humain','Aen Seidhe','Nain'];
+		var Gender = ['Femme','Homme'];
+		var Age = ['Enfant','Adoslescent','Jeune adulte','Adulte','Ancien'];
+		var Personality = ["Timide","Rebelle","Arrogant","Têtu","Amical","Secret","Nerveux","Coquette","Excentrique","Distant"];
+		var History = ["A tout perdu","Sa famille a été tuée","A combattu pendant la guerre du Nord","Pense qu'il a de la magie","Presque mort","A été sauvé par un sorceleur","A été prêtre","A gouverné une petite ville","A vécu comme un bandit","A tué un monstre dangereux"];
+		var Standing = ["Esclave","Esclave","Pauvre","Pauvre","Pauvre","Moyenne","Aisé","Aisé","Riche","Noble"];
+		var Romance = ["Aucune","Aucune","Aucune","Pas intéressé par l'amour","Débauche","Playboy","Intéressé par un joueur","Un amoureux dédié","Marié","Amants maudits"];
+		var Secret = ["Est secrètement un mage","A trouvé un trésor perdu","Est un criminel recherché","Est un agent des services secrets","A une vie secrète","A une profession secrète","Est un travesti","Est un déserteur","A un amant secret","A une malédiction de votre choix"];
+		}
+
+	var Rand1 = Math.floor(Math.random() * Math.floor(10));	// Race
+	var Rand2 = Math.floor(Math.random() * Math.floor(10));	// Gender
+	var Rand3 = Math.floor(Math.random() * Math.floor(5));	// Age
+	var Rand4 = Math.floor(Math.random() * Math.floor(10));	// Personality
+	var Rand5 = Math.floor(Math.random() * Math.floor(10));	// History
+	var Rand6 = Math.floor(Math.random() * Math.floor(10));	// Standing	
+	var Rand7 = Math.floor(Math.random() * Math.floor(10));	// Romance	
+	var Rand8 = Math.floor(Math.random() * Math.floor(10));	// Secret	
+
+	if(Rand1 < 4){var El1 = Race[0];}else if(Rand1 > 6){var El1 = Race[2];}else{var El1 = Race[1];}
+	if(Rand2%2 == 0){var El2 = Gender[0];}else{var El2 = Gender[1];}
+	var El3 = Age[Rand3];
+	var El4 = Personality[Rand4];
+	var El5 = History[Rand5];
+	var El6 = Standing[Rand6];
+	var El7 = Romance[Rand7];
+	var El8 = Secret[Rand8];
+	
+    if(langue == "1"){       
+		document.getElementById('résultat_aff6').innerHTML = "<b>Basic NPC :</b> Race: "+El1+". Gender: "+El2+". Age: "+El3+". Personality: "+El4+"<br><b>Background :</b> "+El5+". Standing: "+El6+". Romance: "+El7+". Secret: "+El8;
+	}else{
+		document.getElementById('résultat_aff6').innerHTML = "<b>PNJ basique :</b> Race: "+El1+". Sexe: "+El2+". Age: "+El3+". Personnalité: "+El4+"<br><b>Histoire :</b> "+El5+". Classe sociale: "+El6+". Romance: "+El7+". Secret: "+El8;
+	}
+}
