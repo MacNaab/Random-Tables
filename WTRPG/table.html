@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="table_style.css">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link" id="Crafting Materials" onclick="Materials1();aff(this.id);">Crafting Materials</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="Animal Parts" onclick="Materials2();aff(this.id);">Hides & Animal Parts</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="Minerals" onclick="Materials3();aff(this.id);">Ingots & Minerals</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="Alchemical Treatments" onclick="Materials4();aff(this.id);">Alchemical Treatments</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="Ingredient Diagrams" onclick="Diagrams1();aff(this.id);" role="tab">Ingredient Diagrams</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="Weapon Diagrams" onclick="Diagrams2();aff(this.id);" role="tab">Weapon Diagrams</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="Armor Diagrams" onclick="Diagrams3();aff(this.id);" role="tab">Armor Diagrams</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="Elderfolk Diagrams" onclick="Diagrams4();aff(this.id);" role="tab">Elderfolk Diagrams</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="Substances" onclick="Substances();aff(this.id);">Substances</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="Formulae" onclick="Formulae();aff(this.id);">Formulae</a>
+  </li>
+</ul>
+	
+<div class="form-group center" style="width:250px">
+    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+</div>
+
+<div class="davadi" id="Aff Table"></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="table_script.js"></script>
+  </body>
+</html>
