@@ -1,0 +1,17 @@
+table {
+	overflow-x:auto;
+}
+
+.center{
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+.davadi{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+a{
+	cursor: pointer;
+}
