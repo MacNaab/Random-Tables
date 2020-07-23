@@ -21,7 +21,7 @@ Base on https://www.reddit.com/r/DnDBehindTheScreen/comments/5l0hea/dicing_for_s
 Base on https://www.reddit.com/r/DnDBehindTheScreen/comments/hw8a35/dicing_for_forests/
 
 --------------------------------
-* The witcher TRPG table :
+The witcher TRPG table :
 - Crafting Materials
 - Hides & Animal Parts
 - Ingots & Minerals
