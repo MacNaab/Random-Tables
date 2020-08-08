@@ -422,7 +422,7 @@ function coffre(){
 		var AlchemyList = ["Acid Solution","Adda’s Tomb","Alchemical Adhesive","Base Powder","Black Venom","Bredan’s Fury","Chloroform","Clotting Powder","Fisstech","Hallucinogen","Invisible Ink","Numbing Herbs","Pantagran’s Elixir","Perfume Potion","Poisoner’s Friend","Quick Fire","Smelling Salts","Sterilizing Fluid","Succubus’ Breath","Talgar’s Tears","Wive’s Tears Potion","Zerrikanian Fire"];
 		var GlyphList = ["Glyph of Magic","Glyph of Air","Glyph of Earth","Glyph of Fire","Glyph of Water"];
 		var RuneList = ["Chemobog","Dazhbog","Devanna","Morana","Perun","Stribog","Svarog","Triglav","Veles","Zoria"];
-		var EF_WeaponList = ["Doublet protecteur Halfling","Chaîne gnomique","Armure de Scoia’tael","Dragon gnome","Mahakaman","Bouclier gnome","Bouclier elfique","Mahakaman Pavise"];
+		var EF_WeaponList = ["Elven Messer","Vrihedd Cavalry Sword","Meteorite Sword","Gnomish Gwyhyr","Tir Tochair Blade","Halfling Rondel","Dwarven Cleaver","Dwarven Axe","Gnomish Black Axe","Mahakaman Martell","Meteorite Chain Mace","Dwarven Pole Hammer","Elven Glaive","Gnomish Staff","Elven Walking Staff","Elven Travel Bow","Elven Zefhar","Gnomish Hand Crossbow","Dwarven Heavy Crossbow","Elven Burrower","Dwarven Impact"];
 		var EF_ArmorList = ["Halfling Protective Doublet","Gnomish Chain","Scoia’tael Armor","Gnomish Dragoon","Mahakaman","Gnomish Buckler","Elven Shield","Mahakaman Pavise"];
 		var RelicList = ["Relic"];
 	}else{
@@ -434,7 +434,7 @@ function coffre(){
 		var AlchemyList = ["Solution acide","Tombe d'Adda","Adhésif alchimique","Poudre de base","Venin noir","La fureur de Bredan","Chloroforme","Poudre de coagulation","Fisstech","Hallucinogène","Encre invisible","Herbes anesthésiantes","Élixir de Pantagran","Potion de parfum","Ami de l'empoisonneur","Feu rapide","Sels odorants","Fluide stérilisant","Souffle de succube","Les larmes de Talgar","Potion de larmes d'épouse","Feu zerrikanien"];
 		var GlyphList = ["Glyphe de magie","Glyphe d'air","Glyphe de terre","Glyphe de feu","Glyphe d'eau"];
 		var RuneList = ["Chemobog","Dazhbog","Devanna","Morana","Perun","Stribog","Svarog","Triglav","Veles","Zoria"];
-		var EF_WeaponList = ["Doublet protecteur Halfling","Chaîne gnomique","Armure de Scoia’tael","Dragon gnome","Mahakaman","Bouclier gnome","Bouclier elfique","Mahakaman Pavise"];
+		var EF_WeaponList = ["Elven Messer","Vrihedd Cavalry Sword","Meteorite Sword","Gnomish Gwyhyr","Tir Tochair Blade","Halfling Rondel","Dwarven Cleaver","Dwarven Axe","Gnomish Black Axe","Mahakaman Martell","Meteorite Chain Mace","Dwarven Pole Hammer","Elven Glaive","Gnomish Staff","Elven Walking Staff","Elven Travel Bow","Elven Zefhar","Gnomish Hand Crossbow","Dwarven Heavy Crossbow","Elven Burrower","Dwarven Impact"];
 		var EF_ArmorList = ["Halfling Protective Doublet","Gnomish Chain","Scoia’tael Armor","Gnomish Dragoon","Mahakaman","Gnomish Buckler","Elven Shield","Mahakaman Pavise"];
 		var RelicList = ["Relique"];
 	}
@@ -533,6 +533,50 @@ if(Rand11 < Relic){
 	var Rand11x = Math.floor(Math.random() * Math.floor(RelicList.length));	// Gear	
 	var El1 = El1+RelicList[Rand11x]+"<br>";}
 	document.getElementById('résultat_aff11').innerHTML = El1;
+}
+
+function coffre_aff(){
+	var langue = document.getElementById('langue_choisi').value;
+	if(langue == "1"){
+		var X1 = "Max Crown: ";
+		var X2 = "Gear: ";
+		var X3 = "Weapon: ";
+		var X4 = "Armor: ";
+		var X5 = "Diagram: ";
+		var X6 = "Formula: ";
+		var X7 = "Alchemy: ";
+		var X8 = "Glyph: ";
+		var X9 = "Rune: ";
+		var X10 = "Elderfolk Weapon: ";
+		var X11 = "Elderfolk Armor: ";
+		var X12 = "Relic: ";
+    }
+    else{
+		var X1 = "Couronnes maximale: ";
+		var X2 = "Equipement: ";
+		var X3 = "Arme: ";
+		var X4 = "Armure: ";
+		var X5 = "Diagramme: ";
+		var X6 = "Formule: ";
+		var X7 = "Alchemie: ";
+		var X8 = "Glyphe: ";
+		var X9 = "Rune: ";
+		var X10 = "Arme Elderfolk: ";
+		var X11 = "Armure Elderfolk: ";
+		var X12 = "Relique: ";
+	}
+	document.getElementById('CHEST_C_aff').innerHTML = X1;
+	document.getElementById('CHEST_G_aff').innerHTML = X2;
+	document.getElementById('CHEST_W_aff').innerHTML = X3;
+	document.getElementById('CHEST_A_aff').innerHTML = X4;
+	document.getElementById('CHEST_D_aff').innerHTML = X5;
+	document.getElementById('CHEST_F_aff').innerHTML = X6;
+	document.getElementById('CHEST_Al_aff').innerHTML = X7;
+	document.getElementById('CHEST_Gl_aff').innerHTML = X8;
+	document.getElementById('CHEST_R_aff').innerHTML = X9;
+	document.getElementById('CHEST_EFW_aff').innerHTML = X10;
+	document.getElementById('CHEST_EFA_aff').innerHTML = X11;
+	document.getElementById('CHEST_Re_aff').innerHTML = X12;
 }
 
 function SiegeQuest(){
