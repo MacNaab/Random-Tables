@@ -44,6 +44,32 @@
       <option value="2">Français</option>
     </select>
   </div>
+  <br>
+
+  <div>
+    <div class="form-group">
+      <select class="form-control" id="Select_01" style="width: 50%;margin-left: auto;margin-right: auto;">
+        <option value="1">Random Inns and Taverns</option>
+        <option value="2">Random Dungeon Traps and Hazards</option>
+        <option value="3">Random Plot Hooks for Small Towns and Villages</option>
+        <option value="4">Random Quests Given To A Party Defending in a Siege</option>
+        <option value="5">Dicing for Dungeons</option>
+        <option value="6">Dicing for Swamps</option>
+        <option value="7">Dicing for Forests</option>
+        <option value="8">Random Possessions</option>
+        <option value="9">Random Contract</option>
+        <option value="10">Random Basic NPC's Lifepath</option>
+        <option value="11">Random Advanced NPC's Lifepath</option>
+        <option value="12">Random Witcher's Lifepath</option>
+      </select>
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-primary btn-lg" onclick="RandomTable()">Generate</button>
+      </div>
+    </div>
+    <div id="aff_random_result" style="margin-right:10%;margin-left:10%"></div>
+  </div>
+
+
 	<br>
   <div style="text-align: center;">
 	<h1>Random Chest</h1>
@@ -91,135 +117,5 @@
   </div>
   <br>
   <div id="résultat_aff11" style="margin-right:10%;margin-left:10%"></div>
-
-  <br><br>
-<div style="text-align: center;">
-	<h1>Random Inns and Taverns</h1>
-	<br>Based on the original creation of <a href="https://www.spelltheory.online/random-tavern-generator/">Spell Theory</a>
-</div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="InnGen()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff8" style="margin-right:10%;margin-left:10%"></div>
-  <br><br>
-<div style="text-align: center;">
-	<h1>Random Dungeon Traps and Hazards</h1>
-	<br>Based on the original creation of <a href="https://www.reddit.com/r/d100/comments/h7qa9m/lets_build_dungeon_traps_and_hazards/">DnD Speak</a>
-</div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="DjTrapGen()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff6_2" style="margin-right:10%;margin-left:10%"></div>
-  <br><br>
-  
-
-  <div style="text-align: center;">
-	<h1>Random Plot Hooks for Small Towns and Villages</h1>
-	<br>Based on the original creation of <a href="https://www.spelltheory.online/village-plot-hooks/">Spell Theory</a>
-  </div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="PlotVillageGen()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff7" style="margin-right:10%;margin-left:10%"></div>
-  <br><br>
-  
-  <div style="text-align: center;">
-	<h1>Random Quests Given To A Party Defending in a Siege</h1>
-	<br>Based on the original creation of <a href="https://www.reddit.com/r/d100/comments/i2liev/d100_quests_given_to_a_party_defending_in_a_siege/">Koraxtheghoul</a>
-  </div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="SiegeQuest()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff12" style="margin-right:10%;margin-left:10%"></div>
-  <br><br>
-
-  <div style="text-align: center;">
-	<h1>Dicing for Dungeons</h1>
-	<br>Based on the original creation of <a href="https://www.reddit.com/r/DnDBehindTheScreen/comments/5i3bvt/dicing_for_dungeons/">famoushippopotamus</a>
-  </div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="DjDiceGen()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff8" style="margin-right:10%;margin-left:10%"></div>
-  <br><br>
-  
-  <div style="text-align: center;">
-	<h1>Dicing for Swamps</h1>
-	<br>Based on the original creation of <a href="https://www.reddit.com/r/DnDBehindTheScreen/comments/5l0hea/dicing_for_swamps/">famoushippopotamus</a>
-  </div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="SwampsDiceGen()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff9" style="margin-right:10%;margin-left:10%"></div>
-  <br><br>
-
-  <div style="text-align: center;">
-	<h1>Dicing for Forests</h1>
-	<br>Based on the original creation of <a href="https://www.reddit.com/r/DnDBehindTheScreen/comments/hw8a35/dicing_for_forests/">Quincy0807</a>
-  </div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="ForestsDiceGen()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff10" style="margin-right:10%;margin-left:10%"></div>
-  <br><br> 
-
-
-
-
-
-  
-  
-  <div style="text-align: center;">
-	<h1>Random Possessions</h1>
-  </div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="LootGen()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff2" style="margin-right:10%;margin-left:10%"></div>
-    <br><br>
-  <div style="text-align: center;">
-	<h1>Random Contract</h1>
-	<br>Based on the original creation of <a href="https://www.reddit.com/r/WitcherTRPG/comments/gslrad/random_contract_generator/">Schism 989</a>
-  </div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="ContractGen()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff3" style="margin-right:10%;margin-left:10%"></div>
-      <br><br>
-  <div style="text-align: center;">
-	<h1>Random Advanced NPC's Lifepath</h1>
-  </div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="LifeGen()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff4" style="margin-right:10%;margin-left:10%"></div>
-  <br><br>
-  <div style="text-align: center;">
-	<h1>Random Basic NPC's Lifepath</h1>
-  </div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="BasicGen()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff6" style="margin-right:10%;margin-left:10%"></div>
-      <br><br>
-  <div style="text-align: center;">
-	<h1>Random Witcher's Lifepath</h1>
-  </div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="WitcherGen()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff5" style="margin-right:10%;margin-left:10%"></div>
 </body>
 </html>
