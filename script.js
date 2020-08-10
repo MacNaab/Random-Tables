@@ -589,3 +589,83 @@ function coffre_aff(){
 	document.getElementById('CHEST_EFA_aff').innerHTML = X11;
 	document.getElementById('CHEST_Re_aff').innerHTML = X12;
 }
+
+function ModularRE_aff(){
+	var langue = document.getElementById('langue_choisi').value;
+	var memo = document.getElementById('ModularRE_Memo').innerHTML;
+	if(memo == ""){
+		var A = $("#slider-range").slider("values", 0);
+		var C = Number(100-$("#slider-range").slider("values", 1));
+		var B = Math.abs(Number(100-C-A));
+	}
+	else{
+		let split = memo.split(' ');
+		var A = split[0];
+		var B = split[1];
+		var C = split[2];
+	}
+	if(langue == "1"){document.getElementById('ici').innerHTML = "Good: "+A+"%<br>Neutral: "+B+"%<br>Bad: "+C+"%";}
+	else{document.getElementById('ici').innerHTML = "Bon: "+A+"%<br>Neutre: "+B+"%<br>Mauvais: "+C+"%";}
+}
+
+function ModularRE(){
+	var langue = document.getElementById('langue_choisi').value;
+	if(langue == 1){
+		var Bon = ['Creature', 'Animal', 'Craftsman', 'Bard', 'Criminal', 'Doctor', 'Armsman', 'Mage', 'Merchant', 'Priest', 'Witcher' , 'Villagoies', 'Environment', 'Weather','Traveler'];
+		var Neutre = ['Creature', 'Animal', 'Caravan', 'Battalion of soldiers', 'Villagoies', 'Environment', 'Weather','Nothing','Traveler'];
+		var Mauvais = ['Human', 'Creature', 'Animal', 'Trap', 'Environment', 'Weather'];
+	}else{
+		var Bon = ['Créature','Animal','Artisan','Barde','Criminel','Docteur',"Homme d'arme",'Mage','Marchand','Prêtre','Sorceleur','Villagoies','Environnement','Météo','Voyageur'];
+		var Neutre = ['Créature','Animal','Caravane','Bataillon de soldats','Villagoies','Environnement','Météo',"Rien ne se passse","Voyageur"];
+		var Mauvais = ['Humain','Créature','Animal','Piège','Environnement','Météo'];
+	}
+	var memo = document.getElementById('ModularRE_Memo').innerHTML;
+	if(memo == ""){
+		var A = $("#slider-range").slider("values", 0);
+		var C = Number(100-$("#slider-range").slider("values", 1));
+		var B = Math.abs(Number(100-C-A));
+	}
+	else{
+		let split = memo.split(' ');
+		var A = split[0];
+		var B = split[1];
+		var C = split[2];
+	}
+
+	var Rand1 = Math.floor(Math.random() * Math.floor(100));	// Type
+	if(Rand1 < A){
+		var Rand2 = Math.floor(Math.random() * Math.floor(Bon.length));
+		if(langue == 1){document.getElementById('résultat_aff12').innerHTML = "Good :   "+Bon[Rand2];}
+		else{document.getElementById('résultat_aff12').innerHTML = "Bon :   "+Bon[Rand2];}
+	}else if(Rand1 > Number(99-C)){
+		var Rand2 = Math.floor(Math.random() * Math.floor(Mauvais.length));
+		if(langue == 1){document.getElementById('résultat_aff12').innerHTML = "Bad :   "+Mauvais[Rand2];}
+		else{document.getElementById('résultat_aff12').innerHTML = "Mauvais :   "+Mauvais[Rand2];}
+	}else{
+		var Rand2 = Math.floor(Math.random() * Math.floor(Neutre.length));
+		if(langue == 1){document.getElementById('résultat_aff12').innerHTML = "Neutral :   "+Neutre[Rand2];}
+		else{document.getElementById('résultat_aff12').innerHTML = "Neutre :   "+Neutre[Rand2];}
+	}
+
+}
+
+$( function() {
+	$( "#slider-range" ).slider({
+	  range: true,
+	  min: 0,
+	  max: 100,
+	  values: [ 33, 67 ],
+	  slide: function( event, ui ) {
+		var A = ui.values[0];
+		var C = Number(100-ui.values[1]);
+		var B = Math.abs(Number(100-C-A));
+		var langue = document.getElementById('langue_choisi').value;
+		if(langue == "1"){document.getElementById('ici').innerHTML = "Good: "+A+"%<br>Neutral: "+B+"%<br>Bad: "+C+"%";}
+		else{document.getElementById('ici').innerHTML = "Bon: "+A+"%<br>Neutre: "+B+"%<br>Mauvais: "+C+"%";}
+		document.getElementById('ModularRE_Memo').innerHTML = A+" "+B+" "+C;
+	  }
+	});
+		var A = $("#slider-range").slider("values", 0);
+		var C = Number(100-$("#slider-range").slider("values", 1));
+		var B = Math.abs(Number(100-C-A));
+  } );
