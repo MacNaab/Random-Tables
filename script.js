@@ -639,8 +639,25 @@ function ModularRE(){
 		else{document.getElementById('résultat_aff12').innerHTML = "Bon :   "+Bon[Rand2];}
 	}else if(Rand1 > Number(99-C)){
 		var Rand2 = Math.floor(Math.random() * Math.floor(Mauvais.length));
-		if(langue == 1){document.getElementById('résultat_aff12').innerHTML = "Bad :   "+Mauvais[Rand2];}
-		else{document.getElementById('résultat_aff12').innerHTML = "Mauvais :   "+Mauvais[Rand2];}
+		if(Rand2 == 1){
+			var Rand3 = Math.floor(Math.random() * Math.floor(10));
+			if(Rand3 < 5){
+				if(langue == 1){document.getElementById('résultat_aff12').innerHTML = "Bad :   Easy Monster"}
+				else{document.getElementById('résultat_aff12').innerHTML = "Mauvais :   Monstre Easy";}				
+			}
+			else if(Rand3 > 7){
+				if(langue == 1){document.getElementById('résultat_aff12').innerHTML = "Bad :   Hard Monster"}
+				else{document.getElementById('résultat_aff12').innerHTML = "Mauvais :   Monstre Hard";}				
+			}
+			else{
+				if(langue == 1){document.getElementById('résultat_aff12').innerHTML = "Bad :   Medium Monster"}
+				else{document.getElementById('résultat_aff12').innerHTML = "Mauvais :   Monstre Medium";}				
+			}
+		}
+		else{
+			if(langue == 1){document.getElementById('résultat_aff12').innerHTML = "Bad :   "+Mauvais[Rand2];}
+			else{document.getElementById('résultat_aff12').innerHTML = "Mauvais :   "+Mauvais[Rand2];}
+		}
 	}else{
 		var Rand2 = Math.floor(Math.random() * Math.floor(Neutre.length));
 		if(langue == 1){document.getElementById('résultat_aff12').innerHTML = "Neutral :   "+Neutre[Rand2];}
