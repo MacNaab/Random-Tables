@@ -2,6 +2,7 @@
 Some Random Tables for D&amp;D
 * Random Chest (The Witcher TRPG)
 Based on https://docs.google.com/document/d/1rBjRb_cEqFxrlLNzr8Qyp2x3J-Pxw8wcLvjGgVc9L6A/edit
+* Random Modular Encountrer
 * Random Inns and Taverns
 Base on https://www.spelltheory.online/random-tavern-generator/
 * Random Possessions
