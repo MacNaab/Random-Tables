@@ -4,34 +4,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculateur distance - The Witcher TRPG</title>
-  <style>
-  .draggable { width: 10px; height: 10px; border-radius: 20px; background: green; }
-  </style>
   <script src="http://code.jquery.com/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="jquery.ui.touch-punch.min.js"></script>
   <script src="JS_map.js"></script>
+  
+  <link rel="stylesheet" href="map_css.css">
 </head>
 <body>
+<div style="text-align:center" class="sticky">
+<button href="#text_aff" class="button button2" onclick="distanceBetweenElems(document.getElementById('P1'),document.getElementById('P2'));scroll_to_top()">Calculer la distance</button>
+<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
+</div>
+<div id="P1" class="ui-widget-content draggable"></div>
+<div id="P2" class="ui-widget-content draggable"></div>
 
+<input id="readMe" type="text" readonly style="display:none">
+<input id="stock_km" type="text" readonly style="display:none">
+<br><br>
+<div id="text_aff" style="margin-left:5%;margin-right:5%"></div>
+<div id="text_aff2" style="margin-left:5%;margin-right:5%"></div>
+<br><br>
 <img style="overflow:auto" src="https://i.redd.it/k67cyrkbf8741.png">
  
-<div id="P1" class="ui-widget-content draggable">
-  <p></p>
-</div>
 
-<div id="P2" class="ui-widget-content draggable">
-  <p></p>
-</div>
-
-<button onclick="distanceBetweenElems(document.getElementById('P1'),document.getElementById('P2'))">Calculer la distance</button>
-<button onclick="Reini_P()">Reinitialiser les points</button>
-
-
-<input id="readMe" type="text" readonly>
-<input id="stock_km" type="text" readonly style="display:none">
-<div id="text_aff"></div>
-<div id="text_aff2"></div>
 </body>
 </html>
