@@ -16,17 +16,27 @@
 <div style="text-align:center" class="sticky">
 <button href="#text_aff" class="button button2" onclick="distanceBetweenElems(document.getElementById('P1'),document.getElementById('P2'));scroll_to_top()">Calculer la distance</button>
 <button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
+<button href="#text_aff" class="button button2" onclick="distance(document.getElementById('P1'));minimap('0');">TEST</button>
 </div>
-<div id="P1" class="ui-widget-content draggable"></div>
-<div id="P2" class="ui-widget-content draggable"></div>
+<div id="P1" class="ui-widget-content draggable">.1</div>
+<div id="P2" class="ui-widget-content draggable">.2</div>
 
-<input id="readMe" type="text" readonly style="display:none">
+<input id="readMe" type="text" readonly style="display:block">
 <input id="stock_km" type="text" readonly style="display:none">
 <br><br>
 <div id="text_aff" style="margin-left:5%;margin-right:5%"></div>
 <div id="text_aff2" style="margin-left:5%;margin-right:5%"></div>
 <br><br>
-<img style="overflow:auto" src="https://i.redd.it/k67cyrkbf8741.png">
+<!-- <img style="overflow:auto;" src="https://i.redd.it/k67cyrkbf8741.png"> -->
+<img id="mapmonde" usemap="#mapmonde" style="overflow:auto;" src="carte/mapmonde.png">
+<map name="mapmonde">
+  <area style="cursor: pointer" shape="poly" coords="0,0,665,0,665,177,423,198,231,263,0,163" alt="1" onclick="minimap(this.alt)">
+  <area style="cursor: pointer" shape="poly" coords="665,177,665,483,465,483,280,529,116,512,151,335,231,263,423,198" alt="2" onclick="minimap(this.alt)">
+  <area style="cursor: pointer" shape="poly" coords="665,483,665,1000,345,1000,345,925,279,873,233,707,280,529,465,483" alt="3" onclick="minimap(this.alt)">
+</map>
+<img id="nord" style="overflow:auto;display:none;" src="carte/nord.jpg">
+<img id="centre" style="overflow:auto;display:none;" src="carte/centre.jpg">
+<img id="sud" style="overflow:auto;display:none;" src="carte/sud.jpg">
  
 
 </body>

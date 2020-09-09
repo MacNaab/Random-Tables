@@ -31,6 +31,15 @@ function distanceBetweenElems(elem1, elem2) {
 		
 }
 
+function distance(elem1) {
+    var e1Rect = elem1.getBoundingClientRect();
+    var dx = (e1Rect.left+(e1Rect.right-e1Rect.left)/2);
+    var dy = (e1Rect.top+(e1Rect.bottom-e1Rect.top)/2);
+//    var dist = Math.sqrt(dx * dx + dy * dy);
+    document.getElementById('readMe').value = "dx : "+dx+" || dy: "+dy;		
+}
+
+
 function ModifTrajet(elem3) {
 	var km = document.getElementById('stock_km').value;
 	if(Number(elem3) != 0){
@@ -63,4 +72,10 @@ function Reini_P() {
 
 function scroll_to_top() {
         $('html,body').animate({scrollTop: 0}, 'slow');
+}
+
+function minimap(info){
+var carte = ['mapmonde','nord','centre','sud'];
+for (let i = 0; i < carte.length; i++) {document.getElementById(carte[i]).style.display = "none";}
+document.getElementById(carte[info]).style.display = "block";
 }
