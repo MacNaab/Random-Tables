@@ -1,5 +1,3 @@
-$( function() {$( ".draggable" ).draggable();} );
-
 function distanceBetweenElems(elem1, elem2) {
 //    alert(elem1+"<br>"+elem2);
     var e1Rect = elem1.getBoundingClientRect();
@@ -78,4 +76,13 @@ function minimap(info){
 var carte = ['mapmonde','nord','centre','sud'];
 for (let i = 0; i < carte.length; i++) {document.getElementById(carte[i]).style.display = "none";}
 document.getElementById(carte[info]).style.display = "block";
+}
+
+function addP(valeur){
+	if(valeur < 2){var valeur = 2;}
+	document.getElementById('réserveP').innerHTML = "";
+	for (let i = 1; i < (Number(Number(valeur)+1)); i++) {
+		$('#réserveP').append('<div id="P'+i+'" class="ui-widget-content draggable">.'+i+'</div>')
+	}
+	$( ".draggable" ).draggable();
 }

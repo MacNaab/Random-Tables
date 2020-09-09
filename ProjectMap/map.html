@@ -18,10 +18,16 @@
 <button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
 <button href="#text_aff" class="button button2" onclick="distance(document.getElementById('P1'));minimap('0');">TEST</button>
 </div>
-<div id="P1" class="ui-widget-content draggable">.1</div>
-<div id="P2" class="ui-widget-content draggable">.2</div>
+<br>
+<div>
+	Nombre de points : <input id="nombreP" type="number" min="2" style="width:50px" onchange="addP(this.value)">
+</div>
+<br>
+<div id="réserveP">
 
-<input id="readMe" type="text" readonly style="display:block">
+</div>
+
+<input id="readMe" type="text" readonly style="display:none">
 <input id="stock_km" type="text" readonly style="display:none">
 <br><br>
 <div id="text_aff" style="margin-left:5%;margin-right:5%"></div>
