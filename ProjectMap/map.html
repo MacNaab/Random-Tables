@@ -13,19 +13,21 @@
   <link rel="stylesheet" href="map_css.css">
 </head>
 <body>
+<div id="texte_région" style="display:none">
 <div style="text-align:center" class="sticky">
-<button href="#text_aff" class="button button2" onclick="distanceBetweenElems(document.getElementById('P1'),document.getElementById('P2'));scroll_to_top()">Calculer la distance</button>
+<button href="#text_aff" class="button button2" onclick="distanceBetweenElems();scroll_to_top()">Calculer la distance</button>
 <button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
-<button href="#text_aff" class="button button2" onclick="distance(document.getElementById('P1'));minimap('0');">TEST</button>
+<button href="#text_aff" class="button button2" onclick="minimap('0');">Retour à la carte monde</button>
 </div>
 <br>
 <div>
 	Nombre de points : <input id="nombreP" type="number" min="2" style="width:50px" onchange="addP(this.value)">
 </div>
 <br>
-<div id="réserveP">
-
+<div id="réserveP" style="margin-left:auto;margin-right:auto"></div>
 </div>
+<div id="texte_introduction"><h3>Sélectionnez une région</h3></div>
+
 
 <input id="readMe" type="text" readonly style="display:none">
 <input id="stock_km" type="text" readonly style="display:none">
