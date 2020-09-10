@@ -42,7 +42,7 @@
 <div style="text-align:center">
 <button id="texte_résultat" style="visibility:hidden" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Résultats</button>
 </div>
-<div id="id01" class="w3-modal">
+<div id="id01" class="w3-modal" style="margin-top:0px;">
  <div class="w3-modal-content w3-card-4 w3-animate-zoom">
   <header class="w3-container w3-blue"> 
    <span onclick="document.getElementById('id01').style.display='none'" 
@@ -57,17 +57,17 @@
 
   <div id="London" class="w3-container city">
 	<h1>Trajet actuel</h1>
-	<div id="text_aff" style="margin-left:5%;margin-right:5%"></div>
-	<div id="text_aff3" style="margin-left:5%;margin-right:5%"></div>
-	<div id="text_aff2" style="margin-left:5%;margin-right:5%"></div>
+	<div id="text_aff" class="texte_type1"></div>
+	<div id="text_aff3" class="texte_type1"></div>
+	<div id="text_aff2" class="texte_type1"></div>
 	<button class="button" onclick="sauvegardeTrajet()">Sauvegarder ce trajet</button>
   </div>
 
   <div id="Paris" class="w3-container city">
 	<h1>Trajet sauvegardé</h1>
-	<div id="text_affB" style="margin-left:5%;margin-right:5%"></div>
-	<div id="text_aff3B" style="margin-left:5%;margin-right:5%"></div>
-	<div id="text_aff2B" style="margin-left:5%;margin-right:5%"></div>
+	<div id="text_affB" class="texte_type1"></div>
+	<div id="text_aff3B" class="texte_type1"></div>
+	<div id="text_aff2B" class="texte_type1"></div>
    </div>
 
   <div class="w3-container w3-light-grey w3-padding">
@@ -82,16 +82,29 @@
 <!-- <img style="overflow:auto;" src="https://i.redd.it/k67cyrkbf8741.png"> -->
 <img id="mapmonde" usemap="#mapmonde" style="overflow:auto;" src="carte/mapmonde.png">
 <map name="mapmonde">
-  <area style="cursor: pointer" shape="poly" coords="0,0,665,0,665,177,423,198,231,263,0,163" alt="1" onclick="minimap(this.alt)">
-  <area style="cursor: pointer" shape="poly" coords="665,177,665,483,465,483,280,529,151,335,231,263,423,198" alt="2" onclick="minimap(this.alt)">
-  <area style="cursor: pointer" shape="poly" coords="665,483,665,1000,345,1000,345,925,279,873,233,707,280,529,465,483" alt="3" onclick="minimap(this.alt)">
-  <area style="cursor: pointer" shape="poly" coords="159,415,209,460,133,524,116,454" alt="4" onclick="minimap(this.alt)">
+  <area title="POVISS - KOVIR, REDANIE, KAEDWEN" style="cursor: pointer" shape="poly" coords="0,0,665,0,665,177,423,198,231,263,0,163" alt="1" onclick="minimap(this.alt)">
+  <area title="TÉMÉRIE, AEDIRN, LYRIE, CINTRA" style="cursor: pointer" shape="poly" coords="665,177,665,483,465,483,280,529,151,335,231,263,423,198" alt="2" onclick="minimap(this.alt)">
+  <area title="NILFGAARD, TOUSSAINT" style="cursor: pointer" shape="poly" coords="665,483,665,1000,345,1000,345,925,279,873,233,707,280,529,465,483" alt="3" onclick="minimap(this.alt)">
+  <area title="ÎLES SKELLIGE" style="cursor: pointer" shape="poly" coords="159,415,209,460,133,524,116,454" alt="4" onclick="minimap(this.alt)">
 </map>
 <img id="nord" class="mapRégion" src="carte/nord.jpg">
 <img id="centre" class="mapRégion" src="carte/centre.jpg">
 <img id="sud" class="mapRégion" src="carte/sud.jpg">
-<img id="Skellige" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/the-skellige-isles-the-witcher-3-wild-hunt-map.jpg">
- 
+<img usemap="#iles_skellige" id="Skellige" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/the-skellige-isles-the-witcher-3-wild-hunt-map.jpg">
+<map name="iles_skellige">
+  <area title="SPIKEROOG" style="cursor: pointer" shape="poly" coords="130,100,265,185,90,265,70,205" alt="1" onclick="minimap2(this.alt)">
+  <area title="AN SKELLIGE" style="cursor: pointer" shape="poly" coords="735,665,730,135,630,120,675,40" alt="2" onclick="minimap2(this.alt)">
+  <area title="HINDERFJALL" style="cursor: pointer" shape="poly" coords="880,315,970,400,895,460,785,390" alt="3" onclick="minimap2(this.alt)">
+  <area title="ARD SKELLIGE" style="cursor: pointer" shape="poly" coords="630,245,700,335,660,545,560,660,390,600,320,510,310,320,410,210" alt="4" onclick="minimap2(this.alt)">
+  <area title="UNDVIK" style="cursor: pointer" shape="poly" coords="150,350,250,280,240,600,180,630,20,575,15,435" alt="5" onclick="minimap2(this.alt)">
+  <area title="FAROE" style="cursor: pointer" shape="poly" coords="705,670,860,700,860,750,670,740" alt="6" onclick="minimap2(this.alt)">
+</map> 
+<img id="Spikeroog" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/spikeroog-the-witcher-3-wild-hunt-map.jpg">
+<img id="An_Skellige" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/an-skellig-the-witcher-3-wild-hunt-map.jpg">
+<img id="Hinderfjall" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/hindarsfjall-the-witcher-3-wild-hunt-map.jpg">
+<img id="Ard_Skellige" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/ard-skellig.jpg">
+<img id="Undvik" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/undvik-the-witcher-3-wild-hunt-map.jpg">
+<img id="Faroe" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/faroe-the-witcher-3-wild-hunt-map.jpg">
 
 </body>
 </html>

@@ -30,7 +30,7 @@ function distanceBetweenElems() {
 		var chevalEL = Math.round((Number(chevalL) - Number(Math.floor(chevalL)))*24);
 		var temps = "<b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br><b>A cheval:</b> "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).<br><b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).";
 
-		var texte = "Segment "+Number(Number(i)+1)+": "+miles+" miles || "+km+" km."+"<br><div style='margin-left:25%'>"+temps+"</div>";
+		var texte = "Segment "+Number(Number(i)+1)+": "+miles+" miles || "+km+" km."+"<br><div class='texte_type2'>"+temps+"</div>";
 		texte_F.push(texte);
 	}
 	
@@ -50,7 +50,7 @@ function distanceBetweenElems() {
 	var chevalEL = Math.round((Number(chevalL) - Number(Math.floor(chevalL)))*24);
 	var temps = "<b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br><b>A cheval:</b> "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).<br><b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).";
 
-	var texte = "<b>Total :</b> "+miles+" miles || "+km+" km."+"<br><div style='margin-left:25%'>"+temps+"</div>";
+	var texte = "<b>Total :</b> "+miles+" miles || "+km+" km."+"<br><div class='texte_type2'>"+temps+"</div>";
 	texte_F.push(texte);
 	
 	var ADK = `<br><br><div>Ajouter un modificateur: <input type="number" id="modif_temps" onchange="ModifTrajet(this.value)"></div>`;
@@ -96,7 +96,7 @@ function distanceBetweenElems2() {
 		var chevalEL = Math.round((Number(chevalL) - Number(Math.floor(chevalL)))*24);
 		var temps = "<b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br><b>A cheval:</b> "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).<br><b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).";
 
-		var texte = "Segment "+Number(Number(i)+1)+": "+miles+" miles || "+km+" km."+"<br><div style='margin-left:25%'>"+temps+"</div>";
+		var texte = "Segment "+Number(Number(i)+1)+": "+miles+" miles || "+km+" km."+"<br><div class='texte_type2'>"+temps+"</div>";
 		texte_F.push(texte);
 	}
 	
@@ -116,7 +116,7 @@ function distanceBetweenElems2() {
 	var chevalEL = Math.round((Number(chevalL) - Number(Math.floor(chevalL)))*24);
 	var temps = "<b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br><b>A cheval:</b> "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).<br><b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).";
 
-	var texte = "<b>Total :</b> "+miles+" miles || "+km+" km."+"<br><div style='margin-left:25%'>"+temps+"</div>";
+	var texte = "<b>Total :</b> "+miles+" miles || "+km+" km."+"<br><div class='texte_type2'>"+temps+"</div>";
 	texte_F.push(texte);
 	
 	var ADK = `<br><br><div>Ajouter un modificateur: <input type="number" id="modif_temps" onchange="ModifTrajet(this.value)"></div>`;
@@ -151,10 +151,10 @@ function ModifTrajet(elem3) {
 
 		var temps = "A pied: "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br>A cheval: "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).<br>A cheval (charge modérée): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).";
 		if(i < Number(Number(split.length)-1)){
-			texte_F.push("Segment "+Number(Number(i)+1)+":<div style='margin-left:25%'>"+temps+"</div>");			
+			texte_F.push("Segment "+Number(Number(i)+1)+":<div class='texte_type2'>"+temps+"</div>");			
 		}
 		else{
-			texte_F.push("<div>Total:<div style='margin-left:25%'>"+temps+"</div></div>");
+			texte_F.push("<div>Total:<div class='texte_type2'>"+temps+"</div></div>");
 		}
 	}
 	
@@ -187,10 +187,10 @@ function ModifTrajet2(elem3) {
 
 		var temps = "A pied: "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br>A cheval: "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).<br>A cheval (charge modérée): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).";
 		if(i < Number(Number(split.length)-1)){
-			texte_F.push("Segment "+Number(Number(i)+1)+":<div style='margin-left:25%'>"+temps+"</div>");			
+			texte_F.push("Segment "+Number(Number(i)+1)+":<div class='texte_type2'>"+temps+"</div>");			
 		}
 		else{
-			texte_F.push("<div>Total:<div style='margin-left:25%'>"+temps+"</div></div>");
+			texte_F.push("<div>Total:<div class='texte_type2'>"+temps+"</div></div>");
 		}
 	}
 	
@@ -259,4 +259,10 @@ function sauvegardeTrajet(){
 	var ADK = `<br><br><div>Ajouter un modificateur: <input type="number" id="modif_temps" onchange="ModifTrajet2(this.value)"></div>`;
 	document.getElementById('text_aff3B').innerHTML = ADK;
 
+}
+
+function minimap2(info){
+var carte = ['','Spikeroog','An_Skellige','Hindarsfjall','Ard_Skellige','Undvik','Faroe'];
+for (let i = 1; i < carte.length; i++) {document.getElementById(carte[i]).style.display = "none";}
+document.getElementById(carte[info]).style.display = "block";
 }
