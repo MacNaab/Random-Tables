@@ -37,8 +37,9 @@
 <div id="réserveP" style="margin-left:auto;margin-right:auto"></div>
 
 
-<input id="readMe" type="text" readonly style="display:none">
 <input id="stock_km" type="text" readonly style="display:none">
+<input id="stock_km2" type="text" readonly style="display:none">
+<br>
 <div style="text-align:center">
 <button id="texte_résultat" style="visibility:hidden" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Résultats</button>
 </div>
@@ -56,14 +57,19 @@
   </div>
 
   <div id="London" class="w3-container city">
-   <h1>Trajet actuel</h1>
-   <div id="text_aff" style="margin-left:5%;margin-right:5%"></div>
-   <div id="text_aff2" style="margin-left:5%;margin-right:5%"></div>
+	<h1>Trajet actuel</h1>
+	<div id="text_aff" style="margin-left:5%;margin-right:5%"></div>
+	<div id="text_aff3" style="margin-left:5%;margin-right:5%"></div>
+	<div id="text_aff2" style="margin-left:5%;margin-right:5%"></div>
+	<button class="button" onclick="sauvegardeTrajet()">Sauvegarder ce trajet</button>
   </div>
 
   <div id="Paris" class="w3-container city">
-   <h1>Trajet sauvegardé</h1>
-  </div>
+	<h1>Trajet sauvegardé</h1>
+	<div id="text_affB" style="margin-left:5%;margin-right:5%"></div>
+	<div id="text_aff3B" style="margin-left:5%;margin-right:5%"></div>
+	<div id="text_aff2B" style="margin-left:5%;margin-right:5%"></div>
+   </div>
 
   <div class="w3-container w3-light-grey w3-padding">
    <button class="w3-button w3-right w3-white w3-border" 
@@ -73,7 +79,7 @@
 </div>
 
 
-<br><br>
+<br>
 <!-- <img style="overflow:auto;" src="https://i.redd.it/k67cyrkbf8741.png"> -->
 <img id="mapmonde" usemap="#mapmonde" style="overflow:auto;" src="carte/mapmonde.png">
 <map name="mapmonde">

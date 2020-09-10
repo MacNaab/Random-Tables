@@ -53,8 +53,9 @@ function distanceBetweenElems() {
 	var texte = "<b>Total :</b> "+miles+" miles || "+km+" km."+"<br><div style='margin-left:25%'>"+temps+"</div>";
 	texte_F.push(texte);
 	
-	var ADK = `<div>Ajouter un modificateur: <input type="number" id="modif_temps" onchange="ModifTrajet(this.value)"></div>`;
-	document.getElementById('text_aff').innerHTML = texte_F+"<br><br>"+ADK;
+	var ADK = `<br><br><div>Ajouter un modificateur: <input type="number" id="modif_temps" onchange="ModifTrajet(this.value)"></div>`;
+	document.getElementById('text_aff').innerHTML = texte_F;
+	document.getElementById('text_aff3').innerHTML = ADK;
 
 // Pereplut pour Mil Trachta 300 miles : 300.8870219866586
 	document.getElementById('texte_résultat').style.visibility = 'visible';
@@ -102,7 +103,7 @@ function distanceBetweenElems2() {
 	for (let i = 0; i < dist_F.length; i++) {
 		distance_totale += Number(dist_F[i])
 	}
-	var miles = Math.round(Number(distance_totale)*300/280);
+	var miles = Math.round(Number(distance_totale)*300/117);
 	var km = Math.round(Number(miles)*1.60934);
 	document.getElementById('stock_km').value = document.getElementById('stock_km').value+km;
 		
@@ -117,8 +118,10 @@ function distanceBetweenElems2() {
 	var texte = "<b>Total :</b> "+miles+" miles || "+km+" km."+"<br><div style='margin-left:25%'>"+temps+"</div>";
 	texte_F.push(texte);
 	
-	var ADK = `<div>Ajouter un modificateur: <input type="number" id="modif_temps" onchange="ModifTrajet(this.value)"></div>`;
-	document.getElementById('text_aff').innerHTML = texte_F+"<br><br>"+ADK;
+	var ADK = `<br><br><div>Ajouter un modificateur: <input type="number" id="modif_temps" onchange="ModifTrajet(this.value)"></div>`;
+	document.getElementById('text_aff').innerHTML = texte_F;
+	document.getElementById('text_aff3').innerHTML = ADK;
+
 
 // Pereplut pour Mil Trachta 300 miles : 300.8870219866586
 }
@@ -160,8 +163,48 @@ function ModifTrajet(elem3) {
 
 	if(Number(elem3) >= 0){var texte = "Avec un modificateur de +";}
 	else{var texte = "Avec un modificateur de ";}
-	document.getElementById('text_aff2').innerHTML = "<b>"+texte+elem3+"%:</b><br>"+texte_F;
+	document.getElementById('text_aff2').innerHTML = "<br><b>"+texte+elem3+"%:</b><br>"+texte_F;
 }
+
+function ModifTrajet2(elem3) {
+	var km = document.getElementById('stock_km2').value;
+	let split = km.split(' ');
+	console.log(elem3+"\n"+split);
+	
+	var texte_F = [];
+	
+	for (let i = 0; i < split.length; i++) {
+		if(Number(elem3) != 0){
+			var pied =	Number(split[i])/20*(Number(100+Number(elem3)))/100;// 20km par jour
+			var cheval = Number(split[i])/40*(Number(100+Number(elem3)))/100;	// 40km par jour : charge modérée
+			var chevalL = Number(split[i])/65*(Number(100+Number(elem3)))/100;	// 65km par jour : charge légère
+		}
+		else{
+			var pied =	Number(split[i])/20;// 20km par jour
+			var cheval = Number(split[i])/40;	// 40km par jour : charge modérée
+			var chevalL = Number(split[i])/65;	// 65km par jour : charge légère
+		}
+		console.log(pied+" - "+chevalL+" - "+cheval);
+		var piedE = Math.round((Number(pied) - Number(Math.floor(pied)))*24);
+		var chevalE = Math.round((Number(cheval) - Number(Math.floor(cheval)))*24);
+		var chevalEL = Math.round((Number(chevalL) - Number(Math.floor(chevalL)))*24);
+
+		var temps = "A pied: "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br>A cheval: "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).<br>A cheval (charge modérée): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).";
+		if(i < Number(Number(split.length)-1)){
+			texte_F.push("Segment "+Number(Number(i)+1)+":<div style='margin-left:25%'>"+temps+"</div>");			
+		}
+		else{
+			texte_F.push("<div>Total:<div style='margin-left:25%'>"+temps+"</div></div>");
+		}
+	}
+	
+	
+
+	if(Number(elem3) >= 0){var texte = "Avec un modificateur de +";}
+	else{var texte = "Avec un modificateur de ";}
+	document.getElementById('text_aff2B').innerHTML = "<br><b>"+texte+elem3+"%:</b><br>"+texte_F;
+}
+
 
 function Reini_P() {
 	$(".draggable").animate({
@@ -212,4 +255,13 @@ function openCity(evt, cityName) {
   }
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.classList.add("w3-light-grey");
+}
+
+function sauvegardeTrajet(){
+	document.getElementById('text_affB').innerHTML = document.getElementById('text_aff').innerHTML;
+	document.getElementById('text_aff2B').innerHTML = document.getElementById('text_aff2').innerHTML;
+	document.getElementById('stock_km2').value = document.getElementById('stock_km').value;
+	var ADK = `<br><br><div>Ajouter un modificateur: <input type="number" id="modif_temps" onchange="ModifTrajet2(this.value)"></div>`;
+	document.getElementById('text_aff3B').innerHTML = ADK;
+
 }
