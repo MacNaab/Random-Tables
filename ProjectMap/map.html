@@ -10,7 +10,6 @@
   <script src="jquery.ui.touch-punch.min.js"></script>
   <script src="JS_map.js"></script>
   
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="map_css.css">
 
 </head>
@@ -84,12 +83,14 @@
 <img id="mapmonde" usemap="#mapmonde" style="overflow:auto;" src="carte/mapmonde.png">
 <map name="mapmonde">
   <area style="cursor: pointer" shape="poly" coords="0,0,665,0,665,177,423,198,231,263,0,163" alt="1" onclick="minimap(this.alt)">
-  <area style="cursor: pointer" shape="poly" coords="665,177,665,483,465,483,280,529,116,512,151,335,231,263,423,198" alt="2" onclick="minimap(this.alt)">
+  <area style="cursor: pointer" shape="poly" coords="665,177,665,483,465,483,280,529,151,335,231,263,423,198" alt="2" onclick="minimap(this.alt)">
   <area style="cursor: pointer" shape="poly" coords="665,483,665,1000,345,1000,345,925,279,873,233,707,280,529,465,483" alt="3" onclick="minimap(this.alt)">
+  <area style="cursor: pointer" shape="poly" coords="159,415,209,460,133,524,116,454" alt="4" onclick="minimap(this.alt)">
 </map>
-<img id="nord" style="overflow:auto;display:none;" src="carte/nord.jpg">
-<img id="centre" style="overflow:auto;display:none;" src="carte/centre.jpg">
-<img id="sud" style="overflow:auto;display:none;" src="carte/sud.jpg">
+<img id="nord" class="mapRégion" src="carte/nord.jpg">
+<img id="centre" class="mapRégion" src="carte/centre.jpg">
+<img id="sud" class="mapRégion" src="carte/sud.jpg">
+<img id="Skellige" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/the-skellige-isles-the-witcher-3-wild-hunt-map.jpg">
  
 
 </body>

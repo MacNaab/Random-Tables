@@ -214,7 +214,7 @@ function scroll_to_top() {
 }
 
 function minimap(info){
-var carte = ['mapmonde','nord','centre','sud'];
+var carte = ['mapmonde','nord','centre','sud','Skellige'];
 for (let i = 0; i < carte.length; i++) {document.getElementById(carte[i]).style.display = "none";}
 document.getElementById(carte[info]).style.display = "block";
 
