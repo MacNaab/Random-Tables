@@ -59,6 +59,7 @@ function distanceBetweenElems() {
 
 // Pereplut pour Mil Trachta 300 miles : 300.8870219866586
 	document.getElementById('texte_résultat').style.visibility = 'visible';
+	document.getElementById('id01').style.display='block'
 }
 
 function distanceBetweenElems2() {
@@ -124,14 +125,13 @@ function distanceBetweenElems2() {
 
 
 // Pereplut pour Mil Trachta 300 miles : 300.8870219866586
+	document.getElementById('id01').style.display='block'
 }
 
 
 function ModifTrajet(elem3) {
 	var km = document.getElementById('stock_km').value;
 	let split = km.split(' ');
-	console.log(elem3+"\n"+split);
-	
 	var texte_F = [];
 	
 	for (let i = 0; i < split.length; i++) {
@@ -145,7 +145,6 @@ function ModifTrajet(elem3) {
 			var cheval = Number(split[i])/40;	// 40km par jour : charge modérée
 			var chevalL = Number(split[i])/65;	// 65km par jour : charge légère
 		}
-		console.log(pied+" - "+chevalL+" - "+cheval);
 		var piedE = Math.round((Number(pied) - Number(Math.floor(pied)))*24);
 		var chevalE = Math.round((Number(cheval) - Number(Math.floor(cheval)))*24);
 		var chevalEL = Math.round((Number(chevalL) - Number(Math.floor(chevalL)))*24);
@@ -169,8 +168,6 @@ function ModifTrajet(elem3) {
 function ModifTrajet2(elem3) {
 	var km = document.getElementById('stock_km2').value;
 	let split = km.split(' ');
-	console.log(elem3+"\n"+split);
-	
 	var texte_F = [];
 	
 	for (let i = 0; i < split.length; i++) {
@@ -184,7 +181,6 @@ function ModifTrajet2(elem3) {
 			var cheval = Number(split[i])/40;	// 40km par jour : charge modérée
 			var chevalL = Number(split[i])/65;	// 65km par jour : charge légère
 		}
-		console.log(pied+" - "+chevalL+" - "+cheval);
 		var piedE = Math.round((Number(pied) - Number(Math.floor(pied)))*24);
 		var chevalE = Math.round((Number(cheval) - Number(Math.floor(cheval)))*24);
 		var chevalEL = Math.round((Number(chevalL) - Number(Math.floor(chevalL)))*24);
@@ -241,7 +237,6 @@ function addP(valeur){
 	$( ".draggable" ).draggable();
 }
 
-ocument.getElementsByClassName("tablink")[0].click();
 
 function openCity(evt, cityName) {
   var i, x, tablinks;
