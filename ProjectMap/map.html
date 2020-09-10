@@ -11,13 +11,23 @@
   <script src="JS_map.js"></script>
   
   <link rel="stylesheet" href="map_css.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 </head>
 <body>
+<div id="texte_introduction">
+<h3 style="text-align:center">Sélectionnez une région</h3>
+	<div style="text-align:center" class="sticky">
+		<button href="#text_aff" class="button button2" onclick="distanceBetweenElems2();scroll_to_top()">Calculer la distance</button>
+		<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
+	</div>
+</div>
 <div id="texte_région" style="display:none">
-<div style="text-align:center" class="sticky">
-<button href="#text_aff" class="button button2" onclick="distanceBetweenElems();scroll_to_top()">Calculer la distance</button>
-<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
-<button href="#text_aff" class="button button2" onclick="minimap('0');">Retour à la carte monde</button>
+	<div style="text-align:center" class="sticky">
+		<button href="#text_aff" class="button button2" onclick="distanceBetweenElems();scroll_to_top()">Calculer la distance</button>
+		<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
+		<button href="#text_aff" class="button button3" onclick="minimap('0');">Retour à la carte monde</button>
+	</div>
 </div>
 <br>
 <div>
@@ -25,15 +35,44 @@
 </div>
 <br>
 <div id="réserveP" style="margin-left:auto;margin-right:auto"></div>
-</div>
-<div id="texte_introduction"><h3>Sélectionnez une région</h3></div>
 
 
 <input id="readMe" type="text" readonly style="display:none">
 <input id="stock_km" type="text" readonly style="display:none">
-<br><br>
-<div id="text_aff" style="margin-left:5%;margin-right:5%"></div>
-<div id="text_aff2" style="margin-left:5%;margin-right:5%"></div>
+<div style="text-align:center">
+<button id="texte_résultat" style="visibility:hidden" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Résultats</button>
+</div>
+<div id="id01" class="w3-modal">
+ <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+  <header class="w3-container w3-blue"> 
+   <span onclick="document.getElementById('id01').style.display='none'" 
+   class="w3-button w3-blue w3-xlarge w3-display-topright">&times;</span>
+   <h2>Calculateur de trajets</h2>
+  </header>
+
+  <div class="w3-bar w3-border-bottom">
+   <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'London')">Trajet actuel</button>
+   <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'Paris')">Trajet sauvegardé</button>
+  </div>
+
+  <div id="London" class="w3-container city">
+   <h1>Trajet actuel</h1>
+   <div id="text_aff" style="margin-left:5%;margin-right:5%"></div>
+   <div id="text_aff2" style="margin-left:5%;margin-right:5%"></div>
+  </div>
+
+  <div id="Paris" class="w3-container city">
+   <h1>Trajet sauvegardé</h1>
+  </div>
+
+  <div class="w3-container w3-light-grey w3-padding">
+   <button class="w3-button w3-right w3-white w3-border" 
+   onclick="document.getElementById('id01').style.display='none'">Fermer</button>
+  </div>
+ </div>
+</div>
+
+
 <br><br>
 <!-- <img style="overflow:auto;" src="https://i.redd.it/k67cyrkbf8741.png"> -->
 <img id="mapmonde" usemap="#mapmonde" style="overflow:auto;" src="carte/mapmonde.png">

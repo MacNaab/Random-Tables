@@ -57,7 +57,72 @@ function distanceBetweenElems() {
 	document.getElementById('text_aff').innerHTML = texte_F+"<br><br>"+ADK;
 
 // Pereplut pour Mil Trachta 300 miles : 300.8870219866586
+	document.getElementById('texte_résultat').style.visibility = 'visible';
 }
+
+function distanceBetweenElems2() {
+	document.getElementById('texte_résultat').style.visibility = 'visible';
+
+	// document.getElementById('P1'),document.getElementById('P2')
+	var NBpoints = document.getElementById('nombreP').value;
+	
+	var dx = [];
+	var dy = [];
+	for (let i = 1; i < Number(Number(NBpoints)+1); i++) {
+		var Rect = document.getElementById('P'+i).getBoundingClientRect();
+		dx.push(Rect.left+(Rect.right-Rect.left)/2);
+		dy.push(Rect.top+(Rect.bottom-Rect.top)/2);
+	}
+	document.getElementById('stock_km').value = "";
+	var texte_F = [];
+	var dist_F = [];
+	for (let i = 0; i < Number(Number(NBpoints)-1); i++) {
+		var dxC = dx[i] - dx[Number(Number(i)+1)];
+		var dyC = dy[i] - dy[Number(Number(i)+1)];
+		var dist = Math.sqrt(dxC * dxC + dyC * dyC);
+		dist_F.push(dist);
+		
+		var miles = Math.round(Number(dist)*300/117);
+		var km = Math.round(Number(miles)*1.60934);
+		document.getElementById('stock_km').value = document.getElementById('stock_km').value+km+" ";
+		
+		var pied =	Number(km)/20;// 20km par jour
+		var piedE = Math.round((Number(pied) - Number(Math.floor(pied)))*24);
+		var cheval = Number(km)/40;	// 40km par jour
+		var chevalE = Math.round((Number(cheval) - Number(Math.floor(cheval)))*24);
+		var chevalL = Number(km)/65;	// 65km par jour : charge légère
+		var chevalEL = Math.round((Number(chevalL) - Number(Math.floor(chevalL)))*24);
+		var temps = "<b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br><b>A cheval:</b> "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).<br><b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).";
+
+		var texte = "Segment "+Number(Number(i)+1)+": "+miles+" miles || "+km+" km."+"<br><div style='margin-left:25%'>"+temps+"</div>";
+		texte_F.push(texte);
+	}
+	
+	var distance_totale = 0;
+	for (let i = 0; i < dist_F.length; i++) {
+		distance_totale += Number(dist_F[i])
+	}
+	var miles = Math.round(Number(distance_totale)*300/280);
+	var km = Math.round(Number(miles)*1.60934);
+	document.getElementById('stock_km').value = document.getElementById('stock_km').value+km;
+		
+	var pied =	Number(km)/20;// 20km par jour
+	var piedE = Math.round((Number(pied) - Number(Math.floor(pied)))*24);
+	var cheval = Number(km)/40;	// 40km par jour
+	var chevalE = Math.round((Number(cheval) - Number(Math.floor(cheval)))*24);
+	var chevalL = Number(km)/65;	// 65km par jour : charge légère
+	var chevalEL = Math.round((Number(chevalL) - Number(Math.floor(chevalL)))*24);
+	var temps = "<b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br><b>A cheval:</b> "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).<br><b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).";
+
+	var texte = "<b>Total :</b> "+miles+" miles || "+km+" km."+"<br><div style='margin-left:25%'>"+temps+"</div>";
+	texte_F.push(texte);
+	
+	var ADK = `<div>Ajouter un modificateur: <input type="number" id="modif_temps" onchange="ModifTrajet(this.value)"></div>`;
+	document.getElementById('text_aff').innerHTML = texte_F+"<br><br>"+ADK;
+
+// Pereplut pour Mil Trachta 300 miles : 300.8870219866586
+}
+
 
 function ModifTrajet(elem3) {
 	var km = document.getElementById('stock_km').value;
@@ -117,7 +182,6 @@ document.getElementById(carte[info]).style.display = "block";
 if(info == 0){
 	document.getElementById('texte_introduction').style.display = 'block';
 	document.getElementById('texte_région').style.display = 'none';
-
 }
 else{
 	document.getElementById('texte_région').style.display = 'block';
@@ -132,4 +196,20 @@ function addP(valeur){
 		$('#réserveP').append('<div id="P'+i+'" class="ui-widget-content draggable">'+i+'</div>')
 	}
 	$( ".draggable" ).draggable();
+}
+
+ocument.getElementsByClassName("tablink")[0].click();
+
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].classList.remove("w3-light-grey");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.classList.add("w3-light-grey");
 }

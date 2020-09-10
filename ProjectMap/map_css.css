@@ -1,4 +1,4 @@
-.draggable { width: 20px; height: 20px; border-radius: 20px; background: blue; cursor: grab; float:left;margin-left:5px;color:white;padding: 0 0 0 10px;}
+.draggable { width: 20px; height: 20px; border-radius: 20px; background: blue; cursor: grab; float:left;margin-left:5px;color:white;padding: 0 0 5px 5px;}
 
 .button {
   background-color: #4CAF50; /* Green */
@@ -19,6 +19,9 @@
 
 .button2 {  background-color: white;   color: black;   border: 2px solid #008CBA;}
 .button2:hover {  background-color: #008CBA;  color: white;}
+
+.button3 { background-color: white; color: black; border: 2px solid #d473d4;}
+.button3:hover {  background-color: #d473d4;  color: white;}
 
 .sticky {
   position: -webkit-sticky;
