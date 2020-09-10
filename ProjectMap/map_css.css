@@ -23,6 +23,9 @@
 .button3 { background-color: white; color: black; border: 2px solid #d473d4;}
 .button3:hover {  background-color: #d473d4;  color: white;}
 
+.button4 { background-color: white; color: black; border: 2px solid #ff7f00; display: none;margin-left:auto;margin-right:auto;margin-bottom:15px}
+.button4:hover {  background-color: #ff7f00;  color: white;}
+
 .sticky {
   position: -webkit-sticky;
   position: sticky;
@@ -46,6 +49,13 @@
 	.texte_type2{margin-left:25%;}
 }
 
+#scrollUp{
+	position: fixed;
+	bottom : 10px;
+	right: -100px;
+	opacity: 0.5;
+	cursor: pointer;
+}
 
 /* W3SCHOOL */
 

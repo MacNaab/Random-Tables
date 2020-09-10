@@ -9,7 +9,6 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="jquery.ui.touch-punch.min.js"></script>
   <script src="JS_map.js"></script>
-  
   <link rel="stylesheet" href="map_css.css">
 
 </head>
@@ -17,15 +16,22 @@
 <div id="texte_introduction">
 <h3 style="text-align:center">Sélectionnez une région</h3>
 	<div style="text-align:center" class="sticky">
-		<button href="#text_aff" class="button button2" onclick="distanceBetweenElems2();scroll_to_top()">Calculer la distance</button>
+		<button class="button button2" onclick="distanceBetweenElems2();scroll_to_top()">Calculer la distance</button>
 		<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
 	</div>
 </div>
 <div id="texte_région" style="display:none">
 	<div style="text-align:center" class="sticky">
-		<button href="#text_aff" class="button button2" onclick="distanceBetweenElems();scroll_to_top()">Calculer la distance</button>
+		<button class="button button2" onclick="distanceBetweenElems();scroll_to_top()">Calculer la distance</button>
 		<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
-		<button href="#text_aff" class="button button3" onclick="minimap('0');">Retour à la carte monde</button>
+		<button class="button button3" onclick="minimap('0');">Retour à la carte monde</button>
+	</div>
+</div>
+<div id="texte_skellige" style="display:none">
+	<div style="text-align:center" class="sticky">
+		<button class="button button2" onclick="distanceBetweenElems3();scroll_to_top()">Calculer la distance</button>
+		<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
+		<button class="button button3" onclick="minimap('0');">Retour à la carte monde</button>
 	</div>
 </div>
 <br>
@@ -99,12 +105,17 @@
   <area title="UNDVIK" style="cursor: pointer" shape="poly" coords="150,350,250,280,240,600,180,630,20,575,15,435" alt="5" onclick="minimap2(this.alt)">
   <area title="FAROE" style="cursor: pointer" shape="poly" coords="705,670,860,700,860,750,670,740" alt="6" onclick="minimap2(this.alt)">
 </map> 
+	<button id="icon_1" class="button button4" onclick="minimap3();">Retour à la carte de Skellige</button>
 <img id="Spikeroog" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/spikeroog-the-witcher-3-wild-hunt-map.jpg">
 <img id="An_Skellige" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/an-skellig-the-witcher-3-wild-hunt-map.jpg">
-<img id="Hinderfjall" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/hindarsfjall-the-witcher-3-wild-hunt-map.jpg">
+<img id="Hindarsfjall" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/hindarsfjall-the-witcher-3-wild-hunt-map.jpg">
 <img id="Ard_Skellige" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/ard-skellig.jpg">
 <img id="Undvik" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/undvik-the-witcher-3-wild-hunt-map.jpg">
 <img id="Faroe" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/faroe-the-witcher-3-wild-hunt-map.jpg">
 
+
+<div id="scrollUp" onclick="scroll_to_top();">
+	<img src="https://www.linuxtricks.fr/upload/to_top.png"/>
+</div>
 </body>
 </html>

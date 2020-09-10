@@ -128,6 +128,73 @@ function distanceBetweenElems2() {
 	document.getElementById('id01').style.display='block'
 }
 
+function distanceBetweenElems3() {
+	document.getElementById('texte_résultat').style.visibility = 'visible';
+
+	// document.getElementById('P1'),document.getElementById('P2')
+	var NBpoints = document.getElementById('nombreP').value;
+	
+	var dx = [];
+	var dy = [];
+	for (let i = 1; i < Number(Number(NBpoints)+1); i++) {
+		var Rect = document.getElementById('P'+i).getBoundingClientRect();
+		dx.push(Rect.left+(Rect.right-Rect.left)/2);
+		dy.push(Rect.top+(Rect.bottom-Rect.top)/2);
+	}
+	document.getElementById('stock_km').value = "";
+	var texte_F = [];
+	var dist_F = [];
+	for (let i = 0; i < Number(Number(NBpoints)-1); i++) {
+		var dxC = dx[i] - dx[Number(Number(i)+1)];
+		var dyC = dy[i] - dy[Number(Number(i)+1)];
+		var dist = Math.sqrt(dxC * dxC + dyC * dyC);
+		dist_F.push(dist);
+		
+		var km = (Number(dist)*8.575/1349);
+		var km = km.toFixed(2);
+		var miles = (Number(km)*0.621371).toFixed(2);
+		document.getElementById('stock_km').value = document.getElementById('stock_km').value+km+" ";
+		
+		var pied =	Number(km)/20;// 20km par jour
+		var piedE = Math.round((Number(pied) - Number(Math.floor(pied)))*24);
+		var cheval = Number(km)/40;	// 40km par jour
+		var chevalE = Math.round((Number(cheval) - Number(Math.floor(cheval)))*24);
+		var chevalL = Number(km)/65;	// 65km par jour : charge légère
+		var chevalEL = Math.round((Number(chevalL) - Number(Math.floor(chevalL)))*24);
+		var temps = "<b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br><b>A cheval:</b> "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).<br><b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).";
+
+		var texte = "Segment "+Number(Number(i)+1)+": "+miles+" miles || "+km+" km."+"<br><div class='texte_type2'>"+temps+"</div>";
+		texte_F.push(texte);
+	}
+	
+	var distance_totale = 0;
+	for (let i = 0; i < dist_F.length; i++) {
+		distance_totale += Number(dist_F[i])
+	}
+	var km = Math.round(Number(distance_totale)*8.575/1349);
+	var miles = (Number(km)*0.621371).toFixed(2);
+	document.getElementById('stock_km').value = document.getElementById('stock_km').value+km;
+		
+	var pied =	Number(km)/20;// 20km par jour
+	var piedE = Math.round((Number(pied) - Number(Math.floor(pied)))*24);
+	var cheval = Number(km)/40;	// 40km par jour
+	var chevalE = Math.round((Number(cheval) - Number(Math.floor(cheval)))*24);
+	var chevalL = Number(km)/65;	// 65km par jour : charge légère
+	var chevalEL = Math.round((Number(chevalL) - Number(Math.floor(chevalL)))*24);
+	var temps = "<b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br><b>A cheval:</b> "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).<br><b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).";
+
+	var texte = "<b>Total :</b> "+miles+" miles || "+km+" km."+"<br><div class='texte_type2'>"+temps+"</div>";
+	texte_F.push(texte);
+	
+	var ADK = `<br><br><div>Ajouter un modificateur: <input type="number" id="modif_temps" onchange="ModifTrajet(this.value)"></div>`;
+	document.getElementById('text_aff').innerHTML = texte_F;
+	document.getElementById('text_aff3').innerHTML = ADK;
+
+
+// Pereplut pour Mil Trachta 300 miles : 300.8870219866586
+	document.getElementById('id01').style.display='block'
+}
+
 
 function ModifTrajet(elem3) {
 	var km = document.getElementById('stock_km').value;
@@ -221,10 +288,17 @@ document.getElementById(carte[info]).style.display = "block";
 if(info == 0){
 	document.getElementById('texte_introduction').style.display = 'block';
 	document.getElementById('texte_région').style.display = 'none';
+	document.getElementById('texte_skellige').style.display = 'none';	
+}
+else if(info == 4){
+	document.getElementById('texte_introduction').style.display = 'none';
+	document.getElementById('texte_région').style.display = 'none';	
+	document.getElementById('texte_skellige').style.display = 'block';	
 }
 else{
 	document.getElementById('texte_région').style.display = 'block';
 	document.getElementById('texte_introduction').style.display = 'none';
+	document.getElementById('texte_skellige').style.display = 'none';	
 }
 }
 
@@ -262,7 +336,23 @@ function sauvegardeTrajet(){
 }
 
 function minimap2(info){
-var carte = ['','Spikeroog','An_Skellige','Hindarsfjall','Ard_Skellige','Undvik','Faroe'];
-for (let i = 1; i < carte.length; i++) {document.getElementById(carte[i]).style.display = "none";}
-document.getElementById(carte[info]).style.display = "block";
+	var carte = ['Skellige','Spikeroog','An_Skellige','Hindarsfjall','Ard_Skellige','Undvik','Faroe'];
+	for (let i = 0; i < carte.length; i++) {document.getElementById(carte[i]).style.display = "none";}
+	document.getElementById(carte[info]).style.display = "block";
+	document.getElementById('icon_1').style.display = "block";
 }
+
+function minimap3(){
+	var carte = ['Skellige','Spikeroog','An_Skellige','Hindarsfjall','Ard_Skellige','Undvik','Faroe'];
+	for (let i = 1; i < carte.length; i++) {document.getElementById(carte[i]).style.display = "none";}
+	document.getElementById(carte[0]).style.display = "block";
+	document.getElementById('icon_1').style.display = "none";
+}
+
+$(window).scroll(function () { //Fonction appelée quand on descend la page
+	if ($(this).scrollTop() > 200 ) {  // Quand on est à 200pixels du haut de page,
+		$('#scrollUp').css('right','10px'); // Replace à 10pixels de la droite l'image
+	} else { 
+		$('#scrollUp').removeAttr( 'style' ); // Enlève les attributs CSS affectés par javascript
+	}
+});
