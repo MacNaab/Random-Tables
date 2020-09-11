@@ -38,16 +38,31 @@ function distance() {
 		var boeufE = Math.round((Number(boeuf) - Number(Math.floor(boeuf)))*24);
 		var caravane =	Number(km)/30;// 30km par jour
 		var caravaneE = Math.round((Number(caravane) - Number(Math.floor(caravane)))*24);		
-		var calèche =	Number(km)/45;// 20km par jour
+		var calèche =	Number(km)/45;// 45km par jour
 		var calècheE = Math.round((Number(calèche) - Number(Math.floor(calèche)))*24);
 
-		var eau_douce =	Number(km)/50;// 20km par jour
+		var eau_douce =	Number(km)/50;// 50km par jour
 		var eau_douceE = Math.round((Number(eau_douce) - Number(Math.floor(eau_douce)))*24);
-		var haute_mer =	Number(km)/100;// 20km par jour
+		var haute_mer =	Number(km)/100;// 100km par jour
 		var haute_merE = Math.round((Number(haute_mer) - Number(Math.floor(haute_mer)))*24);
 		
-		var temps = "<b>Boeuf:</b> "+Math.floor(boeuf)+" jour(s) et "+boeufE+" heure(s).<br><b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br><b>Caravane | Chariot:</b> "+Math.floor(caravane)+" jour(s) et "+caravaneE+" heure(s).<br><b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).<br><b>Calèche:</b> "+Math.floor(calèche)+" jour(s) et "+calèche+" heure(s).<br><b>A cheval</b> (<i>charge légère</i>): "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).";
-		var temps2 = "<b>En eau douce:</b> "+Math.floor(eau_douce)+" jour(s) et "+eau_douceE+" heure(s).<br><b>En haute mer:</b> "+Math.floor(haute_mer)+" jour(s) et "+haute_merE+" heure(s).";
+		var terrestre = ["<b>Boeuf:</b> "+Math.floor(boeuf)+" jour(s) et "+boeufE+" heure(s).","<b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).","<b>Caravane | Chariot:</b> "+Math.floor(caravane)+" jour(s) et "+caravaneE+" heure(s).","<b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).","<b>Calèche:</b> "+Math.floor(calèche)+" jour(s) et "+calèche+" heure(s).","<b>A cheval</b> (<i>charge légère</i>): "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s)."];
+		var navigation = ["<b>En eau douce:</b> "+Math.floor(eau_douce)+" jour(s) et "+eau_douceE+" heure(s).","<b>En haute mer:</b> "+Math.floor(haute_mer)+" jour(s) et "+haute_merE+" heure(s)."];
+
+		var temps = "";var temps2 = "";
+		var valeur_heure = [boeuf,pied,caravane,cheval,calèche,chevalL,eau_douce,haute_mer];
+		var valeur_min = [boeufE,piedE,caravaneE,chevalE,calècheE,chevalEL,eau_douceE,haute_merE];
+
+		for (let y = 0; y < terrestre.length; y++) {
+			var temps = temps+'<input onclick="calcul_total();" type="checkbox" id="check_'+i+'_'+y+'" value="'+valeur_heure[y]+'"><label for="check_'+i+'_'+y+'">'+terrestre[y]+'</label><br>';
+		}
+		for (let y = 0; y < navigation.length; y++) {
+			var z = Number(Number(terrestre.length)+Number(y));
+			var temps2 = temps2+'<input onclick="calcul_total();" type="checkbox" id="check_'+i+'_'+z+'" value="'+valeur_heure[z]+'"><label for="check_'+i+'_'+z+'">'+navigation[y]+'</label><br>';
+		}
+		
+//		var temps = "<b>Boeuf:</b> "+Math.floor(boeuf)+" jour(s) et "+boeufE+" heure(s).<br><b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br><b>Caravane | Chariot:</b> "+Math.floor(caravane)+" jour(s) et "+caravaneE+" heure(s).<br><b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).<br><b>Calèche:</b> "+Math.floor(calèche)+" jour(s) et "+calèche+" heure(s).<br><b>A cheval</b> (<i>charge légère</i>): "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).";
+//		var temps2 = "<b>En eau douce:</b> "+Math.floor(eau_douce)+" jour(s) et "+eau_douceE+" heure(s).<br><b>En haute mer:</b> "+Math.floor(haute_mer)+" jour(s) et "+haute_merE+" heure(s).";
 
 		var texte = "<button class='collapsible collapsibleA'>Segment "+Number(Number(i)+1)+": "+miles+" miles || "+km+" km."+"</button><div class='content'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>";
 		texte_F.push(texte);
@@ -85,7 +100,7 @@ function distance() {
 	var temps = "<b>Boeuf:</b> "+Math.floor(boeuf)+" jour(s) et "+boeufE+" heure(s).<br><b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br><b>Caravane | Chariot:</b> "+Math.floor(caravane)+" jour(s) et "+caravaneE+" heure(s).<br><b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).<br><b>Calèche:</b> "+Math.floor(calèche)+" jour(s) et "+calèche+" heure(s).<br><b>A cheval</b> (<i>charge légère</i>): "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).";
 	var temps2 = "<b>En eau douce:</b> "+Math.floor(eau_douce)+" jour(s) et "+eau_douceE+" heure(s).<br><b>En haute mer:</b> "+Math.floor(haute_mer)+" jour(s) et "+haute_merE+" heure(s).";
 
-	var texte = "<b>Total :</b> "+miles+" miles || "+km+" km."+"<br><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div>";
+	var texte = "<b>Total :</b> "+miles+" miles || "+km+" km."+"<div id='texte_total1'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>";
 	texte_F.push(texte);
 	
 	var ADK = `<br><br><div>Ajouter un modificateur: <input type="number" id="modif_temps" onchange="ModifTrajet(this.value);collapsible('C')"></div>`;
@@ -386,4 +401,44 @@ function modificateur_aff(info){
 		document.getElementById(info).alt = "fermer";
 		document.getElementById(info).style.transform = "rotate(180deg)";
 	}
+}
+
+function calcul_total(){
+	var km = document.getElementById('stock_km').value;
+	let split = km.split(' ');
+//	alert(Number(Number(split.length)-1));
+	
+	var réserve = [];
+	
+	for (let i = 0; i < Number(Number(split.length)-1); i++) {
+		console.log("check_"+i);
+		if(document.getElementById("check_"+i+"_0").checked == true){réserve.push(document.getElementById("check_"+i+"_0").value);}
+		if(document.getElementById("check_"+i+"_1").checked == true){réserve.push(document.getElementById("check_"+i+"_1").value);}
+		if(document.getElementById("check_"+i+"_2").checked == true){réserve.push(document.getElementById("check_"+i+"_2").value);}
+		if(document.getElementById("check_"+i+"_3").checked == true){réserve.push(document.getElementById("check_"+i+"_3").value);}
+		if(document.getElementById("check_"+i+"_4").checked == true){réserve.push(document.getElementById("check_"+i+"_4").value);}
+		if(document.getElementById("check_"+i+"_5").checked == true){réserve.push(document.getElementById("check_"+i+"_5").value);}
+		if(document.getElementById("check_"+i+"_6").checked == true){réserve.push(document.getElementById("check_"+i+"_6").value);}
+		if(document.getElementById("check_"+i+"_7").checked == true){réserve.push(document.getElementById("check_"+i+"_7").value);}
+	}
+	if(réserve.length == Number(Number(split.length)-1)){
+		// texte_total1
+		document.getElementById('stock_total_1').value = document.getElementById('texte_total1').innerHTML;
+		
+		temps_total = 0;
+		for (let i = 0; i < réserve.length; i++) {
+			temps_total += Number(réserve[i])
+		}
+		var heure_total = Math.round((Number(temps_total) - Number(Math.floor(temps_total)))*24);
+		var jour_total = Math.floor(temps_total);
+		
+		document.getElementById('texte_total1').innerHTML = "Sommes des segments : "+jour_total+"jour(s) et "+heure_total+" heure(s).";
+	}
+	if(réserve.length > Number(Number(split.length)-1)){
+		alert("Trop de cases cochées : retour à l'état neutre.");
+		document.getElementById('texte_total1').innerHTML = document.getElementById('stock_total_1').value;
+	}
+	if(réserve.length > Number(Number(split.length)-1) && document.getElementById('stock_total_1').value != ""){
+		document.getElementById('texte_total1').innerHTML = document.getElementById('stock_total_1').value;	
+	}	
 }
