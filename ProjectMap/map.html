@@ -13,27 +13,15 @@
 
 </head>
 <body>
+
 <div id="texte_introduction">
-<h3 style="text-align:center">Sélectionnez une région</h3>
-	<div style="text-align:center" class="sticky">
-		<button class="button button2" onclick="distanceBetweenElems2();scroll_to_top()">Calculer la distance</button>
-		<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
-	</div>
+	<h3 style="text-align:center">Sélectionnez une région</h3>
 </div>
-<div id="texte_région" style="display:none">
 	<div style="text-align:center" class="sticky">
-		<button class="button button2" onclick="distanceBetweenElems();scroll_to_top()">Calculer la distance</button>
+		<button class="button button2" onclick="distance();scroll_to_top();collapsible('A');">Calculer la distance</button>
 		<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
-		<button class="button button3" onclick="minimap('0');">Retour à la carte monde</button>
+		<button id="texte_région" style="visibility:hidden" class="button button3" onclick="minimap('0');">Retour à la carte monde</button>
 	</div>
-</div>
-<div id="texte_skellige" style="display:none">
-	<div style="text-align:center" class="sticky">
-		<button class="button button2" onclick="distanceBetweenElems3();scroll_to_top()">Calculer la distance</button>
-		<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
-		<button class="button button3" onclick="minimap('0');">Retour à la carte monde</button>
-	</div>
-</div>
 <br>
 <div>
 	Nombre de points : <input id="nombreP" type="number" min="2" style="width:50px" onchange="addP(this.value)">
@@ -41,9 +29,9 @@
 <br>
 <div id="réserveP" style="margin-left:auto;margin-right:auto"></div>
 
-
 <input id="stock_km" type="text" readonly style="display:none">
 <input id="stock_km2" type="text" readonly style="display:none">
+<input id="zonage_carte" type="text" readonly style="display:none" value="2">
 <br>
 <div style="text-align:center">
 <button id="texte_résultat" style="visibility:hidden" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Résultats</button>
@@ -66,7 +54,7 @@
 	<div id="text_aff" class="texte_type1"></div>
 	<div id="text_aff3" class="texte_type1"></div>
 	<div id="text_aff2" class="texte_type1"></div>
-	<button class="button" onclick="sauvegardeTrajet()">Sauvegarder ce trajet</button>
+	<button class="button" onclick="sauvegardeTrajet();collapsible('B');">Sauvegarder ce trajet</button>
   </div>
 
   <div id="Paris" class="w3-container city">
@@ -105,7 +93,7 @@
   <area title="UNDVIK" style="cursor: pointer" shape="poly" coords="150,350,250,280,240,600,180,630,20,575,15,435" alt="5" onclick="minimap2(this.alt)">
   <area title="FAROE" style="cursor: pointer" shape="poly" coords="705,670,860,700,860,750,670,740" alt="6" onclick="minimap2(this.alt)">
 </map> 
-	<button id="icon_1" class="button button4" onclick="minimap3();">Retour à la carte de Skellige</button>
+	<button id="icon_1" class="button button4 sticky2" onclick="minimap2('X');">Retour à la carte de Skellige</button>
 <img id="Spikeroog" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/spikeroog-the-witcher-3-wild-hunt-map.jpg">
 <img id="An_Skellige" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/an-skellig-the-witcher-3-wild-hunt-map.jpg">
 <img id="Hindarsfjall" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/hindarsfjall-the-witcher-3-wild-hunt-map.jpg">
@@ -114,8 +102,18 @@
 <img id="Faroe" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/faroe-the-witcher-3-wild-hunt-map.jpg">
 
 
-<div id="scrollUp" onclick="scroll_to_top();">
+<div id="scrollUp" class="scroll" onclick="scroll_to_top();">
 	<img src="https://www.linuxtricks.fr/upload/to_top.png"/>
 </div>
+<div id="scrollDown" class="scroll" onclick="scroll_to_bot();">
+	<img style="transform: rotate(180deg);" src="https://www.linuxtricks.fr/upload/to_top.png"/>
+</div>
+<!--
+<div>
+	<img onclick="zoom('1')" id="icon_2" class="scroll2" src="https://static.thenounproject.com/png/605197-200.png"/>
+	<img onclick="zoom('-1')" id="icon_3" class="scroll2" src="https://static.thenounproject.com/png/605195-200.png"/>
+	<img onclick="zoom('0')" id="icon_4" class="scroll2" src="https://static.thenounproject.com/png/415758-200.png"/>	
+</div>
+-->
 </body>
 </html>
