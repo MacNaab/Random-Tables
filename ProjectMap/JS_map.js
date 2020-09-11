@@ -107,6 +107,8 @@ function distance() {
 	var ADK2= "<table id='modificateur'> <tr> <th>Type</th> <th>Nom</th> <th>Valeur</th> </tr> <tr> <td>Terrestre</td> <td>Route de montagne</td> <td>-75%</td> </tr> <tr> <td>Terrestre</td> <td>Hors piste</td> <td>-50%</td> </tr> <tr> <td>Terrestre</td> <td>Route mal entretenue</td> <td>-25%</td> </tr> <tr> <td>Terrestre</td> <td>Chargé</td> <td>-20%</td> </tr> <tr> <td>Terrestre</td> <td>Météo défavorable</td> <td>-20%</td> </tr> <tr> <td>Terrestre</td> <td>Route inconnue</td> <td>-20%</td> </tr> <tr> <td>Terrestre</td> <td>Route très fréquentée</td> <td>-10%</td> </tr> <tr> <td>Terrestre</td> <td>Route pratiquée</td> <td>+10%</td> </tr> <tr> <td>Terrestre</td> <td>Route pavée</td> <td>+20%</td> </tr> <tr> <td>Navigation</td> <td>Contre-vent</td> <td>-50%</td> </tr> <tr> <td>Navigation</td> <td>Météo défavorable</td> <td>-25%</td> </tr> <tr> <td>Navigation</td> <td>Vent bénéfique</td> <td>+50%</td> </tr></table>"
 	document.getElementById('text_aff').innerHTML = texte_F;
 	document.getElementById('text_aff3').innerHTML = ADK+'<img id="text_aff5" title="Afficher des exemples de modificateurs" alt="fermer" onclick="modificateur_aff(this.id)" class="collapsibleA" style="transform: rotate(180deg);margin:auto;" src="https://www.linuxtricks.fr/upload/to_top.png"/><div class="content">'+ADK2+'</div>';
+
+	document.getElementById('stock_total_1').value = document.getElementById('texte_total1').innerHTML;
 }
 
 
@@ -423,8 +425,6 @@ function calcul_total(){
 	}
 	if(réserve.length == Number(Number(split.length)-1)){
 		// texte_total1
-		document.getElementById('stock_total_1').value = document.getElementById('texte_total1').innerHTML;
-		
 		temps_total = 0;
 		for (let i = 0; i < réserve.length; i++) {
 			temps_total += Number(réserve[i])
@@ -438,7 +438,7 @@ function calcul_total(){
 		alert("Trop de cases cochées : retour à l'état neutre.");
 		document.getElementById('texte_total1').innerHTML = document.getElementById('stock_total_1').value;
 	}
-	if(réserve.length > Number(Number(split.length)-1) && document.getElementById('stock_total_1').value != ""){
+	if(réserve.length < Number(Number(split.length)-1) && document.getElementById('stock_total_1').value != ""){
 		document.getElementById('texte_total1').innerHTML = document.getElementById('stock_total_1').value;	
 	}	
 }
