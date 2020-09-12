@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="map_css.css">
 
 </head>
-<body>
+<body onload="changer_canvas('0')">
 
 <div id="texte_introduction">
 	<h3 style="text-align:center">Sélectionnez une région</h3>
@@ -20,7 +20,7 @@
 	<div style="text-align:center" class="sticky">
 		<button class="button button2" onclick="distance();scroll_to_top();collapsible('A');">Calculer la distance</button>
 		<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
-		<button id="texte_région" style="visibility:hidden" class="button button3" onclick="minimap('0');">Retour à la carte monde</button>
+		<button id="texte_région" style="visibility:hidden" class="button button3" onclick="changer_canvas('0');">Retour à la carte monde</button>
 	</div>
 <br>
 <div>
@@ -32,6 +32,7 @@
 <input id="stock_km" type="text" readonly style="display:none">
 <input id="stock_km2" type="text" readonly style="display:none">
 <input id="zonage_carte" type="text" readonly style="display:none" value="2">
+<input id="numero_carte" type="text" readonly style="display:none" value="0">
 <input id="stock_total_1" type="text" readonly style="display:none">
 <br>
 <div style="text-align:center">
@@ -75,7 +76,11 @@
 
 <br>
 <!-- <img style="overflow:auto;" src="https://i.redd.it/k67cyrkbf8741.png"> -->
-<img id="mapmonde" usemap="#mapmonde" style="overflow:auto;" src="carte/mapmonde.png">
+
+<canvas id="canvas" width="512" height="512"></canvas>
+
+
+<img id="mapmonde" usemap="#mapmonde" style="overflow:auto;display:none" src="carte/mapmonde.png">
 <map name="mapmonde">
   <area title="POVISS - KOVIR, REDANIE, KAEDWEN" style="cursor: pointer" shape="poly" coords="0,0,665,0,665,177,423,198,231,263,0,163" alt="1" onclick="minimap(this.alt)">
   <area title="TÉMÉRIE, AEDIRN, LYRIE, CINTRA" style="cursor: pointer" shape="poly" coords="665,177,665,483,465,483,280,529,151,335,231,263,423,198" alt="2" onclick="minimap(this.alt)">

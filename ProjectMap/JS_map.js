@@ -111,7 +111,6 @@ function distance() {
 	document.getElementById('stock_total_1').value = document.getElementById('texte_total1').innerHTML;
 }
 
-
 function ModifTrajet(elem3) {
 	var km = document.getElementById('stock_km').value;
 	let split = km.split(' ');
@@ -215,7 +214,6 @@ function ModifTrajet2(elem3) {
 	document.getElementById('text_aff2B').innerHTML = "<br><b>"+texte+elem3+"%:</b><br>"+texte_F;
 }
 
-
 function Reini_P() {
 	$(".draggable").animate({
         top: "0px",
@@ -261,11 +259,10 @@ function addP(valeur){
 	if(valeur < 2){var valeur = 2;}
 	document.getElementById('réserveP').innerHTML = "";
 	for (let i = 1; i < (Number(Number(valeur)+1)); i++) {
-		$('#réserveP').append('<div id="P'+i+'" class="ui-widget-content draggable">'+i+'</div>')
+		$('#réserveP').append('<div onclick="relier_points()" id="P'+i+'" class="ui-widget-content draggable">'+i+'</div>')
 	}
 	$( ".draggable" ).draggable();
 }
-
 
 function openCity(evt, cityName) {
   var i, x, tablinks;
@@ -312,7 +309,6 @@ function minimap2(info){
 	}
 }
 
-
 $( document ).ready(function() {
     $(window).scroll(function () { //Fonction appelée quand on descend la page
 		if ($(this).scrollTop() > 200 ) {  // Quand on est à 200pixels du haut de page,
@@ -332,7 +328,8 @@ $( document ).ready(function() {
 //	document.getElementById('icon_2').style.bottom = Number(Number(écran_utilisateur)/2)+40+"px";
 //	document.getElementById('icon_4').style.bottom = Number(Number(écran_utilisateur)/2)-40+"px";
 
-
+	var canvas = document.getElementById("canvas");
+	canvas.addEventListener("click", clickedpolygon);
 });
 
 function collapsible(type){
@@ -432,7 +429,7 @@ function calcul_total(){
 		var heure_total = Math.round((Number(temps_total) - Number(Math.floor(temps_total)))*24);
 		var jour_total = Math.floor(temps_total);
 		
-		document.getElementById('texte_total1').innerHTML = "Sommes des segments : "+jour_total+"jour(s) et "+heure_total+" heure(s).";
+		document.getElementById('texte_total1').innerHTML = "Sommes des segments : <b>"+jour_total+"jour(s) et "+heure_total+" heure(s)</b>.";
 	}
 	if(réserve.length > Number(Number(split.length)-1)){
 		alert("Trop de cases cochées : retour à l'état neutre.");
@@ -442,3 +439,120 @@ function calcul_total(){
 		document.getElementById('texte_total1').innerHTML = document.getElementById('stock_total_1').value;	
 	}	
 }
+
+
+// mapmonde(0),nord(1),centre(2),sud(3),skellige(4)
+var img_largeur = ["665","4771","4658","3092","980"];
+var img_hauteur = ["1000","2020","2546","3917","795"];
+var img_id = ["carte/mapmonde.png","carte/nord.jpg","carte/centre.jpg","carte/sud.jpg","https://mmo4ever.com/maps/gfx/maps/the-skellige-isles-the-witcher-3-wild-hunt-map.jpg"];
+
+function changer_canvas(e){
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+	
+	document.getElementById("canvas").width = img_largeur[e];
+	document.getElementById("canvas").height = img_hauteur[e];
+	
+	var img = new Image()
+	img.src = img_id[e];
+	ctx.drawImage(img, 0, 0);
+
+	if(e == 0){
+		document.getElementById('texte_introduction').style.display = 'block';
+		document.getElementById('texte_région').style.visibility = 'hidden';	
+		document.getElementById('zonage_carte').value = "2";
+	}
+	document.getElementById('numero_carte').value = e;
+}
+
+function relier_points() {
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');
+	
+	//Variables
+	var canvasx = $(canvas).offset().left;
+	var canvasy = $(canvas).offset().top;
+
+	//Nbre Segment:
+	var NBpoints = document.getElementById('nombreP').value;
+	var NBsegment = Number(NBpoints)-1;
+	
+	var objxM = [];
+	var objyM = [];
+
+	for (let i = 0; i < NBpoints; i++) {
+		var a = '#P'+(Number(Number(i)+1));
+		var objx = Number($(a).offset().left)-Number(canvasx); 
+		var objx2 = Math.round(Number(objx)+Number($(a).outerWidth()));
+		var objy = Number($(a).offset().top)-Number(canvasy);
+		var objy2 = Math.round(Number(objy)+Number($(a).outerHeight()));
+		objxM.push((Number(objx)+Number(objx2))/2);
+		objyM.push((Number(objy)+Number(objy2))/2);
+	}
+
+	ctx.clearRect(0,0,canvas.width,canvas.height); //clear canvas
+	var numero_carte = document.getElementById('numero_carte').value;
+	
+	var img = new Image();img.src = img_id[numero_carte];ctx.drawImage(img, 0, 0);
+	
+	for (let i = 0; i < NBsegment; i++) {
+		ctx.beginPath();
+		ctx.moveTo(objxM[i], objyM[i]);
+		ctx.lineTo(objxM[Number(Number(i)+1)], objyM[Number(Number(i)+1)]);
+		ctx.lineWidth = 10;
+		ctx.stroke();
+	}
+}
+
+function clickedpolygon(e) {
+	  let x, y;
+var canvas = document.getElementById("canvas");
+var cx = canvas.getContext("2d");
+  // Only try to hit detect if there was a click
+
+  if (e) {
+    // Localize the click to within the canvas
+    const {clientX, clientY, currentTarget} = e;
+    const {left, top} = currentTarget.getBoundingClientRect();
+    x = clientX - left;
+    y = clientY - top;
+  }
+
+	if(document.getElementById('numero_carte').value == "0"){
+var ar = {
+  "vertices": [
+  [{ "x": 0, "y": 0 }, { "x": 665, "y": 0 }, { "x": 665, "y": 177 }, { "x": 423, "y": 198 }, { "x": 231, "y": 263 }, { "x": 0, "y": 163 }],
+  [{ "x": 665, "y": 177 },{ "x": 665, "y": 483 }, { "x": 280, "y": 529 }, { "x": 151, "y": 335 }, { "x": 231, "y": 263 }, { "x": 423, "y": 198 }],
+  [{ "x": 665, "y": 483 }, { "x": 665, "y": 1000 }, { "x": 345, "y": 1000 }, { "x": 345, "y": 925 }, {"x": 279, "y": 873}, {"x": 279, "y": 873}, {"x": 233, "y": 707}, {"x": 280, "y": 529}, {"x": 465, "y": 483}],
+  [{ "x": 159, "y": 415 },{ "x": 209, "y": 460 }, { "x": 133, "y": 524 }, { "x": 116, "y": 454 }],]
+};
+
+var clickedMe = "";
+  // Iterate all the polygons
+  for (i = 0; i < ar.vertices.length; i++) {
+    for (j = 0; j <= 3; j++) {
+		var keys = Object.keys(ar.vertices[i]).length;
+		cx.beginPath();
+		var nb = 0;
+	    for (let k = 0; k < Number(keys); k++) {
+			var nb = nb;
+			cx.lineTo(ar.vertices[i][nb].x, ar.vertices[i][nb].y);
+			var nb = Number(nb)+1;
+        }
+      if (j == 3) {cx.lineTo(ar.vertices[i][0].x, ar.vertices[i][0].y);}
+      cx.closePath();
+    }
+	if(cx.isPointInPath(x,y)){var clickedMe = Number(Number(i)+1);}
+  }
+  if(clickedMe != ""){
+	  changer_canvas(clickedMe);document.getElementById('numero_carte').value = clickedMe;
+	  	document.getElementById('texte_région').style.visibility = 'visible';
+		document.getElementById('texte_introduction').style.display = 'none';
+		document.getElementById('zonage_carte').value = "1";
+  }
+
+	}
+	
+	if(document.getElementById('numero_carte').value == "4"){}
+}
+
