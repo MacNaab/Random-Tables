@@ -138,7 +138,7 @@ var img_id = ["carte/mapmonde.png","carte/nord.jpg","carte/centre.jpg","carte/su
 	imageObj3.src = img_id[3];
 	imageObj4.src = img_id[4];
 	
-    imageObj1.onload = function () {changer_canvas('0')}
+    imageObj1.onload = function () {changer_canvas('0');console.log('chargé');}
 
 function changer_canvas(e){
 	var width = window.innerWidth;
