@@ -7,37 +7,47 @@
   <script src="http://code.jquery.com/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="jquery.ui.touch-punch.min.js"></script>
+<!--  <script src="jquery.ui.touch-punch.min.js"></script> -->
+  <script src="https://unpkg.com/konva@7.1.0/konva.min.js"></script>
   <script src="JS_map.js"></script>
   <link rel="stylesheet" href="map_css.css">
 
 </head>
-<body onload="changer_canvas('0')">
+<body>
+
+<div id="zone_lat">
+	<div>
+		Nombre de points : <input id="nombreP" type="number" min="2" onchange="addP(this.value)" title="Indiquez ici le nombre de points" placeholder="Indiquez ici le nombre de points">
+	</div>
+	<div style="text-align:center" class="">
+		<button class="button button2" title="Calcule la distance entre les différents points" onclick="distance();scroll_to_top();collapsible('A');">Calculer la distance</button>
+<!--		<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button> -->
+		<button id="texte_région" style="visibility:hidden" class="button button3" onclick="changer_canvas('0');">Retour à la carte monde</button>
+	</div>	
+	<div style="text-align:center">
+		<button id="texte_résultat" style="visibility:hidden" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Résultats</button>
+	</div>
+	
+	<div style="text-align:center;">
+		<img title="Zoom" onclick="zoom('+')" id="icon_2" class="scroll2" src="https://static.thenounproject.com/png/605197-200.png"/>
+		<img title="Dézoom" onclick="zoom('-')" id="icon_3" class="scroll2" src="https://static.thenounproject.com/png/605195-200.png"/>
+		<img title="Retour zoom d'origine" onclick="zoom('=')" id="icon_4" class="scroll2" src="https://static.thenounproject.com/png/415758-200.png"/>	
+	</div>
+</div>
 
 <div id="texte_introduction">
 	<h3 style="text-align:center">Sélectionnez une région</h3>
 </div>
-	<div style="text-align:center" class="sticky">
-		<button class="button button2" onclick="distance();scroll_to_top();collapsible('A');">Calculer la distance</button>
-		<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button>
-		<button id="texte_région" style="visibility:hidden" class="button button3" onclick="changer_canvas('0');">Retour à la carte monde</button>
-	</div>
-<br>
-<div>
-	Nombre de points : <input id="nombreP" type="number" min="2" style="width:50px" onchange="addP(this.value)">
-</div>
-<br>
-<div id="réserveP" style="margin-left:auto;margin-right:auto"></div>
 
 <input id="stock_km" type="text" readonly style="display:none">
 <input id="stock_km2" type="text" readonly style="display:none">
 <input id="zonage_carte" type="text" readonly style="display:none" value="2">
 <input id="numero_carte" type="text" readonly style="display:none" value="0">
+<input id="stock_nombre_P" type="text" readonly style="display:none">
 <input id="stock_total_1" type="text" readonly style="display:none">
-<br>
-<div style="text-align:center">
-<button id="texte_résultat" style="visibility:hidden" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Résultats</button>
-</div>
+<input id="stock_total_2" type="text" readonly style="display:none">
+
+
 <div id="id01" class="w3-modal" style="margin-top:0px;">
  <div class="w3-modal-content w3-card-4 w3-animate-zoom">
   <header class="w3-container w3-blue"> 
@@ -74,39 +84,13 @@
 </div>
 
 
-<br>
 <!-- <img style="overflow:auto;" src="https://i.redd.it/k67cyrkbf8741.png"> -->
 
-<canvas id="canvas" width="512" height="512"></canvas>
-
-
-<img id="mapmonde" usemap="#mapmonde" style="overflow:auto;display:none" src="carte/mapmonde.png">
-<map name="mapmonde">
-  <area title="POVISS - KOVIR, REDANIE, KAEDWEN" style="cursor: pointer" shape="poly" coords="0,0,665,0,665,177,423,198,231,263,0,163" alt="1" onclick="minimap(this.alt)">
-  <area title="TÉMÉRIE, AEDIRN, LYRIE, CINTRA" style="cursor: pointer" shape="poly" coords="665,177,665,483,465,483,280,529,151,335,231,263,423,198" alt="2" onclick="minimap(this.alt)">
-  <area title="NILFGAARD, TOUSSAINT" style="cursor: pointer" shape="poly" coords="665,483,665,1000,345,1000,345,925,279,873,233,707,280,529,465,483" alt="3" onclick="minimap(this.alt)">
-  <area title="ÎLES SKELLIGE" style="cursor: pointer" shape="poly" coords="159,415,209,460,133,524,116,454" alt="4" onclick="minimap(this.alt)">
-</map>
-<img id="nord" class="mapRégion" src="carte/nord.jpg">
-<img id="centre" class="mapRégion" src="carte/centre.jpg">
-<img id="sud" class="mapRégion" src="carte/sud.jpg">
-<img usemap="#iles_skellige" id="Skellige" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/the-skellige-isles-the-witcher-3-wild-hunt-map.jpg">
-<map name="iles_skellige">
-  <area title="SPIKEROOG" style="cursor: pointer" shape="poly" coords="130,100,265,185,90,265,70,205" alt="1" onclick="minimap2(this.alt)">
-  <area title="AN SKELLIGE" style="cursor: pointer" shape="poly" coords="735,665,730,135,630,120,675,40" alt="2" onclick="minimap2(this.alt)">
-  <area title="HINDERFJALL" style="cursor: pointer" shape="poly" coords="880,315,970,400,895,460,785,390" alt="3" onclick="minimap2(this.alt)">
-  <area title="ARD SKELLIGE" style="cursor: pointer" shape="poly" coords="630,245,700,335,660,545,560,660,390,600,320,510,310,320,410,210" alt="4" onclick="minimap2(this.alt)">
-  <area title="UNDVIK" style="cursor: pointer" shape="poly" coords="150,350,250,280,240,600,180,630,20,575,15,435" alt="5" onclick="minimap2(this.alt)">
-  <area title="FAROE" style="cursor: pointer" shape="poly" coords="705,670,860,700,860,750,670,740" alt="6" onclick="minimap2(this.alt)">
-</map> 
-	<button id="icon_1" class="button button4 sticky2" onclick="minimap2('X');">Retour à la carte de Skellige</button>
-<img id="Spikeroog" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/spikeroog-the-witcher-3-wild-hunt-map.jpg">
-<img id="An_Skellige" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/an-skellig-the-witcher-3-wild-hunt-map.jpg">
-<img id="Hindarsfjall" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/hindarsfjall-the-witcher-3-wild-hunt-map.jpg">
-<img id="Ard_Skellige" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/ard-skellig.jpg">
-<img id="Undvik" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/undvik-the-witcher-3-wild-hunt-map.jpg">
-<img id="Faroe" class="mapRégion" src="https://mmo4ever.com/maps/gfx/maps/faroe-the-witcher-3-wild-hunt-map.jpg">
-
+    <div id="scroll-container">
+      <div id="large-container">
+        <div id="container"></div>
+      </div>
+    </div>
 
 <div id="scrollUp" class="scroll" onclick="scroll_to_top();">
 	<img src="https://www.linuxtricks.fr/upload/to_top.png"/>
@@ -114,12 +98,258 @@
 <div id="scrollDown" class="scroll" onclick="scroll_to_bot();">
 	<img style="transform: rotate(180deg);" src="https://www.linuxtricks.fr/upload/to_top.png"/>
 </div>
-<!--
-<div>
-	<img onclick="zoom('1')" id="icon_2" class="scroll2" src="https://static.thenounproject.com/png/605197-200.png"/>
-	<img onclick="zoom('-1')" id="icon_3" class="scroll2" src="https://static.thenounproject.com/png/605195-200.png"/>
-	<img onclick="zoom('0')" id="icon_4" class="scroll2" src="https://static.thenounproject.com/png/415758-200.png"/>	
-</div>
--->
+
 </body>
+
+<script> // Base
+document.getElementById('stock_nombre_P').value = '';
+ 
+// padding will increase the size of stage
+// so scrolling will look smoother
+var PADDING = 500;
+
+var stage = new Konva.Stage({
+    container: 'container',
+	width: window.innerWidth + PADDING * 2,
+    height: window.innerHeight + PADDING * 2,
+	draggable: true,
+});
+		
+var layer = new Konva.Layer();
+stage.add(layer);
+
+//	const canvas = layer.getCanvas()._canvas;
+//	canvas.id = 'canvas';	  
+</script>
+<script> // Carte
+// mapmonde(0),nord(1),centre(2),sud(3),skellige(4)
+var img_largeur = ["665","4771","4658","3092","980"];
+var img_hauteur = ["1000","2020","2546","3917","795"];
+var img_id = ["carte/mapmonde.png","carte/nord.jpg","carte/centre.jpg","carte/sud.jpg","https://mmo4ever.com/maps/gfx/maps/the-skellige-isles-the-witcher-3-wild-hunt-map.jpg"];
+
+	var imageObj0 = new Image();
+	var imageObj1 = new Image();
+	var imageObj2 = new Image();
+	var imageObj3 = new Image();
+	var imageObj4 = new Image();
+	imageObj0.src = img_id[0];
+	imageObj1.src = img_id[1];
+	imageObj2.src = img_id[2];
+	imageObj3.src = img_id[3];
+	imageObj4.src = img_id[4];
+	
+    imageObj1.onload = function () {changer_canvas('0')}
+
+function changer_canvas(e){
+	var width = window.innerWidth;
+    var height = window.innerHeight;
+	var stock_number = document.getElementById('stock_nombre_P').value;
+	if(layer.findOne('#target-0')){
+		for (let i = 0; i < stock_number; i++) {
+			layer.findOne('#target-'+i).destroy();
+			if(i != Number(Number(stock_number)-1)){layer.findOne('#connector-'+i).destroy();}
+		}
+	}
+	
+	if(layer.findOne('#carte')){layer.findOne('#carte').destroy();}
+	if(layer.findOne('#sous-map1')){for (let i = 1; i < 5; i++) {layer.findOne('#sous-map'+i).destroy();}}
+			
+	var taille_x =  Number(window.innerWidth) - 100;
+	if(taille_x > img_largeur[e]){var coord_x = Number(Number(taille_x/2)-Number(img_largeur[e]/2));}
+	else{var coord_x = 0;}
+		
+	if(e == '0'){var carte = new Konva.Image({x: coord_x,y: 0,image: imageObj0,width: img_largeur[e],height: img_hauteur[e],id: 'carte',});}
+	if(e == '1'){var carte = new Konva.Image({x: coord_x,y: 0,image: imageObj1,width: img_largeur[e],height: img_hauteur[e],id: 'carte',});}
+	if(e == '2'){var carte = new Konva.Image({x: coord_x,y: 0,image: imageObj2,width: img_largeur[e],height: img_hauteur[e],id: 'carte',});}
+	if(e == '3'){var carte = new Konva.Image({x: coord_x,y: 0,image: imageObj3,width: img_largeur[e],height: img_hauteur[e],id: 'carte',});}
+	if(e == '4'){var carte = new Konva.Image({x: coord_x,y: 0,image: imageObj4,width: img_largeur[e],height: img_hauteur[e],id: 'carte',});}
+		
+	layer.add(carte);
+
+	if(e == '0'){
+		document.getElementById('texte_introduction').style.display = 'block';
+		document.getElementById('texte_région').style.visibility = 'hidden';	
+		document.getElementById('zonage_carte').value = "2";
+		var poly1 = new Konva.Line({
+			points: [coord_x,0,665+coord_x,0,665+coord_x,177,423+coord_x,198,231+coord_x,263,+coord_x,163],
+			closed: true,
+			id: 'sous-map1',
+		});
+		var poly2 = new Konva.Line({
+			points: [665+coord_x,177,665+coord_x,483,280+coord_x,529,151+coord_x,335,231+coord_x,263,423+coord_x,198],
+			closed: true,
+			id: 'sous-map2',
+		});
+		var poly3 = new Konva.Line({
+			points: [665+coord_x,483,665+coord_x,1000,345+coord_x,1000,345+coord_x,925,279+coord_x,873,279+coord_x,873,233+coord_x,707,280+coord_x,529,465+coord_x,483],
+			closed: true,
+			id: 'sous-map3',
+		});
+		var poly4 = new Konva.Line({
+			points: [159+coord_x,415,209+coord_x,460,133+coord_x,524,116+coord_x,454],
+			closed: true,
+			id: 'sous-map4',
+		});
+		poly1.on('touchstart click', function () {changer_canvas('1');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.display = 'none';document.getElementById('zonage_carte').value = "1";})
+		poly2.on('touchstart click', function () {changer_canvas('2');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.display = 'none';document.getElementById('zonage_carte').value = "1";})
+		poly3.on('touchstart click', function () {changer_canvas('3');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.display = 'none';document.getElementById('zonage_carte').value = "1";})
+		poly4.on('touchstart click', function () {changer_canvas('4');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.display = 'none';document.getElementById('zonage_carte').value = "3";})
+		
+		layer.add(poly1);
+		layer.add(poly2);
+		layer.add(poly3);
+		layer.add(poly4);	
+	}
+    layer.batchDraw();
+}
+</script>
+<script> // Points
+// Ajouter des points
+function addP(e){
+	var stock_number = document.getElementById('stock_nombre_P').value;
+	if(layer.findOne('#target-0')){
+		for (let i = 0; i < stock_number; i++) {
+			layer.findOne('#target-'+i).destroy();
+			if(i != Number(Number(stock_number)-1)){layer.findOne('#connector-'+i).destroy();}
+		}
+	}
+	document.getElementById('stock_nombre_P').value = e;
+
+      var targets = generateTargets(e);
+      var connectors = generateConnectors(e, targets);
+
+      // generate nodes for the app
+      connectors.forEach((connect) => {
+        var line = new Konva.Arrow({
+          stroke: 'red',
+          id: connect.id,
+          fill: 'black',
+		  dash: [40, 10, 0.001, 10],
+		          strokeWidth: 10,
+        });
+        layer.add(line);
+      });
+
+      targets.forEach((target) => {
+        var node = new Konva.Circle({
+          id: target.id,
+          fill: Konva.Util.getRandomColor(),
+          radius: 10,
+          draggable: true,
+        });
+        layer.add(node);
+
+        node.on('dragmove', () => {
+          // mutate the state
+          target.x = node.x();
+          target.y = node.y();
+
+          // update nodes from the new state
+          updateObjects(targets, connectors);
+        });
+      });
+
+	updateObjects(targets, connectors);
+}
+
+// function to generate a list of "targets" (circles)
+function generateTargets(e) {
+	var number = e;
+	var result = [];
+	for (let i = 0; i < e; i++) {
+        result.push({
+            id: 'target-' + i,
+            x: 10+(i*100),
+            y: 10,
+		});
+	}
+	return result;
+}
+
+// function to generate arrows between targets
+function generateConnectors(e, targets) {
+	var number = Number(Number(e)-1);
+	var result = [];
+	for (let i = 0; i < number; i++) {
+        var from = 'target-' + i;
+        var to = 'target-' + Number(Number(i)+1);
+        if (from === to) {continue;}
+        result.push({
+            id: 'connector-' + i,
+            from: from,
+            to: to,
+        });
+    }
+    return result;
+}
+
+function getConnectorPoints(from, to) {
+	const dx = to.x - from.x;
+	const dy = to.y - from.y;
+	let angle = Math.atan2(-dy, dx);
+
+	const radius = 20;
+
+	return [
+		from.x + -radius * Math.cos(angle + Math.PI),
+        from.y + radius * Math.sin(angle + Math.PI),
+        to.x + -radius * Math.cos(angle),
+        to.y + radius * Math.sin(angle),
+    ];
+}
+
+// update all objects on the canvas from the state of the app
+function updateObjects(targets, connectors) {
+	targets.forEach((target) => {
+		var node = layer.findOne('#' + target.id);
+        node.x(target.x);
+        node.y(target.y);
+    });
+
+    connectors.forEach((connect) => {
+        var line = layer.findOne('#' + connect.id);
+        var fromNode = layer.findOne('#' + connect.from);
+        var toNode = layer.findOne('#' + connect.to);
+
+        const points = getConnectorPoints(
+            fromNode.position(),
+            toNode.position()
+        );
+        line.points(points);
+    });
+    layer.batchDraw();
+}
+
+</script>
+<script> // Position
+function calculer_position(){
+	var stock_number = document.getElementById('stock_nombre_P').value;
+	if(stock_number > 0){
+		var position = [];
+		var distance = [];
+		for (let i = 0; i < stock_number; i++) {
+			position.push(layer.findOne('#target-'+i).position());
+		}
+		for (let i = 0; i < Number(Number(stock_number)-1); i++) {
+			var dx = position[i].x - position[Number(Number(i)+1)].x;
+			var dy = position[i].y - position[Number(Number(i)+1)].y;
+			var dist = Math.sqrt(dx * dx + dy * dy);
+			distance.push(dist);
+		}
+	return distance
+	}
+}
+</script>
+<script> // Zoom
+function zoom(e){
+	var oldScale = stage.scaleX();
+    if(e == "+" && oldScale < 5){var newScale = Number(oldScale)+0.1;}
+    if(e == "="){var newScale = 1;}
+    if(e == "-" && oldScale > 0.2){var newScale = Number(oldScale)-0.1;}
+	if(!newScale){var newScale = oldScale;}
+    stage.scale({ x: newScale, y: newScale });
+    stage.batchDraw();
+}
+</script>
+
 </html>

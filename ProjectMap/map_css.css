@@ -1,4 +1,12 @@
-.draggable { width: 20px; height: 20px; border-radius: 20px; background: blue; cursor: grab; float:left;margin-left:5px;color:white;padding: 0 0 5px 5px;}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
+
+/* Firefox */
+input[type=number] {-moz-appearance: textfield;}
+
+body {margin: 0;padding: 0;}
+
+#large-container {overflow: hidden;background-color: #f0f0f0;}
 
 .button {
   background-color: #4CAF50; /* Green */
@@ -46,13 +54,58 @@
 	.texte_type1 {}
 	.texte_type2{margin-left:25px;}
 	.button {padding: 16px 32px; font-size: 8px;}
+	
+	#scroll-container {
+/*	width: calc(100% - 200px); */
+    height: calc(100vh - 50px);
+    overflow: auto;
+    margin: 10px;
+    border: 1px solid grey;
+	}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 	.texte_type1 {margin-left:5%;margin-right:5%;}
 	.texte_type2{margin-left:25%;}
-	.button {padding: 16px 32px;font-size: 16px;}}
+	.button {padding: 16px 32px;font-size: 16px;}
+	#nombreP{
+	  width:176px;
+	  height: 40px;
+	}
+	#zone_lat{
+		overflow:auto;
+		width: 200px;
+		height: calc(100vh - 50px);
+		top: 50px;
+		left: calc(100% - 200px);
+	/*    border: 10px solid blue; */
+		padding-right: 10px;
+		padding-left: 15px;
+		position: fixed;
+	}
+
+	#scroll-container {
+		width: calc(100% - 200px);
+		height: calc(100vh - 50px);
+		overflow: auto;
+		margin: 10px;
+		border: 1px solid grey;
+	}
+}
+	#nombreP{
+	  background-color: white;
+	  border: 2px solid purple;
+	  color: black;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  margin: 4px 2px;
+	  transition-duration: 0.4s;
+	  cursor: pointer;
+	}
+	#nombreP:hover {  background-color: purple;  color: white;}	  
+
 
 .scroll{
 	position: fixed;
@@ -63,10 +116,9 @@
 }
 
 .scroll2{
+	margin-top:15px;
 	width:40px;
 	height:40px;
-	position: fixed;
-	left: 10px;
 	opacity: 0.5;
 	cursor: pointer;
 }
