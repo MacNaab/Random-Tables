@@ -70,7 +70,7 @@ body {margin: 0;padding: 0;}
 	.texte_type2{margin-left:25%;}
 	.button {padding: 16px 32px;font-size: 16px;}
 	#nombreP{
-	  width:176px;
+	  width:169px;
 	  height: 40px;
 	}
 	#zone_lat{
@@ -79,10 +79,13 @@ body {margin: 0;padding: 0;}
 		height: calc(100vh - 50px);
 		top: 50px;
 		left: calc(100% - 200px);
-	/*    border: 10px solid blue; */
+	    border: 1px solid grey;
+		margin-left: 10px;
+		margin-top: 6px;
 		padding-right: 10px;
 		padding-left: 15px;
-		position: fixed;
+		position: absolute;
+		background-color: #f9f9f9;
 	}
 	#scroll-container {
 		width: calc(100% - 200px);
@@ -94,6 +97,7 @@ body {margin: 0;padding: 0;}
 
 	#loader-container {width: calc(100% - 200px);height: calc(100vh - 50px);margin-left:10px;}
 }
+
 	#nombreP{
 	  background-color: white;
 	  border: 2px solid purple;
@@ -106,7 +110,6 @@ body {margin: 0;padding: 0;}
 	  cursor: pointer;
 	}
 	#nombreP:hover {  background-color: purple;  color: white;}	  
-
 
 .scroll{
 	position: fixed;
@@ -466,6 +469,75 @@ html {
 	font-family: 'Roboto', Arial;
 }
 
+
+/* Footer */
+.site-footer {
+  background-color: #26272b;
+  padding: 20px 20px 20px 20px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #737373;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+}
+.site-footer hr {
+  border-top-color: #bbb;
+  opacity: 0.5;
+}
+.site-footer hr.small {
+  margin: 20px 0;
+}
+.site-footer h6 {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 2px;
+  margin-bottom: 0px;
+}
+.site-footer a {
+  color: #737373;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+.footer-links {
+  padding-left: 0;
+  list-style: none;
+}
+.footer-links li {
+  display: block;
+}
+.footer-links a {
+  color: #737373;
+}
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+.footer-links.inline li {
+  display: inline-block;
+}
+.copyright-text {
+  margin: 0;
+}
+@media (max-width: 991px) {
+  .site-footer [class^="col-"] {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .site-footer {
+    padding-bottom: 0;
+  }
+  .site-footer .copyright-text,
+  .site-footer .social-icons {
+    text-align: center;
+  }
+}
 /* W3SCHOOL */
 
 /* W3.CSS 4.13 June 2019 by Jan Egil and Borge Refsnes */
