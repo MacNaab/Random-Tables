@@ -62,6 +62,8 @@ body {margin: 0;padding: 0;}
     margin: 10px;
     border: 1px solid grey;
 	}
+
+#loader-container {width: calc(100%);height: calc(100vh - 50px);}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -84,7 +86,6 @@ body {margin: 0;padding: 0;}
 		padding-left: 15px;
 		position: fixed;
 	}
-
 	#scroll-container {
 		width: calc(100% - 200px);
 		height: calc(100vh - 50px);
@@ -92,6 +93,8 @@ body {margin: 0;padding: 0;}
 		margin: 10px;
 		border: 1px solid grey;
 	}
+
+	#loader-container {width: calc(100% - 200px);height: calc(100vh - 50px);margin-left:10px;}
 }
 	#nombreP{
 	  background-color: white;
@@ -455,9 +458,6 @@ html {
 
 #loader-container {
 	position:absolute;
-	width: calc(100% - 200px);
-	height: calc(100vh - 50px);
-	margin-left:10px;
 	display: -webkit-box;
 	display: flex;
 	-webkit-box-pack: center;
@@ -467,19 +467,6 @@ html {
 	background: #1C212E;
 	font-family: 'Roboto', Arial;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* W3SCHOOL */
 
