@@ -62,8 +62,6 @@ body {margin: 0;padding: 0;}
     margin: 10px;
     border: 1px solid grey;
 	}
-
-#loader-container {width: calc(100%);height: calc(100vh - 50px);}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */

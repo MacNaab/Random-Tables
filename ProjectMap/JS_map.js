@@ -327,6 +327,10 @@ $( document ).ready(function() {
 		}
 	});
 	
+	var sL = $(window).width();
+	var sH = $(window).height();
+	if(sL < 600){$('#loader-container').css('width', sL + 'px');}
+	if(sH < 600){$('#loader-container').css('height', sH + 'px');}
 //	var écran_utilisateur = window.screen.height;
 //	document.getElementById('icon_3').style.bottom = Number(Number(écran_utilisateur)/2)+"px";
 //	document.getElementById('icon_2').style.bottom = Number(Number(écran_utilisateur)/2)+40+"px";
