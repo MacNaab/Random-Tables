@@ -83,9 +83,6 @@
  </div>
 </div>
 
-
-<!-- <img style="overflow:auto;" src="https://i.redd.it/k67cyrkbf8741.png"> -->
-
 <div id="loader-container">
 	<div class="loader">
 	  <div>
@@ -253,7 +250,7 @@ function changer_canvas(e){
 	}
     layer.batchDraw();
 	
-	carte.on('click', function (e) {
+	carte.on('touchstart click', function (e) {
 			var pos = getRelativePointerPosition(carte);
 			document.getElementById('stock_position_souris').innerHTML = "<span id='pos_x'>"+pos.x+"</span> | <span id='pos_y'>"+pos.y+"</span>";
 	});
