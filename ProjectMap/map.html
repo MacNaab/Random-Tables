@@ -21,7 +21,7 @@
 	</div>
 	<div style="text-align:center" class="">
 		<button class="button button2" title="Calcule la distance entre les différents points" onclick="distance();scroll_to_top();collapsible('A');">Calculer la distance</button>
-<!--		<button class="button button1" onclick="Reini_P();scroll_to_top();">Reinitialiser les points</button> -->
+		<button class="button button1" title="Déplace les points au dernier click" onclick="addP('t');">Recentrer les points <span style="font-size:10px">(dernier click)<span></button>
 		<button id="texte_région" style="visibility:hidden" class="button button3" onclick="changer_canvas('0');">Retour à la carte monde</button>
 	</div>	
 	<div style="text-align:center">
@@ -46,7 +46,7 @@
 <input id="stock_nombre_P" type="text" readonly style="display:none">
 <input id="stock_total_1" type="text" readonly style="display:none">
 <input id="stock_total_2" type="text" readonly style="display:none">
-
+<div id="stock_position_souris" style="display:none;"></div>
 
 <div id="id01" class="w3-modal" style="margin-top:0px;">
  <div class="w3-modal-content w3-card-4 w3-animate-zoom">
@@ -252,11 +252,20 @@ function changer_canvas(e){
 		layer.add(poly4);	
 	}
     layer.batchDraw();
+	
+	carte.on('click', function (e) {
+			var pos = getRelativePointerPosition(carte);
+			document.getElementById('stock_position_souris').innerHTML = "<span id='pos_x'>"+pos.x+"</span> | <span id='pos_y'>"+pos.y+"</span>";
+	});
 }
 </script>
 <script> // Points
 // Ajouter des points
 function addP(e){
+	if(e == 't'){var e = document.getElementById('stock_nombre_P').value;
+		if(document.getElementById('pos_x')){var x = document.getElementById('pos_x').innerHTML;var y = document.getElementById('pos_y').innerHTML;}
+		else{var x = 10;var y = 10;}
+	}
 	var stock_number = document.getElementById('stock_nombre_P').value;
 	if(layer.findOne('#target-0')){
 		for (let i = 0; i < stock_number; i++) {
@@ -266,8 +275,8 @@ function addP(e){
 	}
 	document.getElementById('stock_nombre_P').value = e;
 
-      var targets = generateTargets(e);
-      var connectors = generateConnectors(e, targets);
+	if(!x){var targets = generateTargets(e);}else{var targets = generateTargets(e,x,y);console.log(x+'<br>'+y)}
+    var connectors = generateConnectors(e, targets);
 
       // generate nodes for the app
       connectors.forEach((connect) => {
@@ -304,17 +313,19 @@ function addP(e){
 }
 
 // function to generate a list of "targets" (circles)
-function generateTargets(e) {
-	var number = e;
-	var result = [];
+function generateTargets(e,x,y) {
+    var number = e;
+    var result = [];
+	if(!x){var cte_x = Number(10);}else{var cte_x = Number(x)}
+	if(!y){var cte_y = Number(10);}else{var cte_y = Number(y);}
 	for (let i = 0; i < e; i++) {
         result.push({
-            id: 'target-' + i,
-            x: 10+(i*100),
-            y: 10,
-		});
-	}
-	return result;
+			id: 'target-' + i,
+            x: cte_x+(i*100),
+            y: cte_y,
+        });
+    }
+    return result;
 }
 
 // function to generate arrows between targets
@@ -400,6 +411,17 @@ function zoom(e){
 	if(!newScale){var newScale = oldScale;}
     stage.scale({ x: newScale, y: newScale });
     stage.batchDraw();
+}
+</script>
+<script> // reset
+function getRelativePointerPosition(node) {
+    var transform = node.getAbsoluteTransform().copy();
+	// to detect relative position we need to invert transform
+	transform.invert();
+	// get pointer (say mouse or touch) position
+	var pos = node.getStage().getPointerPosition();
+	// now we can find relative point
+	return transform.point(pos);
 }
 </script>
 
