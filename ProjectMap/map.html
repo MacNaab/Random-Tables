@@ -360,7 +360,7 @@ function addP(e){
 	}
 	document.getElementById('stock_nombre_P').value = e;
 
-	if(!x){var targets = generateTargets(e);}else{var targets = generateTargets(e,x,y);console.log(x+'<br>'+y)}
+	if(!x){var targets = generateTargets(e);}else{var targets = generateTargets(e,x,y);}
     var connectors = generateConnectors(e, targets);
 
       // generate nodes for the app
@@ -369,7 +369,6 @@ function addP(e){
 		var epaisseur = document.getElementById("option_f_epaisseur").value;
 		var type = rates('option_f_trait1');
 		var ligne = rates('option_f_trait2');
-		
 		if(type == 'pointillé'){
 			var line = new Konva.Arrow({
 			  stroke: couleur,
@@ -629,7 +628,7 @@ stage.on('touchend', function () {
 function rates(e){
 	var rates = document.getElementById(e);
 	if(rates.checked){var x = '1';}
-	if(x = '1'){
+	if(x == '1'){
 		if(e == 'option_f_trait1'){var x = "pointillé";}else{var x = "round";}
 	}else{
 		if(e == 'option_f_trait1'){var x = "plein";}else{var x = "miter";}
