@@ -160,7 +160,7 @@ function ModifTrajet(elem3) {
 			texte_F.push("<button class='collapsible collapsibleC'>Segment "+Number(Number(i)+1)+"</button><div class='content'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>");
 		}
 		else{
-			texte_F.push("<div>Total:<div id='texte_total2'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div></div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>");
+			texte_F.push("<div>Total:<div id='texte_total2'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>");
 		}
 	}
 	
@@ -231,7 +231,7 @@ function ModifTrajet2(elem3) {
 			texte_F.push("<button class='collapsible collapsibleD'>Segment "+Number(Number(i)+1)+"</button><div class='content'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>");
 		}
 		else{
-			texte_F.push("<div>Total:<div id='texte_total4'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div></div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>");
+			texte_F.push("<div>Total:<div id='texte_total4'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>");
 		}
 	}
 	
@@ -326,11 +326,18 @@ $( document ).ready(function() {
 			$('#scrollDown').removeAttr( 'style' );
 		}
 	});
-	
+
 	var sL = $(window).width();
 	var sH = $(window).height();
 	if(sL < 600){$('#loader-container').css('width', sL + 'px');}
 	if(sH < 600){$('#loader-container').css('height', sH + 'px');}
+	$( window ).on( "orientationchange", function( event ) {
+		var sL = $(window).width();
+		var sH = $(window).height();
+		if(sL < 600){$('#loader-container').css('width', sL + 'px');}
+		if(sH < 600){$('#loader-container').css('height', sH + 'px');}
+	});
+
 //	var écran_utilisateur = window.screen.height;
 //	document.getElementById('icon_3').style.bottom = Number(Number(écran_utilisateur)/2)+"px";
 //	document.getElementById('icon_2').style.bottom = Number(Number(écran_utilisateur)/2)+40+"px";
