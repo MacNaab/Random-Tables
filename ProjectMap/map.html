@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,7 @@
   <script src="http://code.jquery.com/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<!--  <script src="jquery.ui.touch-punch.min.js"></script> -->
+  
   <script src="https://unpkg.com/konva@7.1.0/konva.min.js"></script>
   <script src="JS_map.js"></script>
   <link rel="stylesheet" href="map_css.css">
@@ -15,25 +15,54 @@
 </head>
 <body>
 
-<div id="zone_lat">
-	<div>
-		Nombre de points : <input id="nombreP" type="number" min="2" onchange="addP(this.value)" title="Indiquez ici le nombre de points" placeholder="Indiquez ici le nombre de points">
-	</div>
-	<div style="text-align:center" class="">
-		<button class="button button2" title="Calcule la distance entre les différents points" onclick="distance();scroll_to_top();collapsible('A');">Calculer la distance</button>
-		<button class="button button1" title="Déplace les points au dernier click" onclick="addP('t');">Recentrer les points <span style="font-size:10px">(dernier click)<span></button>
-		<button id="texte_région" style="visibility:hidden" class="button button3" onclick="changer_canvas('0');">Retour à la carte monde</button>
-	</div>	
-	<div style="text-align:center">
-		<button id="texte_résultat" style="visibility:hidden" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Résultats</button>
+	<div class="zoomer">
+		<button title="Zoom" onclick="zoom('+')" id="icon_2" class="zoom1 zoom zoom-button">+</button>
+		<button title="Dézoom" onclick="zoom('-')" id="icon_3" class="zoom2 zoom zoom-button">-</button>
 	</div>
 	
-	<div style="text-align:center;">
-		<img title="Zoom" onclick="zoom('+')" id="icon_2" class="scroll2" src="https://static.thenounproject.com/png/605197-200.png"/>
-		<img title="Dézoom" onclick="zoom('-')" id="icon_3" class="scroll2" src="https://static.thenounproject.com/png/605195-200.png"/>
-		<img title="Retour zoom d'origine" onclick="zoom('=')" id="icon_4" class="scroll2" src="https://static.thenounproject.com/png/415758-200.png"/>	
+	<div class="barre-navigation">
+		<button onclick="mouseClick('1');" title="Ouvrir les options" id="clicliclci" class="input-field">≡</button>
+		<input id="nombreP" class="input-field" type="number" min="2" onchange="addP(this.value)" title="Indiquez ici le nombre de points" placeholder="Indiquez ici le nombre de points">
 	</div>
-</div>
+	<div id="barre" class="barre1">
+		<div style="margin-top:10px;margin-bottom:10px;">
+			<div class="play_1">
+				<a class="play_2">
+					<p title="Calcule la distance entre les différents points" onclick="distance();scroll_to_top();collapsible('A');">
+						<span class="bg"></span>
+						<span class="base"></span>
+						<span class="text">Calculer la distance</span>
+					</p>
+				</a>
+				
+				<a class="play_2 white">
+					<p title="Déplace les points au dernier click" onclick="addP('t');">
+						<span class="bg"></span>
+						<span class="base"></span>
+						<span class="text">Recentrer les points <span style="font-size:10px">(dernier click)<span></span>
+					</p>
+				</a>
+				
+				<a class="play_2 blue" id="texte_région" style="visibility:hidden" onclick="changer_canvas('0');">
+					<p>
+						<span class="bg"></span>
+						<span class="base"></span>
+						<span class="text">Retour à la carte monde</span>
+					</p>
+				</a>
+				<a class="play_2 transparent" id="texte_résultat" style="visibility:hidden" onclick="document.getElementById('id01').style.display='block'">
+					<p>
+						<span class="bg"></span>
+						<span class="base"></span>
+						<span class="text">Résultats</span>
+					</p>
+				</a>
+			</div>
+			<div>
+				<button onclick="mouseClick('2');" title="Plus d'option de personnalisation" id="bouton_option" class="input-field">≡ <span style="font-size:10px;">plus d'options</span></button>
+			</div>
+		</div>
+	</div>
 
 <div id="texte_introduction">
 	<h3 style="text-align:center">Sélectionnez une région</h3>
@@ -47,6 +76,8 @@
 <input id="stock_total_1" type="text" readonly style="display:none">
 <input id="stock_total_2" type="text" readonly style="display:none">
 <div id="stock_position_souris" style="display:none;"></div>
+<input id="stock_clic" type="number" readonly style="display:none">
+<input id="stock_clic2" type="number" readonly style="display:none">
 
 <div id="id01" class="w3-modal" style="margin-top:0px;">
  <div class="w3-modal-content w3-card-4 w3-animate-zoom">
@@ -81,6 +112,60 @@
    onclick="document.getElementById('id01').style.display='none'">Fermer</button>
   </div>
  </div>
+</div>
+
+<div id="option_personnalisation">
+	<button title="Fermer" onclick="mouseClick('2');" class="w3-button w3-blue w3-xlarge w3-display-topright">×</button>
+	<h6>Option de personnalisation</h6>
+	<div style="font-size:10px;font-style: italic;">En * les options de base.</div>
+	<div style="margin-top:15px;">
+		<div>
+			<div style="text-decoration: underline;"><b>Points :</b></div>
+			Rayon:	<input title="Rayon du point (10*)" class="input-number-perso" id="option_p_rayon" type="number" min="1" value="10" placeholder="10">
+			<br>Couleur:<br>
+			<div class="custom-select">
+				<select title="Couleur des points" id="option_p_couleur">
+					<option value="Rand" selected>Aléatoire*</option>
+					<option value="red">Rouge</option>
+					<option value="blue">Bleu</option>
+					<option value="yellow">Jaune</option>
+					<option value="orange">Orange</option>
+					<option value="green">Vert</option>
+					<option value="purple">Violet</option>
+					<option value="black">Noir</option>
+				</select>
+			</div>
+		</div>
+		<br>
+		<div>
+			<div style="text-decoration: underline;"><b>Flèches :</b></div>
+			Couleur:
+			<div class="custom-select">
+				<select title="Couleur des flèches entre les points" id="option_f_couleur">
+					<option value="red" selected>Rouge*</option>
+					<option value="blue">Bleu</option>
+					<option value="yellow">Jaune</option>
+					<option value="orange">Orange</option>
+					<option value="green">Vert</option>
+					<option value="purple">Violet</option>
+					<option value="black">Noir</option>
+				</select>
+			</div>
+			<br>Epaisseur:<input title="Epaisseur des flèches (10*)" class="input-number-perso" id="option_f_epaisseur" type="number" min="1" value="10" placeholder="10">
+			<br>Trait en pointillé:
+			<div style="text-align:center;">
+				<label title="Active ou non les traits en pointillés" class="switch"><input id="option_f_trait1" type="checkbox" checked><span class="slider round"></span></label>
+			</div>
+			<br>Trait arrondi:
+			<div style="text-align:center;">
+				<label title="Active ou non les traits arrondis" class="switch"><input id="option_f_trait2" type="checkbox"><span class="slider round"></span></label>
+			</div>
+		</div>
+		<br>
+		<div>
+Attention ces changemements ne seront effectifs que sur les nouveaux points (ou recentrés).		
+		</div>
+	</div>
 </div>
 
 <div id="loader-container">
@@ -167,7 +252,10 @@ var layer = new Konva.Layer();
 stage.add(layer);
 
 //	const canvas = layer.getCanvas()._canvas;
-//	canvas.id = 'canvas';	  
+//	canvas.id = 'canvas';
+
+
+
 </script>
 <script> // Carte
 // mapmonde(0),nord(1),centre(2),sud(3),skellige(4)
@@ -215,7 +303,7 @@ function changer_canvas(e){
 	layer.add(carte);
 
 	if(e == '0'){
-		document.getElementById('texte_introduction').style.display = 'block';
+		document.getElementById('texte_introduction').style.visibility = 'visible';
 		document.getElementById('texte_région').style.visibility = 'hidden';	
 		document.getElementById('zonage_carte').value = "2";
 		var poly1 = new Konva.Line({
@@ -238,15 +326,15 @@ function changer_canvas(e){
 			closed: true,
 			id: 'sous-map4',
 		});
-		poly1.on('touchstart click', function () {changer_canvas('1');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.display = 'none';document.getElementById('zonage_carte').value = "1";})
-		poly2.on('touchstart click', function () {changer_canvas('2');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.display = 'none';document.getElementById('zonage_carte').value = "1";})
-		poly3.on('touchstart click', function () {changer_canvas('3');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.display = 'none';document.getElementById('zonage_carte').value = "1";})
-		poly4.on('touchstart click', function () {changer_canvas('4');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.display = 'none';document.getElementById('zonage_carte').value = "3";})
+		poly1.on('touchstart click', function () {changer_canvas('1');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.visibility = 'hidden';document.getElementById('zonage_carte').value = "1";})
+		poly2.on('touchstart click', function () {changer_canvas('2');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.visibility = 'hidden';document.getElementById('zonage_carte').value = "1";})
+		poly3.on('touchstart click', function () {changer_canvas('3');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.visibility = 'hidden';document.getElementById('zonage_carte').value = "1";})
+		poly4.on('touchstart click', function () {changer_canvas('4');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.visibility = 'hidden';document.getElementById('zonage_carte').value = "3";})
 		
 		layer.add(poly1);
 		layer.add(poly2);
 		layer.add(poly3);
-		layer.add(poly4);	
+		layer.add(poly4);
 	}
     layer.batchDraw();
 	
@@ -261,7 +349,7 @@ function changer_canvas(e){
 function addP(e){
 	if(e == 't'){var e = document.getElementById('stock_nombre_P').value;
 		if(document.getElementById('pos_x')){var x = document.getElementById('pos_x').innerHTML;var y = document.getElementById('pos_y').innerHTML;}
-		else{var x = 10;var y = 10;}
+		else{var x = 220;var y = 35;}
 	}
 	var stock_number = document.getElementById('stock_nombre_P').value;
 	if(layer.findOne('#target-0')){
@@ -277,23 +365,52 @@ function addP(e){
 
       // generate nodes for the app
       connectors.forEach((connect) => {
-        var line = new Konva.Arrow({
-          stroke: 'red',
-          id: connect.id,
-          fill: 'black',
-		  dash: [40, 10, 0.001, 10],
-		          strokeWidth: 10,
-        });
+		var couleur = document.getElementById("option_f_couleur").value;
+		var epaisseur = document.getElementById("option_f_epaisseur").value;
+		var type = rates('option_f_trait1');
+		var ligne = rates('option_f_trait2');
+		
+		if(type == 'pointillé'){
+			var line = new Konva.Arrow({
+			  stroke: couleur,
+			  strokeWidth: epaisseur,
+			  id: connect.id,
+			  fill: couleur,
+			  dash: [40, 10, 0.001, 10],
+			  lineJoin: ligne,
+			  lineCap: ligne,
+			});
+		}else{
+			var line = new Konva.Arrow({
+			  stroke: couleur,
+			  strokeWidth: epaisseur,
+			  id: connect.id,
+			  fill: couleur,
+			  lineJoin: ligne,
+			  lineCap: ligne,
+			});
+		}
         layer.add(line);
       });
 
       targets.forEach((target) => {
-        var node = new Konva.Circle({
-          id: target.id,
-          fill: Konva.Util.getRandomColor(),
-          radius: 10,
-          draggable: true,
-        });
+		var couleur = document.getElementById("option_p_couleur").value;
+		var rayon = document.getElementById("option_p_rayon").value;
+		if(couleur == "Rand"){
+			var node = new Konva.Circle({
+			  id: target.id,
+			  fill: Konva.Util.getRandomColor(),
+			  radius: rayon,
+			  draggable: true,
+			});
+		}else{
+			var node = new Konva.Circle({
+			  id: target.id,
+			  fill: couleur,
+			  radius: rayon,
+			  draggable: true,
+			});
+		}
         layer.add(node);
 
         node.on('dragmove', () => {
@@ -306,15 +423,15 @@ function addP(e){
         });
       });
 
-	updateObjects(targets, connectors);
+	updateObjects(targets, connectors); 
 }
 
 // function to generate a list of "targets" (circles)
 function generateTargets(e,x,y) {
     var number = e;
     var result = [];
-	if(!x){var cte_x = Number(10);}else{var cte_x = Number(x)}
-	if(!y){var cte_y = Number(10);}else{var cte_y = Number(y);}
+	if(!x){var cte_x = Number(220);}else{var cte_x = Number(x)}
+	if(!y){var cte_y = Number(35);}else{var cte_y = Number(y);}
 	for (let i = 0; i < e; i++) {
         result.push({
 			id: 'target-' + i,
@@ -347,7 +464,8 @@ function getConnectorPoints(from, to) {
 	const dy = to.y - from.y;
 	let angle = Math.atan2(-dy, dx);
 
-	const radius = 20;
+	var rayon = document.getElementById("option_p_rayon").value;
+	var radius = Number(rayon)*2;
 
 	return [
 		from.x + -radius * Math.cos(angle + Math.PI),
@@ -506,4 +624,18 @@ stage.on('touchend', function () {
 	lastCenter = null;
 });
 </script>
+
+<script>
+function rates(e){
+	var rates = document.getElementById(e);
+	if(rates.checked){var x = '1';}
+	if(x = '1'){
+		if(e == 'option_f_trait1'){var x = "pointillé";}else{var x = "round";}
+	}else{
+		if(e == 'option_f_trait1'){var x = "plein";}else{var x = "miter";}
+	}
+	return x
+}
+</script>
+
 </html>

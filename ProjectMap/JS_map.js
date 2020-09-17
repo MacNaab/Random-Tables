@@ -338,6 +338,8 @@ $( document ).ready(function() {
 		if(sH < 600){$('#loader-container').css('height', sH + 'px');}
 	});
 
+	document.getElementById('stock_clic').value = '';
+	document.getElementById('stock_clic2').value = '';
 //	var écran_utilisateur = window.screen.height;
 //	document.getElementById('icon_3').style.bottom = Number(Number(écran_utilisateur)/2)+"px";
 //	document.getElementById('icon_2').style.bottom = Number(Number(écran_utilisateur)/2)+40+"px";
@@ -457,39 +459,27 @@ function calcul_total(e){
 }
 
 // --> KONVAS 
-function minimap(info){
-var carte = ['mapmonde','nord','centre','sud','Skellige','Spikeroog','An_Skellige','Hindarsfjall','Ard_Skellige','Undvik','Faroe'];
-for (let i = 0; i < carte.length; i++) {document.getElementById(carte[i]).style.display = "none";}
-document.getElementById(carte[info]).style.display = "block";
 
-if(info == 0){
-	document.getElementById('texte_introduction').style.display = 'block';
-	document.getElementById('texte_région').style.visibility = 'hidden';	
-//	document.getElementById('texte_skellige').style.display = 'none';
-	document.getElementById('zonage_carte').value = "2";
-}
-else if(info == 4){
-	document.getElementById('texte_introduction').style.display = 'none';
-	document.getElementById('texte_région').style.visibility = 'visible';
-//	document.getElementById('texte_skellige').style.display = 'block';	
-	document.getElementById('zonage_carte').value = "3";
-}
-else{
-	document.getElementById('texte_région').style.visibility = 'visible';
-	document.getElementById('texte_introduction').style.display = 'none';
-//	document.getElementById('texte_skellige').style.display = 'none';	
-	document.getElementById('zonage_carte').value = "1";
-}
-}
-
-function minimap2(info){
-	var carte = ['Skellige','Spikeroog','An_Skellige','Hindarsfjall','Ard_Skellige','Undvik','Faroe'];
-	for (let i = 0; i < carte.length; i++) {document.getElementById(carte[i]).style.display = "none";}
-	if(info == "X"){
-		document.getElementById(carte[0]).style.display = "block";
-		document.getElementById('icon_1').style.display = "none";
+function mouseClick(e) {
+if(e == '1'){
+	var f = document.getElementById('stock_clic').value;
+	if(f != '1'){
+		document.getElementById('barre').style.left = '25px';
+		document.getElementById('stock_clic').value = '1';
 	}else{
-		document.getElementById(carte[info]).style.display = "block";
-		document.getElementById('icon_1').style.display = "block";
+		document.getElementById('barre').style.left = '-200px';
+		document.getElementById('stock_clic').value = '0';
 	}
 }
+if(e == '2'){
+	var f = document.getElementById('stock_clic2').value;
+	if(f != '1'){
+		document.getElementById('option_personnalisation').style.left = '0px';
+		document.getElementById('stock_clic2').value = '1';
+	}else{
+		document.getElementById('option_personnalisation').style.left = '-300px';
+		document.getElementById('stock_clic2').value = '0';
+	}
+}
+}
+
