@@ -176,7 +176,7 @@ body {margin: 0;padding: 0;}
 	transition-duration:1s;
 }
 #nombreP:focus{width:16rem;}
-@media only screen and (max-width: 768px) {#nombreP{width:5.5rem;}}
+@media only screen and (max-width: 768px) {#nombreP{width:5.5rem;height:1.5rem;}#nombreP:focus{width:15.5rem;}}
 
 #clicliclci,#bouton_option {cursor:pointer;}
 #option_personnalisation{
