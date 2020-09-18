@@ -151,12 +151,12 @@
 					<option value="black">Noir</option>
 				</select>
 			</div>
-			<br>Epaisseur:<input title="Epaisseur des flèches (10*)" class="input-number-perso" id="option_f_epaisseur" type="number" min="1" value="10" placeholder="10">
+			Epaisseur:<input title="Epaisseur des flèches (10*)" class="input-number-perso" id="option_f_epaisseur" type="number" min="1" value="10" placeholder="10">
 			<br>Trait en pointillé:
 			<div style="text-align:center;">
 				<label title="Active ou non les traits en pointillés" class="switch"><input id="option_f_trait1" type="checkbox" checked><span class="slider round"></span></label>
 			</div>
-			<br>Trait arrondi:
+			Trait arrondi:
 			<div style="text-align:center;">
 				<label title="Active ou non les traits arrondis" class="switch"><input id="option_f_trait2" type="checkbox"><span class="slider round"></span></label>
 			</div>
@@ -430,7 +430,7 @@ function generateTargets(e,x,y) {
     var number = e;
     var result = [];
 	if(!x){var cte_x = Number(220);}else{var cte_x = Number(x)}
-	if(!y){var cte_y = Number(35);}else{var cte_y = Number(y);}
+	if(!y){var cte_y = Number(60);}else{var cte_y = Number(y);}
 	for (let i = 0; i < e; i++) {
         result.push({
 			id: 'target-' + i,

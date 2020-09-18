@@ -42,7 +42,6 @@
 	}
 }
 
-
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
 /* Firefox */
@@ -177,6 +176,12 @@ body {margin: 0;padding: 0;}
 	transition-duration:1s;
 }
 #nombreP:focus{width:16rem;}
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) { 
+    @media {
+		#nombreP{width:5.5rem;}
+	}
+}
+
 
 #clicliclci,#bouton_option {cursor:pointer;}
 #option_personnalisation{
