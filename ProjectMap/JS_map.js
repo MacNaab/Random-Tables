@@ -329,21 +329,20 @@ $( document ).ready(function() {
 
 	var sL = $(window).width();
 	var sH = $(window).height();
-	if(sL < 600){$('#loader-container').css('width', sL + 'px');}
-	if(sH < 600){$('#loader-container').css('height', sH + 'px');}
+	if(sL < 768){$('#loader-container').css('width', sL + 'px');}
+	if(sL < 768){$('#loader-container').css('height', sH + 'px');}
 	$( window ).on( "orientationchange", function( event ) {
 		var sL = $(window).width();
 		var sH = $(window).height();
-		if(sL < 600){$('#loader-container').css('width', sL + 'px');}
-		if(sH < 600){$('#loader-container').css('height', sH + 'px');}
+		if(sL < 768){$('#loader-container').css('width', sL + 'px');}
+		if(sL < 768){$('#loader-container').css('height', sH + 'px');}
 	});
 
 	document.getElementById('stock_clic').value = '';
 	document.getElementById('stock_clic2').value = '';
-//	var écran_utilisateur = window.screen.height;
-//	document.getElementById('icon_3').style.bottom = Number(Number(écran_utilisateur)/2)+"px";
-//	document.getElementById('icon_2').style.bottom = Number(Number(écran_utilisateur)/2)+40+"px";
-//	document.getElementById('icon_4').style.bottom = Number(Number(écran_utilisateur)/2)-40+"px";
+	
+	$("#nombreP").focus(function(){$("#nombreP").parent().css("width", "20rem");})
+	$("#nombreP").focusout(function(){$("#nombreP").parent().css("width", "10rem");})
 });
 
 function collapsible(type){
