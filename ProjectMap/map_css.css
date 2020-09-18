@@ -174,7 +174,6 @@ body {margin: 0;padding: 0;}
 	margin-left:0px;
 	width:6rem;
 	border-radius:2rem 2rem 2rem 2rem;
-	border: 1px solid #01d758;
 	transition-duration:1s;
 }
 #nombreP:focus{width:16rem;}
