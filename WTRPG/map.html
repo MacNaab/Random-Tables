@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>The Witcher TRPG - Map</title>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/konva@7.1.0/konva.min.js"></script>
+	<script src="map_script.js"></script>
+	<link rel="stylesheet" href="map_css.css">
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="../index.html">Random Table</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="randomM.html">Monster</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="table.html">Table</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="combat.html">Combat</a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link" href="">Map</a>
+      </li>
+    </ul>
+	<img id="flag_01" onclick="traduction();langue('EN');" title="Switch to english mode" style="cursor:pointer;max-height: 32px;display:none" src="https://cdn.countryflags.com/thumbs/united-kingdom/flag-400.png">
+    <img id="flag_02" onclick="traduction('FR');langue('FR');" title="Passer au français" style="cursor:pointer;max-height: 32px;" src="https://cdn.countryflags.com/thumbs/france/flag-400.png">
+  </div>
+</nav>
+<br>
+<div id="texte_introduction">
+	<h3 id="trad_texte_4" style="text-align:center">Sélectionnez une région</h3>
+</div>
+
+<div> <!-- stock -->
+<input id="stock_langue" type="text" value="EN" readonly style="display:none">
+<input id="stock_km" type="text" readonly style="display:none">
+<input id="stock_km2" type="text" readonly style="display:none">
+<input id="zonage_carte" type="text" readonly style="display:none" value="2">
+<input id="numero_carte" type="text" readonly style="display:none" value="0">
+<input id="stock_nombre_P" type="text" readonly style="display:none">
+<input id="stock_total_1" type="text" readonly style="display:none">
+<input id="stock_total_2" type="text" readonly style="display:none">
+<div id="stock_position_souris" style="display:none;"></div>
+<input id="stock_clic" type="number" readonly style="display:none">
+<input id="stock_clic2" type="number" readonly style="display:none">
+</div>
+
+<div class="modal" id="modal_1" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="trad_texte_modal_1" class="modal-title">Calculateur de trajets</h5>
+        <button type="button" class="close" onclick="openModal('fermer');">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		<ul class="nav nav-tabs">
+		  <li class="nav-item">
+			<a id="trad_texte_modal_2" onclick="openInModal('1')" style="cursor:pointer;" class="nav-link">Trajet actuel</a>
+		  </li>
+		  <li class="nav-item">
+			<a id="trad_texte_modal_3" onclick="openInModal('2')" style="cursor:pointer;" class="nav-link">Trajet sauvegardé</a>
+		  </li>
+		</ul>
+		<br>
+<div id="Modal_1_1">
+	<h1 id="trad_texte_modal_4">Trajet actuel</h1>
+	<div id="text_aff" class="texte_type1"></div>
+	<div id="text_aff3" class="texte_type1"></div>
+	<div id="text_aff2" class="texte_type1"></div>
+	<button id="trad_texte_modal_5" class="btn btn-success btn-lg" onclick="sauvegardeTrajet();">Sauvegarder ce trajet</button>
+</div>
+
+<div id="Modal_1_2">
+	<h1 id="trad_texte_modal_6">Trajet sauvegardé</h1>
+	<div id="text_affB" class="texte_type1"></div>
+	<div id="text_aff3B" class="texte_type1"></div>
+	<div id="text_aff2B" class="texte_type1"></div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button id="trad_texte_modal_7" type="button" class="btn btn-secondary" onclick="openModal('fermer');">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<div id="zone_lat">
+	<div>
+		<span id="trad_texte_1">Nombre de points</span> : <input id="nombreP" type="number" min="2" onchange="addP(this.value)" title="Indiquez ici le nombre de points" placeholder="Indiquez ici le nombre de points">
+	</div>
+	<div style="text-align:center">
+		<button id="trad_texte_2" class="button button2" title="Calcule la distance entre les différents points" onclick="distance();">Calculer la distance</button>
+		<button id="trad_texte_3" class="button button1" title="Déplace les points au dernier click" onclick="addP('t');">Recentrer les points <span style="font-size:10px">(dernier click)</span></button>
+		<button id="texte_région" style="visibility:hidden" class="button button3" onclick="changer_canvas('0');">Retour à la carte monde</button>
+	</div>	
+	<div style="text-align:center">
+		<button id="texte_résultat" style="visibility:hidden" onclick="openModal('ouvrir');" class="w3-button w3-black">Résultats</button>
+	</div>
+	<div style="text-align:center;">
+		<img title="Zoom" onclick="zoom('+')" id="icon_2" class="scroll2" src="https://static.thenounproject.com/png/605197-200.png"/>
+		<img title="Dézoom" onclick="zoom('-')" id="icon_3" class="scroll2" src="https://static.thenounproject.com/png/605195-200.png"/>
+		<img title="Retour zoom d'origine" onclick="zoom('=')" id="icon_4" class="scroll2" src="https://static.thenounproject.com/png/415758-200.png"/>	
+	</div>
+</div>
+-->
+<div id="loader-container">
+	<div class="loader">
+	  <div>
+		<ul>
+		  <li>
+			<svg viewBox="0 0 90 120" fill="currentColor">
+			  <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+			</svg>
+		  </li>
+		  <li>
+			<svg viewBox="0 0 90 120" fill="currentColor">
+			  <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+			</svg>
+		  </li>
+		  <li>
+			<svg viewBox="0 0 90 120" fill="currentColor">
+			  <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+			</svg>
+		  </li>
+		  <li>
+			<svg viewBox="0 0 90 120" fill="currentColor">
+			  <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+			</svg>
+		  </li>
+		  <li>
+			<svg viewBox="0 0 90 120" fill="currentColor">
+			  <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+			</svg>
+		  </li>
+		  <li>
+			<svg viewBox="0 0 90 120" fill="currentColor">
+			  <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+			</svg>
+		  </li>
+		</ul>
+	  </div><span id="trad_texte_loader">Chargement</span>
+	</div>
+</div>
+
+<div id="scroll-container">
+    <div id="large-container">
+        <div id="container"></div>
+    </div>
+</div>
+
+<div id="scrollUp" class="scroll" onclick="scroll_to_top();">
+	<img id="trad_texte_5" title="Haut de page" src="https://www.linuxtricks.fr/upload/to_top.png"/>
+</div>
+<div id="scrollDown" class="scroll" onclick="scroll_to_bot();">
+	<img id="trad_texte_6" title="Bas de page" style="transform: rotate(180deg);" src="https://www.linuxtricks.fr/upload/to_top.png"/>
+</div>
+
+	<div class="barre-navigation">
+		<button onclick="mouseClick('1');" title="Ouvrir les options" id="clicliclci" class="input-field">≡</button>
+		<input id="nombreP" class="input-field" type="number" min="2" onchange="addP(this.value)" title="Indiquez ici le nombre de points" placeholder="Indiquez ici le nombre de points">
+	</div>
+	<div id="barre" class="barre1">
+		<div style="margin-top:10px;margin-bottom:10px;">
+			<div class="play_1">
+				<a class="play_2">
+					<p  onclick="distance();scroll_to_top();collapsible('A');">
+						<span class="bg"></span>
+						<span class="base"></span>
+						<span class="text" id="trad_texte_2" title="Calcule la distance entre les différents points">Calculer la distance</span>
+					</p>
+				</a>
+				
+				<a class="play_2 white">
+					<p  onclick="addP('t');">
+						<span class="bg"></span>
+						<span class="base"></span>
+						<span id="trad_texte_3" class="text" title="Déplace les points au dernier click">Recentrer les points <span style="font-size:10px">(dernier click)</span></span>
+					</p>
+				</a>
+				
+				<a class="play_2 blue" id="texte_région" style="visibility:hidden" onclick="changer_canvas('0');">
+					<p>
+						<span class="bg"></span>
+						<span class="base"></span>
+						<span id="trad_texte_7" class="text">Retour à la carte monde</span>
+					</p>
+				</a>
+				<a class="play_2 transparent" id="texte_résultat" style="visibility:hidden" onclick="document.getElementById('modal_1').style.display='block'">
+					<p>
+						<span class="bg"></span>
+						<span class="base"></span>
+						<span id="trad_texte_8" class="text">Résultats</span>
+					</p>
+				</a>
+			</div>
+			<div>
+				<button onclick="mouseClick('2');" title="Plus d'option de personnalisation" id="bouton_option" class="input-field">≡ <span style="font-size:10px;">plus d'options</span></button>
+			</div>
+		</div>
+	</div>
+
+<div id="option_personnalisation">
+    <button type="button" class="close" style="color:white;margin-right:5px;" onclick="mouseClick('2');">
+          <span aria-hidden="true">&times;</span>
+    </button>
+	<h6 id="trad_texte_OP_1">Option de personnalisation</h6>
+	<div id="trad_texte_OP_2" style="font-size:10px;font-style: italic;">En * les options de base.</div>
+	<div style="margin-top:15px;">
+		<div>
+			<div id="trad_texte_OP_3" style="text-decoration: underline;"><b>Points :</b></div>
+  <div class="form-group" style="margin-bottom:0px;">
+    <label id="trad_texte_OP_4" for="option_p_rayon">Rayon:</label>
+    <input title="Rayon du point" type="number" class="form-control" id="option_p_rayon" type="number" min="1" value="10" placeholder="10">
+    <small id="trad_texte_OP_5" class="form-text text-muted">Rayon de base: 10px</small>
+  </div>
+  <div style="margin-top:0px;">
+			<span id="trad_texte_OP_6">Couleur:</span>
+			<select title="Couleur des points" class="custom-select" id="option_p_couleur">
+				<option value="Rand" selected>Aléatoire*</option>
+				<option value="red">Rouge</option>
+				<option value="blue">Bleu</option>
+				<option value="yellow">Jaune</option>
+				<option value="orange">Orange</option>
+				<option value="green">Vert</option>
+				<option value="purple">Violet</option>
+				<option value="black">Noir</option>
+			</select>
+	</div>
+		</div>
+		<br>
+		<div>
+			<div id="trad_texte_OP_7" style="text-decoration: underline;"><b>Flèches :</b></div>
+			<span id="trad_texte_OP_8">Couleur:</span>
+				<select class="custom-select" title="Couleur des flèches entre les points" id="option_f_couleur">
+					<option value="red" selected>Rouge*</option>
+					<option value="blue">Bleu</option>
+					<option value="yellow">Jaune</option>
+					<option value="orange">Orange</option>
+					<option value="green">Vert</option>
+					<option value="purple">Violet</option>
+					<option value="black">Noir</option>
+				</select>
+  <div class="form-group" style="margin-bottom:0px;">
+    <label id="trad_texte_OP_9" for="option_f_epaisseur">Epaisseur:</label>
+    <input title="Epaisseur des flèches" type="number" class="form-control" id="option_f_epaisseur" type="number" min="1" value="10" placeholder="10">
+    <small id="trad_texte_OP_10" class="form-text text-muted">Epaisseur de base: 10px</small>
+  </div>
+  <div style="margin-top:0px;margin-bottom:0px;">
+			<span id="trad_texte_OP_11">Trait en pointillé*:</span>
+			<div style="text-align:center;">
+				<label id="trad_texte_OP_12" title="Active ou non les traits en pointillés" class="switch"><input id="option_f_trait1" type="checkbox" checked><span class="slider round"></span></label>
+			</div>
+	</div><div style="margin-top:0px;">
+			<span id="trad_texte_OP_13">Trait arrondi:</span>
+			<div style="text-align:center;">
+				<label id="trad_texte_OP_14" title="Active ou non les traits arrondis" class="switch"><input id="option_f_trait2" type="checkbox"><span class="slider round"></span></label>
+			</div>
+	</div>
+		</div>
+		<br>
+		<div id="trad_texte_OP_15">
+Attention ces changemements ne seront effectifs que sur les nouveaux points (ou recentrés).		
+		</div>
+	</div>
+</div>
+
+<div class="zoomer">
+		<button title="Zoom" onclick="zoom('+')" id="icon_2" class="zoom1 zoom zoom-button">+</button>
+		<button title="Dézoom" onclick="zoom('-')" id="icon_3" class="zoom2 zoom zoom-button">-</button>
+	</div>
+
+
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div>
+        <h6 id="trad_texte_footer_1">Cartes</h6>
+		<p class="text-justify" id="trad_texte_footer_2">La liste des cartes : <a target="_blank" href="https://i.redd.it/k67cyrkbf8741.png">carte du monde</a>, <a target="_blank" href="http://www.the-witcher-jdr.fr/fichiers/ressources/maps/monde.jpg">carte des régions</a>, <a target="_blank" href="https://mmo4ever.com/maps/gfx/maps/the-skellige-isles-the-witcher-3-wild-hunt-map.jpg">Skellige</a>, <a target="_blank" href="">Ophir et Zerrikania</a> .</p>
+      <hr>
+    </div>
+    <div>
+        <p class="copyright-text">Loading :  Copyright © 2015 All Rights Reserved by Josh Hillier.<br>Footer : Copyright © 2017 All Rights Reserved by Scanfcode.</p>
+    </div>
+  </footer>
+
+</body>
+
+<script> // Base
+document.getElementById('stock_nombre_P').value = '';
+ 
+// padding will increase the size of stage
+// so scrolling will look smoother
+var PADDING = 500;
+
+var stage = new Konva.Stage({
+    container: 'container',
+	width: window.innerWidth + PADDING * 2,
+    height: window.innerHeight + PADDING * 2,
+	draggable: true,
+});
+		
+var layer = new Konva.Layer();
+stage.add(layer);
+
+//	const canvas = layer.getCanvas()._canvas;
+//	canvas.id = 'canvas';
+
+
+
+</script>
+<script> // Carte
+// mapmonde(0),nord(1),centre(2),sud(3),skellige(4)
+var img_largeur = ["665","4771","4658","3092","980"];
+var img_hauteur = ["1000","2020","2546","3917","795"];
+var img_id = ["https://i.redd.it/k67cyrkbf8741.png","../ProjectMap/carte/nord.jpg","../ProjectMap/carte/centre.jpg","../ProjectMap/carte/sud.jpg","https://mmo4ever.com/maps/gfx/maps/the-skellige-isles-the-witcher-3-wild-hunt-map.jpg"];
+
+	var imageObj0 = new Image();
+	var imageObj1 = new Image();
+	var imageObj2 = new Image();
+	var imageObj3 = new Image();
+	var imageObj4 = new Image();
+	imageObj0.src = img_id[0];
+	imageObj1.src = img_id[1];
+	imageObj2.src = img_id[2];
+	imageObj3.src = img_id[3];
+	imageObj4.src = img_id[4];
+	
+    imageObj0.onload = function () {changer_canvas('0');document.getElementById('loader-container').style.display = "none";}
+
+function changer_canvas(e){
+	var width = window.innerWidth;
+    var height = window.innerHeight;
+	var stock_number = document.getElementById('stock_nombre_P').value;
+	if(layer.findOne('#target-0')){
+		for (let i = 0; i < stock_number; i++) {
+			layer.findOne('#target-'+i).destroy();
+			if(i != Number(Number(stock_number)-1)){layer.findOne('#connector-'+i).destroy();}
+		}
+	}
+	
+	if(layer.findOne('#carte')){layer.findOne('#carte').destroy();}
+	if(layer.findOne('#sous-map1')){for (let i = 1; i < 5; i++) {layer.findOne('#sous-map'+i).destroy();}}
+			
+	var taille_x =  Number(window.innerWidth) - 100;
+	if(taille_x > img_largeur[e]){var coord_x = Number(Number(taille_x/2)-Number(img_largeur[e]/2));}
+	else{var coord_x = 0;}
+		
+	if(e == '0'){var carte = new Konva.Image({x: coord_x,y: 0,image: imageObj0,width: img_largeur[e],height: img_hauteur[e],id: 'carte',});}
+	if(e == '1'){var carte = new Konva.Image({x: coord_x,y: 0,image: imageObj1,width: img_largeur[e],height: img_hauteur[e],id: 'carte',});}
+	if(e == '2'){var carte = new Konva.Image({x: coord_x,y: 0,image: imageObj2,width: img_largeur[e],height: img_hauteur[e],id: 'carte',});}
+	if(e == '3'){var carte = new Konva.Image({x: coord_x,y: 0,image: imageObj3,width: img_largeur[e],height: img_hauteur[e],id: 'carte',});}
+	if(e == '4'){var carte = new Konva.Image({x: coord_x,y: 0,image: imageObj4,width: img_largeur[e],height: img_hauteur[e],id: 'carte',});}
+		
+	layer.add(carte);
+
+	if(e == '0'){
+		document.getElementById('texte_introduction').style.visibility = 'visible';
+		document.getElementById('texte_région').style.visibility = 'hidden';	
+		document.getElementById('zonage_carte').value = "2";
+		var poly1 = new Konva.Line({
+			points: [coord_x,0,665+coord_x,0,665+coord_x,177,423+coord_x,198,231+coord_x,263,+coord_x,163],
+			closed: true,
+			id: 'sous-map1',
+		});
+		var poly2 = new Konva.Line({
+			points: [665+coord_x,177,665+coord_x,483,280+coord_x,529,151+coord_x,335,231+coord_x,263,423+coord_x,198],
+			closed: true,
+			id: 'sous-map2',
+		});
+		var poly3 = new Konva.Line({
+			points: [665+coord_x,483,665+coord_x,1000,345+coord_x,1000,345+coord_x,925,279+coord_x,873,279+coord_x,873,233+coord_x,707,280+coord_x,529,465+coord_x,483],
+			closed: true,
+			id: 'sous-map3',
+		});
+		var poly4 = new Konva.Line({
+			points: [159+coord_x,415,209+coord_x,460,133+coord_x,524,116+coord_x,454],
+			closed: true,
+			id: 'sous-map4',
+		});
+		poly1.on('touchstart click', function () {changer_canvas('1');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.visibility = 'hidden';;document.getElementById('zonage_carte').value = "1";})
+		poly2.on('touchstart click', function () {changer_canvas('2');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.visibility = 'hidden';;document.getElementById('zonage_carte').value = "1";})
+		poly3.on('touchstart click', function () {changer_canvas('3');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.visibility = 'hidden';;document.getElementById('zonage_carte').value = "1";})
+		poly4.on('touchstart click', function () {changer_canvas('4');document.getElementById('texte_région').style.visibility = 'visible';document.getElementById('texte_introduction').style.visibility = 'hidden';;document.getElementById('zonage_carte').value = "3";})
+		
+		layer.add(poly1);
+		layer.add(poly2);
+		layer.add(poly3);
+		layer.add(poly4);	
+	}
+    layer.batchDraw();
+	
+	carte.on('touchstart click', function (e) {
+			var pos = getRelativePointerPosition(carte);
+			document.getElementById('stock_position_souris').innerHTML = "<span id='pos_x'>"+pos.x+"</span> | <span id='pos_y'>"+pos.y+"</span>";
+	});
+}
+</script>
+<script> // Points
+// Ajouter des points
+function addP(e){
+	if(e == 't'){var e = document.getElementById('stock_nombre_P').value;
+		if(document.getElementById('pos_x')){var x = document.getElementById('pos_x').innerHTML;var y = document.getElementById('pos_y').innerHTML;}
+		else{var x = 220;var y = 35;}
+	}
+	var stock_number = document.getElementById('stock_nombre_P').value;
+	if(layer.findOne('#target-0')){
+		for (let i = 0; i < stock_number; i++) {
+			layer.findOne('#target-'+i).destroy();
+			if(i != Number(Number(stock_number)-1)){layer.findOne('#connector-'+i).destroy();}
+		}
+	}
+	document.getElementById('stock_nombre_P').value = e;
+
+	if(!x){var targets = generateTargets(e);}else{var targets = generateTargets(e,x,y);}
+    var connectors = generateConnectors(e, targets);
+
+      // generate nodes for the app
+      connectors.forEach((connect) => {
+		var couleur = document.getElementById("option_f_couleur").value;
+		var epaisseur = document.getElementById("option_f_epaisseur").value;
+		var type = rates('option_f_trait1');
+		var ligne = rates('option_f_trait2');
+		if(type == 'pointillé'){
+			var line = new Konva.Arrow({
+			  stroke: couleur,
+			  strokeWidth: epaisseur,
+			  id: connect.id,
+			  fill: couleur,
+			  dash: [40, 10, 0.001, 10],
+			  lineJoin: ligne,
+			  lineCap: ligne,
+			});
+		}else{
+			var line = new Konva.Arrow({
+			  stroke: couleur,
+			  strokeWidth: epaisseur,
+			  id: connect.id,
+			  fill: couleur,
+			  lineJoin: ligne,
+			  lineCap: ligne,
+			});
+		}
+        layer.add(line);
+      });
+
+      targets.forEach((target) => {
+		var couleur = document.getElementById("option_p_couleur").value;
+		var rayon = document.getElementById("option_p_rayon").value;
+		if(couleur == "Rand"){
+			var node = new Konva.Circle({
+			  id: target.id,
+			  fill: Konva.Util.getRandomColor(),
+			  radius: rayon,
+			  draggable: true,
+			});
+		}else{
+			var node = new Konva.Circle({
+			  id: target.id,
+			  fill: couleur,
+			  radius: rayon,
+			  draggable: true,
+			});
+		}
+        layer.add(node);
+
+        node.on('dragmove', () => {
+          // mutate the state
+          target.x = node.x();
+          target.y = node.y();
+
+          // update nodes from the new state
+          updateObjects(targets, connectors);
+        });
+      });
+
+	updateObjects(targets, connectors); 
+}
+
+// function to generate a list of "targets" (circles)
+function generateTargets(e,x,y) {
+    var number = e;
+    var result = [];
+	if(!x){var cte_x = Number(220);}else{var cte_x = Number(x)}
+	if(!y){var cte_y = Number(30);}else{var cte_y = Number(y);}
+	for (let i = 0; i < e; i++) {
+        result.push({
+			id: 'target-' + i,
+            x: cte_x+(i*100),
+            y: cte_y,
+        });
+    }
+    return result;
+}
+
+// function to generate arrows between targets
+function generateConnectors(e, targets) {
+	var number = Number(Number(e)-1);
+	var result = [];
+	for (let i = 0; i < number; i++) {
+        var from = 'target-' + i;
+        var to = 'target-' + Number(Number(i)+1);
+        if (from === to) {continue;}
+        result.push({
+            id: 'connector-' + i,
+            from: from,
+            to: to,
+        });
+    }
+    return result;
+}
+
+function getConnectorPoints(from, to) {
+	const dx = to.x - from.x;
+	const dy = to.y - from.y;
+	let angle = Math.atan2(-dy, dx);
+
+	var rayon = document.getElementById("option_p_rayon").value;
+	var radius = Number(rayon)*2;
+
+	return [
+		from.x + -radius * Math.cos(angle + Math.PI),
+        from.y + radius * Math.sin(angle + Math.PI),
+        to.x + -radius * Math.cos(angle),
+        to.y + radius * Math.sin(angle),
+    ];
+}
+
+// update all objects on the canvas from the state of the app
+function updateObjects(targets, connectors) {
+	targets.forEach((target) => {
+		var node = layer.findOne('#' + target.id);
+        node.x(target.x);
+        node.y(target.y);
+    });
+
+    connectors.forEach((connect) => {
+        var line = layer.findOne('#' + connect.id);
+        var fromNode = layer.findOne('#' + connect.from);
+        var toNode = layer.findOne('#' + connect.to);
+
+        const points = getConnectorPoints(
+            fromNode.position(),
+            toNode.position()
+        );
+        line.points(points);
+    });
+    layer.batchDraw();
+}
+
+</script>
+<script> // Position
+function calculer_position(){
+	var stock_number = document.getElementById('stock_nombre_P').value;
+	if(stock_number > 0){
+		var position = [];
+		var distance = [];
+		for (let i = 0; i < stock_number; i++) {
+			position.push(layer.findOne('#target-'+i).position());
+		}
+		for (let i = 0; i < Number(Number(stock_number)-1); i++) {
+			var dx = position[i].x - position[Number(Number(i)+1)].x;
+			var dy = position[i].y - position[Number(Number(i)+1)].y;
+			var dist = Math.sqrt(dx * dx + dy * dy);
+			distance.push(dist);
+		}
+	return distance
+	}
+}
+</script>
+<script> // Zoom
+function zoom(e){
+	var oldScale = stage.scaleX();
+    if(e == "+" && oldScale < 5){var newScale = Number(oldScale)+0.1;}
+    if(e == "="){var newScale = 1;}
+    if(e == "-" && oldScale > 0.2){var newScale = Number(oldScale)-0.1;}
+	if(!newScale){var newScale = oldScale;}
+    stage.scale({ x: newScale, y: newScale });
+    stage.batchDraw();
+}
+</script>
+<script> // reset
+function getRelativePointerPosition(node) {
+    var transform = node.getAbsoluteTransform().copy();
+	// to detect relative position we need to invert transform
+	transform.invert();
+	// get pointer (say mouse or touch) position
+	var pos = node.getStage().getPointerPosition();
+	// now we can find relative point
+	return transform.point(pos);
+}
+</script>
+<script> // Zoom : mobile
+// by default Konva prevent some events when node is dragging
+// it improve the performance and work well for 95% of cases
+// we need to enable all events on Konva, even when we are dragging a node
+// so it triggers touchmove correctly
+Konva.hitOnDragEnabled = true;
+function getDistance(p1, p2) {
+	return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
+}
+
+function getCenter(p1, p2) {
+	return {
+        x: (p1.x + p2.x) / 2,
+		y: (p1.y + p2.y) / 2,
+	};
+}
+var lastCenter = null;
+var lastDist = 0;
+
+stage.on('touchmove', function (e) {
+	e.evt.preventDefault();
+	var touch1 = e.evt.touches[0];
+	var touch2 = e.evt.touches[1];
+
+	if (touch1 && touch2) {
+          // if the stage was under Konva's drag&drop
+          // we need to stop it, and implement our own pan logic with two pointers
+        if (stage.isDragging()) {
+            stage.stopDrag();
+        }
+
+        var p1 = {
+            x: touch1.clientX,
+            y: touch1.clientY,
+        };
+        var p2 = {
+            x: touch2.clientX,
+            y: touch2.clientY,
+        };
+
+        if (!lastCenter) {
+            lastCenter = getCenter(p1, p2);
+            return;
+        }
+
+        var newCenter = getCenter(p1, p2);
+        var dist = getDistance(p1, p2);
+
+        if (!lastDist) {
+            lastDist = dist;
+        }
+
+        // local coordinates of center point
+        var pointTo = {
+            x: (newCenter.x - stage.x()) / stage.scaleX(),
+            y: (newCenter.y - stage.y()) / stage.scaleX(),
+        };
+
+        var scale = stage.scaleX() * (dist / lastDist);
+
+        stage.scaleX(scale);
+        stage.scaleY(scale);
+
+        // calculate new position of the stage
+        var dx = newCenter.x - lastCenter.x;
+        var dy = newCenter.y - lastCenter.y;
+
+        var newPos = {
+            x: newCenter.x - pointTo.x * scale + dx,
+            y: newCenter.y - pointTo.y * scale + dy,
+        };
+
+        stage.position(newPos);
+        stage.batchDraw();
+
+        lastDist = dist;
+        lastCenter = newCenter;
+	}
+});
+
+stage.on('touchend', function () {
+	lastDist = 0;
+	lastCenter = null;
+});
+</script>
+<script> // Personnalisation Points
+function rates(e){
+	var rates = document.getElementById(e);
+	if(rates.checked){var x = '1';}
+	if(x == '1'){
+		if(e == 'option_f_trait1'){var x = "pointillé";}else{var x = "round";}
+	}else{
+		if(e == 'option_f_trait1'){var x = "plein";}else{var x = "miter";}
+	}
+	return x
+}
+</script>
+
+
+</html>
