@@ -249,6 +249,7 @@ function distance() {
 	}
 	document.getElementById('stock_total_1').value = document.getElementById('texte_total1').innerHTML;
 	collapsible('A');
+	collapsible('A');
 }
 
 function ModifTrajet(elem3) {
