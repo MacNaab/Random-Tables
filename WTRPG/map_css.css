@@ -124,7 +124,7 @@ body {margin: 0;padding: 0;}
 .zoomer{
 	position:absolute;
 	flex-direction: column;
-	z-index: 1500;
+	z-index: 15;
 	bottom:0;
 }
 .zoom{
@@ -149,8 +149,7 @@ body {margin: 0;padding: 0;}
 	border-radius:2rem 2rem 2rem 2rem;
 	height:2rem;
 	width:10rem;
-	z-index: 1500;
-	transition-duration:1s;
+	z-index: 15;	transition-duration:1s;
 }
 #barre{
 	position:absolute;
@@ -161,8 +160,7 @@ body {margin: 0;padding: 0;}
 	height:350px;
 	width:12rem;
 	border-radius:1rem 1rem 1rem 1rem;
-	z-index: 1500;
-}
+	z-index: 15;}
 
 .input-field{
 	background-color:#e0dace;
@@ -192,8 +190,7 @@ body {margin: 0;padding: 0;}
 	height:100vh;
 	width:20rem;
 	border-radius:0 1rem 1rem 0;
-	z-index: 1500;
-	padding-left:5px;
+	z-index: 15;	padding-left:5px;
 	color: #ece8e1;
 	overflow:auto;
 }
@@ -716,6 +713,7 @@ html {
 #modal_1 {
 	background-color: rgb(0,0,0); /* Fallback color */
 	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	z-index: 16;
 }
 
 /* Select */

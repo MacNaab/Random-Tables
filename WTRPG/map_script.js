@@ -250,9 +250,13 @@ function distance() {
 	document.getElementById('stock_total_1').value = document.getElementById('texte_total1').innerHTML;
 	collapsible('A');
 	collapsible('A');
+
 }
 
 function ModifTrajet(elem3) {
+	var langue = document.getElementById('stock_langue').value;
+
+
 	var km = document.getElementById('stock_km').value;
 	let split = km.split(' ');
 	var texte_F = [];
@@ -287,10 +291,14 @@ function ModifTrajet(elem3) {
 		var calècheE = Math.round((Number(calèche) - Number(Math.floor(calèche)))*24);
 		var eau_douceE = Math.round((Number(eau_douce) - Number(Math.floor(eau_douce)))*24);
 		var haute_merE = Math.round((Number(haute_mer) - Number(Math.floor(haute_mer)))*24);
-		
+
+	if(langue == 'FR'){
 		var terrestre = ["<b>Boeuf:</b> "+Math.floor(boeuf)+" jour(s) et "+boeufE+" heure(s).","<b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).","<b>Caravane | Chariot:</b> "+Math.floor(caravane)+" jour(s) et "+caravaneE+" heure(s).","<b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).","<b>Calèche:</b> "+Math.floor(calèche)+" jour(s) et "+calècheE+" heure(s).","<b>A cheval</b> (<i>charge légère</i>): "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s)."];
 		var navigation = ["<b>En eau douce:</b> "+Math.floor(eau_douce)+" jour(s) et "+eau_douceE+" heure(s).","<b>En haute mer:</b> "+Math.floor(haute_mer)+" jour(s) et "+haute_merE+" heure(s)."];
-
+	}else{
+		var terrestre = ["<b>Beef:</b> "+Math.floor(boeuf)+" day(s) and "+boeufE+" hour(s).","<b>Walk:</b> "+Math.floor(pied)+" day(s) and "+piedE+" hour(s).","<b>Caravan | Cart:</b> "+Math.floor(caravane)+" day(s) and "+caravaneE+" hour(s).","<b>Horse</b> (<i>moderate load</i>): "+Math.floor(cheval)+" day(s) and "+chevalE+" hour(s).","<b>Carriage:</b> "+Math.floor(calèche)+" day(s) and "+calècheE+" hour(s).","<b>Horse</b> (<i>light load</i>): "+Math.floor(chevalL)+" day(s) and "+chevalEL+" hour(s)."];
+		var navigation = ["<b>Freshwater:</b> "+Math.floor(eau_douce)+" day(s) and "+eau_douceE+" hour(s).","<b>Seawater:</b> "+Math.floor(haute_mer)+" day(s) and "+haute_merE+" hour(s)."];
+	}
 		var temps = "";var temps2 = "";
 		var valeur_heure = [boeuf,pied,caravane,cheval,calèche,chevalL,eau_douce,haute_mer];
 		var valeur_min = [boeufE,piedE,caravaneE,chevalE,calècheE,chevalEL,eau_douceE,haute_merE];
@@ -305,23 +313,44 @@ function ModifTrajet(elem3) {
 			}
 		}
 		else{
+	if(langue == 'FR'){
 			var temps = "<b>Boeuf:</b> "+Math.floor(boeuf)+" jour(s) et "+boeufE+" heure(s).<br><b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br><b>Caravane | Chariot:</b> "+Math.floor(caravane)+" jour(s) et "+caravaneE+" heure(s).<br><b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).<br><b>Calèche:</b> "+Math.floor(calèche)+" jour(s) et "+calècheE+" heure(s).<br><b>A cheval</b> (<i>charge légère</i>): "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).";
 			var temps2 = "<b>En eau douce:</b> "+Math.floor(eau_douce)+" jour(s) et "+eau_douceE+" heure(s).<br><b>En haute mer:</b> "+Math.floor(haute_mer)+" jour(s) et "+haute_merE+" heure(s).";
+	}else{
+		var temps = "<b>Beef:</b> "+Math.floor(boeuf)+" day(s) and "+boeufE+" hour(s).<br><b>Walk:</b> "+Math.floor(pied)+" day(s) and "+piedE+" hour(s).<br><b>Caravan | Cart:</b> "+Math.floor(caravane)+" day(s) and "+caravaneE+" hour(s).<br><b>Horse</b> (<i>moderate load</i>): "+Math.floor(cheval)+" day(s) and "+chevalE+" hour(s).<br><b>Carriage:</b> "+Math.floor(calèche)+" day(s) and "+calècheE+" hour(s).<br><b>Horse</b> (<i>light load</i>): "+Math.floor(chevalL)+" day(s) and "+chevalEL+" hour(s).";
+		var temps2 = "<b>Freshwater:</b> "+Math.floor(eau_douce)+" day(s) and "+eau_douceE+" hour(s).<br><b>Seawater:</b> "+Math.floor(haute_mer)+" day(s) and "+haute_merE+" hour(s).";
+	}
 		}
 		if(i < Number(Number(split.length)-1)){
+	if(langue == 'FR'){
 			texte_F.push("<button class='collapsible collapsibleC'>Segment "+Number(Number(i)+1)+"</button><div class='content'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>");
+	}else{
+			texte_F.push("<button class='collapsible collapsibleC'>Segment "+Number(Number(i)+1)+"</button><div class='content'><b style='text-decoration: underline;'>On land:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>On water:</b><div class='texte_type2'>"+temps2+"</div></div>");
+	}
 		}
 		else{
+	if(langue == 'FR'){
 			texte_F.push("<div>Total:<div id='texte_total2'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>");
+	}else{
+			texte_F.push("<div>Total:<div id='texte_total2'><b style='text-decoration: underline;'>On land:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>On water:</b><div class='texte_type2'>"+temps2+"</div></div>");
+	}
 		}
 	}
 	
-	if(Number(elem3) >= 0){var texte = "Avec un modificateur de +";}
-	else{var texte = "Avec un modificateur de ";}
+	if(Number(elem3) >= 0){
+		if(langue == 'FR'){var texte = "Avec un modificateur de +";}
+		else{var texte = "With a modifier of +";}
+	}
+	else{
+		if(langue == 'FR'){var texte = "Avec un modificateur de ";}
+		else{var texte = "With a modifier of ";}
+	}
 	document.getElementById('text_aff2').innerHTML = "<br><b>"+texte+elem3+"%:</b><br>"+texte_F;
 }
 
 function ModifTrajet2(elem3) {
+	var langue = document.getElementById('stock_langue').value;
+
 	var km = document.getElementById('stock_km2').value;
 	let split = km.split(' ');
 	var texte_F = [];
@@ -358,9 +387,13 @@ function ModifTrajet2(elem3) {
 		var eau_douceE = Math.round((Number(eau_douce) - Number(Math.floor(eau_douce)))*24);
 		var haute_merE = Math.round((Number(haute_mer) - Number(Math.floor(haute_mer)))*24);
 
+	if(langue == 'FR'){
 		var terrestre = ["<b>Boeuf:</b> "+Math.floor(boeuf)+" jour(s) et "+boeufE+" heure(s).","<b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).","<b>Caravane | Chariot:</b> "+Math.floor(caravane)+" jour(s) et "+caravaneE+" heure(s).","<b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).","<b>Calèche:</b> "+Math.floor(calèche)+" jour(s) et "+calècheE+" heure(s).","<b>A cheval</b> (<i>charge légère</i>): "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s)."];
 		var navigation = ["<b>En eau douce:</b> "+Math.floor(eau_douce)+" jour(s) et "+eau_douceE+" heure(s).","<b>En haute mer:</b> "+Math.floor(haute_mer)+" jour(s) et "+haute_merE+" heure(s)."];
-
+	}else{
+		var terrestre = ["<b>Beef:</b> "+Math.floor(boeuf)+" day(s) and "+boeufE+" hour(s).","<b>Walk:</b> "+Math.floor(pied)+" day(s) and "+piedE+" hour(s).","<b>Caravan | Cart:</b> "+Math.floor(caravane)+" day(s) and "+caravaneE+" hour(s).","<b>Horse</b> (<i>moderate load</i>): "+Math.floor(cheval)+" day(s) and "+chevalE+" hour(s).","<b>Carriage:</b> "+Math.floor(calèche)+" day(s) and "+calècheE+" hour(s).","<b>Horse</b> (<i>light load</i>): "+Math.floor(chevalL)+" day(s) and "+chevalEL+" hour(s)."];
+		var navigation = ["<b>Freshwater:</b> "+Math.floor(eau_douce)+" day(s) and "+eau_douceE+" hour(s).","<b>Seawater:</b> "+Math.floor(haute_mer)+" day(s) and "+haute_merE+" hour(s)."];
+	}
 		var temps = "";var temps2 = "";
 		var valeur_heure = [boeuf,pied,caravane,cheval,calèche,chevalL,eau_douce,haute_mer];
 		var valeur_min = [boeufE,piedE,caravaneE,chevalE,calècheE,chevalEL,eau_douceE,haute_merE];
@@ -375,20 +408,39 @@ function ModifTrajet2(elem3) {
 			}
 		}
 		else{
+	if(langue == 'FR'){
 			var temps = "<b>Boeuf:</b> "+Math.floor(boeuf)+" jour(s) et "+boeufE+" heure(s).<br><b>A pied:</b> "+Math.floor(pied)+" jour(s) et "+piedE+" heure(s).<br><b>Caravane | Chariot:</b> "+Math.floor(caravane)+" jour(s) et "+caravaneE+" heure(s).<br><b>A cheval</b> (<i>charge modérée</i>): "+Math.floor(cheval)+" jour(s) et "+chevalE+" heure(s).<br><b>Calèche:</b> "+Math.floor(calèche)+" jour(s) et "+calècheE+" heure(s).<br><b>A cheval</b> (<i>charge légère</i>): "+Math.floor(chevalL)+" jour(s) et "+chevalEL+" heure(s).";
 			var temps2 = "<b>En eau douce:</b> "+Math.floor(eau_douce)+" jour(s) et "+eau_douceE+" heure(s).<br><b>En haute mer:</b> "+Math.floor(haute_mer)+" jour(s) et "+haute_merE+" heure(s).";
+	}else{
+		var temps = "<b>Beef:</b> "+Math.floor(boeuf)+" day(s) and "+boeufE+" hour(s).<br><b>Walk:</b> "+Math.floor(pied)+" day(s) and "+piedE+" hour(s).<br><b>Caravan | Cart:</b> "+Math.floor(caravane)+" day(s) and "+caravaneE+" hour(s).<br><b>Horse</b> (<i>moderate load</i>): "+Math.floor(cheval)+" day(s) and "+chevalE+" hour(s).<br><b>Carriage:</b> "+Math.floor(calèche)+" day(s) and "+calècheE+" hour(s).<br><b>Horse</b> (<i>light load</i>): "+Math.floor(chevalL)+" day(s) and "+chevalEL+" hour(s).";
+		var temps2 = "<b>Freshwater:</b> "+Math.floor(eau_douce)+" day(s) and "+eau_douceE+" hour(s).<br><b>Seawater:</b> "+Math.floor(haute_mer)+" day(s) and "+haute_merE+" hour(s).";
+	}
 		}
 
 		if(i < Number(Number(split.length)-1)){
-			texte_F.push("<button class='collapsible collapsibleD'>Segment "+Number(Number(i)+1)+"</button><div class='content'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>");
+	if(langue == 'FR'){
+			texte_F.push("<button class='collapsible collapsibleC'>Segment "+Number(Number(i)+1)+"</button><div class='content'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>");
+	}else{
+			texte_F.push("<button class='collapsible collapsibleC'>Segment "+Number(Number(i)+1)+"</button><div class='content'><b style='text-decoration: underline;'>On land:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>On water:</b><div class='texte_type2'>"+temps2+"</div></div>");
+	}
 		}
 		else{
-			texte_F.push("<div>Total:<div id='texte_total4'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>");
+	if(langue == 'FR'){
+			texte_F.push("<div>Total:<div id='texte_total2'><b style='text-decoration: underline;'>Terrestre:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>Navigation:</b><div class='texte_type2'>"+temps2+"</div></div>");
+	}else{
+			texte_F.push("<div>Total:<div id='texte_total2'><b style='text-decoration: underline;'>On land:</b><div class='texte_type2'>"+temps+"</div><b style='text-decoration: underline;'>On water:</b><div class='texte_type2'>"+temps2+"</div></div>");
+	}
 		}
 	}
 	
-	if(Number(elem3) >= 0){var texte = "Avec un modificateur de +";}
-	else{var texte = "Avec un modificateur de ";}
+	if(Number(elem3) >= 0){
+		if(langue == 'FR'){var texte = "Avec un modificateur de +";}
+		else{var texte = "With a modifier of +";}
+	}
+	else{
+		if(langue == 'FR'){var texte = "Avec un modificateur de ";}
+		else{var texte = "With a modifier of ";}
+	}
 	document.getElementById('text_aff2B').innerHTML = "<br><b>"+texte+elem3+"%:</b><br>"+texte_F;
 }
 
@@ -443,6 +495,8 @@ document.getElementById('text_aff2B').innerHTML = nouvChn;
 }
 
 function calcul_total(e){
+	var langue = document.getElementById('stock_langue').value;
+
 	if(e == "A" || e == "B"){var km = document.getElementById('stock_km').value;var stock = 'stock_total_1';}
 	if(e == "C" || e == "D"){var km = document.getElementById('stock_km2').value;var stock = 'stock_total_2';}
 	
@@ -472,11 +526,16 @@ function calcul_total(e){
 		}
 		var heure_total = Math.round((Number(temps_total) - Number(Math.floor(temps_total)))*24);
 		var jour_total = Math.floor(temps_total);
-		
-		document.getElementById(texte).innerHTML = "Sommes des segments : <b>"+jour_total+"jour(s) et "+heure_total+" heure(s)</b>.";
+
+		if(langue == 'FR'){
+			document.getElementById(texte).innerHTML = "Sommes des segments : <b>"+jour_total+"jour(s) et "+heure_total+" heure(s)</b>.";
+		}else{
+			document.getElementById(texte).innerHTML = "Sum of segments: <b>"+jour_total+"day(s) and "+heure_total+" hour(s)</b>.";
+		}
 	}
 	if(réserve.length > Number(Number(split.length)-1)){
-		alert("Trop de cases cochées : retour à l'état neutre.");
+		if(langue == 'FR'){alert("Trop de cases cochées : retour à l'état neutre.");}
+		else{alert("Too many boxes checked: return to neutral state.");}
 		document.getElementById(texte).innerHTML = document.getElementById(stock).value;
 	}
 	if(réserve.length < Number(Number(split.length)-1) && document.getElementById(stock).value != ""){
