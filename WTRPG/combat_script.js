@@ -1,4 +1,4 @@
-$.getJSON('../dtb/bestaire.json', function(jd) {
+$.getJSON('../Fiche/dtb/bestaire.json', function(jd) {
   jd.Base.forEach(function(item){$('#tablo').append('<tr><th scope="row">'+item.Nom+'</th><td>'+item.Caract+'</td><td>'+item.Compt+'</td><td>'+item.Armure+'</td><td>'+item.Arme+'</td><td>'+item.Vulnérabilités+'</td><td>'+item.Capacités+'</td><td>'+item.Note+'</td><td>Base</td></th>');});
   jd.Unofficiel.forEach(function(item){$('#tablo').append('<tr><th scope="row">'+item.Nom+'</th><td>'+item.Caract+'</td><td>'+item.Compt+'</td><td>'+item.Armure+'</td><td>'+item.Arme+'</td><td>'+item.Vulnérabilités+'</td><td>'+item.Capacités+'</td><td>'+item.Note+'</td><td>Base</td></th>');});
 });
