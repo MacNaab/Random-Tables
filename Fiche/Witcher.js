@@ -222,6 +222,7 @@ if(joueur.value == "" || personnage.value == "" || Sexe.value == "" || Race.valu
 	if(Profession.value == ""){var a = a+"\nLa profession de votre personnage";}
 	alert("Vous devez remplir les éléments :"+a);
 }	
+else if(document.getElementById('Race').value =='Halfelin' && document.getElementById('Profession').value == '6' || document.getElementById('Profession').value == '8'){alert('Un Halfelin ne peut pas pratiquer la magie, il lui est donc impossible d\'être mage ou prêtre.');}
 else{
 	Valider.style.width = "20%";
 	En_cours.innerHTML = "Etape 2";
@@ -246,7 +247,6 @@ function fn_pro(){
 }
 
 function Caractéristique(){
-	var ttt = document.getElementById("MAX_CARACT").value;
   var Caractéristique_1 = document.getElementById("Caractéristique_1").value;
   var Caractéristique_2 = document.getElementById("Caractéristique_2").value;
   var Caractéristique_3 = document.getElementById("Caractéristique_3").value;
@@ -258,7 +258,7 @@ function Caractéristique(){
   var Caractéristique_9 = document.getElementById("Caractéristique_9").value;
   
   var Somme = Number(Caractéristique_1) + Number(Caractéristique_2) + Number(Caractéristique_3) + Number(Caractéristique_4) + Number(Caractéristique_5) + Number(Caractéristique_6) + Number(Caractéristique_7) + Number(Caractéristique_8) + Number(Caractéristique_9);
-  var Restant = Number(ttt) - Number(Somme);
+  var Restant = 60 - Somme;
   document.getElementById("Décompte_Caractéristique").innerHTML = Restant;
 }
 
@@ -994,19 +994,13 @@ function FanBasePro(e,f){
 function Race2(){
 	var Race = document.getElementById('Race').value;
 	var Profession = document.getElementById('Profession');
-
-	Profession.disabled = false;
-	Profession.value = "";	
-	Région.disabled = false;
-	Région.value = "";	
-	Origine.disabled = false;
-	Origine.value = "";	
+	$("#Profession").prop({"disabled": false, "value": ""});
+	$("#Région").prop({"disabled": false, "value": "", "required": true});
+	$("#Origine").prop({"disabled": false, "value": "", "required": true});
 
 	Age_4.disabled = true;
 	Age_5.disabled = true;
 
-		Région.required = true;
-		Origine.required = true;
 		Famille.required = true;
 		Parents.required = true;
 		Destin_famille.required = true;
@@ -1026,229 +1020,101 @@ function Race2(){
 		Passé_Normaux.style.display = "block";
 		Passé_Witcher.style.display = "none";
 
+	$('#Région option[value="3"]').prop('disabled', true);
+	$('#Profession option[value="6"]').prop('disabled', false);
+	$('#Profession option[value="8"]').prop('disabled', false);
+	
 
 	if(Race == "Sorceleur"){
-		Profession.value = "9";
-		Profession.disabled = true;
-		Passé_Normaux.style.display = "none";
+		$("#Profession").prop({"disabled": true, "value": "9"});
+		document.getElementById('Passé_Normaux').style.display = "none";
+		var liste = ['Région','Origine','Famille','Parents','Destin_famille','Destin_parents','Statut_familial','Mentor','Fratrie','Age']
+		liste.forEach(function(item){document.getElementById(item).required = false;});
 
-		Région.required = false;
-		Origine.required = false;
-		Famille.required = false;
-		Parents.required = false;
-		Destin_famille.required = false;
-		Destin_parents.required = false;
-		Statut_familial.required = false;
-		Mentor.required = false;
-		Fratrie.required = false;
-		Age.required = false;
-
-		Passé_Witcher.style.display = "block";
-		Sorceleur_1.required = true;
-		Sorceleur_2.required = true;
-		Sorceleur_5.required = true;
-		Sorceleur_6.required = true;
-		Sorceleur_7.required = true;
-		Sorceleur_8.required = true;
-		Sorceleur_9.required = true;
-
+		document.getElementById('Passé_Witcher').style.display = "block";
+		for (let i = 1; i <= 9; i++) {document.getElementById('Sorceleur_'+i).required = true;}
 	}
 	if(Race == "Elfe"){
-		Région.value = "3";
-		Région.disabled = true;
-		Origine.value = "3_1";
-		Origine.disabled = true;
-
-// - Destin Famille RN
-	for (let i = 1; i <= 10; i++) {var A = "Destin_famille_RN_"+i;document.getElementById(A).disabled = true;	}
-// - Destin Famille N
-	for (let i = 1; i <= 10; i++) {var A = "Destin_famille_N_"+i;document.getElementById(A).disabled = true;	}
-// Active Destin Parent RN
-	for (let i = 1; i <= 10; i++) {var A = "Destin_parents_RN_"+i;document.getElementById(A).disabled = true;	}
-// Active Destin Parent N
-	for (let i = 1; i <= 10; i++) {var A = "Destin_parents_N_"+i;document.getElementById(A).disabled = true;	}
-// Active Statut Famille RN
-	for (let i = 1; i <= 7; i++) {var A = "Statut_familial_RN_"+i;document.getElementById(A).disabled = true;	}
-// Active Statut Famille N
-	for (let i = 1; i <= 7; i++) {var A = "Statut_familial_N_"+i;document.getElementById(A).disabled = true;	}
-// Active Mentor RN
-	for (let i = 1; i <= 10; i++) {var A = "Mentor_RN_"+i;document.getElementById(A).disabled = true;	}
-// Active Mentor N
-	for (let i = 1; i <= 10; i++) {var A = "Mentor_N_"+i;document.getElementById(A).disabled = true;	}
-
+		$("#Région").prop({"disabled": true, "value": "3"});Région2();
+		$("#Origine").prop({"disabled": true, "value": "0"});
 // + Fratrie
 	for (let i = 1; i <= 8; i++) {var A = "Fratrie_"+i;document.getElementById(A).disabled = false;	}
 // - Fratrie
 	for (let i = 3; i <= 8; i++) {var A = "Fratrie_"+i;document.getElementById(A).disabled = true;	}
-
-Age_4.disabled = false;
-Age_5.disabled = false;
+	document.getElementById('Age_4').disabled = false;
+	document.getElementById('Age_5').disabled = false;
 	}
 	if(Race == "Nain"){
-		Région.value = "3";
-		Région.disabled = true;
-		Origine.value = "3_2";
-		Origine.disabled = true;
-
-// - Destin Famille RN
-	for (let i = 1; i <= 10; i++) {var A = "Destin_famille_RN_"+i;document.getElementById(A).disabled = true;	}
-// - Destin Famille N
-	for (let i = 1; i <= 10; i++) {var A = "Destin_famille_N_"+i;document.getElementById(A).disabled = true;	}
-// Active Destin Parent RN
-	for (let i = 1; i <= 10; i++) {var A = "Destin_parents_RN_"+i;document.getElementById(A).disabled = true;	}
-// Active Destin Parent N
-	for (let i = 1; i <= 10; i++) {var A = "Destin_parents_N_"+i;document.getElementById(A).disabled = true;	}
-// Active Statut Famille RN
-	for (let i = 1; i <= 7; i++) {var A = "Statut_familial_RN_"+i;document.getElementById(A).disabled = true;	}
-// Active Statut Famille N
-	for (let i = 1; i <= 7; i++) {var A = "Statut_familial_N_"+i;document.getElementById(A).disabled = true;	}
-// Active Mentor RN
-	for (let i = 1; i <= 10; i++) {var A = "Mentor_RN_"+i;document.getElementById(A).disabled = true;	}
-// Active Mentor N
-	for (let i = 1; i <= 10; i++) {var A = "Mentor_N_"+i;document.getElementById(A).disabled = true;	}
-
+		$("#Région").prop({"disabled": true, "value": "3"});Région2();
+		$("#Origine").prop({"disabled": true, "value": "1"});
 // + Fratrie
 	for (let i = 1; i <= 8; i++) {var A = "Fratrie_"+i;document.getElementById(A).disabled = false;	}
 // - Fratrie
 	for (let i = 6; i <= 8; i++) {var A = "Fratrie_"+i;document.getElementById(A).disabled = true;	}
-
 document.getElementById('Age_4').disabled = false;
 document.getElementById('Age_5').disabled = false;
-
 	}
 	if(Race == "Vampire"){
 		Profession.value = "10";
 		Profession.disabled = true;
 	}
+	if(Race == 'Halfelin'){$('#Profession option[value="6"]').prop('disabled', true);$('#Profession option[value="8"]').prop('disabled', true);}
+	if(Race == "Halfelin" || Race == "Gnome"){
+		$('#Région option[value="3"]').prop('disabled', false);
+	}
 }
 
 function Région2(){
-
-	var Région = document.getElementById('Région').value;
-	
 	var Région = document.getElementById('Région').value;
 	var RoyaumesNord = ["Rédanie","Kaedwen","Témérie","Aedirn","Lyrie et Rivie","Kovir et Poviss","Skellige","Cidaris","Verden","Cintra"];
 	var Nilfgaard = ["Coeur de l’Empire","Vicovaro","Angren","Nazair","Metinna","Mag Turga","Geso","Ebbing","Maecht","Gemmery","Étolie"];
 	var Anciens = ["Dol Blathanna","Mahakam"];
-	var Race = document.getElementById('Race').value;
-	var Profession = document.getElementById('Profession');
-	
-	
-
-// Active les origines RN
-	for (let i = 1; i <= 10; i++) {var A = "Origine_RN_"+i;document.getElementById(A).disabled = false;	}
-// Active les origines N
-	for (let i = 1; i <= 11; i++) {var A = "Origine_N_"+i;document.getElementById(A).disabled = false;	}
-
-// Active Destin Famille RN
-	for (let i = 1; i <= 10; i++) {var A = "Destin_famille_RN_"+i;document.getElementById(A).disabled = false;	}
-// Active Destin Famille N
-	for (let i = 1; i <= 10; i++) {var A = "Destin_famille_N_"+i;document.getElementById(A).disabled = false;	}
-// Active Destin Famille TA
-	for (let i = 1; i <= 10; i++) {var A = "Destin_famille_TA_"+i;document.getElementById(A).disabled = false;	}
-
-// Active Destin Parent RN
-	for (let i = 1; i <= 10; i++) {var A = "Destin_parents_RN_"+i;document.getElementById(A).disabled = false;	}
-// Active Destin Parent N
-	for (let i = 1; i <= 10; i++) {var A = "Destin_parents_N_"+i;document.getElementById(A).disabled = false;	}
-// Active Destin Parent TA
-	for (let i = 1; i <= 10; i++) {var A = "Destin_parents_TA_"+i;document.getElementById(A).disabled = false;	}
-
-// Active Statut Famille RN
-	for (let i = 1; i <= 7; i++) {var A = "Statut_familial_RN_"+i;document.getElementById(A).disabled = false;	}
-// Active Statut Famille N
-	for (let i = 1; i <= 7; i++) {var A = "Statut_familial_N_"+i;document.getElementById(A).disabled = false;	}
-// Active Statut Famille TA
-	for (let i = 1; i <= 7; i++) {var A = "Statut_familial_TA_"+i;document.getElementById(A).disabled = false;	}
-
-// Active Mentor RN
-	for (let i = 1; i <= 10; i++) {var A = "Mentor_RN_"+i;document.getElementById(A).disabled = false;	}
-// Active Mentor N
-	for (let i = 1; i <= 10; i++) {var A = "Mentor_N_"+i;document.getElementById(A).disabled = false;	}
-// Active Mentor TA
-	for (let i = 1; i <= 10; i++) {var A = "Mentor_TA_"+i;document.getElementById(A).disabled = false;	}
-
-// Active Fratrie
-	for (let i = 1; i <= 8; i++) {var A = "Fratrie_"+i;document.getElementById(A).disabled = false;	}
-
-	if(Région == "1"){	// Nord
-// Désactive les origines N
-	for (let i = 1; i <= 11; i++) {var A = "Origine_N_"+i;document.getElementById(A).disabled = true;	}
-// Active Destin Famille N
-	for (let i = 1; i <= 10; i++) {var A = "Destin_famille_N_"+i;document.getElementById(A).disabled = true;	}
-// Active Destin Famille TA
-	for (let i = 1; i <= 10; i++) {var A = "Destin_famille_TA_"+i;document.getElementById(A).disabled = true;	}
-// Active Destin Parent N
-	for (let i = 1; i <= 10; i++) {var A = "Destin_parents_N_"+i;document.getElementById(A).disabled = true;	}
-// Active Destin Parent TA
-	for (let i = 1; i <= 10; i++) {var A = "Destin_parents_TA_"+i;document.getElementById(A).disabled = true;	}
-// Active Statut Famille N
-	for (let i = 1; i <= 7; i++) {var A = "Statut_familial_N_"+i;document.getElementById(A).disabled = true;	}
-// Active Statut Famille TA
-	for (let i = 1; i <= 7; i++) {var A = "Statut_familial_TA_"+i;document.getElementById(A).disabled = true;	}
-// Active Mentor N
-	for (let i = 1; i <= 10; i++) {var A = "Mentor_N_"+i;document.getElementById(A).disabled = true;	}
-// Active Mentor TA
-	for (let i = 1; i <= 10; i++) {var A = "Mentor_TA_"+i;document.getElementById(A).disabled = true;	}
-
-	}		
+	$("#Origine").html("<option disabled selected value=''>Origine</option>");
+	if(Région == '1'){
+		var i = 0;
+		RoyaumesNord.forEach(function(item){
+			$("#Origine").append('<option value="'+i+'">'+item+'</option>');
+			i = Number(i)+1;
+		});
+	}
+	if(Région == '2'){
+		var i = 0;
+		Nilfgaard.forEach(function(item){
+			$("#Origine").append('<option value="'+i+'">'+item+'</option>');
+			i = Number(i)+1;
+		});
+	}
+	if(Région == '3'){
+		var i = 0;
+		Anciens.forEach(function(item){
+			$("#Origine").append('<option value="'+i+'">'+item+'</option>');
+			i = Number(i)+1;
+		});
+	}
+		
 	if(Région == "2"){	// Nilfgaard
-// Désactive les origines RN
-	for (let i = 1; i <= 10; i++) {var A = "Origine_RN_"+i;document.getElementById(A).disabled = true;	}
-// Active Destin Famille RN
-	for (let i = 1; i <= 10; i++) {var A = "Destin_famille_RN_"+i;document.getElementById(A).disabled = true;	}
-// Active Destin Famille TA
-	for (let i = 1; i <= 10; i++) {var A = "Destin_famille_TA_"+i;document.getElementById(A).disabled = true;	}
-// Active Destin Parent RN
-	for (let i = 1; i <= 10; i++) {var A = "Destin_parents_RN_"+i;document.getElementById(A).disabled = true;	}
-// Active Destin Parent TA
-	for (let i = 1; i <= 10; i++) {var A = "Destin_parents_TA_"+i;document.getElementById(A).disabled = true;	}
-// Active Statut Famille RN
-	for (let i = 1; i <= 7; i++) {var A = "Statut_familial_RN_"+i;document.getElementById(A).disabled = true;	}
-// Active Statut Famille TA
-	for (let i = 1; i <= 7; i++) {var A = "Statut_familial_TA_"+i;document.getElementById(A).disabled = true;	}
-// Active Mentor RN
-	for (let i = 1; i <= 10; i++) {var A = "Mentor_RN_"+i;document.getElementById(A).disabled = true;	}
-// Active Mentor TA
-	for (let i = 1; i <= 10; i++) {var A = "Mentor_TA_"+i;document.getElementById(A).disabled = true;	}
-
-// Active Fratrie
-	for (let i = 6; i <= 8; i++) {var A = "Fratrie_"+i;document.getElementById(A).disabled = true;	}
-
-
+		// Fratrie
+		$('#Fratrie').val('');
+		for (let i = 6; i <= 8; i++) {var A = "Fratrie_"+i;document.getElementById(A).disabled = true;	}
 	}
 	
 }
 
 function famille2(){
 	var Famille = document.getElementById('Famille').value;
-		Parents.disabled = false;
-		Destin_famille.disabled = false;
-		Destin_parents.disabled = false;
-		Statut_familial.disabled = false;
-	
-	if(Famille == "1"){
-		// En vie > Parents
-		
-	}
-	else{
+	var liste = ['Parents','Destin_famille','Destin_parents','Statut_familial']
+		liste.forEach(function(item){document.getElementById(item).disabled = false;});
+	if(Famille == "2"){
 		// Mort > Destin Famille
-		Parents.disabled = true;
-		Parents.value = "";
-		Destin_parents.disabled = true;
-		Destin_parents.value = "";
-		Statut_familial.disabled = true;
-		Statut_familial.value = "";
+		var liste = ['Parents','Destin_parents','Statut_familial'];
+		liste.forEach(function(item){document.getElementById(item).disabled = true;document.getElementById(item).value = "";});
 	}
 }
 
 function parents2(){
 	var Parents = document.getElementById('Parents').value;
-		Parents.disabled = false;
-		Destin_famille.disabled = false;
-		Destin_parents.disabled = false;
-		Statut_familial.disabled = false;
-
+		var liste = ['Parents','Destin_famille','Destin_parents','Statut_familial'];
+		liste.forEach(function(item){document.getElementById(item).disabled = false;});
 	if(Parents == "1"){
 		// En vie > Statut familial
 		Destin_famille.disabled = true;
@@ -1393,6 +1259,19 @@ function LesRands(t){
 		if(rand == 0){var e = A1[rand2]+" "+A3[rand4+rand3];}else{var e = A2[rand2]+" "+A3[rand4+rand3];}
 		return e;
 	}
+	if(t == 'Frère'){
+		var rand = Math.floor(Math.random() * Math.floor(2));
+		var rand2 = Math.floor(Math.random() * Math.floor(10));
+		var rand3 = Math.floor(Math.random() * Math.floor(10));
+		var rand4 = Math.floor(Math.random() * Math.floor(10));
+		if(rand == 0){var Genre = 'Un frère, '}else{var Genre = 'Une soeur, '}
+		if(rand2 == 9){var Age = 'jumeau, ';}else if(rand2 < 5){var Age = "plus jeune, ";}else{var Age = "plus jeune, ";}
+		var dtb1 = ["timide ","agressif ","gentil ","bizarre ","attentionné ","bavard ","romantique ","sévère ","dépressif ","immature "];
+		var dtb2 = ["qui veut votre mort","qui ne vous supporte pas","qui est jaloux de vous","Rien de particulier","Rien de particulier","Rien de particulier","Rien de particulier","qui vous aime","qui vous admire","qui est très possessif"];
+		var Caractère = dtb1[rand3];
+		if(rand4 < 3 || rand4 > 6){var Ressenti = dtb2[rand4];}else{var Ressenti = "";}
+		return Genre+Age+Caractère+Ressenti;
+	}
 }
 
 function RandYourLife(){
@@ -1470,44 +1349,23 @@ if(EV_1 < "5"){
 
 }
 else if(EV_1 > "7"){
-
 	var Chance = Math.floor(Math.random() * Math.floor(10))+1;	
 	// 1 A Happy Love aftair ; 2-4 A Romantic Tragedy ; 5-6 A Problematic Love ; 7-10 Whores and Debauchery
 
-if(Chance == "1"){var Chance_aff = "<b>Amour parfait :</b> la joie durable et le véritable amour sont une possibilité. Mais ils sont rares. Si vous y parvenez, il est supposé que vous êtes heureux ensemble jusqu'à ce que vous lanciez une autre romance d'un type différent. Ce jet s'applique ensuite à votre état sentimental actuel.";}
+if(Chance == "1"){var Chance_aff = "<b>Histoire idyllique:</b> vous formez un couple heureux.";}
 else if(Chance > "1" && Chance < "5"){
-	var Roll = Math.floor(Math.random() * Math.floor(10))+1;	
-	
-	if(Roll == "1"){var Roll = "Votre amant a été capturé par des bandits il y a quelque temps et est toujours leur captif.";}
-	if(Roll == "2"){var Roll = "Votre amant a mystérieusement disparu un jour et vous ne savez pas où ils sont allés.";}
-	if(Roll == "3"){var Roll = "Votre amant a été emprisonné ou exilé pour des crimes qu'il n'a peut-être pas commis.";}
-	if(Roll == "4"){var Roll = "Votre amant vous a été enlevé par une puissante malédiction.";}
-	if(Roll == "5"){var Roll = "Quelque chose s'est passé entre vous et votre amant et vous avez été forcé de les tuer.";}
-	if(Roll == "6"){var Roll = "Votre amant s'est suicidé. Vous ne savez peut-être pas pourquoi ils l'ont fait.";}
-	if(Roll == "7"){var Roll = "Votre amant a été enlevé par un noble et la prise pour concubine.";}
-	if(Roll == "8"){var Roll = "Un rival a volé votre amour.";}
-	if(Roll == "9"){var Roll = "Votre amant a été tué par des monstres. Il peut s'agir d'un accident ou prévu.";}
-	if(Roll == "10"){var Roll = "Votre amant est un mage, un sorceleur ou un monstre sensible, condamnant la romance.";}
-	
+	var Roll = Math.floor(Math.random() * Math.floor(10));	
+	var IDD = ["Votre amant a été capturé par des bandits il y a quelque temps. Il est toujours leur prisonnier.","Un jour, votre amant a disparu dans des circonstances mystérieuses. Vous ne savez pas où il est parti.","Votre amant a été emprisonné ou exilé pour des crimes qu’il n’avait pas commis.","Une puissante malédiction vous a enlevé votre amant.","Il s’est passé quelque chose entre votre amant et vous. Vous avez été forcé de le tuer.","Votre amant s’est suicidé. Vous ne connaissez pas forcément la raison de son geste.","Votre bien-aimé s’est fait capturer par un noble qui en a fait son amant ou sa maîtresse.","Un rival s’est interposé entre vous et votre amant dont il a gagné l’affection.","Des monstres ont tué votre amant. C’était un accident ou un plan soigneusement huilé.","Votre amant est un mage, un sorceleur ou un monstre intelligent. Votre relation est condamnée d’avance."];
+	var Roll = IDD[Roll];
 	var Chance_aff = "<b>Tragédie romantique :</b> "+Roll;
 }
 else if(Chance > "4" && Chance < "7"){
-	var Roll = Math.floor(Math.random() * Math.floor(10))+1;	
-		
-	if(Roll == "1"){var Roll = "La famille ou les amis de votre amant vous détestent et ne tolèrent pas votre romance.";}
-	if(Roll == "2"){var Roll = "Votre amoureux travaille comme une pute pour gagner sa vie et refuse de renoncer à son travail.";}
-	if(Roll == "3"){var Roll = "Votre amoureux est soumis à une malédiction mineure telle que la paranoïa ou d'horribles cauchemars.";}
-	if(Roll == "4"){var Roll = "Votre amant a dormi et a refusé de s'arrêter quand vous l'avez découvert.";}
-	if(Roll == "5"){var Roll = "Votre amoureux est incroyablement jaloux et ne supporte pas que vous soyez avec un rival possible.";}
-	if(Roll == "6"){var Roll = "Vous vous battez constamment et rien ne peut l'arrêter longtemps. Vous descendez toujours dans des cris.";}
-	if(Roll == "7"){var Roll = "Vous êtes en quelque sorte des rivaux professionnels. Vous vous dérobez souvent des clients.";}
-	if(Roll == "8"){var Roll = "L'un de vous est humain et l'autre non humain, ce qui rend votre vie difficile.";}
-	if(Roll == "9"){var Roll = "Votre amant est déjà marié.";}
-	if(Roll == "10"){var Roll = "Vos amis ou votre famille détestent votre amant et ne tolèrent pas votre romance.";}
-
-	var Chance_aff = "<b>Amour problématique :</b> "+Roll;
+	var Roll = Math.floor(Math.random() * Math.floor(10));	
+	var IDD = ["La famille ou les amis de votre amant vous haïssent et désapprouvent votre relation.","Votre amant se prostitue pour gagner sa vie et refuse d’abandonner son travail.","Votre amant souffre d’une malédiction mineure qui lui cause d’horribles cauchemars ou des crises de paranoïa.","Votre amant couche à droite à gauche, et bien que vous l’ayez découvert, il refuse d’arrêter.","Votre amant éprouve une jalousie maladive et ne supporte pas de vous savoir en compagnie de rivaux potentiels.","Vous vous battez sans cesse et rien ne peut vous arrêter. Vos disputes se terminent toujours par des hurlements.","Vous êtes des rivaux sur le plan professionnel. Vous ne cessez de vous voler mutuellement des clients.","L’un de vous est un humain, l’autre est un non-humain, ce qui vous complique la vie.","Votre amant est déjà marié. Il veut ou ne veut pas quitter son conjoint.","Votre famille ou vos amis détestent votre amant et désapprouvent votre relation."];
+	var Roll = IDD[Roll];
+	var Chance_aff = "<b>Relation compliquée:</b> "+Roll;
 }
-else {var Chance_aff = "<b>Débauche :</b> vous avez passé votre temps à dormir, à aller aux putes et peut-être à laisser une traînée d'enfants bâtards dans votre sillage si vous ne faisiez pas attention."}
+else {var Chance_aff = "<b>Débauche :</b> vous avez passé votre temps votre temps à coucher à droite à gauche et à vous payer les services de prostituées. Si vous n’avez pas fait attention, vous avez probablement semé une collection de bâtards dans votre sillage."}
 }
 else{
 	var Chance = Math.floor(Math.random() * Math.floor(2))+1;	
@@ -1526,181 +1384,82 @@ else{var Close = "lié par serment";}
 if(Situation < "4"){var Situation = "dans les Royaumes du Nord.";}
 else if(Situation > "3" && Situation < "7"){var Situation = "dans l'Empire de Nilfgaard.";}
 else if(Situation > "6" && Situation < "10"){var Situation = "dans les Terres Ancestrales.";}
-else{var Situation = "au-delà des frontières.";}
+else{var Situation = "au-delà des frontières du monde connu.";}
 
 	var Chance_aff = "<b>Allier :</b> "+Ami+", vous êtes "+Close+", il/elle est actuellement "+Situation;
 }
 else{
 	var Ami = LesRands('Enemies');	
-	var Close = Math.floor(Math.random() * Math.floor(10))+1;	
+	var Close = Math.floor(Math.random() * Math.floor(10))+1;
 	var Chance_aff = "<b>Ennemie :</b> "+Ami+". Attention, son pouvoir est de "+Close+"/10";
 }
 }
 	return Chance_aff;
 }
 
-function RandomLife(){
+function RandomLife2(){
 	var checkBox = document.getElementById("HdV_random");
-
+if(checkBox.checked == true){
+	var Race = $('#Race').val();
+	var Rand = Math.floor(Math.random() * Math.floor(10));
+	// Région || 1: Nord | 2: Nilf | 3: Anciens
 	var Région = document.getElementById('Région').value;
-	var Race = document.getElementById('Race').value;
+	var Origine = $('#Origine').val();
+	var Famille = $('#Famille').val();
+	var Parents = $('#Parents').val();
 
-	if(checkBox.checked == true){
-		if(Région == ""){
-			var A = Math.floor(Math.random() * Math.floor(2))+1;
-			// A = Région : 1 = TN / 2 = N
-			document.getElementById("Région").value = A;
-			if(A == 1){
-			var B = Math.floor(Math.random() * Math.floor(10))+1;
-			// B = Origine
-			Origine.value = A+"_"+B;}
-			else{var B = Math.floor(Math.random() * Math.floor(11))+1;Origine.value = A+"_"+B;}
-		
-			var C = Math.floor(Math.random() * Math.floor(2))+1;
-			// C = Famille
-			Famille.value = C
-			if(C == 1){
-		// En vie > Parents
-			var D = Math.floor(Math.random() * Math.floor(2))+1;
-			// D = Parents	
-			Parents.value = D;
-
-	if(D == "1"){
-		// En vie > Statut familial
-Destin_famille.disabled = true;Destin_famille.value = "";Destin_parents.disabled = true;Destin_parents.value = "";
-
-			var G = Math.floor(Math.random() * Math.floor(7))+1;
-			Statut_familial.value = A+"_"+G;
+	if(Région == ""){
+		var Rand1 = Math.floor(Math.random() * Math.floor(2))+1;
+		if(Race == 'Halfelin' || Race == 'Gnome'){var Rand1 = Math.floor(Math.random() * Math.floor(3))+1;}
+		$('#Région').val(Rand1);Région2();
+		if(Rand1 == 1){var Rand2 = Math.floor(Math.random() * Math.floor(10));$('#Origine').val(Rand2);}
+		if(Rand1 == 2){var Rand2 = Math.floor(Math.random() * Math.floor(10));if(Rand2 > 2){var Rand2 = Math.floor(Math.random() * Math.floor(10))+1;$('#Origine').val(Rand2);}else{$('#Origine').val('0');}}
+		if(Rand1 == 3){var Rand2 = Math.floor(Math.random() * Math.floor(2));$('#Origine').val(Rand2);}
 	}
-	else{
-		// Morts > Destin Parents
-Destin_famille.disabled = true;Destin_famille.value = "";Statut_familial.disabled = true;Destin_parents.value = "";
-	
-			var F = Math.floor(Math.random() * Math.floor(10))+1;
-			Destin_parents.value = A+"_"+F;
-	
-	}
-
-
-			}
-			else{
-		// Mort > Destin Famille
-Parents.disabled = true;Parents.value = "";Destin_parents.disabled = true;Destin_parents.value = "";Statut_familial.disabled = true;Statut_familial.value = "";		
-
-			var E = Math.floor(Math.random() * Math.floor(10))+1;
-			Destin_famille.value = A+"_"+E;
-			
-			}
-		
-			var H = Math.floor(Math.random() * Math.floor(10))+1;
-			// H = Mentor
-			Mentor.value = A+"_"+H;
-			
-			if(A == 1){var I = Math.floor(Math.random() * Math.floor(9));}
-			if(A == 2){var I = Math.floor(Math.random() * Math.floor(6));}
-			Fratrie.value = I;
+	var Rand3 = Math.floor(Math.random() * Math.floor(2))+1;$('#Famille').val(Rand3);
+	if(Rand3 == 0){ // VOIR PARENTS
+		var Rand4 = Math.floor(Math.random() * Math.floor(2))+1;$('#Parents').val(Rand4);
+		if(Rand4 == 0){	// VOIR SITUATION FAMILLE
+			var Rand5 = Math.floor(Math.random() * Math.floor(10));
+			if(Rand5 < 6){$('#Statut_familial').val(Rand5);}else if(Rand5 >= 7){$('#Statut_familial').val('6');}else{$('#Statut_familial').val('5');}
+			var liste = ['Destin_famille','Destin_parents'];
+			liste.forEach(function(item){document.getElementById(item).disabled = true;document.getElementById(item).value = "";});
+		}else{	// VOIR DESTIN PARENTS
+			var Rand5 = Math.floor(Math.random() * Math.floor(10));$('#Destin_parents').val(Rand5);
+			var liste = ['Destin_famille','Statut_familial'];
+			liste.forEach(function(item){document.getElementById(item).disabled = true;document.getElementById(item).value = "";});
 		}
-		
-		if(Race == "Elfe"){
-			var C = Math.floor(Math.random() * Math.floor(2))+1;
-			// C = Famille
-			Famille.value = C
-			if(C == 1){
-		// En vie > Parents
-			var D = Math.floor(Math.random() * Math.floor(2))+1;
-			// D = Parents	
-			Parents.value = D;
-
-	if(D == "1"){
-		// En vie > Statut familial
-Destin_famille.disabled = true;Destin_famille.value = "";Destin_parents.disabled = true;Destin_parents.value = "";
-
-			var G = Math.floor(Math.random() * Math.floor(7))+1;
-			Statut_familial.value = "3_"+G;
+	}else{ // VOIR DESTIN FAMILLE
+		var Rand4 = Math.floor(Math.random() * Math.floor(10));$('#Destin_famille').val(Rand4);
+		var liste = ['Parents','Destin_parents','Statut_familial'];
+		liste.forEach(function(item){document.getElementById(item).disabled = true;document.getElementById(item).value = "";});
 	}
-	else{
-		// Morts > Destin Parents
-Destin_famille.disabled = true;Destin_famille.value = "";Statut_familial.disabled = true;Destin_parents.value = "";
 	
-			var F = Math.floor(Math.random() * Math.floor(10))+1;
-			Destin_parents.value = "3_"+F;
-	
-	}
-
-
-			}
-			else{
-		// Mort > Destin Famille
-Parents.disabled = true;Parents.value = "";Destin_parents.disabled = true;Destin_parents.value = "";Statut_familial.disabled = true;Statut_familial.value = "";		
-
-			var E = Math.floor(Math.random() * Math.floor(10))+1;
-			Destin_famille.value = "3_"+E;
-			
-			}
-		
-			var H = Math.floor(Math.random() * Math.floor(10))+1;
-			// H = Mentor
-			Mentor.value = "3_"+H;
-			
-			var I = Math.floor(Math.random() * Math.floor(3))
-			Fratrie.value = I;
-			
-		}
-
-		if(Race == "Nain"){
-			var C = Math.floor(Math.random() * Math.floor(2))+1;
-			// C = Famille
-			Famille.value = C
-			if(C == 1){
-		// En vie > Parents
-			var D = Math.floor(Math.random() * Math.floor(2))+1;
-			// D = Parents	
-			Parents.value = D;
-
-	if(D == "1"){
-		// En vie > Statut familial
-Destin_famille.disabled = true;Destin_famille.value = "";Destin_parents.disabled = true;Destin_parents.value = "";
-
-			var G = Math.floor(Math.random() * Math.floor(7))+1;
-			Statut_familial.value = "3_"+G;
-	}
-	else{
-		// Morts > Destin Parents
-Destin_famille.disabled = true;Destin_famille.value = "";Statut_familial.disabled = true;Destin_parents.value = "";
-	
-			var F = Math.floor(Math.random() * Math.floor(10))+1;
-			Destin_parents.value = "3_"+F;
-	
-	}
-
-
-			}
-			else{
-		// Mort > Destin Famille
-Parents.disabled = true;Parents.value = "";Destin_parents.disabled = true;Destin_parents.value = "";Statut_familial.disabled = true;Statut_familial.value = "";		
-
-			var E = Math.floor(Math.random() * Math.floor(10))+1;
-			Destin_famille.value = "3_"+E;
-			
-			}
-		
-			var H = Math.floor(Math.random() * Math.floor(10))+1;
-			// H = Mentor
-			Mentor.value = "3_"+H;
-			
-			var I = Math.floor(Math.random() * Math.floor(6))
-			Fratrie.value = I;
-			
-		}
+	var Rand6 = Math.floor(Math.random() * Math.floor(10));$('#Mentor').val(Rand6);
+	var Rand7 = Math.floor(Math.random() * Math.floor(10))+1;
+	if(Rand1 == 1 || Région=="1"){
+		if(Rand7 > 8){$('#Fratrie').val('0');}else{$('#Fratrie').val(Rand7);}
+	}else if(Rand1 == 2 || Région=="2" || Race=='Nain'){
+		if(Rand7 > 5){$('#Fratrie').val('0');}else{$('#Fratrie').val(Rand7);}
+	}else{
+		if(Rand7 < 3){$('#Fratrie').val('1');}else if(Rand7 > 8){$('#Fratrie').val('2');}else{$('#Fratrie').val('0');}
 		
 	}
+	if(Race == 'Humain'){var Rand8 = Math.floor(Math.random() * Math.floor(2))+2;$('#Age').val(Rand8);
+	}else{var Rand8 = Math.floor(Math.random() * Math.floor(4))+2;$('#Age').val(Rand8);
+	}
+	RandomLife();
+}
+}
 
-var Age = document.getElementById('Age').value;
-var Chance_aff = ''
+function RandomLife(){
+	var Age = document.getElementById('Age').value;
+	var Chance_aff = ''
 	for(let i=0; i < Age;i++){
-		var Chance_aff = Chance_aff+"<br>"+RandYourLife();
+		if(i == Number(Number(Age)-1)){var Chance_aff = Chance_aff+RandYourLife();}
+		else{var Chance_aff = Chance_aff+RandYourLife()+"<br>";}
 	}
-	Events.innerHTML = Chance_aff;
+	document.getElementById('Events').innerHTML = Chance_aff;
 }
 
 function Récapitulatif(){
@@ -1755,147 +1514,50 @@ if(Sorceleur_6.value == "5"){var Maintenant = "Finalement, toute la négativité
 	else{
 // PB inconnu > voir en PHP
 var Origine = document.getElementById('Origine').value;
+var Région = document.getElementById('Région').value;
 var Fratrie = document.getElementById('Fratrie').value;
 var Fratrie_1 = Number(Fratrie)+1;
 var Mentor = document.getElementById('Mentor').value;
 
-if(Origine == "1_1"){var Origine = "De Rédanie, dans les Royaumes du Nord."}if(Origine == "1_2"){var Origine = "De Kaedwen, dans les Royaumes du Nord."}if(Origine == "1_3"){var Origine = "De Temerie, dans les Royaumes du Nord."}if(Origine == "1_4"){var Origine = "D'Aedirn, dans les Royaumes du Nord."}if(Origine == "1_5"){var Origine = "De Lyria & Rivia, dans les Royaumes du Nord."}if(Origine == "1_6"){var Origine = "De Kovir & Poviss, dans les Royaumes du Nord."}if(Origine == "1_7"){var Origine = "De Skellige, dans les Royaumes du Nord."}if(Origine == "1_8"){var Origine = "De Cidaris, dans les Royaumes du Nord."}if(Origine == "1_9"){var Origine = "De Verden, dans les Royaumes du Nord."}if(Origine == "1_10"){var Origine = "De Cintra, dans les Royaumes du Nord."}
-if(Origine == "2_1"){var Origine = "Du Cœur de Nilfgaard."}if(Origine == "2_2"){var Origine = "De Vicovaro, dans Empire de Nilfgaard."}if(Origine == "2_3"){var Origine = "D'Angren, dans Empire de Nilfgaard."}if(Origine == "2_4"){var Origine = "De Nazair, dans Empire de Nilfgaard."}if(Origine == "2_5"){var Origine = "De Mettina, dans Empire de Nilfgaard."}if(Origine == "2_6"){var Origine = "De Mag Turga, dans Empire de Nilfgaard."}if(Origine == "2_7"){var Origine = "De Gheso, dans Empire de Nilfgaard."}if(Origine == "2_8"){var Origine = "De Ebbing, dans Empire de Nilfgaard."}if(Origine == "2_9"){var Origine = "De Maecht, dans Empire de Nilfgaard."}if(Origine == "2_10"){var Origine = "De Gemmeria, dans Empire de Nilfgaard."}if(Origine == "2_11"){var Origine = "D'Etolia, dans Empire de Nilfgaard."}
-if(Origine == "3_1"){var Origine = "De la vallée elfique de Dol Blathanna."}if(Origine == "3_2"){var Origine = "Des montagnes naines de Mahakam."}
+if(Région == "1"){
+	var Origine = "De "+$("#Origine option:selected").text()+", dans les "+$("#Région option:selected").text()+".";
+	var DDD1 = ["Les membres de votre famille se sont éparpillés aux quatre vents à cause des guerres successives et vous n’avez aucune idée d’où ils se trouvent à l’heure actuelle.","Votre famille a été emprisonnée pour des crimes, peut-être sur de fausses accusations. Vous êtes le seul à en être réchappé. Vous voulez libérer vos proches… ou pas.","Votre maison familiale est victime d’une malédiction. Vos terres ne donnent plus de récoltes ou des spectres hantent les couloirs de votre demeure. Séjourner dans cette maison s’avérait trop dangereux.","Les guerres incessantes ont fini par détruire le moyen de subsistance de votre famille, qui a dû se tourner vers les activités criminelles pour survivre.","Votre famille a accumulé de lourdes dettes à cause de paris ou d’emprunts. Vous avez désespérément besoin d’argent.","Votre famille est engagée dans une vendetta avec une autre famille. Vous ne souvenez peut-être même pas de l’élément déclencheur de cette rancune.","À cause de son comportement ou de son inaction, votre famille est haïe de tout le village et plus personne ne veut avoir affaire avec elle.","Un jour, une bande de voyous vous a pris tout ce que vous possédiez. Les bandits ont massacré tout le monde, sauf vous, qui êtes à présent complètement seul.","Votre famille possède un sombre secret qui, s’il était découvert, détruirait votre vie de fond en comble. Vous pouvez imaginer quel est ce secret ou laisser le maître de jeu s’en charger.","Les membres de votre famille se détestent les uns les autres. Tous ceux avec lesquels vous avez grandi ne font aucun effort pour se parler, et vous avez de la chance quand vous obtenez un simple bonjour de la part de vos frères et soeurs."];
+	var DDD2 = ["Votre ou vos parents se sont fait tuer au cours des Guerres nordiques. Vraisemblablement votre père, mais votre mère a pu combattre ou faire partie des victimes collatérales.","Votre ou vos parents vous ont abandonné dans la nature où vous étiez livré à vous-même. Ils n’avaient peut-être pas les moyens de vous élever. Ou bien était-ce un accident ?","Votre ou vos parents ont été maudits par un mage ou à cause de la haine intense que leur vouait une personne qu’ils ont rencontrée au cours de leur vie. Cette malédiction leur a été fatale.","Votre ou vos parents vous ont échangé contre de l’argent, des biens ou un service. Ils avaient plus besoin de monnaie que d’un marmot.","Votre ou vos parents ont rejoint une organisation criminelle. Vous fréquentiez souvent des bandits et étiez parfois forcé de travailler pour eux.","Votre ou vos parents ont été tués par des monstres. À vous de décider quelle créature a mis fin à leurs jours.","Votre ou vos parents ont été exécutés à tort. Ils ont servi de bouc émissaire ou se trouvaient au mauvais endroit au mauvais moment.","Votre ou vos parents ont succombé à une épidémie. Il n’existait aucun remède, vous pouviez seulement tenter d’apaiser leurs souffrances.","Votre ou vos parents sont passés à Nilfgaard. Ils ont conclu un marché en échange d’informations ou ont traversé la frontière.","Votre ou vos parents ont été kidnappés par des aristocrates. La victime était probablement votre mère, qui a attiré l’attention du suzerain local et de son fils."];
+	var DDD3 = ["Vous avez grandi dans le manoir d’un noble où des serviteurs prenaient soin de vous. Vous deviez observer un comportement irréprochable et faire bonne impression en permanence. Équipement de départ: lettre de noblesse (Réputation +2)","On vous a confié à un mage dès votre plus jeune âge. Vous avez vécu confortablement, mais vous n’avez guère eu l’occasion de voir votre protecteur qui était sans cesse occupé. Équipement de départ: une chronique (Éducation +1)","Vous avez grandi dans un manoir où vous avez appris à devenir un seigneur ou une dame digne de ce nom. Votre destin a été scellé dès votre naissance. Équipement de départ: armoiries personnelles (Réputation +1)","Vous avez grandi dans une famille de marchands, baignant en permanence dans les cris, les âpres négociations et le tintement de la monnaie. Équipement de départ: 2 connaissances","Vous avez grandi dans l’atelier d’un artisan. Vos journées, souvent longues, étaient marquées par le vacarme incessant qui accompagne le processus de création. Équipement de départ: 3 schémas/formules communes","Vous avez grandi dans une famille d’artistes. Vous avez peut-être commencé à exercer le métier dans un théâtre. Équipement de départ: 1 instrument et 1 ami","Vous avez grandi dans une ferme à la campagne. Vous ne possédiez pas grand-chose et meniez une existence humble, mais dangereuse. Équipement de départ: un porte-bonheur (Chance +1)"];
+	var DDD4 = ["Une Église. Vous avez grandi sous l’influence de votre religion locale et passiez des heures à l’église. Équipement: un texte sacré","Un artisan. Un artisan vous a appris à apprécier l’art et le savoir-faire. Équipement: un objet que vous avez fabriqué","Un comte. Vous étiez sous l’influence d’un  comte ou d’une comtesse qui vous a appris à rester digne en toutes circonstances. Équipement: une bague en argent","Un mage. Un mage vous a appris à ne pas avoir peur de la magie et à toujours tout remettre en question. Équipement: un petit pendentif","Une sorcière. Vous avez saisi l’importance du savoir auprès d’une sorcière de village. Équipement: une poupée de magie noire","Une personne maudite. Cette personne souffrant d’une malédiction vous a appris à ne pas juger les autres de façon trop sévère. Équipement: une statuette sculptée","Un bateleur. Un artiste vous a enseigné tous les secrets du spectacle et de la mise en scène. Équipement: une affiche ou un ticket","Un marchand. Un négociant vous a appris l’art de la ruse et les bienfaits de l’intelligence. Équipement: une pièce que vous avez gagnée","Un criminel. Un voyou vous a appris à faire passer votre intérêt avant celui des autres. Équipement: un masque","Un homme d’armes. Vous avez côtoyé un soldat qui vous a appris à vous défendre. Équipement: un trophée de guerre"];
+}
+if(Région == "2"){
+	if(Origine == "0"){var Origine = "Du "+$("#Origine option:selected").text();}else{var Origine = "De "+$("#Origine option:selected").text()+", dans l'"+$("#Région option:selected").text();}
+	var DDD1 = ["Votre famille a été réduite en esclavage à la suite d’accusations (fondées ou non) de crimes contre l’Empire. Vous seul en être réchappé.","Votre famille a été exilée dans le désert de Korath et vous avez passé la majorité de votre jeunesse à tenter de survivre dans cette terre hostile et désolée.","Un mage renégat a assassiné votre famille pour se venger ou par goût de la violence. Dans tous les cas, vous êtes le seul survivant.","Les membres de votre famille ont disparu et vous n’avez aucune idée d’où ils se trouvent. Un jour, ils sont partis, et vous ne les avez plus jamais revus.","Votre famille a été exécutée pour trahison envers l’Empire. Vous êtes le seul à avoir échappé à ce destin.","Votre famille a été déchue de ses titres pour une raison quelconque. Vous avez été chassé de votre maison et deviez vous débrouiller pour survivre au milieu de la populace.","Le nom de votre famille a été terni par un parent proche qui a fait un étalage scandaleux de ses dons magiques, à la manière d’un mage nordique.","Par votre faute, votre famille est tombée en disgrâce auprès de l’Empire. Une de vos actions ou votre échec a jeté l’opprobre sur votre nom et celui de vos parents.","Votre famille possède un sombre secret qui, s’il était découvert, détruirait votre vie et celle de votre parenté de fond en comble. Vous devez le protéger au péril de votre vie.","Votre famille a été assassinée. Cette tragédie faisait peut-être partie d’une machination, ou alors vos proches s’en sont pris à plus fort qu’eux. Quoi qu’il en soit, tout le monde est mort."];
+	var DDD2 = ["Votre père est mort au cours des Guerres nordiques. Il faisait déjà partie de l’armée ou a été enrôlé à l’occasion de ce conflit.","Votre ou vos parents ont été empoisonnés. C’est peut-être l’oeuvre d’un rival issu du même milieu, ou bien on a voulu se débarrasser d’eux, car ils devenaient gênants.","Les services secrets ont enlevé votre ou vos parents pour les soumettre à la question. La semaine suivante, leurs corps étaient pendus dans les rues de la ville.","Votre ou vos parents ont été assassinés par un mage renégat. Ils ont vraisemblablement voulu le dénoncer aux autorités impériales et en ont payé le prix.","Votre ou vos parents ont été enfermés pour utilisation illégale de la magie. Ils ont peut-être bel et bien commis ce crime ou ont été victimes d’un complot.","Votre ou vos parents ont été exilés dans le désert de Korath. Il semblerait qu’ils aient commis un crime grave, mais leur exécution aurait fait trop de bruit. ","Votre ou vos parents ont été maudits par un mage, qui cherchait apparemment à se venger d’eux.","Un jour, vos parents vous ont quitté. Vous ne savez peut-être même pas pourquoi. Ils ont juste disparu du jour au lendemain. ","Votre ou vos parents ont été réduits en esclavage, car ils ont commis un crime contre l’Empire ou ont été piégés par un rival.","Votre ou vos parents ont été envoyés dans le Nord en tant qu’agents doubles. Vous ne savez peut-être pas où ils se trouvent actuellement, mais vous savez qu’ils servent l’Empereur."];
+	var DDD3 = ["Vous avez grandi dans un manoir où l’on vous a appris à évoluer dans l’univers de la cour. La richesse était votre source de motivation. Équipement de départ: lettre de noblesse (Réputation +2)","Vous avez été élevé au sein de l’Église du Grand Soleil, qui n’a cessé de vous guider. Vous êtes devenu très pieux. Équipement de départ: un symbole sacré (Courage +2)","Vous avez grandi en sachant que vous devriez exercer votre devoir envers l’Empereur, et que les richesses ne seraient qu’une récompense pour vos bons et loyaux services. Équipement de départ: armoiries personnelles (Réputation +1)","Vous avez grandi dans l’atelier d’un artisan où vous avez appris à fabriquer des objets qui s’exportent dans le monde entier. Vous connaissez la valeur du travail bien fait. Équipement de départ: 3 schémas/formules communes","Pendant votre jeunesse, votre famille vendait ses produits aux quatre coins de l’Empire. Vous avez vu passer toutes sortes de biens exotiques venus du monde entier. Équipement de départ: 2 connaissances","Vous êtes né dans la servitude et vivez dans un logement modeste. Vous possédez peu de biens et travaillez dur. Équipement de départ: un oiseau ou un serpent apprivoisé","Vous avez grandi dans l’une des milliers de fermes que compte l’Empire. Vous ne possédiez pas grand-chose, mais la vie était simple. Équipement de départ: un porte-bonheur (Chance +1)"];
+	var DDD4 = ["Le Culte du Grand Soleil. L’Église a exercé une influence majeure sur vous. Vous avez passé des années à apprendre les chants et les rituels consacrés. Équipement: un masque de cérémonie","Un paria. Un proscrit vous a montré qu’il fallait toujours remettre la société en question. Équipement: un insigne aux couleurs vives","Un comte. Un comte vous a enseigné l’art du commandement. Équipement: un collier en argent","Un mage. Un mage vous a enseigné l’importance de la discipline et de la prudence. Équipement: un emblème","Un détective. Vous avez passé des heures aux côtés d’un enquêteur impérial à résoudre des mystères. Équipement: une loupe","Un chasseur de mages. Aux côtés d’un chasseur de mage, vous avez appris à vous méfier des sorciers et de leurs sortilèges Équipement: une bague en dimeritium","Un homme d’armes. Vous avez passé des heures à écouter un soldat raconter des histoires pleines de danger et de rebondissements. Équipement: un trophée de guerre","Un artisan. Un artisan vous a appris à apprécier le savoir-faire et la précision. Équipement: un objet que vous avez fabriqué","Un monstre intelligent. Vous avez découvert aux côtés d’une créature intelligente que tous les monstres n’étaient pas mauvais. Équipement: une étrange statuette","Un bateleur. Un artiste a influencé votre état d’esprit en vous apprenant à laisser libre cours à votre créativité. Équipement: un cadeau d’un admirateur"];
+}
+if(Région == "3"){
+	if(Origine == "0"){var Origine = "De la vallée elfique de Dol Blathanna."}else{var Origine = "Des montagnes naines de Mahakam."}
+	var DDD1 = ["Votre famille est accusée de soutenir les humains et n’est donc pas particulièrement appréciée dans votre village natal.","Votre famille a été ostracisée à cause de ses opinions divergentes. Depuis, les gens vous évitent comme la peste, vous et vos proches.","Votre famille est morte pendant les Guerres nordiques. Elle a peut-être directement pris part au conflit ou a fait partie des victimes collatérales qui se trouvaient au mauvais endroit au mauvais moment.","Votre famille est au coeur d’une vendetta depuis des siècles. Même si personne ne se souvient des origines de ce conflit, il n’a rien perdu de sa violence.","Votre famille a été déchue de ses titres pour une raison quelconque. Vous avez été chassé de votre maison et deviez vous débrouiller pour survivre.","Durant votre jeunesse, votre famille menait des raids sur colonies humaines pour obtenir de la nourriture et peut-être se venger des hommes.","La demeure familiale est hantée. Apparemment, cette malédiction est le résultat des innombrables morts qui ont eu lieu à l’emplacement de votre maison lors de la guerre contre les humains.","Votre famille est divisée depuis qu’un de vos proches, peut-être votre frère ou votre soeur, est en couple avec un humain. Certains membres de votre parenté apprécient le nouveau venu, d’autres le détestent.","Votre famille a été tuée par des humains qui pensaient avoir mis la main sur des Scoia’tael. Vos proches ont été massacrés ou pendus sans avoir eu droit à un procès équitable.","Votre famille descend d’un traître notoire, ce qui a un impact sur ses relations avec les autres membres des races anciennes. Ces derniers vous mènent la vie dure dans votre terre natale."];
+	var DDD2 = ["Votre ou vos parents ont été accusés d’oeuvrer pour la Scoia’tael. Leurs voisins leur jettent des regards en coin.","Votre ou vos parents se sont retournés contre leur propre peuple et ont trahi les races anciennes en faveur des humains. Ils ne sont plus les bienvenus dans votre terre natale.","Votre ou vos parents ont sombré dans le désespoir et se sont suicidés. Comme ils ne pensaient plus retrouver la gloire passée de leur peuple, ils ont définitivement baissé les bras.","Au cours d’un voyage, vos parents ont été victimes de la xénophobie des humains. Ils sont morts au cours d’un pogrom et leurs corps ont été exposés sur des piques.","Votre ou vos parents sont devenus obsédés par l’idée de retrouver la gloire passée de leur race. Ils ont tout sacrifié pour cette cause.","Votre ou vos parents ont été exilés de leur terre natale, à cause d’un crime ou d’opinions divergentes par exemple.","Votre ou vos parents ont été victimes d’une malédiction. À vous de choisir laquelle ou de laisser le maître de jeu en décider.","Vos parents vous ont confié à une autre famille pour que vous puissiez survivre, car ils ne pouvaient pas prendre soin de vous.","Votre ou vos parents ont rejoint les Scoia’tael dans l’espoir de se venger des humains qui détruisent leur vie.","Votre ou vos parents sont morts dans un soi-disant accident. En réalité, ils se sont fait un ennemi puissant qui a fini par trouver le moyen de se débarrasser d’eux."];
+	var DDD3 = ["Vous avez grandi dans un palais où vous l’on rappelait sans cesse le glorieux passé de votre peuple. Vous devez être à la hauteur de cet héritage. Équipement de départ: lettre de noblesse (Réputation +2)","Vous êtes le fils d’un noble guerrier. Vous devez faire honneur à la réputation de votre famille sans jamais renier votre héritage. Équipement de départ: armoiries personnelles (Réputation +1)","Vous avez grandi dans une famille de marchands itinérants. La vie n’était pas toujours facile, mais l’artisanat non-humain est toujours très recherché. Équipement de départ: 2 connaissances","Vous êtes le fils d’un couple de scribes, chargés de perpétuer l’histoire des races anciennes et de la protéger autant que faire se peut. Équipement de départ: une chronique (Éducation +1)","Le chant et la musique vous ont accompagné toute votre jeunesse. Vous avez aussi travaillé en coulisses pour aider à écrire des chansons et à réparer des instruments. Équipement de départ: 1 instrument et 1 ami","Vous avez grandi dans une famille d’artisans qui visitait d’anciens palais pour trouver l’inspiration et consacrait de nombreuses heures à la réalisation de ses projets. Équipement de départ: 3 schémas/formules communes","Vous avez grandi dans une famille modeste qui s’occupait de l’entretien des manoirs des plus riches ou exerçait de petits boulots dans les environs de votre ville natale. Équipement de départ: un porte-bonheur (Chance +1)"];
+	var DDD4 = ["Un humain. La personne la plus influente a été un humain qui vous a appris que le racisme n’était pas toujours justifié. Équipement: une poupée de chiffon","Un artisan. Un artisan vous a appris à admirer l’art sublime des races anciennes. Équipement: un petit objet que vous avez fabriqué","Un guerrier noble. Un danseur de guerre ou un défenseur de Mahakam vous a expliqué ce qu’était l’honneur. Équipement: un trophée","Un aristocrate. Un membre d’une grande famille vous a appris la fierté et les subtilités de l’étiquette. Équipement: une chevalière","Un bateleur. Vous avez côtoyé un artiste qui vous a appris l’importance de la gaieté et de la beauté. Équipement: une affiche ou un ticket","Un bandit. Un pillard vous a convaincu que vous avez le droit de prendre ce dont vous avez besoin par la force. Équipement: une sacoche","Un sage. Vous avez été sous l’influence d’un sage qui vous a enseigné l’importance de l’histoire des races anciennes. Équipement: un livre de contes","Un criminel. Vous avez suivi les enseignements d’un hors-la-loi qui vous a poussé à suivre vos propres règles. Équipement: un masque","Un chasseur. Vous avez connu un chasseur qui vous a montré comment survivre dans les contrées sauvages. Équipement: un trophée de chasse","Un fermier pauvre. Vous avez appris auprès d’un paysan modeste à vivre heureux. Équipement: une bêche"];
+}
 
 if(Fratrie == "0"){var Fratrie = " Enfant unique,"}
-else{var Fratrie = " Issue d'une fratrie de "+Fratrie_1+",";}
-
-if(Destin_famille.value != ""){
-	if(Destin_famille.value == "1_1"){var Famille = "Votre famille a été dispersée par les guerres et vous ne savez pas où se trouvent la plupart d'entre elles.";}
-	if(Destin_famille.value == "1_2"){var Famille = "Votre famille a été emprisonnée pour des délits ou pour des accusations forgées de toutes pièces. Tu étais le seul à t'échapper. Vous voudrez peut-être les libérer ... ou peut-être pas.";}
-	if(Destin_famille.value == "1_3"){var Famille = "Votre maison familiale a été maudite et maintenant les récoltes ne poussent plus et des spectres parcourent les couloirs. Il est devenu trop dangereux pour vous de rester dans cette maison.";}
-	if(Destin_famille.value == "1_4"){var Famille = "Avec tant de guerres, le gagne-pain de votre famille a été détruit. Votre famille s'est tournée vers le crime pour survivre.";}
-	if(Destin_famille.value == "1_5"){var Famille = "Votre famille a accumulé une énorme dette de jeux. Vous avez désespérément besoin d'argent.";}
-	if(Destin_famille.value == "1_6"){var Famille = "Votre famille est morte dans une querelle avec une autre famille. Vous ne vous souvenez peut-être même pas pourquoi cette querelle a commencé...";}
-	if(Destin_famille.value == "1_7"){var Famille = "En raison d'une action ou d'une inaction, votre famille est devenue détestée dans votre ville natale et maintenant personne là-bas ne veut rien avoir à faire avec eux.";}
-	if(Destin_famille.value == "1_8"){var Famille = "Un jour, tout ce que vous aviez a été arraché par une bande de bandits. Votre famille a été massacrée, vous laissant entièrement seul.";}
-	if(Destin_famille.value == "1_9"){var Famille = "Votre famille a un secret profond et sombre qui, s'il était découvert, vous ruinerait complètement. Vous pouvez décider quel est ce secret, ou le MJ peut décider.";}
-	if(Destin_famille.value == "1_10"){var Famille = "Votre famille en est venue à se mépriser. Personne avec qui vous avez grandi ne vous reparlera et vous avez de la chance de recevoir le bonjour de vos frères et sœurs.";}
-
-	if(Destin_famille.value == "2_1"){var Famille = "Votre famille a été condamné pour des crimes contre l'Empire ou pour de fausses accusations. Vous seul avez échappé.";}
-	if(Destin_famille.value == "2_2"){var Famille = "Votre famille a été exilée dans le désert de Korath et vous avez probablement passé la majeure partie de votre jeunesse à lutter pour survivre dans ce désert mortel.";}
-	if(Destin_famille.value == "2_3"){var Famille = "Votre famille a été tuée par un mage renégat qui a eu une vendetta contre votre famille ou qui voulait juste du sang. De toute façon, vous êtes seul.";}
-	if(Destin_famille.value == "2_4"){var Famille = "Votre famille a disparu et vous ne savez pas où ils sont allés. Un jour, ils se sont levés et sont partis.";}
-	if(Destin_famille.value == "2_5"){var Famille = "Votre famille a été exécutée pour trahison contre l'Empire. Vous étiez le seul à échapper à ce sort.";}
-	if(Destin_famille.value == "2_6"){var Famille = "Votre famille a été dépouillée de son titre pour une raison quelconque. Vous avez été expulsé de votre domicile et vous avez dû survivre parmi le peuple.";}
-	if(Destin_famille.value == "2_7"){var Famille = "Votre nom de famille a été terni par un parent magicien qui s'affiche honteusement comme un mage du Nord.";}
-	if(Destin_famille.value == "2_8"){var Famille = "Vous avez déshonoré votre famille aux yeux de l'Empire. Quelque chose que vous avez fait ou omis de faire a ruiné votre nom personnel et a nui à votre famille.";}
-	if(Destin_famille.value == "2_9"){var Famille = "Votre famille a un secret profond et sombre qui, s'il était découvert, les détruirait ainsi que leur nom pour toujours. Vous devez protéger ce secret avec votre vie.";}
-	if(Destin_famille.value == "2_10"){var Famille = "Votre famille a été assassinée. Ils peuvent avoir gêné le plan de quelqu'un ou avoir été utilisé pour atteindre quelqu'un de plus puissant. De toute façon, votre famille est partie maintenant.";}
-
-	if(Destin_famille.value == "3_1"){var Famille = "Votre famille était marquée comme des sympathisants humains et n'est pas particulièrement aimée dans sa patrie.";}
-	if(Destin_famille.value == "3_2"){var Famille = "Votre famille a été ostracisée pour ses opinions dissidentes et maintenant les gens ne vont plus socialiser avec vous ou votre famille.";}
-	if(Destin_famille.value == "3_3"){var Famille = "Votre famille est morte dans les guerres du Nord. Ils ont peut-être effectivement combattu pendant la guerre ou ont été des victimes de la guerre.";}
-	if(Destin_famille.value == "3_4"){var Famille = "Votre famille est prise dans une querelle depuis des siècles. Vous ne vous souvenez peut-être pas pourquoi cette querelle a commencé, mais c'est terrible.";}
-	if(Destin_famille.value == "3_5"){var Famille = "Votre famille a été dépouillée de son titre pour une raison quelconque. Vous avez été expulsé de votre domicile et laissé en difficulté pour survivre";}
-	if(Destin_famille.value == "3_6"){var Famille = "Votre famille a pillé des établissements humains au début de votre vie pour obtenir de la nourriture et peut-être riposter contre les humains.";}
-	if(Destin_famille.value == "3_7"){var Famille = "Votre maison familiale est hantée. C'est très probablement parce que votre maison a été le site de nombreux morts pendant la guerre contre les humains.";}
-	if(Destin_famille.value == "3_8"){var Famille = "Votre famille a été divisée par un beau-père humain qui a été amené dans votre famille par un frère ou une sœur. Certains membres de votre famille les aiment et d'autres les détestent.</option>";}
-	if(Destin_famille.value == "3_9"){var Famille = "Votre famille a été tuée par des humains qui les prennaient pour des Scoia’tael. Ils peuvent avoir été abattus ou pendus sans procédure ni procès.";}
-	if(Destin_famille.value == "3_10"){var Famille = "Votre famille est issue d'un traître infâme. Il entache les interactions de votre famille avec les autres races et rend la vie dans les terres ancestrales difficile.";}
-	
-}	
-
-if(Destin_parents.value != ""){
-	if(Destin_parents.value == "1_1"){var Famille = "Un ou plusieurs de vos parents ont été tués dans les guerres du Nord. Très probablement votre père, mais il est également possible que votre mère se soit battue ou ait été une victime.";}
-	if(Destin_parents.value == "1_2"){var Famille = "Un ou plusieurs de vos parents vous ont laissé seul dans les étendus sauvages. Peut-être qu'ils ne pouvaient pas se permettre de vous garder; vous étiez peut-être un accident.";}
-	if(Destin_parents.value == "1_3"){var Famille = "Un ou plusieurs de vos parents ont été maudits par un mage ou à cause de la haine intense de quelqu'un qu'ils ont rencontré. La malédiction leur a pris la vie.";}
-	if(Destin_parents.value == "1_4"){var Famille = "Un ou plusieurs de vos parents vous ont vendu pour de la monnaie ou vous ont peut-être échangé contre certains biens ou services. Vos parents avaient plus besoin d'argent que vous.";}
-	if(Destin_parents.value == "1_5"){var Famille = "Un ou plusieurs de vos parents ont rejoint un gang. Vous avez vu ce gang souvent et avez parfois été obligé de travailler avec eux.";}
-	if(Destin_parents.value == "1_6"){var Famille = "Un ou plusieurs de vos parents ont été tués par des monstres. C'est à vous de décider à quoi ils ont pu être la proie.";}
-	if(Destin_parents.value == "1_7"){var Famille = "Un ou plusieurs de vos parents ont été exécutés à tort. Ils peuvent avoir été un bouc émissaire pour quelque chose ou simplement au mauvais endroit.";}
-	if(Destin_parents.value == "1_8"){var Famille = "Un ou plusieurs de vos parents sont morts de la peste. Il n'y avait rien d'autre à faire que d'essayer d'achever leur souffrance.";}
-	if(Destin_parents.value == "1_9"){var Famille = "Un ou plusieurs de vos parents ont fait défection à Nilfgaard. Ils ont peut-être obtenu un accord pour obtenir des informations ou ils ont peut-être simplement franchi la frontière.";}
-	if(Destin_parents.value == "1_10"){var Famille = "Un ou plusieurs de vos parents ont été enlevés par des nobles. C'est probablement votre mère qui a attiré l'attention d'un seigneur local ou de son fils.";}
-	
-	if(Destin_parents.value == "2_1"){var Famille = "Votre père est décédé dans l'une des guerres du Nord. Il a peut-être déjà été dans l'armée ou il peut avoir été enrôlé pendant cette guerre";}
-	if(Destin_parents.value == "2_2"){var Famille = "Un ou plusieurs de vos parents ont été empoisonnés. Cela a peut-être été le travail d'un rival professionnel, ou cela a peut-être été pour écarter vos parents.";}
-	if(Destin_parents.value == "2_3"){var Famille = "La police secrète a emmené votre ou vos parents pour un «interrogatoire». La semaine suivante, leur corps a été retrouvé pendu dans les rues de la ville.";}
-	if(Destin_parents.value == "2_4"){var Famille = "Un ou plusieurs de vos parents ont été tués par un mage voyou. Ils ont très probablement essayé de remettre le mage en question et en ont payé le prix.";}
-	if(Destin_parents.value == "2_5"){var Famille = "Un ou plusieurs de vos parents ont été emprisonnés pour magie illégale. Peut-être qu'ils ont réellement commis le crime ou peut-être que c'était une mise en scène.";}
-	if(Destin_parents.value == "2_6"){var Famille = "Un ou plusieurs de vos parents ont été exilés dans le désert de Korath. Ils ont probablement commis un crime majeur, mais les tuer causerait des problèmes.";}
-	if(Destin_parents.value == "2_7"){var Famille = "Un ou plusieurs de vos parents ont été maudits par un mage. Le mage avait probablement une vendetta contre eux.";}
-	if(Destin_parents.value == "2_8"){var Famille = "Vos parents vous ont simplement quittés. Vous ne savez peut-être même pas pourquoi ils l'ont fait. Un jour, vos parents ont tout simplement disparu.";}
-	if(Destin_parents.value == "2_9"){var Famille = "Un ou plusieurs de vos parents ont été réduits en esclavage. Ils ont commis un crime contre l'Empire ou ont été piégé par un rival.";}
-	if(Destin_parents.value == "2_10"){var Famille = "Un ou plusieurs de vos parents ont été envoyés dans le Nord comme agents doubles. Vous ne savez probablement même pas où ils sont maintenant, mais ils servent l'Empereur.";}
-	
-	if(Destin_parents.value == "3_1"){var Famille = "Un ou plusieurs de vos parents ont été accusés d’être Scoia’tael. Les gens autour de vous jettent des regards à vos parents.";}
-	if(Destin_parents.value == "3_2"){var Famille = "Un ou plusieurs de vos parents se sont retournés contre votre propre peuple et ont vendu les races aînées aux humains. Vos parents ne sont pas les bienvenus dans votre pays d'origine.";}
-	if(Destin_parents.value == "3_3"){var Famille = "Un ou plusieurs de vos parents se sont suicidés de désespoir. Sans espoir de regagner la gloire du passé, ils ont abandonné et y ont mis fin.";}
-	if(Destin_parents.value == "3_4"){var Famille = "En voyage, un ou plusieurs de vos parents sont devenus la proie du racisme humain. Ils sont morts dans un pogrom et leurs corps ont été affichés sur des piques.";}
-	if(Destin_parents.value == "3_5"){var Famille = "Un ou plusieurs de vos parents sont devenus obsédés par le fait de retrouver l'ancienne gloire de leur race. Ils ont tout sacrifié pour cette cause.";}
-	if(Destin_parents.value == "3_6"){var Famille = "Un ou plusieurs de vos parents ont été exilés de votre patrie. Il existe de nombreuses raisons possibles, du crime aux opinions dissidentes.";}
-	if(Destin_parents.value == "3_7"){var Famille = "Un ou plusieurs de vos parents ont été maudits. Vous pouvez décider de ce qu'est cette malédiction ou, le Game Master peut décider.";}
-	if(Destin_parents.value == "3_8"){var Famille = "Vos parents vous ont donné à une autre famille pour que vous puissiez survivre, car ils ne pouvaient pas prendre soin de vous.";}
-	if(Destin_parents.value == "3_9"){var Famille = "Un ou plusieurs de vos parents ont rejoint les Scoia’tael pour tenter de se venger des humains qu’ils considèrent comme ruinant leur vie.";}
-	if(Destin_parents.value == "3_10"){var Famille = "Un ou plusieurs de vos parents sont décédés dans un «accident». Très probablement, ils se sont fait un ennemi puissant qui a finalement trouvé un moyen de s'en débarrasser.";}
+else{
+	var Frer = "";
+for (let i = 0; i < Fratrie; i++) {
+	if(i == Number(Number(Fratrie)-1)){Frer = Frer+LesRands('Frère');}else{Frer = Frer+LesRands('Frère')+", ";}
 }
-if(Statut_familial.value != ""){
-	if(Statut_familial.value == "1_1"){var Famille = "Aristocratie: Vous avez grandi dans un noble manoir avec des serviteurs pour vous attendre, mais vous vous attendiez toujours à vous comporter et à impressionner. Équipement de départ: Papier de noblesse (+2 Réputation)";}
-	if(Statut_familial.value == "1_2"){var Famille = "Adopté par un mage: Vous avez été donné à un mage à un jeune âge. Vous viviez dans le confort mais voyiez à peine votre concierge, toujours occupé. Équipement de départ: une chronique (+1 éducation)";}
-	if(Statut_familial.value == "1_3"){var Famille = "Chevaliers: Vous avez grandi dans un manoir où vous avez appris à être une vraie dame ou un seigneur. Votre destin a été fixé dès la naissance.Équipement de départ: Héraldique personnelle (+1 réputation)";}
-	if(Statut_familial.value == "1_4"){var Famille = "Famille de marchands: vous avez grandi parmi les marchands et vous avez toujours été entouré de cris, de marchandages et d'argent. Équipement de départ: 2 connaissances";}
-	if(Statut_familial.value == "1_5"){var Famille = "Famille d'artisans: vous avez grandi dans un atelier d'artisans. Vos journées ont été remplies des bruits incessants de la création, et souvent longues. Équipement de départ: 3 diagrammes / formules communes";}
-	if(Statut_familial.value == "1_6"){var Famille = "Famille d'artiste: Vous avez grandi avec un groupe d'artistes. Vous avez peut-être voyagé ou joué dans un théâtre. Équipement de départ: 1 instrument et 1 ami";}
-	if(Statut_familial.value == "1_7"){var Famille = "Famille paysanne: vous avez grandi dans une ferme à la campagne. Vous n'aviez pas grand-chose à votre nom et votre vie était simple, mais dangereuse. Équipement de départ: un jeton chanceux (+1 chance)";}
+	var Fratrie = " Issue d'une fratrie de "+Fratrie_1+": "+Frer;
 
-	if(Statut_familial.value == "2_1"){var Famille = "Aristocratie: Vous avez grandi dans un manoir, vous vous entraînez à bien connaître le monde de la cour. Le luxe n'était que votre motivation. Équipement de départ: Papier de noblesse (+2 Réputation)";}
-	if(Statut_familial.value == "2_2"){var Famille = "Haut clergé: vous avez été élevé parmi le clergé du Grand Soleil. Vous avez grandi pieux et toujours conscient que l'Église vous guiderait. Équipement de départ: un symbole sacré (+1 Courage)";}
-	if(Statut_familial.value == "2_3"){var Famille = "Chevaliers: Vous avez grandi en sachant que votre devoir était envers l'empereur et que tout votre luxe était une récompense pour votre service éventuel. Équipement de départ: Héraldique personnelle (+1 réputation)";}
-	if(Statut_familial.value == "2_4"){var Famille = "Famille d'artisan: Vous avez grandi dans une boutique d'artisan, apprenant à créer des produits à vendre dans le monde entier. Vous avez appris la valeur de la qualité. Équipement de départ: 3 diagrammes / formules communes";}
-	if(Statut_familial.value == "2_5"){var Famille = "Famille de marchands: vous avez grandi en vendant des produits dans tout l'Empire. Vous avez vu toutes sortes de produits exotiques du monde entier. Équipement de départ: 2 connaissances";}
-	if(Statut_familial.value == "2_6"){var Famille = "Né dans la servitude: vous êtes né dans la servitude et avez vécu dans des quartiers simples. Vous possédiez très peu et peiniez souvent. Équipement de départ: un oiseau ou un serpent entraîné";}
-	if(Statut_familial.value == "2_7"){var Famille = "Famille paysanne: Vous avez grandi dans l'une des milliers de fermes de l'Empire. Vous aviez peu de choses à votre nom mais la vie était simple. Équipement de départ: un jeton chanceux (+1 chance)";}
 
-	if(Statut_familial.value == "3_1"){var Famille = "Aristocratie: Vous avez grandi dans un palais et vous avez constamment rappelé la gloire du passé. Vous deviez être à la hauteur de l'héritage. Équipement de départ: Papier de noblesse (+2 Réputation)";}
-	if(Statut_familial.value == "3_2"){var Famille = "Guerrier noble: Vous avez grandi en tant qu'enfant de noble guerrier, censé élever la réputation de votre famille et ne jamais déshonorer votre héritage. Équipement de départ: Héraldique personnelle (+1 réputation)";}
-	if(Statut_familial.value == "3_3"){var Famille = "Marchands: vous avez grandi parmi les marchands itinérants. La vie était parfois difficile, mais les loisirs non humains ont toujours de la valeur. Équipement de départ: 2 connaissances";}
-	if(Statut_familial.value == "3_4"){var Famille = "Famille de scribes: Vous avez grandi en tant qu'enfant de scribes, enregistrant et protégeant le plus possible l'histoire des personnes âgées. Équipement de départ: une chronique (+1 éducation)";}
-	if(Statut_familial.value == "3_5"){var Famille = "Artistes: Vous avez grandi en chantant des chansons et en jouant des pièces. Vous avez travaillé dans les coulisses, aidé à écrire des chansons et réparé des instruments. Équipement de départ: 1 instrument et 1 ami";}
-	if(Statut_familial.value == "3_6"){var Famille = "Famille d'artisans: Vous avez grandi dans une famille d'artisans, visitant d'anciens palais pour vous inspirer et passant des heures chaque jour sur des projets. Équipement de départ: 3 diagrammes / formules courants";}
-	if(Statut_familial.value == "3_7"){var Famille = "Famille de roturiers: vous avez grandi dans une famille basse-née, occupée aux manoirs des autres ou occupant de petits emplois dans votre ville natale. Équipement de départ: un jeton chanceux (+1 chance)";}
 }
 
-if(Mentor == "1_1"){var Mentor = "l'église. Vous avez grandi sous l'influence de votre religion locale et avez passé des heures par jour à l'église. Équipement: un texte sacré";}
-if(Mentor == "1_2"){var Mentor = "un artisan qui vous a appris à apprécier l'art et les compétences. Équipement: un jeton que vous avez créé";}
-if(Mentor == "1_3"){var Mentor = "un comte ou une comtesse qui vous a appris à vous composer. Équipement: une bague en argent";}
-if(Mentor == "1_4"){var Mentor = "un mage qui vous a appris à ne pas craindre la magie et à toujours remettre en question. Équipement: un petit pendentif";}
-if(Mentor == "1_5"){var Mentor = "une sorcière du village qui vous a appris l'importance de la connaissance. Équipement: une poupée magique noire";}
-if(Mentor == "1_6"){var Mentor = "une personne maudite qui vous a appris à ne jamais juger les autres trop sévèrement. Équipement: un totem sculpté";}
-if(Mentor == "1_7"){var Mentor = "un artiste qui vous a beaucoup appris sur le spectacle. Équipement: un ticket";}
-if(Mentor == "1_8"){var Mentor = "un marchand qui vous a appris à être astucieux et intelligent. Équipement: une pièce que vous avez gagnée";}
-if(Mentor == "1_9"){var Mentor = "un criminel qui vous a appris à prendre soin de vous. Équipement: un masque";}
-if(Mentor == "1_10"){var Mentor = "un soldat qui vous a appris à vous défendre. Équipement: un trophée de bataille";}
+if(Destin_famille.value != ""){var Famille = DDD1[$('#Destin_famille').val()];}	
+if(Destin_parents.value != ""){var Famille = DDD2[$('#Destin_famille').val()];}	
+if(Statut_familial.value != ""){var Famille = DDD3[$('#Destin_famille').val()]+".";}	
 
-if(Mentor == "2_1"){var Mentor = "a été l'Église. Vous avez passé des années à apprendre des chants et des rituels. Équipement: un masque de cérémonie";}
-if(Mentor == "2_2"){var Mentor = "un paria social qui vous a appris à toujours remettre en question la société. Équipement: un badge coloré brillant";}
-if(Mentor == "2_3"){var Mentor = "un comte qui vous a appris à diriger et à inculquer l'ordre. Équipement: un collier en argent";}
-if(Mentor == "2_4"){var Mentor = "un mage qui vous a appris l'importance de l'ordre et de la prudence. Équipement: un emblème";}
-if(Mentor == "2_5"){var Mentor = "un détective impérial. Vous avez passé beaucoup de temps à résoudre des mystères. Équipement: une loupe";}
-if(Mentor == "2_6"){var Mentor = "un chasseur de mages qui vous a appris à faire attention à la magie et aux mages. Équipement: une bague en Dimeritium";}
-if(Mentor == "2_7"){var Mentor = "un soldat qui a partagé des histoires de danger et d'excitation. Équipement: un trophée de bataille";}
-if(Mentor == "2_8"){var Mentor = "un artisan qui vous a appris à apprécier la compétence et la précision. Équipement: un bijou que vous avez créé";}
-if(Mentor == "2_9"){var Mentor = "un monstre sensible qui vous a appris que tous les monstres ne sont pas mauvais. Équipement: un étrange totem";}
-if(Mentor == "2_10"){var Mentor = "un artiste qui vous a appris à vous exprimer. Équipement: un jeton d'un fan";}
-
-if(Mentor == "3_1"){var Mentor = "Un humain qui vous a appris que le racisme est parfois infondé. Équipement: une poupée de paille";}
-if(Mentor == "3_2"){var Mentor = "un artisan qui vous a appris à apprécier le grand art des personnes âgées. Équipement: un petit jeton que vous avez créé";}
-if(Mentor == "3_3"){var Mentor = "un Danseur de Guerre ou un Défenseur Mahakaman qui vous a enseigné l'honneur. Équipement: un jeton de bataille";}
-if(Mentor == "3_4"){var Mentor = "un highborn qui vous a enseigné la fierté et comment vous comporter. Équipement: une chevalière";}
-if(Mentor == "3_5"){var Mentor = "un artiste qui vous a appris l'importance du bonheur et de la beauté. Équipement: un ticket";}
-if(Mentor == "3_6"){var Mentor = "un pillard qui vous a appris que vous avez le droit de prendre ce dont vous avez besoin. Équipement: un cartable";}
-if(Mentor == "3_7"){var Mentor = "un sage qui vous a enseigné l'importance de l'histoire des personnes âgées. Équipement: un livre de contes";}
-if(Mentor == "3_8"){var Mentor = "un criminel qui vous a appris à suivre vos propres règles. Équipement: un masque";}
-if(Mentor == "3_9"){var Mentor = "un chasseur qui vous a appris à survivre dans les terres sauvages. Équipement: un trophée de chasse";}
-if(Mentor == "3_10"){var Mentor = "un agriculteur des basses terres qui vous a appris à vivre heureux. Équipement: pelle d'agriculteur";}
-
-var Mentor = ". <br>Possède pour mentor "+Mentor;
+var Mentor = DDD4[Mentor];
+var Mentor = ". <br>Possède pour influence: "+Mentor;
 
 Récap_HDM.innerHTML = Origine+Fratrie+"<br>"+Famille+Mentor+"<br>"+Events.innerHTML;
 
@@ -2307,11 +1969,8 @@ function RandomLifeWither2(e){
 }
    
 function FormationWitcher(){
-
 	Bouton_Formation_Witcher.style.display = "none";
-	
 	var EH = "0"; 	// Epreuve des Herbes 
-	
 	Sorceleur_3_4.style.display = "block";
 	
 	var EV_1 = Math.floor(Math.random() * Math.floor(10))+1;
@@ -2841,6 +2500,8 @@ async function fillForm() {
 	if(DTB.race == 'Nain'){var Particularités = "Tanné comme du cuir\nCoriace\nOEil de l’expert";}
 	if(DTB.race == 'Humain'){var Particularités = "Digne de confiance\nIngénieux\nTêtu comme une mule";}
 	if(DTB.race == 'Vampire'){var Particularités = "Sens Vampiriques\nÊtre Surnaturel\nCorps de Vampire\nDes années d'expériences";}
+	if(DTB.race == 'Halfelin'){var Particularités = "Agile\nFermier\nRésistant à la magie";}
+	if(DTB.race == 'Gnome'){var Particularités = "Maîtres artisans\nLangue d'argent\nSens aigu de l'odorat";}
 
 	partiField.setText(Particularités);
 

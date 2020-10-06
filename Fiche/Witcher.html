@@ -43,7 +43,7 @@
 <div id="GrT"> <!-- Tableau autour du texte -->
 
 <h2>The Witcher</h2>
-<p style = "text-decoration: underline; font-weight: bold;"> Merci de remplir la feuille de création de personnage ci-dessous et de le valider <a target="_blank" href="../Guide/Witcher_fr.pdf" class="badge badge-warning">Description Fr ici</a></p>
+<p style = "text-decoration: underline; font-weight: bold;"> Merci de remplir la feuille de création de personnage ci-dessous et de le valider <a target="_blank" href="http://www.the-witcher-jdr.fr/fichiers/aides/combats/competences.pdf" class="badge badge-warning">Description Fr ici</a></p>
 	
 	<div style="margin-left:25%;margin-right:25%;">	<!-- Barre de progression -->
 <div class="progress" style="height: 20px;">
@@ -84,7 +84,9 @@
 					<option value="Humain">Humain</option>
 					<option value="Elfe">Elfe</option>
 					<option value="Nain">Nain</option>
+					<option value="Halfelin">Halfelin</option>
 					<option value="Vampire">Vampire*</option>
+					<option value="Gnome">Gnome</option>
 			</select>
 			<div class="invalid-feedback">Selectionnez la race du personnage</div>			
 		</div>
@@ -98,7 +100,7 @@
 					<option value="5">Homme d’armes</option>
 					<option value="6">Mage</option>
 					<option value="7">Marchand</option>
-					<option value="8">Prêtre / Druide</option>
+					<option value="8">Prêtre</option>
 					<option disabled value="9">Sorceleur</option>
 					<option disabled value="10">Vampire</option>
 			</select>
@@ -115,15 +117,15 @@
 <div id="Passé_Normaux">
 <div>Je préfère sauter cette étape (aléatoire)
 <label class="switch">
-			<input type="checkbox" id="HdV_random" onclick="RandomLife()">
+			<input type="checkbox" id="HdV_random" onclick="RandomLife2()">
 			<span class="slider round"></span>
 </label>
 </div>
 <br>
 <div><h4>Patrie :</h4>	<!-- Patrie -->
-<div class="form-row" >	
+	<div class="form-row" >	
 		<div class="col">
-			<select name="Région" id="Région" class="custom-select" style="background-color:white" onchange="Région2()">
+			<select id="Région" class="custom-select" style="background-color:white" onchange="Région2()">
 				<option disabled selected value="">Région</option>
 				<option value="1">Royaumes du Nord</option>
 				<option value="2">Nilfgaard</option>
@@ -132,37 +134,8 @@
 			<div class="invalid-feedback">Selectionnez la région du personnage</div>			
 		</div>
 		<div class="col">
-			<select name="Origine" id="Origine" class="custom-select" style="background-color:white" onchange="">
+			<select id="Origine" class="custom-select" style="background-color:white" onchange="">
 				<option disabled selected value="">Origine</option>
-				<optgroup label="Royaumes du Nord">
-					<option id="Origine_RN_1" value="1_1">Redania</option>
-					<option id="Origine_RN_2" value="1_2">Kaedwen</option>
-					<option id="Origine_RN_3" value="1_3">Temeria</option>
-					<option id="Origine_RN_4" value="1_4">Aedirn</option>
-					<option id="Origine_RN_5" value="1_5">Lyria & Rivia</option>
-					<option id="Origine_RN_6" value="1_6">Kovir & Poviss</option>
-					<option id="Origine_RN_7" value="1_7">Skellige</option>
-					<option id="Origine_RN_8" value="1_8">Cidaris</option>
-					<option id="Origine_RN_9" value="1_9">Verden</option>
-					<option id="Origine_RN_10" value="1_10">Cintra</option>
-				</optgroup>
-				<optgroup label="Nilfgaard">
-					<option id="Origine_N_1" value="2_1">Le Cœur de Nilfgaard</option>
-					<option id="Origine_N_2" value="2_2">Vicovaro</option>
-					<option id="Origine_N_3" value="2_3">Angren</option>
-					<option id="Origine_N_4" value="2_4">Nazair</option>
-					<option id="Origine_N_5" value="2_5">Mettina</option>
-					<option id="Origine_N_6" value="2_6">Mag Turga</option>
-					<option id="Origine_N_7" value="2_7">Gheso</option>
-					<option id="Origine_N_8" value="2_8">Ebbing</option>
-					<option id="Origine_N_9" value="2_9">Maecht</option>
-					<option id="Origine_N_10" value="2_10">Gemmeria</option>
-					<option id="Origine_N_11" value="2_11">Etolia</option>
-				</optgroup>
-				<optgroup label="Terres Ancestrales">
-					<option disabled value="3_1">Dol Blathanna</option>
-					<option disabled value="3_2">Mahakam</option>
-				</optgroup>
 			</select>
 			<div class="invalid-feedback">Selectionnez la région d'origine du personnage</div>			
 		</div>
@@ -791,7 +764,7 @@ Famille de roturiers: vous avez grandi dans une famille basse-née, occupée aux
 <br><br>
 <div class="form-row" >	
 		<div class="col">
-			<select name="Famille" id="Famille" class="custom-select" style="background-color:white" onchange="famille2()">
+			<select id="Famille" class="custom-select" style="background-color:white" onchange="famille2()">
 				<option disabled selected value="">Famille</option>
 				<option value="1">Certain sont encore en vie</option>
 				<option value="2">Quelque chose est arrivé...</option>
@@ -811,117 +784,45 @@ Famille de roturiers: vous avez grandi dans une famille basse-née, occupée aux
 		<div class="col">
 			<select name="Destin_famille" id="Destin_famille" class="custom-select" style="background-color:white">
 				<option disabled selected value="">Destin familiale</option>
-				<optgroup label="Royaumes du Nord">
-					<option id="Destin_famille_RN_1" value="1_1">Destin 1</option>
-					<option id="Destin_famille_RN_2" value="1_2">Destin 2</option>
-					<option id="Destin_famille_RN_3" value="1_3">Destin 3</option>
-					<option id="Destin_famille_RN_4" value="1_4">Destin 4</option>
-					<option id="Destin_famille_RN_5" value="1_5">Destin 5</option>
-					<option id="Destin_famille_RN_6" value="1_6">Destin 6</option>
-					<option id="Destin_famille_RN_7" value="1_7">Destin 7</option>
-					<option id="Destin_famille_RN_8" value="1_8">Destin 8</option>
-					<option id="Destin_famille_RN_9" value="1_9">Destin 9</option>
-					<option id="Destin_famille_RN_10" value="1_10">Destin 10</option>
-				</optgroup>
-				<optgroup label="Nilfgaard">
-					<option id="Destin_famille_N_1" value="2_1">Destin 1</option>
-					<option id="Destin_famille_N_2" value="2_2">Destin 2</option>
-					<option id="Destin_famille_N_3" value="2_3">Destin 3</option>
-					<option id="Destin_famille_N_4" value="2_4">Destin 4</option>
-					<option id="Destin_famille_N_5" value="2_5">Destin 5</option>
-					<option id="Destin_famille_N_6" value="2_6">Destin 6</option>
-					<option id="Destin_famille_N_7" value="2_7">Destin 7</option>
-					<option id="Destin_famille_N_8" value="2_8">Destin 8</option>
-					<option id="Destin_famille_N_9" value="2_9">Destin 9</option>
-					<option id="Destin_famille_N_10" value="2_10">Destin 10</option>
-				</optgroup>
-				<optgroup label="Terres Ancestrales">
-					<option id="Destin_famille_TA_1" value="3_1">Destin 1</option>
-					<option id="Destin_famille_TA_2" value="3_2">Destin 2</option>
-					<option id="Destin_famille_TA_3" value="3_3">Destin 3</option>
-					<option id="Destin_famille_TA_4" value="3_4">Destin 4</option>
-					<option id="Destin_famille_TA_5" value="3_5">Destin 5</option>
-					<option id="Destin_famille_TA_6" value="3_6">Destin 6</option>
-					<option id="Destin_famille_TA_7" value="3_7">Destin 7</option>
-					<option id="Destin_famille_TA_8" value="3_8">Destin 8</option>
-					<option id="Destin_famille_TA_9" value="3_9">Destin 9</option>
-					<option id="Destin_famille_TA_10" value="3_10">Destin 10</option>
-				</optgroup>
+				<option value="0">Destin 1</option>
+				<option value="1">Destin 2</option>
+				<option value="2">Destin 3</option>
+				<option value="3">Destin 4</option>
+				<option value="4">Destin 5</option>
+				<option value="5">Destin 6</option>
+				<option value="6">Destin 7</option>
+				<option value="7">Destin 8</option>
+				<option value="8">Destin 9</option>
+				<option value="9">Destin 10</option>
 			</select>
 			<div class="invalid-feedback">Selectionnez le destin familiale</div>			
 		</div>
 		<div class="col">
 			<select name="Destin_parents" id="Destin_parents" class="custom-select" style="background-color:white">
 				<option disabled selected value="">Destin parental</option>
-				<optgroup label="Royaumes du Nord">
-					<option id="Destin_parents_RN_1" value="1_1">Destin 1</option>
-					<option id="Destin_parents_RN_2" value="1_2">Destin 2</option>
-					<option id="Destin_parents_RN_3" value="1_3">Destin 3</option>
-					<option id="Destin_parents_RN_4" value="1_4">Destin 4</option>
-					<option id="Destin_parents_RN_5" value="1_5">Destin 5</option>
-					<option id="Destin_parents_RN_6" value="1_6">Destin 6</option>
-					<option id="Destin_parents_RN_7" value="1_7">Destin 7</option>
-					<option id="Destin_parents_RN_8" value="1_8">Destin 8</option>
-					<option id="Destin_parents_RN_9" value="1_9">Destin 9</option>
-					<option id="Destin_parents_RN_10" value="1_10">Destin 10</option>
-				</optgroup>
-				<optgroup label="Nilfgaard">
-					<option id="Destin_parents_N_1" value="2_1">Destin 1</option>
-					<option id="Destin_parents_N_2" value="2_2">Destin 2</option>
-					<option id="Destin_parents_N_3" value="2_3">Destin 3</option>
-					<option id="Destin_parents_N_4" value="2_4">Destin 4</option>
-					<option id="Destin_parents_N_5" value="2_5">Destin 5</option>
-					<option id="Destin_parents_N_6" value="2_6">Destin 6</option>
-					<option id="Destin_parents_N_7" value="2_7">Destin 7</option>
-					<option id="Destin_parents_N_8" value="2_8">Destin 8</option>
-					<option id="Destin_parents_N_9" value="2_9">Destin 9</option>
-					<option id="Destin_parents_N_10" value="2_10">Destin 10</option>
-				</optgroup>
-				<optgroup label="Terres Ancestrales">
-					<option id="Destin_parents_TA_1" value="3_1">Destin 1</option>
-					<option id="Destin_parents_TA_2" value="3_2">Destin 2</option>
-					<option id="Destin_parents_TA_3" value="3_3">Destin 3</option>
-					<option id="Destin_parents_TA_4" value="3_4">Destin 4</option>
-					<option id="Destin_parents_TA_5" value="3_5">Destin 5</option>
-					<option id="Destin_parents_TA_6" value="3_6">Destin 6</option>
-					<option id="Destin_parents_TA_7" value="3_7">Destin 7</option>
-					<option id="Destin_parents_TA_8" value="3_8">Destin 8</option>
-					<option id="Destin_parents_TA_9" value="3_9">Destin 9</option>
-					<option id="Destin_parents_TA_10" value="3_10">Destin 10</option>
-				</optgroup>
+				<option value="0">Destin 1</option>
+				<option value="1">Destin 2</option>
+				<option value="2">Destin 3</option>
+				<option value="3">Destin 4</option>
+				<option value="4">Destin 5</option>
+				<option value="5">Destin 6</option>
+				<option value="6">Destin 7</option>
+				<option value="7">Destin 8</option>
+				<option value="8">Destin 9</option>
+				<option value="9">Destin 10</option>
 			</select>
 			<div class="invalid-feedback">Selectionnez le destin parental</div>			
 		</div>
 		<div class="col">
 			<select name="Statut_familial" id="Statut_familial" class="custom-select" style="background-color:white">
 				<option disabled selected value="">Statut familial</option>
-				<optgroup label="Royaumes du Nord">
-					<option id="Statut_familial_RN_1" value="1_1">Statut 1</option>
-					<option id="Statut_familial_RN_2" value="1_2">Statut 2</option>
-					<option id="Statut_familial_RN_3" value="1_3">Statut 3</option>
-					<option id="Statut_familial_RN_4" value="1_4">Statut 4</option>
-					<option id="Statut_familial_RN_5" value="1_5">Statut 5</option>
-					<option id="Statut_familial_RN_6" value="1_6">Statut 6</option>
-					<option id="Statut_familial_RN_7" value="1_7">Statut 7</option>
-				</optgroup>
-				<optgroup label="Nilfgaard">
-					<option id="Statut_familial_N_1" value="2_1">Statut 1</option>
-					<option id="Statut_familial_N_2" value="2_2">Statut 2</option>
-					<option id="Statut_familial_N_3" value="2_3">Statut 3</option>
-					<option id="Statut_familial_N_4" value="2_4">Statut 4</option>
-					<option id="Statut_familial_N_5" value="2_5">Statut 5</option>
-					<option id="Statut_familial_N_6" value="2_6">Statut 6</option>
-					<option id="Statut_familial_N_7" value="2_7">Statut 7</option>
-				</optgroup>
-				<optgroup label="Terres Ancestrales">
-					<option id="Statut_familial_TA_1" value="3_1">Statut 1</option>
-					<option id="Statut_familial_TA_2"value="3_2">Statut 2</option>
-					<option id="Statut_familial_TA_3"value="3_3">Statut 3</option>
-					<option id="Statut_familial_TA_4"value="3_4">Statut 4</option>
-					<option id="Statut_familial_TA_5"value="3_5">Statut 5</option>
-					<option id="Statut_familial_TA_6"value="3_6">Statut 6</option>
-					<option id="Statut_familial_TA_7"value="3_7">Statut 7</option>
-				</optgroup>
+				<option value="0">Statut 1</option>
+				<option value="1">Statut 2</option>
+				<option value="2">Statut 3</option>
+				<option value="3">Statut 4</option>
+				<option value="4">Statut 5</option>
+				<option value="5">Statut 6</option>
+				<option value="6">Statut 7</option>
 			</select>
 			<div class="invalid-feedback">Selectionnez le statut familial</div>			
 		</div>
@@ -930,47 +831,21 @@ Famille de roturiers: vous avez grandi dans une famille basse-née, occupée aux
 		<div class="col">
 			<select name="Mentor" id="Mentor" class="custom-select" style="background-color:white">
 				<option disabled selected value="">Mentor</option>
-				<optgroup label="Royaumes du Nord">
-					<option id="Mentor_RN_1" value="1_1">Mentor 1</option>
-					<option id="Mentor_RN_2" value="1_2">Mentor 2</option>
-					<option id="Mentor_RN_3" value="1_3">Mentor 3</option>
-					<option id="Mentor_RN_4" value="1_4">Mentor 4</option>
-					<option id="Mentor_RN_5" value="1_5">Mentor 5</option>
-					<option id="Mentor_RN_6" value="1_6">Mentor 6</option>
-					<option id="Mentor_RN_7" value="1_7">Mentor 7</option>
-					<option id="Mentor_RN_8" value="1_8">Mentor 8</option>
-					<option id="Mentor_RN_9" value="1_9">Mentor 9</option>
-					<option id="Mentor_RN_10" value="1_10">Mentor 10</option>
-				</optgroup>
-				<optgroup label="Nilfgaard">
-					<option id="Mentor_N_1" value="2_1">Mentor 1</option>
-					<option id="Mentor_N_2" value="2_2">Mentor 2</option>
-					<option id="Mentor_N_3" value="2_3">Mentor 3</option>
-					<option id="Mentor_N_4" value="2_4">Mentor 4</option>
-					<option id="Mentor_N_5" value="2_5">Mentor 5</option>
-					<option id="Mentor_N_6" value="2_6">Mentor 6</option>
-					<option id="Mentor_N_7" value="2_7">Mentor 7</option>
-					<option id="Mentor_N_8" value="2_8">Mentor 8</option>
-					<option id="Mentor_N_9" value="2_9">Mentor 9</option>
-					<option id="Mentor_N_10" value="2_10">Mentor 10</option>
-				</optgroup>
-				<optgroup label="Terres Ancestrales">
-					<option id="Mentor_TA_1" value="3_1">Mentor 1</option>
-					<option id="Mentor_TA_2" value="3_2">Mentor 2</option>
-					<option id="Mentor_TA_3" value="3_3">Mentor 3</option>
-					<option id="Mentor_TA_4" value="3_4">Mentor 4</option>
-					<option id="Mentor_TA_5" value="3_5">Mentor 5</option>
-					<option id="Mentor_TA_6" value="3_6">Mentor 6</option>
-					<option id="Mentor_TA_7" value="3_7">Mentor 7</option>
-					<option id="Mentor_TA_8" value="3_8">Mentor 8</option>
-					<option id="Mentor_TA_9" value="3_9">Mentor 9</option>
-					<option id="Mentor_TA_10" value="3_10">Mentor 10</option>
-				</optgroup>
+				<option value="0">Mentor 1</option>
+				<option value="1">Mentor 2</option>
+				<option value="2">Mentor 3</option>
+				<option value="3">Mentor 4</option>
+				<option value="4">Mentor 5</option>
+				<option value="5">Mentor 6</option>
+				<option value="6">Mentor 7</option>
+				<option value="7">Mentor 8</option>
+				<option value="8">Mentor 9</option>
+				<option value="9">Mentor 10</option>
 			</select>
 			<div class="invalid-feedback">Selectionnez votre mentor</div>			
 		</div>
 		<div class="col">
-			<select name="Fratrie" id="Fratrie" class="custom-select" style="background-color:white">
+			<select id="Fratrie" class="custom-select" style="background-color:white">
 				<option disabled selected value="">Fratrie</option>
 				<option id="Fratrie_0" value="0">Enfant unique</option>
 				<option id="Fratrie_1" value="1">1</option>
@@ -1120,7 +995,7 @@ Comment s'est passée la formation précoce ?<br><div style="text-align:left" id
 <div id="Etape_3" class="Etape" style="display:none;"> <!-- Etape 3 : caractéristiques -->
 
 <div>	<!-- Caractéristiques -->
-<b><input type="number" id="MAX_CARACT"> points</b> à dépenser dans les 9 caractéristiques primaires suivantes : (max = 10 / min = 1)
+<b>60 points</b> à dépenser dans les 9 caractéristiques primaires suivantes : (max = 10 / min = 1)
 <br><br>
 
 <div class="grid-container">
