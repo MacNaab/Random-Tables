@@ -247,6 +247,7 @@ function fn_pro(){
 }
 
 function Caractéristique(){
+	var ttt = document.getElementById("MAX_CARACT").value;
   var Caractéristique_1 = document.getElementById("Caractéristique_1").value;
   var Caractéristique_2 = document.getElementById("Caractéristique_2").value;
   var Caractéristique_3 = document.getElementById("Caractéristique_3").value;
@@ -258,7 +259,7 @@ function Caractéristique(){
   var Caractéristique_9 = document.getElementById("Caractéristique_9").value;
   
   var Somme = Number(Caractéristique_1) + Number(Caractéristique_2) + Number(Caractéristique_3) + Number(Caractéristique_4) + Number(Caractéristique_5) + Number(Caractéristique_6) + Number(Caractéristique_7) + Number(Caractéristique_8) + Number(Caractéristique_9);
-  var Restant = 60 - Somme;
+  var Restant = Number(ttt) - Number(Somme);
   document.getElementById("Décompte_Caractéristique").innerHTML = Restant;
 }
 
