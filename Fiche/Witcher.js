@@ -1965,7 +1965,7 @@ if(Profession.value == '6' || Profession.value == '8' || Profession.value == '9'
 	if(Profession.value == '9'){
 		var stock = [];
 		DTB_MAGIE.Base.forEach(function(item){if(item.Type == "Signe de base"){stock.push(item.Nom);}});
-		for (let i = 0; i < stock.length; i++) {if(i != Number(Number(stock.length)-1)){ddd = ddd+stock[i].Nom+", ";}else{ddd = ddd+stock[i].Nom+".";}}		
+		for (let i = 0; i < stock.length; i++) {if(i != Number(Number(stock.length)-1)){ddd = ddd+stock[i]+", ";}else{ddd = ddd+stock[i]+".";}}		
 	}else if(Profession.value == '10'){
 		var ddd = $("#Sort_Vampire_1 option:selected").text()+', '+$("#Sort_Vampire_2 option:selected").text();
 	}else{
@@ -2813,7 +2813,7 @@ async function fillForm() {
 			form.getTextField('Formule D'+trackeurD1).setText(found2.Effet);
 			form.getTextField('Formule C'+trackeurD1).setText(found.Composants);
 			form.getTextField('Formule SD'+trackeurD1).setText(found.SD);
-			trackeurB1 = Number(Number(trackeurD1)+1);			
+			trackeurD1 = Number(Number(trackeurD1)+1);			
 		});
 	}
 
