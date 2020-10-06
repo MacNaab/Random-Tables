@@ -1,5 +1,17 @@
-var DTB = [{PS:'test',END:'test'}];
+$.getJSON('../dtb/bestaire.json', function(jd) {
+  jd.Base.forEach(function(item){$('#tablo').append('<tr><th scope="row">'+item.Nom+'</th><td>'+item.Caract+'</td><td>'+item.Compt+'</td><td>'+item.Armure+'</td><td>'+item.Arme+'</td><td>'+item.Vulnérabilités+'</td><td>'+item.Capacités+'</td><td>'+item.Note+'</td><td>Base</td></th>');});
+  jd.Unofficiel.forEach(function(item){$('#tablo').append('<tr><th scope="row">'+item.Nom+'</th><td>'+item.Caract+'</td><td>'+item.Compt+'</td><td>'+item.Armure+'</td><td>'+item.Arme+'</td><td>'+item.Vulnérabilités+'</td><td>'+item.Capacités+'</td><td>'+item.Note+'</td><td>Base</td></th>');});
+});
+$(document).ready(function(){
+  $("#SearchBeast").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#tablo tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+})
 
+var DTB = [{PS:'test',END:'test'}];
 
 function fn_red(e){
 	const regex = / /gi;
