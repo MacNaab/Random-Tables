@@ -4,14 +4,16 @@ $.getJSON('../Fiche/dtb/bestaire.json', function(jd) {
 		var Co = "";for (var [key, value] of Object.entries(item.Compt)) {Co=Co+`${key}: ${value}`+'<br>';}
 		var Ar = "";var Ar2 = [];item.Arme.forEach(function (item2){Ar2.push(Object.values(item2));});Ar2.forEach(function (item2){Ar=Ar+Object.values(item2)+'<br>';});
 		var Cap = "";item.Capacités.forEach(function(item2){Cap=Cap+item2+"<br>"});
-		$('#tablo').append('<tr><th scope="row">'+item.Nom+'</th><td>'+Ca+'</td><td>'+Co+'</td><td>'+item.Armure+'</td><td>'+Ar+'</td><td>'+item.Vulnérabilités+'</td><td>'+Cap+'</td><td>'+item.Note+'</td><td>Base</td></th>');
+		var Vul = "";item.Vulnérabilités.forEach(function(item2){Vul=Vul+item2+"<br>"});
+		$('#tablo').append('<tr><th scope="row">'+item.Nom+'</th><td>'+Ca+'</td><td>'+Co+'</td><td>'+item.Armure+'</td><td>'+Ar+'</td><td>'+Vul+'</td><td>'+Cap+'</td><td>'+item.Note+'</td><td>Base</td></th>');
 	});
 	jd.Unofficiel.forEach(function(item){
 		var Ca = "";for (var [key, value] of Object.entries(item.Caract)) {Ca=Ca+`${key}: ${value}`+'<br>';}
 		var Co = "";for (var [key, value] of Object.entries(item.Compt)) {Co=Co+`${key}: ${value}`+'<br>';}
 		var Ar = "";var Ar2 = [];item.Arme.forEach(function (item2){Ar2.push(Object.values(item2));});Ar2.forEach(function (item2){Ar=Ar+Object.values(item2)+'<br>';});
 		var Cap = "";item.Capacités.forEach(function(item2){Cap=Cap+item2+"<br>"});
-		$('#tablo').append('<tr><th scope="row">'+item.Nom+'</th><td>'+Ca+'</td><td>'+Co+'</td><td>'+item.Armure+'</td><td>'+Ar+'</td><td>'+item.Vulnérabilités+'</td><td>'+Cap+'</td><td>'+item.Note+'</td><td>Unofficiel</td></th>');
+		var Vul = "";item.Vulnérabilités.forEach(function(item2){Vul=Vul+item2+"<br>"});
+		$('#tablo').append('<tr><th scope="row">'+item.Nom+'</th><td>'+Ca+'</td><td>'+Co+'</td><td>'+item.Armure+'</td><td>'+Ar+'</td><td>'+Vul+'</td><td>'+Cap+'</td><td>'+item.Note+'</td><td>Unofficiel</td></th>');
 	});
 });
 $(document).ready(function(){
