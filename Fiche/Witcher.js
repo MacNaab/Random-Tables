@@ -247,6 +247,7 @@ function fn_pro(){
 }
 
 function Caractéristique(){
+	var ttt = document.getElementById("MAX_CARACT").value;
   var Caractéristique_1 = document.getElementById("Caractéristique_1").value;
   var Caractéristique_2 = document.getElementById("Caractéristique_2").value;
   var Caractéristique_3 = document.getElementById("Caractéristique_3").value;
@@ -258,7 +259,7 @@ function Caractéristique(){
   var Caractéristique_9 = document.getElementById("Caractéristique_9").value;
   
   var Somme = Number(Caractéristique_1) + Number(Caractéristique_2) + Number(Caractéristique_3) + Number(Caractéristique_4) + Number(Caractéristique_5) + Number(Caractéristique_6) + Number(Caractéristique_7) + Number(Caractéristique_8) + Number(Caractéristique_9);
-  var Restant = 60 - Somme;
+  var Restant = Number(ttt) - Number(Somme);
   document.getElementById("Décompte_Caractéristique").innerHTML = Restant;
 }
 
@@ -2522,25 +2523,4 @@ $.getJSON('dtb/item.json', function(jd) {
 	JSON_item = jd;
 });
 
-function CTclicked(e){
-	$("#toast1").toast('show');
-	$.ajax({
-        url: "Witcher.php",
-        type: "POST",
-        data: {
-			joueur: e.joueur,
-			personnage: e.perso,
-			sexe: e.sexe,
-			race: e.race,
-			profession: document.getElementById('Profession').value,
-			C1: e.INT,C2: e.REF,C3: e.DEX,E1: e.COR,E2: e.VIT,E3: e.EMP,A1: e.TEC,A2: e.VOL,A3: e.CHA,
-			compétence: $('#Récap_compétences').html(),
-			magie: $('#Récap_magie').html(),
-			HdV: $('#Récap_HDM').html(),
-			description: 'END = PS = '+e.END+' ||| '+$('#Récap_item').html()+' ||| '+$('#Description').val(),
-			},
-        cache: false,
-        success: function(data){$('#error_php').html(data);}
-      });
-	$("#toast2").toast('show');
-}
+function CTclicked(e){$("#toast1").toast('show');}
