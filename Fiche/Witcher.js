@@ -244,10 +244,10 @@ function fn_pro(){
 	if(pro == '8'){$('#Compétence_Profession_aff').html('Initié des Dieux');}
 	if(pro == '9'){$('#Compétence_Profession_aff').html('Formation de sorceleur');}
 	if(pro == '10'){$('#Compétence_Profession_aff').html('Étreinte');}
+	if(pro == '11'){$('#Compétence_Profession_aff').html('Notoriété');}
 }
 
 function Caractéristique(){
-	var ttt = document.getElementById("MAX_CARACT").value;
   var Caractéristique_1 = document.getElementById("Caractéristique_1").value;
   var Caractéristique_2 = document.getElementById("Caractéristique_2").value;
   var Caractéristique_3 = document.getElementById("Caractéristique_3").value;
@@ -259,7 +259,7 @@ function Caractéristique(){
   var Caractéristique_9 = document.getElementById("Caractéristique_9").value;
   
   var Somme = Number(Caractéristique_1) + Number(Caractéristique_2) + Number(Caractéristique_3) + Number(Caractéristique_4) + Number(Caractéristique_5) + Number(Caractéristique_6) + Number(Caractéristique_7) + Number(Caractéristique_8) + Number(Caractéristique_9);
-  var Restant = Number(ttt) - Number(Somme);
+  var Restant = 60 - Somme;
   document.getElementById("Décompte_Caractéristique").innerHTML = Restant;
 }
 
@@ -983,14 +983,34 @@ if (Profession == "10"){
 	document.getElementById('garageàVampire').style.display = "block";
 	document.getElementById('Magie Vampire').style.display = "block";
 }	
+if (Profession == "11"){
+	// Vigilance (Int) Éducation (Int) Étiquette(INT) Équitation (REF) Duperie (Emp) Stylisme (Emp) Psychologie (Emp) Commandement (Emp) Persuasion (EMP)
+	// 1 Combat Skill
+	var ListeCompt = ['Compétence_Profession_INT_1','Compétence_Profession_INT_4','Compétence_Profession_INT_7','Compétence_Profession_REF_4','Compétence_Profession_EMP_2','Compétence_Profession_EMP_5','Compétence_Profession_EMP_6','Compétence_Profession_EMP_7','Compétence_Profession_EMP_8'];
+	for (let i = 0; i < ListeCompt.length; i++){
+		document.getElementById(ListeCompt[i]+'_aff').style.visibility = "visible";
+		document.getElementById(ListeCompt[i]).disabled = false;
+		document.getElementById(ListeCompt[i]).value = "1";
+		document.getElementById(ListeCompt[i]).min = "1";		
 	}
+	document.getElementById('garageàNoble').style.display = "block";
+}
+}
 	
 function FanBasePro(e,f){
 	if(e == '1'){
 		for (let i = 1; i <= 7; i++) {document.getElementById("Compétence_Profession_TEC_"+i+"_aff").style.visibility = "hidden";document.getElementById("Compétence_Profession_TEC_"+i).value = "";}
 		document.getElementById("Compétence_Profession_TEC_"+f+"_aff").style.visibility = "visible";
+		document.getElementById("Compétence_Profession_TEC_"+f).disabled = false;
 		document.getElementById("Compétence_Profession_TEC_"+f).value = 1;
 		document.getElementById("Compétence_Profession_TEC_"+f).min = 1;
+	}
+	if(e == '2'){
+		for (let i = 1; i <= 8; i++) {if(i != 2 || i != 4 || i != 5){document.getElementById("Compétence_Profession_REF_"+i+"_aff").style.visibility = "hidden";document.getElementById("Compétence_Profession_REF_"+i).value = "";}}
+		document.getElementById("Compétence_Profession_REF_"+f+"_aff").style.visibility = "visible";
+		document.getElementById("Compétence_Profession_REF_"+f).disabled = false;
+		document.getElementById("Compétence_Profession_REF_"+f).value = 1;
+		document.getElementById("Compétence_Profession_REF_"+f).min = 1;
 	}
 }
 
@@ -1037,15 +1057,17 @@ function Race2(){
 		document.getElementById('Passé_Witcher').style.display = "block";
 		for (let i = 1; i <= 9; i++) {document.getElementById('Sorceleur_'+i).required = true;}
 	}
-	if(Race == "Elfe"){
-		$("#Région").prop({"disabled": true, "value": "3"});Région2();
-		$("#Origine").prop({"disabled": true, "value": "0"});
+	if(Race != "Humain" && Race != "Sorceleur"){
 // + Fratrie
 	for (let i = 1; i <= 8; i++) {var A = "Fratrie_"+i;document.getElementById(A).disabled = false;	}
 // - Fratrie
 	for (let i = 3; i <= 8; i++) {var A = "Fratrie_"+i;document.getElementById(A).disabled = true;	}
 	document.getElementById('Age_4').disabled = false;
 	document.getElementById('Age_5').disabled = false;
+	}
+	if(Race == "Elfe"){
+		$("#Région").prop({"disabled": true, "value": "3"});Région2();
+		$("#Origine").prop({"disabled": true, "value": "0"});
 	}
 	if(Race == "Nain"){
 		$("#Région").prop({"disabled": true, "value": "3"});Région2();
@@ -1054,8 +1076,6 @@ function Race2(){
 	for (let i = 1; i <= 8; i++) {var A = "Fratrie_"+i;document.getElementById(A).disabled = false;	}
 // - Fratrie
 	for (let i = 6; i <= 8; i++) {var A = "Fratrie_"+i;document.getElementById(A).disabled = true;	}
-document.getElementById('Age_4').disabled = false;
-document.getElementById('Age_5').disabled = false;
 	}
 	if(Race == "Vampire"){
 		Profession.value = "10";
@@ -2134,7 +2154,18 @@ function équipement(){
 			profession.push({n:'Outils de Voleur',p:0,t:'nm'});
 			profession.push({n:'Ustensiles de Cuisine',p:0,t:'nm'});
 		}
-
+		if(pro == 11){
+			profession.push({n:'Bijoux',p:0,t:'arme'});
+			profession.push({n:'Cheval',p:0,t:'nm'});
+			profession.push({n:'Encre invisible',p:0,t:'nm'});
+			profession.push({n:'Journal',p:0.5,t:'nm'});
+			profession.push({n:'Nécessaire d’écriture',p:1,t:'nm'});
+			profession.push({n:'Parfum',p:0.1,t:'nm'});
+			profession.push({n:'Poche secrète',p:0.1,t:'nm'});
+			profession.push({n:'Trousse de maquillage',p:0.5,t:'nm'});
+			profession.push({n:'Vêtements Noble',p:0,t:'nm'});
+			profession.push({n:'Esboda',p:0,t:'arme'});
+		}
 	for (let i = 0; i < profession.length; i++) {
 		$('#GEAR_CONTAINER').append('<div class="custom-control custom-checkbox"><input value="'+profession[i].p+'" value2="'+profession[i].t+'" type="checkbox" class="custom-control-input CHECK_GEAR" id="checkbox_équipement_'+i+'"><label class="custom-control-label" for="checkbox_équipement_'+i+'">'+profession[i].n+'</label></div>');
 	}
@@ -2166,6 +2197,7 @@ function langues(){
 	}
 	if(pro == '2' || pro == '7' || pro == '10'){
 		document.getElementById('garageàlangue').style.display = "block";
+			for (let i = 1; i <= 3; i++) {document.getElementById('customCheckLangue'+i).checked = false;}
 		$('input.CHECK_langue').on('change', function(evt) {
 			if($('input.CHECK_langue:checked').length > limit) {this.checked = false;}
 			$('#langue_a_choix2').html(Number(limit)-Number($('input.CHECK_langue:checked').length));
@@ -2523,4 +2555,25 @@ $.getJSON('dtb/item.json', function(jd) {
 	JSON_item = jd;
 });
 
-function CTclicked(e){$("#toast1").toast('show');}
+function CTclicked(e){
+	$("#toast1").toast('show');
+	$.ajax({
+        url: "Witcher.php",
+        type: "POST",
+        data: {
+			joueur: e.joueur,
+			personnage: e.perso,
+			sexe: e.sexe,
+			race: e.race,
+			profession: document.getElementById('Profession').value,
+			C1: e.INT,C2: e.REF,C3: e.DEX,E1: e.COR,E2: e.VIT,E3: e.EMP,A1: e.TEC,A2: e.VOL,A3: e.CHA,
+			compétence: $('#Récap_compétences').html(),
+			magie: $('#Récap_magie').html(),
+			HdV: $('#Récap_HDM').html(),
+			description: 'END = PS = '+e.END+' ||| '+$('#Récap_item').html()+' ||| '+$('#Description').val(),
+			},
+        cache: false,
+        success: function(data){$('#error_php').html(data);}
+      });
+	$("#toast2").toast('show');
+}

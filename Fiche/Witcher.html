@@ -12,8 +12,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/pdf-lib@1.11.0"></script>
     <script src="https://unpkg.com/downloadjs@1.4.7"></script>
-<link rel="stylesheet" href="../validenonvalide.css"/>
-
 <link rel="stylesheet" href="Witcher.css"/>
 <script src="Witcher.js"></script>	
 
@@ -86,7 +84,7 @@
 					<option value="Nain">Nain</option>
 					<option value="Halfelin">Halfelin</option>
 					<option value="Vampire">Vampire*</option>
-					<option value="Gnome">Gnome</option>
+					<option value="Gnome">Gnome*</option>
 			</select>
 			<div class="invalid-feedback">Selectionnez la race du personnage</div>			
 		</div>
@@ -101,6 +99,7 @@
 					<option value="6">Mage</option>
 					<option value="7">Marchand</option>
 					<option value="8">Prêtre</option>
+					<option value="11">Noble</option>
 					<option disabled value="9">Sorceleur</option>
 					<option disabled value="10">Vampire</option>
 			</select>
@@ -995,7 +994,7 @@ Comment s'est passée la formation précoce ?<br><div style="text-align:left" id
 <div id="Etape_3" class="Etape" style="display:none;"> <!-- Etape 3 : caractéristiques -->
 
 <div>	<!-- Caractéristiques -->
-<b><input type="number" id="MAX_CARACT"> points</b> à dépenser dans les 9 caractéristiques primaires suivantes : (max = 10 / min = 1)
+<b>60 points</b> à dépenser dans les 9 caractéristiques primaires suivantes : (max = 10 / min = 1)
 <br><br>
 
 <div class="grid-container">
@@ -1091,10 +1090,10 @@ Comment s'est passée la formation précoce ?<br><div style="text-align:left" id
 	</div>
 </div>
 <div id="garageàVampire" style="display:none;" class="grid-container">
-	<div><span>choisissez une compétence TEC</span></div>
+	<div><span>Choisissez une compétence TEC</span></div>
 	<div>
 		<select class="custom-select" onchange='FanBasePro("1",this.value);'>
-		  <option selected>Compétence TEC</option>
+		  <option disabled selected>Compétence TEC</option>
 		  <option value="1">Alchimie</option>
 		  <option value="2">Artisanat</option>
 		  <option value="3">Déguisement</option>
@@ -1102,6 +1101,19 @@ Comment s'est passée la formation précoce ?<br><div style="text-align:left" id
 		  <option value="5">Falsification</option>
 		  <option value="6">Crochetage</option>
 		  <option value="7">Fabrication de pièges</option>
+		</select>
+	</div>
+</div>
+<div id="garageàNoble" style="display:none;" class="grid-container">
+	<div><span>Choisissez une compétence d'arme</span></div>
+	<div>
+		<select class="custom-select" onchange='FanBasePro("2",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="1">Bagarre</option>
+		  <option value="7">Bâton/Lance</option>
+		  <option value="8">Escrime</option>
+		  <option value="6">Lames courtes</option>
+		  <option value="3">Mêlée</option>
 		</select>
 	</div>
 </div>
@@ -1144,7 +1156,7 @@ Comment s'est passée la formation précoce ?<br><div style="text-align:left" id
 		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_INT_6" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_INT_7_aff">
-		<div class="grid-item2-1">Etiquette</div>
+		<div class="grid-item2-1">Étiquette</div>
 		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_INT_7" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_INT_8_aff">
@@ -1181,7 +1193,7 @@ Comment s'est passée la formation précoce ?<br><div style="text-align:left" id
 		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_3" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3"  id="Compétence_Profession_REF_4_aff">
-		<div class="grid-item2-1">Equitation</div>
+		<div class="grid-item2-1">Équitation</div>
 		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_4" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3"  id="Compétence_Profession_REF_5_aff">
@@ -1257,7 +1269,7 @@ Comment s'est passée la formation précoce ?<br><div style="text-align:left" id
 		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_4" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_EMP_5_aff">
-		<div class="grid-item2-1">Style</div>
+		<div class="grid-item2-1">Stylisme</div>
 		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_5" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_EMP_6_aff">
@@ -1802,5 +1814,16 @@ Serveur :
       Création de la fiche en personnage en format en cours...
     </div>
   </div>
+  <div class="toast" id="toast2" data-autohide="false" style="position: fixed; bottom: 0; right: 0;">
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">BDD</strong>
+      <small class="text-muted"></small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+    </div>
+    <div id="error_php" class="toast-body">
+      Some text inside the toast body
+    </div>
+  </div>
+
 </body>
 </html>
