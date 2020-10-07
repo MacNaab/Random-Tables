@@ -234,13 +234,13 @@ else{
 
 function fn_pro(){
 	var pro = document.getElementById("Profession").value;
-	if(pro == '1'){$('#Compétence_Profession_aff').html('Travailleur');}
+	if(pro == '1'){$('#Compétence_Profession_aff').html('Rafistolage');}
 	if(pro == '2'){$('#Compétence_Profession_aff').html('Prestation');}
 	if(pro == '3'){$('#Compétence_Profession_aff').html('Paranoïa exercée');}
 	if(pro == '4'){$('#Compétence_Profession_aff').html('Mains thérapeutiques');}
 	if(pro == '5'){$('#Compétence_Profession_aff').html('Dur à cuire');}
 	if(pro == '6'){$('#Compétence_Profession_aff').html('Exercice de la magie');}
-	if(pro == '7'){$('#Compétence_Profession_aff').html('Voyageur');}
+	if(pro == '7'){$('#Compétence_Profession_aff').html('Grand voyageur');}
 	if(pro == '8'){$('#Compétence_Profession_aff').html('Initié des Dieux');}
 	if(pro == '9'){$('#Compétence_Profession_aff').html('Formation de sorceleur');}
 	if(pro == '10'){$('#Compétence_Profession_aff').html('Étreinte');}
