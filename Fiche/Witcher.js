@@ -247,7 +247,6 @@ function fn_pro(){
 }
 
 function Caractéristique(){
-	var ttt = document.getElementById("MAX_CARACT").value;
   var Caractéristique_1 = document.getElementById("Caractéristique_1").value;
   var Caractéristique_2 = document.getElementById("Caractéristique_2").value;
   var Caractéristique_3 = document.getElementById("Caractéristique_3").value;
@@ -259,7 +258,7 @@ function Caractéristique(){
   var Caractéristique_9 = document.getElementById("Caractéristique_9").value;
   
   var Somme = Number(Caractéristique_1) + Number(Caractéristique_2) + Number(Caractéristique_3) + Number(Caractéristique_4) + Number(Caractéristique_5) + Number(Caractéristique_6) + Number(Caractéristique_7) + Number(Caractéristique_8) + Number(Caractéristique_9);
-  var Restant = Number(ttt) - Number(Somme);
+  var Restant = 60 - Somme;
   document.getElementById("Décompte_Caractéristique").innerHTML = Restant;
 }
 
@@ -334,6 +333,8 @@ function Pouet(){
 // Retire VOL
 	for (let i = 1; i <= 7; i++) {var A = "Compétence_Profession_VOL_"+i;document.getElementById(A).value = "";document.getElementById(A).min = "0";}
 	
+	document.getElementById('garageàVampire').style.display = "none";
+	document.getElementById('Magie Vampire').style.display = "none";
 
 var Profession = document.getElementById('Profession').value;
 
@@ -1243,8 +1244,8 @@ function LesRands(t){
 		var Allier3 = ['que vous avez sauvé de quelque chose','que vous avez rencontré dans une taverne','qui vous a engagé pour quelque chose','avec qui vous êtiez prisonnés','avec qui vous avez été forcé de travailler ensemble','qui vous a engagé pour quelque chose',"que vous avez rencontrés en état d'ébriété",'que vous avez rencontré en voyageant','avec qui vous avez combattu ensemble'];
 		
 		var rand = Math.floor(Math.random() * Math.floor(2));
-		var rand2 = Math.floor(Math.random() * Math.floor(10));
-		var rand3 = Math.floor(Math.random() * Math.floor(10));
+		var rand2 = Math.floor(Math.random() * Math.floor(Allier2.length));
+		var rand3 = Math.floor(Math.random() * Math.floor(Allier3.length));
 		if(rand == 0){var e = Allier1[rand2]+" "+Allier3[rand3];}else{var e = Allier2[rand2]+" "+Allier3[rand3];}
 		return e;
 	}
@@ -1254,8 +1255,8 @@ function LesRands(t){
 		var A3 = ["qui vous a agressé","qui a causé la perte d'un être cher","qui vous a humilié en publique","qui a causé une malédiction","qui vous a accusé de sorcellerie illégale","qui a refusé vos avances","qui vous a causé une terrible blessure","qui vous fait chanter","qui a déjoué vos plans","qui a causé une attaque de monstres","que vous avez agressé","à qui vous avez causé la perte d'un être cher","que vous avez humilié en publique","à qui vous avez causé une malédiction","que vous avez accusé de sorcellerie illégale","à qui vous avez refusé ses avances","à qui vous avez causé une terrible blessure","que vous faites chanter","à qui vous avez déjoué ses plans","à qui vous avez causé une attaque de monstres"];
 
 		var rand = Math.floor(Math.random() * Math.floor(2));
-		var rand2 = Math.floor(Math.random() * Math.floor(10));
-		var rand3 = Math.floor(Math.random() * Math.floor(10));
+		var rand2 = Math.floor(Math.random() * Math.floor(A2.length));
+		var rand3 = Math.floor(Math.random() * Math.floor(A3.length));
 		var rand4 = Math.floor(Math.random() * Math.floor(2));
 		if(rand == 0){var e = A1[rand2]+" "+A3[rand4+rand3];}else{var e = A2[rand2]+" "+A3[rand4+rand3];}
 		return e;
@@ -2259,9 +2260,10 @@ async function fillForm() {
 		var DTB = {
 			joueur: document.getElementById('joueur').value,
 			perso: document.getElementById('personnage').value,
+			sexe: document.getElementById('Sexe').value,
 			race: document.getElementById('Race').value,
 			pro: LPro[document.getElementById('Profession').value],
-			age: LPro[document.getElementById('Age').value],
+			age: LAge[document.getElementById('Age').value],
 			origine: $("#Origine option:selected").text(),
 			INT: document.getElementById('Caractéristique_1').value,
 			REF: document.getElementById('Caractéristique_2').value,
@@ -2280,6 +2282,7 @@ async function fillForm() {
 				REC: document.getElementById('Récap_REC').innerHTML,
 		}
 		
+	CTclicked(DTB);
     	// Fetch the PDF with form fields
 //      const formUrl = 'dod_character.pdf'
       const formUrl = 'fiche_eric.pdf'
@@ -2511,9 +2514,33 @@ async function fillForm() {
 
 			// Trigger the browser to download the PDF document
 	download(pdfBytes, "pdf-lib_form_creation_example.pdf", "application/pdf");
+	$('#PDF_load').html("Fiche de "+DTB.perso+" crée !");	
 }
 
 var JSON_item = ""
 $.getJSON('dtb/item.json', function(jd) {
 	JSON_item = jd;
 });
+
+function CTclicked(e){
+	$("#toast1").toast('show');
+	$.ajax({
+        url: "Witcher.php",
+        type: "POST",
+        data: {
+			joueur: e.joueur,
+			personnage: e.perso,
+			sexe: e.sexe,
+			race: e.race,
+			profession: document.getElementById('Profession').value,
+			C1: e.INT,C2: e.REF,C3: e.DEX,E1: e.COR,E2: e.VIT,E3: e.EMP,A1: e.TEC,A2: e.VOL,A3: e.CHA,
+			compétence: $('#Récap_compétences').html(),
+			magie: $('#Récap_magie').html(),
+			HdV: $('#Récap_HDM').html(),
+			description: 'END = PS = '+e.END+' ||| '+$('#Récap_item').html()+' ||| '+$('#Description').val(),
+			},
+        cache: false,
+        success: function(data){$('#error_php').html(data);}
+      });
+	$("#toast2").toast('show');
+}
