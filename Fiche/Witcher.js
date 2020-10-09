@@ -244,7 +244,7 @@ function fn_pro(){
 	if(pro == '8'){$('#Compétence_Profession_aff').html('Initié des Dieux');}
 	if(pro == '9'){$('#Compétence_Profession_aff').html('Formation de sorceleur');}
 	if(pro == '10'){$('#Compétence_Profession_aff').html('Étreinte');}
-	if(pro == '11'){$('#Compétence_Profession_aff').html('Notoriété');}
+	if(pro == '11'){$('#Compétence_Profession_aff').html('Prestige');}
 }
 
 function Caractéristique(){
