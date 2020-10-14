@@ -245,10 +245,13 @@ function fn_pro(){
 	if(pro == '9'){$('#Compétence_Profession_aff').html('Formation de sorceleur');}
 	if(pro == '10'){$('#Compétence_Profession_aff').html('Étreinte');}
 	if(pro == '11'){$('#Compétence_Profession_aff').html('Prestige');}
+	if(pro == '12'){$('#Compétence_Profession_aff').html('Intolérance');}
+	if(pro == '13'){$('#Compétence_Profession_aff').html('Foi inébranlable');}
+	if(pro == '14'){$('#Compétence_Profession_aff').html('Rapide comme une flèche');}
+	if(pro == '15'){$('#Compétence_Profession_aff').html('Détermination');}
 }
 
 function Caractéristique(){
-	var ttt = document.getElementById("MAX_CARACT").value;
   var Caractéristique_1 = document.getElementById("Caractéristique_1").value;
   var Caractéristique_2 = document.getElementById("Caractéristique_2").value;
   var Caractéristique_3 = document.getElementById("Caractéristique_3").value;
@@ -260,7 +263,7 @@ function Caractéristique(){
   var Caractéristique_9 = document.getElementById("Caractéristique_9").value;
   
   var Somme = Number(Caractéristique_1) + Number(Caractéristique_2) + Number(Caractéristique_3) + Number(Caractéristique_4) + Number(Caractéristique_5) + Number(Caractéristique_6) + Number(Caractéristique_7) + Number(Caractéristique_8) + Number(Caractéristique_9);
-  var Restant = Number(ttt) - Number(Somme);
+  var Restant = 60 - Somme;
   document.getElementById("Décompte_Caractéristique").innerHTML = Restant;
 }
 
@@ -335,7 +338,10 @@ function Pouet(){
 // Retire VOL
 	for (let i = 1; i <= 7; i++) {var A = "Compétence_Profession_VOL_"+i;document.getElementById(A).value = "";document.getElementById(A).min = "0";}
 	
-	document.getElementById('garageàVampire').style.display = "none";
+	var garage = ['HD','Vampire','Noble','Fanatique','HLL','Nomade'];
+	garage.forEach(function (KKK){
+		document.getElementById('garageà'+KKK).style.display = "none";
+	});
 	document.getElementById('Magie Vampire').style.display = "none";
 
 var Profession = document.getElementById('Profession').value;
@@ -612,72 +618,15 @@ if (Profession == "4"){
 
 
 }
-if (Profession == "5"){
-// H d'armes
-// Any 5 Combat Skills > REF1 + 3 + 8 / DEX 1 + 3
-// Courage VOL:1 Intimidation VOL:3
-// Dodge/Escape REF:2
-// Physique COR:1
-// Wilderness Survival INT:11
-
-	Compétence_Profession_INT_11_aff.style.visibility = "visible";
-	Compétence_Profession_INT_11.disabled = false;
-	Compétence_Profession_INT_11.value = "1";
-	Compétence_Profession_INT_11.min = "1";
-
-	Compétence_Profession_VOL_1_aff.style.visibility = "visible";
-	Compétence_Profession_VOL_1.disabled = false;
-	Compétence_Profession_VOL_1.value = "1";
-	Compétence_Profession_VOL_1.min = "1";
-	Compétence_Profession_VOL_3_aff.style.visibility = "visible";
-	Compétence_Profession_VOL_3.disabled = false;
-	Compétence_Profession_VOL_3.value = "1";
-	Compétence_Profession_VOL_3.min = "1";
-	
-	Compétence_Profession_REF_2_aff.style.visibility = "visible";
-	Compétence_Profession_REF_2.disabled = false;
-	Compétence_Profession_REF_2.value = "1";
-	Compétence_Profession_REF_2.min = "1";
-	Compétence_Profession_REF_1_aff.style.visibility = "visible";
-	Compétence_Profession_REF_1.disabled = false;
-	Compétence_Profession_REF_1.value = "1";
-	Compétence_Profession_REF_1.min = "1";
-	Compétence_Profession_REF_3_aff.style.visibility = "visible";
-	Compétence_Profession_REF_3.disabled = false;
-	Compétence_Profession_REF_3.value = "1";
-	Compétence_Profession_REF_3.min = "1";
-	Compétence_Profession_REF_8.value = "1";
-	Compétence_Profession_REF_8.min = "1";
-	Compétence_Profession_REF_8_aff.style.visibility = "visible";
-	Compétence_Profession_REF_8.disabled = false;
-
-	Compétence_Profession_DEX_1_aff.style.visibility = "visible";
-	Compétence_Profession_DEX_1.disabled = false;
-	Compétence_Profession_DEX_1.value = "1";
-	Compétence_Profession_DEX_1.min = "1";
-	Compétence_Profession_DEX_3.value = "1";
-	Compétence_Profession_DEX_3.min = "1";
-	Compétence_Profession_DEX_3_aff.style.visibility = "visible";
-	Compétence_Profession_DEX_3.disabled = false;
-
-	Compétence_Profession_COR_1_aff.style.visibility = "visible";
-	Compétence_Profession_COR_1.disabled = false;
-	Compétence_Profession_COR_1.value = "1";
-	Compétence_Profession_COR_1.min = "1";
-
-// ---
-
-	Compétence_INT_11.style.visibility = "hidden";
-	Compétence_VOL_1.style.visibility = "hidden";
-	Compétence_VOL_3.style.visibility = "hidden";
-	Compétence_REF_2.style.visibility = "hidden";
-	Compétence_REF_1.style.visibility = "hidden";
-	Compétence_REF_3.style.visibility = "hidden";
-	Compétence_REF_8.style.visibility = "hidden";
-	Compétence_DEX_1.style.visibility = "hidden";
-	Compétence_DEX_3.style.visibility = "hidden";
-	Compétence_COR_1.style.visibility = "hidden";
-
+if (Profession == "5"){	// H d'armes
+	document.getElementById('garageàHD').style.display = "block";
+	var ListeCompt = ['Compétence_Profession_INT_11','Compétence_Profession_REF_2','Compétence_Profession_COR_1','Compétence_Profession_VOL_1','Compétence_Profession_VOL_3'];
+	for (let i = 0; i < ListeCompt.length; i++){
+		document.getElementById(ListeCompt[i]+'_aff').style.visibility = "visible";
+		document.getElementById(ListeCompt[i]).disabled = false;
+		document.getElementById(ListeCompt[i]).value = "1";
+		document.getElementById(ListeCompt[i]).min = "1";		
+	}
 }	
 if (Profession == "6"){
 // Mage
@@ -996,23 +945,135 @@ if (Profession == "11"){
 	}
 	document.getElementById('garageàNoble').style.display = "block";
 }
+if (Profession == "12"){
+	// Survie (Int) Bagarre (Réf) Lames courtes (Réf) Athlétisme (Dex) Physique (Cor) Résilience (Cor) Jeu (Emp) Artisanat (Tech) Premiers soins (Tech) Courage (Vol)
+	var ListeCompt = ['Compétence_Profession_INT_11','Compétence_Profession_REF_1','Compétence_Profession_REF_6','Compétence_Profession_DEX_2','Compétence_Profession_COR_1','Compétence_Profession_COR_2','Compétence_Profession_EMP_4','Compétence_Profession_TEC_2','Compétence_Profession_TEC_4','Compétence_Profession_VOL_1'];
+	for (let i = 0; i < ListeCompt.length; i++){
+		document.getElementById(ListeCompt[i]+'_aff').style.visibility = "visible";
+		document.getElementById(ListeCompt[i]).disabled = false;
+		document.getElementById(ListeCompt[i]).value = "1";
+		document.getElementById(ListeCompt[i]).min = "1";		
+	}
 }
+if (Profession == "13"){
+	var ListeCompt = ['Compétence_Profession_INT_8','Compétence_Profession_INT_11','Compétence_Profession_COR_2','Compétence_Profession_EMP_7','Compétence_Profession_EMP_2','Compétence_Profession_EMP_8','Compétence_Profession_VOL_1','Compétence_Profession_VOL_3','Compétence_Profession_VOL_6'];
+	for (let i = 0; i < ListeCompt.length; i++){
+		document.getElementById(ListeCompt[i]+'_aff').style.visibility = "visible";
+		document.getElementById(ListeCompt[i]).disabled = false;
+		document.getElementById(ListeCompt[i]).value = "1";
+		document.getElementById(ListeCompt[i]).min = "1";		
+	}
+	document.getElementById('garageàFanatique').style.display = "block";
+}
+if (Profession == "14"){
+	var ListeCompt = ['Compétence_Profession_INT_8','Compétence_Profession_INT_11','Compétence_Profession_DEX_3','Compétence_Profession_REF_3','Compétence_Profession_COR_1','Compétence_Profession_TEC_7','Compétence_Profession_VOL_1','Compétence_Profession_VOL_6'];
+	for (let i = 0; i < ListeCompt.length; i++){
+		document.getElementById(ListeCompt[i]+'_aff').style.visibility = "visible";
+		document.getElementById(ListeCompt[i]).disabled = false;
+		document.getElementById(ListeCompt[i]).value = "1";
+		document.getElementById(ListeCompt[i]).min = "1";		
+	}
+	document.getElementById('garageàHLL').style.display = "block";
+}
+if (Profession == "15"){
+	var ListeCompt = ['Compétence_Profession_REF_4','Compétence_Profession_DEX_2','Compétence_Profession_COR_2','Compétence_Profession_EMP_7','Compétence_Profession_EMP_8','Compétence_Profession_VOL_1','Compétence_Profession_VOL_3'];
+	for (let i = 0; i < ListeCompt.length; i++){
+		document.getElementById(ListeCompt[i]+'_aff').style.visibility = "visible";
+		document.getElementById(ListeCompt[i]).disabled = false;
+		document.getElementById(ListeCompt[i]).value = "1";
+		document.getElementById(ListeCompt[i]).min = "1";		
+	}
+	document.getElementById('garageàNomade').style.display = "block";
+}
+
+}
+
 	
 function FanBasePro(e,f){
-	if(e == '1'){
+	// Tactique(0)
+	// Bagarre(1), Lance(5), Equitation(3), Escrime(6), Lames courtes(4), Mêlée(2)
+	// Arbalète(9), Archerie(7), Athlétisme(8)
+	var Ccombat = ['Compétence_Profession_INT_9','Compétence_Profession_REF_1','Compétence_Profession_REF_3','Compétence_Profession_REF_4','Compétence_Profession_REF_6','Compétence_Profession_REF_7','Compétence_Profession_REF_8','Compétence_Profession_DEX_1','Compétence_Profession_DEX_2','Compétence_Profession_DEX_3'];
+	function TejCombat(){
+		Ccombat.forEach(function(BK){
+			if(BK != 'empty'){
+		document.getElementById(BK+"_aff").style.visibility = "hidden";
+		document.getElementById(BK).disabled = true;
+		document.getElementById(BK).value = "";
+			}
+		});
+	}
+	if(e == '1'){ // Vampire
 		for (let i = 1; i <= 7; i++) {document.getElementById("Compétence_Profession_TEC_"+i+"_aff").style.visibility = "hidden";document.getElementById("Compétence_Profession_TEC_"+i).value = "";}
 		document.getElementById("Compétence_Profession_TEC_"+f+"_aff").style.visibility = "visible";
 		document.getElementById("Compétence_Profession_TEC_"+f).disabled = false;
 		document.getElementById("Compétence_Profession_TEC_"+f).value = 1;
 		document.getElementById("Compétence_Profession_TEC_"+f).min = 1;
+		return;
 	}
-	if(e == '2'){
-		for (let i = 1; i <= 8; i++) {if(i != 2 || i != 4 || i != 5){document.getElementById("Compétence_Profession_REF_"+i+"_aff").style.visibility = "hidden";document.getElementById("Compétence_Profession_REF_"+i).value = "";}}
-		document.getElementById("Compétence_Profession_REF_"+f+"_aff").style.visibility = "visible";
-		document.getElementById("Compétence_Profession_REF_"+f).disabled = false;
-		document.getElementById("Compétence_Profession_REF_"+f).value = 1;
-		document.getElementById("Compétence_Profession_REF_"+f).min = 1;
+	if(e == '2'){ // Noble
+		delete Ccombat[3];
+		delete Ccombat[9];
+		TejCombat();
 	}
+	if(e == '2-2'){// Fanatique
+		TejCombat();
+	}
+	if(e == '3'){// Hors-la-loi, CAC
+	// 1 = Bagarre, 3 = Mêlée, 6 = Lames courtes, 8 = Escrime
+	// 2 = Esquive, 4 = Equi, 5 = Navi | 7 = Lance
+		delete Ccombat[3];
+		delete Ccombat[9];
+		TejCombat();
+	}
+	if(e == '4'){// Nomade 
+	// 1 = Bagarre, 3 = Mêlée, 6 = Lames courtes, 8 = Escrime
+	// 2 = Esquive, 4 = Equi, 5 = Navi
+		delete Ccombat[3];
+		delete Ccombat[8];
+		TejCombat();
+		function aie(K){
+			document.getElementById(K+"_aff").style.visibility = "visible";
+			document.getElementById(K).disabled = false;
+			document.getElementById(K).value = 1;
+			document.getElementById(K).min = 1;
+			console.log(K);
+		}
+		var C1 = document.getElementById('Nomade_1').value;
+		if(C1 !=''){aie(C1);}
+		var C2 = document.getElementById('Nomade_2').value;
+		if(C2 !=''){aie(C2);}
+		var C3 = document.getElementById('Nomade_3').value;
+		if(C3 !=''){aie(C3);}
+		return;
+	}
+	if(e == '0'){// Homme d'armes 
+		TejCombat();
+		function aie(K){
+			document.getElementById(K+"_aff").style.visibility = "visible";
+			document.getElementById(K).disabled = false;
+			document.getElementById(K).value = 1;
+			document.getElementById(K).min = 1;
+			console.log(K);
+		}
+		var C1 = document.getElementById('HD_1').value;
+		if(C1 !=''){aie(C1);}
+		var C2 = document.getElementById('HD_2').value;
+		if(C2 !=''){aie(C2);}
+		var C3 = document.getElementById('HD_3').value;
+		if(C3 !=''){aie(C3);}
+		var C4 = document.getElementById('HD_4').value;
+		if(C5 !=''){aie(C4);}
+		var C5 = document.getElementById('HD_5').value;
+		if(C5 !=''){aie(C5);}
+		return;
+	}
+
+	document.getElementById(f+"_aff").style.visibility = "visible";
+	document.getElementById(f).disabled = false;
+	document.getElementById(f).value = 1;
+	document.getElementById(f).min = 1;
+
 }
 
 function Race2(){
@@ -1702,7 +1763,7 @@ function RandYourWitcher(e){
 		var dette2 = Math.floor(Math.random() * Math.floor(10))+1;
 			if(dette2 < "4"){var trahi = "Il vous a fait chanté.";}else if(dette2 > "7"){var trahi = "Il vous a attaqué dans le dos.";}else{var trahi = "Il a dévoilé un de vos secrets.";}
 			if(dette2 < "4"){var mort = "tué par un monstre.";}if(dette2 > "3" && dette2 < "7"){var mort = "exécuté.";}if(dette2 > "6" && dette2 < "9" ){var mort = "assassiné.";}if(dette2 > "8"){var dette = "empoisonné.";}
-	var Danger_a = ["<b>Dette</b> : à cause d'un équipement cassé, d'une partie de Gwent ou autres, vous avez fait croître une dette de "+dette+" couronnes à un établissement ou une maison noble.","<b>Monstre échappé</b> : Un troll, un katakan, un loup-garou ou un autre monstre que vous chassiez vous a échappé et se promène librement. Ils peuvent revenir un jour...","<b>Dépendance</b> : Vous êtes tombé sur des moments difficiles et avez contracté une dépendance.","<b>Détenu</b> : Vous avez passé "+dette2+" ans de cette décennie dans une prison en raison de fausses accusations, ou peut-être d'un crime que vous avez commis.","<b>Accusé à tort</b> : Soit quelqu'un veut que tu partes, soit tu étais le parfait bouc émissaire.","<b>Trahi</b> : Un ami ou un amant vous a trahi."+trahi,"<b>Ami ou amant tué</b> : Un proche a été "+mort,"<b>Hors la loi</b> : Vous avez été interdit de territoire à la suite d'actes odieux contre le royaume ou de fausses accusations. Dans ce royaume, vous êtes recherché par la Garde.","<b>Manipulé</b> : Vous avez été manipulé pour briser votre neutralité. Vous décidez comment cela s'est produit, mais quiconque connaît votre réputation sait que vous n'êtes pas neutre.","<b>Maudit</b> : Vous avez été touché par une malédiction. A voir avec le MJ."];
+	var Danger_a = ["<b>Dette</b> : à cause d'un équipement cassé, d'une partie de Gwynt ou autres, vous avez fait croître une dette de "+dette+" couronnes à un établissement ou une maison noble.","<b>Monstre échappé</b> : Un troll, un katakan, un loup-garou ou un autre monstre que vous chassiez vous a échappé et se promène librement. Ils peuvent revenir un jour...","<b>Dépendance</b> : Vous êtes tombé sur des moments difficiles et avez contracté une dépendance.","<b>Détenu</b> : Vous avez passé "+dette2+" ans de cette décennie dans une prison en raison de fausses accusations, ou peut-être d'un crime que vous avez commis.","<b>Accusé à tort</b> : Soit quelqu'un veut que tu partes, soit tu étais le parfait bouc émissaire.","<b>Trahi</b> : Un ami ou un amant vous a trahi."+trahi,"<b>Ami ou amant tué</b> : Un proche a été "+mort,"<b>Hors la loi</b> : Vous avez été interdit de territoire à la suite d'actes odieux contre le royaume ou de fausses accusations. Dans ce royaume, vous êtes recherché par la Garde.","<b>Manipulé</b> : Vous avez été manipulé pour briser votre neutralité. Vous décidez comment cela s'est produit, mais quiconque connaît votre réputation sait que vous n'êtes pas neutre.","<b>Maudit</b> : Vous avez été touché par une malédiction. A voir avec le MJ."];
 	var Danger_c = ["<b>Genou rigide (-1 SPD)</b> : Une horrible blessure à votre jambe l'a brisée et presque irrémédiable. Même après une intervention chirurgicale et un régime de potions de sorceleur, il n'a jamais été le même.","<b>Oeil endommagé (-1 Vigilance (vision))</b> : Habituellement, les sorceleurs sont assez rapides pour éviter une attaque, mais certains monstres sont trop rapides. Un coup dans l'œil l'a laissé légèrement flou.","<b>Bras raide (-1 Mêlée)</b> : Un coup fracassant sur votre bras vous a laissé des semaines de récupération et un bras raide. Vous pouvez toujours tenir une épée et vous battre, mais la raideur vous aggrave toujours.","<b>Doigts endommagés (impossible de faire des signes avec cette main)</b> : Cela peut avoir été le résultat de la torture ou simplement d'une frappe très malchanceuse à cette main au combat, mais ses doigts sont raides et maladroits.","<b>Pointe de flèche intégrée (-1 Physique)</b> : Un tireur d'élite vous a laissé une pointe de flèche dans votre corps, logée dans votre muscle.","<b>Respiration sifflante (-5 points d'endurance)</b> : Vous avez peut-être été poignardé aux poumons ou inhalé un gaz toxique. De toute façon, vos poumons ont été endommagés; respirer normalement est quelque peu difficile.","<b>Énorme cicatrice (-2 charme et séduction)</b> : Il n’est pas rare que le corps d’un sorceleur soit un rempli de cicatrices. Cependant, vous avez subi un coup qui a défiguré votre visage.","<b>Nez endommagé (-2 Sens accrus)</b> : Un certain nombre de coups de poing au visage dans des combats de barres (ou des gaz toxiques) ont endommagé votre nez et vous ont presque volé votre suivi de parfum.","<b>Dégâts de venin (-5 PV)</b> : Des toxines qui se sont répandues et qui vous ont laissé des veines noircies autour de la blessure et a affaibli votre corps.","<b>À moitié sourd (-1 Vigilance (audition))</b> : De nombreux monstres utilisent des attaques sonores mortelles. Vous avez eu la chance d'en survivre, mais vos oreilles ne seront plus jamais les mêmes."];
 
 	var Danger_b1 = ['Un noble','Un mercenaire','Un soldat','Un marchand','Un criminel'];
@@ -2156,7 +2217,7 @@ function équipement(){
 			profession.push({n:'Ustensiles de Cuisine',p:0,t:'nm'});
 		}
 		if(pro == 11){
-			profession.push({n:'Bijoux',p:0,t:'arme'});
+			profession.push({n:'Bijoux',p:0,t:'nm'});
 			profession.push({n:'Cheval',p:0,t:'nm'});
 			profession.push({n:'Encre invisible',p:0,t:'nm'});
 			profession.push({n:'Journal',p:0.5,t:'nm'});
@@ -2167,6 +2228,57 @@ function équipement(){
 			profession.push({n:'Vêtements Noble',p:0,t:'nm'});
 			profession.push({n:'Esboda',p:0,t:'arme'});
 		}
+		if(pro == 12){
+			profession.push({n:'Bière',p:0,t:'nm'});
+			profession.push({n:'Une autre bière',p:0,t:'nm'});
+			profession.push({n:'Charriot',p:0,t:'nm'});
+			profession.push({n:'Vêtements chauds',p:0.5,t:'nm'});
+			profession.push({n:'Ustensiles de cuisine',p:1,t:'nm'});
+			profession.push({n:'Pierre à briquet',p:0.1,t:'nm'});
+			profession.push({n:'Jeu de Gwynt',p:0.1,t:'nm'});
+			profession.push({n:'Symbole sacré',p:0.5,t:'nm'});
+			profession.push({n:'Pipe et Tabac',p:0,t:'nm'});
+			profession.push({n:'Sac',p:0,t:'nm'});
+		}
+		if(pro == 13){
+			profession.push({n:'Bougie x5',p:0,t:'compo'});
+			profession.push({n:'Coup-de-poing',p:0,t:'arme'});
+			profession.push({n:'Fauchon de chasseur',p:0,t:'arme'});
+			profession.push({n:'Gambison',p:0.5,t:'armure'});
+			profession.push({n:'Hachette',p:1,t:'arme'});
+			profession.push({n:'Nécessaire d\'écriture',p:0.1,t:'nm'});
+			profession.push({n:'Pierre à briquet',p:0.1,t:'nm'});
+			profession.push({n:'Poignard',p:0.5,t:'arme'});
+			profession.push({n:'Tente',p:0,t:'nm'});
+			profession.push({n:'Torche x5',p:0,t:'nm'});
+				$('#GEAR_CONTAINER').append('<div class="custom-control custom-checkbox"><input value="0" value2="nm" type="checkbox" class="custom-control-input CHECK_GEAR" id="checkbox_équipement_OFFI" checked disabled><label class="custom-control-label" for="checkbox_équipement_OFFI">Symbole sacré</label></div>');
+				$('#GEAR_CONTAINER').append('<div class="custom-control custom-checkbox"><input value="0" value2="arme" type="checkbox" class="custom-control-input CHECK_GEAR" id="checkbox_équipement_OFFI1" checked disabled><label class="custom-control-label" for="checkbox_équipement_OFFI1">Texte sacré</label></div>');
+		}
+		if(pro == 14){
+			profession.push({n:'Arbalète avec 20 carreaux',p:0,t:'arme'});
+			profession.push({n:'Brigandine',p:0,t:'armure'});
+			profession.push({n:'Équipement de pêche',p:0,t:'nm'});
+			profession.push({n:'Fausse pièces x500',p:0.5,t:'nm'});
+			profession.push({n:'Krigsverd',p:1,t:'arme'});
+			profession.push({n:'Grande tente',p:0.1,t:'nm'});
+			profession.push({n:'Hallebarde rédanienne',p:0.1,t:'arme'});
+			profession.push({n:'Masse d\'arme',p:0.5,t:'arme'});
+			profession.push({n:'Outils d\'artisan',p:0,t:'nm'});
+			profession.push({n:'Un cheval',p:0,t:'nm'});
+		}
+		if(pro == 15){
+			profession.push({n:'Arc court avec 20 flèches',p:0,t:'arme'});
+			profession.push({n:'Hache d\'arme',p:0,t:'arme'});
+			profession.push({n:'Hache de lancer x5',p:0,t:'arme'});
+			profession.push({n:'Héliotite',p:0.5,t:'nm'});
+			profession.push({n:'Masse d\'arme',p:1,t:'arme'});
+			profession.push({n:'Oeillère de course',p:0.1,t:'nm'});
+			profession.push({n:'Sacoche',p:0.1,t:'nm'});
+			profession.push({n:'Tente',p:0.5,t:'nm'});
+			profession.push({n:'Un cheval',p:0,t:'nm'});
+			profession.push({n:'Ustensiles de cuisine',p:0,t:'nm'});
+		}
+
 	for (let i = 0; i < profession.length; i++) {
 		$('#GEAR_CONTAINER').append('<div class="custom-control custom-checkbox"><input value="'+profession[i].p+'" value2="'+profession[i].t+'" type="checkbox" class="custom-control-input CHECK_GEAR" id="checkbox_équipement_'+i+'"><label class="custom-control-label" for="checkbox_équipement_'+i+'">'+profession[i].n+'</label></div>');
 	}
@@ -2288,7 +2400,7 @@ $.getJSON('dtb/magie.json', function(jd) {
 const { PDFDocument } = PDFLib;
 
 async function fillForm() {
-	var LPro = ['',"Artisan","Barde","Criminel","Docteur","Homme d'armes","Mage","Marchand","Prêtre","Sorceleur","Vampire"];
+	var LPro = ['',"Artisan","Barde","Criminel","Docteur","Homme d'armes","Mage","Marchand","Prêtre","Sorceleur","Vampire","Noble","Paysan","Fanatique","Hors-la-loi","Nomade"];
 	var LAge = ['','Dizaine','Vingtaine','Trentaine','Quarentaine','Cinquentaine'];
 	
 		var DTB = {
@@ -2423,6 +2535,8 @@ async function fillForm() {
 		var nom = item.nom;	nom = nom.replace(' x5','');	nom = nom.replace(' x10','');nom = nom.replace('/<b>/gi','');
 		if(item.type == "arme"){
 			if(nom == "Arbalète avec 20 carreaux"){nom = "Arbalète";}
+			if(nom == "Arc court avec 20 flèches"){nom = "Arc court";}
+			if(nom == "Hache de lancer x5"){nom = "Hache de lancer";}
 			var found = JSON_item.Arme.find(x => x.Nom == nom);
 			form.getTextField('Arme '+trackeur1).setText(nom);
 			form.getTextField('Arme '+trackeur1+' Pré').setText(found.Précision);
@@ -2538,8 +2652,8 @@ async function fillForm() {
 	if(DTB.race == 'Nain'){var Particularités = "Tanné comme du cuir\nCoriace\nOEil de l’expert";}
 	if(DTB.race == 'Humain'){var Particularités = "Digne de confiance\nIngénieux\nTêtu comme une mule";}
 	if(DTB.race == 'Vampire'){var Particularités = "Sens Vampiriques\nÊtre Surnaturel\nCorps de Vampire\nDes années d'expériences";}
-	if(DTB.race == 'Halfelin'){var Particularités = "Agile\nFermier\nRésistant à la magie";}
-	if(DTB.race == 'Gnome'){var Particularités = "Maîtres artisans\nLangue d'argent\nSens aigu de l'odorat";}
+	if(DTB.race == 'Halfelin'){var Particularités = "Agile\nPeuple agreste\nRésilience magique";}
+	if(DTB.race == 'Gnome'){var Particularités = "Maîtres artisans\nBeau parleur\nSens aigu de l'odorat";}
 
 	partiField.setText(Particularités);
 
@@ -2556,4 +2670,25 @@ $.getJSON('dtb/item.json', function(jd) {
 	JSON_item = jd;
 });
 
-function CTclicked(e){$("#toast1").toast('show');}
+function CTclicked(e){
+	$("#toast1").toast('show');
+	$.ajax({
+        url: "Witcher.php",
+        type: "POST",
+        data: {
+			joueur: e.joueur,
+			personnage: e.perso,
+			sexe: e.sexe,
+			race: e.race,
+			profession: document.getElementById('Profession').value,
+			C1: e.INT,C2: e.REF,C3: e.DEX,E1: e.COR,E2: e.VIT,E3: e.EMP,A1: e.TEC,A2: e.VOL,A3: e.CHA,
+			compétence: $('#Récap_compétences').html(),
+			magie: $('#Récap_magie').html(),
+			HdV: $('#Récap_HDM').html(),
+			description: 'END = PS = '+e.END+' ||| '+$('#Récap_item').html()+' ||| '+$('#Description').val(),
+			},
+        cache: false,
+        success: function(data){$('#error_php').html(data);}
+      });
+	$("#toast2").toast('show');
+}

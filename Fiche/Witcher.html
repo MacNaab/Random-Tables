@@ -100,6 +100,10 @@
 					<option value="7">Marchand</option>
 					<option value="8">Prêtre</option>
 					<option value="11">Noble</option>
+					<option value="12">Paysan</option>
+					<option value="13">Fanatique</option>
+					<option value="14">Hors-la-loi</option>
+					<option value="15">Nomade</option>
 					<option disabled value="9">Sorceleur</option>
 					<option disabled value="10">Vampire</option>
 			</select>
@@ -994,7 +998,7 @@ Comment s'est passée la formation précoce ?<br><div style="text-align:left" id
 <div id="Etape_3" class="Etape" style="display:none;"> <!-- Etape 3 : caractéristiques -->
 
 <div>	<!-- Caractéristiques -->
-<b><input type="number" id="MAX_CARACT"> points</b> à dépenser dans les 9 caractéristiques primaires suivantes : (max = 10 / min = 1)
+<b>60 points</b> à dépenser dans les 9 caractéristiques primaires suivantes : (max = 10 / min = 1)
 <br><br>
 
 <div class="grid-container">
@@ -1104,16 +1108,192 @@ Comment s'est passée la formation précoce ?<br><div style="text-align:left" id
 		</select>
 	</div>
 </div>
+<div id="garageàID" style="display:none;" class="grid-container">
+	<div><span>Choisissez une compétence d'arme</span></div>
+	<div>
+		<select class="custom-select" onchange='FanBasePro("2",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+</div>
+<div id="garageàHD" style="display:none;" class="grid-container">
+	<div><span>Choisissez 5 compétences d'arme</span></div>
+	<div>
+		<select id="HD_1" class="custom-select" onchange='FanBasePro("0",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+	<div>
+		<select id="HD_2" class="custom-select" onchange='FanBasePro("0",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+	<div>
+		<select id="HD_3" class="custom-select" onchange='FanBasePro("0",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+	<div>
+		<select id="HD_4" class="custom-select" onchange='FanBasePro("0",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+	<div>
+		<select id="HD_5" class="custom-select" onchange='FanBasePro("0",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+</div>
+
 <div id="garageàNoble" style="display:none;" class="grid-container">
 	<div><span>Choisissez une compétence d'arme</span></div>
 	<div>
 		<select class="custom-select" onchange='FanBasePro("2",this.value);'>
 		  <option selected disabled>Compétence d'arme</option>
-		  <option value="1">Bagarre</option>
-		  <option value="7">Bâton/Lance</option>
-		  <option value="8">Escrime</option>
-		  <option value="6">Lames courtes</option>
-		  <option value="3">Mêlée</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+</div>
+<div id="garageàFanatique" style="display:none;" class="grid-container">
+	<div><span>Choisissez une compétence d'arme</span></div>
+	<div>
+		<select class="custom-select" onchange='FanBasePro("2-2",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+</div>
+<div id="garageàHLL" style="display:none;" class="grid-container">
+	<div><span>Choisissez une compétence d'arme</span></div>
+	<div>
+		<select class="custom-select" onchange='FanBasePro("3",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+</div>
+<div id="garageàNomade" style="display:none;" class="grid-container">
+	<div><span>Choisissez 3 compétences d'arme</span></div>
+	<div>
+		<select id="Nomade_1" class="custom-select" onchange='FanBasePro("4",this.value);'>
+		  <option value="" selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		</select>
+	</div>
+	<div>
+		<select id="Nomade_2" class="custom-select" onchange='FanBasePro("4",this.value);'>
+		  <option value="" selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		</select>
+	</div>
+	<div>
+		<select id="Nomade_3" class="custom-select" onchange='FanBasePro("4",this.value);'>
+		  <option value="" selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
 		</select>
 	</div>
 </div>
@@ -1814,5 +1994,16 @@ Serveur :
       Création de la fiche en personnage en format en cours...
     </div>
   </div>
+  <div class="toast" id="toast2" data-autohide="false" style="position: fixed; bottom: 0; right: 0;">
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">BDD</strong>
+      <small class="text-muted"></small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+    </div>
+    <div id="error_php" class="toast-body">
+      Some text inside the toast body
+    </div>
+  </div>
+
 </body>
 </html>
