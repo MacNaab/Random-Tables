@@ -884,7 +884,7 @@ Famille de roturiers: vous avez grandi dans une famille basse-née, occupée aux
 </div>
 
 </div>
-<div id="Passé_Witcher">
+<div id="Passé_Witcher" style="display:none">
 <div>Je préfère sauter cette étape (aléatoire)
 <label class="switch">
 			<input type="checkbox" id="HdV_random_Witcher" onclick="RandomLifeWither()">
@@ -958,7 +958,7 @@ Comment s'est passée la formation précoce ?<br><div style="text-align:left" id
 				<option disabled selected value="">Degrès de sécurité</option>
 				<option value="1">Prudent</option>
 				<option value="2">Ordinaire</option>
-				<option value="3">Non neutre</option>
+				<option value="3">Peu prudent</option>
 				<option value="4">Risqué</option>
 			</select>
 			<div class="invalid-feedback">Selectionnez votre premier événément</div>			
@@ -968,7 +968,7 @@ Comment s'est passée la formation précoce ?<br><div style="text-align:left" id
 				<option disabled selected value="">Degrès de sécurité</option>
 				<option value="1">Prudent</option>
 				<option value="2">Ordinaire</option>
-				<option value="3">Non neutre</option>
+				<option value="3">Peu prudent</option>
 				<option value="4">Risqué</option>
 			</select>
 			<div class="invalid-feedback">Selectionnez votre second événément</div>			
@@ -978,7 +978,7 @@ Comment s'est passée la formation précoce ?<br><div style="text-align:left" id
 				<option disabled selected value="">Degrès de sécurité</option>
 				<option value="1">Prudent</option>
 				<option value="2">Ordinaire</option>
-				<option value="3">Non neutre</option>
+				<option value="3">Peu prudent</option>
 				<option value="4">Risqué</option>
 			</select>
 			<div class="invalid-feedback">Selectionnez votre dernier événément</div>			
@@ -993,12 +993,120 @@ Comment s'est passée la formation précoce ?<br><div style="text-align:left" id
 </div>
 </div>
 </div>
+<div id="Passé_Mage" style="display:none">
+<div>Je préfère sauter cette étape (aléatoire)
+<label class="switch">
+			<input type="checkbox" id="HdV_random_Mage" onclick="RandomLifeMage()">
+			<span class="slider round"></span>
+</label>
+</div>
+<br>
+<div class="form-row" >	
+		<div class="col">
+			<select id="Mage_1" class="custom-select" style="background-color:white">
+				<option disabled selected value="">À quel âge êtes-vous entré en formation ?</option>
+				<option value="1">2-6 ans</option>
+				<option value="2">7-12 ans</option>
+				<option value="3">Après 12 ans</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez un choix</div>			
+		</div>
+		<div class="col">
+			<select id="Mage_2" class="custom-select" style="background-color:white">
+				<option disabled selected value="">Dans quelle école ?</option>
+				<option value="1">Aretuza</option>
+				<option value="2">Ban Ard</option>
+				<option value="3">École Impériale de Nilfgaard</option>
+				<option value="4">Cercle de Druides</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez un choix</div>			
+		</div>
+</div>
+<br>
+<div>
+<input id="Bouton_Formation_Mage" class="btn btn-primary" type="button" value="Cliquez ici pour découvrir votre formation" onclick="FormationMage()">
+<div id="Mage_3_4" style="display:none">
+Comment s'est passée la formation ?<br><div style="text-align:left" id="Mage_3"></div>
+<br>Comment s'est terminé votre formation ?<br><div style="text-align:left" id="Mage_4"></div>
+</div>
+<br>
+<div class="form-row" >	
+		<div class="col">
+			<select id="Mage_5" class="custom-select" style="background-color:white" onchange="">
+				<option disabled selected value="">Quel a été votre événement le plus marquant ?</option>
+				<option value="1">Trouvé un apprenti</option>
+				<option value="2">Traqué par un mage Noir</option>
+				<option value="3">Œuvré aux côtés d’un Druide</option>
+				<option value="4">Étude d’un Sorceleur</option>
+				<option value="5">Au service d’un noble</option>
+				<option value="6">Au-delà des frontières</option>
+				<option value="7">Romance Marquante</option>
+				<option value="8">Déjoué une intrigue contre votre académie</option>
+				<option value="9">Touché par l’infamie</option>
+				<option value="10">Touché par la gloire</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez un choix</div>			
+		</div>
+		<div class="col">
+			<select id="Mage_6" class="custom-select" style="background-color:white" onchange="">
+				<option disabled selected value="">Qui êtes-vous maintenant?</option>
+				<option value="1">Mage attitré</option>
+				<option value="2">Ermite</option>
+				<option value="3">Vie Normale</option>
+				<option value="4">Sans emploi</option>
+				<option value="5">Mage Noir</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez un choix</div>			
+		</div>
+</div>
+<div>La vie en tant que Sorceleur :
+<div class="form-row" >	
+		<div class="col">
+			<select id="Mage_7" class="custom-select" style="background-color:white" onchange="RandomLifeMage2('1',this.value)">
+				<option disabled selected value="">Degrès de sécurité</option>
+				<option value="1">Prudent</option>
+				<option value="2">Ordinaire</option>
+				<option value="3">Peu prudent</option>
+				<option value="4">Risqué</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez votre premier événément</div>			
+		</div>
+		<div class="col">
+			<select id="Mage_8" class="custom-select" style="background-color:white" onchange="RandomLifeMage2('2',this.value)">
+				<option disabled selected value="">Degrès de sécurité</option>
+				<option value="1">Prudent</option>
+				<option value="2">Ordinaire</option>
+				<option value="3">Peu prudent</option>
+				<option value="4">Risqué</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez votre second événément</div>			
+		</div>
+		<div class="col">
+			<select id="Mage_9" class="custom-select" style="background-color:white" onchange="RandomLifeMage2('3',this.value)">
+				<option disabled selected value="">Degrès de sécurité</option>
+				<option value="1">Prudent</option>
+				<option value="2">Ordinaire</option>
+				<option value="3">Peu prudent</option>
+				<option value="4">Risqué</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez votre dernier événément</div>			
+		</div>
+</div>
+<br>
+<div style="text-align:left">
+<div>1.<span id="Evénement_Mage_1"></span></div>
+<div>2.<span id="Evénement_Mage_2"></span></div>
+<div>3.<span id="Evénement_Mage_3"></span></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <div id="Etape_3" class="Etape" style="display:none;"> <!-- Etape 3 : caractéristiques -->
 
 <div>	<!-- Caractéristiques -->
-<b><input type="number" id="MAX_CARACT"> points</b> à dépenser dans les 9 caractéristiques primaires suivantes : (max = 10 / min = 1)
+<b>60 points</b> à dépenser dans les 9 caractéristiques primaires suivantes : (max = 10 / min = 1)
 <br><br>
 
 <div class="grid-container">
@@ -1994,5 +2102,16 @@ Serveur :
       Création de la fiche en personnage en format en cours...
     </div>
   </div>
+  <div class="toast" id="toast2" data-autohide="false" style="position: fixed; bottom: 0; right: 0;">
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">BDD</strong>
+      <small class="text-muted"></small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+    </div>
+    <div id="error_php" class="toast-body">
+      Some text inside the toast body
+    </div>
+  </div>
+
 </body>
 </html>

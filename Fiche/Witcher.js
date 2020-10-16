@@ -195,6 +195,28 @@ else{
 	Caractéristique();
 }
 				}
+			else if(Profession.value == "6"){
+if(Mage_1.value == "" || Mage_2.value == "" || Mage_3.innerHTML == "" || Mage_4.innerHTML == "" || Mage_5.value == "" || Mage_6.value == "" || Mage_7.value == "" || Mage_8.value == "" || Mage_9.value == ""){
+	var a = "";
+	if(Mage_1.value == ""){var a = "\nL'âge";}
+	if(Mage_2.value == ""){var a = a+"\nL'école";}
+	if(Mage_3.innerHTML == "" || Mage_4.innerHTML == ""){var a = a+"\nCliquez sur le bouton";}
+	if(Mage_5.value == ""){var a = a+"\nL'événement marquant";}
+	if(Mage_6.value == ""){var a = a+"\nMaintenant";}
+	if(Mage_7.value == ""){var a = a+"\nLe premier événement";}
+	if(Mage_8.value == ""){var a = a+"\nLe second événement";}
+	if(Mage_9.value == ""){var a = a+"\nLe troisième événement";}
+	alert("Vous devez remplir les éléments :"+a);
+}
+else{
+	Valider.style.width = "40%";
+	En_cours.innerHTML = "Etape 3";
+	Etape_2.style.display = "none";
+	Etape_3.style.display = "block";
+	Caractéristique();
+}
+				}
+
 			else{
 if(Région.value == "" || Origine.value == "" || Age.value == ""){
 	var a = "";
@@ -252,7 +274,6 @@ function fn_pro(){
 }
 
 function Caractéristique(){
-	var ttt = document.getElementById("MAX_CARACT").value;
   var Caractéristique_1 = document.getElementById("Caractéristique_1").value;
   var Caractéristique_2 = document.getElementById("Caractéristique_2").value;
   var Caractéristique_3 = document.getElementById("Caractéristique_3").value;
@@ -264,7 +285,7 @@ function Caractéristique(){
   var Caractéristique_9 = document.getElementById("Caractéristique_9").value;
   
   var Somme = Number(Caractéristique_1) + Number(Caractéristique_2) + Number(Caractéristique_3) + Number(Caractéristique_4) + Number(Caractéristique_5) + Number(Caractéristique_6) + Number(Caractéristique_7) + Number(Caractéristique_8) + Number(Caractéristique_9);
-  var Restant = Number(ttt) - Number(Somme);
+  var Restant = 60 - Somme;
   document.getElementById("Décompte_Caractéristique").innerHTML = Restant;
 }
 
@@ -629,7 +650,7 @@ if (Profession == "5"){	// H d'armes
 		document.getElementById(ListeCompt[i]).min = "1";		
 	}
 }	
-if (Profession == "6"){
+if (Profession == "6"){	// Mage
 // Mage
 // Education (INT:4), Social Etiquette (INT:7)
 // Grooming & Style (EMP:5), Human Perception (EMP:6), Seduction (EMP:10)
@@ -706,7 +727,8 @@ if (Profession == "6"){
 	Rituel_1.style.display = "block";
 	Malédiction_1.style.display = "block";
 
-
+	document.getElementById('Passé_Normaux').style.display = "none";
+	document.getElementById('Passé_Mage').style.display = "block";
 }
 if (Profession == "7"){
 // Marchand
@@ -1103,8 +1125,9 @@ function Race2(){
 		Sorceleur_8.required = false;
 		Sorceleur_9.required = false;
 
-		Passé_Normaux.style.display = "block";
-		Passé_Witcher.style.display = "none";
+		document.getElementById('Passé_Normaux').style.display = "block";
+		document.getElementById('Passé_Witcher').style.display = "none";
+		document.getElementById('Passé_Mage').style.display = "none";
 
 	$('#Région option[value="3"]').prop('disabled', true);
 	$('#Profession option[value="6"]').prop('disabled', false);
@@ -1537,7 +1560,6 @@ if(checkBox.checked == true){
 	RandomLife();
 }
 }
-
 function RandomLife(){
 	var Age = document.getElementById('Age').value;
 	var Chance_aff = ''
@@ -1596,6 +1618,17 @@ if(Sorceleur_6.value == "5"){var Maintenant = "Finalement, toute la négativité
 	Récap_HDM.innerHTML = Age+" "+Ecole+"<br>"+Sorceleur_3.innerHTML+"<br>"+Sorceleur_4.innerHTML+"<br>"+EventImportant+"<br>"+Evénement_Sorceleur_1.innerHTML+"<br>"+Evénement_Sorceleur_2.innerHTML+"<br>"+Evénement_Sorceleur_3.innerHTML+"<br>"+Maintenant;
 	Récap2_HDM.value = Age+" "+Ecole+"\n"+Sorceleur_3.innerHTML+"\n"+Sorceleur_4.innerHTML+"\n"+EventImportant+"\n"+Evénement_Sorceleur_1.innerHTML+"\n"+Evénement_Sorceleur_2.innerHTML+"\n"+Evénement_Sorceleur_3.innerHTML+"\n"+Maintenant;;
 	
+	}
+	else if(Profession.value == "6"){
+		var Age_dtb = ["Votre énergie magique s’est soit manifestée tardivement car mal canalisées soit vos émotions ont brouillés votre Force. Vous avez fini par être détecté et envoyé en école.","Vous avez été repéré(e) comme la plupart des autres mages pendant votre enfance car vous deveniez conscient de vos aptitudes mais ne compreniez pas comment les maîtriser, ce qui a attiré l’attention sur vous. Vous êtes en plein dans les années d’apprentissage de l’enfant (entre 7 et 12 ans) alors vous étiez dans des conditions optimales pour l’instruction magique.","Votre potentiel magique a été détecté très tôt car vous étiez particulièrement instable et sujet à vos émotions primaires. Vous avez commencé votre instruction entre 2 et 6 ans."];
+		var Ecole_dtb = ["<b>Aretuza (+1 en Education).</b> Vous avez été formée à l’école des Sorcières en Rédanie (à Loxia après la guerre en 1267).Vous étiez destinée pour être une conseillère de monarque, et avez reçu une éducation impeccable, mais les places ont été attribuées, vous êtes indépendante ou au service de l’école.","<b>Ban Ard (-1 de pénalité en VE).</b> Vous avez été formé à l’école des Mages à Kaedwen. Votre éducation complète vous a permis d’acquérir une formation axée sur la possibilité que vous devrez vous servir d’une petite armure pour vous protéger des lames de soldats adverses ...","<b>École Impériale de Nilfgaard (+1 en Duperie).</b> Vous avez été éduqué(e) dans une école sous le joug impérial, la scolarité fut rude et austère, où tout écart était sévèrement puni. Dans le meilleur des cas, vous étiez destiné(e) à être espion. Depuis, vous avez réussi à avoir votre indépendance ou êtes en mission pour l’Empire...","<b>Cercle de Druides (+1 incantation de Druide).</b> Vous avez été formé(e) dans la nature par les druides, mais vos talents étaient trop prodigieux; on vous a donc envoyé(e) dans une école pour exploiter au mieux vos talents."];
+		var EVT_dtb = ["Au travers de vos pérégrinations vous avez trouvé un ou une apprenti(e). Vous avez décider de lui enseigner votre vision de la magie avant de le remettre à l’académie.","À la place d’un collègue bienveillant, vous vous êtes retrouvé au milieu d’une machination concoctée par un mage renégat ou noir. Vous l’avez échappé belle cette fois-ci.","Vous avez rencontré et échangé avec un Druide. Vos avis divergents ont enrichis vos vision de la magie, du chaos mais aussi de votre place dans la Nature.","Vous avez eu l’occasion d’étudier un sorceleur en action et en théorie. Toutes ces mutations en une seule personne est tout bonnement prodigieux !","Vous êtes entré au service d’un noble. La condition était bonne mais vous avez appris que beaucoup de secrets sombres rôdent et avez dû conspirer pour leur petit succès.","Un jour, vous vous êtes aventuré hors des limites connues du Continent - au-delà des Monts Dragons, de Tir-Tochair, les Monts Bleus ou la Grande Mer.","Tous les Mages ne trouvent pas l’amour (ou cela dure rarement longtemps). Mais vous avez penser à vous installer avec elle à l’époque. Ces pensées vous reviennent parfois.","Votre école de Magie était au centre d’un sordide complot et vous avez participer à défendre les intérêts de cette Académie. Vous avez survécu, mais pas tous vos amis.","Malgré votre discrétion, une cohorte de villageois montés par des prêtres vous ont chassés de leurs terres. Vous savez à quoi vous attendre si vous y retournez.","Un village entier vous est reconnaissant pour vos expertises et vos actes. Vous avez pu oublier quelques instant les intrigues politiques et les chasses aux sorcières."];
+		var MTN_dtb = ["Vous avez signé (ou êtes assigné) comme mage personnel, que ce soit à un seigneur, une maison noble ou une personnalité importante. Vous êtes payé pour vos conseils, votre protection ou pour vous occuper d’affaires... moins glorieuses.","Vous avez décidé de vous retirer du monde afin de mener vos recherches tranquillement ou simplement pour avoir un peu de paix et faire une pause. Votre futur vous appartient et vous sortez de votre cahute pour voir à quoi ressemble le monde désormais.","Vous avez une place dans un village ou ville, êtes régulièrement en mission pour la Confrérie ou menez des recherches en son nom. Une vie somme toutes banale pour un mage si ce n’est que vous faîtes partie de vastes machinations.","Malgré vos talents et vos voyages, vous n’avez pas réussi à trouver votre place en ce monde ou avez été chassé. Vous menez une vie incertaine sur les chemins pour vivre","Si certains sont connus pour leur bienveillance, vous êtes maintenant crains pour vos pratique à la limite de l’éthique. Si vous n’avez pas été chassé par vos pairs, vous savez qu’ils ont besoin de vous là où ils refusent de se salir les mains."];
+	var Age = Age_dtb[Mage_1.value];
+	var Ecole = Ecole_dtb[Mage_2.value];
+	var EventImportant = EVT_dtb[Mage_5.value];
+	var Maintenant = MTN_dtb[Mage_6.value];
+		Récap_HDM.innerHTML = Age+" "+Ecole+"<br>"+Mage_3.innerHTML+"<br>"+Mage_4.innerHTML+"<br>"+EventImportant+"<br>"+Evénement_Mage_1.innerHTML+"<br>"+Evénement_Mage_2.innerHTML+"<br>"+Evénement_Mage_3.innerHTML+"<br>"+Maintenant;	
 	}
 	else{
 // PB inconnu > voir en PHP
@@ -1776,7 +1809,7 @@ function RandYourWitcher(e){
 	var Chasse_1 = ["un spectre","une créature maudite","un hybride","un insectoïde","un élémentaire","une veuve","un ogre","un draconide","un nécrophage","un vampire"];
 	var Chasse_2 = [" dans une fôret."," dans un batiment."," dans un batiment abandonné."," sur la côte."," dans la montagne."," dans une ville."," dans un cimetierre."," dans un hameau."," le long de la rivière."," dans un grotte."];
 	var Chasse_3 = [" Vous avez pris votre argent et vous êtes parti."," L'employeur a refusé de payer."," L'employeur vous a payé en échange."," Ce fut un combat particulièrement difficile."," Ce fut un combat étonnamment facile."];
-	var Chasse_4 = [" Malheuresement, le monstre était faux."," Malheuresement, c'était une malédiction."," Malheuresement, le monstre était déjà mort."," Malheuresement, ce n'était pas ce que vous pensiez."," Malheuresement, votre employeur voulait l'attrapé vivant."," Malheuresement, l'employeur est à blâmer pour tout cela"," Malheuresement, le monstre était inoffensif."," Malheuresement, c'était un piège."," Malheuresement, c'était plus que ce qu'on vous avait dit."," Malheuresement, un mage était derrière tout ça."];
+	var Chasse_4 = [" MalHeureusement, le monstre était faux."," MalHeureusement, c'était une malédiction."," MalHeureusement, le monstre était déjà mort."," MalHeureusement, ce n'était pas ce que vous pensiez."," MalHeureusement, votre employeur voulait l'attrapé vivant."," MalHeureusement, l'employeur est à blâmer pour tout cela"," MalHeureusement, le monstre était inoffensif."," MalHeureusement, c'était un piège."," MalHeureusement, c'était plus que ce qu'on vous avait dit."," MalHeureusement, un mage était derrière tout ça."];
 
 	var B1 = ["Un chasseur de prime","Un magicien","Un maître","Un ami d'enfance","Un artisan","Un ancien ennemi","Un duc","Un prêtre","Un soldat","Un barde"];
 	var B2 = ["Une chasseuse de prime","Une magicienne","Une maîtresse","Une amie d'enfance","Une artisane","Une ancienne ennemie","Une duchesse","Une prêtresse","Une soldate","Une barde"];
@@ -1810,7 +1843,7 @@ function RandYourWitcher(e){
 			var Rand4 = Math.floor(Math.random() * Math.floor(5));
 
 			var DCD = Math.floor(Math.random() * Math.floor(10))+1;
-			if(DCD <= "30"){var DCD = " Fort heureusement, il/elle est morte depuis ce temps.";}else{var DCD = " Malheuresement, il/elle toujours en vie...";}
+			if(DCD <= "30"){var DCD = " Fort heureusement, il/elle est morte depuis ce temps.";}else{var DCD = " MalHeureusement, il/elle toujours en vie...";}
 			if(Sexe == "0"){var Danger_aff = "<b>Ennemi</b> :"+Danger_b1[Rand1]+' '+Danger_b4[Rand2]+' '+Danger_b3[Rand3]+' '+Danger_b5[Rand4]+DCD;}else{var Danger_aff = "<b>Ennemi</b> :"+Danger_b2[Rand1]+' '+Danger_b4[Rand2]+' '+Danger_b3[Rand3]+' '+Danger_b5[Rand4]+DCD;	}
         }
         else{	// Wounds
@@ -1833,7 +1866,7 @@ function RandYourWitcher(e){
         var Proche = Math.floor(Math.random() * Math.floor(10))+1;
 			if(Proche < "7"){var Proche = " Vous êtes des connaissances.";}else if(Proche == "10"){var Proche = " Vous êtes lié par serment.";}else{var Proche = " Vous êtes des amis.";}
         var Vivant = Math.floor(Math.random() * Math.floor(100))+1;
-			if(Vivant <= "30"){var Vivant = "<br>Malheuresement, il/elle est morte.";}else{var Vivant = "<br>Heureusement, il/elle est toujours vivant.";}
+			if(Vivant <= "30"){var Vivant = "<br>MalHeureusement, il/elle est morte.";}else{var Vivant = "<br>Heureusement, il/elle est toujours vivant.";}
 		if(Sexe == "0"){var EV = "<b>Allier</b> : "+B1[Rand1]+B3[Rand2]+Proche+Vivant;}else{var EV = "<b>Allier</b> : "+B2[Rand1]+B3[Rand2]+Proche+Vivant;}
     }
     if(EV == "3"){	// Chasse
@@ -1867,7 +1900,7 @@ function RandYourWitcher(e){
 			var Rand4 = Math.floor(Math.random() * Math.floor(5));
 
 			var DCD = Math.floor(Math.random() * Math.floor(10))+1;
-			if(DCD <= "30"){var DCD = " Fort heureusement, il/elle est morte depuis ce temps.";}else{var DCD = " Malheuresement, il/elle toujours en vie...";}
+			if(DCD <= "30"){var DCD = " Fort heureusement, il/elle est morte depuis ce temps.";}else{var DCD = " MalHeureusement, il/elle toujours en vie...";}
 			if(Sexe == "0"){var Danger_aff = "<b>Ennemi</b> :"+Danger_b1[Rand1]+' '+Danger_b4[Rand2]+' '+Danger_b3[Rand3]+' '+Danger_b5[Rand4]+DCD;}else{var Danger_aff = "<b>Ennemi</b> :"+Danger_b2[Rand1]+' '+Danger_b4[Rand2]+' '+Danger_b3[Rand3]+' '+Danger_b5[Rand4]+DCD;	}
         }
         else{	// Wounds
@@ -1890,7 +1923,7 @@ function RandYourWitcher(e){
         var Proche = Math.floor(Math.random() * Math.floor(10))+1;
 			if(Proche < "7"){var Proche = " Vous êtes des connaissances.";}else if(Proche == "10"){var Proche = " Vous êtes lié par serment.";}else{var Proche = " Vous êtes des amis.";}
         var Vivant = Math.floor(Math.random() * Math.floor(100))+1;
-			if(Vivant <= "30"){var Vivant = "<br>Malheuresement, il/elle est morte.";}else{var Vivant = "<br>Heureusement, il/elle est toujours vivant.";}
+			if(Vivant <= "30"){var Vivant = "<br>MalHeureusement, il/elle est morte.";}else{var Vivant = "<br>Heureusement, il/elle est toujours vivant.";}
 		if(Sexe == "0"){var EV = "<b>Allier</b> : "+B1[Rand1]+B3[Rand2]+Proche+Vivant;}else{var EV = "<b>Allier</b> : "+B2[Rand1]+B3[Rand2]+Proche+Vivant;}
     }
     if(EV >= "3" && EV <= "5"){	// Chasse
@@ -1924,7 +1957,7 @@ function RandYourWitcher(e){
 			var Rand4 = Math.floor(Math.random() * Math.floor(5));
 
 			var DCD = Math.floor(Math.random() * Math.floor(10))+1;
-			if(DCD <= "30"){var DCD = " Fort heureusement, il/elle est morte depuis ce temps.";}else{var DCD = " Malheuresement, il/elle toujours en vie...";}
+			if(DCD <= "30"){var DCD = " Fort heureusement, il/elle est morte depuis ce temps.";}else{var DCD = " MalHeureusement, il/elle toujours en vie...";}
 			if(Sexe == "0"){var Danger_aff = "<b>Ennemi</b> :"+Danger_b1[Rand1]+' '+Danger_b4[Rand2]+' '+Danger_b3[Rand3]+' '+Danger_b5[Rand4]+DCD;}else{var Danger_aff = "<b>Ennemi</b> :"+Danger_b2[Rand1]+' '+Danger_b4[Rand2]+' '+Danger_b3[Rand3]+' '+Danger_b5[Rand4]+DCD;	}
         }
         else{	// Wounds
@@ -1948,7 +1981,7 @@ function RandYourWitcher(e){
         var Proche = Math.floor(Math.random() * Math.floor(10))+1;
 			if(Proche < "7"){var Proche = " Vous êtes des connaissances.";}else if(Proche == "10"){var Proche = " Vous êtes lié par serment.";}else{var Proche = " Vous êtes des amis.";}
         var Vivant = Math.floor(Math.random() * Math.floor(100))+1;
-			if(Vivant <= "30"){var Vivant = "<br>Malheuresement, il/elle est morte.";}else{var Vivant = "<br>Heureusement, il/elle est toujours vivant.";}
+			if(Vivant <= "30"){var Vivant = "<br>MalHeureusement, il/elle est morte.";}else{var Vivant = "<br>Heureusement, il/elle est toujours vivant.";}
 		if(Sexe == "0"){var EV = "<b>Allier</b> : "+B1[Rand1]+B3[Rand2]+Proche+Vivant;}else{var EV = "<b>Allier</b> : "+B2[Rand1]+B3[Rand2]+Proche+Vivant;}
     }
     if(EV == "8"){	// Chasse
@@ -1982,7 +2015,7 @@ function RandYourWitcher(e){
 			var Rand4 = Math.floor(Math.random() * Math.floor(5));
 
 			var DCD = Math.floor(Math.random() * Math.floor(10))+1;
-			if(DCD <= "30"){var DCD = " Fort heureusement, il/elle est morte depuis ce temps.";}else{var DCD = " Malheuresement, il/elle toujours en vie...";}
+			if(DCD <= "30"){var DCD = " Fort heureusement, il/elle est morte depuis ce temps.";}else{var DCD = " MalHeureusement, il/elle toujours en vie...";}
 			if(Sexe == "0"){var Danger_aff = "<b>Ennemi</b> :"+Danger_b1[Rand1]+' '+Danger_b4[Rand2]+' '+Danger_b3[Rand3]+' '+Danger_b5[Rand4]+DCD;}else{var Danger_aff = "<b>Ennemi</b> :"+Danger_b2[Rand1]+' '+Danger_b4[Rand2]+' '+Danger_b3[Rand3]+' '+Danger_b5[Rand4]+DCD;	}
         }
         else{	// Wounds
@@ -2005,7 +2038,7 @@ function RandYourWitcher(e){
         var Proche = Math.floor(Math.random() * Math.floor(10))+1;
 			if(Proche < "7"){var Proche = " Vous êtes des connaissances.";}else if(Proche == "10"){var Proche = " Vous êtes lié par serment.";}else{var Proche = " Vous êtes des amis.";}
         var Vivant = Math.floor(Math.random() * Math.floor(100))+1;
-			if(Vivant <= "30"){var Vivant = "<br>Malheuresement, il/elle est morte.";}else{var Vivant = "<br>Heureusement, il/elle est toujours vivant.";}
+			if(Vivant <= "30"){var Vivant = "<br>MalHeureusement, il/elle est morte.";}else{var Vivant = "<br>Heureusement, il/elle est toujours vivant.";}
 		if(Sexe == "0"){var EV = "<b>Allier</b> : "+B1[Rand1]+B3[Rand2]+Proche+Vivant;}else{var EV = "<b>Allier</b> : "+B2[Rand1]+B3[Rand2]+Proche+Vivant;}
     }
     if(EV == "8" || EV == "9"){	// Chasse
@@ -2047,46 +2080,192 @@ if(Now == "10"){Sorceleur_6.value = "5";}
 	
 	}
 }
-
 function RandomLifeWither2(e){
 	if(e == "1"){Evénement_Sorceleur_1.innerHTML = RandYourWitcher('Sorceleur_7');}
 	if(e == "2"){Evénement_Sorceleur_2.innerHTML = RandYourWitcher('Sorceleur_8');}
 	if(e == "3"){Evénement_Sorceleur_3.innerHTML = RandYourWitcher('Sorceleur_9');}
 }
-   
-function FormationWitcher(){
-	Bouton_Formation_Witcher.style.display = "none";
-	var EH = "0"; 	// Epreuve des Herbes 
-	Sorceleur_3_4.style.display = "block";
-	
-	var EV_1 = Math.floor(Math.random() * Math.floor(10))+1;
-if(EV_1 == "1"){var EV_1 = "<b>Blessé pendant le défi (-1 SPD)</b> : Vous avez été blessé en courant le défi autour de votre école. Votre jambe était gravement cassée et même après la guérison, elle est encore légèrement raide.";}	
-if(EV_1 == "2"){var EV_1 = "<b>Connaissances volées (+1 schéma de sorceleur)</b> : Pendant votre formation à l'école, vous vous êtes glissé dans les bibliothèques du donjon et avez copié l'un des diagrammes de sorceleur secret.";}
-if(EV_1 == "3"){var EV_1 = "<b>Rival (se fait un ennemi sorceleur)</b> : Pendant l'entraînement au donjon, vous avez formé une rivalité avec un autre sorceleur à l'entraînement. Même après des mutations, la haine continue de bouillir.";}	
-if(EV_1 == "4"){
-	var EH = "2";
-	var EV_1 = "<b>Mutations faciles (+2 à l'épreuve des herbes)</b> : Vous vous êtes bien adapté aux moindres mutations et champignons mutagènes qui vous ont été donnés au début de l'entraînement. Lorsque le moment est venu pour l'épreuve des herbes, vous étiez bien préparé.";}	
-if(EV_1 == "5"){var EV_1 = "<b>Retour de flamme magique (-1 seuil de vigueur)</b> : Un échec à lancer un signe a causé des dommages mineurs à votre corps. C'était horriblement douloureux, et même après la guérison de votre corps, votre seuil de vigueur a été abaissé.";}	
-if(EV_1 == "6"){var EV_1 = "<b>Meilleur de la classe (+1 escrime)</b> : Vous étiez l'un des meilleurs épéistes de votre classe et vos compétences n'ont pas terni. Vous effectuez facilement les mouvements complexes et les pirouettes de sorceleur.";}	
-if(EV_1 == "7"){
-	var EH = "-2";
-	var EV_1 = "<b>Mauvaise réaction aux mutagènes (-2 a l'épreuve des herbes)</b> : Vous avez eu des réactions allergiques aux champignons mutagènes et aux composés chimiques qui vous ont été donnés au début de l'entraînement. Lorsque l'épreuve des herbes est arrivé, c'était plus difficile.";}	
-if(EV_1 == "8"){var EV_1 = "<b>Ami (se fait un ami sorceleur)</b> : Vous vous êtes fait un ami rapidement pendant vos premières années de formation. La formation est difficile et les situations dangereuses ont scellé votre lien.";}	
-if(EV_1 == "9"){var EV_1 = "<b>Blessé par le pendule (-1 REF)</b> : Vous avez été blessé lors de votre entraînement au pendule. Vous êtes tombé des poteaux et avez cassé plusieurs os sur les rochers en dessous. Une fois guéri, vous êtes un peu plus rigide qu'avant.";}	
-if(EV_1 == "10"){var EV_1 = "<b>Recherche approfondie (+1 formation de sorceleur)</b> : Bien que l'entraînement à l'épée soit important, vous avez passé la plupart de votre temps libre dans les bibliothèques du donjon à étudier les monstres du monde et à prendre des notes.";}	
 
-	Sorceleur_3.innerHTML = EV_1;
+function RandomLifeMage(){
+	if(HdV_random_Mage.checked == true){
+        var Age = Math.floor(Math.random() * Math.floor(10))+1;
+		if(Age == "1"){Mage_1.value = "1";}else if(Age < "8"){Mage_1.value = "2";}else{Mage_1.value = "3";}
+
+        var School = Math.floor(Math.random() * Math.floor(10))+1;
+		if(School <= "3"){Mage_2.value = "1";}if(School >= "4" && School <= "6"){Mage_2.value = "2";}if(School >= "7" && School < "10"){Mage_2.value = "3";}if(School == "10"){Mage_2.value = "4";}
+
+        var EventImportant = Math.floor(Math.random() * Math.floor(10))+1;
+		Mage_5.value = EventImportant;
+        var Now = Math.floor(Math.random() * Math.floor(10))+1;
+		if(Now == "1"){Mage_6.value = "1";}if(Now == "2"){Mage_6.value = "2";}if(Now > "2" && Now < "7"){Mage_6.value = "3";}if(Now >= "7" && Now < "10"){Mage_6.value = "4";}if(Now == "10"){Mage_6.value = "5";}
+	}
+}
+function RandomLifeMage2(e,f){
+	if(e == "1"){Evénement_Mage_1.innerHTML = RandYouLifeMage(f);}
+	if(e == "2"){Evénement_Mage_2.innerHTML = RandYouLifeMage(f);}
+	if(e == "3"){Evénement_Mage_3.innerHTML = RandYouLifeMage(f);}
+}
+function RandYouLifeMage(f){
+	function Bénéfice(){
+		var Bénéf = ["<b>Investissement.</b> Au cours de votre vie, vous avez décidé d’investir dans ","<b>Romance.</b> Vous avez trouvé l’amour qui ne s’est pas arrêté à votre condition de Mage. D’une manière ou d’une autre, vous avez une réelle connexion avec cette personne.","<b>Abondance.</b> Cette vous avez eu une large rentrée d’argent durant cette décennie. Non seulement vous avez payé toutes vos dépenses en ingrédients et en équipement, mais vous avez mis de côté ","<b>Un noble vous doit une faveur.</b> Vous avez rendu un service à un noble. Cela était peut-être legal, ou même illegal—dans tous les cas, le noble vous en dois une et sait que vous reviendrez collecter ce service un de ces jours, tant que ce service est raisonnable (à la discrétion du MJ).","<b>Secret de Magicien.</b> Au travers de vos voyages, vous avez rencontré un vieux mage ou ermite qui vous a transmis l’un de ses secrets oubliés et l’avez appris. Vous gagnez un Sort, un rituel, une incantation ou un signe alternatif de votre choix.","<b>Anobli pour votre valeur.</b> À un moment de cette décennie, vous avez défendu un pays ou intrigué pour son compte. Cela était peut-être une demande ou un pur hasard, toujours est-il qu’un Roi/Reine vous a anoblis pour ce service rendu. Gagnez +1 en Réputation dans un pays de votre choix.","<b>Allié à des bandits.</b> Vous avez dû au cours de vos obligation (ou pour un contrat) côtoyer un groupe de bandits ou même des Scoia’tael. Vous n’étiez pas d’accord avec leurs méthodes, mais il ne vous ont pas embêtés, ni eux par vous. Vous pouvez leur demander un service une fois par mois tant que c’est raisonnable (demandez au MJ).","<b>Exploré des Ruines.</b> Pour une raison ou pour une autre, vous avez dû explorer une ruine grande et complexe. Vous y avez trouvé ","<b>Un Sorceleur vous doit une faveur.</b> Vous avez rendu service à un Sorceleur en difficulté ou qui avait besoin de quelqu’un qui fait de la vraie magie. Toujours est-il que maintenant il vous doit une faveur en retour, tant que c’est raisonnable (à la discrétion du MJ).","<b>Vous avez trouvé un Mentor.</b> Vous avez étudié avec un Mentor, en passant des mois entiers à étudier, pratiquer et discourir avec ce dernier. Cette étrange expérience vous fais gagner +1 dans une compétence d’Intelligence ou en démarrer une nouvelle avec +2."];
+			var B1 = ['une tour de Mage.','une maison isolée.','une maison de village.','une cabane de sorcière.','une carriole.','une maison de ville.','une Capitale alliée.','un Îlot.','un petit domaine.'];
+			var B2 = ['Ça a duré quelques semaines.', 'Ça a duré quelques mois.', 'Cela dure toujours, au gré de vos retrouvailles.'];
+			var B3 = (Math.floor(Math.random() * Math.floor(10))+1)*100;
+			var B8 = ['une amélioration elfique.','une messer elfe.','une amélioration naine.','une arbalète de poing gnome.','un manteau nain.'];
+		var Rand = (Math.floor(Math.random() * Math.floor(10)));
+			var Rand2 = (Math.floor(Math.random() * Math.floor(10)));
+		var Résultat = Bénéf[Rand];
+			if(Rand == 0){Résultat = Résultat+B1[Rand2];}
+			if(Rand == 1){if(Rand2 < 6){Résultat = Résultat+B1[0];}else if(Rand2 >= 8){Résultat = Résultat+B1[2];}else{Résultat = Résultat+B1[1];}}
+			if(Rand == 2){Résultat = Résultat+B3+" couronnes !";}
+			if(Rand == 7){Résultat = Résultat+B7[Math.floor(Rand2/2)];}
+		return Résultat;
+	}
+	function Allié(){
+		var StatutH = ['Un chasseur de Prime','Un sorceleur','Un professeur','Un ami d\'enfance','Un forgeron','Un ancien ennemi','Un duc','Un prêtre','Un soldat','Un barde'];
+		var StatutF = ['Une chasseuse de Prime','Une sorceleuse','Une professeur','Une amie d\'enfance','Une forgeronne','Une ancienne ennemie','Une duchesse','Une prêtresse','Une soldate','Une barde'];
+		var Circonstance = ["vous lui avez sauvé la vie.","vous vous êtes rencontré dans une taverne.","qui vous a sauvé la vie.","qui vous a engagé pour une tâche quelconque.","vous avez été pris au piège ensemble.","vous avez été forcés de travailler ensemble.","vous l’avez engagépour une tâche quelconque.","vous vous êtes lié d’amitié lors d’un banquet.","vous vous êtes rencontré lors d’un voyage.","vous avez combattu ensemble."];
+		var ProcheH = ['Une connaissance','Un ami','À la vie, à la mort'];
+		var ProcheF = ['Une connaissance','Une amie','À la vie, à la mort'];
+		
+		var Rand = (Math.floor(Math.random() * Math.floor(2)));
+		var Rand2 = (Math.floor(Math.random() * Math.floor(10)));
+		var Rand3 = (Math.floor(Math.random() * Math.floor(10)));
+		var Rand4 = (Math.floor(Math.random() * Math.floor(10)));
+		var Rand5 = (Math.floor(Math.random() * Math.floor(100)));
+		var Rand6 = (Math.floor(Math.random() * Math.floor(10)));
+		if(Rand == 0){	// Homme
+			if(Rand4 < 6){var Proche = ProcheH[0];}else if(Rand4 == 9){var Proche = ProcheH[2];}else{var Proche = ProcheH[1];}
+			if(Rand5 < 30){
+				if(Rand6 < 3){var VieMort = "MalHeureusement, il est mort dans une attaque de bandits";
+				}else if(Rand6 < 6){var VieMort = "MalHeureusement, il est mort dans une attaque de monstres";
+				}else if(Rand6 < 9){var VieMort = "MalHeureusement, il est une victime de la guerre";
+				}else{var VieMort = "MalHeureusement, il est mort naturellement";}
+			}else{var VieMort = "Il est toujours en vie"}
+			var Résultat = "<b>Allié.</b> "+StatutH[Rand2]+". "+Proche+", "+Circonstance[Rand3]+" "+VieMort+".";
+		}else{ // Femme
+			if(Rand4 < 6){var Proche = ProcheF[0];}else if(Rand4 == 9){var Proche = ProcheF[2];}else{var Proche = ProcheF[1];}
+			if(Rand5 < 30){
+				if(Rand6 < 3){var VieMort = "MalHeureusement, elle est morte dans une attaque de bandits";
+				}else if(Rand6 < 6){var VieMort = "MalHeureusement, elle est morte dans une attaque de monstres";
+				}else if(Rand6 < 9){var VieMort = "MalHeureusement, elle est une victime de la guerre";
+				}else{var VieMort = "MalHeureusement, elle est morte naturellement";}
+			}else{var VieMort = "Elle est toujours en vie"}
+			var Résultat = "<b>Alliée.</b> "+StatutF[Rand2]+". "+Proche+", "+Circonstance[Rand3]+" "+VieMort+".";
+		}
+		return Résultat;	
+	}
+	function Mission(){
+		var Miss = ["Retrouver un Mage","Lever une malédiction complexe","Participer à un raid secret","Empoisonnement","Conspiration basique","Charmer une personne importante","Récolter des Inforamtions","Participer à une guerre ou expédition punitive","Assassinat","Conspiration internationale"];
+		var Lieu = ["une forêt","un banquet somptueux","un château abandonné","un lieu perdu","une maison close","une ville","les marais","un hameau","un cirque itinérant","des ruines Elfiques"];
+		var Fin = ["Vous avez été reconnu pour vos exploits","Vous n’avez pas ou peu eu de reconnaissance","La reconnaissance fut moindre","Ce fut particulièrement difficile","Ce fut plus facile que prévu"];
+		var Retournement = ["La finalité était une façade","Il y avait une (autre) malédiction","Le travail était déjà fait... mais par qui ?","Tout ne s’est pas passé comme prévu","Vous auriez dû ramener une preuve vivante","Vous avez rattrapé la bourde de votre Loge","Tout ça n’a servi à rien","C’était un piège qui vous était destiné","On ne vous a pas tout dit","Une autre Loge a tout machiné"];
+			var E1 = ((Math.floor(Math.random() * Math.floor(10)))+(Math.floor(Math.random() * Math.floor(10))))*400;
+			var E4 = (Math.floor(Math.random() * Math.floor(10)))+1;
+		var Event = ["<b>Dette.</b> À causes des destructions magiques sur un domaine ou celles d’un royaume, vous devez rembourser la somme de "+E1+" couronnes",
+		"<b>Échappé.</b> Un espion, un renégat ou une créature intelligente vous a enfui et vous n’avez pas pu le rattraper. Ce dernier vous en veut et viendra pour se venger.",
+		"<b>Addiction.</b> Les temps ont été dures et vous avez succombé à une addiction.",
+		"<b>Emprisonné.</b> Vous avez passé "+E4+" années en prison pour un crime que vous avez perpétré ou dont vous êtes accusé à tort. À moins que le contre espionnage ne vous ai eu !",
+		"<b>Accusé à tort.</b> Soit quelqu’un veut se débarrasser de vous, soit vous faîtes le parfait bouc émissaire.",
+		"<b>Trahi.</b> Un ami ou amant vous a trahi.",
+		"<b>Ami ou amant tué.</b> Un proche a été tué.",
+		"<b>Hors la loi dans un royaume.</b> Vous avez été déclaré Hors la loi dans un royaume pour des crimes odieux à tort ou à raison. La garde vous y recherche activement.",
+		"<b>Manipulé.</b> Vous avez été embringué dans une vaste machination pour vous discréditer. Ceux qui vous connaissent de réputation vous perçoivent comme maléfique ou mauvais.",
+		"<b>Maudit.</b> Vous avez été frappé par une malédiction. Sa nature est à la discrétion du MJ et doit décider comment vous devez vous en débarrasser."
+		];
+		var Blessure = ["<b>Raideur au genou (-1 en VIT).</b> Un atterrissage brutale ou un coup dévastateur, votre genou était dans un sale état. Malgré des soins magiques intensifs, vous ne pouvez plus courir un 100m haie.",
+		"<b>Œil endommagé (-1 en Vigilance Oculaire).</b> On vous a soit arraché un œil, soit il est parti au combat. Malgré la magie vous n’avez pas réussi à le faire repousser, et vous maintenez une illusion à sa place.",
+		"<b>Raideur au bras (-1 aux aptitudes de combat).</b> Un coup puissant vous a blessé au bras, malgré les soins magiques, ça ne reviendra pas. Vous pouvez reprendre les armes ou votre bâtons, mais vous avez toujours mal.",
+		"<b>Doigts blessés (-1 aux sorts et incantations).</b> Une déflagration ou une torture vous a abimé les doigts. Malgré les soins, vous avez plus de mal à pratiquer les sort et incantation de cette main (ou même les deux).",
+		"<b>Faiblesse Magique (-1 en Résistance de la Magie).</b> Un raté d’harmonisation vous a fragilisé du point de vue de votre immunité magique. Que ce soit un lieu corrompu ou un sort qui vous ait atteint, c’est irréversible.",
+		"<b>Sifflement (-5 en Endurance).</b> Vous avez été soit empoisonnée au Diméritium soit par une blessure incurable aux poumons. Vous pouvez entendre ces dernier siffler lors de gros efforts.",
+		"<b>Illusion instable (-2 en Charme et Séduction).</b> L’illusion ou la métamorphose dont vous vous parez se dissipe petit à petit et vous ne pouvez rien y faire. Votre magie fait toujours le lien, mais beaucoup moins.",
+		"<b>Poison (-2 en étiquette pour vous tenir socialement).</b> Vous avez été empoisonné mais avez résisté par miracle ou par magie. Cependant, votre estomac n’a pas récupéré : vous rotez et avez souvent des gaz bruyants.",
+		"<b>Dégâts dûs au Diméritium (-5 points de Santé).</b> On vous a atteint avec une lame de Diméritium et cela gardes des traces dans l’un de vos organe. Des veines noirâtres apparaissent et vous êtes affaibli.",
+		"<b>À moitié sourd (-1 en vigilance sur l’ouïe).</b> Une puissante détonation vous a presque fait perdre l’ouïe. Les soins intensif ont été d’une grande aide, mais vous devez toujours tendre l’oreille désormais."
+		];
+		var Ennemi_H = ['Un noble','Un prêtre','Un mage','Un marchand','Un criminel'];
+		var Ennemi_F = ['Une noble','Une prêtresse','Une mage','Une marchande','Une criminelle'];
+		var Ennemi_C = ['qui vous a calomnié','vous avez contrecarré ses plans','qui vous a trahi','vous avez tué l\'un de ses parents','qui vous a trompé'];
+		var Ennemi_I = ['politique','culturelle','physique','militaire','magique'];
+		var Ennemi_CSQ = ['C’est (presque) du passé','Coup dans le dos','Violence brutal','Il/Elle vous pourchasse','Il/Elle veut faire couler votre sang ...']
+		
+		var Rand = (Math.floor(Math.random() * Math.floor(Miss.length)));
+		var Rand2 = (Math.floor(Math.random() * Math.floor(Lieu.length)));
+		var Rand3 = (Math.floor(Math.random() * Math.floor(Fin.length)));
+		var Rand4 = (Math.floor(Math.random() * Math.floor(10)));
+		var Rand5 = (Math.floor(Math.random() * Math.floor(Retournement.length)));
+		var Rand6 = (Math.floor(Math.random() * Math.floor(10)));
+		var Rand7 = (Math.floor(Math.random() * Math.floor(10)));
+		var Rand8 = (Math.floor(Math.random() * Math.floor(2)));
+		var Rand9 = (Math.floor(Math.random() * Math.floor(5)));
+		var Rand10 = (Math.floor(Math.random() * Math.floor(5)));
+		var Rand11 = (Math.floor(Math.random() * Math.floor(5)));
+		var Rand12 = (Math.floor(Math.random() * Math.floor(5)));
+		var Rand13 = (Math.floor(Math.random() * Math.floor(100)));
+		var Rand14 = (Math.floor(Math.random() * Math.floor(100)));
+		var Résultat = "<b>Mission. </b>"+Miss[Rand]+" dans "+Lieu[Rand2]+". "+Fin[Rand3]+".";
+		if(Rand4 < 4){
+			if(Rand6 < 3){
+				var Danger = Event[Rand7];
+			}else if(Rand6 < 6){
+				var Danger = Blessure[Rand7];
+			}else{
+				if(Rand13 < 30){
+					if(Rand14 < 3){var MV = "Heureusement, il/elle est une victime de la guerre."}
+					else if(Rand14 < 6){var MV = "Heureusement, vous l'avez tué."}
+					else if(Rand14 < 9){var MV = "Heureusement, il/elle est une morte dans une attaque de monstre."}
+					else{var MV = "Heureusement, il/elle mort.e d'une mort naturelle."}					
+				}else{var MV = "Il/elle est toujours en vie."}
+				if(Rand7 == 0){var Danger = Ennemi_H[Rand9]+", "+Ennemi_C[Rand11]+"avec une influence "+Ennemi_I[Rand10]+". "+Ennemi_CSQ[Rand12]+"."+MV;
+				}else{var Danger = Ennemi_F[Rand9]+", "+Ennemi_C[Rand11]+"avec une influence "+Ennemi_I[Rand10]+". "+Ennemi_CSQ[Rand12]+"."+MV;}
+			}
+			var Résultat = Résultat+" "+Retournement[Rand5]+". "+Danger;
+		}
+		return Résultat;
+	}
+		var Rand = (Math.floor(Math.random() * Math.floor(10)));
+	if(f == '1'){
+		if(Rand == 0){return Bénéfice();}
+		else if(Rand == 1){return Allié();}
+		else if(Rand == 2){return Mission();}
+		else{return "Il ne s'est rien passé";}
+	}
+	if(f == '2'){
+		if(Rand == 0){return Bénéfice();}
+		else if(Rand < 3){return Allié();}
+		else if(Rand < 5){return Mission();}
+		else{return "Il ne s'est rien passé";}
+	}
+	if(f == '3'){
+		if(Rand < 2){return Bénéfice();}
+		else if(Rand < 7){return Allié();}
+		else if(Rand == 7){return Mission();}
+		else{return "Il ne s'est rien passé";}
+	}
+	if(f == '4'){
+		if(Rand < 5){return Bénéfice();}
+		else if(Rand < 7){return Allié();}
+		else if(Rand < 9){return Mission();}
+		else{return "Il ne s'est rien passé";}
+	}
+}
+   
+function FormationMage(){
+	Bouton_Formation_Mage.style.display = "none";
+	var EH = "0"; 	// Epreuve des Herbes 
+	Mage_3_4.style.display = "block";
 	
-if(Sorceleur_1.value == "1"){var EH = Number(EH)-2}
-if(Sorceleur_1.value == "3"){var EH = Number(EH)+2}
+	var Formation = ["<b>Trauma Magique (-1 en Volonté).</b> Un retour de magie vous a blessé et affaibli durant votre formation. Votre volonté s’en est retrouvée définitivement émoussée.","<b>Bon élève (+1 en Formation de Mage).</b> Vous avez intégré parfaitement les cours prodigués par vos professeurs. Travail, facilités ou juste de bons profs, vous êtes incollable en Théorie de la Magie !","<b>Amis Mage (faites vous un ami Mage).</b> Vous vous êtes fait un allié sur les bancs de l’école très tôt dans votre formation. La rigueur a confirmé votre lien.","<b>Mauvaise Harmonisation (-2 en Fin de Formation).</b> Vous avez eu du mal à vous acclimater à vos études, immaturité, mauvais alignement à la magie.... terminer votre formation sera difficile....","<b>Accident Magique (-2 en Vigueur).</b> Lors de votre formation, vous avez été blessé gravement par la magie, et votre faculté à canaliser le chaos s’en est trouvé amoindrie.","<b>Premier de la Classe (Incantation +1).</b> Vos avez excellé dans les arts incantatoires et cela se ressens encore. Vous manipulez la magie courante avec beaucoup d’agilité !","<b>Bonne Harmonisation (+2 en Fin de Formation).</b> Vous avez facilement acquis les bases et vous êtes parfaitement acclimaté à la force du Chaos. Vous terminerez votre formation plus facilement que d’autres","<b>Ennemi Magicien (faites vous un mage ennemi).</b> Très tôt, vous vous êtes fait un rival (ou un groupe rival) dans votre formation. Une fois terminée, cette haine s’est confirmée et se fait ressentir encore aujourd’hui","<b>Métamorphose Ratée (Empathie -1).</b> Votre apparence a été modifiée, mais un raté magique vous a affecté et émoussévotre empathie. Malgré les soins et les illusions, vous ne donnez plus le change.","<b>Recherches étendues (+1 Magie d’Apprenti).</b> Vous avez trouvé un grimoire de magie plus avancé que vous n’auriez pas dû, mais vous avez réussi à acquérir une formule de plus au début de votre formation"];
+	var EV_1 = Math.floor(Math.random() * Math.floor(Formation.length));	
+	Mage_3.innerHTML = Formation[EV_1];
 	
+	if(Mage_1.value == "1"){var EH = Number(EH)-2}if(Mage_1.value == "3"){var EH = Number(EH)+2}	
 	var EV_2 = Math.floor(Math.random() * Math.floor(10))+1;
 	var EH = Number(EH)+(Number(EV_2));
-if(EH <= "1"){var EH = "<b>Presque mortel (-1 EMP et -1 CORPS)</b> : L'épreuve des herbes a presque détruit votre corps. Bien que vous ayez survécu au processus, votre corps et votre esprit ont été endommagés de façon permanente."}
-if(EH > "1" && EH < "4"){var EH = "<b>Mal accepté (-1 EMP)</b> : L'épreuve des herbes s'est mal passé et les sorceleurs en charge de la mutation n'étaient pas tout à fait sûrs que vous y arriviez. Vous avez survécu, mais pas sans cicatrices mentales."}
-if(EH > "3" && EH <= "10"){var EH = "<b>Mutations passables</b> : Le procès des herbes s'est bien passé. Vous êtes passé dans les rangs des sorceleurs avec rien de plus que des souvenirs d'horribles douleurs."}
-if(EH >= "10"){var EH = "<b>Mutations supplémentaires (+1 EMP et +1 DEX)</b> : Votre corps était très réceptif a l'épreuve des Herbes et vous aviez des mutations supplémentaires qui vous étaient appliquées. Votre corps l'a bien géré et toute la douleur a finalement payé."}
-	Sorceleur_4.innerHTML = EH;
+	var Fin = ["<b>Renégat (-1 en Empathie, -1 en volonté & +1 Connaissance de Rue).</b> Votre impulsivité fait de vous un danger pour vous ou les autres et vos instructeurs n’ont pas réussi à vous discipliner. Vous avez claqué la porte de l’académie en fuyant ou en passant pour mort, vous évoluez désormais en marge de la société...","<b>Admis sans distinction (-1 en Volonté).</b> Vous avez passé les tests finaux sans honneurs ni distinction. Votre hargne vous a permis d’avancer et a laissé des traces dans votre comportement.","<b>Formation sans encombres (sans modificateur).</b> Vous avez passé les différentes épreuves et êtes désormais un Mage accompli ! Vous êtes un membre fiable de la Confrérie des Magiciens.","<b>Formation avec les honneurs (+1 en Volonté & +1 en Empathie).</b> Vous avez parfaitement intégré vos cours et canalisé l’énergie du Chaos. Votre volontésans faille a payé et vous voici un membre distingué de votre confrérie."];
+	if(EH == "1"){var EH = Fin[0];}if(EH == "2" || EH == "3"){var EH = Fin[1];}if(EH >= "4" && EH <= "9"){var EH = Fin[2];}if(EH == "10"){var EH = Fin[3];}
+	Mage_4.innerHTML = EH;
 }
 
 function équipement(){
@@ -2429,7 +2608,7 @@ async function fillForm() {
 				REC: document.getElementById('Récap_REC').innerHTML,
 		}
 		
-	CTclicked();
+	CTclicked(DTB);
     	// Fetch the PDF with form fields
 //      const formUrl = 'dod_character.pdf'
       const formUrl = 'fiche_eric.pdf'
@@ -2671,6 +2850,25 @@ $.getJSON('dtb/item.json', function(jd) {
 	JSON_item = jd;
 });
 
-function CTclicked(){
+function CTclicked(e){
 	$("#toast1").toast('show');
+	$.ajax({
+        url: "Witcher.php",
+        type: "POST",
+        data: {
+			joueur: e.joueur,
+			personnage: e.perso,
+			sexe: e.sexe,
+			race: e.race,
+			profession: document.getElementById('Profession').value,
+			C1: e.INT,C2: e.REF,C3: e.DEX,E1: e.COR,E2: e.VIT,E3: e.EMP,A1: e.TEC,A2: e.VOL,A3: e.CHA,
+			compétence: $('#Récap_compétences').html(),
+			magie: $('#Récap_magie').html(),
+			HdV: $('#Récap_HDM').html(),
+			description: 'END = PS = '+e.END+' ||| '+$('#Récap_item').html()+' ||| '+$('#Description').val(),
+			},
+        cache: false,
+        success: function(data){$('#error_php').html(data);}
+      });
+	$("#toast2").toast('show');
 }
