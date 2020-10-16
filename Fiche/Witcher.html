@@ -1106,7 +1106,7 @@ Comment s'est passée la formation ?<br><div style="text-align:left" id="Mage_3"
 <div id="Etape_3" class="Etape" style="display:none;"> <!-- Etape 3 : caractéristiques -->
 
 <div>	<!-- Caractéristiques -->
-<b>60 points</b> à dépenser dans les 9 caractéristiques primaires suivantes : (max = 10 / min = 1)
+<b><input type="number" id="MAX_CARACT"> points</b> à dépenser dans les 9 caractéristiques primaires suivantes : (max = 10 / min = 1)
 <br><br>
 
 <div class="grid-container">
@@ -2090,7 +2090,6 @@ Serveur :
 	</div>	
 		
 </div> <!-- Tableau texte -->
-
 </form>
   <div class="toast" id="toast1" data-autohide="false" style="position: fixed; top: 0; right: 0;">
     <div class="toast-header">
@@ -2102,16 +2101,5 @@ Serveur :
       Création de la fiche en personnage en format en cours...
     </div>
   </div>
-  <div class="toast" id="toast2" data-autohide="false" style="position: fixed; bottom: 0; right: 0;">
-    <div class="toast-header">
-      <strong class="mr-auto text-primary">BDD</strong>
-      <small class="text-muted"></small>
-      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
-    </div>
-    <div id="error_php" class="toast-body">
-      Some text inside the toast body
-    </div>
-  </div>
-
 </body>
 </html>
