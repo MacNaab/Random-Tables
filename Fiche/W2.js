@@ -123,7 +123,6 @@ function Caract(e,f){
 	}else{
 		if(compé > '1'){document.getElementById(dtb[f]).value = Number(compé)-1;}
 	}
-	Caractéristique()
 }
 
 // Aff Compétence Profession
