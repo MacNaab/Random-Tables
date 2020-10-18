@@ -154,11 +154,7 @@ function Pouet(){
 
 
 // Affiche INT
-	for (let i = 1; i <= 13; i++) {
-		var A = "Compétence_INT_"+i;
-		console.log(A);
-		document.getElementById(A).style.visibility = "visible";
-	}
+	for (let i = 1; i <= 13; i++) {var A = "Compétence_INT_"+i;		document.getElementById(A).style.visibility = "visible";}
 // Affiche REF
 	for (let i = 1; i <= 8; i++) {var A = "Compétence_REF_"+i;document.getElementById(A).style.visibility = "visible";}
 // Affiche DEX
@@ -554,9 +550,6 @@ if (Profession == "6"){	// Mage
 	Sort_5.style.display = "block";
 	Rituel_1.style.display = "block";
 	Malédiction_1.style.display = "block";
-
-	document.getElementById('Passé_Normaux').style.display = "none";
-	document.getElementById('Passé_Mage').style.display = "block";
 }
 if (Profession == "7"){
 // Marchand
