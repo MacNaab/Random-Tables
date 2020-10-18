@@ -114,6 +114,7 @@
 </div>
 
 <div id="Etape_2" class="Etape" style="display:none;">	<!-- Etape 2 : passé du personnage -->
+	<input type="text" id="Age" class="form-control" placeholder="Âge du personnage" required>
 	Historique du personnage (facultatif) :
 	<textarea id="Historique" class="form-control" rows="7" placeholder="Histoire de vie du personnage.."></textarea>
 </div>
@@ -424,60 +425,55 @@
 	<div class="grid-container">
 	  <div class="grid-container3" id="Compétence_Profession_INT_1_aff">
 		<div class="grid-item2-1">Vigilance</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_INT_1" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_INT_1" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_INT_2_aff">
 	  <div class="grid-item2-1">Négociation</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt GIGAQ" min="0" max="6" id="Compétence_Profession_INT_2" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt GIGAQ" min="0" max="13" id="Compétence_Profession_INT_2" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_INT_3_aff">
 		<div class="grid-item2-1">Déduction</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt GIGAQ" min="0" max="6" id="Compétence_Profession_INT_3" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt GIGAQ" min="0" max="13" id="Compétence_Profession_INT_3" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_INT_4_aff">
 		<div class="grid-item2-1">Éducation</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_INT_4" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_INT_4" oninput="Compétence_PRO()" disabled>
 	  </div>
-	  <div class="grid-container2" id="Compétence_Profession_INT_5_aff">
+	  <div class="grid-container3" id="Compétence_Profession_INT_5_aff">
 		<div class="grid-item2-1"><b>Langue commune</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Langage_PRO" disabled>
-		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_INT_5" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 récap_compt compt_pro" id="Langage_PRO" min="0" max="13" id="Compétence_Profession_INT_5" oninput="Compétence_PRO()" disabled>
 	  </div>
-	  <div class="grid-container2" id="Compétence_Profession_INT_12_aff">
+	  <div class="grid-container3" id="Compétence_Profession_INT_12_aff">
 		<div class="grid-item2-1"><b>Langue ancienne</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Langage_PRO2" disabled>
-		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_INT_12" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 récap_compt compt_pro" id="Langage_PRO2" min="0" max="13" id="Compétence_Profession_INT_12" oninput="Compétence_PRO()" disabled>
 	  </div>
-	  <div class="grid-container2" id="Compétence_Profession_INT_13_aff">
+	  <div class="grid-container3" id="Compétence_Profession_INT_13_aff">
 		<div class="grid-item2-1"><b>Langue naine</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Langage_PRO3" disabled>
-		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_INT_13" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 récap_compt compt_pro" id="Langage_PRO3" min="0" max="13" id="Compétence_Profession_INT_13" oninput="Compétence_PRO()" disabled>
 	  </div>
-	  <div class="grid-container2" id="Compétence_Profession_INT_6_aff">
+	  <div class="grid-container3" id="Compétence_Profession_INT_6_aff">
 		<div class="grid-item2-1"><b>Connaissance des Monstres</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Connaissance_Monstres_PRO" disabled>
-		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_INT_6" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 récap_compt compt_pro" min="0" max="13" id="Compétence_Profession_INT_6" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_INT_7_aff">
 		<div class="grid-item2-1">Étiquette</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_INT_7" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_INT_7" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_INT_8_aff">
 	  <div class="grid-item2-1">Connaissance de la rue</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_INT_8" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_INT_8" oninput="Compétence_PRO()" disabled>
 	  </div>
-	  <div class="grid-container2" id="Compétence_Profession_INT_9_aff">
+	  <div class="grid-container3" id="Compétence_Profession_INT_9_aff">
 		<div class="grid-item2-1"><b>Tactique</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Tactique_PRO" disabled>
-		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_INT_9" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 récap_compt compt_pro" min="0" max="13" id="Compétence_Profession_INT_9" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_INT_10_aff">
 		<div class="grid-item2-1">Enseignement</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_INT_10" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_INT_10" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_INT_11_aff">
 		<div class="grid-item2-1">Survie</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_INT_11" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_INT_11" oninput="Compétence_PRO()" disabled>
 	  </div>
 	</div>
 </div>
@@ -485,35 +481,35 @@
 	<div class="grid-container">
 	  <div class="grid-container3"  id="Compétence_Profession_REF_1_aff">
 		<div class="grid-item2-1">Bagarre</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_1" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_REF_1" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3"  id="Compétence_Profession_REF_2_aff">
 		<div class="grid-item2-1">Esquive/Evasion</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_2" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_REF_2" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3"  id="Compétence_Profession_REF_3_aff">
 		<div class="grid-item2-1">Mêlée</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_3" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_REF_3" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3"  id="Compétence_Profession_REF_4_aff">
 		<div class="grid-item2-1">Équitation</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_4" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_REF_4" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3"  id="Compétence_Profession_REF_5_aff">
 		<div class="grid-item2-1">Navigation</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_5" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_REF_5" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3"  id="Compétence_Profession_REF_6_aff">
 		<div class="grid-item2-1">Lames courtes</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_6" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_REF_6" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3"  id="Compétence_Profession_REF_7_aff">
 		<div class="grid-item2-1">Bâton/Lance</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_7" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_REF_7" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3"  id="Compétence_Profession_REF_8_aff">
 		<div class="grid-item2-1">Escrime</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_8" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_REF_8" oninput="Compétence_PRO()" disabled>
 	  </div>
 	</div>
 </div>
@@ -521,23 +517,23 @@
 	<div class="grid-container">
 	  <div class="grid-container3" id="Compétence_Profession_DEX_1_aff">
 		<div class="grid-item2-1">Archerie</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_DEX_1" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_DEX_1" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_DEX_2_aff">
 		<div class="grid-item2-1">Athlétisme</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_DEX_2" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_DEX_2" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_DEX_3_aff">
 		<div class="grid-item2-1">Arbalète</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_DEX_3" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_DEX_3" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_DEX_4_aff">
 		<div class="grid-item2-1">Adresse</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_DEX_4" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_DEX_4" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_DEX_5_aff">
 		<div class="grid-item2-1">Furtivité</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_DEX_5" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_DEX_5" oninput="Compétence_PRO()" disabled>
 	  </div>
 	</div>
 </div>
@@ -545,11 +541,11 @@
 	<div class="grid-container">
 	  <div class="grid-container3" id="Compétence_Profession_COR_1_aff">
 		<div class="grid-item2-1">Physique</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_COR_1" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_COR_1" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_COR_2_aff">
 		<div class="grid-item2-1">Résilience</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_COR_2" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_COR_2" oninput="Compétence_PRO()" disabled>
 	  </div>
 	</div>
 </div>
@@ -557,78 +553,75 @@
 	<div class="grid-container">
 	  <div class="grid-container3" id="Compétence_Profession_EMP_1_aff">
 		<div class="grid-item2-1">Charisme</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_1" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_EMP_1" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_EMP_2_aff">
 		<div class="grid-item2-1">Duperie</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_2" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_EMP_2" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_EMP_3_aff">
 		<div class="grid-item2-1">Artiste</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_3" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_EMP_3" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_EMP_4_aff">
 		<div class="grid-item2-1">Jeu</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_4" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_EMP_4" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_EMP_5_aff">
 		<div class="grid-item2-1">Stylisme</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_5" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_EMP_5" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_EMP_6_aff">
 		<div class="grid-item2-1">Psychologie</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_6" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_EMP_6" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_EMP_7_aff">
 		<div class="grid-item2-1">Commandement</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_7" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_EMP_7" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_EMP_8_aff">
 		<div class="grid-item2-1">Persuasion</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_8" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_EMP_8" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_EMP_9_aff">
 		<div class="grid-item2-1">Représentation</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_9" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_EMP_9" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_EMP_10_aff">
 		<div class="grid-item2-1">Séduction</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_10" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_EMP_10" oninput="Compétence_PRO()" disabled>
 	  </div>
 	</div>
 </div>
 <div><span>TECHNIQUE</span>
 	<div class="grid-container">
-	  <div class="grid-container2" id="Compétence_Profession_TEC_1_aff">
+	  <div class="grid-container3" id="Compétence_Profession_TEC_1_aff">
 		<div class="grid-item2-1"><b>Alchimie</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Alchimie_PRO" disabled>
-		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_TEC_1" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_TEC_1" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container2" id="Compétence_Profession_TEC_2_aff">
 		<div class="grid-item2-1"><b>Artisanat</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Artisanat_PRO" disabled>
-		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_TEC_2" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 récap_compt compt_pro" min="0" max="13" id="Compétence_Profession_TEC_2" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_TEC_3_aff">
 		<div class="grid-item2-1">Déguisement</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_TEC_3" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_TEC_3" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_TEC_4_aff">
 		<div class="grid-item2-1">Premiers secours</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_TEC_4" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_TEC_4" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_TEC_5_aff">
 		<div class="grid-item2-1">Falsification</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_TEC_5" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_TEC_5" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3" id="Compétence_Profession_TEC_6_aff">
 		<div class="grid-item2-1">Crochetage</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_TEC_6" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_TEC_6" oninput="Compétence_PRO()" disabled>
 	  </div>
-	  <div class="grid-container2" id="Compétence_Profession_TEC_7_aff">
+	  <div class="grid-container3" id="Compétence_Profession_TEC_7_aff">
 		<div class="grid-item2-1"><b>Fabrication de pièges</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Piège_PRO" disabled>
-		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_TEC_7" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 récap_compt compt_pro" min="0" max="13" id="Compétence_Profession_TEC_7" oninput="Compétence_PRO()" disabled>
 	  </div>
 	</div>
 </div>
@@ -636,35 +629,31 @@
 	<div class="grid-container">
 	  <div class="grid-container3"  id="Compétence_Profession_VOL_1_aff">
 		<div class="grid-item2-1">Courage</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_VOL_1" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_VOL_1" oninput="Compétence_PRO()" disabled>
 	  </div>
-	  <div class="grid-container2"  id="Compétence_Profession_VOL_2_aff">
+	  <div class="grid-container3"  id="Compétence_Profession_VOL_2_aff">
 		<div class="grid-item2-1"><b>Envoûtement</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Malédiction_PRO" disabled>
-		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_VOL_2" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 récap_compt compt_pro" min="0" max="13" id="Compétence_Profession_VOL_2" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3"  id="Compétence_Profession_VOL_3_aff">
 		<div class="grid-item2-1">Intimidation</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_VOL_3" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_VOL_3" oninput="Compétence_PRO()" disabled>
 	  </div>
-	  <div class="grid-container2"  id="Compétence_Profession_VOL_4_aff">
+	  <div class="grid-container3"  id="Compétence_Profession_VOL_4_aff">
 		<div class="grid-item2-1">Incantation</div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Incantation_PRO" disabled>
-		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_VOL_4" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 récap_compt compt_pro" min="0" max="13" id="Compétence_Profession_VOL_4" oninput="Compétence_PRO()" disabled>
 	  </div>
-	  <div class="grid-container2"  id="Compétence_Profession_VOL_5_aff">
+	  <div class="grid-container3"  id="Compétence_Profession_VOL_5_aff">
 		<div class="grid-item2-1"><b>Résistance à la magie</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Résistance_Magie_PRO" disabled>
-		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_VOL_5" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 récap_compt compt_pro" min="0" max="13" id="Compétence_Profession_VOL_5" oninput="Compétence_PRO()" disabled>
 	  </div>
 	  <div class="grid-container3"  id="Compétence_Profession_VOL_6_aff">
 		<div class="grid-item2-1">Résistance à la contrainte</div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_VOL_6" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_VOL_6" oninput="Compétence_PRO()" disabled>
 	  </div>
-	  <div class="grid-container2"  id="Compétence_Profession_VOL_7_aff">
+	  <div class="grid-container3"  id="Compétence_Profession_VOL_7_aff">
 		<div class="grid-item2-1">Rituels</div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Rituel_PRO" disabled>
-		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_VOL_7" oninput="Compétence_PRO()" disabled>
+		<input type="number" class="grid-item2-2 récap_compt compt_pro" min="0" max="13" id="Compétence_Profession_VOL_7" oninput="Compétence_PRO()" disabled>
 	  </div>
 	</div>
 </div>
@@ -672,7 +661,7 @@
 	<div class="grid-container">
 	  <div class="grid-container3">
 		<div class="grid-item2-1" id="Compétence_Profession_aff"></div>
-		<input type="number" class="grid-item2-2 compt_pro récap_compt"  min="1" max="6" value='1' id="Compétence_Profession" oninput="Compétence_PRO()">
+		<input type="number" class="grid-item2-2 compt_pro récap_compt"  min="1" max="13" value='1' id="Compétence_Profession" oninput="Compétence_PRO()">
 	  </div>
 	</div>
 </div>
@@ -778,60 +767,55 @@
 	<div class="grid-container">
 	  <div class="grid-container3" id="Compétence_INT_1_aff">
 		<div class="grid-item2-1">Vigilance</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_1" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_INT_1">
 	  </div>
 	  <div class="grid-container3" id="Compétence_INT_2_aff">
 	  <div class="grid-item2-1">Négociation</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_2" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_INT_2">
 	  </div>
 	  <div class="grid-container3" id="Compétence_INT_3_aff">
 		<div class="grid-item2-1">Déduction</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_3" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_INT_3">
 	  </div>
 	  <div class="grid-container3" id="Compétence_INT_4_aff">
 		<div class="grid-item2-1">Education</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_4" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_INT_4">
 	  </div>
-	  <div class="grid-container2" id="Compétence_INT_5_aff">
+	  <div class="grid-container3" id="Compétence_INT_5_aff">
 		<div class="grid-item2-1"><b>Langue commune</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Langage" disabled>
-		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_INT_5" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen" id="Langage" min="0" max="13" id="Compétence_INT_5">
 	  </div>
-	  <div class="grid-container2" id="Compétence_INT_12_aff">
+	  <div class="grid-container3" id="Compétence_INT_12_aff">
 		<div class="grid-item2-1"><b>Langue ancienne</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Langage2" disabled>
-		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_INT_12" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 récap_compt compt_gen" id="Langage2" min="0" max="13" id="Compétence_INT_12">
 	  </div>
-	  <div class="grid-container2" id="Compétence_INT_13_aff">
+	  <div class="grid-container3" id="Compétence_INT_13_aff">
 		<div class="grid-item2-1"><b>Langue naine</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Langage3" disabled>
-		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_INT_13" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" id="Langage3" min="0" max="13" id="Compétence_INT_13">
 	  </div>
-	  <div class="grid-container2" id="Compétence_INT_6_aff">
+	  <div class="grid-container3" id="Compétence_INT_6_aff">
 		<div class="grid-item2-1"><b>Connaissance des Monstres</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Connaissance_Monstres" disabled>
-		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_INT_6" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_INT_6">
 	  </div>
 	  <div class="grid-container3" id="Compétence_INT_7_aff">
 		<div class="grid-item2-1">Etiquette</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_7" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_INT_7">
 	  </div>
 	  <div class="grid-container3" id="Compétence_INT_8_aff">
 	  <div class="grid-item2-1">Connaissance de la rue</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_8" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_INT_8">
 	  </div>
-	  <div class="grid-container2" id="Compétence_INT_9_aff">
+	  <div class="grid-container3" id="Compétence_INT_9_aff">
 		<div class="grid-item2-1"><b>Tactique</b></div>
-		<input type="number" class="grid-item2-3" id="Tactique" disabled>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="12" id="Compétence_INT_9" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_INT_9">
 	  </div>
 	  <div class="grid-container3" id="Compétence_INT_10_aff">
 		<div class="grid-item2-1">Enseignement</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_10" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_INT_10">
 	  </div>
 	  <div class="grid-container3" id="Compétence_INT_11_aff">
 		<div class="grid-item2-1">Survie</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_11" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_INT_11">
 	  </div>
 	</div>
 </div>
@@ -839,35 +823,35 @@
 	<div class="grid-container">
 	  <div class="grid-container3"  id="Compétence_REF_1_aff">
 		<div class="grid-item2-1">Bagarre</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_1" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_REF_1">
 	  </div>
 	  <div class="grid-container3"  id="Compétence_REF_2_aff">
 		<div class="grid-item2-1">Esquive/Evasion</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_2" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_REF_2">
 	  </div>
 	  <div class="grid-container3"  id="Compétence_REF_3_aff">
 		<div class="grid-item2-1">Mêlée</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_3" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_REF_3">
 	  </div>
 	  <div class="grid-container3"  id="Compétence_REF_4_aff">
 		<div class="grid-item2-1">Equitation</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_4" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_REF_4">
 	  </div>
 	  <div class="grid-container3"  id="Compétence_REF_5_aff">
 		<div class="grid-item2-1">Navigation</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_5" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_REF_5">
 	  </div>
 	  <div class="grid-container3"  id="Compétence_REF_6_aff">
 		<div class="grid-item2-1">Lames courtes</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_6" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_REF_6">
 	  </div>
 	  <div class="grid-container3"  id="Compétence_REF_7_aff">
 		<div class="grid-item2-1">Bâton/Lance</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_7" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_REF_7">
 	  </div>
 	  <div class="grid-container3"  id="Compétence_REF_8_aff">
 		<div class="grid-item2-1">Escrime</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_8" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_REF_8">
 	  </div>
 	</div>
 </div>
@@ -875,23 +859,23 @@
 	<div class="grid-container">
 	  <div class="grid-container3" id="Compétence_DEX_1_aff">
 		<div class="grid-item2-1">Archerie</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_DEX_1" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_DEX_1">
 	  </div>
 	  <div class="grid-container3" id="Compétence_DEX_2_aff">
 		<div class="grid-item2-1">Athlétisme</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_DEX_2" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_DEX_2">
 	  </div>
 	  <div class="grid-container3" id="Compétence_DEX_3_aff">
 		<div class="grid-item2-1">Arbalète</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_DEX_3" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_DEX_3">
 	  </div>
 	  <div class="grid-container3" id="Compétence_DEX_4_aff">
 		<div class="grid-item2-1">Adresse</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_DEX_4" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_DEX_4">
 	  </div>
 	  <div class="grid-container3" id="Compétence_DEX_5_aff">
 		<div class="grid-item2-1">Furtivité</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_DEX_5" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_DEX_5">
 	  </div>
 	</div>
 </div>
@@ -899,11 +883,11 @@
 	<div class="grid-container">
 	  <div class="grid-container3" id="Compétence_COR_1_aff">
 		<div class="grid-item2-1">Physique</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_COR_1" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_COR_1">
 	  </div>
 	  <div class="grid-container3" id="Compétence_COR_2_aff">
 		<div class="grid-item2-1">Résilience</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_COR_2" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_COR_2">
 	  </div>
 	</div>
 </div>
@@ -911,78 +895,75 @@
 	<div class="grid-container">
 	  <div class="grid-container3" id="Compétence_EMP_1_aff">
 		<div class="grid-item2-1">Charisme</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_1" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_EMP_1">
 	  </div>
 	  <div class="grid-container3" id="Compétence_EMP_2_aff">
 		<div class="grid-item2-1">Duperie</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_2" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_EMP_2">
 	  </div>
 	  <div class="grid-container3" id="Compétence_EMP_3_aff">
 		<div class="grid-item2-1">Artiste</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_3" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_EMP_3">
 	  </div>
 	  <div class="grid-container3" id="Compétence_EMP_4_aff">
 		<div class="grid-item2-1">Jeu</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_4" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_EMP_4">
 	  </div>
 	  <div class="grid-container3" id="Compétence_EMP_5_aff">
 		<div class="grid-item2-1">Style</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_5" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_EMP_5">
 	  </div>
 	  <div class="grid-container3" id="Compétence_EMP_6_aff">
 		<div class="grid-item2-1">Psychologie</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_6" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_EMP_6">
 	  </div>
 	  <div class="grid-container3" id="Compétence_EMP_7_aff">
 		<div class="grid-item2-1">Commandement</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_7" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_EMP_7">
 	  </div>
 	  <div class="grid-container3" id="Compétence_EMP_8_aff">
 		<div class="grid-item2-1">Persuasion</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_8" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_EMP_8">
 	  </div>
 	  <div class="grid-container3" id="Compétence_EMP_9_aff">
 		<div class="grid-item2-1">Représentation</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_9" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_EMP_9">
 	  </div>
 	  <div class="grid-container3" id="Compétence_EMP_10_aff">
 		<div class="grid-item2-1">Séduction</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_10" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_EMP_10">
 	  </div>
 	</div>
 </div>
 <div><span>TECHNIQUE</span>
 	<div class="grid-container">
-	  <div class="grid-container2" id="Compétence_TEC_1_aff">
+	  <div class="grid-container3" id="Compétence_TEC_1_aff">
 		<div class="grid-item2-1"><b>Alchimie</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Alchimie" disabled>
-		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_TEC_1" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 récap_compt compt_gen" min="0" max="13" id="Compétence_TEC_1">
 	  </div>
-	  <div class="grid-container2" id="Compétence_TEC_2_aff">
+	  <div class="grid-container3" id="Compétence_TEC_2_aff">
 		<div class="grid-item2-1"><b>Artisanat</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Artisanat" disabled>
-		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_TEC_2" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 récap_compt compt_gen" min="0" max="13" id="Compétence_TEC_2">
 	  </div>
 	  <div class="grid-container3" id="Compétence_TEC_3_aff">
 		<div class="grid-item2-1">Déguisement</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_TEC_3" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_TEC_3">
 	  </div>
 	  <div class="grid-container3" id="Compétence_TEC_4_aff">
 		<div class="grid-item2-1">Premiers secours</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_TEC_4" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_TEC_4">
 	  </div>
 	  <div class="grid-container3" id="Compétence_TEC_5_aff">
 		<div class="grid-item2-1">Falsification</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_TEC_5" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_TEC_5">
 	  </div>
 	  <div class="grid-container3" id="Compétence_TEC_6_aff">
 		<div class="grid-item2-1">Crochetage</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_TEC_6" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_TEC_6">
 	  </div>
-	  <div class="grid-container2" id="Compétence_TEC_7_aff">
+	  <div class="grid-container3" id="Compétence_TEC_7_aff">
 		<div class="grid-item2-1"><b>Fabrication de pièges</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Piège" disabled>
-		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_TEC_7" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 récap_compt compt_gen" min="0" max="13" id="Compétence_TEC_7">
 	  </div>
 	</div>
 </div>
@@ -990,35 +971,32 @@
 	<div class="grid-container">
 	  <div class="grid-container3"  id="Compétence_VOL_1_aff">
 		<div class="grid-item2-1">Courage</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_VOL_1" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_VOL_1">
 	  </div>
-	  <div class="grid-container2"  id="Compétence_VOL_2_aff">
+	  <div class="grid-container3"  id="Compétence_VOL_2_aff">
 		<div class="grid-item2-1"><b>Envoûtement</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Malédiction" disabled>
-		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_VOL_2" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_VOL_2">
 	  </div>
 	  <div class="grid-container3"  id="Compétence_VOL_3_aff">
 		<div class="grid-item2-1">Intimidation</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_VOL_3" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_VOL_3">
 	  </div>
-	  <div class="grid-container2"  id="Compétence_VOL_4_aff">
+	  <div class="grid-container3"  id="Compétence_VOL_4_aff">
 		<div class="grid-item2-1"><b>Incantation</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Incantation" disabled>
-		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_VOL_4" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_VOL_4">
 	  </div>
-	  <div class="grid-container2"  id="Compétence_VOL_5_aff">
+	  <div class="grid-container3"  id="Compétence_VOL_5_aff">
 		<div class="grid-item2-1"><b>Résistance à la magie</b></div>
-		<input type="number" class="grid-item2-3 récap_compt" id="Résistance_Magie" disabled>
-		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_VOL_5" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 récap_compt compt_gen" min="0" max="13" id="Compétence_VOL_5">
 	  </div>
 	  <div class="grid-container3"  id="Compétence_VOL_6_aff">
 		<div class="grid-item2-1">Résistance à la contrainte</div>
-		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_VOL_6" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="13" id="Compétence_VOL_6">
 	  </div>
 	  <div class="grid-container2"  id="Compétence_VOL_7_aff">
 		<div class="grid-item2-1"><b>Rituels</b></div>
 		<input type="number" class="grid-item2-3 récap_compt" id="Rituel" disabled>
-		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_VOL_7" oninput="Compétence2()">
+		<input type="number" class="grid-item2-2 compt_gen" min="0" max="13" id="Compétence_VOL_7">
 	  </div>
 	</div>
 </div>
