@@ -927,10 +927,6 @@ function Race2(){
 	var Race = document.getElementById('Race').value;
 	var Profession = document.getElementById('Profession');
 	$("#Profession").prop({"disabled": false, "value": ""});
-	$("#Région").prop({"disabled": false, "value": "", "required": true});
-	$("#Origine").prop({"disabled": false, "value": "", "required": true});
-
-	$('#Région option[value="3"]').prop('disabled', true);
 	$('#Profession option[value="6"]').prop('disabled', false);
 	$('#Profession option[value="8"]').prop('disabled', false);
 	
@@ -941,7 +937,6 @@ function Race2(){
 		Profession.disabled = true;
 	}
 	if(Race == 'Halfelin'){$('#Profession option[value="6"]').prop('disabled', true);$('#Profession option[value="8"]').prop('disabled', true);}
-	if(Race == "Halfelin" || Race == "Gnome"){$('#Région option[value="3"]').prop('disabled', false);}
 }
 
 function Récapitulatif(){
@@ -1271,12 +1266,6 @@ function équipement(){
 }
 
 function langues(){
-	var Région = document.getElementById('Région').value;
-	var Origine = document.getElementById('Origine').value;
-	if(Région == '1'){if(Origine != "Origine_RN_7"){langue_maternelle('0');}else{langue_maternelle('1');}}
-	if(Région == '2'){langue_maternelle('1');}
-	if(Région == '3'){if(Origine == "3_1"){langue_maternelle('1');}else{langue_maternelle('2');}}
-	
 	var pro = document.getElementById('Profession').value;
 	if(pro == '2'){
 		$('#langue_a_choix').html('une langue');
