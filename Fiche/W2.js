@@ -71,7 +71,7 @@ function PE(){	// Suivant
 			Valider.style.width = "80%";En_cours.innerHTML = "Etape 5";Etape_4.style.display = "none";Etape_5.style.display = "block";	
 		}
 		if(Valider.style.width == "40%"){	// Etape 3 > 4
-			langues(); Valider.style.width = "60%"; En_cours.innerHTML = "Etape 4"; Etape_3.style.display = "none"; Etape_4.style.display = "block"; fn_pro();Compétence_PRO();	
+			langues(); Valider.style.width = "60%"; En_cours.innerHTML = "Etape 4"; Etape_3.style.display = "none"; Etape_4.style.display = "block"; fn_pro();	
 		}
 		if(Valider.style.width == "20%"){	// Etape 2 > 3		
 			Valider.style.width = "40%";En_cours.innerHTML = "Etape 3";Etape_2.style.display = "none";Etape_3.style.display = "block";
@@ -1378,7 +1378,7 @@ async function fillForm() {
 			sexe: document.getElementById('Sexe').value,
 			race: document.getElementById('Race').value,
 			pro: LPro[document.getElementById('Profession').value],
-			age: LAge[document.getElementById('Age').value],
+			age: document.getElementById('Age').value,
 			origine: $("#Origine option:selected").text(),
 			INT: document.getElementById('Caractéristique_1').value,
 			REF: document.getElementById('Caractéristique_2').value,
