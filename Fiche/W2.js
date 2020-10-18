@@ -154,7 +154,11 @@ function Pouet(){
 
 
 // Affiche INT
-	for (let i = 1; i <= 13; i++) {var A = "Compétence_INT_"+i;document.getElementById(A).style.visibility = "visible";}
+	for (let i = 1; i <= 13; i++) {
+		var A = "Compétence_INT_"+i;
+		console.log(A);
+		document.getElementById(A).style.visibility = "visible";
+	}
 // Affiche REF
 	for (let i = 1; i <= 8; i++) {var A = "Compétence_REF_"+i;document.getElementById(A).style.visibility = "visible";}
 // Affiche DEX
