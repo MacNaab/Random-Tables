@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>JdR The Witcher</title>
+
+<!-- include libraries(jQuery, bootstrap) -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/pdf-lib@1.11.0"></script>
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+<link rel="stylesheet" href="Witcher.css"/>
+<script src="W2.js"></script>	
+
+</head>
+<body>
+<!-- Navigation -->
+<div id="navigation" style="z-index:100">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">The Witcher</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+		<li class="nav-item active">
+          <a class="nav-link" href="../index.php">Accueil
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+      </ul>
+    </div>
+	
+  </div>
+</nav>
+
+<div id="GrT"> <!-- Tableau autour du texte -->
+
+<h2>The Witcher</h2>
+<p style = "text-decoration: underline; font-weight: bold;"> Merci de remplir la feuille de création de personnage ci-dessous et de le valider <a target="_blank" href="http://www.the-witcher-jdr.fr/fichiers/aides/combats/competences.pdf" class="badge badge-warning">Description Fr ici</a></p>
+	
+	<div style="margin-left:25%;margin-right:25%;">	<!-- Barre de progression -->
+<div class="progress" style="height: 20px;">
+  <div id="PB_V" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="5" style="width: 0%"></div>
+  <div id="PB_EC" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="5" style="width: 20%">Étape 1</div>
+</div>
+	</div>
+	
+	<br><br>
+<form class="was-validated">
+
+<div id="Etape_1" class="Etape">	<!-- Etape 1 : nom joueur, perso, sexe, race, profession -->
+	<div class="form-row">	<!-- Noms -->
+		    <div class="col">
+				<input type="text" name="joueur" id="joueur" class="form-control" placeholder="Prénom du joueur" required>
+				<div class="invalid-feedback">Remplissez votre prénom</div>
+			</div>			  
+		<br>
+		    <div class="col">
+				<input type="text" name="personnage" id="personnage" class="form-control" placeholder="Prénom, nom ou surnom du personnage" required>
+				<div class="invalid-feedback">Remplissez le nom de votre personnage</div>
+			</div>
+	</div>
+	<br>
+	<div class="form-row">	<!-- Sexe + Race + Profession -->
+		<div class="col">
+			<select name="Sexe" id="Sexe" class="custom-select" style="background-color:white" required>
+				<option disabled selected value="">Sexe du personnage</option>
+				<option value="0">Homme</option>
+				<option value="1">Femme</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez le sexe du personnage</div>			
+		</div>
+		<div class="col">
+			<select name="Race" id="Race" class="custom-select" style="background-color:white" onchange="Race2();Pouet()" required>
+				<option disabled selected value="">Race</option>
+					<option value="Sorceleur">Sorceleur</option>
+					<option value="Humain">Humain</option>
+					<option value="Elfe">Elfe</option>
+					<option value="Nain">Nain</option>
+					<option value="Halfelin">Halfelin</option>
+					<option value="Vampire">Vampire*</option>
+					<option value="Gnome">Gnome*</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez la race du personnage</div>			
+		</div>
+		<div class="col">
+			<select name="Profession" id="Profession" class="custom-select" style="background-color:white" onchange="Pouet()" required>
+				<option disabled selected value="">Profession</option>
+					<option value="1">Artisan</option>
+					<option value="2">Barde</option>
+					<option value="3">Criminel</option>
+					<option value="4">Docteur</option>
+					<option value="5">Homme d’armes</option>
+					<option value="6">Mage</option>
+					<option value="7">Marchand</option>
+					<option value="8">Prêtre</option>
+					<option value="11">Noble</option>
+					<option value="12">Paysan</option>
+					<option value="13">Fanatique</option>
+					<option value="14">Hors-la-loi</option>
+					<option value="15">Nomade</option>
+					<option disabled value="9">Sorceleur</option>
+					<option disabled value="10">Vampire</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez la profession du personnage</div>			
+		</div>
+	</div>
+	<br>
+</div>
+
+<div id="Etape_2" class="Etape" style="display:none;">	<!-- Etape 2 : passé du personnage -->
+	Historique du personnage (facultatif) :
+	<textarea id="Historique" class="form-control" rows="7" placeholder="Histoire de vie du personnage.."></textarea>
+</div>
+
+<div id="Etape_3" class="Etape" style="display:none;"> <!-- Etape 3 : caractéristiques -->
+
+<div>	<!-- Caractéristiques -->
+<b><input type="number" id="MAX_CARACT"> points</b> à dépenser dans les 9 caractéristiques primaires suivantes : (max = 10 / min = 1)
+<br><br>
+
+<div class="grid-container">
+  <div class="grid-containerB2">
+	<div class="grid-itemB-1">INTELLIGENCE</div>
+	<input type="button" class="grid-itemB-2" value="-" onclick="Caract('-','1');Compétence2()">
+	<input type="number" class="grid-itemB-3" value="1" id="Caractéristique_1" disabled>
+	<input type="button" class="grid-itemB-4" value="+" onclick="Caract('+','1');;Compétence2()">
+  </div>
+  <div class="grid-containerB2">
+	<div class="grid-itemB-1">RÉFLEXES</div>
+	<input type="button" class="grid-itemB-2" value="-" onclick="Caract('-','2');Compétence2()">
+	<input type="number" class="grid-itemB-3" value="1" id="Caractéristique_2" disabled>
+	<input type="button" class="grid-itemB-4" value="+" onclick="Caract('+','2');Compétence2()">
+  </div>
+  <div class="grid-containerB2">
+	<div class="grid-itemB-1">DEXTÉRITÉ</div>
+	<input type="button" class="grid-itemB-2" value="-" onclick="Caract('-','3')">
+	<input type="number" class="grid-itemB-3" value="1" id="Caractéristique_3" disabled>
+	<input type="button" class="grid-itemB-4" value="+" onclick="Caract('+','3')">
+  </div>
+  <div class="grid-containerB2">
+	<div class="grid-itemB-1">CORPS</div>
+	<input type="button" class="grid-itemB-2" value="-" onclick="Caract('-','4')">
+	<input type="number" class="grid-itemB-3" value="1" id="Caractéristique_4" disabled>
+	<input type="button" class="grid-itemB-4" value="+" onclick="Caract('+','4')">
+  </div>
+  <div class="grid-containerB2">
+	<div class="grid-itemB-1">VITESSE</div>
+	<input type="button" class="grid-itemB-2" value="-" onclick="Caract('-','5')">
+	<input type="number" class="grid-itemB-3" value="1" id="Caractéristique_5" disabled>
+	<input type="button" class="grid-itemB-4" value="+" onclick="Caract('+','5')">
+  </div>
+  <div class="grid-containerB2">
+	<div class="grid-itemB-1">EMPATHIE</div>
+	<input type="button" class="grid-itemB-2" value="-" onclick="Caract('-','6')">
+	<input type="number" class="grid-itemB-3" value="1" id="Caractéristique_6" disabled>
+	<input type="button" class="grid-itemB-4" value="+" onclick="Caract('+','6');">
+  </div>
+  <div class="grid-containerB2">
+	<div class="grid-itemB-1">TECHNIQUE</div>
+	<input type="button" class="grid-itemB-2" value="-" onclick="Caract('-','7')">
+	<input type="number" class="grid-itemB-3" value="1" id="Caractéristique_7" disabled>
+	<input type="button" class="grid-itemB-4" value="+" onclick="Caract('+','7')">
+  </div>
+  <div class="grid-containerB2">
+	<div class="grid-itemB-1">VOLONTÉ</div>
+	<input type="button" class="grid-itemB-2" value="-" onclick="Caract('-','8')">
+	<input type="number" class="grid-itemB-3" value="1" id="Caractéristique_8" disabled>
+	<input type="button" class="grid-itemB-4" value="+" onclick="Caract('+','8')">
+  </div>
+  <div class="grid-containerB2">
+	<div class="grid-itemB-1">CHANCE</div>
+	<input type="button" class="grid-itemB-2" value="-" onclick="Caract('-','9')">
+	<input type="number" class="grid-itemB-3" value="1" id="Caractéristique_9" disabled>
+	<input type="button" class="grid-itemB-4" value="+" onclick="Caract('+','9')">
+  </div>
+</div>
+
+
+<div>	<!-- 1-2-3 -->
+
+	<br>
+	<div>	<!-- Décompte -->
+		<button type="button" disabled class="btn btn-primary">Points de caractéristique restant : <span id="Décompte_Caractéristique">51</span></button>
+	</div>
+      
+</div>
+
+</div>
+</div>
+
+<div id="Etape_4" class="Etape" style="display:none;"> <!-- Etape 4 : compétences de profession -->
+
+<div><b>44 points</b> à dépenser dans les compétences de professions suivantes : (max = 6 / min = 1)</div>
+<br><div>En <b>gras</b> les compétences nécessitant 2 points pour augmenter d'un niveau</div>
+<br>
+<div id="garageàlangue" style="display:none;">
+	<span>choisissez <span id="langue_a_choix">une langue</span>, encore <span id="langue_a_choix2"></span></span>
+	<div class="grid-container">
+		<div class="custom-control custom-checkbox">
+		  <input type="checkbox" class="custom-control-input CHECK_langue" id="customCheckLangue1">
+		  <label class="custom-control-label" for="customCheckLangue1">Langue commune</label>
+		</div>
+		<div class="custom-control custom-checkbox">
+		  <input type="checkbox" class="custom-control-input CHECK_langue" id="customCheckLangue2">
+		  <label class="custom-control-label" for="customCheckLangue2">Langue ancienne</label>
+		</div>
+		<div class="custom-control custom-checkbox">
+		  <input type="checkbox" class="custom-control-input CHECK_langue" id="customCheckLangue3">
+		  <label class="custom-control-label" for="customCheckLangue3">Langue naine</label>
+		</div>
+	</div>
+</div>
+<div id="garageàVampire" style="display:none;" class="grid-container">
+	<div><span>Choisissez une compétence TEC</span></div>
+	<div>
+		<select class="custom-select" onchange='FanBasePro("1",this.value);'>
+		  <option disabled selected>Compétence TEC</option>
+		  <option value="1">Alchimie</option>
+		  <option value="2">Artisanat</option>
+		  <option value="3">Déguisement</option>
+		  <option value="4">Premiers secours</option>
+		  <option value="5">Falsification</option>
+		  <option value="6">Crochetage</option>
+		  <option value="7">Fabrication de pièges</option>
+		</select>
+	</div>
+</div>
+<div id="garageàID" style="display:none;" class="grid-container">
+	<div><span>Choisissez une compétence d'arme</span></div>
+	<div>
+		<select class="custom-select" onchange='FanBasePro("2",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+</div>
+<div id="garageàHD" style="display:none;" class="grid-container">
+	<div><span>Choisissez 5 compétences d'arme</span></div>
+	<div>
+		<select id="HD_1" class="custom-select" onchange='FanBasePro("0",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+	<div>
+		<select id="HD_2" class="custom-select" onchange='FanBasePro("0",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+	<div>
+		<select id="HD_3" class="custom-select" onchange='FanBasePro("0",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+	<div>
+		<select id="HD_4" class="custom-select" onchange='FanBasePro("0",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+	<div>
+		<select id="HD_5" class="custom-select" onchange='FanBasePro("0",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+</div>
+
+<div id="garageàNoble" style="display:none;" class="grid-container">
+	<div><span>Choisissez une compétence d'arme</span></div>
+	<div>
+		<select class="custom-select" onchange='FanBasePro("2",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+</div>
+<div id="garageàFanatique" style="display:none;" class="grid-container">
+	<div><span>Choisissez une compétence d'arme</span></div>
+	<div>
+		<select class="custom-select" onchange='FanBasePro("2-2",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_4">Équitation</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+</div>
+<div id="garageàHLL" style="display:none;" class="grid-container">
+	<div><span>Choisissez une compétence d'arme</span></div>
+	<div>
+		<select class="custom-select" onchange='FanBasePro("3",this.value);'>
+		  <option selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_2">Athlétisme</option>
+		</select>
+	</div>
+</div>
+<div id="garageàNomade" style="display:none;" class="grid-container">
+	<div><span>Choisissez 3 compétences d'arme</span></div>
+	<div>
+		<select id="Nomade_1" class="custom-select" onchange='FanBasePro("4",this.value);'>
+		  <option value="" selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		</select>
+	</div>
+	<div>
+		<select id="Nomade_2" class="custom-select" onchange='FanBasePro("4",this.value);'>
+		  <option value="" selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		</select>
+	</div>
+	<div>
+		<select id="Nomade_3" class="custom-select" onchange='FanBasePro("4",this.value);'>
+		  <option value="" selected disabled>Compétence d'arme</option>
+		  <option value="Compétence_Profession_INT_9">Tactique</option>
+		  <option value="Compétence_Profession_REF_1">Bagarre</option>
+		  <option value="Compétence_Profession_REF_7">Bâton/Lance</option>
+		  <option value="Compétence_Profession_REF_8">Escrime</option>
+		  <option value="Compétence_Profession_REF_6">Lames courtes</option>
+		  <option value="Compétence_Profession_REF_3">Mêlée</option>
+		  <option value="Compétence_Profession_DEX_3">Arbalète</option>
+		  <option value="Compétence_Profession_DEX_1">Archerie</option>
+		</select>
+	</div>
+</div>
+<div><span>INTELLIGENCE</span>
+	<div class="grid-container">
+	  <div class="grid-container3" id="Compétence_Profession_INT_1_aff">
+		<div class="grid-item2-1">Vigilance</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_INT_1" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_INT_2_aff">
+	  <div class="grid-item2-1">Négociation</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt GIGAQ" min="0" max="6" id="Compétence_Profession_INT_2" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_INT_3_aff">
+		<div class="grid-item2-1">Déduction</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt GIGAQ" min="0" max="6" id="Compétence_Profession_INT_3" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_INT_4_aff">
+		<div class="grid-item2-1">Éducation</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_INT_4" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container2" id="Compétence_Profession_INT_5_aff">
+		<div class="grid-item2-1"><b>Langue commune</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Langage_PRO" disabled>
+		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_INT_5" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container2" id="Compétence_Profession_INT_12_aff">
+		<div class="grid-item2-1"><b>Langue ancienne</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Langage_PRO2" disabled>
+		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_INT_12" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container2" id="Compétence_Profession_INT_13_aff">
+		<div class="grid-item2-1"><b>Langue naine</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Langage_PRO3" disabled>
+		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_INT_13" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container2" id="Compétence_Profession_INT_6_aff">
+		<div class="grid-item2-1"><b>Connaissance des Monstres</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Connaissance_Monstres_PRO" disabled>
+		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_INT_6" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_INT_7_aff">
+		<div class="grid-item2-1">Étiquette</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_INT_7" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_INT_8_aff">
+	  <div class="grid-item2-1">Connaissance de la rue</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_INT_8" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container2" id="Compétence_Profession_INT_9_aff">
+		<div class="grid-item2-1"><b>Tactique</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Tactique_PRO" disabled>
+		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_INT_9" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_INT_10_aff">
+		<div class="grid-item2-1">Enseignement</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_INT_10" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_INT_11_aff">
+		<div class="grid-item2-1">Survie</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_INT_11" oninput="Compétence_PRO()" disabled>
+	  </div>
+	</div>
+</div>
+<div><span>RÉFLEXES</span>
+	<div class="grid-container">
+	  <div class="grid-container3"  id="Compétence_Profession_REF_1_aff">
+		<div class="grid-item2-1">Bagarre</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_1" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3"  id="Compétence_Profession_REF_2_aff">
+		<div class="grid-item2-1">Esquive/Evasion</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_2" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3"  id="Compétence_Profession_REF_3_aff">
+		<div class="grid-item2-1">Mêlée</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_3" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3"  id="Compétence_Profession_REF_4_aff">
+		<div class="grid-item2-1">Équitation</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_4" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3"  id="Compétence_Profession_REF_5_aff">
+		<div class="grid-item2-1">Navigation</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_5" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3"  id="Compétence_Profession_REF_6_aff">
+		<div class="grid-item2-1">Lames courtes</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_6" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3"  id="Compétence_Profession_REF_7_aff">
+		<div class="grid-item2-1">Bâton/Lance</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_7" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3"  id="Compétence_Profession_REF_8_aff">
+		<div class="grid-item2-1">Escrime</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_REF_8" oninput="Compétence_PRO()" disabled>
+	  </div>
+	</div>
+</div>
+<div><span>DEXTÉRITÉ</span>
+	<div class="grid-container">
+	  <div class="grid-container3" id="Compétence_Profession_DEX_1_aff">
+		<div class="grid-item2-1">Archerie</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_DEX_1" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_DEX_2_aff">
+		<div class="grid-item2-1">Athlétisme</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_DEX_2" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_DEX_3_aff">
+		<div class="grid-item2-1">Arbalète</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_DEX_3" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_DEX_4_aff">
+		<div class="grid-item2-1">Adresse</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_DEX_4" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_DEX_5_aff">
+		<div class="grid-item2-1">Furtivité</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_DEX_5" oninput="Compétence_PRO()" disabled>
+	  </div>
+	</div>
+</div>
+<div><span>CORPS</span>
+	<div class="grid-container">
+	  <div class="grid-container3" id="Compétence_Profession_COR_1_aff">
+		<div class="grid-item2-1">Physique</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_COR_1" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_COR_2_aff">
+		<div class="grid-item2-1">Résilience</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_COR_2" oninput="Compétence_PRO()" disabled>
+	  </div>
+	</div>
+</div>
+<div><span>EMPATHIE</span>
+	<div class="grid-container">
+	  <div class="grid-container3" id="Compétence_Profession_EMP_1_aff">
+		<div class="grid-item2-1">Charisme</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_1" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_EMP_2_aff">
+		<div class="grid-item2-1">Duperie</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_2" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_EMP_3_aff">
+		<div class="grid-item2-1">Artiste</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_3" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_EMP_4_aff">
+		<div class="grid-item2-1">Jeu</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_4" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_EMP_5_aff">
+		<div class="grid-item2-1">Stylisme</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_5" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_EMP_6_aff">
+		<div class="grid-item2-1">Psychologie</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_6" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_EMP_7_aff">
+		<div class="grid-item2-1">Commandement</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_7" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_EMP_8_aff">
+		<div class="grid-item2-1">Persuasion</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_8" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_EMP_9_aff">
+		<div class="grid-item2-1">Représentation</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_9" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_EMP_10_aff">
+		<div class="grid-item2-1">Séduction</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_EMP_10" oninput="Compétence_PRO()" disabled>
+	  </div>
+	</div>
+</div>
+<div><span>TECHNIQUE</span>
+	<div class="grid-container">
+	  <div class="grid-container2" id="Compétence_Profession_TEC_1_aff">
+		<div class="grid-item2-1"><b>Alchimie</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Alchimie_PRO" disabled>
+		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_TEC_1" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container2" id="Compétence_Profession_TEC_2_aff">
+		<div class="grid-item2-1"><b>Artisanat</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Artisanat_PRO" disabled>
+		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_TEC_2" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_TEC_3_aff">
+		<div class="grid-item2-1">Déguisement</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_TEC_3" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_TEC_4_aff">
+		<div class="grid-item2-1">Premiers secours</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_TEC_4" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_TEC_5_aff">
+		<div class="grid-item2-1">Falsification</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_TEC_5" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3" id="Compétence_Profession_TEC_6_aff">
+		<div class="grid-item2-1">Crochetage</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_TEC_6" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container2" id="Compétence_Profession_TEC_7_aff">
+		<div class="grid-item2-1"><b>Fabrication de pièges</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Piège_PRO" disabled>
+		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_TEC_7" oninput="Compétence_PRO()" disabled>
+	  </div>
+	</div>
+</div>
+<div><span>VOLONTÉ</span>
+	<div class="grid-container">
+	  <div class="grid-container3"  id="Compétence_Profession_VOL_1_aff">
+		<div class="grid-item2-1">Courage</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_VOL_1" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container2"  id="Compétence_Profession_VOL_2_aff">
+		<div class="grid-item2-1"><b>Envoûtement</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Malédiction_PRO" disabled>
+		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_VOL_2" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3"  id="Compétence_Profession_VOL_3_aff">
+		<div class="grid-item2-1">Intimidation</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_VOL_3" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container2"  id="Compétence_Profession_VOL_4_aff">
+		<div class="grid-item2-1">Incantation</div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Incantation_PRO" disabled>
+		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_VOL_4" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container2"  id="Compétence_Profession_VOL_5_aff">
+		<div class="grid-item2-1"><b>Résistance à la magie</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Résistance_Magie_PRO" disabled>
+		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_VOL_5" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container3"  id="Compétence_Profession_VOL_6_aff">
+		<div class="grid-item2-1">Résistance à la contrainte</div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="6" id="Compétence_Profession_VOL_6" oninput="Compétence_PRO()" disabled>
+	  </div>
+	  <div class="grid-container2"  id="Compétence_Profession_VOL_7_aff">
+		<div class="grid-item2-1">Rituels</div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Rituel_PRO" disabled>
+		<input type="number" class="grid-item2-2 compt_pro" min="0" max="12" id="Compétence_Profession_VOL_7" oninput="Compétence_PRO()" disabled>
+	  </div>
+	</div>
+</div>
+<div><span>PROFESSION</span>
+	<div class="grid-container">
+	  <div class="grid-container3">
+		<div class="grid-item2-1" id="Compétence_Profession_aff"></div>
+		<input type="number" class="grid-item2-2 compt_pro récap_compt"  min="1" max="6" value='1' id="Compétence_Profession" oninput="Compétence_PRO()">
+	  </div>
+	</div>
+</div>
+	<div>	<!-- Décompte -->
+		<button type="button" disabled class="btn btn-primary">Points de compétences restant : <span id="Décompte_Compétence_PRO">44</span></button>
+	</div>
+
+
+<br>
+<div><!-- Magie -->
+
+<div id="Magie_Explication"></div>
+
+<div><!-- Sorts : M = 5 / P = 0 -->
+<div class="form-row">	
+		<div class="col">
+			<select id="Sort_1" class="custom-select MagieMagie" style="background-color:white"><option disabled selected value="">Sort</option></select>
+			<div class="invalid-feedback">Selectionnez un sort</div>			
+		</div>
+		<div class="col">
+			<select id="Sort_2" class="custom-select MagieMagie" style="background-color:white"><option disabled selected value="">Sort</option></select>
+			<div class="invalid-feedback">Selectionnez un sort</div>			
+		</div>
+		<div class="col">
+			<select id="Sort_3" class="custom-select MagieMagie" style="background-color:white"><option disabled selected value="">Sort</option></select>
+			<div class="invalid-feedback">Selectionnez un sort</div>			
+		</div>
+</div>
+<div class="form-row">
+		<div class="col">
+			<select style="width:66.66%" id="Sort_4" class="custom-select MagieMagie" style="background-color:white"><option disabled selected value="">Sort</option></select>
+			<div class="invalid-feedback">Selectionnez un sort</div>			
+		</div>
+		<div class="col">
+			<select style="width:66.66%" id="Sort_5" class="custom-select MagieMagie" style="background-color:white"><option disabled selected value="">Sort</option></select>
+			<div class="invalid-feedback">Selectionnez un sort</div>			
+		</div>
+</div>
+</div>
+
+<div class="form-row">	<!-- Invocations : M = 0 / P = 2 -->
+		<div class="col">
+			<select name="Invocation_1" id="Invocation_1" class="custom-select MagieMagie" style="background-color:white">
+				<option disabled selected value="">Invocation</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez une invocation</div>			
+		</div>
+		<div class="col">
+			<select name="Invocation_2" id="Invocation_2" class="custom-select MagieMagie" style="background-color:white">
+				<option disabled selected value="">Invocation</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez une invocation</div>			
+		</div>
+</div>
+
+<div class="form-row">	<!-- Rituels : M = 1 / P = 2 -->
+		<div class="col">
+			<select name="Rituel_1" id="Rituel_1" class="custom-select MagieMagie" style="background-color:white">
+				<option disabled selected value="">Rituel</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez un rituel</div>			
+		</div>
+		<div class="col">
+			<select name="Rituel_2" id="Rituel_2" class="custom-select MagieMagie" style="background-color:white">
+				<option disabled selected value="">Rituel</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez un rituel</div>			
+		</div>
+</div>
+
+<div class="form-row">	<!-- Malédictions : M = 1 / P = 2 -->
+		<div class="col">
+			<select name="Malédiction_1" id="Malédiction_1" class="custom-select MagieMagie" style="background-color:white">
+				<option disabled selected value="">Envoûtement</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez un envoûtement</div>			
+		</div>
+		<div class="col">
+			<select name="Malédiction_2" id="Malédiction_2" class="custom-select MagieMagie" style="background-color:white">
+				<option disabled selected value="">Envoûtement</option>
+			</select>
+			<div class="invalid-feedback">Selectionnez un envoûtement</div>			
+		</div>
+</div>
+
+</div>
+<div id="Magie Vampire" style="display:none">
+	<div class="grid-container">
+		<select id="Sort_Vampire_1" class="custom-select" style="background-color:white"><option disabled selected value="">Sort</option></select>
+		<select id="Sort_Vampire_2" class="custom-select" style="background-color:white"><option disabled selected value="">Sort</option></select>
+	</div>
+</div>
+
+</div>
+
+<div id="Etape_5" class="Etape" style="display:none;"> <!-- Etape 5 : compétences générale -->
+
+<div><b><span id="Points_Comp_Bonus">INT + REF</span> points</b> supplémentaire à dépenser parmi toutes les autres compétences : (max = 6 / min = 0)</div>
+<br>
+<div>En <b>gras</b> les compétences nécessitant 2 points pour augmenter d'un niveau</div>
+<br>
+<div><span>INTELLIGENCE</span>
+	<div class="grid-container">
+	  <div class="grid-container3" id="Compétence_INT_1_aff">
+		<div class="grid-item2-1">Vigilance</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_1" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_INT_2_aff">
+	  <div class="grid-item2-1">Négociation</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_2" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_INT_3_aff">
+		<div class="grid-item2-1">Déduction</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_3" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_INT_4_aff">
+		<div class="grid-item2-1">Education</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_4" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container2" id="Compétence_INT_5_aff">
+		<div class="grid-item2-1"><b>Langue commune</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Langage" disabled>
+		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_INT_5" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container2" id="Compétence_INT_12_aff">
+		<div class="grid-item2-1"><b>Langue ancienne</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Langage2" disabled>
+		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_INT_12" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container2" id="Compétence_INT_13_aff">
+		<div class="grid-item2-1"><b>Langue naine</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Langage3" disabled>
+		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_INT_13" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container2" id="Compétence_INT_6_aff">
+		<div class="grid-item2-1"><b>Connaissance des Monstres</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Connaissance_Monstres" disabled>
+		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_INT_6" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_INT_7_aff">
+		<div class="grid-item2-1">Etiquette</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_7" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_INT_8_aff">
+	  <div class="grid-item2-1">Connaissance de la rue</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_8" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container2" id="Compétence_INT_9_aff">
+		<div class="grid-item2-1"><b>Tactique</b></div>
+		<input type="number" class="grid-item2-3" id="Tactique" disabled>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="12" id="Compétence_INT_9" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_INT_10_aff">
+		<div class="grid-item2-1">Enseignement</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_10" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_INT_11_aff">
+		<div class="grid-item2-1">Survie</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_INT_11" oninput="Compétence2()">
+	  </div>
+	</div>
+</div>
+<div><span>RÉFLEXES</span>
+	<div class="grid-container">
+	  <div class="grid-container3"  id="Compétence_REF_1_aff">
+		<div class="grid-item2-1">Bagarre</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_1" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3"  id="Compétence_REF_2_aff">
+		<div class="grid-item2-1">Esquive/Evasion</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_2" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3"  id="Compétence_REF_3_aff">
+		<div class="grid-item2-1">Mêlée</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_3" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3"  id="Compétence_REF_4_aff">
+		<div class="grid-item2-1">Equitation</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_4" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3"  id="Compétence_REF_5_aff">
+		<div class="grid-item2-1">Navigation</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_5" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3"  id="Compétence_REF_6_aff">
+		<div class="grid-item2-1">Lames courtes</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_6" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3"  id="Compétence_REF_7_aff">
+		<div class="grid-item2-1">Bâton/Lance</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_7" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3"  id="Compétence_REF_8_aff">
+		<div class="grid-item2-1">Escrime</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_REF_8" oninput="Compétence2()">
+	  </div>
+	</div>
+</div>
+<div><span>DEXTÉRITÉ</span>
+	<div class="grid-container">
+	  <div class="grid-container3" id="Compétence_DEX_1_aff">
+		<div class="grid-item2-1">Archerie</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_DEX_1" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_DEX_2_aff">
+		<div class="grid-item2-1">Athlétisme</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_DEX_2" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_DEX_3_aff">
+		<div class="grid-item2-1">Arbalète</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_DEX_3" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_DEX_4_aff">
+		<div class="grid-item2-1">Adresse</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_DEX_4" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_DEX_5_aff">
+		<div class="grid-item2-1">Furtivité</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_DEX_5" oninput="Compétence2()">
+	  </div>
+	</div>
+</div>
+<div><span>CORPS</span>
+	<div class="grid-container">
+	  <div class="grid-container3" id="Compétence_COR_1_aff">
+		<div class="grid-item2-1">Physique</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_COR_1" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_COR_2_aff">
+		<div class="grid-item2-1">Résilience</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_COR_2" oninput="Compétence2()">
+	  </div>
+	</div>
+</div>
+<div><span>EMPATHIE</span>
+	<div class="grid-container">
+	  <div class="grid-container3" id="Compétence_EMP_1_aff">
+		<div class="grid-item2-1">Charisme</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_1" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_EMP_2_aff">
+		<div class="grid-item2-1">Duperie</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_2" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_EMP_3_aff">
+		<div class="grid-item2-1">Artiste</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_3" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_EMP_4_aff">
+		<div class="grid-item2-1">Jeu</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_4" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_EMP_5_aff">
+		<div class="grid-item2-1">Style</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_5" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_EMP_6_aff">
+		<div class="grid-item2-1">Psychologie</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_6" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_EMP_7_aff">
+		<div class="grid-item2-1">Commandement</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_7" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_EMP_8_aff">
+		<div class="grid-item2-1">Persuasion</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_8" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_EMP_9_aff">
+		<div class="grid-item2-1">Représentation</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_9" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_EMP_10_aff">
+		<div class="grid-item2-1">Séduction</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_EMP_10" oninput="Compétence2()">
+	  </div>
+	</div>
+</div>
+<div><span>TECHNIQUE</span>
+	<div class="grid-container">
+	  <div class="grid-container2" id="Compétence_TEC_1_aff">
+		<div class="grid-item2-1"><b>Alchimie</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Alchimie" disabled>
+		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_TEC_1" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container2" id="Compétence_TEC_2_aff">
+		<div class="grid-item2-1"><b>Artisanat</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Artisanat" disabled>
+		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_TEC_2" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_TEC_3_aff">
+		<div class="grid-item2-1">Déguisement</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_TEC_3" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_TEC_4_aff">
+		<div class="grid-item2-1">Premiers secours</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_TEC_4" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_TEC_5_aff">
+		<div class="grid-item2-1">Falsification</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_TEC_5" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3" id="Compétence_TEC_6_aff">
+		<div class="grid-item2-1">Crochetage</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_TEC_6" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container2" id="Compétence_TEC_7_aff">
+		<div class="grid-item2-1"><b>Fabrication de pièges</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Piège" disabled>
+		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_TEC_7" oninput="Compétence2()">
+	  </div>
+	</div>
+</div>
+<div><span>VOLONTÉ</span>
+	<div class="grid-container">
+	  <div class="grid-container3"  id="Compétence_VOL_1_aff">
+		<div class="grid-item2-1">Courage</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_VOL_1" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container2"  id="Compétence_VOL_2_aff">
+		<div class="grid-item2-1"><b>Envoûtement</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Malédiction" disabled>
+		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_VOL_2" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3"  id="Compétence_VOL_3_aff">
+		<div class="grid-item2-1">Intimidation</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_VOL_3" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container2"  id="Compétence_VOL_4_aff">
+		<div class="grid-item2-1"><b>Incantation</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Incantation" disabled>
+		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_VOL_4" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container2"  id="Compétence_VOL_5_aff">
+		<div class="grid-item2-1"><b>Résistance à la magie</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Résistance_Magie" disabled>
+		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_VOL_5" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container3"  id="Compétence_VOL_6_aff">
+		<div class="grid-item2-1">Résistance à la contrainte</div>
+		<input type="number" class="grid-item2-2 compt_gen récap_compt" min="0" max="6" id="Compétence_VOL_6" oninput="Compétence2()">
+	  </div>
+	  <div class="grid-container2"  id="Compétence_VOL_7_aff">
+		<div class="grid-item2-1"><b>Rituels</b></div>
+		<input type="number" class="grid-item2-3 récap_compt" id="Rituel" disabled>
+		<input type="number" class="grid-item2-2 compt_gen" min="0" max="12" id="Compétence_VOL_7" oninput="Compétence2()">
+	  </div>
+	</div>
+</div>
+
+	<div>	<!-- Décompte -->
+		<button type="button" disabled class="btn btn-primary">Points de compétences restant : <span id="Décompte_Compétence">INT + REF</span></button>
+	</div>
+
+</div>
+
+<div id="Etape_6" class="Etape" style="display:none;"> <!-- Etape 6 : équipement + description -->
+	Equipement de départ: (Encore <span id="GEAR_CND"></span> choix)
+	<div class="grid-container" id='GEAR_CONTAINER'> <!-- GEAR -->	</div>
+	<div style="margin-left:10%;margin-right:10%">
+	Description du personnage (facultatif) :
+	  <textarea id="Description" class="form-control" aria-label="With textarea" rows="7" placeholder="Style personnel : vestimentaire, personnalité, aspirations, physique, valeurs etc"></textarea>
+	</div>
+</div>
+
+<div id="Récap" class="Etape" style="text-align:left;display:none;">
+<div>	<!-- Client -->
+
+Nom du joueur : <span id="Récap_joueur"></span> ;
+Nom du personnage : <span id="Récap_perso"></span> ;
+<br>Sexe : <span id="Récap_sexe"></span> ;
+Race : <span id="Récap_race"></span> ;
+Profession : <span id="Récap_profession"></span>
+
+<br><br>Histoire de vie :<br>
+<span id="Récap_HDM"></span>
+
+<br><br>Caractéristiques :<br>
+INTELLIGENCE <span id="Récap_puissance"></span> ; RÉFLEXES <span id="Récap_vigueur"></span> ; DEXTÉRITÉ <span id="Récap_agilité"></span> ;
+<br>CORPS <span id="Récap_intellect"></span> ; VITESSE <span id="Récap_perception"></span> ; EMPATHIE <span id="Récap_ténacité"></span> ;
+<br>TECHNIQUE <span id="Récap_charisme"></span> ; VOLONTÉ <span id="Récap_communication"></span> ; CHANCE <span id="Récap_instinct"></span> ;
+<div>
+Étourdissement <span id="Récap_ETOU"></span> ; 
+Course <span id="Récap_RUN"></span> ; 
+Saut <span id="Récap_SAUT"></span> ; 
+PS <span id="Récap_PS"></span> ; 
+Endurance <span id="Récap_END"></span> ; 
+Encombrement <span id="Récap_ENC"></span> ; 
+Récupération <span id="Récap_REC"></span> ; 
+</div>
+
+
+<br><br>Compétences :</br>
+<span id="Récap_compétences"></span>
+<br><span id="RRRécap" style="display:none"> Magie : 
+<br><span id="Récap_magie"></span></span>
+
+<br><br>Equipement :
+<div id="Récap_item"></div>
+</div>
+<br>
+
+<div style="display:none">	<!-- Serveur -->
+Serveur :
+  <textarea id="Récap2_compétences" name="Récap2_compétences" placeholder="Compétences"></textarea>
+  <textarea id="Récap2_HDM" name="Récap2_HDM" placeholder="HDM"></textarea>
+  <textarea id="Récap2_magie" name="Récap2_magie" placeholder="Magie"></textarea>
+  
+</div>
+
+
+
+
+</div>
+	
+	<br><br>
+	<div class="form-row" id="Boutton_Suivant">	<!-- Bouton Suivant -->
+		<div class="col">
+			<button type="button" class="btn btn-secondary" onclick="AV()">Précédent</button>
+		</div>
+		<div class="col">
+			<button type="button" class="btn btn-success"  onclick="PE()">Suivant</button>
+		</div>
+	</div>	
+	
+	<br>
+	<div style="display:none;" id="Le_Bouton_Final" class="grid-container-max">	<!-- Bouton valider -->
+			<button type="button" class="btn btn-secondary" onclick="AV('retour')">Précédent</button>
+            <button id="button" onclick="fillForm();" type="button" class="btn btn-success">Valider !</button>
+	</div>	
+		
+</div> <!-- Tableau texte -->
+</form>
+  <div class="toast" id="toast1" data-autohide="false" style="position: fixed; top: 0; right: 0;">
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">Creation de la fiche de personnage...</strong>
+      <small class="text-muted"></small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+    </div>
+    <div id="PDF_load" class="toast-body">
+      Création de la fiche en personnage en format en cours...
+    </div>
+  </div>
+</body>
+</html>
