@@ -368,6 +368,10 @@ function Pouet(){
 
 var Profession = document.getElementById('Profession').value;
 
+	document.getElementById('Passé_Normaux').style.display = "block";
+	document.getElementById('Passé_Mage').style.display = "none";
+	document.getElementById('Passé_Witcher').style.display = "none";
+	
 if (Profession == "1"){
 // Artisan
 
@@ -941,6 +945,9 @@ if (Profession == "9"){
 	Compétence_REF_4.style.visibility = "hidden";
 	Compétence_REF_8.style.visibility = "hidden";
 	Compétence_VOL_4.style.visibility = "hidden";
+	
+	document.getElementById('Passé_Normaux').style.display = "none";
+	document.getElementById('Passé_Witcher').style.display = "block";
 
 }	
 if (Profession == "10"){
