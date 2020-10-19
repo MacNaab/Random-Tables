@@ -244,7 +244,6 @@ if(joueur.value == "" || personnage.value == "" || Sexe.value == "" || Race.valu
 	if(Profession.value == ""){var a = a+"\nLa profession de votre personnage";}
 	alert("Vous devez remplir les éléments :"+a);
 }	
-else if(document.getElementById('Race').value =='Halfelin' && document.getElementById('Profession').value == '6' || document.getElementById('Profession').value == '8'){alert('Un Halfelin ne peut pas pratiquer la magie, il lui est donc impossible d\'être mage ou prêtre.');}
 else{
 	Valider.style.width = "20%";
 	En_cours.innerHTML = "Etape 2";
