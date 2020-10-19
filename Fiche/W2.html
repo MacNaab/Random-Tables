@@ -4,8 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>JdR The Witcher</title>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <!-- include libraries(jQuery, bootstrap) -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -15,7 +13,8 @@
     <script src="https://unpkg.com/downloadjs@1.4.7"></script>
 <link rel="stylesheet" href="Witcher.css"/>
 <script src="W2.js"></script>	
-
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
 <!-- Navigation -->
@@ -117,7 +116,7 @@
 <div id="Etape_2" class="Etape" style="display:none;">	<!-- Etape 2 : passé du personnage -->
 	<input type="text" id="Age" class="form-control" placeholder="Âge du personnage" required>
 	Historique du personnage (facultatif) :
-	<textarea id="Historique" class="form-control" rows="7" placeholder="Histoire de vie du personnage.."></textarea>
+	<textarea id="Historique" class="form-control" rows="7" placeholder="Histoire de vie du personnage.." required></textarea>
 </div>
 
 <div id="Etape_3" class="Etape" style="display:none;"> <!-- Etape 3 : caractéristiques -->
@@ -125,7 +124,6 @@
 <div>	<!-- Caractéristiques -->
 <b><input type="number" id="MAX_CARACT"> points</b> à dépenser dans les 9 caractéristiques primaires suivantes : (max = 10 / min = 1)
 <br><br>
-
 <div class="grid-container">
   <div class="grid-containerB2">
 	<div class="grid-itemB-1">INTELLIGENCE</div>
@@ -182,17 +180,6 @@
 	<input type="button" class="grid-itemB-4" value="+" onclick="Caract('+','9')">
   </div>
 </div>
-
-
-<div>	<!-- 1-2-3 -->
-
-	<br>
-	<div>	<!-- Décompte -->
-		<button type="button" disabled class="btn btn-primary">Points de caractéristique restant : <span id="Décompte_Caractéristique">51</span></button>
-	</div>
-      
-</div>
-
 </div>
 </div>
 
@@ -600,7 +587,7 @@
 		<div class="grid-item2-1"><b>Alchimie</b></div>
 		<input type="number" class="grid-item2-2 compt_pro récap_compt" min="0" max="13" id="Compétence_Profession_TEC_1" oninput="Compétence_PRO()" disabled>
 	  </div>
-	  <div class="grid-container2" id="Compétence_Profession_TEC_2_aff">
+	  <div class="grid-container3" id="Compétence_Profession_TEC_2_aff">
 		<div class="grid-item2-1"><b>Artisanat</b></div>
 		<input type="number" class="grid-item2-2 récap_compt compt_pro" min="0" max="13" id="Compétence_Profession_TEC_2" oninput="Compétence_PRO()" disabled>
 	  </div>
@@ -666,10 +653,6 @@
 	  </div>
 	</div>
 </div>
-	<div>	<!-- Décompte -->
-		<button type="button" disabled class="btn btn-primary">Points de compétences restant : <span id="Décompte_Compétence_PRO">44</span></button>
-	</div>
-
 
 <br>
 <div><!-- Magie -->
@@ -1000,16 +983,15 @@
 	  </div>
 	</div>
 </div>
-
-	<div>	<!-- Décompte -->
-		<button type="button" disabled class="btn btn-primary">Points de compétences restant : <span id="Décompte_Compétence">INT + REF</span></button>
-	</div>
-
 </div>
 
 <div id="Etape_6" class="Etape" style="display:none;"> <!-- Etape 6 : équipement + description -->
-	Equipement de départ: (Encore <span id="GEAR_CND"></span> choix)
+	Equipement : (la 2e proposition = Formule/Schéma, )
 	<div class="grid-container" id='GEAR_CONTAINER'> <!-- GEAR -->	</div>
+	<div style="text-align:center;">
+		<button type="button" class="btn btn-primary" onclick='Stuff("+")' title="Ajouter un item">+</button>
+		<button type="button" class="btn btn-danger" onclick='Stuff("-")' title="Supprimer le dernier item">-</button>
+	</div>
 	<div style="margin-left:10%;margin-right:10%">
 	Description du personnage (facultatif) :
 	  <textarea id="Description" class="form-control" aria-label="With textarea" rows="7" placeholder="Style personnel : vestimentaire, personnalité, aspirations, physique, valeurs etc"></textarea>

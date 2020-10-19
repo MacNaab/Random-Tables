@@ -65,7 +65,6 @@ function PE(){	// Suivant
 		}		
 		if(Valider.style.width == "80%"){	// Etape 5 > 6
 			Valider.style.width = "100%";En_cours.style.width = "0%";Etape_5.style.display = "none";Etape_6.style.display = "block";
-			équipement();
 		}
 		if(Valider.style.width == "60%"){	// Etape 4 > 5
 			Valider.style.width = "80%";En_cours.innerHTML = "Etape 5";Etape_4.style.display = "none";Etape_5.style.display = "block";	
@@ -1036,9 +1035,9 @@ function ListeParClass(e){
 		});
 		return RATP;
 	}
-	if(e == '2'){
-		$('.CHECK_GEAR:checked').each(function(){
-			RATP.push({nom: $(this).siblings('label').html(),poids: $(this).val(),type: $(this).attr('value2')});
+	if(e == '2'){ // Items
+		$('.lesautostuff').each(function(){
+			RATP.push({nom: $(this).val(),type: $(this).siblings('select').val()});
 		});
 		return RATP;
 	}
@@ -1060,206 +1059,29 @@ function ListeParClass(e){
 	}
 }
 
-function équipement(){
-	var pro = document.getElementById('Profession').value;
-	var profession = [];
-	var limit = 5;
-	$('#GEAR_CONTAINER').html('');
-		if(pro == 1){
-			profession.push({n:'50 couronnes de composants',p:0,t:'compo'});
-			profession.push({n:'Cadenas',p:0.1,t:'nm'});
-			profession.push({n:'Coffre en bois',p:1,t:'nm'});
-			profession.push({n:"Ensemble d'alchimie",p:3,t:'nm'});
-			profession.push({n:'Forge portable',p:5,t:'nm'});
-			profession.push({n:"Outils d'artisan",p:5,t:'nm'});
-			profession.push({n:'Outils de marchand',p:1.5,t:'nm'});
-			profession.push({n:'Sablier heure',p:1,t:'nm'});
-			profession.push({n:'Épée longue de fer',p:1.5,t:'arme'});
-			profession.push({n:"Masse d'armes",p:2,t:'arme'});
-		}
-		if(pro == 2){
-			profession.push({n:'Bourse',p:0.1,t:'nm'});
-			profession.push({n:'Fourreau,jarretière',p:0.1,t:'nm'});
-			profession.push({n:'Instrument',p:1,t:'nm'});
-			profession.push({n:'Liqueur',p:1,t:'nm'});
-			profession.push({n:'Miroir de poche',p:0.5,t:'nm'});
-			profession.push({n:'Journal',p:0.5,t:'nm'});
-			profession.push({n:'Jeu de Gwynt',p:0.1,t:'nm'});
-			profession.push({n:'Parfum',p:0.1,t:'nm'});
-			profession.push({n:'Piste de dés',p:0.5,t:'nm'});
-			profession.push({n:'Dague',p:0.1,t:'arme'});
-		}
-		if(pro == 3){
-			profession.push({n:'Chloroforme',p:0.1,t:'nm'});
-			profession.push({n:'Dés pipés',p:0.1,t:'nm'});
-			profession.push({n:'Fourreau, manche',p:0.1,t:'nm'});
-			profession.push({n:'Lanterne,sourde',p:1,t:'nm'});
-			profession.push({n:'Outils de voleur',p:1,t:'nm'});
-			profession.push({n:'Poche secrète',p:0.1,t:'nm'});
-			profession.push({n:'Sacoche',p:1,t:'nm'});
-			profession.push({n:'Coup-de-poing',p:0.5,t:'arme'});
-			profession.push({n:'Couteau de lancer x5',p:2.5,t:'arme'});
-			profession.push({n:'Stylet',p:0.5,t:'arme'});
-		}
-		if(pro == 4){
-			profession.push({n:'Bougies x10',p:1,t:'compo'});
-			profession.push({n:'Couverture',p:0.1,t:'nm'});
-			profession.push({n:'Fluide stérilisant x10',p:1,t:'compo'});
-			profession.push({n:'Grande tente',p:8,t:'nm'});
-			profession.push({n:'Herbes engourdissantes x10',p:1,t:'compo'});
-			profession.push({n:'Instruments chirurgicaux',p:1,t:'nm'});
-			profession.push({n:'Nécessaire d’écriture',p:1,t:'nm'});
-			profession.push({n:'Poudre de coagulation x10',p:1,t:'compo'});
-			profession.push({n:'Sablier heure',p:1,t:'nm'});
-			profession.push({n:'Dague',p:0.1,t:'arme'});
-		}
-		if(pro == 6){
-			profession.push({n:'100 couronnes de composants',p:0,t:'compo'});
-			profession.push({n:'Bourse',p:0.1,t:'nm'});
-			profession.push({n:'Fourreau,jarretière',p:0.1,t:'nm'});
-			profession.push({n:'Journal',p:0.5,t:'nm'});
-			profession.push({n:'Miroir de poche',p:0.5,t:'nm'});
-			profession.push({n:'Nécessaire d’écriture',p:1,t:'nm'});
-			profession.push({n:'Sablier heure',p:1,t:'nm'});
-			profession.push({n:'Trousse de maquillage',p:0.5,t:'nm'});
-			profession.push({n:'Bâton de mage',p:2.5,t:'arme'});
-			profession.push({n:'Dague',p:0.1,t:'arme'});
-		}
-		if(pro == 5){
-			profession.push({n:'Sacoche',p:1,t:'nm'});
-			profession.push({n:'Pantalon renforcé',p:2.5,t:'armure',VE:0,PA:12});
-			profession.push({n:'Brigandine',p:7,t:'armure',VE:1,PA:12});
-			profession.push({n:'Camail',p:1.5,t:'armure',VE:0,PA:12});
-			profession.push({n:'Hache de bataille',p:2,t:'arme',Pr:0,DMG:'5d6',T:'T',F:'15'});
-			profession.push({n:'Arbalète avec 20 carreaux',p:3,t:'arme',Pr:2,DMG:'4d6+2',T:'P',F:'5',Por:'200m',Eff:'Rechargement lent, Perforation'});
-			profession.push({n:'Kord',p:1,t:'arme',Pr:0,DMG:'5d6',T:'T/P',F:'15',Eff:'Saignement (25%)'});
-			profession.push({n:'Lance',p:1,t:'arme',Pr:0,DMG:'3d6',T:'P',F:'10',Eff:'Allonge',Por:'Corpsx2m'});
-			profession.push({n:'Couteau de lancer x5',p:2.5,t:'arme',Pr:0,DMG:'1d6',T:'P',F:'5',Por:'Corpsx4m'});
-			profession.push({n:"Bocle d'acier",p:1,t:'bouclier',F:6,VE:0});
-		}
-		if(pro == 7){
-			var limit = 4;
-			profession.push({n:'Grande tente',p:8,t:'nm'});
-			profession.push({n:'Journal',p:0.5,t:'nm'});
-			profession.push({n:'Nécessaire d’écriture',p:1,t:'nm'});
-			profession.push({n:'Outils de marchand',p:1.5,t:'nm'});
-			profession.push({n:'Arbalète avec 20 carreaux',p:3,t:'arme'});
-			profession.push({n:'Dague',p:0.1,t:'arme'});
-				$('#GEAR_CONTAINER').append('<div class="custom-control custom-checkbox"><input value="0" value2="nm" type="checkbox" class="custom-control-input CHECK_GEAR" id="checkbox_équipement_OFFI" disabled><label class="custom-control-label" for="checkbox_équipement_OFFI">Mule + chariot avec 1000 couronnes d\'articles courants ou du quotidien</label></div>');
-		}
-		if(pro == 8){
-			profession.push({n:'100 couronnes de composants',p:0,t:'compo'});
-			profession.push({n:'Ensemble d’alchimie',p:3,t:'nm'});
-			profession.push({n:'Fluide stérilisant x5',p:0.5,t:'compo'});
-			profession.push({n:'Herbes engourdissantes x5',p:0.5,t:'compo'});
-			profession.push({n:'Instruments chirurgicaux',p:1,t:'nm'});
-			profession.push({n:'Nécessaire d’écriture',p:1,t:'nm'});
-			profession.push({n:'Poudre de coagulation x5',p:0.5,t:'compo'});
-			profession.push({n:'Sablier heure',p:1,t:'nm'});
-			profession.push({n:'Symbole sacré',p:0.1,t:'nm'});
-			profession.push({n:'Bâton de mage',p:2.5,t:'arme'});
-			profession.push({n:'Dague',p:0.1,t:'arme'});
-		}
-		if(pro == 9){
-			profession.push({n:'Ensemble d’alchimie',p:3,t:'nm'});
-			profession.push({n:'Cheval',p:0,t:'nm'});
-			profession.push({n:'Arbalète de poing',p:1,t:'arme'});
-			profession.push({n:'Couteau de lancer x5',p:2.5,t:'arme'});
-			profession.push({n:'Gambison à tissage renforcé',p:2.5,t:'armure'});
-				$('#GEAR_CONTAINER').append('<div class="custom-control custom-checkbox"><input value="0" value2="nm" type="checkbox" class="custom-control-input CHECK_GEAR" id="checkbox_équipement_OFFI" checked disabled><label class="custom-control-label" for="checkbox_équipement_OFFI">Médaillon de sorceleur</label></div>');
-				$('#GEAR_CONTAINER').append('<div class="custom-control custom-checkbox"><input value="0" value2="arme" type="checkbox" class="custom-control-input CHECK_GEAR" id="checkbox_équipement_OFFI1" checked disabled><label class="custom-control-label" for="checkbox_équipement_OFFI1">Epée d\'argent de sorceleur</label></div>');
-				$('#GEAR_CONTAINER').append('<div class="custom-control custom-checkbox"><input value="0" value2="arme" type="checkbox" class="custom-control-input CHECK_GEAR" id="checkbox_équipement_OFFI2" checked disabled><label class="custom-control-label" for="checkbox_équipement_OFFI2">Epée d\'acier de sorceleur</label></div>');
-				$('#GEAR_CONTAINER').append('<select id="witcher_décoction" class="custom-select Wfformule"><option disabled selected value="">Décoction</option><option value="1">Décoctions d\'Arachas</option><option value="2">Décoctions de Fiellon</option><option value="3">Décoctions de Griffon</option><option value="4">Décoctions de Guenaude sépulcrale</option><option value="5">Décoctions de Katakan</option><option value="6">Décoction de Loup-garou</option><option value="7">Décoctions de Nekker</option><option value="8">Décoction de Spectre de midi</option><option value="9">Décoction de Troll</option><option value="10">Décoction de Wyvern</option></select>');
-				$('#GEAR_CONTAINER').append('<select id="witcher_huile1" class="custom-select Wfformule"><option disabled selected value="">Huile</option><option value="1">Huile contre les draconides</option><option value="2">Huile contre les bêtes</option><option value="3">Huile contre les créatures maudites</option><option value="4">Huile contre les élémentaires</option><option value="5">Huile contre les hybrides</option><option value="6">Huile contre les insectoïdes</option><option value="7">Huile contre les nécrophages</option><option value="8">Huile contre les ogroïdes</option><option value="9">Huile contre les spectres</option><option value="10">Huile contre les vampires</option><option value="11">Huile contre les vestiges</option><option value="12">Venin du pendu </option></select>');
-				$('#GEAR_CONTAINER').append('<select id="witcher_huile2" class="custom-select Wfformule"><option disabled selected value="">Huile</option><option value="1">Huile contre les draconides</option><option value="2">Huile contre les bêtes</option><option value="3">Huile contre les créatures maudites</option><option value="4">Huile contre les élémentaires</option><option value="5">Huile contre les hybrides</option><option value="6">Huile contre les insectoïdes</option><option value="7">Huile contre les nécrophages</option><option value="8">Huile contre les ogroïdes</option><option value="9">Huile contre les spectres</option><option value="10">Huile contre les vampires</option><option value="11">Huile contre les vestiges</option><option value="12">Venin du pendu </option></select>');
-				$('#GEAR_CONTAINER').append('<select id="witcher_potion1" class="custom-select Wfformule"><option disabled selected value="">Potion</option><option value="1">Hirondelle</option><option value="2">Blizzard</option><option value="3">Chat</option><option value="4">Chat-huant</option><option value="5">Forêt de Maribor</option><option value="6">Loriot doré</option><option value="7">Miel blanc</option><option value="8">Orque</option><option value="9">Philtre de Petri</option><option value="10">Pleine lune</option><option value="11">Sang noir</option><option value="12">Tonnerre</option></select>');
-				$('#GEAR_CONTAINER').append('<select id="witcher_potion2" class="custom-select Wfformule"><option disabled selected value="">Potion</option><option value="1">Hirondelle</option><option value="2">Blizzard</option><option value="3">Chat</option><option value="4">Chat-huant</option><option value="5">Forêt de Maribor</option><option value="6">Loriot doré</option><option value="7">Miel blanc</option><option value="8">Orque</option><option value="9">Philtre de Petri</option><option value="10">Pleine lune</option><option value="11">Sang noir</option><option value="12">Tonnerre</option></select>');
-		}
-		if(pro == 10){
-			var limit = 3;
-			profession.push({n:'100 Courronnes de Composant',p:0,t:'nm'});
-			profession.push({n:'Bourse de 50 Couronnes',p:0,t:'nm'});
-			profession.push({n:'Instruments Chirurgicaux',p:0,t:'nm'});
-			profession.push({n:'Instrument',p:0,t:'nm'});
-			profession.push({n: 'Nécéssaire d\'écriture',p:0,t:'nm'});
-			profession.push({n:'Outils d\'artisan',p:0,t:'nm'});
-			profession.push({n:'Ensemble d\'Alchimie',p:0,t:'nm'});
-			profession.push({n:'Vêtements Noble',p:0,t:'nm'});
-			profession.push({n:'Outils de Voleur',p:0,t:'nm'});
-			profession.push({n:'Ustensiles de Cuisine',p:0,t:'nm'});
-		}
-		if(pro == 11){
-			profession.push({n:'Bijoux',p:0,t:'nm'});
-			profession.push({n:'Cheval',p:0,t:'nm'});
-			profession.push({n:'Encre invisible',p:0,t:'nm'});
-			profession.push({n:'Journal',p:0.5,t:'nm'});
-			profession.push({n:'Nécessaire d’écriture',p:1,t:'nm'});
-			profession.push({n:'Parfum',p:0.1,t:'nm'});
-			profession.push({n:'Poche secrète',p:0.1,t:'nm'});
-			profession.push({n:'Trousse de maquillage',p:0.5,t:'nm'});
-			profession.push({n:'Vêtements Noble',p:0,t:'nm'});
-			profession.push({n:'Esboda',p:0,t:'arme'});
-		}
-		if(pro == 12){
-			profession.push({n:'Bière',p:0,t:'nm'});
-			profession.push({n:'Une autre bière',p:0,t:'nm'});
-			profession.push({n:'Charriot',p:0,t:'nm'});
-			profession.push({n:'Vêtements chauds',p:0.5,t:'nm'});
-			profession.push({n:'Ustensiles de cuisine',p:1,t:'nm'});
-			profession.push({n:'Pierre à briquet',p:0.1,t:'nm'});
-			profession.push({n:'Jeu de Gwynt',p:0.1,t:'nm'});
-			profession.push({n:'Symbole sacré',p:0.5,t:'nm'});
-			profession.push({n:'Pipe et Tabac',p:0,t:'nm'});
-			profession.push({n:'Sac',p:0,t:'nm'});
-		}
-		if(pro == 13){
-			profession.push({n:'Bougie x5',p:0,t:'compo'});
-			profession.push({n:'Coup-de-poing',p:0,t:'arme'});
-			profession.push({n:'Fauchon de chasseur',p:0,t:'arme'});
-			profession.push({n:'Gambison',p:0.5,t:'armure'});
-			profession.push({n:'Hachette',p:1,t:'arme'});
-			profession.push({n:'Nécessaire d\'écriture',p:0.1,t:'nm'});
-			profession.push({n:'Pierre à briquet',p:0.1,t:'nm'});
-			profession.push({n:'Poignard',p:0.5,t:'arme'});
-			profession.push({n:'Tente',p:0,t:'nm'});
-			profession.push({n:'Torche x5',p:0,t:'nm'});
-				$('#GEAR_CONTAINER').append('<div class="custom-control custom-checkbox"><input value="0" value2="nm" type="checkbox" class="custom-control-input CHECK_GEAR" id="checkbox_équipement_OFFI" checked disabled><label class="custom-control-label" for="checkbox_équipement_OFFI">Symbole sacré</label></div>');
-				$('#GEAR_CONTAINER').append('<div class="custom-control custom-checkbox"><input value="0" value2="arme" type="checkbox" class="custom-control-input CHECK_GEAR" id="checkbox_équipement_OFFI1" checked disabled><label class="custom-control-label" for="checkbox_équipement_OFFI1">Texte sacré</label></div>');
-		}
-		if(pro == 14){
-			profession.push({n:'Arbalète avec 20 carreaux',p:0,t:'arme'});
-			profession.push({n:'Brigandine',p:0,t:'armure'});
-			profession.push({n:'Équipement de pêche',p:0,t:'nm'});
-			profession.push({n:'Fausse pièces x500',p:0.5,t:'nm'});
-			profession.push({n:'Krigsverd',p:1,t:'arme'});
-			profession.push({n:'Grande tente',p:0.1,t:'nm'});
-			profession.push({n:'Hallebarde rédanienne',p:0.1,t:'arme'});
-			profession.push({n:'Masse d\'arme',p:0.5,t:'arme'});
-			profession.push({n:'Outils d\'artisan',p:0,t:'nm'});
-			profession.push({n:'Un cheval',p:0,t:'nm'});
-		}
-		if(pro == 15){
-			profession.push({n:'Arc court avec 20 flèches',p:0,t:'arme'});
-			profession.push({n:'Hache d\'arme',p:0,t:'arme'});
-			profession.push({n:'Hache de lancer x5',p:0,t:'arme'});
-			profession.push({n:'Héliotite',p:0.5,t:'nm'});
-			profession.push({n:'Masse d\'arme',p:1,t:'arme'});
-			profession.push({n:'Oeillère de course',p:0.1,t:'nm'});
-			profession.push({n:'Sacoche',p:0.1,t:'nm'});
-			profession.push({n:'Tente',p:0.5,t:'nm'});
-			profession.push({n:'Un cheval',p:0,t:'nm'});
-			profession.push({n:'Ustensiles de cuisine',p:0,t:'nm'});
-		}
+function AutoStuff(){
+	var auto = [];
+	JSON_item.Item.forEach(function(e){auto.push(e.Nom);});
+	JSON_item.Arme.forEach(function(e){auto.push(e.Nom);});
+	JSON_item.Armure.forEach(function(e){auto.push(e.Nom);});
+	JSON_item.Potion.forEach(function(e){auto.push(e.Nom);});
+	JSON_item.Formule.forEach(function(e){auto.push(e.Nom);});
+	JSON_item.Composants.forEach(function(e){auto.push(e.Nom);});
+	JSON_item.Schéma.forEach(function(e){auto.push(e.Nom);});
 
-	for (let i = 0; i < profession.length; i++) {
-		$('#GEAR_CONTAINER').append('<div class="custom-control custom-checkbox"><input value="'+profession[i].p+'" value2="'+profession[i].t+'" type="checkbox" class="custom-control-input CHECK_GEAR" id="checkbox_équipement_'+i+'"><label class="custom-control-label" for="checkbox_équipement_'+i+'">'+profession[i].n+'</label></div>');
-	}
+    $( ".lesautostuff" ).autocomplete({source: auto});
+}
 
-	$('#GEAR_CND').html(Number(limit)-Number($('input.CHECK_GEAR:checked').length));
-	$('input.CHECK_GEAR').on('change', function(evt) {
-	   if($('input.CHECK_GEAR:checked').length > limit) {this.checked = false;}
-		$('#GEAR_CND').html(Number(limit)-Number($('input.CHECK_GEAR:checked').length));
-	});
+function Stuff(e){
+	if(e == '+'){
+		var select = '<select class="custom-select" required><option value="" selected>Catégorie</option><option value="Arme">Arme</option><option value="Armure">Armure</option><option value="Bouclier">Bouclier</option><option value="Composants">Composants</option><option value="Equipement">Equipement</option><option value="Formule">Formule/Schéma</option></select>';
+		var input = '<input class="form-control lesautostuff" type="text" placeholder="Objet" required>';
+		
+    	$('#GEAR_CONTAINER').append("<div  class='grid-container3'>"+input+select+"</div>");
+        AutoStuff();
+    }else{
+    	$('#GEAR_CONTAINER input:last-child').remove();
+    }
 }
 
 function langues(){
@@ -1497,9 +1319,10 @@ async function fillForm() {
 	var RATP2 = ListeParClass('2');
 	var trackeur = [1,1,1,1]	// arme, armure, compo, nm
 	var trackeur1 = 1;var trackeur2 = 1;var trackeur3 = 1;var trackeur4 = 1;
+		var trackeurD1 = 0;
 	RATP2.forEach(function(item){
 		var nom = item.nom;	nom = nom.replace(' x5','');	nom = nom.replace(' x10','');nom = nom.replace('/<b>/gi','');
-		if(item.type == "arme"){
+		if(item.type == "Arme"){
 			if(nom == "Arbalète avec 20 carreaux"){nom = "Arbalète";}
 			if(nom == "Arc court avec 20 flèches"){nom = "Arc court";}
 			if(nom == "Hache de lancer x5"){nom = "Hache de lancer";}
@@ -1513,7 +1336,7 @@ async function fillForm() {
 			form.getTextField('Arme '+trackeur1+' Effet').setText(found.Effet);
 			trackeur1 = Number(Number(trackeur1)+1);
 		}
-		if(item.type == "armure"){
+		if(item.type == "Armure"){
 			var found = JSON_item.Armure.find(x => x.Nom == nom);
 			form.getTextField('Armure '+trackeur2).setText(nom);
 			form.getTextField('Armure '+trackeur2+' PA').setText(found.PA);
@@ -1521,7 +1344,7 @@ async function fillForm() {
 			form.getTextField('Armure '+trackeur2+' Effet').setText(found.Effet);
 			trackeur2 = Number(Number(trackeur2)+1);			
 		}
-		if(item.type == "bouclier"){
+		if(item.type == "Bouclier"){
 			var found = JSON_item.Armure.find(x => x.Nom == nom);
 			form.getTextField('Bouclier 1').setText(nom);
 			form.getTextField('Bouclier 1 F').setText(found.PA);
@@ -1529,16 +1352,27 @@ async function fillForm() {
 			form.getTextField('Bouclier 1 Effet').setText(found.Effet);			
 			form.getTextField('Bouclier 1 VE').setText(found.VE);			
 		}
-		if(item.type == "compo"){
+		if(item.type == "Composants"){
 			var nombre = item.nom;
 			let split = nombre.split(' x')
 			form.getTextField('Composant '+trackeur3).setText(nom);
 			form.getTextField('Composant '+trackeur3+' Q').setText(split[1]);
 			trackeur3 = Number(Number(trackeur3)+1);			
 		}
-		if(item.type == "nm"){
+		if(item.type == "Equipement"){
 			form.getTextField('Equipement '+trackeur4).setText(nom);
 			trackeur4 = Number(Number(trackeur4)+1);			
+		}
+		if(item.type == "Formule"){
+			var nom = item.nom;
+			var found = JSON_item.Formule.find(x => x.Nom == nom);
+			if(found == undefined){found = JSON_item.Schéma.find(x => x.Nom == nom);var found2 = {Effet: 'Durée: '+found.Durée};
+			}else{var found2 = JSON_item.Potion.find(x => x.Nom == nom);}
+			form.getTextField('Formule N'+trackeurD1).setText(nom);
+			form.getTextField('Formule D'+trackeurD1).setText(found2.Effet);
+			form.getTextField('Formule C'+trackeurD1).setText(found.Composants);
+			form.getTextField('Formule SD'+trackeurD1).setText(found.SD);
+			trackeurD1 = Number(Number(trackeurD1)+1);
 		}
 	});
 
@@ -1581,18 +1415,6 @@ async function fillForm() {
 				trackeurB2 = Number(Number(trackeurB2)+1);		
 			}
 		});
-		var RATP4 = ListeParClass('4');
-		var trackeurD1 = 0;
-		RATP4.forEach(function(item){
-			var nom = item.nom;
-			var found = JSON_item.Formule.find(x => x.Nom == nom);
-			var found2 = JSON_item.Potion.find(x => x.Nom == nom);
-			form.getTextField('Formule N'+trackeurD1).setText(nom);
-			form.getTextField('Formule D'+trackeurD1).setText(found2.Effet);
-			form.getTextField('Formule C'+trackeurD1).setText(found.Composants);
-			form.getTextField('Formule SD'+trackeurD1).setText(found.SD);
-			trackeurD1 = Number(Number(trackeurD1)+1);			
-		});
 	}
 
 	if(DTB.pro == "Vampire"){
@@ -1627,7 +1449,7 @@ async function fillForm() {
       const pdfBytes = await pdfDoc.save();
 
 			// Trigger the browser to download the PDF document
-	download(pdfBytes, "The-Witcher-TRPG-Fiche-PJ.pdf", "application/pdf");
+	download(pdfBytes, DTB.perso+".pdf", "application/pdf");
 	$('#PDF_load').html("Fiche de "+DTB.perso+" crée !");	
 }
 
