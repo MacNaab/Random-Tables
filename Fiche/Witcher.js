@@ -2842,7 +2842,7 @@ async function fillForm() {
       const pdfBytes = await pdfDoc.save();
 
 			// Trigger the browser to download the PDF document
-	download(pdfBytes, "pdf-lib_form_creation_example.pdf", "application/pdf");
+	download(pdfBytes, "The_Witcher_TRPG_Fiche_PJ.pdf", "application/pdf");
 	$('#PDF_load').html("Fiche de "+DTB.perso+" crée !");	
 }
 
