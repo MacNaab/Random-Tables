@@ -1198,7 +1198,7 @@ async function fillForm() {
 			race: document.getElementById('Race').value,
 			pro: LPro[document.getElementById('Profession').value],
 			age: document.getElementById('Age').value,
-			origine: $("#Origine option:selected").text(),
+			origine: document.getElementById('Origine').value,
 			INT: document.getElementById('Caractéristique_1').value,
 			REF: document.getElementById('Caractéristique_2').value,
 	 		DEX: document.getElementById('Caractéristique_3').value,
@@ -1458,3 +1458,8 @@ $.getJSON('dtb/item.json', function(jd) {
 	JSON_item = jd;
 });
 function CTclicked(e){$("#toast1").toast('show');}
+
+$( document ).ready(function() {
+	var auto = ["Rédanie","Kaedwen","Témérie","Aedirn","Lyrie et Rivie","Kovir et Poviss","Skellige","Cidaris","Verden","Cintra","Coeur de l’Empire","Vicovaro","Angren","Nazair","Metinna","Mag Turga","Geso","Ebbing","Maecht","Gemmery","Étolie","Dol Blathanna","Mahakam"];
+	$( "#Origine" ).autocomplete({source: auto});
+});
