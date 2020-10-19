@@ -689,12 +689,7 @@ if (Profession == "8"){
 	Rituel_1.style.display = "block";
 	Rituel_2.style.display = "block";
 	Malédiction_1.style.display = "block";
-	Malédiction_1.value = "1";
-	Malédiction_1.disabled = true;
 	Malédiction_2.style.display = "block";
-	Malédiction_2.value = "2";
-	Malédiction_2.disabled = true;
-
 }
 if (Profession == "9"){
 // Sorceleur
