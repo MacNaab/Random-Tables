@@ -1674,8 +1674,8 @@ for (let i = 0; i < Fratrie; i++) {
 }
 
 if(Destin_famille.value != ""){var Famille = DDD1[$('#Destin_famille').val()];}	
-if(Destin_parents.value != ""){var Famille = DDD2[$('#Destin_famille').val()];}	
-if(Statut_familial.value != ""){var Famille = DDD3[$('#Destin_famille').val()]+".";}	
+if(Destin_parents.value != ""){var Famille = DDD2[$('#Destin_parents').val()];}	
+if(Statut_familial.value != ""){var Famille = DDD3[$('#Statut_familial').val()];}	
 
 var Mentor = DDD4[Mentor];
 var Mentor = ". <br>Possède pour influence: "+Mentor;
