@@ -1,5 +1,5 @@
 var JSON_Bestiaire = "";
-$.getJSON('../../dtb/bestaire.json', function(jd) {
+$.getJSON('../Fiche/dtb/bestaire.json', function(jd) {
 	JSON_Bestiaire = jd;
 	jd.Base.forEach(function(item){
 		var Ca = "";for (var [key, value] of Object.entries(item.Caract)) {Ca=Ca+`${key}: ${value}`+'<br>';}
