@@ -87,7 +87,7 @@ function Add_Méchant(){
 	var barre1 = '<div class="progress"><div id="Barre1_ennemie_'+Nbre+'" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%">PS</div></div>';
 	var barre2 = '<div class="progress"><div id="Barre2_ennemie_'+Nbre+'" class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%">END</div></div>';
 
-$("#méchant").append('<div id="Ennemie'+Nbre+'" style="padding-bottom: 25px;"><div class="grid-container">'+barre1+barre2+'</div>Ennemie #'+Nbre+' : <span id="Ennemie_Nom_'+Nbre+'">'+Nom+'</span>, initiative : <span id="Ennemie_Ini_'+Nbre+'">'+Initiative+'</span>, PS: <span id="Ennemie_PV_'+Nbre+'">'+PV+'</span>/'+PV+', Endurance: <span id="Ennemie_STA_'+Nbre+'">'+Endurance+'</span>/'+Endurance+'<span id="Ennemie_Nombre_'+Nbre+'" style="display: none;">0</span></div>');
+$("#méchant").append('<div id="Ennemie'+Nbre+'" style="padding-bottom: 25px;"><div class="grid-container">'+barre1+barre2+'</div><b><span id="Ennemie_Nom_'+Nbre+'">'+Nom+'</span></b>, initiative : <span id="Ennemie_Ini_'+Nbre+'">'+Initiative+'</span>, PS: <span id="Ennemie_PV_'+Nbre+'">'+PV+'</span>/'+PV+', Endurance: <span id="Ennemie_STA_'+Nbre+'">'+Endurance+'</span>/'+Endurance+'<span id="Ennemie_Nombre_'+Nbre+'" style="display: none;">0</span></div>');
 
   document.getElementById("Ennemie"+Nbre).style.paddingBottom = "25px";
   
@@ -131,7 +131,7 @@ function Add_Méchant_PNJ(){
 		var barre1 = '<div class="progress"><div id="Barre1_ennemie_'+Nbre+'" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%">PS</div></div>';
 		var barre2 = '<div class="progress"><div id="Barre2_ennemie_'+Nbre+'" class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%">END</div></div>';
 	
-		$("#méchant").append('<div id="Ennemie'+Nbre+'" style="padding-bottom: 25px;"><div class="grid-container">'+barre1+barre2+'</div>Ennemie #'+Nbre+' : <span id="Ennemie_Nom_'+Nbre+'">'+Nom+'</span>, initiative : <span id="Ennemie_Ini_'+Nbre+'">'+Initiative+'</span>, PS: <span id="Ennemie_PV_'+Nbre+'">'+PV+'</span>/'+PV+', Endurance: <span id="Ennemie_STA_'+Nbre+'">'+Endurance+'</span>/'+Endurance+'<span id="Ennemie_Nombre_'+Nbre+'" style="display: none;">0</span></div>');
+		$("#méchant").append('<div id="Ennemie'+Nbre+'" style="padding-bottom: 25px;"><div class="grid-container">'+barre1+barre2+'</div><b><span id="Ennemie_Nom_'+Nbre+'">'+Nom+'</span></b>, initiative : <span id="Ennemie_Ini_'+Nbre+'">'+Initiative+'</span>, PS: <span id="Ennemie_PV_'+Nbre+'">'+PV+'</span>/'+PV+', Endurance: <span id="Ennemie_STA_'+Nbre+'">'+Endurance+'</span>/'+Endurance+'<span id="Ennemie_Nombre_'+Nbre+'" style="display: none;">0</span></div>');
 		document.getElementById("Ennemie"+Nbre).style.paddingBottom = "25px";
 	  	var option = document.createElement("option");
 	  		option.text = Nom;option.value = Nbre;
