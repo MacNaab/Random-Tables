@@ -2122,6 +2122,7 @@ function RandomLifeMage(){
 		Mage_5.value = EventImportant;
         var Now = Math.floor(Math.random() * Math.floor(10))+1;
 		if(Now == "1"){Mage_6.value = "1";}if(Now == "2"){Mage_6.value = "2";}if(Now > "2" && Now < "7"){Mage_6.value = "3";}if(Now >= "7" && Now < "10"){Mage_6.value = "4";}if(Now == "10"){Mage_6.value = "5";}
+		FormationMage();
 	}
 }
 function RandomLifeMage2(e,f){
