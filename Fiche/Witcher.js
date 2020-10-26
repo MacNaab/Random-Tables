@@ -2079,7 +2079,7 @@ if(Now == "2"){Sorceleur_6.value = "2";}
 if(Now > "2" && Now < "9"){Sorceleur_6.value = "3";}
 if(Now == "9"){Sorceleur_6.value = "4";}
 if(Now == "10"){Sorceleur_6.value = "5";}
-	
+	FormationWitcher();
 	}
 }
 function RandomLifeWither2(e){
@@ -2089,21 +2089,25 @@ function RandomLifeWither2(e){
 }
 
 function FormationWitcher(){
-	Bouton_Formation_Witcher.style.display = "none";
-	var EH = "0"; 	// Epreuve des Herbes 
-	Sorceleur_3_4.style.display = "block";
-	
-	var Formation = ["<b>Blessé sur le Gantelet (–1 VIT)</b>: Vous avez été blessé en traversant le Gantelet entourant votre école. Votre jambe a été salement amochée et, même après sa guérison, elle en conserve une légère rigidité.","<b>Connaissances dérobées (+1 schéma de sorceleur)</b>: Lorsque vous étiez en formation dans votre école, vous vous êtes introduit dans la bibliothèque de la forteresse pour y recopier l’un des schémas secrets des sorceleurs, emportant ensuite l’information avec vous.","<b>Rival (un ennemi sorceleur)</b>: Durant votre entraînement, vous avez développé une rivalité avec un autre sorceleur en formation. Même après les mutations, sa haine à votre encontre persiste.","<b>Mutations aisées (+2 à l’Épreuve des Herbes)</b>: Vous vous êtes bien adapté aux mutations mineures et aux champignons mutagènes que l’on vous a fait consommer depuis les débuts de votre formation. Lorsque le jour de l’Épreuve des Herbes est arrivé, vous étiez bien préparé.","<b>Contrecoup magique (–1 au seuil de Vigueur)</b>: Lors d’un échec au lancement d’un signe, vous vous êtes blessé. Ce fut affreusement douloureux et, même après guérison, votre seuil de Vigueur s’en est trouvé réduit.","<b>Premier de la classe (+1 en Escrime)</b>: Vous étiez l’un des meilleurs escrimeurs de votre classe et vos talents n’ont en rien diminué. Vous effectuez les mouvements, pirouettes et vrilles complexes des sorceleurs avec aisance.","<b>Mauvaise réaction aux mutagènes (–2 à l’Épreuve des Herbes)</b>: Vous avez fait une réaction allergique aux champignons mutagènes et aux composants chimiques que l’on vous a donnés au début de votre formation. L’Épreuve des Herbes n’en fut que plus difficile.","<b>Ami (un ami sorceleur)</b>: Vous vous êtes rapidement fait un ami lors de votre formation de sorceleur. L’entraînement rigoureux et les situations périlleuses ont scellé votre lien.","<b>Blessé par le Pendule (–1 RÉF)</b>: Vous avez été blessé en vous entraînant avec le Pendule. Vous êtes tombé et vous vous êtes fracturé plusieurs os sur les rochers en dessous. Bien que guéri, vous subissez encore certaines raideurs.","<b>Recherches étendues (+1 en Formation de sorceleur)</b>: Bien que l’apprentissage de l’escrime soit important, vous avez passé la plupart de votre temps libre dans la bibliothèque de la forteresse, étudiant les monstres parcourant le monde et prenant des notes."];
-	var EV_1 = Math.floor(Math.random() * Math.floor(Formation.length));
-		if(EV_1 == 3){EH=2;}if(EV_1 == 6){EH='-2';}
-	Sorceleur_3.innerHTML = Formation[EV_1];
-	
-	if(Sorceleur_1.value == "1"){var EH = Number(EH)-2}if(Sorceleur_1.value == "3"){var EH = Number(EH)+2}	
-	var EV_2 = Math.floor(Math.random() * Math.floor(10))+1;
-	var EH = Number(EH)+(Number(EV_2));
-	var Fin = ["<b>Presque fatales (–1 EMP et –1 COR)</b>: L’Épreuve des Herbes a pratiquement détruit votre corps. Bien que vous ayez survécu, votre corps et votre esprit ont été irrémédiablement endommagés.","<b>À peine reçu (–1 EMP)</b>: L’Épreuve des Herbes s’est mal déroulée et les sorceleurs en charge des mutations n’étaient pas certains que vous y surviviez. Vous y êtes parvenu, mais pas sans séquelles psychologiques.","<b>Mutations passables (aucun modificateur)</b>: L’Épreuve des Herbes s’est bien déroulée. Vous avez été accepté dans les rangs des sorceleurs avec juste quelques souvenirs horriblement douloureux.","<b>Mutations supplémentaires (+1 EMP et +1 DEX)</b>: Votre corps s’est montré très réceptif à l’Épreuve des Herbes et vous avez obtenu des mutations supplémentaires. Votre corps les a bien supportées et toute cette souffrance a finalement payé."];
-	if(EH == "1"){var EH = Fin[0];}if(EH == "2" || EH == "3"){var EH = Fin[1];}if(EH >= "4" && EH <= "9"){var EH = Fin[2];}if(EH >= "10"){var EH = Fin[3];}
-	Sorceleur_4.innerHTML = EH;
+	if(Sorceleur_1.value != ""){
+		Bouton_Formation_Witcher.style.display = "none";
+		var EH = "0"; 	// Epreuve des Herbes 
+		Sorceleur_3_4.style.display = "block";
+
+		var Formation = ["<b>Blessé sur le Gantelet (–1 VIT)</b>: Vous avez été blessé en traversant le Gantelet entourant votre école. Votre jambe a été salement amochée et, même après sa guérison, elle en conserve une légère rigidité.","<b>Connaissances dérobées (+1 schéma de sorceleur)</b>: Lorsque vous étiez en formation dans votre école, vous vous êtes introduit dans la bibliothèque de la forteresse pour y recopier l’un des schémas secrets des sorceleurs, emportant ensuite l’information avec vous.","<b>Rival (un ennemi sorceleur)</b>: Durant votre entraînement, vous avez développé une rivalité avec un autre sorceleur en formation. Même après les mutations, sa haine à votre encontre persiste.","<b>Mutations aisées (+2 à l’Épreuve des Herbes)</b>: Vous vous êtes bien adapté aux mutations mineures et aux champignons mutagènes que l’on vous a fait consommer depuis les débuts de votre formation. Lorsque le jour de l’Épreuve des Herbes est arrivé, vous étiez bien préparé.","<b>Contrecoup magique (–1 au seuil de Vigueur)</b>: Lors d’un échec au lancement d’un signe, vous vous êtes blessé. Ce fut affreusement douloureux et, même après guérison, votre seuil de Vigueur s’en est trouvé réduit.","<b>Premier de la classe (+1 en Escrime)</b>: Vous étiez l’un des meilleurs escrimeurs de votre classe et vos talents n’ont en rien diminué. Vous effectuez les mouvements, pirouettes et vrilles complexes des sorceleurs avec aisance.","<b>Mauvaise réaction aux mutagènes (–2 à l’Épreuve des Herbes)</b>: Vous avez fait une réaction allergique aux champignons mutagènes et aux composants chimiques que l’on vous a donnés au début de votre formation. L’Épreuve des Herbes n’en fut que plus difficile.","<b>Ami (un ami sorceleur)</b>: Vous vous êtes rapidement fait un ami lors de votre formation de sorceleur. L’entraînement rigoureux et les situations périlleuses ont scellé votre lien.","<b>Blessé par le Pendule (–1 RÉF)</b>: Vous avez été blessé en vous entraînant avec le Pendule. Vous êtes tombé et vous vous êtes fracturé plusieurs os sur les rochers en dessous. Bien que guéri, vous subissez encore certaines raideurs.","<b>Recherches étendues (+1 en Formation de sorceleur)</b>: Bien que l’apprentissage de l’escrime soit important, vous avez passé la plupart de votre temps libre dans la bibliothèque de la forteresse, étudiant les monstres parcourant le monde et prenant des notes."];
+		var EV_1 = Math.floor(Math.random() * Math.floor(Formation.length));
+			if(EV_1 == 3){EH=2;}if(EV_1 == 6){EH='-2';}
+		Sorceleur_3.innerHTML = Formation[EV_1];
+
+		if(Sorceleur_1.value == "1"){var EH = Number(EH)-2}if(Sorceleur_1.value == "3"){var EH = Number(EH)+2}	
+		var EV_2 = Math.floor(Math.random() * Math.floor(10))+1;
+		var EH = Number(EH)+(Number(EV_2));
+		var Fin = ["<b>Presque fatales (–1 EMP et –1 COR)</b>: L’Épreuve des Herbes a pratiquement détruit votre corps. Bien que vous ayez survécu, votre corps et votre esprit ont été irrémédiablement endommagés.","<b>À peine reçu (–1 EMP)</b>: L’Épreuve des Herbes s’est mal déroulée et les sorceleurs en charge des mutations n’étaient pas certains que vous y surviviez. Vous y êtes parvenu, mais pas sans séquelles psychologiques.","<b>Mutations passables (aucun modificateur)</b>: L’Épreuve des Herbes s’est bien déroulée. Vous avez été accepté dans les rangs des sorceleurs avec juste quelques souvenirs horriblement douloureux.","<b>Mutations supplémentaires (+1 EMP et +1 DEX)</b>: Votre corps s’est montré très réceptif à l’Épreuve des Herbes et vous avez obtenu des mutations supplémentaires. Votre corps les a bien supportées et toute cette souffrance a finalement payé."];
+		if(EH == "1"){var EH = Fin[0];}if(EH == "2" || EH == "3"){var EH = Fin[1];}if(EH >= "4" && EH <= "9"){var EH = Fin[2];}if(EH >= "10"){var EH = Fin[3];}
+		Sorceleur_4.innerHTML = EH;
+	}else{
+		alert('Selectionnez l\'âge à laquelle vous êtes devenu sorceleur.');
+	}
 }
 
 function RandomLifeMage(){
@@ -2272,20 +2276,24 @@ function RandYouLifeMage(f){
 }
    
 function FormationMage(){
-	Bouton_Formation_Mage.style.display = "none";
-	var EH = "0"; 	// Epreuve des Herbes 
-	Mage_3_4.style.display = "block";
-	
-	var Formation = ["<b>Trauma Magique (-1 en Volonté).</b> Un retour de magie vous a blessé et affaibli durant votre formation. Votre volonté s’en est retrouvée définitivement émoussée.","<b>Bon élève (+1 en Formation de Mage).</b> Vous avez intégré parfaitement les cours prodigués par vos professeurs. Travail, facilités ou juste de bons profs, vous êtes incollable en Théorie de la Magie !","<b>Amis Mage (faites vous un ami Mage).</b> Vous vous êtes fait un allié sur les bancs de l’école très tôt dans votre formation. La rigueur a confirmé votre lien.","<b>Mauvaise Harmonisation (-2 en Fin de Formation).</b> Vous avez eu du mal à vous acclimater à vos études, immaturité, mauvais alignement à la magie.... terminer votre formation sera difficile....","<b>Accident Magique (-2 en Vigueur).</b> Lors de votre formation, vous avez été blessé gravement par la magie, et votre faculté à canaliser le chaos s’en est trouvé amoindrie.","<b>Premier de la Classe (Incantation +1).</b> Vos avez excellé dans les arts incantatoires et cela se ressens encore. Vous manipulez la magie courante avec beaucoup d’agilité !","<b>Bonne Harmonisation (+2 en Fin de Formation).</b> Vous avez facilement acquis les bases et vous êtes parfaitement acclimaté à la force du Chaos. Vous terminerez votre formation plus facilement que d’autres","<b>Ennemi Magicien (faites vous un mage ennemi).</b> Très tôt, vous vous êtes fait un rival (ou un groupe rival) dans votre formation. Une fois terminée, cette haine s’est confirmée et se fait ressentir encore aujourd’hui","<b>Métamorphose Ratée (Empathie -1).</b> Votre apparence a été modifiée, mais un raté magique vous a affecté et émoussévotre empathie. Malgré les soins et les illusions, vous ne donnez plus le change.","<b>Recherches étendues (+1 Magie d’Apprenti).</b> Vous avez trouvé un grimoire de magie plus avancé que vous n’auriez pas dû, mais vous avez réussi à acquérir une formule de plus au début de votre formation"];
-	var EV_1 = Math.floor(Math.random() * Math.floor(Formation.length));	
-	Mage_3.innerHTML = Formation[EV_1];
-	
-	if(Mage_1.value == "1"){var EH = Number(EH)-2}if(Mage_1.value == "3"){var EH = Number(EH)+2}	
-	var EV_2 = Math.floor(Math.random() * Math.floor(10))+1;
-	var EH = Number(EH)+(Number(EV_2));
-	var Fin = ["<b>Renégat (-1 en Empathie, -1 en volonté & +1 Connaissance de Rue).</b> Votre impulsivité fait de vous un danger pour vous ou les autres et vos instructeurs n’ont pas réussi à vous discipliner. Vous avez claqué la porte de l’académie en fuyant ou en passant pour mort, vous évoluez désormais en marge de la société...","<b>Admis sans distinction (-1 en Volonté).</b> Vous avez passé les tests finaux sans honneurs ni distinction. Votre hargne vous a permis d’avancer et a laissé des traces dans votre comportement.","<b>Formation sans encombres (sans modificateur).</b> Vous avez passé les différentes épreuves et êtes désormais un Mage accompli ! Vous êtes un membre fiable de la Confrérie des Magiciens.","<b>Formation avec les honneurs (+1 en Volonté & +1 en Empathie).</b> Vous avez parfaitement intégré vos cours et canalisé l’énergie du Chaos. Votre volontésans faille a payé et vous voici un membre distingué de votre confrérie."];
-	if(EH == "1"){var EH = Fin[0];}if(EH == "2" || EH == "3"){var EH = Fin[1];}if(EH >= "4" && EH <= "9"){var EH = Fin[2];}if(EH >= "10"){var EH = Fin[3];}
-	Mage_4.innerHTML = EH;
+	if(Mage_1.value != ""){
+		Bouton_Formation_Mage.style.display = "none";
+		var EH = "0"; 	// Epreuve des Herbes 
+		Mage_3_4.style.display = "block";
+
+		var Formation = ["<b>Trauma Magique (-1 en Volonté).</b> Un retour de magie vous a blessé et affaibli durant votre formation. Votre volonté s’en est retrouvée définitivement émoussée.","<b>Bon élève (+1 en Formation de Mage).</b> Vous avez intégré parfaitement les cours prodigués par vos professeurs. Travail, facilités ou juste de bons profs, vous êtes incollable en Théorie de la Magie !","<b>Amis Mage (faites vous un ami Mage).</b> Vous vous êtes fait un allié sur les bancs de l’école très tôt dans votre formation. La rigueur a confirmé votre lien.","<b>Mauvaise Harmonisation (-2 en Fin de Formation).</b> Vous avez eu du mal à vous acclimater à vos études, immaturité, mauvais alignement à la magie.... terminer votre formation sera difficile....","<b>Accident Magique (-2 en Vigueur).</b> Lors de votre formation, vous avez été blessé gravement par la magie, et votre faculté à canaliser le chaos s’en est trouvé amoindrie.","<b>Premier de la Classe (Incantation +1).</b> Vos avez excellé dans les arts incantatoires et cela se ressens encore. Vous manipulez la magie courante avec beaucoup d’agilité !","<b>Bonne Harmonisation (+2 en Fin de Formation).</b> Vous avez facilement acquis les bases et vous êtes parfaitement acclimaté à la force du Chaos. Vous terminerez votre formation plus facilement que d’autres","<b>Ennemi Magicien (faites vous un mage ennemi).</b> Très tôt, vous vous êtes fait un rival (ou un groupe rival) dans votre formation. Une fois terminée, cette haine s’est confirmée et se fait ressentir encore aujourd’hui","<b>Métamorphose Ratée (Empathie -1).</b> Votre apparence a été modifiée, mais un raté magique vous a affecté et émoussévotre empathie. Malgré les soins et les illusions, vous ne donnez plus le change.","<b>Recherches étendues (+1 Magie d’Apprenti).</b> Vous avez trouvé un grimoire de magie plus avancé que vous n’auriez pas dû, mais vous avez réussi à acquérir une formule de plus au début de votre formation"];
+		var EV_1 = Math.floor(Math.random() * Math.floor(Formation.length));	
+		Mage_3.innerHTML = Formation[EV_1];
+
+		if(Mage_1.value == "1"){var EH = Number(EH)-2}if(Mage_1.value == "3"){var EH = Number(EH)+2}	
+		var EV_2 = Math.floor(Math.random() * Math.floor(10))+1;
+		var EH = Number(EH)+(Number(EV_2));
+		var Fin = ["<b>Renégat (-1 en Empathie, -1 en volonté & +1 Connaissance de Rue).</b> Votre impulsivité fait de vous un danger pour vous ou les autres et vos instructeurs n’ont pas réussi à vous discipliner. Vous avez claqué la porte de l’académie en fuyant ou en passant pour mort, vous évoluez désormais en marge de la société...","<b>Admis sans distinction (-1 en Volonté).</b> Vous avez passé les tests finaux sans honneurs ni distinction. Votre hargne vous a permis d’avancer et a laissé des traces dans votre comportement.","<b>Formation sans encombres (sans modificateur).</b> Vous avez passé les différentes épreuves et êtes désormais un Mage accompli ! Vous êtes un membre fiable de la Confrérie des Magiciens.","<b>Formation avec les honneurs (+1 en Volonté & +1 en Empathie).</b> Vous avez parfaitement intégré vos cours et canalisé l’énergie du Chaos. Votre volontésans faille a payé et vous voici un membre distingué de votre confrérie."];
+		if(EH == "1"){var EH = Fin[0];}if(EH == "2" || EH == "3"){var EH = Fin[1];}if(EH >= "4" && EH <= "9"){var EH = Fin[2];}if(EH >= "10"){var EH = Fin[3];}
+		Mage_4.innerHTML = EH;
+	}else{
+		alert('Selectionnez l\'âge à laquelle vous êtes devenu mage.');
+	}
 }
 
 function équipement(){
