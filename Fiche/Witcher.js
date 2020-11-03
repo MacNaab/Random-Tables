@@ -2609,6 +2609,7 @@ $.getJSON('dtb/magie.json', function(jd) {
 const { PDFDocument } = PDFLib;
 
 async function fillForm() {
+	try{
 	var LPro = ['',"Artisan","Barde","Criminel","Docteur","Homme d'armes","Mage","Marchand","Prêtre","Sorceleur","Vampire","Noble","Paysan","Fanatique","Hors-la-loi","Nomade"];
 	var LAge = ['','Dizaine','Vingtaine','Trentaine','Quarentaine','Cinquentaine'];
 	
@@ -2872,6 +2873,13 @@ async function fillForm() {
 			// Trigger the browser to download the PDF document
 	download(pdfBytes, "The_Witcher_TRPG_Fiche_PJ.pdf", "application/pdf");
 	$('#PDF_load').html("Fiche de "+DTB.perso+" crée !");	
+	} 
+	catch(err){
+            console.log(err);
+            $("#PDF_load").html(err+".<br>Vous ne devez pas réduire le code.");
+            $("#toast1").toast('show');
+            return;
+        }
 }
 
 var JSON_item = ""
