@@ -2876,7 +2876,7 @@ async function fillForm() {
 	} 
 	catch(err){
             console.log(err);
-            $("#PDF_load").html(err+".<br>Vous ne devez pas réduire le code.");
+            $("#PDF_load").html(err);
             $("#toast1").toast('show');
             return;
         }
