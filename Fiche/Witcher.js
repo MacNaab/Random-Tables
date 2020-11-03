@@ -2831,8 +2831,6 @@ async function fillForm() {
 			var nom = item.nom;
 			var found = JSON_item.Formule.find(x => x.Nom == nom);
 			var found2 = JSON_item.Potion.find(x => x.Nom == nom);
-			console.log(found2);
-			console.log(nom);
 			form.getTextField('Formule N'+trackeurD1).setText(nom);
 			form.getTextField('Formule D'+trackeurD1).setText(found2.Effet);
 			form.getTextField('Formule C'+trackeurD1).setText(found.Composants);
