@@ -201,7 +201,7 @@ function trie1(){
     
     var aff = "";
     for (let i = 0; i < (Lan0-1); i++) {
-        var aff = aff+'\n'+(i+1)+':'+XYZ[i][1];
+        var aff = aff+'\n<b>'+(i+1)+':</b> '+XYZ[i][1];
     }
     document.getElementById('ordre_atk').innerHTML = aff;
 }
