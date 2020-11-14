@@ -31,7 +31,7 @@
 		  "Armure": "0",
 		  "Taille": "Taille humaine",
 		  "Poids": "Poids humain",
-		  "Environnement": "Dans des villes ou des tours isolées",
+		  "Environnement": ["Ville"],
 		  "Intelligence": "Humaine",
 		  "Organisation": "Généralement solitaire",
 		  "Note": "Les pouvoirs magiques présentés ci-dessus sont un exemple de ce que les mages peuvent utiliser pour s’en sortir face aux personnages joueurs. Vous pouvez personnaliser votre sorcier en le dotant de sorts, de rituels et d’envoûtements alternatifs décrits dans la section sur la magie, page 99."
