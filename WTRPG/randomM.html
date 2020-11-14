@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>The Witcher TRPG Monster</title>
   </head>
-  <body onload="Mobs()">
+  <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -148,7 +148,21 @@ Partout / ChampsDeBataille / Cimetière / Ruines / Grottes / Marin / Egouts /Mon
 <div class="form-group" style="width:250px;margin-left:auto;margin-right:auto;">
     <input class="form-control" id="myInput" type="text" placeholder="Rechercher..">
 </div>
-<div id="Aff Table" style="margin-left:10%;margin-right:10%">
+<div style="margin-left:10%;margin-right:10%">
+	<table class="table table-striped table-hover table-responsive">
+		<thead>
+			<tr>
+				<th scope="col">Nom</th>
+				<th scope="col">Type</th>
+				<th scope="col">Difficulté</th>
+				<th scope="col">Environnement</th>
+				<th scope="col">Organisation</th>
+				<th scope="col">Intelligence</th>
+			</tr>
+		</thead>
+		<tbody id="Aff_Table">
+		</tbody>
+	</table>
 </div>
 </div>
 
