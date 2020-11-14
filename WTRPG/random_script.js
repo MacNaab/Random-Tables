@@ -22,7 +22,7 @@ var CheckUrbain = document.getElementById('Check Urbain2');
   if(CheckBois.checked == true){DataB = DataB.concat(Humain.Forêts);}
   if(CheckUrbain.checked == true){DataB = DataB.concat(Humain.Urbain);}
 
-  if(CheckPartout.checked == true){DataB = Partout.concat(Humain.Routes, Humain.Mahakam, Humain.Marin, Humain.Forêts, Humain.Urbain);}
+  if(CheckPartout.checked == true){DataB = Humain.Partout.concat(Humain.Routes, Humain.Mahakam, Humain.Marin, Humain.Forêts, Humain.Urbain);}
 
 	var Rand = Math.floor(Math.random() * Math.floor(DataB.length));
   
@@ -33,7 +33,6 @@ var JSON_Bestiaire = "";
 $.getJSON('rencontre.json', function(jd) {
 	JSON_Bestiaire = jd;
 	jd.Humain.forEach(function(e){
-		console.log(e.Environnement);
 		e.Environnement.forEach(function(f){
 			if(f == "Partout"){Humain.Partout.push(e.Nom)};
 			if(f == "Route"){Humain.Routes.push(e.Nom)};
