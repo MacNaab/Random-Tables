@@ -8,7 +8,7 @@ var Humain = {
 }
 
 var JSON_Bestiaire = "";
-$.getJSON('../Fiche/dtb/bestaire.json', function(jd) {
+$.getJSON('rencontre.json', function(jd) {
 	JSON_Bestiaire = jd;
 	jd.Humain.forEach(function(e){
 		e.Environnement.forEach(function(f){
