@@ -1,0 +1,6651 @@
+{
+	"Humain": [
+		{
+		  "Nom": "ARCHERS SCOIA’TAEL",
+		  "Menace": "Faible Complexe",
+		  "Récompense": "20 couronnes",
+		  "Armure": "5",
+		  "Taille": "Taille humaine",
+		  "Poids": "Poids humain",
+		  "Environnement": ["Forêts","Ville"],
+		  "Intelligence": "Humaine",
+		  "Organisation": "Commandos de 3 à 15 individus",
+		  "Note": "Les archers Scoia’tael commencent d’abord par décocher des flèches normales pour tenter de tuer toutes leurs cibles rapidement. Ils réservent leurs fouisseuses elfes pour les ennemis qu’ils abhorrent de tout leur cœur et les fuyards qu’ils devront traquer après la bataille."
+		},
+		{
+		  "Nom": "BANDITS",
+		  "Menace": "Faible Simple",
+		  "Récompense": "10 couronnes",
+		  "Armure": "5",
+		  "Taille": "Taille humaine",
+		  "Poids": "Poids humain",
+		  "Environnement": ["Ville","Route"],
+		  "Intelligence": "Humaine",
+		  "Organisation": "Bandes de 3 à 15 individus",
+		  "Note": "Le niveau de compétences des bandits est extrêmement variable. Le profil présenté ici est celui d’un voyou de base, le genre de gros bras qui surveille l’entrepôt d’un criminel ou tend des embuscades aux voyageurs sur les routes. Vous pouvez tout à fait modifier les caractéristiques des bandits pour les rendre plus ou moins menaçants. Pour représenter un paysan ordinaire ou un scélérat de bas étage, diminuez ses RÉF et sa DEX à 3, et ses PS à 15. Sachez toutefois que ces brigands ne représenteront pas un défi pour les personnages combattants. Si vous voulez peupler les routes de voyous endurcis, augmentez leur RÉF et de DEX à 7 ou 8, et leurs PS à 35. Lorsque vous modifiez les caractéristiques de combat, vous pouvez également améliorer les compétences et les équipements."
+		},
+		{
+		  "Nom": "MAGES",
+		  "Menace": "Moyen Simple",
+		  "Récompense": "100 couronnes",
+		  "Armure": "0",
+		  "Taille": "Taille humaine",
+		  "Poids": "Poids humain",
+		  "Environnement": "Dans des villes ou des tours isolées",
+		  "Intelligence": "Humaine",
+		  "Organisation": "Généralement solitaire",
+		  "Note": "Les pouvoirs magiques présentés ci-dessus sont un exemple de ce que les mages peuvent utiliser pour s’en sortir face aux personnages joueurs. Vous pouvez personnaliser votre sorcier en le dotant de sorts, de rituels et d’envoûtements alternatifs décrits dans la section sur la magie, page 99."
+		},
+		{
+		  "Nom": "BERSERKIR",
+		  "Menace": "Moyen Fort",
+		  "Récompense": "300 couronnes",
+		  "Armure": "15",
+		  "Taille": "Au moins 2 mètres de hauteur",
+		  "Poids": "Au moins 200 Kg",
+		  "Environnement": ["Fôret","Montagnes"],
+		  "Intelligence": "Fureur, combatif, animal",
+		  "Organisation": "Solitaire ou en petite meute",
+		  "Note": ""
+		},
+		{
+		  "Nom": "SVINFYLKINGAR",
+		  "Menace": "Moyen Fort",
+		  "Récompense": "200 couronnes",
+		  "Armure": "20",
+		  "Taille": "Au moins 2 mètres de hauteur",
+		  "Poids": "Au moins 200 Kg",
+		  "Environnement": ["Fôret","Montagnes"],
+		  "Intelligence": "Fureur, combatif, animal",
+		  "Organisation": "Solitaire ou en petite meute",
+		  "Note": ""
+		},
+		{
+		  "Nom": "ULFHEDNAR",
+		  "Menace": "Moyen Fort",
+		  "Récompense": "200 couronnes",
+		  "Armure": "10",
+		  "Taille": "Environ 1,5 mètres de hauteur",
+		  "Poids": "Au moins 100 Kg",
+		  "Environnement": ["Fôret","Montagnes"],
+		  "Intelligence": "Fureur, combatif, animal",
+		  "Organisation": "Solitaire ou en petite meute",
+		  "Note": ""
+		},
+		{
+		  "Nom": "CHEF BANDIT",
+		  "Menace": "Simple Complexe",
+		  "Récompense": "40 couronnes",
+		  "Armure": "Tête: 8<br>Torse: 12<br>Jambes: 12",
+		  "Taille": "Taille humaine",
+		  "Poids": "Poids humain",
+		  "Environnement": ["Ville","Route"],
+		  "Intelligence": "Humaine",
+		  "Organisation": "Bandes de 3 à 15 individus",
+		  "Note": "Le niveau de compétences des bandits est extrêmement variable. Le profil présenté ici est celui d’un voyou de base, le genre de gros bras qui surveille l’entrepôt d’un criminel ou tend des embuscades aux voyageurs sur les routes. Vous pouvez tout à fait modifier les caractéristiques des bandits pour les rendre plus ou moins menaçants. Pour représenter un paysan ordinaire ou un scélérat de bas étage, diminuez ses RÉF et sa DEX à 3, et ses PS à 15. Sachez toutefois que ces brigands ne représenteront pas un défi pour les personnages combattants. Si vous voulez peupler les routes de voyous endurcis, augmentez leur RÉF et de DEX à 7 ou 8, et leurs PS à 35. Lorsque vous modifiez les caractéristiques de combat, vous pouvez également améliorer les compétences et les équipements."
+		},
+		{
+		  "Nom": "SOUS-CHEF BANDIT",
+		  "Menace": "Simple Moyen",
+		  "Récompense": "15 couronnes",
+		  "Armure": "Tête:0<br>Torse: 14<br>Jambes: 14",
+		  "Taille": "Taille humaine",
+		  "Poids": "Poids humain",
+		  "Environnement": ["Ville","Route"],
+		  "Intelligence": "Humaine",
+		  "Organisation": "Bandes de 3 à 15 individus",
+		  "Note": "Le niveau de compétences des bandits est extrêmement variable. Le profil présenté ici est celui d’un voyou de base, le genre de gros bras qui surveille l’entrepôt d’un criminel ou tend des embuscades aux voyageurs sur les routes. Vous pouvez tout à fait modifier les caractéristiques des bandits pour les rendre plus ou moins menaçants. Pour représenter un paysan ordinaire ou un scélérat de bas étage, diminuez ses RÉF et sa DEX à 3, et ses PS à 15. Sachez toutefois que ces brigands ne représenteront pas un défi pour les personnages combattants. Si vous voulez peupler les routes de voyous endurcis, augmentez leur RÉF et de DEX à 7 ou 8, et leurs PS à 35. Lorsque vous modifiez les caractéristiques de combat, vous pouvez également améliorer les compétences et les équipements."
+		}
+	],
+	"Monstre": [
+		{
+		  "Nom": "GOULE",
+		  "Menace": "Faible Difficile",
+		  "Récompense": "30 couronnes",
+		  "Armure": "0",
+		  "Taille": "Environ 1,25 m au garrot",
+		  "Poids": "Environ 86 kg",
+		  "Environnement": ["Champs de bataille","Cimetière"],
+		  "Intelligence": "Aussi intelligente qu’un chien",
+		  "Organisation": "Groupes de 3 à 6 individus",
+		  "Note": ""
+		},
+		{
+		  "Nom": "GUENAUDE SÉPULCRALE",
+		  "Menace": "Moyen Complexe",
+		  "Récompense": "500 couronnes",
+		  "Armure": "0",
+		  "Taille": "Environ 1,75 m",
+		  "Poids": "Environ 80 kg",
+		  "Environnement": ["Cimetière","Grotte"],
+		  "Intelligence": "Aussi intelligente qu’un humain",
+		  "Organisation": "Solitaire",
+		  "Note": "Même les mages les plus érudits butent sur l’origine de la magie qui émane des cercles de crânes des guenaudes sépulcrales. Dans l’ensemble, on considère qu’ils tirent leurs pouvoirs des démons peuplant le vide qui sépare les différents plans de l’univers."
+		},
+		{
+		  "Nom": "NOYEURS",
+		  "Menace": "Faible Simple",
+		  "Récompense": "10 couronnes",
+		  "Armure": "0",
+		  "Taille": "Taille humaine",
+		  "Poids": "Poids humain",
+		  "Environnement": ["Marin"],
+		  "Intelligence": "Aussi intelligent qu’un poisson",
+		  "Organisation": "Groupes de 3 à 6 individus",
+		  "Note": "Ils ont beau croire que les noyeurs sont des criminels revenus à la vie, beaucoup de citadins de la région du Pontar sont prêts à payer un bon prix pour obtenir des cerveaux de ces monstres. Ils les font bouillir dans un ragoût pour obtenir, paraît-il, un aphrodisiaque extrêmement puissant."
+		},
+		{
+		  "Nom": "FANTÔMES",
+		  "Menace": "Faible Difficile",
+		  "Récompense": "30 couronnes",
+		  "Armure": "0",
+		  "Taille": "Taille humaine",
+		  "Poids": "Intangible",
+		  "Environnement": ["Champs de bataille","Cimetière"],
+		  "Intelligence": "Guidé par ses émotions",
+		  "Organisation": "Groupes de 3 à 21 individus",
+		  "Note": "Les armes d’un fantôme sont la manifestation du pouvoir qu’il acquiert au moment de sa création. Lorsqu’il meurt, on ne peut pas ramasser sa lanterne et son épée qui s’évaporent avec le reste de son corps."
+		},
+		{
+		  "Nom": "SPECTRE DE MIDI",
+		  "Menace": "Moyen Difficile",
+		  "Récompense": "800 couronnes",
+		  "Armure": "0",
+		  "Taille": "Taille humaine",
+		  "Poids": "Intangible",
+		  "Environnement": ["Ville"],
+		  "Intelligence": "Consumé par la haine",
+		  "Organisation": "Solitaire",
+		  "Note": ""
+		},
+		{
+		  "Nom": "LOUPS",
+		  "Menace": "Facile Simple",
+		  "Récompense": "10 couronnes",
+		  "Armure": "0",
+		  "Taille": "Environ 0,8 m",
+		  "Poids": "Environ 68 kg",
+		  "Environnement": ["Forêts","Plaines"],
+		  "Intelligence": "Aussi intelligent qu’un chien",
+		  "Organisation": "Meutes de 3 à 6 individus",
+		  "Note": ""
+		},
+		{
+		  "Nom": "WARGS",
+		  "Menace": "Facile Simple",
+		  "Récompense": "10 couronnes",
+		  "Armure": "0",
+		  "Taille": "Environ 0,8 m",
+		  "Poids": "Environ 68 kg",
+		  "Environnement": ["Forêts","Plaines"],
+		  "Intelligence": "Aussi intelligent qu’un chien",
+		  "Organisation": "Meutes de 3 à 6 individus",
+		  "Note": "Les wargs sont plus grands que les loups, arborent une fourrure brun-roux et possèdent des yeux rouges et brillants. Au vu de leur comportement, ils paraissent plus intelligents que les loups."
+		},
+		{
+		  "Nom": "LOUPS-GAROUS",
+		  "Menace": "Moyen Complexe",
+		  "Récompense": "500 couronnes",
+		  "Armure": "8",
+		  "Taille": "Environ 2,5 m",
+		  "Poids": "Environ 140 kg",
+		  "Environnement": ["Forêts","Ville"],
+		  "Intelligence": "Aussi intelligent qu’un humain",
+		  "Organisation": "Solitaire",
+		  "Note": "Un personnage affligé de lycanthropie a 30 % de chance de se transformer en loup-garou chaque nuit au moment où la lune se lève. Quand il est sous sa forme bestiale, il devient un prédateur sanguinaire doté d’une intelligence humaine qui a soif de meurtre. Si c’est un personnage joueur, le MJ en prend le contrôle jusqu’au lever du jour. Lorsqu’il est transformé en monstre, le lycanthrope acquiert les armes, l’armure et les capacités d’un loup-garou. Le personnage ajoute également les bonus suivants à ses caractéristiques : Réflexes +2,  Corps +3,  Vitesse +4,  Empathie –5"
+		},
+		{
+		  "Nom": "GRIFFONS",
+		  "Menace": "Difficile Complexe",
+		  "Récompense": "1200 couronnes",
+		  "Armure": "8",
+		  "Taille": "Environ 2 m au garrot",
+		  "Poids": "Environ 900 kg",
+		  "Environnement": ["Montagne"],
+		  "Intelligence": "Aussi intelligent qu’un chien",
+		  "Organisation": "Seul ou en couple",
+		  "Note": ""
+		},
+		{
+		  "Nom": "SIRÈNES",
+		  "Menace": "Facile Complexe",
+		  "Récompense": "20 couronnes",
+		  "Armure": "0",
+		  "Taille": "Environ 3 m de long",
+		  "Poids": "Environ 120 kg",
+		  "Environnement": ["Marin"],
+		  "Intelligence": "Aussi intelligente qu’un humain",
+		  "Organisation": "Groupes de 3 à 6 individus",
+		  "Note": ""
+		},
+		{
+		  "Nom": "ARACHAS",
+		  "Menace": "Fort Complexe",
+		  "Récompense": "1000 couronnes",
+		  "Armure": "20",
+		  "Taille": "Environ 3 m",
+		  "Poids": "Environ 800 kg",
+		  "Environnement": ["Marécages"],
+		  "Intelligence": "Aussi intelligente qu’un chien",
+		  "Organisation": "Solitaire",
+		  "Note": ""
+		},
+		{
+		  "Nom": "ENDRIAGUES",
+		  "Menace": "Facile Difficile",
+		  "Récompense": "30 couronnes",
+		  "Armure": "8",
+		  "Taille": "Environ 2,5 m",
+		  "Poids": "Environ 200 kg",
+		  "Environnement": ["Marécages"],
+		  "Intelligence": "Aussi intelligente qu’un chien",
+		  "Organisation": "Groupes de 3 à 9 individus",
+		  "Note": "Les reines endriagues ressemblent tant aux arachas qu’on peut facilement les confondre. Lorsque les personnages s’aventurent dans un nid d’endriague, le MJ peut utiliser les caractéristiques des arachas pour représenter la reine.\nÉpines de bourdon Un bourdon endriague projette ses épines sur un rayon de 5 m autour de lui. On peut esquiver ou bloquer les épines (SD 15). La cible subit 1d6 points de dégâts empoisonnés pour chaque point de marge d’échec.\nQueue de guerrière Une guerrière endriague possède une grande queue qui inflige 4d6+2 points de dégâts ayant 50 % de chance d’être empoisonnés.\nPinces d’ouvrière Les pinces de l’ouvrière endriague ont 25 % de chance d’infliger des dégâts empoisonnés."
+		},
+		{
+		  "Nom": "GOLEMS",
+		  "Menace": "Fort Simple",
+		  "Récompense": "1200 couronnes",
+		  "Armure": "20",
+		  "Taille": "Environ 2,5 m",
+		  "Poids": "Environ 900 kg",
+		  "Environnement": ["Ruines"],
+		  "et": "des tours de sorciers",
+		  "Intelligence": "Incapable de réfléchir",
+		  "Organisation": "Solitaire",
+		  "Note": ""
+		},
+		{
+		  "Nom": "FIELLONS",
+		  "Menace": "Fort Difficile",
+		  "Récompense": "1500 couronnes",
+		  "Armure": "10",
+		  "Taille": "Environ 4 m au garrot",
+		  "Poids": "Environ 1500 kg",
+		  "Environnement": ["Forêts"],
+		  "Intelligence": "Aussi intelligent qu’un chien",
+		  "Organisation": "Solitaire",
+		  "Note": ""
+		},
+		{
+		  "Nom": "NEKKERS",
+		  "Menace": "Facile Complexe",
+		  "Récompense": "10 couronnes",
+		  "Armure": "0",
+		  "Taille": "Environ 1 m",
+		  "Poids": "Environ 13 kg",
+		  "Environnement": ["Forêts","Plaines"],
+		  "Intelligence": "Aussi intelligent qu’un",
+		  "humain": "simplet",
+		  "Organisation": "Bandes de 3 à 12 individus",
+		  "Note": ""
+		},
+		{
+		  "Nom": "CHEF NEKKER",
+		  "Menace": "Facile Complexe",
+		  "Récompense": "10 couronnes",
+		  "Armure": "0",
+		  "Taille": "Environ 1 m",
+		  "Poids": "Environ 13 kg",
+		  "Environnement": ["Forêts","Plaines"],
+		  "Intelligence": "Aussi intelligent qu’un",
+		  "humain": "simplet",
+		  "Organisation": "Bandes de 3 à 12 individus",
+		  "Note": "Les chefs nekkers sont en général plus grands que les autres membres de leur espèce. Certains savants pensent qu’il s’agit d’une autre race de nekker, mais il est plus probable que, comme chez les humains, les monstres élisent les plus forts comme chef. On pense qu’ils arborent des peintures de guerre, ce qui expliquerait la teinte rouge de leur peau."
+		},
+		{
+		  "Nom": "TROLLS DE PIERRE",
+		  "Menace": "Moyen Difficile",
+		  "Récompense": "800 couronnes",
+		  "Armure": "20",
+		  "Taille": "Environ 2 m",
+		  "Poids": "Environ 150 kg",
+		  "Environnement": ["Montagnes","Vallées"],
+		  "Intelligence": "Aussi intelligent qu’un",
+		  "humain": "simplet",
+		  "Organisation": "Solitaire ou groupes de 2 à 3",
+		  "individus": "undefined",
+		  "Note": "Il n’est pas rare de trouver des trolls des cavernes vivant sous des ponts ou à proximité, et parfois des trolls de pierre. Les villes profitent souvent de leur force et de leurs talents de bâtisseurs pour les assigner à la maintenance des ponts et, parfois, pour qu’ils s’occupent de percevoir les droits de passage. Les autorités s’accommodent très bien de ces employés qui ne se plaignent presque jamais et qu’elles peuvent payer avec de la vodka."
+		},
+		{
+		  "Nom": "WYVERNS",
+		  "Menace": "Fort Difficile",
+		  "Récompense": "1000 couronnes",
+		  "Armure": "10",
+		  "Taille": "Environ 2 m",
+		  "Poids": "Environ 900 kg",
+		  "Environnement": ["Montagnes","Vallées"],
+		  "Intelligence": "Aussi intelligente qu’un chien",
+		  "Organisation": "Solitaire ou par couple",
+		  "Note": "Depuis des années, les armures que revêtent la noblesse et les chevaliers ainsi que les tenues des mages tenant à impressionner leurs pairs comportent des écailles de draconides. Les écailles tannées pour obtenir du cuir de draconide offrent une protection efficace et sont tellement solides que les ensembles d’armure fabriqués dans cette matière font partie des héritages familiaux qui se transmettent de génération en génération."
+		},
+		{
+		  "Nom": "KATAKANS",
+		  "Menace": "Fort Difficile",
+		  "Récompense": "1500 couronnes",
+		  "Armure": "0",
+		  "Taille": "Environ 2 m",
+		  "Poids": "Environ 115 kg",
+		  "Environnement": ["Ruines","Grottes","Ville"],
+		  "Intelligence": "Aussi intelligent qu’un humain",
+		  "Organisation": "Solitaire",
+		  "Note": ""
+		},
+		{
+		  "Nom": "AGUARA",
+		  "Menace": "Moyen Complexe",
+		  "Récompense": "800 couronnes",
+		  "Armure": "8",
+		  "Taille": "Humaine",
+		  "Poids": "Humain",
+		  "Environnement": ["Fôret"],
+		  "Intelligence": "Aussi intelligent qu’un humain",
+		  "Organisation": "Solitaire",
+		  "Note": ""
+		}
+	],
+  "Unofficiel": [
+    {
+      "Nom": "ABAYA",
+      "Menace": "Moyen Complexe",
+      "Récompense": "450 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 1,75m",
+      "Poids": "Jusqu’à 80kg",
+      "Environnement": "Rivières, marécages et rives",
+      "Intelligence": "Aussi intelligent qu’un humain",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "5",
+        "RÉF": "8",
+        "DEX": "10",
+        "COR": "5",
+        "VIT": "7",
+        "EMP": "3",
+        "TECH": "3",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "5",
+        "COU": "21",
+        "SAUT": "4",
+        "END": "25",
+        "ENC": "50",
+        "REC": "5",
+        "PS": "50",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "8",
+        "Vigilance": "7",
+        "Bagarre": "4",
+        "Courage": "7",
+        "Esquive/Evasion": "6",
+        "Résilience": "8",
+        "Mêlée": "8",
+        "Résistance à la contrainte": "10",
+        "Résistance à la magie": "9",
+        "Furtivité": "8",
+        "Survie": "9"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "5d6",
+          "Effet": "Saignement(50%)",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "6d6",
+          "Effet": "Saignement(75%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Dents d’abaya (1d6/2)",
+        "Objets étranges (1d6)",
+        "Rune aléatoire",
+        "Essence d’eau"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les nécrophages",
+        "Vulnérable au feu"
+      ],
+      "Capacités": [
+        "Jet de boue",
+        "Amphibien",
+        "Bauge",
+        "Sol humide",
+        "Chef des noyeurs",
+        "Sous la pluie"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "ALPYRE",
+      "Menace": "Difficile Complexe",
+      "Récompense": "1000 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 1,5 m",
+      "Poids": "Environ 75 kg",
+      "Environnement": "Bâtiments isolés, caves ou grottes",
+      "Intelligence": "Aussi intelligent qu’un humain",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "6",
+        "RÉF": "12",
+        "DEX": "11",
+        "COR": "6",
+        "VIT": "10",
+        "EMP": "8",
+        "TECH": "4",
+        "VOL": "8",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "30",
+        "SAUT": "12",
+        "END": "50",
+        "ENC": "60",
+        "REC": "7",
+        "PS": "70",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "10",
+        "Vigilance": "8",
+        "Bagarre": "8",
+        "Charisme": "9",
+        "Courage": "6",
+        "Duperie": "10",
+        "Esquive/Evasion": "10",
+        "Perception humaine": "8",
+        " imidation": "4",
+        "Mêlée": "7",
+        "Résistance à la contrainte": "8",
+        "Résistance à la magie": "9",
+        "Séduction": "10",
+        "Furtivité": "9"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "5d6",
+          "Effet": "Aucun",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "2d6+2",
+          "Effet": "Saignement(100%) Salive anesthésiante",
+          "Att/tour": "2"
+        }
+      ],
+      "Butins": [
+        "Dent de vampire (1d10)",
+        "Doses de sédatif (1d6/2)",
+        "Butin aléatoire"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les vampires",
+        "Potion Sang noir",
+        "Transfert sanguin",
+        "Argent",
+        "Bombe Poussière de lune"
+      ],
+      "Capacités": [
+        "Régénération",
+        "Charge rapide",
+        "Illusion",
+        "Nyctalopie",
+        "Salive anesthésiante",
+        "Hurlement sonique"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "AMAROK",
+      "Menace": "Moyen Complexe",
+      "Récompense": "650 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 1 m",
+      "Poids": "Environ 70 kg",
+      "Environnement": "Forêts, collines",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "6",
+        "DEX": "8",
+        "COR": "5",
+        "VIT": "11",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "12",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "33",
+        "SAUT": "6",
+        "END": "35",
+        "ENC": "50",
+        "REC": "7",
+        "PS": "50",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "5",
+        "Vigilance": "5",
+        "Bagarre": "6",
+        "Courage": "10",
+        "Esquive/Evasion": "2",
+        "Résilience": "10",
+        " imidation": "10",
+        "Mêlée": "7",
+        "Résistance à la magie": "7",
+        "Incantation": "7",
+        "Furtivité": "7"
+      },
+      "Arme": [
+        {
+          "Nom": "Morsures",
+          "DMG": "4d6+1",
+          "Effet": "Gel",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Poussière imprégnée (1d6)",
+        "Essence de lumière (1d6/2)",
+        "Peau de loup"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les créatures maudites",
+        "Faiblesse astrale",
+        "Chat (potion)",
+        "Bannissement"
+      ],
+      "Capacités": [
+        "Revirement",
+        "Chasseur sans fin",
+        "Invisibilité",
+        "Sauvage",
+        "Nyctalopie",
+        "Phobavore"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "BARGHEST",
+      "Menace": "Facile Complexe",
+      "Récompense": "50 couronnes",
+      "Armure": "8",
+      "Taille": "Taille",
+      "Poids": "Poids",
+      "Environnement": "Environnement",
+      "Intelligence": "Intelligence",
+      "Organisation": "Organisation",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "5",
+        "DEX": "6",
+        "COR": "5",
+        "VIT": "7",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "5",
+        "COU": "21",
+        "SAUT": "4",
+        "END": "25",
+        "ENC": "50",
+        "REC": "5",
+        "PS": "25",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "7",
+        "Vigilance": "8",
+        "Bagarre": "7",
+        "Courage": "4",
+        "Esquive/Evasion": "7",
+        "Résilience": "6",
+        "Mêlée": "7",
+        "Résistance à la magie": "5",
+        "Incantation": "5",
+        "Furtivité": "5"
+      },
+      "Arme": [
+        {
+          "Nom": "Morsure",
+          "DMG": "3d6+2",
+          "Effet": "Feu(25%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Essence de lumière (1d6/2)",
+        "Poussière de spectre (1d6)",
+        "Poussière imprégnée (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les spectres",
+        "Poussière de lune et Yrden"
+      ],
+      "Capacités": [
+        "Nyctalopie",
+        "Immunité au poison",
+        "Sauvage",
+        "Décalage",
+        "Flash aveuglant",
+        "Corps enflammés"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "BASILIC",
+      "Menace": "Difficile Complexe",
+      "Récompense": "800 couronnes",
+      "Armure": "8",
+      "Taille": "1,5 m au garrot",
+      "Poids": "Environ 70 kg",
+      "Environnement": "Caves, égoûts, endroits sombres",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Solitaire ou en couple",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "9",
+        "DEX": "9",
+        "COR": "9",
+        "VIT": "8",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "24",
+        "SAUT": "5",
+        "END": "35",
+        "ENC": "90",
+        "REC": "7",
+        "PS": "70",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "6",
+        "Vigilance": "8",
+        "Bagarre": "7",
+        "Courage": "4",
+        "Esquive/Evasion": "6",
+        "Résilience": "6",
+        "Mêlée": "8",
+        "Résistance à la magie": "7",
+        "Furtivité": "3",
+        "Survie": "8"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "4d6+2",
+          "Effet": "Aucun",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Bec",
+          "DMG": "5d6+2",
+          "Effet": "Poison(100%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Extrait de venin (1d10)",
+        "Ecailles de draconide (1d6)",
+        "Glande à venin"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les draconides",
+        "Vulnérable au feu"
+      ],
+      "Capacités": [
+        "Vol",
+        "Immunité au poison",
+        "Sauvage",
+        "Extrêmement venimeux",
+        "Peau durcie",
+        "Haleine nocive",
+        "Résistances (T,P)"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "BRUMELIN",
+      "Menace": "Moyen Complexe",
+      "Récompense": "450 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 1,5 m",
+      "Poids": "Environ 65 kg",
+      "Environnement": "Espaces brumeux, marécages",
+      "Intelligence": "Aussi intelligent qu’un humain stupide",
+      "Organisation": "Solitaire, rarement en petits groupes",
+      "Caract": {
+        "INT": "2",
+        "RÉF": "9",
+        "DEX": "9",
+        "COR": "6",
+        "VIT": "8",
+        "EMP": "2",
+        "TECH": "1",
+        "VOL": "8",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "24",
+        "SAUT": "4",
+        "END": "35",
+        "ENC": "70",
+        "REC": "7",
+        "PS": "50",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "3",
+        "Vigilance": "7",
+        "Bagarre": "6",
+        "Courage": "3",
+        "Duperie": "10",
+        "Esquive/Evasion": "8",
+        "Résilience": "5",
+        "Résistance à la contrainte": "6",
+        "Résistance à la magie": "7",
+        "Incantation": "8",
+        "Furtivité": "9",
+        "Survie": "5"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "5d6",
+          "Effet": "-",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "6d6",
+          "Effet": "Saignement(50%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Phosphore (1d6)",
+        "Poussière imprégnée (1d6/2)",
+        "Rune aléatoire"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les nécrophages",
+        "Aard et Yrden"
+      ],
+      "Capacités": [
+        "Capacités",
+        "Décalage",
+        "Téléportation",
+        "Brouillardier",
+        "Illusions",
+        "Nyctalopie",
+        "Sensibilité",
+        "Leurre"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "COCATRIX",
+      "Menace": "Moyen Complexe",
+      "Récompense": "600 couronnes",
+      "Armure": "5",
+      "Taille": "1,2 m au garrot",
+      "Poids": "Environ 500 kg",
+      "Environnement": "Grottes sombres, ruines, caves",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "2",
+        "RÉF": "8",
+        "DEX": "9",
+        "COR": "7",
+        "VIT": "9",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "4",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "27",
+        "SAUT": "5",
+        "END": "30",
+        "ENC": "70",
+        "REC": "6",
+        "PS": "60",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "7",
+        "Vigilance": "6",
+        "Bagarre": "7",
+        "Courage": "4",
+        "Esquive/Evasion": "7",
+        "Résilience": "6",
+        "Mêlée": "7",
+        "Résistance à la magie": "5",
+        "Furtivité": "5",
+        "Survie": "8"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "4d6",
+          "Effet": "-",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Bec",
+          "DMG": "5d6",
+          "Effet": "Poison(50%) Saignement(50%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Extrait de venin (1d6)",
+        "Ecailles de draconide (1d6/2)",
+        "Solution acide (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les draconides",
+        "Gaz inflammables"
+      ],
+      "Capacités": [
+        "Vol",
+        "Immunité au poison",
+        "Sauvage",
+        "Haleine toxique",
+        "Brouillard toxique",
+        "Résistances (T)"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "COUVIN",
+      "Menace": "Moyen Complexe",
+      "Récompense": "500 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 0,5 m",
+      "Poids": "Environ 40 kg",
+      "Environnement": "Potentiellement partout",
+      "Intelligence": "Aussi intelligent qu’un humain stupide",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "3",
+        "RÉF": "2",
+        "DEX": "7",
+        "COR": "3",
+        "VIT": "2",
+        "EMP": "3",
+        "TECH": "1",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "4",
+        "COU": "6",
+        "SAUT": "1",
+        "END": "20",
+        "ENC": "30",
+        "REC": "4",
+        "PS": "20",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "6",
+        "Vigilance": "5",
+        "Bagarre": "9",
+        "Courage": "7",
+        "Esquive/Evasion": "6",
+        "Résilience": "4",
+        "Mêlée": "7",
+        "Résistance à la magie": "7",
+        "Furtivité": "9",
+        "Survie": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6+3",
+          "Effet": "Saignement(25%)",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "4d6+2",
+          "Effet": "Saignement(75%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Essence de lumière (1d6/2)",
+        "Extrait de venin (1d6/2)",
+        "Dent de couvin (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les créatures maudites",
+        "Transfert sanguin"
+      ],
+      "Capacités": [
+        "Transformation",
+        "Appât de spectre",
+        "Nyctalopie",
+        "Bond (T)",
+        "Epines (T)",
+        "Drainage du sang"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "COUVIN TRANSFORMÉ",
+      "Menace": "Moyen Complexe",
+      "Récompense": "500 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 0,5 m",
+      "Poids": "Environ 40 kg",
+      "Environnement": "Potentiellement partout",
+      "Intelligence": "Aussi intelligent qu’un humain stupide",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "3",
+        "RÉF": "8",
+        "DEX": "8",
+        "COR": "6",
+        "VIT": "6",
+        "EMP": "3",
+        "TECH": "1",
+        "VOL": "7",
+        "ETOU": "6",
+        "COU": "18",
+        "SAUT": "3",
+        "END": "30",
+        "ENC": "60",
+        "REC": "6",
+        "PS": "60",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "6",
+        "Vigilance": "5",
+        "Bagarre": "9",
+        "Courage": "7",
+        "Esquive/Evasion": "6",
+        "Résilience": "4",
+        "Mêlée": "7",
+        "Résistance à la magie": "7",
+        "Furtivité": "9",
+        "Survie": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6+3",
+          "Effet": "Saignement(25%)",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "4d6+2",
+          "Effet": "Saignement(75%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Essence de lumière (1d6/2)",
+        "Extrait de venin (1d6/2)",
+        "Dent de couvin (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les créatures maudites",
+        "Transfert sanguin"
+      ],
+      "Capacités": [
+        "Transformation",
+        "Appât de spectre",
+        "Nyctalopie",
+        "Bond (T)",
+        "Epines (T)",
+        "Drainage du sang"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "CYCLOPE",
+      "Menace": "Difficile Complexe",
+      "Récompense": "1750 couronnes",
+      "Armure": "10",
+      "Taille": "Jusqu’à 5 m",
+      "Poids": "Environ 1600 kg",
+      "Environnement": "Collines, montagnes et grottes isolées",
+      "Intelligence": "Aussi intelligent qu’un humain stupide",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "2",
+        "RÉF": "8",
+        "DEX": "6",
+        "COR": "18",
+        "VIT": "5",
+        "EMP": "1",
+        "TECH": "6",
+        "VOL": "4",
+        "CHA": "0",
+        "ETOU": "11",
+        "COU": "15",
+        "SAUT": "3",
+        "END": "110",
+        "ENC": "180",
+        "REC": "11",
+        "PS": "110",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "3",
+        "Vigilance": "8",
+        "Bagarre": "6",
+        "Courage": "7",
+        "Esquive/Evasion": "4",
+        "Résilience": "10",
+        "Mêlée": "7",
+        "Physique": "10",
+        "Résistance à la contrainte": "7",
+        "Résistance à la magie": "8",
+        "Fabrication de pièges": "6",
+        "Survie": "7"
+      },
+      "Arme": [
+        {
+          "Nom": "Poing",
+          "DMG": "8d6+6",
+          "Effet": "Longue portée(2m)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Un arbre",
+          "DMG": "8d6+2",
+          "Effet": "Longue portée(4m) Etourdissement(-2)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Objets communs (2d10)",
+        "Runes aléatoires (2)",
+        "Oeil de cyclope"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les ogroïdes"
+      ],
+      "Capacités": [
+        "Force écrasante",
+        "Œil-qui-voit-tout",
+        "Massif",
+        "Balayage",
+        "Résistances (T,C,P)"
+      ],
+      "Note": "Bien que particulièrement stupides, les cyclopes sont néanmoins capables de fabriquer des pièges étonnamment sophistiqués. Ils utilisent souvent ces compétences pour protéger leurs repaires."
+    },
+    {
+      "Nom": "DEVOREUR",
+      "Menace": "Facile Complexe",
+      "Récompense": "50 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 2 m",
+      "Poids": "Environ 150 kg",
+      "Environnement": "Champs de bataille, cimetières, grottes",
+      "Intelligence": "Aussi intelligent qu’un humain stupide",
+      "Organisation": "Solitaire, parfois avec des goules",
+      "Caract": {
+        "INT": "3",
+        "RÉF": "5",
+        "DEX": "6",
+        "COR": "8",
+        "VIT": "5",
+        "EMP": "3",
+        "TECH": "6",
+        "VOL": "7",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "15",
+        "SAUT": "3",
+        "END": "35",
+        "ENC": "70",
+        "REC": "7",
+        "PS": "35",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "6",
+        "Vigilance": "5",
+        "Bagarre": "7",
+        "Courage": "7",
+        "Esquive/Evasion": "6",
+        "Résilience": "6",
+        "Mêlée": "6",
+        "Résistance à la contrainte": "6",
+        "Résistance à la magie": "4",
+        "Furtivité": "7",
+        "Survie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Morsure",
+          "DMG": "6d6",
+          "Effet": "-",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Moelle de goule (1d6)",
+        "Phosphore (1d6/2)",
+        "Soufre (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les nécrophages",
+        ""
+      ],
+      "Capacités": [
+        "Avaler en entier",
+        "Chef de meute",
+        "Nyctalopie",
+        "Immunité au poison",
+        "Robuste"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "DOPPLER",
+      "Menace": "Moyen Difficile",
+      "Récompense": "1000 couronnes",
+      "Taille": "Environ 1,5 m",
+      "Poids": "Environ 100 kg",
+      "Environnement": "Partout",
+      "Intelligence": "Aussi intelligent qu’un humain",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "7",
+        "EMP": "9",
+        "CHA": "0"
+      },
+      "Compt": {
+        "Envoûtement": "8",
+        "Duperie": "10",
+        "Perception humaine": "9",
+        " imidation": "6",
+        "Résistance à la contrainte": "7",
+        "Séduction": "9"
+      },
+      "Butins": [
+        "Cinquième essence (1d6/2)",
+        "Objets communs (1d6)",
+        "Eventuels biens volés"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les reliques",
+        "Contact de l’argent"
+      ],
+      "Capacités": [
+        "Mimétisme"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "DRAGON",
+      "Menace": "Fort Difficile",
+      "Récompense": "1500+ couronnes",
+      "Armure": "10",
+      "Taille": "Variable, jusqu’à 6m au garrot",
+      "Poids": "Variable, jusqu’à 1500 kg",
+      "Environnement": "Forêts, caves, montagnes (selon sa couleur)",
+      "Intelligence": "Aussi intelligent qu’un humain",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "6",
+        "RÉF": "10",
+        "DEX": "9",
+        "COR": "12",
+        "VIT": "7",
+        "EMP": "6",
+        "TECH": "3",
+        "VOL": "10",
+        "CHA": "0",
+        "ETOU": "11",
+        "COU": "21",
+        "SAUT": "4",
+        "END": "55",
+        "ENC": "120",
+        "REC": "11",
+        "PS": "110",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "9",
+        "Vigilance": "8",
+        "Bagarre": "9",
+        "Envoûtement": "5",
+        "Courage": "7",
+        "Duperie": "6",
+        "Esquive/Evasion": "8",
+        "Résilience": "6",
+        " imidation": "5",
+        "Mêlée": "10",
+        "Résistance à la contrainte": "6",
+        "Résistance à la magie": "10",
+        "Incantation": "8",
+        "Furtivité": "7",
+        "Survie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Morsure",
+          "DMG": "8d6",
+          "Effet": "Ablation Perçage d’armure",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Griffes",
+          "DMG": "5d6",
+          "Effet": "Saignement(50%)",
+          "Att/tour": "2"
+        }
+      ],
+      "Butins": [
+        "Oeil de dragon (2)",
+        "Dent de dragon (1d10)",
+        "Ecailles de draconides (2d10)",
+        "Coeur de dragon",
+        "Pillage de son trésor"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les draconides"
+      ],
+      "Capacités": [
+        "Massif",
+        "Vol",
+        "Harmonie avec la magie",
+        "Souffle",
+        "Nyctalopie",
+        "Absorption de magie",
+        "Immunités (noirs: poison, rouges & dorés: feu, blancs: froid|gel)",
+        "Résistances (T,C,P)"
+      ],
+      "Note": "Les dragons se présentent sous différentes espèces, représentées par des couleurs. Les plus connues sont : le noir, le rouge, le blanc et le vert. Les dragons dorés n’existent presque exclusivement que dans les légendes, et les dragons de roche sont considérés comme éteints. Les statistiques et les compétences indiquées représentent les plus petites couleurs de dragons telles que le vert, le noir et le blanc ; le MJ devrait se sentir libre d’en ajouter pour représenter les plus grandes variétés. \nLes dragons noirs soufflent un gaz nocif, infligeant 5d6 dégâts et 2d6 d’ablation. Ils ont également une armure deux fois plus importante que celle indiquée. \nLes dragons verts soufflent de la vapeur, infligeant 6d6 dégâts qui sont également stupéfiants. Ils sont amphibies. \nLes dragons blancs soufflent un brouillard glacial, infligeant 6d6 dégâts et provoquant l’effet Gel. \nLes dragons rouges et les dorés crachent du feu, infligeant 6d6 dégâts et l’effet Incinération. \nLes dragons dorés peuvent également prendre la forme d’humains ou d’autres créatures."
+    },
+    {
+      "Nom": "DRAUGIR",
+      "Menace": "Facile Simple",
+      "Récompense": "65 couronnes",
+      "Armure": "30",
+      "Taille": "Taille humaine",
+      "Poids": "Selon l’équipement porté",
+      "Environnement": "Champs de bataille, fosses communes, ruines",
+      "Intelligence": "Consumé par ses émotions",
+      "Organisation": "De une à plusieurs dizaines, parfois menés par un draug",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "6",
+        "DEX": "2",
+        "COR": "6",
+        "VIT": "2",
+        "EMP": "4",
+        "TECH": "1",
+        "VOL": "4",
+        "CHA": "0",
+        "ETOU": "5",
+        "COU": "6",
+        "SAUT": "1",
+        "END": "25",
+        "ENC": "50",
+        "REC": "5",
+        "PS": "25",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Archerie": "5",
+        "Athlétisme": "4",
+        "Vigilance": "4",
+        "Esquive/Evasion": "6",
+        "Résilience": "8",
+        "Résistance à la magie": "6",
+        "Bâton/Lance": "7",
+        "Furtivité": "3",
+        "Escrime": "7",
+        "Survie": "3"
+      },
+      "Arme": [
+        {
+          "Nom": "Epée de spectre",
+          "DMG": "3d6",
+          "Effet": "-",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Lance de spectre",
+          "DMG": "2d6+2",
+          "Effet": "Longue portée(2m)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Arc de spectre",
+          "DMG": "2d6+1",
+          "Effet": "Portée: 100m",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Objets communs (1d6/2)",
+        "Arme commune",
+        "Armure commune",
+        "Poussière de spectre (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les spectres",
+        "Lourd"
+      ],
+      "Capacités": [
+        "Colosse blindé",
+        "Volumineux",
+        "Déjà mort",
+        "Alimenté par la colère",
+        "Résistances (T)"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "DRAUGR",
+      "Menace": "Fort Difficile",
+      "Récompense": "1800 couronnes",
+      "Armure": "30",
+      "Taille": "Jusqu’à 6 m",
+      "Poids": "Environ 1000 kg",
+      "Environnement": "Champs de batailles, fosses communes, ruines",
+      "Intelligence": "Aussi intelligent qu’il l’était en vie, souvent fou",
+      "Organisation": "Solitaire, souvent avec le draugir",
+      "Caract": {
+        "INT": "7",
+        "RÉF": "8",
+        "DEX": "7",
+        "COR": "14",
+        "VIT": "4",
+        "EMP": "4",
+        "TECH": "1",
+        "VOL": "9",
+        "CHA": "0",
+        "ETOU": "11",
+        "COU": "12",
+        "SAUT": "2",
+        "END": "55",
+        "ENC": "140",
+        "REC": "11",
+        "PS": "110",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "5",
+        "Vigilance": "7",
+        "Courage": "10",
+        "Esquive/Evasion": "6",
+        "Résilience": "8",
+        "Mêlée": "8",
+        "Résistance à la contrainte": "10",
+        "Résistance à la magie": "10",
+        "Furtivité": "8",
+        "Escrime": "8",
+        "Survie": "9"
+      },
+      "Arme": [
+        {
+          "Nom": "Epée de spectre",
+          "DMG": "8d6",
+          "Effet": "-1PRE Feu(25%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Essence de spectre (1d10)",
+        "Poussière de spectre (1d10)",
+        "Potentiellement une relique",
+        "Runes aléatoires (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les spectres",
+        "Yrden"
+      ],
+      "Capacités": [
+        "Colosse blindé",
+        "Massif",
+        "Déjà mort",
+        "Tornade",
+        "Artillerie fantôme",
+        "Charge",
+        "Résistances (T,feu)",
+        ""
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "DRYADE",
+      "Menace": "Moyen Simple",
+      "Récompense": "350 couronnes",
+      "Armure": "0",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Forêts profondes",
+      "Intelligence": "Aussi intelligent qu’un humain",
+      "Organisation": "Solitaire, ou en bandes de 2 à 5",
+      "Caract": {
+        "INT": "6",
+        "RÉF": "7",
+        "DEX": "9",
+        "COR": "6",
+        "VIT": "8",
+        "EMP": "7",
+        "TECH": "5",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "24",
+        "SAUT": "4",
+        "END": "30",
+        "ENC": "60",
+        "REC": "6",
+        "PS": "30",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Archerie": "10",
+        "Athlétisme": "8",
+        "Vigilance": "9",
+        "Duperie": "4",
+        "Esquive/Evasion": "8",
+        "Résilience": "5",
+        "Mains thérapeutiques": "7",
+        " imidation": "5",
+        "Résistance à la contrainte": "5",
+        "Résistance à la magie": "4",
+        "Bâton/Lance": "7",
+        "Furtivité": "9",
+        "Tactique": "3",
+        "Fabrication de pièges": "5",
+        "Survie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Arc long",
+          "DMG": "4d6",
+          "Effet": "Saignement(100%)",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Lance",
+          "DMG": "3d6",
+          "Effet": "Longue portée(2m)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Objets communs (1d6/2)",
+        "Ingrédients végétaux (1d6)",
+        "Fkèches (20)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les reliques"
+      ],
+      "Capacités": [
+        "Un avec la nature",
+        "Tireuse d’élite",
+        "Mains thérapeutiques"
+      ],
+      "Note": "Les statistiques et les compétences représentées ici concernent les dryades de sang pur. Les dryades transformées sont susceptibles d’être légèrement moins puissantes, à discrétion du MJ."
+    },
+    {
+      "Nom": "ELEMENTAIRE FEU",
+      "Menace": "Difficile Complexe",
+      "Récompense": "1350 couronnes",
+      "Armure": "15",
+      "Taille": "Jusqu’à 2,5 m",
+      "Poids": "Jusqu’à 1000 kg",
+      "Environnement": "Partout où un mage l’invoque",
+      "Intelligence": "Capable de pensées simples",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "11",
+        "DEX": "6",
+        "COR": "11",
+        "VIT": "3",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "8",
+        "COU": "9",
+        "SAUT": "1",
+        "END": "-",
+        "ENC": "120",
+        "REC": "8",
+        "PS": "80",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "6",
+        "Vigilance": "8",
+        "Bagarre": "6",
+        "Esquive/Evasion": "5",
+        "Physique": "10",
+        "Résistance à la magie": "10",
+        "Furtivité": "4",
+        "Survie": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Poing",
+          "DMG": "8d6",
+          "Effet": "Feu(25%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Soufre (1d10)",
+        "Fragments lunaires (1d6/2)",
+        "Rune aléatoire",
+        "Poussière imprégnée"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les élémentaires",
+        "Bombes au dimeritium",
+        "Flammes vacillantes"
+      ],
+      "Capacités": [
+        "Force écrasante",
+        "Flammes",
+        "Massif",
+        "Construit",
+        "Fournaise",
+        "Résistances (T,C,P)"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "ELEMENTAIRE GLACE",
+      "Menace": "Difficile Complexe",
+      "Récompense": "1350 couronnes",
+      "Armure": "25",
+      "Taille": "Jusqu’à 2,5 m",
+      "Poids": "Jusqu’à 1000 kg",
+      "Environnement": "Partout où un mage l’invoque",
+      "Intelligence": "Capable de pensées simples",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "11",
+        "DEX": "6",
+        "COR": "11",
+        "VIT": "3",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "8",
+        "COU": "9",
+        "SAUT": "1",
+        "END": "-",
+        "ENC": "120",
+        "REC": "8",
+        "PS": "80",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "7",
+        "Vigilance": "5",
+        "Bagarre": "8",
+        "Esquive/Evasion": "7",
+        "Physique": "10",
+        "Résistance à la magie": "10",
+        "Furtivité": "4",
+        "Survie": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Poing",
+          "DMG": "8d6",
+          "Effet": "Gel(25%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Eau ducale (1d6/2)",
+        "Essence d’eau (1d10)",
+        "Rune aléatoire",
+        "Poussière infusée"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les élémentaires",
+        "Bombes au dimeritium",
+        "Fragile"
+      ],
+      "Capacités": [
+        "Force écrasante",
+        "Pointes glacées",
+        "Massif",
+        "Construit",
+        "Froid glacial",
+        "Résistances (T,C,P)"
+      ],
+      "Note": ""
+    },
+    {
+      "15": "undefined",
+      "Nom": "ELEMENTAIRE TERRE",
+      "Difficile": "Simple Récompense",
+      "1200 couronnes": "Armure",
+      "Taille": "Jusqu’à 2,5 m",
+      "Poids": "Jusqu’à 1000 kg",
+      "Environnement": "Partout où un mage l’invoque",
+      "Intelligence": "Capable de pensées simples",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "10",
+        "DEX": "7",
+        "COR": "12",
+        "VIT": "2",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "8",
+        "COU": "6",
+        "SAUT": "1",
+        "END": "-",
+        "ENC": "120",
+        "REC": "8",
+        "PS": "80",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "4",
+        "Vigilance": "9",
+        "Bagarre": "6",
+        "Esquive/Evasion": "5",
+        "Physique": "10",
+        "Résistance à la magie": "10",
+        "Furtivité": "4",
+        "Survie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Poing",
+          "DMG": "8d6",
+          "Effet": "-",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Pierres précieuses (1d6/2)",
+        "Fragments lunaires (1d6/2)",
+        "Rune aléatoire",
+        "Poussière imprégnée (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les élémentaires",
+        "Bombes au dimeritium"
+      ],
+      "Capacités": [
+        "Force écrasante",
+        "Camouflage",
+        "Massif",
+        "Construit",
+        "Onde de choc",
+        "Résistances (T,C,P)"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "FLEDRE",
+      "Menace": "Moyen Simple",
+      "Récompense": "500 couronnes",
+      "Armure": "5",
+      "Taille": "Jusqu’à 2,5 m",
+      "Poids": "Jusqu’à 125 kg",
+      "Environnement": "Caves, égouts, cryptes",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Solitaire, parfois par 2 ou 3",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "7",
+        "DEX": "7",
+        "COR": "9",
+        "VIT": "7",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "4",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "21",
+        "SAUT": "10",
+        "END": "30",
+        "ENC": "70",
+        "REC": "6",
+        "PS": "60",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "6",
+        "Vigilance": "5",
+        "Bagarre": "7",
+        "Courage": "7",
+        "Esquive/Evasion": "6",
+        "Résilience": "6",
+        "Mêlée": "6",
+        "Résistance à la contrainte": "6",
+        "Résistance à la magie": "4",
+        "Furtivité": "7",
+        "Survie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "5d6",
+          "Effet": "Saignement(50%)",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "6d6+2",
+          "Effet": "Saignement(100%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Crocs de vampire (1d6/2)",
+        "Salive de vampire (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les vampires",
+        "Sang noir",
+        "Faiblesse astrale",
+        "Vulnérabilité au feu",
+        "Transfert sanguin"
+      ],
+      "Capacités": [
+        "Régénération",
+        "Chasseur sans fin",
+        "Nyctalopie",
+        "Invisible à la scrutation magique",
+        "Grimpeur",
+        "Ailes de Vestige"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "GARGOUILLE",
+      "Menace": "Moyen Difficile",
+      "Récompense": "900 couronnes",
+      "Armure": "15",
+      "Taille": "Environ 1,75 m",
+      "Poids": "Environ 750 kg",
+      "Environnement": "Partout où un mage l’invoque",
+      "Intelligence": "Incapable de réfléchir",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "8",
+        "DEX": "5",
+        "COR": "10",
+        "VIT": "4",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "12",
+        "SAUT": "2",
+        "ENC": "100",
+        "REC": "7",
+        "PS": "70",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "5",
+        "Vigilance": "8",
+        "Bagarre": "7",
+        "Esquive / Evasion": "6",
+        "Résistance à la magie": "10",
+        "Furtivité": "5",
+        "Survie": "2"
+      },
+      "Arme": [
+        {
+          "Nom": "Poing",
+          "DMG": "6d6",
+          "Effet": "-",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Cinquième essence (1d6/2)",
+        "Poussière imprégnée (1d6)",
+        "Coeur de gargouille"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les élémentaires",
+        "Bombes au dimeritium"
+      ],
+      "Capacités": [
+        "Construit",
+        "Massif",
+        "Charge explosive",
+        "Lanceur de roche",
+        "Haleine empoisonnée",
+        "Piétinement",
+        "Résistances (T,C,P)"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "HARPIE",
+      "Menace": "Facile Complexe",
+      "Récompense": "20 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 1,25 m, voûté",
+      "Poids": "Environ 65 kg",
+      "Environnement": "Sommets, falaises, tours en ruines",
+      "Intelligence": "Aussi intelligent qu’un humain stupide",
+      "Organisation": "Groupes de 5 à 20",
+      "Caract": {
+        "INT": "2",
+        "RÉF": "7",
+        "DEX": "7",
+        "COR": "4",
+        "VIT": "9",
+        "EMP": "2",
+        "TECH": "4",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "5",
+        "COU": "21",
+        "SAUT": "21",
+        "END": "25",
+        "ENC": "40",
+        "REC": "5",
+        "PS": "25",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "8",
+        "Vigilance": "8",
+        "Bagarre": "5",
+        "Esquive/Evasion": "6",
+        "Résilience": "4",
+        "Mêlée": "7",
+        "Résistance à la magie": "5",
+        "Furtivité": "4",
+        "Survie": "7"
+      },
+      "Arme": [
+        {
+          "Nom": "Serres",
+          "DMG": "2d6+3",
+          "Effet": "+1 PRE(Dans les airs)",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Griffes",
+          "DMG": "2d6",
+          "Effet": "-",
+          "Att/tour": "2"
+        }
+      ],
+      "Butins": [
+        "Plumes de harpies (1d6)",
+        "Objets communs (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les hybrides",
+        "Vulnérable au feu",
+        "Os creux",
+        "Mouvement entravé"
+      ],
+      "Capacités": [
+        "Vol",
+        "Manœuvres aériennes"
+      ],
+      "Note": "Comme les pies, les harpies sont très attirées par les objets brillants. Leurs nids sont susceptibles de contenir divers objets métalliques comme des bijoux, des pièces de monnaie, ou même parfois des armes et des armures volées."
+    },
+    {
+      "Nom": "LESHEN",
+      "Menace": "Fort Difficile",
+      "Récompense": "1750 couronnes",
+      "Armure": "5",
+      "Taille": "Environ 4 m",
+      "Poids": "Environ 250 kg",
+      "Environnement": "Forêts profonde et nature sauvage",
+      "Intelligence": "Peut-être plus intelligent qu’un humain",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "11",
+        "RÉF": "6",
+        "DEX": "8",
+        "COR": "7",
+        "VIT": "5",
+        "EMP": "4",
+        "TECH": "1",
+        "VOL": "12",
+        "CHA": "0",
+        "ETOU": "9",
+        "COU": "15",
+        "SAUT": "3",
+        "END": "45",
+        "ENC": "70",
+        "REC": "9",
+        "PS": "90",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "8",
+        "Vigilance": "10",
+        "Bagarre": "4",
+        "Esquive/Evasion": "5",
+        "Résilience": "10",
+        "Mêlée": "9",
+        "Résistance à la magie": "10",
+        "Incantation": "8",
+        "Furtivité": "7",
+        "Survie": "10"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "6d6+2",
+          "Effet": "+1 PRE Portée:2m",
+          "Att/tour": "2"
+        }
+      ],
+      "Butins": [
+        "Ingrédients végétaux (1d10)",
+        "Os de bête (1d10)",
+        "Poussière imprégnée (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les reliques",
+        "Dimeritium",
+        "Vulnérable au feu",
+        "Poussière de lune et Yrden"
+      ],
+      "Capacités": [
+        "Fumée (D)",
+        "Racines (D)",
+        "Meute de corbeaux (D)",
+        "Totems (max 5)",
+        "Chef de meute",
+        "Esprit de la forêt",
+        "Résistances (T,C)"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "MANTICORE",
+      "Menace": "Moyen Complexe",
+      "Récompense": "750 couronnes",
+      "Armure": "8",
+      "Taille": "1,5 m au garrot",
+      "Poids": "Environ 550 kg",
+      "Environnement": "Montagnes, plaines, déserts",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "2",
+        "RÉF": "9",
+        "DEX": "7",
+        "COR": "8",
+        "VIT": "7",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "21",
+        "SAUT": "4",
+        "END": "35",
+        "ENC": "80",
+        "REC": "7",
+        "PS": "70",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "7",
+        "Vigilance": "6",
+        "Bagarre": "7",
+        "Courage": "4",
+        "Esquive/Evasion": "7",
+        "Résilience": "6",
+        "Mêlée": "7",
+        "Résistance à la magie": "5",
+        "Furtivité": "5",
+        "Survie": "8"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "4d6",
+          "Effet": "-",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "5d6",
+          "Effet": "Saignement(50%)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Dard de queue",
+          "DMG": "5d6",
+          "Effet": "Perçage d’armure Poison(100%)  Longue portée(2m)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Extrait de venin (1d6)",
+        "Dard de manticore",
+        "Cuir de manticore"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les hybrides"
+      ],
+      "Capacités": [
+        "Vol",
+        "Immunité au poison",
+        "Sauvage",
+        "Pic empoisonné",
+        "Venin anesthésiant",
+        "Nyctalopie",
+        "Bond",
+        "Résistance (C)"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "NAÏADE",
+      "Menace": "Facile Difficile",
+      "Récompense": "250 couronnes",
+      "Armure": "0",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Rivières, bois et lacs",
+      "Intelligence": "Aussi intelligent qu’un humain",
+      "Organisation": "Solitaire ou en groupes de 2 ou 3",
+      "Caract": {
+        "INT": "5",
+        "RÉF": "7",
+        "DEX": "7",
+        "COR": "5",
+        "VIT": "6",
+        "EMP": "7",
+        "TECH": "3",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "5",
+        "COU": "18",
+        "SAUT": "3",
+        "END": "25",
+        "ENC": "50",
+        "REC": "5",
+        "PS": "25",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "5",
+        "Vigilance": "7",
+        "Bagarre": "7",
+        "Charisme": "8",
+        "Courage": "5",
+        "Duperie": "6",
+        "Esquive/Evasion": "8",
+        "Résilience": "4",
+        "Représentation": "8",
+        "Persuasion": "8",
+        "Résistance à la contrainte": "5",
+        "Résistance à la magie": "5",
+        "Séduction": "9",
+        "Furtivité": "7",
+        "Survie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Poing",
+          "DMG": "1d6",
+          "Effet": "-",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Essence d’eau (1d6)",
+        "Objets communs (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les reliques"
+      ],
+      "Capacités": [
+        "Amphibien",
+        "Chant hypnotique",
+        "Illusion",
+        "Réfraction"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "NAUCORE",
+      "Menace": "Facile Simple",
+      "Récompense": "30 couronnes",
+      "Armure": "10",
+      "Taille": "Environ 2 m",
+      "Poids": "Environ 90 kg",
+      "Environnement": "Mers, rivages, rivières et lacs profonds",
+      "Intelligence": "Aussi intelligent qu’un poisson",
+      "Organisation": "Solitaire, parfois par 2 ou 3",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "7",
+        "DEX": "7",
+        "COR": "8",
+        "VIT": "8",
+        "EMP": "1",
+        "TECH": "5",
+        "VOL": "3",
+        "CHA": "0",
+        "ETOU": "5",
+        "COU": "24",
+        "SAUT": "4",
+        "END": "25",
+        "ENC": "80",
+        "REC": "5",
+        "PS": "25",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "6",
+        "Vigilance": "5",
+        "Bagarre": "7",
+        "Courage": "8",
+        "Esquive/Evasion": "6",
+        "Résilience": "6",
+        "Mêlée": "6",
+        "Résistance à la magie": "3",
+        "Résistance à la contrainte": "3",
+        "Furtivité": "7",
+        "Survie": "7"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6",
+          "Effet": "Saignement(25%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Essence d’eau (1d6/2)",
+        "Viande crue (1d6)",
+        "Perle"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les insectoïdes",
+        "Mouvement entravé",
+        "Vulnérable au feu"
+      ],
+      "Capacités": [
+        "Amphibien",
+        "Nyctalopie",
+        "Sauvage",
+        "Ejection de larves",
+        "Camouflage naturel",
+        "Résistances (T)"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "NEREIDE",
+      "Menace": "Moyen Difficile",
+      "Récompense": "550 couronnes",
+      "Armure": "0",
+      "Taille": "Taille humaine normale",
+      "Poids": "Poids humain normal",
+      "Environnement": "Mers",
+      "Intelligence": "Aussi intelligent qu’un humain",
+      "Organisation": "Solitaire, parfois en groupes de 2 ou 3",
+      "Caract": {
+        "INT": "5",
+        "RÉF": "8",
+        "DEX": "7",
+        "COR": "7",
+        "VIT": "9",
+        "EMP": "7",
+        "TECH": "1",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "27",
+        "SAUT": "5",
+        "END": "30",
+        "ENC": "70",
+        "REC": "7",
+        "PS": "30",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "7",
+        "Vigilance": "6",
+        "Bagarre": "8",
+        "Courage": "4",
+        "Esquive/Evasion": "7",
+        "Résilience": "6",
+        "Mêlée": "7",
+        "Résistance à la magie": "5",
+        "Furtivité": "5",
+        "Survie": "8"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "4d6",
+          "Effet": "Saignement(25%)",
+          "Att/tour": "2"
+        }
+      ],
+      "Butins": [
+        "Essence d’eau (1d6)",
+        "Objets communs (1d6/2)",
+        "Objets étranges (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les reliques",
+        "Mouvement entravé",
+        "Vulnérable au feu"
+      ],
+      "Capacités": [
+        "Amphibien",
+        "Nyctalopie",
+        "Chant des profondeurs",
+        "Appel",
+        "Illusion",
+        "Tentacules"
+      ],
+      "Note": "Compagnon = Bongare"
+    },
+    {
+      "Nom": "Bongare",
+      "Menace": "Moyen Difficile",
+      "Récompense": "550 couronnes",
+      "Armure": "0",
+      "Taille": "Taille humaine normale",
+      "Poids": "Poids humain normal",
+      "Environnement": "Mers",
+      "Intelligence": "Aussi intelligent qu’un humain",
+      "Organisation": "Solitaire, parfois en groupes de 2 ou 3",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "7",
+        "DEX": "6",
+        "COR": "8",
+        "VIT": "6",
+        "EMP": "2",
+        "TECH": "1",
+        "VOL": "6",
+        "ETOU": "7",
+        "COU": "18",
+        "SAUT": "3",
+        "END": "35",
+        "ENC": "80",
+        "REC": "7",
+        "PS": "35",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "6",
+        "Vigilance": "5",
+        "Bagarre": "6",
+        "Esquive/Evasion": "5",
+        "Mêlée": "8"
+      },
+      "Arme": [
+        {
+          "Nom": "Fouet",
+          "DMG": "3d6",
+          "Effet": "ETOU (-2)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "5d6",
+          "Effet": "Saignement(50%) Poison(50%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Essence d’eau (1d6)",
+        "Objets communs (1d6/2)",
+        "Objets étranges (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les reliques",
+        "Mouvement entravé",
+        "Vulnérable au feu"
+      ],
+      "Capacités": [
+        "Amphibien",
+        "Nyctalopie",
+        "Chant des profondeurs",
+        "Appel",
+        "Illusion",
+        "Tentacules"
+      ],
+      "Note": "Compagnon de NEREIDE"
+    },
+    {
+      "Nom": "OGRE",
+      "Menace": "Moyen Simple",
+      "Récompense": "250 couronnes",
+      "Armure": "10",
+      "Taille": "Environ 2 m",
+      "Poids": "Environ 125 kg",
+      "Environnement": "Montagnes, grottes, régions sauvages",
+      "Intelligence": "Aussi intelligent qu’un humain stupide",
+      "Organisation": "Bande de guerriers de 3 à 6.<br>Jusqu’à 50 en communauté.",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "7",
+        "DEX": "7",
+        "COR": "8",
+        "VIT": "5",
+        "EMP": "5",
+        "TECH": "4",
+        "VOL": "4",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "15",
+        "SAUT": "3",
+        "END": "30",
+        "ENC": "80",
+        "REC": "6",
+        "PS": "30",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "8",
+        "Vigilance": "7",
+        "Bagarre": "8",
+        "Courage": "6",
+        "Esquive/Evasion": "7",
+        "Résilience": "6",
+        "Résistance à la magie": "5",
+        "Furtivité": "6",
+        "Escrime": "7",
+        "Survie": "7"
+      },
+      "Arme": [
+        {
+          "Nom": "Lame brute",
+          "DMG": "4d6+4",
+          "Effet": "-",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Javelot",
+          "DMG": "3d6+2",
+          "Effet": "Portée:32m",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Armure en métal brut",
+        "Arme de mauvaise facture",
+        "Objets communs (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les ogroïdes",
+        "Aveuglement"
+      ],
+      "Capacités": [
+        "Nyctalopie",
+        "Robuste",
+        "Coups",
+        "Force physique"
+      ],
+      "Note": "Les ogres sont une race intelligente. Bien que stupides et violents, ils ont beaucoup plus de points communs avec les humains et les races anciennes que la plupart des monstres que les sorceleurs peuvent rencontrer."
+    },
+    {
+      "Nom": "PESTA",
+      "Menace": "Fort Complexe",
+      "Récompense": "1000 couronnes",
+      "Armure": "0",
+      "Taille": "Taille humaine",
+      "Poids": "Intangible",
+      "Environnement": "Zones urbaines, ou touchées par la peste",
+      "Intelligence": "Consumé par l’amertume ou la colère",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "5",
+        "RÉF": "8",
+        "DEX": "7",
+        "COR": "7",
+        "VIT": "6",
+        "EMP": "3",
+        "TECH": "1",
+        "VOL": "10",
+        "CHA": "0",
+        "ETOU": "8",
+        "COU": "18",
+        "SAUT": "5",
+        "END": "40",
+        "ENC": "70",
+        "REC": "8",
+        "PS": "80",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "5",
+        "Vigilance": "10",
+        "Bagarre": "8",
+        "Courage": "6",
+        "Esquive/Evasion": "7",
+        "Résilience": "6",
+        " imidation": "6",
+        "Résistance à la contrainte": "6",
+        "Résistance à la magie": "5",
+        "Incantation": "8",
+        "Furtivité": "7",
+        "Survie": "5"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "5d6",
+          "Effet": "Maladie(25%)",
+          "Att/tour": "2"
+        }
+      ],
+      "Butins": [
+        "Essence de fantôme (1d6)",
+        "Poussière de spectre (1d6)",
+        "Poussière imprégnée (1d6)",
+        "Objets lui ayant appartenu (si le corps peut être retrouvé)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les spectres",
+        "Poussière de lune et Yrden",
+        "Magie guérisseuse"
+      ],
+      "Capacités": [
+        "Incorporel",
+        "Malédiction",
+        "Horde de rats",
+        "Essaim d’insectes",
+        "Maladie"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "PHENIX",
+      "Menace": "Fort Complexe",
+      "Récompense": "1000 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 1,75 m",
+      "Poids": "Environ 180 kg",
+      "Environnement": "Montagnes, plaines, déserts",
+      "Intelligence": "Aussi intelligent qu’un humain stupide",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "7",
+        "DEX": "9",
+        "COR": "5",
+        "VIT": "7",
+        "EMP": "4",
+        "TECH": "1",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "5",
+        "COU": "21",
+        "SAUT": "4",
+        "END": "25",
+        "ENC": "70",
+        "REC": "5",
+        "PS": "50",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "8",
+        "Vigilance": "6",
+        "Bagarre": "5",
+        "Courage": "8",
+        "Esquive/Evasion": "9",
+        "Résilience": "5",
+        "Mêlée": "9",
+        "Résistance à la contrainte": "7",
+        "Résistance à la magie": "8",
+        "Furtivité": "3",
+        "Survie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Serres (en vol)",
+          "DMG": "4d6+6",
+          "Effet": "Saignement(25%) PRE:+1",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Bec",
+          "DMG": "6d6+2",
+          "Effet": "Saignement(50%) Feu(50%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Plume de phénix (1d6)",
+        "Coeur de phénix",
+        "Oeuf de phénix"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les draconides",
+        "Vulnérable au froid"
+      ],
+      "Capacités": [
+        "Régénération",
+        "Vol",
+        "Explosion",
+        "Nimbus de feu",
+        "Immortalité",
+        "Rayonnement",
+        "Immunité au feu"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "PUTRÉFACTEUR",
+      "Menace": "Facile Difficile",
+      "Récompense": "30 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 1,5 m",
+      "Poids": "Environ 80 kg",
+      "Environnement": "Champs de bataille et cimetières",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Groupes de 3 à 6",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "6",
+        "DEX": "7",
+        "COR": "7",
+        "VIT": "9",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "27",
+        "SAUT": "5",
+        "END": "30",
+        "ENC": "70",
+        "REC": "6",
+        "PS": "30",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "7",
+        "Vigilance": "6",
+        "Bagarre": "6",
+        "Courage": "6",
+        "Esquive/Evasion": "6",
+        "Résilience": "5",
+        "Mêlée": "6",
+        "Résistance à la magie": "5",
+        "Furtivité": "5",
+        "Survie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6",
+          "Effet": "-",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "3d6+1",
+          "Effet": "Saignement(25%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Moelle de putréfacteur (1d6/2)",
+        "Griffes de putréfacteur (2)",
+        "Extrait de venin (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les nécrophages",
+        "Gaz inflammables"
+      ],
+      "Capacités": [
+        "Sauvage",
+        "Bond",
+        "Nyctalopie",
+        "Explosion"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "SHAELMAAR",
+      "Menace": "Moyen Complexe",
+      "Récompense": "600 couronnes",
+      "Armure": "25",
+      "Taille": "Environ 3 m",
+      "Poids": "Environ 800 kg",
+      "Environnement": "Caves, montagnes",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "6",
+        "DEX": "7",
+        "COR": "10",
+        "VIT": "4",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "12",
+        "SAUT": "2",
+        "END": "35",
+        "ENC": "70",
+        "REC": "7",
+        "PS": "70",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "6",
+        "Vigilance": "7",
+        "Bagarre": "7",
+        "Courage": "7",
+        "Esquive/Evasion": "5",
+        "Résilience": "8",
+        "Mêlée": "9",
+        "Physique": "9",
+        "Résistance à la magie": "5",
+        "Furtivité": "2",
+        "Survie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Frappe",
+          "DMG": "5d6",
+          "Effet": "ETOU (-2)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "6d6",
+          "Effet": "Saignement(50%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Optima Mater (1d6/2)",
+        "Calcium Equum (1d10)",
+        "Pierres (2d10)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les reliques",
+        "Point faible (Abdomen)",
+        "Aveugle",
+        "Grosse carrure"
+      ],
+      "Capacités": [
+        "Charge roulante",
+        "Terrier",
+        "Terre brisée",
+        "Vision nocturne",
+        "Massif",
+        "Sauvage",
+        "Résistances (T,C,P)"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "STRYGE",
+      "Menace": "Moyen Difficile",
+      "Récompense": "650 couronnes",
+      "Armure": "5",
+      "Taille": "Environ 1,25 m au garrot",
+      "Poids": "Environ 125 kg",
+      "Environnement": "Cryptes",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "10",
+        "DEX": "8",
+        "COR": "5",
+        "VIT": "10",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "8",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "30",
+        "SAUT": "15",
+        "END": "25",
+        "ENC": "50",
+        "REC": "6",
+        "PS": "50",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "9",
+        "Vigilance": "7",
+        "Bagarre": "8",
+        "Courage": "9",
+        "Esquive/Evasion": "10",
+        "Résilience": "7",
+        "Mêlée": "9",
+        "Physique": "9",
+        "Résistance à la magie": "7",
+        "Furtivité": "8",
+        "Survie": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "4d6+2",
+          "Effet": "Saignement(25%)",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "5d6",
+          "Effet": "Saignement(75%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Cinquième essence (1d6/2)",
+        "Objets aléatoires (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les créatures maudites",
+        "Faiblesse astrale"
+      ],
+      "Capacités": [
+        "Régénération (3)",
+        "Saut",
+        "Nyctalopie",
+        "Terre d’origine",
+        "Escalade",
+        "Charge rapide",
+        "Amie des nécrophages"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "SUCCUBE",
+      "Menace": "Moyen Complexe",
+      "Récompense": "650 couronnes",
+      "Armure": "5",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Partout où il y a des gens",
+      "Intelligence": "Aussi intelligent qu’un humain",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "6",
+        "RÉF": "7",
+        "DEX": "8",
+        "COR": "7",
+        "VIT": "6",
+        "EMP": "12",
+        "TECH": "4",
+        "VOL": "8",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "18",
+        "SAUT": "3",
+        "END": "35",
+        "ENC": "70",
+        "REC": "7",
+        "PS": "70",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "6",
+        "Vigilance": "7",
+        "Bagarre": "6",
+        "Charisme": "10",
+        "Courage": "7",
+        "Duperie": "8",
+        "Esquive/Evasion": "8",
+        "Résilience": "8",
+        "Perception humaine": "10",
+        "Mêlée": "7",
+        "Persuasion": "10",
+        "Résistance à la magie": "7",
+        "Séduction": "10",
+        "Incantation": "5",
+        "Furtivité": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Coup",
+          "DMG": "3d6+2",
+          "Effet": "PRE +1",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Coup de tête",
+          "DMG": "4d6+2",
+          "Effet": "ETOU -1",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Objets communs (1d10)",
+        "Rune aléatoire"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les hybrides"
+      ],
+      "Capacités": [
+        "Insatiable",
+        "Séduction",
+        "Incantation",
+        "Immunité au charme"
+      ],
+      "Note": "Le pendant masculin de la succube est l’incube. Il est identique à la succube à tous égards, sauf en ce qui concerne son apparence."
+    },
+    {
+      "Nom": "SYLVAIN",
+      "Menace": "Moyen Simple",
+      "Récompense": "500 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 3 m",
+      "Poids": "Jusqu’à 200 kg",
+      "Environnement": "Forêts et ruines isolées",
+      "Intelligence": "Aussi intelligent qu’un humain",
+      "Organisation": "Solitaire, parfois en petites communautés",
+      "Caract": {
+        "INT": "6",
+        "RÉF": "6",
+        "DEX": "4",
+        "COR": "11",
+        "VIT": "4",
+        "EMP": "7",
+        "TECH": "5",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "8",
+        "COU": "12",
+        "SAUT": "2",
+        "END": "40",
+        "ENC": "70",
+        "REC": "8",
+        "PS": "50",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "9",
+        "Vigilance": "4",
+        "Bagarre": "10",
+        "Charisme": "5",
+        "Courage": "7",
+        "Duperie": "10",
+        "Esquive/Evasion": "6",
+        "Résilience": "5",
+        "Perception humaine": "8",
+        "Physique": "8",
+        "Résistance à la contrainte": "6",
+        "Résistance à la magie": "8",
+        "Furtivité": "3",
+        "Survie": "9"
+      },
+      "Arme": [
+        {
+          "Nom": "Poing",
+          "DMG": "5d6+1",
+          "Effet": "-",
+          "Att/tour": "2"
+        }
+      ],
+      "Butins": [
+        "Objets communs (1d6)",
+        "Possessions étranges (1d6)",
+        "Rune aléatoire"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les reliques",
+        "Glouton"
+      ],
+      "Capacités": [
+        "Force écrasante",
+        "Solide",
+        "Têtu",
+        "Langue d’argent",
+        "Odeur nauséabonde"
+      ],
+      "Note": "Les sylvains sont une race intelligence et généralement placide, et ont beaucoup plus de points communs avec les humains et les races anciennes que la plupart des monstres que les sorceleurs peuvent rencontrer. On les trouve souvent en interaction (semi-)pacifique avec des communautés humains dans les régions les plus isolées."
+    },
+    {
+      "Nom": "TSCHART",
+      "Menace": "Difficile Complexe",
+      "Récompense": "1250 couronnes",
+      "Armure": "8",
+      "Taille": "2 m au garrot",
+      "Poids": "Environ 800 kg",
+      "Environnement": "Régions sauvages éloignées",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "12",
+        "DEX": "9",
+        "COR": "12",
+        "VIT": "9",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "9",
+        "COU": "27",
+        "SAUT": "6",
+        "END": "45",
+        "ENC": "90",
+        "REC": "90",
+        "PS": "50",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "6",
+        "Vigilance": "10",
+        "Bagarre": "4",
+        "Courage": "8",
+        "Esquive/Evasion": "6",
+        "Résilience": "4",
+        "Mêlée": "7",
+        "Physique": "8",
+        "Résistance à la magie": "5",
+        "Furtivité": "2",
+        "Survie": "5"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "5d6+2",
+          "Effet": "-",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "6d6+1",
+          "Effet": "Saignement(50%)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Cornes",
+          "DMG": "7d6",
+          "Effet": "-1 PRE",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Oeil de tschart (3)",
+        "Excrément de tschart (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les reliques",
+        "Poussière de lune",
+        "Ouïe sensible",
+        "Vulnérable au feu"
+      ],
+      "Capacités": [
+        "Régénération (3)",
+        "Charge",
+        "Massif",
+        "Sauvage"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "VAMPIRE SUPERIEUR",
+      "Menace": "Fort Difficile",
+      "Récompense": "2000+ couronnes",
+      "Armure": "20",
+      "Taille": "Taille humaine normale",
+      "Poids": "Poids humain normal",
+      "Environnement": "Partout, souvent en zones urbaines",
+      "Intelligence": "Bien plus intelligent qu’un humain",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "13",
+        "RÉF": "12",
+        "DEX": "9",
+        "COR": "10",
+        "VIT": "9",
+        "EMP": "14",
+        "TECH": "7",
+        "VOL": "10",
+        "CHA": "0",
+        "ETOU": "10",
+        "COU": "27",
+        "SAUT": "5",
+        "END": "50",
+        "ENC": "100",
+        "REC": "10",
+        "PS": "100",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "10",
+        "Vigilance": "8",
+        "Bagarre": "8",
+        "Charisme": "10",
+        "Courage": "9",
+        "Duperie": "10",
+        "Esquive/Evasion": "10",
+        "Etiquette": "10",
+        "Perception humaine": "10",
+        " imidation": "10",
+        "Mêlée": "9",
+        "Résistance à la contrainte": "10",
+        "Résistance à la magie": "10",
+        "Séduction": "10",
+        "Furtivité": "10",
+        "Connaissance de la rue": "10"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "6d6",
+          "Effet": "Saignement(50%)",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "8d6+2",
+          "Effet": "Saignement(100%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Crocs de vampire (1d6/2)",
+        "Salive de vampire (1d6)",
+        "Runes aléatoires (1d6)",
+        "Probablement une relique",
+        "Toutes les richesses d’un noble"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les vampires",
+        "Sang noir (potion)",
+        "Transfert sanguin"
+      ],
+      "Capacités": [
+        "Régénération (10)",
+        "Illusion",
+        "Invisible à la scrutation magique",
+        "Nyctalopie",
+        "Immortalité",
+        "Immunités (Feu & Argent)",
+        "Pouvoirs variables"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "VODIANOÏ",
+      "Menace": "Facile Complexe",
+      "Récompense": "35 couronnes",
+      "Armure": "4",
+      "Taille": "Environ 1,75 m",
+      "Poids": "Jusqu’à 75 kg",
+      "Environnement": "Mers, rivages, lacs profonds",
+      "Intelligence": "Aussi intelligent qu’un humain",
+      "Organisation": "Groupes de 4 à 10, communautés",
+      "Caract": {
+        "INT": "5",
+        "RÉF": "7",
+        "DEX": "6",
+        "COR": "3",
+        "VIT": "6",
+        "EMP": "7",
+        "TECH": "7",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "4",
+        "COU": "12",
+        "SAUT": "2",
+        "END": "20",
+        "ENC": "30",
+        "REC": "4",
+        "PS": "20",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "8",
+        "Vigilance": "7",
+        "Bagarre": "4",
+        "Courage": "7",
+        "Esquive/Evasion": "6",
+        "Résilience": "4",
+        "Mêlée": "8",
+        "Physique": "4",
+        "Résistance à la magie": "2",
+        "Furtivité": "8",
+        "Fabrication de pièges": "5",
+        "Survie": "9"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6",
+          "Effet": "-",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Javelot",
+          "DMG": "3d6",
+          "Effet": "Portée:6m",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Objets communs (1d6/2)",
+        "Objets étranges (1d6)",
+        "Veste de cuir simple",
+        "Masque étrange"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les ogroÏdes",
+        "Air libre",
+        "Yeux sensibles"
+      ],
+      "Capacités": [
+        "Neurotoxine",
+        "Amphibien",
+        "Nyctalopie"
+      ],
+      "Note": "Les vodianoï sont une espèce intelligente et ont beaucoup plus de points communs avec les humains et les races anciennes que la plupart des monstres que les sorceleurs peuvent rencontrer.  Souvent dirigé par un chef."
+    },
+    {
+      "Nom": "PRÊTRE VODIANOÏ",
+      "Menace": "Facile Complexe",
+      "Récompense": "35 couronnes",
+      "Armure": "4",
+      "Taille": "Environ 1,75 m",
+      "Poids": "Jusqu’à 75 kg",
+      "Environnement": "Mers, rivages, lacs profonds",
+      "Intelligence": "Aussi intelligent qu’un humain",
+      "Organisation": "Groupes de 4 à 10, communautés",
+      "Caract": {
+        "INT": "5",
+        "RÉF": "7",
+        "DEX": "6",
+        "COR": "3",
+        "VIT": "6",
+        "EMP": "7",
+        "TECH": "7",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "4",
+        "COU": "12",
+        "SAUT": "2",
+        "END": "20",
+        "ENC": "30",
+        "REC": "4",
+        "PS": "20",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "8",
+        "Vigilance": "7",
+        "Bagarre": "4",
+        "Courage": "7",
+        "Esquive/Evasion": "6",
+        "Résilience": "4",
+        "Mêlée": "8",
+        "Physique": "4",
+        "Résistance à la magie": "2",
+        "Furtivité": "8",
+        "Fabrication de pièges": "5",
+        "Survie": "9"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6",
+          "Effet": "-",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Javelot",
+          "DMG": "3d6",
+          "Effet": "Portée:6m",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Objets communs (1d6/2)",
+        "Objets étranges (1d6)",
+        "Veste de cuir simple",
+        "Masque étrange"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les ogroÏdes",
+        "Air libre",
+        "Yeux sensibles"
+      ],
+      "Capacités": [
+        "Neurotoxine",
+        "Amphibien",
+        "Nyctalopie",
+        "Chef",
+        "Prière de guérison",
+        "Averse",
+        "Contrôle de l’eau"
+      ],
+      "Note": "Souvent, un groupe de vodianoï est dirigé par un prêtre. Tant que celui-ci est vivant, tous les vodianoï de son groupe ont un bonus de +4 en Courage."
+    },
+    {
+      "Nom": "ZEUGLE",
+      "Menace": "Fort Simple",
+      "Récompense": "1250 couronnes",
+      "Armure": "10",
+      "Taille": "Environ 6 m",
+      "Poids": "Jusqu’à 500 kg",
+      "Environnement": "Egouts, parfois les marécages",
+      "Intelligence": "Aussi intelligent qu’un poisson",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "9",
+        "DEX": "4",
+        "COR": "14",
+        "VIT": "2",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "10",
+        "COU": "6",
+        "SAUT": "-",
+        "END": "50",
+        "ENC": "140",
+        "REC": "10",
+        "PS": "50",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "2",
+        "Vigilance": "4",
+        "Bagarre": "10",
+        "Courage": "4",
+        "Esquive/Evasion": "2",
+        "Résilience": "10",
+        "Mêlée": "2",
+        "Physique": "10",
+        "Résistance à la magie": "5",
+        "Furtivité": "8"
+      },
+      "Arme": [
+        {
+          "Nom": "Tentacules",
+          "DMG": "4d6",
+          "Effet": "-",
+          "Att/tour": "1-4"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "8d6+2",
+          "Effet": "-",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Objets communs (1d6/2)",
+        "Objets étranges (1d6)",
+        "Essence d’eau (1d6)",
+        "Os de bête (2d10)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les insectoïdes",
+        "Point faible (Corps)"
+      ],
+      "Capacités": [
+        "Tentacules",
+        "Amphibien",
+        "Nyctalopie",
+        "Crasse",
+        "Odeur nauséabonde",
+        "Vorace",
+        "Immunité (poison, maladie)",
+        "Résistances (Feu,C,P)",
+        ""
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "ANOPHELI",
+      "Menace": "Facile Simple",
+      "Récompense": "40 couronnes",
+      "Armure": "3",
+      "Taille": "1,25 - 1,5 m voûté",
+      "Poids": "Environ 65 kg, jusqu’à 100 kg si bien nourri",
+      "Environnement": "Marécages, plaines inondables et grottes riches en fer",
+      "Intelligence": "Nourri, comme un humain stupide (comme un poisson quand il a faim)",
+      "Organisation": "Entre 1 et 3 en itinérance (jusqu’à 12 dans un nid)",
+      "Caract": {
+        "1": "(2)",
+        "3": "(7)",
+        "6": "(4)",
+        "20": "(30)",
+        "21": "(12)",
+        "INT": "1",
+        "(4)": "PS",
+        "DEX": "6",
+        "COR": "5",
+        "VIT": "7",
+        "TECH": "1",
+        "(5)": "VOL",
+        "CHA": "0",
+        "ETOU": "6",
+        "SAUT": "4",
+        "(3)": "END",
+        "ENC": "50",
+        "REC": "6",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Mêlée": "6",
+        "Bagarre": "7",
+        "Esquive/Evasion": "5",
+        "Athlétisme": "5",
+        "Vigilance": "3",
+        "Furtivité": "6",
+        "Survie": "5",
+        "Résistance à la magie": "2",
+        "Résilience": "6",
+        "Courage": "3"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "2d6+2",
+          "Effet": "PRE +1",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Trompe",
+          "DMG": "3d6+1",
+          "Effet": "Saignement(50%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "1 unité de Fer",
+        "Acide (1d6)",
+        "Coeur d’anopheli"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les ogroïdes",
+        "Potion Sang noir",
+        "Vulnérabilité au froid",
+        "Aveugle",
+        "Point faible (Abdomen)",
+        ""
+      ],
+      "Capacités": [
+        "Vol limité",
+        "Explosion",
+        "Sens améliorés",
+        "Jet de vomi",
+        "Faim de loup"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "BERBEROKA",
+      "Menace": "Facile Simple",
+      "Récompense": "45 couronnes",
+      "Armure": "5",
+      "Taille": "Environ 1 m au garrot",
+      "Poids": "Environ 95 kg",
+      "Environnement": "Marécages, étangs et mares rocheuses",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Meutes de 3 à 6",
+      "Caract": {
+        "INT": "2",
+        "RÉF": "6",
+        "DEX": "5",
+        "COR": "6",
+        "VIT": "4",
+        "EMP": "5",
+        "TECH": "1",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "5",
+        "COU": "12",
+        "SAUT": "4",
+        "END": "25",
+        "ENC": "60",
+        "REC": "5",
+        "PS": "25",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "7",
+        "Vigilance": "8",
+        "Bagarre": "7",
+        "Courage": "4",
+        "Esquive/Evasion": "7",
+        "Résilience": "6",
+        "Perception humaine": "5",
+        "Mêlée": "7",
+        "Résistance à la magie": "5",
+        "Furtivité": "5",
+        "Tactique": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6+2",
+          "Effet": "-",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "4d6",
+          "Effet": "PRE:-1 Saignement(100%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Essence d’eau (1d6)",
+        "Peau de loup",
+        "Pétrole brut (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les hybrides",
+        "Crustacés"
+      ],
+      "Capacités": [
+        "Sauvage",
+        "Mangeur d’eau",
+        "Vomi d’eau",
+        "Intelligence partagée"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "BUKUVAK",
+      "Menace": "Moyen Simple",
+      "Récompense": "150 couronnes",
+      "Armure": "5",
+      "Taille": "1 m au garrot",
+      "Poids": "Environ 175 kg",
+      "Environnement": "Rivières et lacs profonds",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Solitaire, parfois avec des noyeurs",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "7",
+        "DEX": "6",
+        "COR": "7",
+        "VIT": "4",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "4",
+        "CHA": "0",
+        "ETOU": "5",
+        "COU": "12",
+        "SAUT": "2",
+        "END": "25",
+        "ENC": "70",
+        "REC": "5",
+        "PS": "25",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "4",
+        "Vigilance": "8",
+        "Bagarre": "8",
+        "Courage": "3",
+        "Duperie": "6",
+        "Esquive/Evasion": "6",
+        "Résilience": "5",
+        "Mêlée": "7",
+        "Physique": "4",
+        "Résistance à la magie": "5",
+        "Furtivité": "6",
+        "Survie": "5"
+      },
+      "Arme": [
+        {
+          "Nom": "Morsure",
+          "DMG": "4d6",
+          "Effet": "Saignement(25%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Essence d’eau",
+        "Pétrole brut (1d10)",
+        "Ecailles de draconide (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les draconides",
+        "Vulnérable au feu"
+      ],
+      "Capacités": [
+        "Amphibien",
+        "Enchevêtrement de queue",
+        "Mucus épais",
+        "Sauvage",
+        "Modulation"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "GUVORAG",
+      "Menace": "Moyen Complexe",
+      "Récompense": "450 couronnes",
+      "Armure": "10",
+      "Taille": "Environ 3 m",
+      "Poids": "Environ 250 kg",
+      "Environnement": "Forêts, caves, bâtiments abandonnés",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "7",
+        "DEX": "9",
+        "COR": "6",
+        "VIT": "8",
+        "EMP": "8",
+        "TECH": "1",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "5",
+        "COU": "24",
+        "SAUT": "4",
+        "END": "25",
+        "ENC": "60",
+        "REC": "5",
+        "PS": "50",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "5",
+        "Vigilance": "10",
+        "Bagarre": "9",
+        "Charisme": "6",
+        "Duperie": "6",
+        "Esquive/Evasion": "6",
+        "Perception humaine": "10",
+        " imidation": "6",
+        "Mêlée": "7",
+        "Résistance à la magie": "10",
+        "Séduction": "6",
+        "Incantation": "6",
+        "Furtivité": "5",
+        "Survie": "2"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "4d6",
+          "Effet": "-",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "5d6",
+          "Effet": "Saignement(50%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Soie (1d10)",
+        "Poussière imprégnée (1d6/2)",
+        "Mucus de guvorag (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les insectoïdes",
+        "Faiblesse astrale"
+      ],
+      "Capacités": [
+        "Nyctalopie",
+        "Sauvage",
+        "Marionnettiste",
+        "Tissage de lumière",
+        "Sensible à la magie",
+        "Grimpeur",
+        "Toiles"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "PRETA",
+      "Menace": "Facile Difficile",
+      "Récompense": "50 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 1,25 m, voûté",
+      "Poids": "Environ 50 kg",
+      "Environnement": "Presque partout",
+      "Intelligence": "Consumé par la faim",
+      "Organisation": "Groupes de 3 à 6",
+      "Caract": {
+        "INT": "3",
+        "RÉF": "5",
+        "DEX": "7",
+        "COR": "6",
+        "VIT": "5",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "5",
+        "COU": "15",
+        "SAUT": "3",
+        "END": "25",
+        "ENC": "60",
+        "REC": "5",
+        "PS": "25",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "7",
+        "Vigilance": "8",
+        "Bagarre": "5",
+        "Esquive/Evasion": "6",
+        "Résilience": "8",
+        "Mêlée": "6",
+        "Résistance à la magie": "5",
+        "Furtivité": "5",
+        "Survie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "",
+          "DMG": "undefined",
+          "Effet": "undefined",
+          "Att/tour": "undefined"
+        }
+      ],
+      "Butins": [
+        "Poussière imprégnée (1d6)",
+        "Essence de fantôme (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les créatures maudites",
+        "Faiblesse astrale"
+      ],
+      "Capacités": [
+        "Invisible pour les rassasiés",
+        "Consumé par la faim",
+        "Furie",
+        "Nyctalopie"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "UKTENA",
+      "Menace": "Moyen Complexe",
+      "Récompense": "650 couronnes",
+      "Armure": "8",
+      "Taille": "Longueur d’environ 10 m",
+      "Poids": "Jusqu’à 750 kg",
+      "Environnement": "Montagnes, forêts et caves",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "2",
+        "RÉF": "9",
+        "DEX": "6",
+        "COR": "9",
+        "VIT": "4",
+        "EMP": "3",
+        "TECH": "1",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "12",
+        "SAUT": "2",
+        "END": "35",
+        "ENC": "90",
+        "REC": "7",
+        "PS": "70",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "5",
+        "Vigilance": "8",
+        "Bagarre": "8",
+        "Esquive/Evasion": "7",
+        "Résilience": "6",
+        "Mêlée": "7",
+        "Physique": "7",
+        "Résistance à la magie": "5",
+        "Incantation": "8",
+        "Furtivité": "5",
+        "Survie": "6",
+        "Butins": "Salive d’uktena"
+      },
+      "Arme": [
+        {
+          "Nom": "Morsure",
+          "DMG": "5d6",
+          "Effet": "Poison(50%) Saignement(25%)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Langue barbelée",
+          "DMG": "6d6+2",
+          "Effet": "Poison(100%) Portée:5m PRE:-1",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Salive d’uktena (1d10)",
+        "Ecailles de draconide (1d10)",
+        "Chitine"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les hybrides",
+        "Vulnérable au feu",
+        "Ecailles fragiles (A) "
+      ],
+      "Capacités": [
+        "Etouffement",
+        "Salive empoisonnée",
+        "Divination",
+        "Grimpeur",
+        "Natation",
+        "Résistances (T,P)"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "RECRUES",
+      "Menace": "Faible Complexe",
+      "Récompense": "30 couronnes",
+      "Armure": "Tête: 8, Torse: 14, Jambes: 12",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Partout",
+      "Intelligence": "Humaine",
+      "Organisation": "En groupes",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "6",
+        "DEX": "6",
+        "COR": "6",
+        "VIT": "5",
+        "EMP": "3",
+        "TECH": "2",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "5",
+        "COU": "15",
+        "SAUT": "3",
+        "END": "25",
+        "ENC": "60",
+        "REC": "5",
+        "PS": "25",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Archerie": "6",
+        "Athlétisme": "6",
+        "Vigilance": "4",
+        "Bagarre": "6",
+        "Courage": "4",
+        "Esquive / Evasion": "6",
+        "Résilience": "5",
+        "Résistance à la contrainte": "4",
+        "Résistance à la magie": "4",
+        "Bâton / Lance": "7",
+        "Furtivité": "3",
+        "Escrime": "3",
+        "Tactique": "3",
+        "Survie": "3"
+      },
+      "Arme": [
+        {
+          "Nom": "Arc court",
+          "DMG": "3d6+3",
+          "Effet": "Portée: 100m Saignement(100%)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Epée",
+          "DMG": "2d6+4",
+          "Effet": "Saignement(25%)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Lance",
+          "DMG": "3d6",
+          "Effet": "Longue portée",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (1d10)",
+        "Flèches / Carreaux (20)",
+        "Objets communs (1d6)",
+        "Camail",
+        "Brigandine",
+        "Pantalon renforcé"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Pauvre infanterie de merde"
+      ],
+      "Note": "Les recrues peuvent venir de n’importe quelle nation, l’entrée incluse ici est un exemple et les MJs devraient se sentir libres de redéfinir leurs équipements, leurs statistiques et même leurs capacités, pour mieux répondre à leurs préférences. Comme pour les bandits, les recrues peuvent être plus difficiles à combattre en améliorant leurs statistiques ou leurs PS. Le MJ peut aussi leur donner une meilleure armure ou de meilleures armes.<br>Les recrues seront parfois des unités criminelles. Sauf ordre direct, ils ne se battent généralement pas jusqu’à la mort. La plupart des déserteurs des différentes armées sont issus d’unités de recrues."
+    },
+    {
+      "Nom": "BANDITS DE GRAND CHEMIN",
+      "Menace": "Faible Complexe",
+      "Récompense": "40 couronnes",
+      "Armure": "Tête: 8,Torse: 12,Jambes: 12",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "A proximité des villes et des routes",
+      "Intelligence": "Humaine",
+      "Organisation": "En groupes",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "6",
+        "DEX": "7",
+        "COR": "6",
+        "VIT": "5",
+        "EMP": "6",
+        "TECH": "4",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "15",
+        "SAUT": "3",
+        "END": "30",
+        "ENC": "60",
+        "REC": "5",
+        "PS": "30",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Archerie": "5",
+        "Athlétisme": "5",
+        "Vigilance": "6",
+        "Bagarre": "6",
+        "Courage": "7",
+        "Esquive / Evasion": "5",
+        "Résilience": "5",
+        "Résistance à la contrainte": "5",
+        "Résistance à la magie": "4",
+        "Equitation": "5",
+        "Lames courtes": "5",
+        "Bâton / Lance": "7",
+        "Furtivité": "5",
+        "Escrime": "7",
+        "Tactique": "4",
+        "Fabrication de pièges": "6",
+        "Survie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Arc long",
+          "DMG": "4d6",
+          "Effet": "100m de portée",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Dague",
+          "DMG": "1d6+2",
+          "Effet": "-",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Epée",
+          "DMG": "2d6+4",
+          "Effet": "-",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Lance",
+          "DMG": "3d6",
+          "Effet": "Longue portée(2m)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (2d10)",
+        "Flèches / Carreaux (20)",
+        "Objets communs (1d6)",
+        "Capuche à tissage renforcé",
+        "Brigandine",
+        "Pantalon renforcé"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Délit de fuite"
+      ],
+      "Note": "Les bandits de grand chemin ont souvent recours à des tactiques d’embuscade, soit en poursuivant ou en attirant des cibles vers des alliés, soit en posant des pièges le long de la route. (Pour connaître ces règles, reportez-vous au Livre de base, p. 55.) Les bandits de grand chemin peuvent également se déplacer à cheval. Si c’est le cas, ils ont des sacoches (+1 Contrôle), une selle de cavalerie et des bardes de cuir (10 PA). <br><b>Cheval:</b><br>Athlétisme +11 Mod. de contrôle +2 Vitesse 12 PS 40 Poids 100"
+    },
+    {
+      "Nom": "MERCENAIRES",
+      "Menace": "Faible Complexe",
+      "Récompense": "35 couronnes",
+      "Armure": "Tête: 5,Torse: 14,Jambes: 12",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Partout",
+      "Intelligence": "Humaine",
+      "Organisation": "En groupes",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "7",
+        "DEX": "7",
+        "COR": "6",
+        "VIT": "6",
+        "EMP": "6",
+        "TECH": "4",
+        "VOL": "7",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "18",
+        "SAUT": "3",
+        "END": "30",
+        "ENC": "60",
+        "REC": "6",
+        "PS": "30",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Vigilance": "6",
+        "Bagarre": "6",
+        "Courage": "8",
+        "Arbalète": "7",
+        "Esquive / Evasion": "6",
+        "Résilience": "7",
+        "Mêlée": "7",
+        "Résistance à la contrainte": "3",
+        "Résistance à la magie": "4",
+        "Equitation": "4",
+        "Lames courtes": "5",
+        "Furtivité": "5",
+        "Escrime": "6",
+        "Tactique": "5",
+        "Survie": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Arbalète",
+          "DMG": "4d6+2",
+          "Effet": "Portée 100m",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Poignard",
+          "DMG": "2d6+2",
+          "Effet": "Saignement(25%) PRE:+1",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Epée",
+          "DMG": "2d6+4",
+          "Effet": "-",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (3d10)",
+        "Carreaux (20)",
+        "Objets communs (1d6)",
+        "Capuche à tissage renforcé",
+        "Brigandine",
+        "Pantalon renforcé",
+        "Bocle d’acier"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Paranoïa professionnelle"
+      ],
+      "Note": "<b>Cheval:</b> Athlétisme +11 Mod. de contrôle +2 Vitesse 12 PS 40 Poids 100 <br>Les mercenaires sont généralement soit engagés individuellement, soit organisés en groupes indépendants de taille importante, qui sont engagés par diverses nations sur tout le continent. L’argent est la principale motivation de toute unité de mercenaires, et la corruption, au lieu d’une confrontation directe, est parfois possible, même si elle est coûteuse. Les mercenaires peuvent être de n’importe quelle nation ou race, cette entrée ne doit être utilisée qu’à titre de référence, les MJs sont encouragés à la modifier s’ils en ont besoin. Certaines unités de mercenaires peuvent contenir ou être entièrement composées de biens de cavalerie."
+    },
+    {
+      "Nom": "PIRATES",
+      "Menace": "Faible Complexe",
+      "Récompense": "45 couronnes",
+      "Armure": "Tête: 3,Torse: 5,Jambes: 5",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Rivières, lacs et côtes",
+      "Intelligence": "Humaine",
+      "Organisation": "En groupes",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "6",
+        "DEX": "7",
+        "COR": "7",
+        "VIT": "7",
+        "EMP": "6",
+        "TECH": "4",
+        "VOL": "4",
+        "CHA": "0",
+        "ETOU": "5",
+        "COU": "21",
+        "SAUT": "4",
+        "END": "25",
+        "ENC": "50",
+        "REC": "5",
+        "PS": "25",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Archerie": "7",
+        "Vigilance": "6",
+        "Bagarre": "8",
+        "Courage": "6",
+        "Esquive / Evasion": "7",
+        "Résilience": "6",
+        " imidation": "8",
+        "Mêlée": "7",
+        "Résistance à la contrainte": "7",
+        "Résistance à la magie": "4",
+        "Lames courtes": "8",
+        "Furtivité": "5",
+        "Tactique": "6",
+        "Survie": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Arc court",
+          "DMG": "3d6+3",
+          "Effet": "Portée:100m Saignement(100%)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Poignard",
+          "DMG": "2d6+3",
+          "Effet": "Saignement(25%) PRE:+1",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Hache d’armes",
+          "DMG": "5d6+1",
+          "Effet": "-",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (1d10)",
+        "Flèches / Carreaux (20)",
+        "Objets communs (1d6)",
+        "Capuche d’archer",
+        "Gambison léger",
+        "Pantalon matelassé"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Cocktail explosif"
+      ],
+      "Note": "<b>Bateau:</b><br> Athlétisme - Mod. de contrôle 0 Vitesse 10 PS 60 Poids 610 <br>Les pirates se battent pour voler, rien de plus, rien de moins. Ils se battent rarement jusqu’à la mort, à moins d’être particulièrement désespérés ou d’avoir une motivation particulière. Un groupe de pirates n’engagera presque jamais le combat contre une cible à moins que les circonstances ne penchent fortement en leur faveur, et ils utiliseront tous les sales coups possibles pour s’en assurer. Vous trouverez ci-dessous les statistiques d’un petit bateau pirates typique, tel un cotre. Ces statistiques peuvent être modifiées pour représenter un navire plus grand, si besoin."
+    },
+    {
+      "Nom": "INFANTERIE NILFGAARDIENNE",
+      "Menace": "Faible Complexe",
+      "Récompense": "110 couronnes",
+      "Armure": "Tête: 16 Torse: 20 Jambes: 14",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Partout où l’Armée les envoie",
+      "Intelligence": "Humaine",
+      "Organisation": "En groupes",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "7",
+        "DEX": "7",
+        "COR": "7",
+        "VIT": "5",
+        "EMP": "6",
+        "TECH": "4",
+        "VOL": "5",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "15",
+        "SAUT": "3",
+        "END": "30",
+        "ENC": "60",
+        "REC": "6",
+        "PS": "30",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "7",
+        "Vigilance": "6",
+        "Bagarre": "6",
+        "Courage": "7",
+        "Arbalète": "7",
+        "Esquive / Evasion": "6",
+        "Résilience": "5",
+        " imidation": "3",
+        "Commandement": "4",
+        "Résistance à la contrainte": "5",
+        "Résistance à la magie": "4",
+        "Bâton / Lance": "8",
+        "Furtivité": "5",
+        "Escrime": "8",
+        "Tactique": "4",
+        "Survie": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Arbalète",
+          "DMG": "4d6+2",
+          "Effet": "Portée:100m PRE:+1",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Esboda",
+          "DMG": "5d6+1",
+          "Effet": "PRE +1",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Hache de guerre",
+          "DMG": "4d6+3",
+          "Effet": "Longue portée (2m)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (2d10)",
+        "Flèches / Carreaux (20)",
+        "Objets communs (1d6)",
+        "Armet",
+        "Armure de plates",
+        "Jambières de plates",
+        "Bouclier d’acier"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Discipline stricte"
+      ],
+      "Note": "Comme pour les bandits, l’infanterie peut être rendue plus difficile à combattre en améliorant ses statistiques ou ses PS. Le MJ peut aussi leur donner de meilleures armures ou de meilleures armes. <br> L’infanterie est l’épine dorsale des groupes d’armée des Noirs. Ce sont les soldats les plus communs, ceux que la plupart des gens rencontrent. Ils sont généralement loyaux, très disciplinés et bien entraînés. Comme dans toute armée, il y a des exceptions à cette règle, mais des punitions sévères et une supervision presque constante font que la plupart des soldats restent dans le rang."
+    },
+    {
+      "Nom": "AGENTS DES SERVICES SECRETS",
+      "Menace": "Faible Difficile",
+      "Récompense": "250 couronnes",
+      "Armure": "Tête: 8 Torse: 8 Jambes: 8",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Partout",
+      "Intelligence": "Humaine",
+      "Organisation": "Généralement solitaire",
+      "Caract": {
+        "INT": "7",
+        "RÉF": "8",
+        "DEX": "8",
+        "COR": "5",
+        "VIT": "7",
+        "EMP": "8",
+        "TECH": "6",
+        "VOL": "8",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "21",
+        "SAUT": "6",
+        "END": "30",
+        "ENC": "50",
+        "REC": "6",
+        "PS": "30",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "4",
+        "Vigilance": "8",
+        "Bagarre": "9",
+        "Courage": "7",
+        "Arbalète": "5",
+        "Duperie": "9",
+        "Déguisement": "8",
+        "Esquive / Evasion": "8",
+        "ContRÉFaçon": "6",
+        " imidation": "7",
+        "Mêlée": "7",
+        "Persuasion": "7",
+        "Crochetage": "9",
+        "Résistance à la contrainte": "10",
+        "Résistance à la magie": "4",
+        "Furtivité": "4",
+        "Escrime": "3",
+        "Tactique": "6",
+        "Survie": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Arbalète de poing",
+          "DMG": "2d6+2",
+          "Effet": "Portée:50m Rechargement lent",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Stylet",
+          "DMG": "1d6",
+          "Effet": "Dissimulation PRE:+1",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Coup-de-poing",
+          "DMG": "2d6",
+          "Effet": "-",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Orion",
+          "DMG": "1d6",
+          "Effet": "10m portée",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (5d10)",
+        "Flèches / Carreaux (20)",
+        "Objets communs (1d6)",
+        "Capuche à tissage renforcé",
+        "Gambison à tissage renforcé",
+        "Pantalon à tissage renforcé",
+        "Nécessaire de déguisement",
+        "Outils de voleur",
+        "Forge portable",
+        "Renseignements / Ordres"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Spécialiste de l’espionnage",
+        "Additifs alchimiques"
+      ],
+      "Note": "Les agents se procurent souvent des armures et des armes différentes pour mieux s’infiltrer dans les lieux ou se créer de fausses identités. Bien que cette entrée soit conçue comme un espion de Nilfgaard, elle peut facilement être modifiée pour devenir un espion de n’importe quel pays."
+    },
+    {
+      "Nom": "PACIFICATEUR DE GEMMERA",
+      "Menace": "Fort Simple",
+      "Récompense": "500 couronnes",
+      "Armure": "Tête: 14 Torse: 16 Jambes: 16",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Partout",
+      "Intelligence": "Humaine",
+      "Organisation": "En groupes, petites unités",
+      "Caract": {
+        "INT": "3",
+        "RÉF": "8",
+        "DEX": "6",
+        "COR": "8",
+        "VIT": "4",
+        "EMP": "5",
+        "TECH": "2",
+        "VOL": "7",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "12",
+        "SAUT": "4",
+        "END": "35",
+        "ENC": "80",
+        "REC": "7",
+        "PS": "35",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "5",
+        "Vigilance": "4",
+        "Bagarre": "9",
+        "Courage": "9",
+        "Esquive / Evasion": "7",
+        "Résilience": "8",
+        "Etiquette": "7",
+        " imidation": "8",
+        "Commandement": "5",
+        "Mêlée": "9",
+        "Physique": "7",
+        "Résistance à la contrainte": "8",
+        "Résistance à la magie": "5",
+        "Furtivité": "4",
+        "Tactique": "3",
+        "Survie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Poignard",
+          "DMG": "2d6+4",
+          "Effet": "Saignement(25%) PRE:+1",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Maillet kaedwenien",
+          "DMG": "6d6+4",
+          "Effet": "Météorite Etourdissement(-2)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Hachette",
+          "DMG": "2d6+3",
+          "Effet": "18m portée",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (4d10)",
+        "Objets communs (1d6)",
+        "Capuche renforcée",
+        "Veste de cuir",
+        "Pantalon de cuir"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Soldats entraînés",
+        "Pouvoir destructeur"
+      ],
+      "Note": "Les pacificateurs existent pour répandre la terreur. Cela signifie qu’ils se livrent régulièrement à des actions vraiment terribles, comme le meurtre et le viol, afin de rendre passifs les civils nouvellement conquis. Ces actions sont évidemment délicates, et peuvent facilement être soit ignorées entièrement, soit dissimulées en coulisses si le MJ le souhaite."
+    },
+    {
+      "Nom": "CHEVALIERS NILFGAARDIENS",
+      "Menace": "Fort Complexe",
+      "Récompense": "650 couronnes",
+      "Armure": "Tête : 30 Torse: 30 Jambes: 30",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Partout",
+      "Intelligence": "Humaine",
+      "Organisation": "En groupes, petites unités",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "8",
+        "DEX": "7",
+        "COR": "7",
+        "VIT": "5",
+        "EMP": "6",
+        "TECH": "3",
+        "VOL": "7",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "15",
+        "SAUT": "3",
+        "END": "35",
+        "ENC": "70",
+        "REC": "7",
+        "PS": "35",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Vigilance": "5",
+        "Bagarre": "8",
+        "Courage": "8",
+        "Esquive / Evasion": "7",
+        "Résilience": "7",
+        " imidation": "4",
+        "Commandement": "7",
+        "Résistance à la contrainte": "6",
+        "Résistance à la magie": "6",
+        "Equitation": "9",
+        "Lames courtes": "6",
+        "Bâton / Lance": "10",
+        "Furtivité": "3",
+        "Escrime": "9",
+        "Tactique": "6",
+        "Survie": "5"
+      },
+      "Arme": [
+        {
+          "Nom": "Poignard",
+          "DMG": "2d6+3",
+          "Effet": "Saignement(25%) PRE:+1",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Lame vicovarienne",
+          "DMG": "5d6+5",
+          "Effet": "Equilibrée",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Hache de bataille",
+          "DMG": "4d6+3",
+          "Effet": "Longue portée(2m)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (4d10)",
+        "Flèches / Carreaux (20)",
+        "Objets communs (1d6)",
+        "Casque nilfgaardien",
+        "Armure de plates nilfgaardienne",
+        "Jambières nilfgaardiennes"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Soldats entraînés",
+        "Choc et effroi"
+      ],
+      "Note": "<b>Cheval de guerre</b><br>Athlétisme +12 Mod. de contrôle -1 Vitesse 11 PS 50 Poids 270 <br>Les chevaliers peuvent être rendus moins difficiles à combattre en diminuant leurs statistiques ou leurs PS. Le MJ peut également leur donner une armure et un équipement plus légers.<br>Les chevaliers se battent presque toujours à cheval. Ils disposent de sacoches, d’une selle de cavalerie (+1 aux jets de Contrôle), d’oeillères (+1 pour calmer la monture) et de barde de mailles (15 PA)."
+    },
+    {
+      "Nom": "SOLDATS DES ROYAUMES DU NORD",
+      "Menace": "Faible Complexe",
+      "Récompense": "100 couronnes",
+      "Armure": "Tête: 14 Torse: 14 Jambes: 14",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Partout",
+      "Intelligence": "Humaine",
+      "Organisation": "En groupes",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "7",
+        "DEX": "7",
+        "COR": "7",
+        "VIT": "6",
+        "EMP": "5",
+        "TECH": "3",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "18",
+        "SAUT": "3",
+        "END": "35",
+        "ENC": "60",
+        "REC": "6",
+        "PS": "30",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Archerie": "7",
+        "Athlétisme": "4",
+        "Vigilance": "6",
+        "Bagarre": "6",
+        "Courage": "6",
+        "Esquive / Evasion": "6",
+        "Résilience": "5",
+        " imidation": "5",
+        "Commandement": "4",
+        "Mêlée": "7",
+        "Résistance à la contrainte": "6",
+        "Résistance à la magie": "5",
+        "Furtivité": "5",
+        "Escrime": "6",
+        "Tactique": "3",
+        "Survie": "5"
+      },
+      "Arme": [
+        {
+          "Nom": "Arc court",
+          "DMG": "3d6+3",
+          "Effet": "100m portée",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Krigsverd",
+          "DMG": "4d6+5",
+          "Effet": "PRE:+2",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Masse d’armes",
+          "DMG": "5d6+1",
+          "Effet": "-",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (3d10)",
+        "Flèches / Carreaux (20)",
+        "Objets communs (1d6)",
+        "Capuche renforcée",
+        "Armure de hallebardier",
+        "Jambières rédaniennes",
+        "Bocle d’acier"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Aguerris"
+      ],
+      "Note": "Comme pour les bandits, l’infanterie peut être rendue plus difficile à combattre en améliorant ses statistiques ou ses PS. Le MJ peut aussi leur donner une meilleure armure ou de meilleures armes.<br>Les soldats du Nord peuvent provenir de n’importe quel pays, rassemblés sous la bannière des Royaumes du Nord. Dans cette optique, les armes ou armures dont ils sont équipés peuvent facilement être modifiées pour s’adapter à une nation ou une unité particulière."
+    },
+    {
+      "Nom": "CAVALERIE DE KAEDWEN",
+      "Menace": "Moyen Complexe",
+      "Récompense": "450 couronnes",
+      "Armure": "Tête: 16 Torse: 16 Jambes: 16",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Partout",
+      "Intelligence": "Humaine",
+      "Organisation": "En groupes, petites unités",
+      "Caract": {
+        "INT": "3",
+        "RÉF": "8",
+        "DEX": "8",
+        "COR": "8",
+        "VIT": "4",
+        "EMP": "5",
+        "TECH": "2",
+        "VOL": "7",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "12",
+        "SAUT": "2",
+        "END": "35",
+        "ENC": "80",
+        "REC": "8",
+        "PS": "35",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "4",
+        "Vigilance": "4",
+        "Bagarre": "9",
+        "Courage": "9",
+        "Esquive / Evasion": "7",
+        "Résilience": "8",
+        " imidation": "8",
+        "Commandement": "5",
+        "Mêlée": "9",
+        "Physique": "7",
+        "Résistance à la contrainte": "8",
+        "Résistance à la magie": "5",
+        "Equitation": "7",
+        "Furtivité": "4",
+        "Tactique": "3",
+        "Survie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Arc court",
+          "DMG": "3d6+2",
+          "Effet": "Portée:100m Saignement(100%)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Hachette",
+          "DMG": "2d6+2",
+          "Effet": "-",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Maillet kaedwenien",
+          "DMG": "6d6+3",
+          "Effet": "Météorite Etourdissement(-2)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (4d10)",
+        "Flèches / Carreaux (20)",
+        "Objets communs (1d6)",
+        "Veste de cuir",
+        "Pantalon de cuir"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Soldats entraînés",
+        "Tirailleur"
+      ],
+      "Note": "<b>Cheval</b><br>Athlétisme +11 Mod. de contrôle +2 Vitesse 12 PS 40 Poids 100<br>Le terrain de Kaedwen ne convient pas aux chevaux de guerre, leur cavalerie est donc généralement déployée sur des montures agiles. Les cavaliers Kaedweniens se battent presque toujours à cheval. Ils disposent de sacoches, d’une selle de cavalerie (+1 aux jets de Contrôle), d’oeillères (+1 pour calmer la monture) et de barde de cuir (10 PA)."
+    },
+    {
+      "Nom": "STRIES BLEUES",
+      "Menace": "Moyen Difficile",
+      "Récompense": "300 couronnes",
+      "Armure": "Tête: 14 Torse: 16 Jambes: 12",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Partout",
+      "Intelligence": "Humaine",
+      "Organisation": "En groupes",
+      "Caract": {
+        "INT": "6",
+        "RÉF": "9",
+        "DEX": "8",
+        "COR": "7",
+        "VIT": "7",
+        "EMP": "5",
+        "TECH": "7",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "21",
+        "SAUT": "4",
+        "END": "30",
+        "ENC": "70",
+        "REC": "6",
+        "PS": "30",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "8",
+        "Vigilance": "7",
+        "Bagarre": "8",
+        "Courage": "6",
+        "Arbalète": "6",
+        "Esquive / Evasion": "5",
+        "Résilience": "5",
+        " imidation": "5",
+        "Commandement": "4",
+        "Mêlée": "7",
+        "Résistance à la contrainte": "6",
+        "Résistance à la magie": "5",
+        "Furtivité": "8",
+        "Escrime": "7",
+        "Tactique": "6",
+        "Fabrication de pièges": "8",
+        "Survie": "9"
+      },
+      "Arme": [
+        {
+          "Nom": "Arbalète",
+          "DMG": "4d6+2",
+          "Effet": "Portée:100m Saignement(100%) PRE:+1",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Kord",
+          "DMG": "5d6+1",
+          "Effet": "Saignement(25%)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Poignard",
+          "DMG": "2d6+3",
+          "Effet": "Saignement(25%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (2d10)",
+        "Flèches / Carreaux (20)",
+        "Objets communs (1d6)",
+        "Capuche renforcée",
+        "Veste de cuir",
+        "Pantalon renforcé"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Soldats entraînés",
+        "Spécialistes des embuscades"
+      ],
+      "Note": "Les Stries Bleues utilisent presque toujours des tactiques d’embuscade et de fuite, soit en poursuivant ou en attirant des cibles dans les rangs des alliés, soit en posant des pièges le long de la route. (Voir le Livre de base, p. 55)"
+    },
+    {
+      "Nom": "HALLEBARDIERS REDANIENS",
+      "Menace": "Moyen Simple",
+      "Récompense": "400 couronnes",
+      "Armure": "Tête: 12 Torse: 14 Jambes: 14",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Partout",
+      "Intelligence": "Humaine",
+      "Organisation": "En groupes, petites unités",
+      "Caract": {
+        "INT": "5",
+        "RÉF": "8",
+        "DEX": "8",
+        "COR": "7",
+        "VIT": "5",
+        "EMP": "4",
+        "TECH": "3",
+        "VOL": "7",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "15",
+        "SAUT": "3",
+        "END": "35",
+        "ENC": "35",
+        "REC": "7",
+        "PS": "35",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Archerie": "7",
+        "Athlétisme": "5",
+        "Vigilance": "6",
+        "Bagarre": "6",
+        "Courage": "6",
+        "Esquive / Evasion": "7",
+        "Résilience": "5",
+        " imidation": "5",
+        "Commandement": "4",
+        "Résistance à la contrainte": "6",
+        "Résistance à la magie": "5",
+        "Bâton / Lance": "9",
+        "Furtivité": "5",
+        "Escrime": "6",
+        "Tactique": "3",
+        "Survie": "5"
+      },
+      "Arme": [
+        {
+          "Nom": "Epée de chevalier",
+          "DMG": "2d6+5",
+          "Effet": "-",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Poignard",
+          "DMG": "2d6+3",
+          "Effet": "Saignement(25%) PRE:+1",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Hallebarde rouge",
+          "DMG": "6d6+4",
+          "Effet": "Longue portée(2m)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (3d10)",
+        "Objets communs (1d6)",
+        "Camail",
+        "Armure de hallebardier rédanien",
+        "Jambières rédaniennes"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Soldats entraînés",
+        "Prêt !"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "MARAUDEURS SCOIA’TAEL",
+      "Menace": "Moyen Complexe",
+      "Récompense": "500 couronnes",
+      "Armure": "Tête: 10 Torse: 10 Jambes: 10",
+      "Taille": "Taille naine",
+      "Poids": "Poids naine",
+      "Environnement": "Zones rurales, forêts et routes",
+      "Intelligence": "Humaine",
+      "Organisation": "Petits groupes",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "7",
+        "DEX": "6",
+        "COR": "8",
+        "VIT": "4",
+        "EMP": "6",
+        "TECH": "6",
+        "VOL": "6",
+        "CHA": "0",
+        "ETOU": "7",
+        "COU": "12",
+        "SAUT": "2",
+        "END": "35",
+        "ENC": "80",
+        "REC": "7",
+        "PS": "35",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "7",
+        "Vigilance": "6",
+        "Bagarre": "8",
+        "Courage": "7",
+        "Arbalète": "7",
+        "Esquive / Evasion": "4",
+        "Résilience": "5",
+        "Commandement": "4",
+        "Mêlée": "7",
+        "Résistance à la contrainte": "5",
+        "Résistance à la magie": "7",
+        "Lames courtes": "6",
+        "Furtivité": "8",
+        "Tactique": "4",
+        "Fabrication de pièges": "7",
+        "Survie": "7"
+      },
+      "Arme": [
+        {
+          "Nom": "Arbalète de poing gnome",
+          "DMG": "2d6",
+          "Effet": "Portée:100m PRE:+3 (Ablation)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Couperet nain",
+          "DMG": "3d6+1",
+          "Effet": "PRE +2",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Hache naine",
+          "DMG": "5d6+4",
+          "Effet": "PRE:+3",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (2d10)",
+        "Carreaux (20)",
+        "Impacts nains (1d6)",
+        "Objets communs (1d6)",
+        "Cotte de mailles gnome"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Soldats entraînés",
+        "Cotte de mailles gnome"
+      ],
+      "Note": "Bien qu’ils soient conçus avec des équipements des Races Anciennes, les maraudeurs peuvent être ré-équipés pour utiliser des équipements banals si le MJ le souhaite. Le MJ peut aussi augmenter la difficulté en leur donnant de meilleures armures ou armes de la section « Armures des Races Anciennes ». Des bombes peuvent également être données aux maraudeurs, mais ces armes sont extrêmement mortelles et peuvent rapidement tuer un groupe de joueurs.<br>Bien que les elfes soient le plus courant, les Scoia’tael font aussi appel à d’autres membres des Races Anciennes comme les halfelins, les gnomes et les nains."
+    },
+    {
+      "Nom": "VETERANS SCOIA’TAEL",
+      "Menace": "Moyen Complexe",
+      "Récompense": "500 couronnes",
+      "Armure": "Tête: 20 Torse: 20 Jambes: 20",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "Zones rurales, forêts et routes",
+      "Intelligence": "Humaine",
+      "Organisation": "En groupes, petites unités",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "7",
+        "DEX": "9",
+        "COR": "5",
+        "VIT": "8",
+        "EMP": "6",
+        "TECH": "4",
+        "VOL": "7",
+        "CHA": "0",
+        "ETOU": "6",
+        "COU": "15",
+        "SAUT": "3",
+        "END": "30",
+        "ENC": "50",
+        "REC": "6",
+        "PS": "30",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Archerie": "9",
+        "Athlétisme": "7",
+        "Vigilance": "9",
+        "Bagarre": "6",
+        "Courage": "6",
+        "Esquive / Evasion": "8",
+        "Résilience": "4",
+        "Commandement": "3",
+        "Résistance à la contrainte": "5",
+        "Résistance à la magie": "4",
+        "Equitation": "6",
+        "Furtivité": "8",
+        "Escrime": "8",
+        "Tactique": "6",
+        "Survie": "8"
+      },
+      "Arme": [
+        {
+          "Nom": "Arc de voyage elfe",
+          "DMG": "4d6",
+          "Effet": "Portée:200m PRE:+2 Saignement(100%)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Messer elfe",
+          "DMG": "3d6+4",
+          "Effet": "PRE +2",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Vouge elfe",
+          "DMG": "4d6+3",
+          "Effet": "Longue portée(2m) Saignement(25%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (2d10)",
+        "Flèches / Carreaux (20)",
+        "Fouisseuse elfe",
+        "Objets communs (1d6)",
+        "Armure Scoia’tael"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Soldats entraînés",
+        "Armure Scoia’tael"
+      ],
+      "Note": "<b>Cheval:</b><br>Athlétisme +11 Mod. de contrôle +3 Vitesse 12 PS 40 Poids 100<br>Bien qu’ils soient conçus avec des équipements des Races Anciennes, les vétérans peuvent être ré-équipés pour utiliser des équipements banals si le MJ le souhaite. Le MJ peut aussi augmenter la difficulté en leur donnant de meilleures armures ou armes de la section « Armures des Races Anciennes ». Des bombes peuvent également être données aux maraudeurs, mais ces armes sont extrêmement mortelles et peuvent rapidement tuer un groupe de joueurs.<br>Les vétérans se battent parfois à cheval. Ils disposent de sacoches, d’une selle de course (+2 aux jets de Contrôle), d’oeillères (+1 pour calmer la monture) et de bardes de cuir (10 PA)."
+    },
+    {
+      "Nom": "DEFENSEURS DE MAHAKAM",
+      "Menace": "Moyen Complexe",
+      "Récompense": "600 couronnes",
+      "Armure": "Tête : 8",
+      "Torse : 20": "Jambes : 20",
+      "Taille": "Taille naine",
+      "Poids": "Poids nain",
+      "Environnement": "Généralement près de Mahakam",
+      "Intelligence": "Humaine",
+      "Organisation": "En groupes",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "8",
+        "DEX": "7",
+        "COR": "9",
+        "VIT": "4",
+        "EMP": "5",
+        "TECH": "4",
+        "VOL": "7",
+        "CHA": "0",
+        "ETOU": "8",
+        "COU": "12",
+        "SAUT": "2",
+        "END": "40",
+        "ENC": "90",
+        "REC": "8",
+        "PS": "40",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Athlétisme": "5",
+        "Vigilance": "7",
+        "Bagarre": "7",
+        "Courage": "7",
+        "Arbalète": "8",
+        "Esquive / Evasion": "8",
+        "Résilience": "6",
+        "Commandement": "6",
+        "Mêlée": "9",
+        "Résistance à la contrainte": "6",
+        "Résistance à la magie": "7",
+        "Furtivité": "2",
+        "Tactique": "5",
+        "Survie": "5"
+      },
+      "Arme": [
+        {
+          "Nom": "Arbalète lourde naine",
+          "DMG": "5d6",
+          "Effet": "Portée:300m PRE:+3 Ablation",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Marteau mahakamien",
+          "DMG": "5d6+1",
+          "Effet": "Perforation",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Couperet nain",
+          "DMG": "3d6+1",
+          "Effet": "PRE +2",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Couronnes (2d10)",
+        "Flèches / Carreaux (20)",
+        "Impacts nains (1d6)",
+        "Objets communs (1d6)",
+        "Armure de plates",
+        "Jambières de plates",
+        "Pavois mahakamien"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Soldats entraînés",
+        "Soutien fort"
+      ],
+      "Note": "Bien qu’ils soient conçus avec des équipements des Races Anciennes, les Défenseurs peuvent être ré-équipés pour utiliser des équipements banals si le MJ le souhaite. Le MJ peut aussi augmenter la difficulté en leur donnant de meilleures armures ou armes de la section « Armures des Races Anciennes »."
+    }
+  ],
+  "Extended": [
+    {
+      "Nom": "ALGOULES",
+      "Menace": "Moyen Simple",
+      "Récompense": "50 couronnes",
+      "Armure": "5",
+      "Taille": "Environ 1,30 mètre au garrot",
+      "Poids": "Environ 90kg",
+      "Environnement": "Champs de bataille et cimetières",
+      "Intelligence": "À peu près aussi intelligent qu'un chien",
+      "Organisation": "Bandes de 3 à 15 goules",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "7",
+        "DEX": "7",
+        "COR": "7",
+        "VIT": "6",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "5",
+        "CHA": "0",
+        "ÉTOU": "6",
+        "COU": "18",
+        "SAUT": "3",
+        "END": "30",
+        "ENC": "50",
+        "RÉC": "6",
+        "PS": "30",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Mêlée": "7",
+        "Survie": "6",
+        "Vigilance": "7",
+        "Bagarre": "7",
+        "Esquive/Évasion": "6",
+        "Athlétisme": "8",
+        "Furtivité": "3",
+        "Résilience": "6",
+        "Courage": "8",
+        "Résistance à la contrainte": "5",
+        "Résistance à la magie": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6",
+          "Effet": "Aucun",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "3d6+2",
+          "Effet": "Saignement (25%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Extrait de venin (1d6/2)",
+        "Griffes de goule (2)",
+        "Moelle de goule (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les nécrophages"
+      ],
+      "Capacités": [
+        "Bond",
+        "Fureur",
+        "Nyctalopie",
+        "Sauvage",
+        "Hurlement sonique",
+        "Pointes"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "ARACHNOMORPHE",
+      "Menace": "Faible Difficile",
+      "Récompense": "25 couronnes",
+      "Armure": "5",
+      "Taille": "Entre 1.50 et 2 mètres",
+      "Poids": "Environ 50kg",
+      "Environnement": "Forêts, marais et grottes",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Bandes de 5 à 15 individus",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "6",
+        "DEX": "8",
+        "COR": "6",
+        "VIT": "8",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "4",
+        "CHA": "0",
+        "ÉTOU": "5",
+        "COU": "24",
+        "SAUT": "4",
+        "END": "25",
+        "ENC": "60",
+        "RÉC": "5",
+        "PS": "25",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "7",
+        "Vigilance": "5",
+        "Bagarre": "6",
+        "Mêlée": "6",
+        "Esquive/Évasion": "5",
+        "Athlétisme": "7",
+        "Furtivité": "8",
+        "Résilience": "4",
+        "Courage": "3",
+        "Résistance à la magie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "2d6+1",
+          "Effet": "Aucun",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "2d6-2",
+          "Effet": "Toile",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Chitine d’arachnomorphe (1d6/2)",
+        "Salive d’arachnomorphe (1d6/2)",
+        "Soie (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les insectoïdes"
+      ],
+      "Capacités": [
+        "Bond",
+        "Nyctalopie",
+        "Sauvage",
+        "Toile"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "BANSHEE",
+      "Menace": "Moyen Complexe",
+      "Récompense": "250 couronnes",
+      "Armure": "0",
+      "Taille": "Taille humaine",
+      "Poids": "Intangible",
+      "Environnement": "Déserts, près des zones rurales",
+      "Intelligence": "Guidé par ses émotions",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "4",
+        "RÉF": "8",
+        "DEX": "5",
+        "COR": "7",
+        "VIT": "8",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "9",
+        "CHA": "0",
+        "ÉTOU": "8",
+        "COU": "24",
+        "SAUT": "4",
+        "END": "40",
+        "ENC": "70",
+        "RÉC": "8",
+        "PS": "60",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "6",
+        "Vigilance": "8",
+        "Bagarre": "7",
+        "Esquive/Évasion": "8",
+        "Mêlée": "8",
+        "Athlétisme": "4",
+        "Furtivité": "9",
+        "Résilience": "7",
+        "Incantation": "7",
+        "Résistance à la magie": "7"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "4d6",
+          "Effet": "Saignement (25%)",
+          "Att/tour": "2"
+        }
+      ],
+      "Butins": [
+        "Essence de fantôme (1d6)",
+        "Poussière de spectre (1d6)",
+        "Poussière imprégnée (1d6)",
+        "Poussière de lune (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les spectres"
+      ],
+      "Capacités": [
+        "Démon de poussière",
+        "Hurlement sonique",
+        "Incorporel",
+        "Invoquer des squelettes"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "DJINN",
+      "Menace": "Fort Difficile",
+      "Récompense": "2 000 couronnes",
+      "Armure": "0",
+      "Taille": "Variable",
+      "Poids": "Intangible",
+      "Environnement": "Loin de la civilisation, près de son maître",
+      "Intelligence": "Assez intelligent pour négocier",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "5",
+        "RÉF": "5",
+        "DEX": "6",
+        "COR": "5",
+        "VIT": "3",
+        "EMP": "5",
+        "TECH": "1",
+        "VOL": "11",
+        "CHA": "0",
+        "ÉTOU": "8",
+        "COU": "19",
+        "SAUT": "1",
+        "END": "-",
+        "ENC": "50",
+        "RÉC": "8",
+        "PS": "100",
+        "VIG": "30"
+      },
+      "Compt": {
+        "Survie": "6",
+        "Vigilance": "10",
+        "Esquive/Évasion": "7",
+        "Furtivité": "9",
+        "Duperie": "6 (Emp)",
+        "Persuasion": "6 (Emp)",
+        "Psychologie": "8 (Emp)",
+        "Incantation": "11",
+        "Résistance à la contrainte": "7",
+        "Résistance à la magie": "12"
+      },
+      "Arme": [
+        {
+          "Nom": "Voir « Magie »",
+          "DMG": "-",
+          "Effet": "-",
+          "Att/tour": "-"
+        }
+      ],
+      "Butins": [
+        "-"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les élémentaires",
+        "Bombes au dimeritium",
+        "Axé sur les accords",
+        "Récipient"
+      ],
+      "Capacités": [
+        "Magie",
+        "Malicieux",
+        "Invulnérabilités",
+        "Téléportation"
+      ],
+      "Note": "DERNIER RECOURS<br> Lorsqu'un djinn tombe en dessous de 10 PS, il lui faudra un tour pour préparer une énorme téléportation tout en maintenant les tempêtes ou autres attaques actives. Au début de son prochain tour, le djinn disparaîtra et ne laissera aucune trace de sa nouvelle localisation. Si le djinn tombe à 0 PS, il est incapable d'exécuter ce sort en un instant. Mais après 30 minutes de repos, le djinn se téléportera instantanément, à condition qu'il n'ait pas été piégé dans un récipient."
+    },
+    {
+      "Nom": "ÉCHIDNA",
+      "Menace": "Moyen Simple",
+      "Récompense": "50 couronnes",
+      "Armure": "5",
+      "Taille": "Environ 3 mètres de long",
+      "Poids": "Environ 150kg",
+      "Environnement": "Mers et côtes",
+      "Intelligence": "Humaine",
+      "Organisation": "Bandes de 3 à 6 individus souvent mélangé avec des sirènes",
+      "Caract": {
+        "INT": "5",
+        "RÉF": "8",
+        "DEX": "8",
+        "COR": "7",
+        "VIT": "8",
+        "EMP": "5",
+        "TECH": "3",
+        "VOL": "9",
+        "CHA": "0",
+        "ÉTOU": "8",
+        "COU": "24",
+        "SAUT": "4",
+        "END": "40",
+        "ENC": "70",
+        "RÉC": "8",
+        "PS": "25",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "7",
+        "Vigilance": "7",
+        "Bagarre": "7",
+        "Mêlée": "8",
+        "Esquive/Évasion": "6",
+        "Athlétisme": "9",
+        "Furtivité": "8",
+        "Résilience": "7",
+        "Séduction": "5 (Emp)",
+        "Courage": "5",
+        "Résistance à la contrainte": "7",
+        "Résistance à la magie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6+1",
+          "Effet": "+1 fiabilité",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "2d6-2",
+          "Effet": "Saignement (75%)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Queue",
+          "DMG": "3d6+2",
+          "Effet": "Stupéfaction",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Cordes vocales de sirène",
+        "Essence d’eau (1d6)",
+        "Objets communs (1d6/3)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les hybrides",
+        "Mouvement entravé"
+      ],
+      "Capacités": [
+        "Amphibien",
+        "Hurlement sonique",
+        "Illusion",
+        "Vol"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "EKIMME",
+      "Menace": "Moyen Complexe",
+      "Récompense": "500 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 2 mètres",
+      "Poids": "Environ 100kg",
+      "Environnement": "Ruines, grottes et proche des villes",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "10",
+        "DEX": "8",
+        "COR": "7",
+        "VIT": "8",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "7",
+        "CHA": "0",
+        "ÉTOU": "7",
+        "COU": "24",
+        "SAUT": "4",
+        "END": "35",
+        "ENC": "70",
+        "RÉC": "7",
+        "PS": "60",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "8",
+        "Vigilance": "8",
+        "Bagarre": "7",
+        "Mêlée": "8",
+        "Esquive/Évasion": "8",
+        "Athlétisme": "8",
+        "Furtivité": "10",
+        "Résilience": "7",
+        "Courage": "10",
+        "Résistance à la magie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6",
+          "Effet": "Ablation",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "6d6+2",
+          "Effet": "Saignement (100%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Crocs de vampire (1d6)",
+        "Peau d'ekimme (1d6)",
+        "Salive de vampire (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les vampires",
+        "Potion de sang noir",
+        "Faiblesse céleste",
+        "Vulnérable au feu",
+        "Transfert sanguin"
+      ],
+      "Capacités": [
+        "Bond",
+        "Invisibilité",
+        "Nyctalopie",
+        "Régénération"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "FOËNARD",
+      "Menace": "Fort Simple",
+      "Récompense": "950 couronnes",
+      "Armure": "8",
+      "Taille": "Environ 2 mètres",
+      "Poids": "Environ 800kg",
+      "Environnement": "Montagnes et vallées",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Solitaire ou en couple",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "9",
+        "DEX": "9",
+        "COR": "9",
+        "VIT": "8",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "7",
+        "CHA": "0",
+        "ÉTOU": "8",
+        "COU": "24",
+        "SAUT": "4",
+        "END": "40",
+        "ENC": "90",
+        "RÉC": "8",
+        "PS": "80",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "9",
+        "Vigilance": "8",
+        "Bagarre": "8",
+        "Mêlée": "8",
+        "Esquive/Évasion": "7",
+        "Athlétisme": "6",
+        "Furtivité": "4( )",
+        "Résilience": "7",
+        "Courage": "8",
+        "Résistance à la magie": "7"
+      },
+      "Arme": [
+        {
+          "Nom": "Morsure",
+          "DMG": "6d6",
+          "Effet": "Aucun",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Serres",
+          "DMG": "6d6+3",
+          "Effet": "Stupéfaction, Au sol",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Queue fourchue",
+          "DMG": "8d6",
+          "Effet": "Ablation, Poison (50%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Écailles de draconide (1d10)",
+        "Extrait de venin (1d10)",
+        "OEil de foënard (2)",
+        "OEuf de foënard (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les draconides"
+      ],
+      "Capacités": [
+        "Résistances (Poison, T, P)",
+        "Sauvage",
+        "Vol"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "GLOUTON DES VASIERES",
+      "Menace": "Moyen Difficile",
+      "Récompense": "600 couronnes",
+      "Armure": "5",
+      "Taille": "Jusqu'à 4 mètres",
+      "Poids": "Jusqu'à 1 000kg",
+      "Environnement": "Marécages et rivières",
+      "Intelligence": "Aussi intelligent qu’un poisson",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "13",
+        "DEX": "12",
+        "COR": "8",
+        "VIT": "10",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "4",
+        "CHA": "0",
+        "ÉTOU": "7",
+        "COU": "30",
+        "SAUT": "6",
+        "END": "35",
+        "ENC": "80",
+        "RÉC": "7",
+        "PS": "70",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "7",
+        "Vigilance": "7",
+        "Bagarre": "8",
+        "Mêlée": "8",
+        "Esquive/Évasion": "6",
+        "Athlétisme": "10",
+        "Furtivité": "9",
+        "Résilience": "8",
+        "Courage": "8",
+        "Résistance à la magie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Morsure",
+          "DMG": "8d6",
+          "Effet": "Aucun",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Pinces",
+          "DMG": "2d6",
+          "Effet": "Aucun",
+          "Att/tour": "6"
+        }
+      ],
+      "Butins": [
+        "Chitine (1d6)",
+        "Essence d’eau (1d6)",
+        "Pinces de monstre (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les insectoïdes",
+        "Mouvement entravé"
+      ],
+      "Capacités": [
+        "Chasseur Sauteur",
+        "Sauvage"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "OUVRIÈRE KIKIMORRHE",
+      "Menace": "Moyen Complexe",
+      "Récompense": "50 couronnes",
+      "Armure": "10",
+      "Taille": "Entre 1 et 3 mètres",
+      "Poids": "Entre 180kg et 300kg",
+      "Environnement": "Marécages et grottes",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Colonies de 3 à 20",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "7",
+        "DEX": "8",
+        "COR": "9",
+        "VIT": "10",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "7",
+        "CHA": "0",
+        "ÉTOU": "8",
+        "COU": "24",
+        "SAUT": "4",
+        "END": "40",
+        "ENC": "90",
+        "RÉC": "8",
+        "PS": "40",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "8",
+        "Vigilance": "8",
+        "Bagarre": "7",
+        "Mêlée": "7",
+        "Esquive/Évasion": "9",
+        "Athlétisme": "8",
+        "Furtivité": "6",
+        "Physique": "10",
+        "Résilience": "8",
+        "Courage": "6",
+        "Résistance à la magie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6",
+          "Effet": "+15% Toxicité",
+          "Att/tour": "2"
+        }
+      ],
+      "Butins": [
+        "Chitine (1d6/2)",
+        "Extrait de venin (1d6/2)",
+        "Pince de monstre (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les insectoïdes",
+        "Vulnérable au feu"
+      ],
+      "Capacités": [
+        "Bond",
+        "Cécité",
+        "Immunité au poison",
+        "Sauvage"
+      ],
+      "Note": "Les ouvriers sont plus petites et plus rapides que les autres kikimorrhes. Elles ont une VIT de 10 et un +2 pour l'athlétisme et l'esquive/évasion."
+    },
+    {
+      "Nom": "GUERRIÈRE KIKIMORRHE",
+      "Menace": "Moyen Complexe",
+      "Récompense": "50 couronnes",
+      "Armure": "20",
+      "Taille": "Entre 1 et 3 mètres",
+      "Poids": "Entre 180kg et 300kg",
+      "Environnement": "Marécages et grottes",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Colonies de 3 à 20",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "7",
+        "DEX": "8",
+        "COR": "9",
+        "VIT": "8",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "7",
+        "CHA": "0",
+        "ÉTOU": "8",
+        "COU": "24",
+        "SAUT": "4",
+        "END": "40",
+        "ENC": "90",
+        "RÉC": "8",
+        "PS": "40",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "8",
+        "Vigilance": "8",
+        "Bagarre": "7",
+        "Mêlée": "7",
+        "Esquive/Évasion": "7",
+        "Athlétisme": "6",
+        "Furtivité": "6",
+        "Physique": "10",
+        "Résilience": "8",
+        "Courage": "6",
+        "Résistance à la magie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6",
+          "Effet": "+15% Toxicité",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "5d6",
+          "Effet": "+30% Toxicité",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Chitine (1d6/2)",
+        "Extrait de venin (1d6/2)",
+        "Pince de monstre (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les insectoïdes",
+        "Vulnérable au feu"
+      ],
+      "Capacités": [
+        "Bond",
+        "Cécité",
+        "Commander les ouvrières",
+        "Immunité au poison",
+        "Sauvage"
+      ],
+      "Note": "Les guerrières sont plus grosses et plus fortes que les ouvrières. Elles ont 20 d’armures et sont capables de commander les ouvrières autour d'eux. Ces commandes ne peuvent jamais être plus complexes que  \"Apportez ça\". \"Attaquez ceci\" ou \"Creusez un tunnel là-bas\"."
+    },
+    {
+      "Nom": "REINE KIKIMORRHE",
+      "Menace": "Moyen Complexe",
+      "Récompense": "50 couronnes",
+      "Armure": "20",
+      "Taille": "Entre 1 et 3 mètres",
+      "Poids": "Entre 180kg et 300kg",
+      "Environnement": "Marécages et grottes",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Colonies de 3 à 20",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "7",
+        "DEX": "8",
+        "COR": "9",
+        "VIT": "3",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "7",
+        "CHA": "0",
+        "ÉTOU": "8",
+        "COU": "24",
+        "SAUT": "4",
+        "END": "40",
+        "ENC": "90",
+        "RÉC": "8",
+        "PS": "40",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "8",
+        "Vigilance": "8",
+        "Bagarre": "7",
+        "Mêlée": "7",
+        "Esquive/Évasion": "7",
+        "Athlétisme": "6",
+        "Furtivité": "6",
+        "Physique": "10",
+        "Résilience": "8",
+        "Courage": "6",
+        "Résistance à la magie": "6"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6",
+          "Effet": "+15% Toxicité, Au sol",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "5d6",
+          "Effet": "+30% Toxicité, Au sol",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Chitine (1d6/2)",
+        "Extrait de venin (1d6/2)",
+        "Pince de monstre (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les insectoïdes"
+      ],
+      "Capacités": [
+        "Bond",
+        "Cécité",
+        "Immunité aux effets",
+        "Résistance (T,P,C)",
+        "Sauvage"
+      ],
+      "Note": "Les reines sont un spectacle rare. Elles sont le type de kikimorrhe le plus gros et le plus dangereux. Elles sont immunisés contre tous les effets, même le feu, ont une résistance aux attaques tranchantes, perforantes et contondantes, 20 d’armures et leurs attaques mettent la cible au sol. Elles sont également très lentes, n'ayant donc qu'une VIT de 3."
+    },
+    {
+      "Nom": "KOCHTCHEÏ",
+      "Menace": "Moyen Complexe",
+      "Récompense": "250 couronnes",
+      "Armure": "0",
+      "Taille": "Taille humaine",
+      "Poids": "Poids humain",
+      "Environnement": "A proximité",
+      "Intelligence": "Humaine",
+      "Organisation": "Bandes de 3 à 15 individus",
+      "Caract": {
+        "INT": "3",
+        "RÉF": "6",
+        "DEX": "5",
+        "COR": "5",
+        "VIT": "4",
+        "EMP": "3",
+        "TECH": "4",
+        "VOL": "4",
+        "CHA": "0",
+        "ÉTOU": "4",
+        "COU": "12",
+        "SAUT": "2",
+        "END": "20",
+        "ENC": "50",
+        "RÉC": "4",
+        "PS": "20",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "16",
+        "Vigilance": "16",
+        "Bagarre": "7",
+        "Mêlée": "8",
+        "Esquive/Évasion": "8",
+        "Athlétisme": "8",
+        "Furtivité": "5",
+        "Résilience": "10",
+        "Courage": "15",
+        "Résistance à la magie": "10"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "5d6",
+          "Effet": "Aveuglement (25%)",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "8d6",
+          "Effet": "Pénétration d’armure",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Coeur de kochtcheï (1)",
+        "Chitine (3d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les bêtes",
+        "Vulnérabilité de l'argent",
+        "Exosquelette"
+      ],
+      "Capacités": [
+        "Amphibien",
+        "Bête de destruction",
+        "Farouche",
+        "Grimpeur"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "MULA",
+      "Menace": "Dur Difficile",
+      "Récompense": "1 500 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 2 mètres",
+      "Poids": "Environ 120kg",
+      "Environnement": "Ruines et grottes",
+      "Intelligence": "Aussi intelligent qu’un humain",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "6",
+        "RÉF": "15",
+        "DEX": "11",
+        "COR": "10",
+        "VIT": "8",
+        "EMP": "3",
+        "TECH": "3",
+        "VOL": "6",
+        "CHA": "0",
+        "ÉTOU": "8",
+        "COU": "24",
+        "SAUT": "4",
+        "END": "40",
+        "ENC": "100",
+        "RÉC": "8",
+        "PS": "80",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "8",
+        "Vigilance": "10",
+        "Bagarre": "8",
+        "Mêlée": "9",
+        "Esquive/Évasion": "9",
+        "Athlétisme": "9",
+        "Furtivité": "10",
+        "Résilience": "10",
+        "Courage": "10",
+        " imidation": "12",
+        "Résistance à la contrainte": "9",
+        "Résistance à la magie": "9"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "8d6",
+          "Effet": "Aucun",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Crocs",
+          "DMG": "6d6",
+          "Effet": "Saignement (100%), active Rage sanguine",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Rune aléatoire",
+        "Crocs de vampire (1d6/2)",
+        "Salive de vampire (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les vampires",
+        "Potion de sang noir",
+        "Transfert sanguin",
+        "Briser les crocs"
+      ],
+      "Capacités": [
+        "Bond",
+        "Brouillard",
+        "Invisible à la scrutation magique",
+        "Nyctalopie",
+        "Rage sanguine"
+      ],
+      "Note": "RAGE SANGUINE<br> Dans cet état, ses yeux commencent à briller et il ne se transforme pas en brouillard. Ses attaques gagnent +2 Fia et ses griffes attaquent 2 fois par tour. Rage sanguine se termine après 5 tours ou si le mula subit une blessure critique."
+    },
+    {
+      "Nom": "NECROPHAGE",
+      "Menace": "Moyen Simple",
+      "Récompense": "100 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 1.60 mètres",
+      "Poids": "Environ 60kg",
+      "Environnement": "Déserts et cimetières",
+      "Intelligence": "Peut-être au niveau humain",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "5",
+        "RÉF": "8",
+        "DEX": "8",
+        "COR": "6",
+        "VIT": "7",
+        "EMP": "4",
+        "TECH": "5",
+        "VOL": "7",
+        "CHA": "0",
+        "ÉTOU": "6",
+        "COU": "21",
+        "SAUT": "4",
+        "END": "30",
+        "ENC": "60",
+        "RÉC": "6",
+        "PS": "60",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "12",
+        "Vigilance": "8",
+        "Bagarre": "7",
+        "Mêlée": "7",
+        "Esquive/Évasion": "4",
+        "Athlétisme": "8",
+        "Furtivité": "6",
+        "Résilience": "8",
+        "Courage": "8",
+        "Alchimie": "3 (Tec)",
+        "Artisanat": "3 (Tec)",
+        "Résistance à la contrainte": "9",
+        "Résistance à la magie": "9"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "4d6",
+          "Effet": "Aucun",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "5d6",
+          "Effet": "Poison (50%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Extrait de venin (1d6)",
+        "Langue de nécrophage (1)",
+        "Oreilles de nécrophage (2)",
+        "Objets étranges (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les nécrophages"
+      ],
+      "Capacités": [
+        "Familiarité",
+        "Compagnons fantomatiques",
+        "Jet acide",
+        "Immunité au poison",
+        "Nyctalopie"
+      ],
+      "Note": "COMPAGNONS FANTOMATIQUES<br> Les barghests invoqués de cette manière tiendront compte de tous les ordres du nécrophage et ne disparaîtront pas à moins qu'ils ne soient tués ou que le nécrophage ne meure. Pour cette raison, le territoire d'un nécrophage est parfois gardé par de petits groupes de barghests."
+    },
+    {
+      "Nom": "NEKURAT",
+      "Menace": "Fort Difficile",
+      "Récompense": "1 750 couronnes",
+      "Armure": "0",
+      "Taille": "Environ 2 mètres",
+      "Poids": "Environ 100kg",
+      "Environnement": "Ruines, grottes et à proximité des villes",
+      "Intelligence": "Au-dessus du niveau humain",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "7",
+        "RÉF": "14",
+        "DEX": "15",
+        "COR": "8",
+        "VIT": "14",
+        "EMP": "8",
+        "TECH": "4",
+        "VOL": "10",
+        "CHA": "0",
+        "ÉTOU": "9",
+        "COU": "42",
+        "SAUT": "8",
+        "END": "45",
+        "ENC": "80",
+        "RÉC": "9",
+        "PS": "90",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "8",
+        "Vigilance": "12",
+        "Bagarre": "8",
+        "Mêlée": "8",
+        "Esquive/Évasion": "12",
+        "Athlétisme": "12",
+        "Furtivité": "13",
+        "Résilience": "5",
+        "Charisme": "8 (Emp)",
+        "Persuasion": "8 (Emp)",
+        "Courage": "8",
+        " imidation": "7",
+        "Résistance à la contrainte": "10",
+        "Résistance à la magie": "8"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "8d6",
+          "Effet": "Saignement (25%)",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Crocs",
+          "DMG": "10d6",
+          "Effet": "Saignement (75%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Glyphe ou Rune aléatoire",
+        "Crocs de vampire (1d6/2)",
+        "Salive de vampire (1d6)",
+        "Potentiellement une relique"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les vampires",
+        "Potion de sang noir",
+        "Faiblesse céleste",
+        "Transfert sanguin"
+      ],
+      "Capacités": [
+        "Changeforme",
+        "Immunité",
+        "Invisible à la scrutation magique",
+        "Nyctalopie",
+        "Régénération (5)"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "PENITENT",
+      "Menace": "Fort Simple",
+      "Récompense": "1 000 couronnes",
+      "Armure": "0",
+      "Taille": "Taille humaine",
+      "Poids": "Intangible",
+      "Environnement": "Hante les gens qui ont commis des actes terribles",
+      "Intelligence": "Consumé par la colère",
+      "Organisation": "Solitaire, mais souvent entouré de spectres",
+      "Caract": {
+        "INT": "5",
+        "RÉF": "9",
+        "DEX": "7",
+        "COR": "8",
+        "VIT": "6",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "9",
+        "CHA": "0",
+        "ÉTOU": "8",
+        "COU": "18",
+        "SAUT": "3",
+        "END": "40",
+        "ENC": "80",
+        "RÉC": "8",
+        "PS": "80",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "4",
+        "Vigilance": "10",
+        "Bagarre": "8",
+        "Escrime": "9",
+        "Esquive/Évasion": "8",
+        "Mêlée": "8",
+        "Athlétisme": "4",
+        "Furtivité": "8",
+        "Résilience": "6",
+        "Résistance à la magie": "7"
+      },
+      "Arme": [
+        {
+          "Nom": "Epée de spectre",
+          "DMG": "5d6",
+          "Effet": "Aucun",
+          "Att/tour": "3"
+        },
+        {
+          "Nom": "Lanterne de spectre",
+          "DMG": "6d6",
+          "Effet": "Feu (50%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Essence de fantôme (1d6)",
+        "Poussière de spectre (1d6)",
+        "Poussière imprégnée (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les spectres",
+        "Poussière de lune et Yrden",
+        "Pénitence effectuée"
+      ],
+      "Capacités": [
+        "Alimenté par la colère",
+        "Commandement des spectres",
+        "Invoquer des spectres",
+        "Incorporel",
+        "Téléportation"
+      ],
+      "Note": "COMMANDEMENT DES SPECTRES<br> Les ordres ne sont que des tactiques humaines de base et donc jamais plus complexes que \"Tuez-les d'abord\", \"Gardez celui-ci pour la fin\" ou \"Retraite\"."
+    },
+    {
+      "Nom": "PIQUETEUR",
+      "Menace": "Faible Difficile",
+      "Récompense": "50 couronnes",
+      "Armure": "5",
+      "Taille": "Taille humaine",
+      "Poids": "Environ 90kg",
+      "Environnement": "Champs de bataille et cimetières",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Bandes de 3 à 6 individus, souvent avec des putréfacteurs",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "6",
+        "DEX": "7",
+        "COR": "7",
+        "VIT": "9",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "5",
+        "CHA": "0",
+        "ÉTOU": "6",
+        "COU": "27",
+        "SAUT": "5",
+        "END": "30",
+        "ENC": "70",
+        "RÉC": "6",
+        "PS": "40",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "6",
+        "Vigilance": "6",
+        "Bagarre": "7",
+        "Mêlée": "7",
+        "Esquive/Évasion": "5",
+        "Athlétisme": "7",
+        "Furtivité": "5",
+        "Résilience": "5",
+        "Courage": "8",
+        "Résistance à la magie": "5"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "3d6",
+          "Effet": "Saignement (25%)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "4d6",
+          "Effet": "-1 Fia, Saignement (50%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Extrait de venin (1d6/2)",
+        "Griffes de putréfacteur (2)",
+        "Moelle de putréfacteur (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les nécrophages",
+        "Gaz inflammables"
+      ],
+      "Capacités": [
+        "Bond",
+        "Explosion",
+        "Nyctalopie",
+        "Sauvage"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "SPECTRE DE MINUIT",
+      "Menace": "Moyen Difficile",
+      "Récompense": "750 couronnes",
+      "Armure": "0",
+      "Taille": "Taille humaine",
+      "Poids": "Intangible",
+      "Environnement": "Champs et prairies, à proximité des communautés rurales",
+      "Intelligence": "Consumé par le chagrin",
+      "Organisation": "Solitaire",
+      "Caract": {
+        "INT": "5",
+        "RÉF": "9",
+        "DEX": "6",
+        "COR": "6",
+        "VIT": "5",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "10",
+        "CHA": "0",
+        "ÉTOU": "6",
+        "COU": "18",
+        "SAUT": "3",
+        "END": "30",
+        "ENC": "60",
+        "RÉC": "6",
+        "PS": "60",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "5",
+        "Vigilance": "10",
+        "Bagarre": "7",
+        "Mêlée": "8",
+        "Esquive/Évasion": "8",
+        "Athlétisme": "4",
+        "Furtivité": "10",
+        "Résilience": "6",
+        "Incantation": "7",
+        "Résistance à la magie": "7"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "4d6+4",
+          "Effet": "Aucun",
+          "Att/tour": "2"
+        }
+      ],
+      "Butins": [
+        "Essence de fantôme (1d6)",
+        "Poussière de spectre (1d6)",
+        "Poussière imprégnée (1d6)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les spectres",
+        "Poussière de lune et Yrden",
+        "Faiblesse céleste",
+        "Changeant"
+      ],
+      "Capacités": [
+        "Alimenté par le chagrin",
+        "Démon de poussière",
+        "Incorporel",
+        "Veilleuse"
+      ],
+      "Note": "VEILLEUSE<br> Tant que ces copies existent, tous les êtres vivants dans un rayon de 30 m subissent 3 dégâts par tour. Une fois que toutes les copies sont vaincues, le spectre de minuit réapparaît. Les copies elles-mêmes n'attaqueront pas mais défendront et partageront les mêmes traits qu'un spectre de minuit normal. Frapper une copie la tuera."
+    },
+    {
+      "Nom": "TROLL DE GLACE",
+      "Menace": "Moyen Difficile",
+      "Récompense": "850 couronnes",
+      "Armure": "20",
+      "Taille": "Environ 4 mètres",
+      "Poids": "Environ 150kg",
+      "Environnement": "Montagnes",
+      "Intelligence": "Aussi intelligent qu’un humain simplet",
+      "Organisation": "Solitaire ou groupes de 2 à 3 individus",
+      "Caract": {
+        "INT": "3",
+        "RÉF": "10",
+        "DEX": "6",
+        "COR": "14",
+        "VIT": "4",
+        "EMP": "1",
+        "TECH": "3",
+        "VOL": "6",
+        "CHA": "0",
+        "ÉTOU": "10",
+        "COU": "12",
+        "SAUT": "2",
+        "END": "50",
+        "ENC": "140",
+        "RÉC": "10",
+        "PS": "100",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "8",
+        "Vigilance": "7",
+        "Bagarre": "8",
+        "Esquive/Évasion": "5",
+        "Athlétisme": "4",
+        "Furtivité": "2",
+        "Physique": "8",
+        "Résilience": "8",
+        "Courage": "10",
+        "Résistance à la contrainte": "6",
+        "Résistance à la magie": "8"
+      },
+      "Arme": [
+        {
+          "Nom": "Poings",
+          "DMG": "6d6",
+          "Effet": "Aucun",
+          "Att/tour": "2"
+        }
+      ],
+      "Butins": [
+        "Foie de troll (1)",
+        "Objets communs (1d6)",
+        "Peau de troll (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les ogroïdes",
+        "Point faible (abdomen - 5)",
+        "Vulnérable au feu"
+      ],
+      "Capacités": [
+        "Force écrasante",
+        "Lanceur de roche",
+        "Né dans la glace",
+        "Résistances (C,T,P)"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "GUERRIER DE LA CHASSE SAUVAGE",
+      "Menace": "Moyen Complexe",
+      "Récompense": "100 couronnes",
+      "Armure": "Tète : 30, Torse : 30, Jambes : 30",
+      "Taille": "Taille Aen Elle",
+      "Poids": "Poids Aen Elle",
+      "Environnement": "Avec la Chasse Sauvage",
+      "Intelligence": "Humaine",
+      "Organisation": "Bandes de 3+ individus, souvent accompagné de molosses",
+      "Caract": {
+        "INT": "6",
+        "RÉF": "8",
+        "DEX": "6",
+        "COR": "8",
+        "VIT": "6",
+        "EMP": "4",
+        "TECH": "3",
+        "VOL": "6",
+        "CHA": "0",
+        "ÉTOU": "7",
+        "COU": "18",
+        "SAUT": "3",
+        "END": "35",
+        "ENC": "80",
+        "RÉC": "7",
+        "PS": "35",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "5",
+        "Vigilance": "6",
+        "Bagarre": "6",
+        "Escrime": "6",
+        "Esquive/Évasion": "4",
+        "Lames courtes": "5",
+        "Arbalète": "4",
+        "Athlétisme": "4",
+        "Furtivité": "3",
+        "Résilience": "5",
+        "Courage": "7",
+        "Résistance à la contrainte": "5",
+        "Résistance à la magie": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Epée de la Chasse Sauvage",
+          "DMG": "5d6",
+          "Effet": "+2 Fia, Gel (50%)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Hache de la Chasse Sauvage",
+          "DMG": "5d6+2",
+          "Effet": "+1 Fia, Gel (50%), Saignement (25%)",
+          "Att/tour": "1"
+        },
+        {
+          "Nom": "Masse de la Chasse Sauvage",
+          "DMG": "6d6",
+          "Effet": "+1 Fia, Gel (50%), -2 ETOU",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Armure de la Chasse Sauvage",
+        "Son arme",
+        "Son bouclier (si utilisé)",
+        "Objet commun (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu"
+      ],
+      "Capacités": [
+        "Bouclier",
+        "Cavalier",
+        "Immunité au gel",
+        "Résistances"
+      ],
+      "Note": "<b>Bouclier<b><br> Certains guerriers portent des boucliers. Bien que les porteurs de boucliers soient rares, les guerriers feront bon usage des boucliers en essayant de bloquer les attaques et en particulier les projectiles visant leurs camarades. <br><b>Cavalier</b><br> Certains guerriers possèdent un cheval de guerre fidèle. Ces soi-disant cavaliers ont un bonus +5 supplémentaire pour les jets de contrôle avec leurs montures."
+    },
+    {
+      "Nom": "MOLOSSE DE LA CHASSE SAUVAGE",
+      "Menace": "Moyen Simple",
+      "Récompense": "50 couronnes",
+      "Armure": "10",
+      "Taille": "Environ 80 centimètres",
+      "Poids": "Environ 80kg",
+      "Environnement": "Avec la Chasse Sauvage",
+      "Intelligence": "Aussi intelligent qu’un chien",
+      "Organisation": "Bandes de 3+ individus",
+      "Caract": {
+        "INT": "1",
+        "RÉF": "6",
+        "DEX": "8",
+        "COR": "5",
+        "VIT": "7",
+        "EMP": "1",
+        "TECH": "1",
+        "VOL": "4",
+        "CHA": "0",
+        "ÉTOU": "4",
+        "COU": "21",
+        "SAUT": "4",
+        "END": "20",
+        "ENC": "50",
+        "RÉC": "4",
+        "PS": "20",
+        "VIG": "0"
+      },
+      "Compt": {
+        "Survie": "6",
+        "Vigilance": "6",
+        "Bagarre": "6",
+        "Mêlée": "6",
+        "Esquive/Évasion": "4",
+        "Athlétisme": "7",
+        "Furtivité": "4",
+        "Résilience": "6",
+        "Courage": "7",
+        "Résistance à la magie": "4"
+      },
+      "Arme": [
+        {
+          "Nom": "Griffes",
+          "DMG": "2d6+3",
+          "Effet": "Aucun",
+          "Att/tour": "2"
+        },
+        {
+          "Nom": "Morsure",
+          "DMG": "3d6+1",
+          "Effet": "Gel (100%)",
+          "Att/tour": "1"
+        }
+      ],
+      "Butins": [
+        "Chair pourrie (1d6)",
+        "Os de bête (1d6)",
+        "Soufre (1d6/2)"
+      ],
+      "Vulnérabilités": [
+        "Huile contre les élémentaires",
+        "Vulnérable au feu"
+      ],
+      "Capacités": [
+        "Immunité au gel",
+        "Nature gelée",
+        "Pointes de glace",
+        "Sauvage",
+        "Traque olfactive"
+      ],
+      "Note": ""
+    },
+    {
+      "Nom": "NAVIGATRICE DE LA CHASSE SAUVAGE",
+      "Menace": "Moyen Difficile",
+      "Récompense": "150 couronnes",
+      "Armure": "Tête : 18, Torse : 18, Jambes : 18",
+      "Taille": "Taille Aen Elle",
+      "Poids": "Poids Aen Elle",
+      "Environnement": "Avec la Chasse Sauvage",
+      "Intelligence": "Humaine",
+      "Organisation": "Solitaire, accompagné par des guerriers et molosses",
+      "Caract": {
+        "INT": "7",
+        "RÉF": "8",
+        "DEX": "6",
+        "COR": "5",
+        "VIT": "6",
+        "EMP": "5",
+        "TECH": "5",
+        "VOL": "9",
+        "CHA": "0",
+        "ÉTOU": "7",
+        "COU": "18",
+        "SAUT": "3",
+        "END": "35",
+        "ENC": "50",
+        "RÉC": "7",
+        "PS": "35",
+        "VIG": "20"
+      },
+      "Compt": {
+        "Survie": "5",
+        "Vigilance": "7",
+        "Bâton/Lance": "7",
+        "Bagarre": "5",
+        "Esquive/Évasion": "8",
+        "Athlétisme": "5",
+        "Furtivité": "4",
+        "Physique": "5",
+        "Résilience": "6",
+        "Courage": "6",
+        "Incantation": "8",
+        "Résistance à la contrainte": "8",
+        "Résistance à la magie": "8"
+      },
+      "Arme": [
+        {
+          "Nom": "Bâton de navigatrice",
+          "DMG": "3d6",
+          "Effet": "Allonge, Focus (2), Focus supérieur, +1 Fia, Gel (50%)",
+          "Att/tour": "2"
+        }
+      ],
+      "Butins": [
+        "Armure de navigatrice",
+        "Bâton de navigatrice",
+        "Objets communs (1d6)",
+        "Potentiellement un schéma de la chasse sauvage"
+      ],
+      "Vulnérabilités": [
+        "Venin du pendu",
+        "Dimeritium"
+      ],
+      "Capacités": [
+        "Immunité au gel",
+        "Invoquer des molosses",
+        "Portail",
+        "Sort",
+        "Téléportation"
+      ],
+      "Note": "Un navigateur est capable d'utiliser les sorts: Dissipation Invocation de bâton Aire de glace Grêle de Cary Vague du Naglfar Tryferi Gaeaf"
+    }
+  ]
+}
