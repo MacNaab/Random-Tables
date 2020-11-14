@@ -7,6 +7,28 @@ var Humain = {
 	Urbain: []
 }
 
+function Human(){
+var CheckPartout = document.getElementById('Check Partout2');
+var CheckRoutes = document.getElementById('Check Routes');
+var CheckMahakam = document.getElementById('Check Mahakam');
+var CheckMarin = document.getElementById('Check Marin2');
+var CheckBois = document.getElementById('Check Bois');
+var CheckUrbain = document.getElementById('Check Urbain2');
+  
+  var DataB = Humain.Partout;
+  if(CheckRoutes.checked == true){DataB = DataB.concat(Humain.Routes);}
+  if(CheckMahakam.checked == true){DataB = DataB.concat(Humain.Mahakam);}
+  if(CheckMarin.checked == true){DataB = DataB.concat(Humain.Marin);}
+  if(CheckBois.checked == true){DataB = DataB.concat(Humain.Forêts);}
+  if(CheckUrbain.checked == true){DataB = DataB.concat(Humain.Urbain);}
+
+  if(CheckPartout.checked == true){DataB = Partout.concat(Humain.Routes, Humain.Mahakam, Humain.Marin, Humain.Forêts, Humain.Urbain);}
+
+	var Rand = Math.floor(Math.random() * Math.floor(DataB.length));
+  
+	document.getElementById("Résultat Rand2").innerHTML = DataB[Rand];
+}
+
 var JSON_Bestiaire = "";
 $.getJSON('rencontre.json', function(jd) {
 	JSON_Bestiaire = jd;
@@ -77,7 +99,7 @@ var CheckUrbain = document.getElementById('Check Urbain');
 	document.getElementById("Résultat Rand").innerHTML = DataB[Rand];
 }
 
-function Human(){
+function HumanOld(){
 	var Partout = ["Conscripts","Mercenary Soldier","Secret Service Agents","Gemmerian Pacifiers","Nilfgaardian Knights","Northern Kingdoms Soldiers","Kaedweni Cavalry","Temerian Blue Stripes","Redanian Halberdiers","Mercenaries","Witch Hunters","Crinfrid Reavers"];
 	var Urbain = ["Mages","Bandits","Highwaymen","Nilfgaardian Infantry"];
 	var Routes = ["Bandits","Highwaymen","Scoia’tael Marauders","Scoia’tael Veterans","Scoia’tael Archers","Nilfgaardian Infantry"];
