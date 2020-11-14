@@ -41,7 +41,7 @@ $.getJSON('rencontre.json', function(jd) {
 			if(f == "Forêts"){Humain.Forêts.push(e.Nom)};
 			if(f == "Ville"){Humain.Urbain.push(e.Nom)};
 		});
-		$('#Aff_Table').append('<tr><th scope="row">'+e.Nom+'</th><td>HUMANOÏDES</td><td>'+e.Menace+'</td><td>'+e.Récompense+'</td><td>'+e.Environnement+'</td><td>'+e.Organisation+'</td><td>'+e.Intelligence+'</td><td>'+e.Taille+'</td><td>'+e.Poids+'</td></th>');
+		$('#Aff_Table').append('<tr><th scope="row">'+e.Nom+'</th><td>HUMANOÏDE</td><td>'+e.Menace+'</td><td>'+e.Récompense+'</td><td>'+e.Environnement+'</td><td>'+e.Organisation+'</td><td>'+e.Intelligence+'</td><td>'+e.Taille+'</td><td>'+e.Poids+'</td></th>');
 	});
 //	$('#Aff_Table').append('<tr><th scope="row">'+e.Nom+'</th><td>'+e.Type+'</td><td>'+e.Menace+'</td><td>'+e.Récompense+'</td><td>'+e.Environnement+'</td><td>'+e.Organisation+'</td><td>'+e.Intelligence+'</td><td>'+e.Taille+'</td><td>'+e.Poids+'</td></th>');
 	console.log(Humain);
