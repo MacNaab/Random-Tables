@@ -47,7 +47,7 @@ $.getJSON('rencontre.json', function(jd) {
 	console.log(Humain);
 });
 
-var Humain = {
+var Monstre = {
 	Partout: [],
 	ChampsDeBataille: [],
 	Cimetière: [],
