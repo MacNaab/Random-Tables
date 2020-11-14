@@ -11,6 +11,7 @@ var JSON_Bestiaire = "";
 $.getJSON('rencontre.json', function(jd) {
 	JSON_Bestiaire = jd;
 	jd.Humain.forEach(function(e){
+		console.log(e.Environnement);
 		e.Environnement.forEach(function(f){
 			if(f == "Partout"){Humain.Partout.push(e.Nom)};
 			if(f == "Route"){Humain.Routes.push(e.Nom)};
