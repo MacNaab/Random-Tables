@@ -47,6 +47,23 @@ $.getJSON('rencontre.json', function(jd) {
 	console.log(Humain);
 });
 
+var Humain = {
+	Partout: [],
+	ChampsDeBataille: [],
+	Cimetière: [],
+	Ruines: [],
+	Grottes: [],
+	Marin: [],
+	Egouts: [],
+	Montagnes: [],
+	Forêts: [],
+	Plaines: [],
+	Déserts: [],
+	Marécages: [],
+	Invocation: [],
+	Urbain: []
+}
+
 function OP(){
 	var Partout = ["Pretas","Dopplers","Foglets","Succubi","Higher Vampires","Botchlings","Demon"];
 	var ChampsDeBataille = ["Ghoul","Wraiths","Rotfiends","Draug","Draugir","Devourers","Scurver","Alghoul","Bloedzuiger","Graveir"];
