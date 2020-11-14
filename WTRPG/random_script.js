@@ -18,8 +18,8 @@ $.getJSON('rencontre.json', function(jd) {
 			if(f == "Mahakam"){Humain.Mahakam.push(e.Nom)};
 			if(f == "Forêts"){Humain.Forêts.push(e.Nom)};
 			if(f == "Ville"){Humain.Urbain.push(e.Nom)};
-		}
-	}
+		});
+	});
 	console.log(Humain);
 });
 
