@@ -1,3 +1,28 @@
+var Humain = {
+	Partout: [],
+	Routes: [],
+	Marin: [],
+	Mahakam: [],
+	Forêts: [],
+	Urbain: []
+}
+
+var JSON_Bestiaire = "";
+$.getJSON('../Fiche/dtb/bestaire.json', function(jd) {
+	JSON_Bestiaire = jd;
+	jd.Humain.forEach(function(e){
+		e.Environnement.forEach(function(f){
+			if(f == "Partout"){Humain.Partout.push(e.Nom)};
+			if(f == "Route"){Humain.Routes.push(e.Nom)};
+			if(f == "Marin"){Humain.Marin.push(e.Nom)};
+			if(f == "Mahakam"){Humain.Mahakam.push(e.Nom)};
+			if(f == "Forêts"){Humain.Forêts.push(e.Nom)};
+			if(f == "Ville"){Humain.Urbain.push(e.Nom)};
+		}
+	}
+	console.log(Humain);
+});
+
 function OP(){
 	var Partout = ["Pretas","Dopplers","Foglets","Succubi","Higher Vampires","Botchlings","Demon"];
 	var ChampsDeBataille = ["Ghoul","Wraiths","Rotfiends","Draug","Draugir","Devourers","Scurver","Alghoul","Bloedzuiger","Graveir"];
