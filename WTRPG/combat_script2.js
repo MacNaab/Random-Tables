@@ -22,6 +22,19 @@ $.getJSON('../Fiche/dtb/bestaire.json', function(jd) {
 		var Vul = "";item.Vulnérabilités.forEach(function(item2){Vul=Vul+item2+"<br>"});
 		$('#tablo').append('<tr><th scope="row">'+item.Nom+'</th><td>'+Ca+'</td><td>'+Co+'</td><td>'+item.Armure+'</td><td>'+Ar+'</td><td>'+Vul+'</td><td>'+Cap+'</td><td>'+item.Note+'</td><td>Unofficiel</td></th>');
 	});
+	jd.Extended.forEach(function(item){
+		var Ca = "";for (var [key, value] of Object.entries(item.Caract)) {Ca=Ca+`${key}: ${value}`+'<br>';}
+		var Co = "";for (var [key, value] of Object.entries(item.Compt)) {Co=Co+`${key}: ${value}`+'<br>';}
+		var Ar = "";
+		var Ar2 = [];
+		if(item.Arme){
+			item.Arme.forEach(function (item2){Ar2.push(Object.values(item2));});
+			Ar2.forEach(function (item2){Ar=Ar+Object.values(item2)+'<br>';});
+		}
+		var Cap = "";item.Capacités.forEach(function(item2){Cap=Cap+item2+"<br>"});
+		var Vul = "";item.Vulnérabilités.forEach(function(item2){Vul=Vul+item2+"<br>"});
+		$('#tablo').append('<tr><th scope="row">'+item.Nom+'</th><td>'+Ca+'</td><td>'+Co+'</td><td>'+item.Armure+'</td><td>'+Ar+'</td><td>'+Vul+'</td><td>'+Cap+'</td><td>'+item.Note+'</td><td>Extended</td></th>');
+	});
 	jd.Site.forEach(function(item){
 		var Ca = "";for (var [key, value] of Object.entries(item.Caract)) {Ca=Ca+`${key}: ${value}`+'<br>';}
 		var Co = "";for (var [key, value] of Object.entries(item.Compt)) {Co=Co+`${key}: ${value}`+'<br>';}
@@ -43,9 +56,9 @@ $(document).ready(function(){
 
 function AutoStuff(){
 	var auto = [];
-	console.log(JSON_Bestiaire);
 	JSON_Bestiaire.Base.forEach(function(e){auto.push(e.Nom);});
 	JSON_Bestiaire.Unofficiel.forEach(function(e){auto.push(e.Nom);});
+	JSON_Bestiaire.Extended.forEach(function(e){auto.push(e.Nom);});
 	JSON_Bestiaire.Site.forEach(function(e){auto.push(e.Nom);});
     $( ".ListeP" ).autocomplete({source: auto});
 }
@@ -100,6 +113,7 @@ function Add_Méchant_PNJ(){
 	var e = document.getElementById('EN_nombre_PNJ').value;if(e==""){e=1;}
 	var found = JSON_Bestiaire.Base.find(x => x.Nom == EN_nom_PNJ.value);
 	if(found == undefined){var found = JSON_Bestiaire.Unofficiel.find(x => x.Nom == EN_nom_PNJ.value);}
+	if(found == undefined){var found = JSON_Bestiaire.Extended.find(x => x.Nom == EN_nom_PNJ.value);}
 	if(found == undefined){var found = JSON_Bestiaire.Site.find(x => x.Nom == EN_nom_PNJ.value);} 
 
 	for(let i=1;i <= e;i++){
@@ -230,6 +244,7 @@ function ATQ(){
 	var N = document.getElementById('ATQ_nom_PNJ').value;
 	var found = JSON_Bestiaire.Base.find(x => x.Nom == N);
 	if(found == undefined){var found = JSON_Bestiaire.Unofficiel.find(x => x.Nom == N);}
+	if(found == undefined){var found = JSON_Bestiaire.Extended.find(x => x.Nom == N);}
 	if(found == undefined){var found = JSON_Bestiaire.Site.find(x => x.Nom == N);} 
 
 	var carac = Number(document.getElementById('ATQ_Caractéristique').value);
@@ -266,6 +281,7 @@ function DEF(){
 	var N = document.getElementById('DEF_nom_PNJ').value;
 	var found = JSON_Bestiaire.Base.find(x => x.Nom == N);
 	if(found == undefined){var found = JSON_Bestiaire.Unofficiel.find(x => x.Nom == N);}
+	if(found == undefined){var found = JSON_Bestiaire.Extended.find(x => x.Nom == N);}
 	if(found == undefined){var found = JSON_Bestiaire.Site.find(x => x.Nom == N);} 
 
 	var carac = Number(document.getElementById('DEF_Caractéristique').value);
