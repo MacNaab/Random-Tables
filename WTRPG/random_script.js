@@ -47,41 +47,43 @@ var Monstre = {
 }
 
 var JSON_Bestiaire = "";
-$.getJSON('rencontre.json', function(jd) {
-	JSON_Bestiaire = jd;
-	jd.Humain.forEach(function(e){
-		e.Environnement.forEach(function(f){
-			if(f == "Partout"){Humain.Partout.push(e.Nom)};
-			if(f == "Route"){Humain.ChampsDeBataille.push(e.Nom)};
-			if(f == "Marin"){Humain.Marin.push(e.Nom)};
-			if(f == "Mahakam"){Humain.Mahakam.push(e.Nom)};
-			if(f == "Forêts"){Humain.Forêts.push(e.Nom)};
-			if(f == "Ville"){Humain.Urbain.push(e.Nom)};
+function a(){
+	$.getJSON('rencontre.json', function(jd) {
+		JSON_Bestiaire = jd;
+		jd.Humain.forEach(function(e){
+			e.Environnement.forEach(function(f){
+				if(f == "Partout"){Humain.Partout.push(e.Nom)};
+				if(f == "Route"){Humain.ChampsDeBataille.push(e.Nom)};
+				if(f == "Marin"){Humain.Marin.push(e.Nom)};
+				if(f == "Mahakam"){Humain.Mahakam.push(e.Nom)};
+				if(f == "Forêts"){Humain.Forêts.push(e.Nom)};
+				if(f == "Ville"){Humain.Urbain.push(e.Nom)};
+			});
+			$('#Aff_Table').append('<tr><th scope="row">'+e.Nom+'</th><td>HUMANOÏDE</td><td>'+e.Menace+'</td><td>'+e.Récompense+'</td><td>'+e.Environnement+'</td><td>'+e.Organisation+'</td><td>'+e.Intelligence+'</td><td>'+e.Taille+'</td><td>'+e.Poids+'</td></th>');
 		});
-		$('#Aff_Table').append('<tr><th scope="row">'+e.Nom+'</th><td>HUMANOÏDE</td><td>'+e.Menace+'</td><td>'+e.Récompense+'</td><td>'+e.Environnement+'</td><td>'+e.Organisation+'</td><td>'+e.Intelligence+'</td><td>'+e.Taille+'</td><td>'+e.Poids+'</td></th>');
-	});
-	jd.Monstre.forEach(function(e){
-		e.Environnement.forEach(function(f){
-			if(f == "Partout"){Monstre.Partout.push(e.Nom)};
-			if(f == "Champs de bataille"){Monstre.Routes.push(e.Nom)};
-			if(f == "Cimetière"){Monstre.Cimetière.push(e.Nom)};
-			if(f == "Ruines"){Monstre.Ruines.push(e.Nom)};
-			if(f == "Grotte"){Monstre.Grottes.push(e.Nom)};
-			if(f == "Marin"){Monstre.Marin.push(e.Nom)};
-			if(f == "Egouts"){Monstre.Egouts.push(e.Nom)};
-			if(f == "Montagnes"){Monstre.Montagnes.push(e.Nom)};
-			if(f == "Forêts"){Monstre.Forêts.push(e.Nom)};
-			if(f == "Plaines"){Monstre.Plaines.push(e.Nom)};
-			if(f == "Déserts"){Monstre.Déserts.push(e.Nom)};
-			if(f == "Marécages"){Monstre.Marécages.push(e.Nom)};
-			if(f == "Invocation"){Monstre.Invocation.push(e.Nom)};
-			if(f == "Ville"){Monstre.Urbain.push(e.Nom)};		
+		jd.Monstre.forEach(function(e){
+			e.Environnement.forEach(function(f){
+				if(f == "Partout"){Monstre.Partout.push(e.Nom)};
+				if(f == "Champs de bataille"){Monstre.Routes.push(e.Nom)};
+				if(f == "Cimetière"){Monstre.Cimetière.push(e.Nom)};
+				if(f == "Ruines"){Monstre.Ruines.push(e.Nom)};
+				if(f == "Grotte"){Monstre.Grottes.push(e.Nom)};
+				if(f == "Marin"){Monstre.Marin.push(e.Nom)};
+				if(f == "Egouts"){Monstre.Egouts.push(e.Nom)};
+				if(f == "Montagnes"){Monstre.Montagnes.push(e.Nom)};
+				if(f == "Forêts"){Monstre.Forêts.push(e.Nom)};
+				if(f == "Plaines"){Monstre.Plaines.push(e.Nom)};
+				if(f == "Déserts"){Monstre.Déserts.push(e.Nom)};
+				if(f == "Marécages"){Monstre.Marécages.push(e.Nom)};
+				if(f == "Invocation"){Monstre.Invocation.push(e.Nom)};
+				if(f == "Ville"){Monstre.Urbain.push(e.Nom)};		
+			});
+			$('#Aff_Table').append('<tr><th scope="row">'+e.Nom+'</th><td>'+e.Type+'</td><td>'+e.Menace+'</td><td>'+e.Récompense+'</td><td>'+e.Environnement+'</td><td>'+e.Organisation+'</td><td>'+e.Intelligence+'</td><td>'+e.Taille+'</td><td>'+e.Poids+'</td></th>');
 		});
-		$('#Aff_Table').append('<tr><th scope="row">'+e.Nom+'</th><td>'+e.Type+'</td><td>'+e.Menace+'</td><td>'+e.Récompense+'</td><td>'+e.Environnement+'</td><td>'+e.Organisation+'</td><td>'+e.Intelligence+'</td><td>'+e.Taille+'</td><td>'+e.Poids+'</td></th>');
+		console.log(Humain);
+		console.log(Monstre);
 	});
-	console.log(Humain);
-	console.log(Monstre);
-});
+}
 
 function OP(){
 var CheckPartout = document.getElementById('Check Partout');
@@ -151,6 +153,7 @@ var CheckUrbain = document.getElementById('Check Urbain2');
 }
 
 $(document).ready(function(){
+	a();
   $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $("tbody tr").filter(function() {
