@@ -49,9 +49,9 @@ var Monstre = {
 var JSON_Bestiaire = "";
 function a(){
 	console.log('A');
+	/*
 	$.getJSON('rencontre.json', function(jd) {
 		JSON_Bestiaire = jd;
-		/*
 		jd.Humain.forEach(function(e){
 			e.Environnement.forEach(function(f){
 				if(f == "Partout"){Humain.Partout.push(e.Nom)};
@@ -82,9 +82,12 @@ function a(){
 			});
 			$('#Aff_Table').append('<tr><th scope="row">'+e.Nom+'</th><td>'+e.Type+'</td><td>'+e.Menace+'</td><td>'+e.Récompense+'</td><td>'+e.Environnement+'</td><td>'+e.Organisation+'</td><td>'+e.Intelligence+'</td><td>'+e.Taille+'</td><td>'+e.Poids+'</td></th>');
 		});
-		*/
 		console.log(Humain);
 		console.log(Monstre);
+	});
+	*/
+	$.getJSON('rencontre.json', function(jd) {
+		alert('AA');
 	});
 }
 
