@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>The Witcher TRPG - Combat</title>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="combat_script.js"></script>
+    <link rel="stylesheet" href="combat_style.css">
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="../index.html">Random Table</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="randomM.html">Monster</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="table.html">Table</a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link" href="">Combat</a>
+      </li>
+	<li class="nav-item">
+        <a class="nav-link" href="combat2.html">Combat v2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="map.html">Map</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="https://macnaab.github.io/Easy-Battlemap-Creator/index_en.html">Battlemap Creator</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+
+<div id="tableau_1" class="tableau">
+<div class="tableau-contenu">
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+<table  class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Circonstances</th>
+      <th scope="col">Modificateur</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">Cible immobilisée</th><td>+4</td></tr>
+    <tr><th scope="row">Cible esquivant activement</th><td>-2</td></tr>
+    <tr><th scope="row">Cible mouvante (REF > 10)</th><td>-3</td></tr>
+    <tr><th scope="row">Dégainage Rapide</th><td>-3</td></tr>
+    <tr><th scope="row">Embuscade</th><td>+5</td></tr>
+    <tr><th scope="row">Tir ricochet</th><td>-5</td></tr>
+    <tr><th scope="row">Aveuglé (lumière, poussière)</th><td>-3</td></tr>
+    <tr><th scope="row">Cible à contre-jour</th><td>+2</td></tr>
+    <tr><th scope="row">Viser (par tour)</th><td>+1</td></tr>
+  </tbody>
+</table>
+    </div>
+    <div class="col-sm">
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Portée</th>
+      <th scope="col">Modificateur</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">A bout portant</th><td>+5</td></tr>
+    <tr><th scope="row">Courte (1/4 portée)</th><td>0</td></tr>
+    <tr><th scope="row">Intermédiaire (1/2 portée)</th><td>-2</td></tr>
+    <tr><th scope="row">Longue (1x portée)</th><td>-4</td></tr>
+    <tr><th scope="row">Extrême (2x portée)</th><td>+6</td></tr>
+  </tbody>
+</table>
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Lumière</th>
+      <th scope="col">Modificateur</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">Lumière brillante</th><td>-3</td></tr>
+    <tr><th scope="row">Ténèbres</th><td>-2</td></tr>
+  </tbody>
+</table>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div id="tableau_2" class="tableau">
+<div class="tableau-contenu">
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Taille</th>
+      <th scope="col">Modificateur</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">Petite (Chat ou nekker)</th><td>+2</td></tr>
+    <tr><th scope="row">Moyenne (Humain)</th><td>0</td></tr>
+    <tr><th scope="row">Grande (Troll ou cheval)</th><td>-2</td></tr>
+    <tr><th scope="row">Énorme (Fiellon)</th><td>-4</td></tr>
+  </tbody>
+</table>
+    </div>
+    <div class="col-sm">
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Lumière</th>
+      <th scope="col">Modificateur</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">Lumière brillante</th><td>-3</td></tr>
+    <tr><th scope="row">Ténèbres</th><td>-2</td></tr>
+  </tbody>
+</table>
+	</div>
+	
+  </div>
+</div>
+</div>
+</div>
+
+<div id="tableau_3" class="tableau">
+<div class="tableau-contenu">
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+<table  class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Abris</th>
+      <th scope="col">PA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">Mur de Pierre</th><td>30</td></tr>
+    <tr><th scope="row">Gros arbre</th><td>30</td></tr>
+    <tr><th scope="row">Mur de brique</th><td>25</td></tr>
+    <tr><th scope="row">Porte en acier</th><td>20</td></tr>
+    <tr><th scope="row">Lourde porte en bois</th><td>15</td></tr>
+    <tr><th scope="row">Carriole</th><td>10</td></tr>
+    <tr><th scope="row">Mur de bois</th><td>10</td></tr>
+    <tr><th scope="row">Tonneau de bois</th><td>10</td></tr>
+    <tr><th scope="row">Broussailles</th><td>7</td></tr>
+    <tr><th scope="row">Toit de chaume</th><td>7</td></tr>
+    <tr><th scope="row">Tente</th><td>5</td></tr>
+  </tbody>
+</table>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<button class="collapsible_perso">Ajouter un Personnage</button>
+<div class="content_perso">
+  <div class="input-group mb-3" style="margin-right: 20%;">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col"><small class="form-text text-muted">Personnage:</small><input type="text" class="form-control" placeholder="Nom" id="EN_nom"></div>
+      <div class="col"><small class="form-text text-muted">Initiative:</small><input type="number" class="form-control" id="EN_initiative" placeholder="Initiative"></div>
+	  <div class="col-md"></div>
+      <div class="col"><small class="form-text text-muted">Points Santé:</small><input type="number" class="form-control" id="EN_vie" placeholder="PV"></div>
+      <div class="col"><small class="form-text text-muted">Endurance:</small><input type="number" class="form-control" id="EN_STA" placeholder="Endurance"></div>
+      <div class="col" style="margin-top:23px;"><input type="button" class="input-group-text" value="Ajouter" onclick="Add_Méchant(),trie1()"></div>
+    </div>
+  </div>
+</div>
+<h1>Combat Tracker:</h1>
+<div class="">
+  <div id="EN_nbre" style="display: none;">0</div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+			<small class="form-text text-muted">Personnage:</small>
+    <select class="custom-select" id="Combat_Nom">
+      <option value="" disabled selected>Ennemie</option>
+    </select>          
+        </div>
+        <div class="col"><small class="form-text text-muted">Points de santé:</small><input class="form-control" type="number" id="Combat_PV" placeholder="PS"></div>
+        <div class="col-md"></div>
+		<div class="col"><small class="form-text text-muted">Endurance:</small><input class="form-control" type="number" id="Combat_STA" placeholder="Endurance"></div>
+        <div class="col" style="margin-top:23px;"><input class="input-group-text" onclick="Combat()" type="button" value="Combat !"></div>
+      </div>
+    </div>
+   </div>
+   <i>En cas de régénération de PV / Endurance : mettre la valeur en négatif.</i>
+  <br>
+  <div>
+	PS = 0 → mourant (stat divisé par 3): chaque tour jet Sauvegarde.<br>END = 0 → inconscient, jet de SAUVEGARDE.
+  </div>
+  <br>
+  <div><b>Ordre du combat:</b><div id="ordre_atk"></div></div><div id="ordre_atk0" style="display: none;"></div>
+  <br>
+  <div id='méchant' class="grid-container"></div>
+</div>
+
+<div style="margin-left:5%;margin-right:5%">
+<h1>Calculateur Combat:</h1>
+<button class="collapsible_perso">Etape 1 - Initiative</button>
+<div class="content_perso">
+	<div class="container">
+	  <div class="row">
+		<div class="col-sm">
+		  <b>Initiative = 1D10 + REF + Mod.</b>
+		</div>
+		<div class="col-sm">
+		  <b>Dégainage Rapide:</b> +3 initiative | -3 à l'attaque
+		</div>
+		<div class="col-sm">
+		  <b>Embuscade:</b> +5 attaque
+		</div>
+	  </div>
+	</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+		<small class="form-text text-muted">Caractéristique REF:</small>
+		<input class="form-control number-perso" type="number" id="Initiative_REF" placeholder="REF">
+    </div>
+    <div class="col">
+		<small class="form-text text-muted">Modificateur:</small>
+		<input class="form-control number-perso" type="text" id="Initiative_mod" placeholder="Modificateur">
+    </div>
+    <div class="col-sm col-lg-2"></div>
+    <div class="col" style="margin-top:23px;">
+		<input class="btn btn-primary" type="button" onclick="INI()" value="Calculer !">
+    </div>
+  </div>
+</div>
+    <div style="text-align:center" id="Initiative_aff"></div>
+</div>
+<button class="collapsible_perso">Etape 2 - Jet d'attaque</button>
+<div class="content_perso">
+	<h6>
+		<svg onclick="aff_info('tableau_1')" style="cursor:pointer;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+		  <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+		  <circle cx="8" cy="4.5" r="1"/>
+		</svg>
+	</h6>
+	<div class="container">
+	  <div class="row">
+		<div class="col-sm">
+			<span><b>CaC = 1D10 + REF + Compétence d'arme + Mod.</b></span><br>
+			<span><b>Distance = 1D10 + DEX + Compétence d'arme + Mod. POR</b></span><br>
+			<span><b>Magie = 1D10 + VOL + Incantation</b></span>
+		</div>
+		<div class="col-sm">
+			<span><b>Frappe puissante:</b> -3 attaque, dégâts x2</span><br>
+			<span><b>Frappe rapide:</b> 2 attaques</span>
+		</div>
+	  </div>
+	</div>
+	<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+		<small class="form-text text-muted">Caractéristique:</small>
+		<input class="form-control number-perso" type="number" id="ATQ_Caractéristique" placeholder="Caractéristique">
+    </div>
+    <div class="col">
+		<small class="form-text text-muted">Compétence:</small>
+		<input class="form-control number-perso" type="number" id="ATQ_Comptétence" placeholder="Compétence">
+    </div>
+    <div class="col-md"></div>
+    <div class="col">
+		<small class="form-text text-muted">Modificateur:</small>
+		<input class="form-control number-perso" type="text" id="ATQ_Mod" placeholder="Modificateur">
+    </div>
+    <div class="col" style="margin-top:23px;">
+		<input class="btn btn-primary" type="button" value="Calculer !" onclick="ATQ()">
+    </div>
+  </div>
+</div>
+    <div style="text-align:center" id="ATQ_aff"></div>
+</div>
+<button class="collapsible_perso">Etape 3 - Jet défense</button>
+<div class="content_perso">
+	<h6>
+		<svg onclick="aff_info('tableau_2')" style="cursor:pointer;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+		  <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+		  <circle cx="8" cy="4.5" r="1"/>
+		</svg>
+	</h6>
+	<div class="container">
+	  <div class="row">
+		<div class="col-sm">
+			<span><b>Esquive:</b> Esquive/Evasion</span><br>
+			<span><b>Repositionnement:</b> Athlétisme</span><br>
+			<span><b>Blocage:</b> Compétence d'arme (-1 PA)</span><br>
+			<span><b>Parade:</b> Compétence d'arme -3 (-5 armes à distance)</span><br>
+			<span><b>Défense magique:</b> 1D10 + VOL + Résist. magie </span>
+		</div>
+		<div class="col-sm">
+			<span><b>Arme:</b> Compétence d'arme</span><br>
+			<span><b>Bouclier:</b> Mêlée</span><br>
+			<span><b>Corps:</b> Bagarre</span>
+		</div>
+	  </div>
+	</div>
+	<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+		<small class="form-text text-muted">Caractéristique:</small>
+		<input class="form-control number-perso" type="number" id="DEF_Caractéristique" placeholder="Caractéristique">
+    </div>
+    <div class="col">
+		<small class="form-text text-muted">Compétence:</small>
+		<input class="form-control number-perso" type="number" id="DEF_Comptétence" placeholder="Compétence">
+    </div>
+    <div class="col-md"></div>
+    <div class="col">
+		<small class="form-text text-muted">Modificateur:</small>
+		<input class="form-control number-perso" type="text" id="DEF_Mod" placeholder="Modificateur">
+    </div>
+    <div class="col" style="margin-top:23px;">
+		<input class="btn btn-primary" type="button" value="Calculer !" onclick="DEF()">
+    </div>
+  </div>
+</div>
+    <div style="text-align:center" id="DEF_aff"></div>
+</div>
+
+<button class="collapsible_perso">Etape 4 - Calcul</button>
+<div class="content_perso">
+<div class="container">
+  <div class="row">
+    <div class="col">
+		<small class="form-text text-muted">Jet d'attaque:</small>
+		<input class="form-control number-perso" type="number" placeholder="Attaquant" id="cc_i1">
+    </div>
+    <div class="col">
+		<small class="form-text text-muted">Viser:</small>
+        <select id="cc_i3" class="custom-select number-perso">
+          <option value="0">Non</option>
+          <option value="-6">Tête</option>
+          <option value="-1">Torse</option>
+          <option value="-3">Bras | Membre</option>
+          <option value="-2">Jambe | Queue | Aile</option>
+        </select>
+    </div>
+    <div class="col-md"></div>
+    <div class="col">
+		<small class="form-text text-muted">Jet défense:</small>
+		<input class="form-control number-perso" type="number" placeholder="Défenseur" id="cc_i2">
+
+    </div>
+    <div class="col" style="margin-top:23px;">
+		<input class="btn btn-primary" type="button" value="Calculer !" onclick="cc_calcul()">
+    </div>
+	</div>
+</div>
+    <div style="text-align:center" id="attaque_aff"></div>
+</div>
+<button class="collapsible_perso">Etape 5 - Dommages</button>
+<div class="content_perso">
+	<h6>
+		<svg onclick="aff_info('tableau_3')" style="cursor:pointer;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+		  <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+		  <circle cx="8" cy="4.5" r="1"/>
+		</svg>
+	</h6>
+<div class="container">
+  <div class="row">
+    <div class="col">
+		<small class="form-text text-muted">Dégâts de l'arme:</small>
+		<input class="form-control number-perso" type="texte" placeholder="4d6+2" id="dom_1">
+    </div>
+    <div class="col">
+		<small class="form-text text-muted">Localisation:</small>
+        <select id="dom_2" class="custom-select number-perso">
+          <option value="0">Aléatoire</option>
+          <option value="3">Tête</option>
+          <option value="1">Torse</option>
+          <option value="0.5">Bras | Membre</option>
+          <option value="0.5">Jambe | Queue | Aile</option>
+        </select>
+    </div>
+    <div class="col-md"></div>
+    <div class="col">
+<div class="custom-control custom-switch" style="margin-top:30px;">
+  <input type="checkbox" class="custom-control-input" id="customSwitch2">
+  <label class="custom-control-label" for="customSwitch2">Monstre</label>
+</div>
+    </div>
+    <div class="col">
+<div class="custom-control custom-switch" style="margin-top:30px;">
+  <input type="checkbox" class="custom-control-input" id="dom_5">
+  <label class="custom-control-label" for="dom_5">Frappe puissante</label>
+</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+<div class="custom-control custom-switch" style="margin-top:30px;">
+  <input onchange='fn_switch(this.checked)' type="checkbox" class="custom-control-input" id="customSwitch1">
+  <label class="custom-control-label" for="customSwitch1">Mêlée</label>
+</div>
+    </div>
+    <div class="col">
+		<small class="form-text text-muted">Caractéristique CORPS:</small>
+		<input disabled class="form-control number-perso" min='1' max='13' type="number" placeholder="CORPS" id="dom_3">
+    </div>
+    <div class="col-md"></div>
+    <div class="col">
+		<small class="form-text text-muted">Pouvoir d'arrêt:</small>
+		<input class="form-control number-perso" type="text" placeholder="PA" id="dom_4">
+    </div>
+    <div class="col">
+		<small class="form-text text-muted">Critique:</small>
+		<select id="dom_6" class="custom-select number-perso">
+          <option value="0">Non</option>
+          <option value="3">CC Simple</option>
+          <option value="5">CC Complexe</option>
+          <option value="8">CC Difficile</option>
+          <option value="10">CC Mortel</option>
+        </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+		<small class="form-text text-muted">Résistance|Vulnérabilité:</small>
+        <select id="dom_7" class="custom-select number-perso">
+          <option value="1">Aucune</option>
+          <option value="0.5">Résistance</option>
+          <option value="2">Vulnérabilité</option>
+        </select>
+	</div>
+    <div class="col" style="margin-top:23px;">
+		<input class="btn btn-primary" type="button" value="Calculer !" onclick="dommage_calcul()">
+    </div>
+  </div>
+</div>
+    <div style="text-align:center" id="dommage_aff"></div>
+</div>
+	<div style="margin-left:5%;margin-right:5%;margin-top:5px;">
+<button class="collapsible_perso">Bestiaire</button>
+<div class="content_perso">
+	<div class="form-group center" style="width:250px"><input class="form-control" id="SearchBeast" type="text" placeholder="Rechercher.."></div>
+    <table class="table table-bordered table-hover table-responsive">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Caractéristiques</th>
+      <th scope="col">Compétences</th>
+      <th scope="col">Armure</th>
+      <th scope="col">Arme<br>Nom,DMG,Effet,Att/tour</th>
+      <th scope="col">Vulnérabilités</th>
+      <th scope="col">Capacités</th>
+      <th scope="col">Note</th>
+      <th scope="col">Source</th>
+    </tr>
+  </thead>
+  <tbody id="tablo">
+  </tbody>
+</table>
+</div>
+	</div>
+</div>
+
+  </body>
+</html>
