@@ -48,6 +48,7 @@ var Monstre = {
 
 var JSON_Bestiaire = "";
 function a(){
+	console.log('A');
 	$.getJSON('rencontre.json', function(jd) {
 		JSON_Bestiaire = jd;
 		jd.Humain.forEach(function(e){
@@ -151,13 +152,3 @@ var CheckUrbain = document.getElementById('Check Urbain2');
   
 	document.getElementById("Résultat Rand2").innerHTML = DataB[Rand];
 }
-
-$(document).ready(function(){
-	a();
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("tbody tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
