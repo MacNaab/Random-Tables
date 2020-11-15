@@ -602,67 +602,30 @@ if(Rand11 < Relic){
 	document.getElementById('résultat_aff11').innerHTML = El1;
 }
 
-function coffre_aff(){
-	var langue = document.getElementById('langue_choisi').value;
-	if(langue == "1"){
-		var X1 = "Max Crown: ";
-		var X2 = "Gear: ";
-		var X3 = "Weapon: ";
-		var X4 = "Armor: ";
-		var X5 = "Diagram: ";
-		var X6 = "Formula: ";
-		var X7 = "Alchemy: ";
-		var X8 = "Glyph: ";
-		var X9 = "Rune: ";
-		var X10 = "Elderfolk Weapon: ";
-		var X11 = "Elderfolk Armor: ";
-		var X12 = "Relic: ";
-    }
-    else{
-		var X1 = "Couronnes maximale: ";
-		var X2 = "Equipement: ";
-		var X3 = "Arme: ";
-		var X4 = "Armure: ";
-		var X5 = "Diagramme: ";
-		var X6 = "Formule: ";
-		var X7 = "Alchemie: ";
-		var X8 = "Glyphe: ";
-		var X9 = "Rune: ";
-		var X10 = "Arme Elderfolk: ";
-		var X11 = "Armure Elderfolk: ";
-		var X12 = "Relique: ";
-	}
-	document.getElementById('CHEST_C_aff').innerHTML = X1;
-	document.getElementById('CHEST_G_aff').innerHTML = X2;
-	document.getElementById('CHEST_W_aff').innerHTML = X3;
-	document.getElementById('CHEST_A_aff').innerHTML = X4;
-	document.getElementById('CHEST_D_aff').innerHTML = X5;
-	document.getElementById('CHEST_F_aff').innerHTML = X6;
-	document.getElementById('CHEST_Al_aff').innerHTML = X7;
-	document.getElementById('CHEST_Gl_aff').innerHTML = X8;
-	document.getElementById('CHEST_R_aff').innerHTML = X9;
-	document.getElementById('CHEST_EFW_aff').innerHTML = X10;
-	document.getElementById('CHEST_EFA_aff').innerHTML = X11;
-	document.getElementById('CHEST_Re_aff').innerHTML = X12;
-}
-
 function ModularRE_aff(){
 	var langue = document.getElementById('langue_choisi').value;
-	var memo = document.getElementById('ModularRE_Memo').innerHTML;
 	if(memo == ""){
 		var A = $("#slider-range").slider("values", 0);
 		var C = Number(100-$("#slider-range").slider("values", 1));
 		var B = Math.abs(Number(100-C-A));
 	}
 	else{
-		let split = memo.split(' ');
-		var A = split[0];
-		var B = split[1];
-		var C = split[2];
+		try {
+			var A = memo[0];
+			var B = memo[1];
+			var C = memo[2];
+		} catch (error) {
+			console.error(error);
+			var A = $("#slider-range").slider("values", 0);
+			var C = Number(100-$("#slider-range").slider("values", 1));
+			var B = Math.abs(Number(100-C-A));			
+		}
 	}
 	if(langue == "1"){document.getElementById('ici').innerHTML = "Good: "+A+"%<br>Neutral: "+B+"%<br>Bad: "+C+"%";}
 	else{document.getElementById('ici').innerHTML = "Bon: "+A+"%<br>Neutre: "+B+"%<br>Mauvais: "+C+"%";}
 }
+
+var memo = "";
 
 function ModularRE(){
 	var langue = document.getElementById('langue_choisi').value;
@@ -686,17 +649,22 @@ function ModularRE(){
 		var Mauvais = ['Humain','Créature','Animal','Piège','Environnement','Météo'];
 		var Classe = ['Artisan','Barde','Criminel','Docteur',"Homme d'arme",'Mage','Marchand','Prêtre','Sorceleur']
 	}
-	var memo = document.getElementById('ModularRE_Memo').innerHTML;
 	if(memo == ""){
 		var A = $("#slider-range").slider("values", 0);
 		var C = Number(100-$("#slider-range").slider("values", 1));
 		var B = Math.abs(Number(100-C-A));
 	}
 	else{
-		let split = memo.split(' ');
-		var A = split[0];
-		var B = split[1];
-		var C = split[2];
+		try {
+			var A = memo[0];
+			var B = memo[1];
+			var C = memo[2];
+		} catch (error) {
+			console.error(error);
+			var A = $("#slider-range").slider("values", 0);
+			var C = Number(100-$("#slider-range").slider("values", 1));
+			var B = Math.abs(Number(100-C-A));			
+		}
 	}
 
 	var Rand1 = Math.floor(Math.random() * Math.floor(100));	// Type
@@ -809,7 +777,8 @@ $( function() {
 		var langue = document.getElementById('langue_choisi').value;
 		if(langue == "1"){document.getElementById('ici').innerHTML = "Good: "+A+"%<br>Neutral: "+B+"%<br>Bad: "+C+"%";}
 		else{document.getElementById('ici').innerHTML = "Bon: "+A+"%<br>Neutre: "+B+"%<br>Mauvais: "+C+"%";}
-		document.getElementById('ModularRE_Memo').innerHTML = A+" "+B+" "+C;
+		var memo = [A,B,C];
+//		document.getElementById('ModularRE_Memo').innerHTML = A+" "+B+" "+C;
 	  }
 	});
 		var A = $("#slider-range").slider("values", 0);
