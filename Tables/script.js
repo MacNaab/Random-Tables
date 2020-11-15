@@ -605,8 +605,8 @@ if(Rand11 < Relic){
 function ModularRE_aff(){
 	var langue = document.getElementById('langue_choisi').value;
 	if(memo == ""){
-		var A = $("#slider-range").slider({values:0});
-		var C = Number(100-$("#slider-range").slider({values:1}));
+		var A = $("#slider-range").slider('values',0);
+		var C = Number(100-$("#slider-range").slider('values',1));
 		var B = Math.abs(Number(100-C-A));
 	}
 	else{
@@ -616,13 +616,11 @@ function ModularRE_aff(){
 			var C = memo[2];
 		} catch (error) {
 			console.error(error);
-			var A = $("#slider-range").slider({values:0});
-			var C = Number(100-$("#slider-range").slider({values:1}));
+			var A = $("#slider-range").slider('values',0);
+			var C = Number(100-$("#slider-range").slider('values',1));
 			var B = Math.abs(Number(100-C-A));			
 		}
 	}
-	console.log('A:'+A+'<br>B:'+B+'<br>C:'+C);
-	console.log($("#slider-range").slider());
 	if(langue == "1"){document.getElementById('ici').innerHTML = "Good: "+A+"%<br>Neutral: "+B+"%<br>Bad: "+C+"%";}
 	else{document.getElementById('ici').innerHTML = "Bon: "+A+"%<br>Neutre: "+B+"%<br>Mauvais: "+C+"%";}
 }
@@ -652,8 +650,8 @@ function ModularRE(){
 		var Classe = ['Artisan','Barde','Criminel','Docteur',"Homme d'arme",'Mage','Marchand','Prêtre','Sorceleur']
 	}
 	if(memo == ""){
-		var A = $("#slider-range").slider("values", 0);
-		var C = Number(100-$("#slider-range").slider("values", 1));
+		var A = $("#slider-range").slider('values',0);
+		var C = Number(100-$("#slider-range").slider('values',1));
 		var B = Math.abs(Number(100-C-A));
 	}
 	else{
@@ -663,8 +661,8 @@ function ModularRE(){
 			var C = memo[2];
 		} catch (error) {
 			console.error(error);
-			var A = $("#slider-range").slider("values", 0);
-			var C = Number(100-$("#slider-range").slider("values", 1));
+			var A = $("#slider-range").slider('values',1);
+			var C = Number(100-$("#slider-range").slider('values',1));
 			var B = Math.abs(Number(100-C-A));			
 		}
 	}
@@ -763,27 +761,4 @@ function ModularRE(){
 			else{document.getElementById('résultat_aff12').innerHTML = "Neutre :   "+Neutre[Rand2];}
 		}
 	}
-
 }
-
-$( function() {
-	$( "#slider-range" ).slider({
-	  range: true,
-	  min: 0,
-	  max: 100,
-	  values: [ 33, 67 ],
-	  slide: function( event, ui ) {
-		var A = ui.values[0];
-		var C = Number(100-ui.values[1]);
-		var B = Math.abs(Number(100-C-A));
-		var langue = document.getElementById('langue_choisi').value;
-		if(langue == "1"){document.getElementById('ici').innerHTML = "Good: "+A+"%<br>Neutral: "+B+"%<br>Bad: "+C+"%";}
-		else{document.getElementById('ici').innerHTML = "Bon: "+A+"%<br>Neutre: "+B+"%<br>Mauvais: "+C+"%";}
-		var memo = [A,B,C];
-//		document.getElementById('ModularRE_Memo').innerHTML = A+" "+B+" "+C;
-	  }
-	});
-		var A = $("#slider-range").slider("values", 0);
-		var C = Number(100-$("#slider-range").slider("values", 1));
-		var B = Math.abs(Number(100-C-A));
-} );

@@ -109,3 +109,27 @@
   </div>
   <br>
   <div id="résultat_aff12" style="margin-right:10%;margin-left:10%"></div>
+
+<script>
+$( function() {
+	$( "#slider-range" ).slider({
+	  range: true,
+	  min: 0,
+	  max: 100,
+	  values: [ 33, 67 ],
+	  slide: function( event, ui ) {
+		var A = ui.values[0];
+		var C = Number(100-ui.values[1]);
+		var B = Math.abs(Number(100-C-A));
+		var langue = document.getElementById('langue_choisi').value;
+		if(langue == "1"){document.getElementById('ici').innerHTML = "Good: "+A+"%<br>Neutral: "+B+"%<br>Bad: "+C+"%";}
+		else{document.getElementById('ici').innerHTML = "Bon: "+A+"%<br>Neutre: "+B+"%<br>Mauvais: "+C+"%";}
+		var memo = [A,B,C];
+//		document.getElementById('ModularRE_Memo').innerHTML = A+" "+B+" "+C;
+	  }
+	});
+		var A = $("#slider-range").slider("values", 0);
+		var C = Number(100-$("#slider-range").slider("values", 1));
+		var B = Math.abs(Number(100-C-A));
+} );
+</script>
