@@ -800,7 +800,6 @@ var Rencontre = {
 		  "Taille": "Taille Aen Elle",
 		  "Poids": "Poids Aen Elle",
 			  "Environnement": ["Partout"],
-		  "Environnement": "Avec la Chasse Sauvage",
 		  "Intelligence": "Humaine",
 		  "Organisation": "Bandes de 3+ individus, souvent accompagné de molosses",
 		  "Note": "<b>Bouclier<b><br> Certains guerriers portent des boucliers. Bien que les porteurs de boucliers soient rares, les guerriers feront bon usage des boucliers en essayant de bloquer les attaques et en particulier les projectiles visant leurs camarades. <br><b>Cavalier</b><br> Certains guerriers possèdent un cheval de guerre fidèle. Ces soi-disant cavaliers ont un bonus +5 supplémentaire pour les jets de contrôle avec leurs montures."
