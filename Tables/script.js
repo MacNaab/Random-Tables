@@ -605,8 +605,8 @@ if(Rand11 < Relic){
 function ModularRE_aff(){
 	var langue = document.getElementById('langue_choisi').value;
 	if(memo == ""){
-		var A = $("#slider-range").slider("values", 0);
-		var C = Number(100-$("#slider-range").slider("values", 1));
+		var A = $("#slider-range").slider('value', 0);
+		var C = Number(100-$("#slider-range").slider('value', 1));
 		var B = Math.abs(Number(100-C-A));
 	}
 	else{
@@ -616,8 +616,8 @@ function ModularRE_aff(){
 			var C = memo[2];
 		} catch (error) {
 			console.error(error);
-			var A = $("#slider-range").slider("values", 0);
-			var C = Number(100-$("#slider-range").slider("values", 1));
+			var A = $("#slider-range").slider("value", 0);
+			var C = Number(100-$("#slider-range").slider("value", 1));
 			var B = Math.abs(Number(100-C-A));			
 		}
 	}
