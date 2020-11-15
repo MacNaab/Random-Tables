@@ -1,26 +1,146 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-  <meta charset="utf-8">
-  <title>The Witcher TRPG</title>
-<!-- include libraries(jQuery, bootstrap) -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
   <script src="script.js"></script>
   <script src="rencontre.js"></script>
-  </head>
-  <body>
-	<div id="la-nav-bar"></div>
-    <div id='app'></div>
-	  <div id="toast"></div>
-  </body>
+
+<div style="margin-left:5%;margin-right:5%">
+	<div>
+		<div>
+			Monstre aléatoire :
+	<!--
+	Partout / ChampsDeBataille / Cimetière / Ruines / Grottes / Marin / Egouts /Montagnes / Forêts / Plaines / Déserts / Marécages / Invocation / Urbain
+	-->
+			<br>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Partout" value="option1">
+	  <label class="form-check-label" for="Check Partout">Partout</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check ChampsDeBataille" >
+	  <label class="form-check-label" for="Check ChampsDeBataille">Champs De Bataille</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Cimetière" >
+	  <label class="form-check-label" for="Check Cimetière">Cimetière</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Ruines" >
+	  <label class="form-check-label" for="Check Ruines">Ruines</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Grottes" >
+	  <label class="form-check-label" for="Check Grottes">Grottes</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Marin" >
+	  <label class="form-check-label" for="Check Marin">Marin</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Montagnes" >
+	  <label class="form-check-label" for="Check Montagnes">Montagnes</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Forêts" >
+	  <label class="form-check-label" for="Check Forêts">Forêts</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Plaines" >
+	  <label class="form-check-label" for="Check Plaines">Plaines</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Marécages" >
+	  <label class="form-check-label" for="Check Marécages">Marécages</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Egouts" >
+	  <label class="form-check-label" for="Check Egouts">Egouts</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Déserts" >
+	  <label class="form-check-label" for="Check Déserts">Déserts</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Invocation" >
+	  <label class="form-check-label" for="Check Invocation">Invocation</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Urbain" >
+	  <label class="form-check-label" for="Check Urbain">Urbain</label>
+	</div>
+	<div class="d-flex justify-content-center"><button type="button" class="btn btn-outline-warning btn-lg" onclick="OP()">Roll</button></div>
+		</div>
+		<div id="Résultat Rand"></div>
+	</div>
+
+	<div>
+		<div>
+			Humain aléatoire:
+	<!--
+	Partout / ChampsDeBataille / Cimetière / Ruines / Grottes / Marin / Egouts /Montagnes / Forêts / Plaines / Déserts / Marécages / Invocation / Urbain
+	-->
+			<br>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Partout2">
+	  <label class="form-check-label" for="Check Partout2">Partout</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Routes" >
+	  <label class="form-check-label" for="Check Routes">Routes</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Marin2" >
+	  <label class="form-check-label" for="Check Marin2">Marin</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Mahakam" >
+	  <label class="form-check-label" for="Check Mahakam">Mahakam</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Bois" >
+	  <label class="form-check-label" for="Check Bois">Forêts</label>
+	</div>
+	<div class="form-check form-check-inline">
+	  <input class="form-check-input" type="checkbox" id="Check Urbain2" >
+	  <label class="form-check-label" for="Check Urbain2">Urbain</label>
+	</div>
+	<div class="d-flex justify-content-center"><button type="button" class="btn btn-outline-warning btn-lg" onclick="Human()">Roll</button></div>
+		</div>
+		<div id="Résultat Rand2"></div>
+	</div>
+</div>
+
+<div>
+<div class="form-group" style="width:250px;margin-left:auto;margin-right:auto;">
+    <input class="form-control" id="myInput" type="text" placeholder="Rechercher..">
+</div>
+<div style="margin-left:10%;margin-right:10%">
+	<table class="table table-striped table-hover table-responsive">
+		<thead>
+			<tr>
+			<th scope="col">Nom</th>
+			<th scope="col">Type</th>
+			<th scope="col">Difficulté</th>
+			<th scope="col">Récompense</th>
+			<th scope="col">Environnement</th>
+			<th scope="col">Organisation</th>
+			<th scope="col">Intelligence</th>
+			<th scope="col">Taille</th>
+			<th scope="col">Poids</th>
+			</tr>
+		</thead>
+		<tbody id="Aff_Table">
+		</tbody>
+	</table>
+</div>
+</div>
+
 <script>
 $(document).ready(function(){
-	$('#la-nav-bar').load("../nav.htm");
-	$('#app').load("page.htm");
+	a();
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("tbody tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
 });
 </script>
-</html>
+
