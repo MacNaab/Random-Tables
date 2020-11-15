@@ -86,10 +86,7 @@ function a(){
 		console.log(Monstre);
 	});
 	*/
-	$.getJSON('rencontre.json', function(jd) {
-		alert('AA');
-	});
-	$.getJSON( "ajax/rencontre.json", function( data ) {
+	$.getJSON( "rencontre.json", function( data ) {
 		console.log('alpha');
 	});
 }
