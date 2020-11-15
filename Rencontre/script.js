@@ -52,7 +52,7 @@ function a(){
 		Rencontre.Humain.forEach(function(e){
 			e.Environnement.forEach(function(f){
 				if(f == "Partout"){Humain.Partout.push(e.Nom)};
-				if(f == "Route"){Humain.ChampsDeBataille.push(e.Nom)};
+				if(f == "Route"){Humain.Routes.push(e.Nom)};
 				if(f == "Marin"){Humain.Marin.push(e.Nom)};
 				if(f == "Mahakam"){Humain.Mahakam.push(e.Nom)};
 				if(f == "Forêts"){Humain.Forêts.push(e.Nom)};
@@ -64,7 +64,7 @@ function a(){
 		Rencontre.Monstre.forEach(function(e){
 			e.Environnement.forEach(function(f){
 				if(f == "Partout"){Monstre.Partout.push(e.Nom)};
-				if(f == "Champs de bataille"){Monstre.Routes.push(e.Nom)};
+				if(f == "Champs de bataille"){Monstre.ChampsDeBataille.push(e.Nom)};
 				if(f == "Cimetière"){Monstre.Cimetière.push(e.Nom)};
 				if(f == "Ruines"){Monstre.Ruines.push(e.Nom)};
 				if(f == "Grotte"){Monstre.Grottes.push(e.Nom)};
