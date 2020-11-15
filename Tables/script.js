@@ -551,7 +551,9 @@ if(Relic == ""){var Relic = 1;}
 	var Rand10 = Math.floor(Math.random() * Math.floor(100));// EF Armor	
 	var Rand11 = Math.floor(Math.random() * Math.floor(1000));// Relic	
 
-	var El1 = Rand0+" crown<br>";
+	if(langue == "1"){
+		var El1 = Rand0+" crown<br>";
+	}else{var El1 = Rand0+" couronnes<br>";}
 if(Rand1 < Gear){
 	var Rand1x = Math.floor(Math.random() * Math.floor(GearList.length));	// Gear	
 	var El1 = El1+GearList[Rand1x]+"<br>";}
@@ -813,4 +815,4 @@ $( function() {
 		var A = $("#slider-range").slider("values", 0);
 		var C = Number(100-$("#slider-range").slider("values", 1));
 		var B = Math.abs(Number(100-C-A));
-  } );
+} );

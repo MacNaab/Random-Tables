@@ -7,124 +7,20 @@
 </style>
 
   <div class="form-group d-flex justify-content-center sticky-top">
-    <select class="form-control" id="langue_choisi" style="width: 300px">
+    <select class="form-control" id="langue_choisi" style="width: 300px" onchange="lalangue(this.value)">
       <option value="1">English</option>
       <option value="2">Français</option>
     </select>
   </div>
   <br>
-
-  <div>
-    <div class="form-group">
-      <select class="form-control" id="Select_01" style="width: 50%;margin-left: auto;margin-right: auto;">
-        <option value="1">Random Inns and Taverns</option>
-        <option value="2">Random Dungeon Traps and Hazards</option>
-        <option value="3">Random Plot Hooks for Small Towns and Villages</option>
-        <option value="4">Random Quests Given To A Party Defending in a Siege</option>
-        <option value="5">Dicing for Dungeons</option>
-        <option value="6">Dicing for Swamps</option>
-        <option value="7">Dicing for Forests</option>
-        <option value="8">Random Possessions</option>
-        <option value="9">Random Contract</option>
-        <option value="10">Random Basic NPC's Lifepath</option>
-         <option value="11">Random Advanced NPC's Lifepath</option>
-        <option value="12">Random Witcher's Lifepath</option>
-	      <option value="13">Non-combat wilderness encounters</option>
-	      <option value="14">Non-combat city encounters</option>
-	      <option value="15">Non-combat encounters while travelling between cities/villages/towns</option>
-	      <option value="16">Non-combat encounters for a small town or village</option>
-	      <option value="17">Non-combat obstacles to encounter while traveling</option>
-      </select>
-      <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-primary btn-lg" onclick="RandomTable()">Generate</button>
-      </div>
-    </div>
-    <div id="aff_random_result" style="margin-right:10%;margin-left:10%"></div>
-  </div>
-
-
-	<br>
-  <div style="text-align: center;">
-	<h1>Random Chest</h1>
-	<br>
-	<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCHEST" onclick="coffre_aff()">
-  Edit Drop Rate
-</button>
-	<br>Based on the original creation of <a href="https://docs.google.com/document/d/1rBjRb_cEqFxrlLNzr8Qyp2x3J-Pxw8wcLvjGgVc9L6A/edit">Super Godzilla</a>
-
-
-<!-- Modal -->
-<div class="modal fade" id="ModalCHEST" tabindex="-1" role="dialog" aria-labelledby="ModalCHESTLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="ModalCHESTLabel">Drop Rate</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="d-flex justify-content-around"><span id="CHEST_C_aff">Max Crown: </span>			<input type="text" style="width:100px" id="CHEST_C"></div>
-        <div class="d-flex justify-content-around"><span id="CHEST_G_aff">Gear: </span>			<input type="text" style="width:50px" id="CHEST_G">%</div>
-        <div class="d-flex justify-content-around"><span id="CHEST_W_aff">Weapon: </span>			<input type="text" style="width:50px" id="CHEST_W">%</div>
-        <div class="d-flex justify-content-around"><span id="CHEST_A_aff">Armor: </span>			<input type="text" style="width:50px" id="CHEST_A">%</div>
-        <div class="d-flex justify-content-around"><span id="CHEST_D_aff">Diagram: </span>		<input type="text" style="width:50px" id="CHEST_D">%</div>
-        <div class="d-flex justify-content-around"><span id="CHEST_F_aff">Formula: </span>		<input type="text" style="width:50px" id="CHEST_F">%</div>
-        <div class="d-flex justify-content-around"><span id="CHEST_Al_aff">Alchemy: </span>		<input type="text" style="width:50px" id="CHEST_Al">%</div>
-        <div class="d-flex justify-content-around"><span id="CHEST_Gl_aff">Glyph: </span>			<input type="text" style="width:50px" id="CHEST_Gl">%</div>
-        <div class="d-flex justify-content-around"><span id="CHEST_R_aff">Rune: </span>			<input type="text" style="width:50px" id="CHEST_R">%</div>
-        <div class="d-flex justify-content-around"><span id="CHEST_EFW_aff">EF Weapon: </span>	<input type="text" style="width:50px" id="CHEST_EFW">%</div>
-        <div class="d-flex justify-content-around"><span id="CHEST_EFA_aff">EF Armor: </span>		<input type="text" style="width:50px" id="CHEST_EFA">%</div>
-        <div class="d-flex justify-content-around"><span id="CHEST_Re_aff">Relic: </span>			<input type="text" style="width:50px" id="CHEST_Re">‰</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="coffre()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff11" style="margin-right:10%;margin-left:10%"></div>
-
-  <br>
-  <div style="text-align: center;">
-	<h1>Random Modular Encountrer</h1>
-	<br>
-	<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalRE" onclick="ModularRE_aff()">
-  Edit Rate
-</button>
-
-
-<!-- Modal -->
-<div class="modal fade" id="ModalRE" tabindex="-1" role="dialog" aria-labelledby="ModalRELabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="ModalRELabel">Edit Rate</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div id="ici"></div>
-        <span id="ModularRE_Memo" style="display: none;"></span>
-        <div id="slider-range"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-  <div class="d-flex justify-content-center">
-	  <button type="button" class="btn btn-primary btn-lg" onclick="ModularRE()">Generate</button>
-  </div>
-  <br>
-  <div id="résultat_aff12" style="margin-right:10%;margin-left:10%"></div>
+	<div id="la_langue_choisi"></div>
+	
+<script>	
+function lalangue(e){
+	if(e == "1"){
+		$('#la_langue_choisi').load(Tables/En.htm);
+	}else{
+		$('#la_langue_choisi').load(Tables/Fr.htm);
+	}
+}	
+</script>	

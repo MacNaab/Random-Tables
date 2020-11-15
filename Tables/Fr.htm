@@ -1,0 +1,114 @@
+  <div>
+    <div class="form-group">
+      <select class="form-control" id="Select_01" style="width: 50%;margin-left: auto;margin-right: auto;">
+        <option value="1">Auberges et tavernes aléatoires</option>
+        <option value="2">Pièges et dangers aléatoires des donjons</option>
+        <option value="3">Retournement de situation aléatoire pour les petites villes et villages</option>
+        <option value="4">Quêtes aléatoires confiées à un groupe se défendant lors d'un siège</option>
+        <option value="5">Dés pour les donjons</option>
+        <option value="6">Dés pour les marais</option>
+        <option value="7">Découpage en dés pour les forêts</option>
+        <option value="8">Possessions aléatoires</option>
+        <option value="9">Contrat aléatoire</option>
+        <option value="10">Histoire de vie de PNJ aléatoire (version basique)</option>
+         <option value="11">Histoire de vie de PNJ aléatoire (version avancée)</option>
+        <option value="12">Histoire de vie de sorceleur aléatoire</option>
+	      <option value="13">Rencontres en milieu sauvage sans combat</option>
+	      <option value="14">Rencontres en villes sans combat</option>
+	      <option value="15">Rencontres sans combat lors d'un voyage entre des villes / villages / villes</option>
+	      <option value="16">Rencontres sans combat pour une petite ville ou un village</option>
+	      <option value="17">Obstacles non liés au combat à rencontrer en voyage</option>
+      </select>
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-primary btn-lg" onclick="RandomTable()">Générer</button>
+      </div>
+    </div>
+    <div id="aff_random_result" style="margin-right:10%;margin-left:10%"></div>
+  </div>
+
+
+	<br>
+  <div style="text-align: center;">
+	<h1>Coffre aléatoire</h1>
+	<br>
+	<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCHEST" onclick="coffre_aff()">
+  Modifier le taux de chute
+</button>
+	<br>Based on the original creation of <a href="https://docs.google.com/document/d/1rBjRb_cEqFxrlLNzr8Qyp2x3J-Pxw8wcLvjGgVc9L6A/edit">Super Godzilla</a>
+
+
+<!-- Modal -->
+<div class="modal fade" id="ModalCHEST" tabindex="-1" role="dialog" aria-labelledby="ModalCHESTLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalCHESTLabel">Drop Rate</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex justify-content-around"><span id="CHEST_C_aff">Couronnes Max: </span>			<input type="text" style="width:100px" id="CHEST_C"></div>
+        <div class="d-flex justify-content-around"><span id="CHEST_G_aff">Équipement: </span>			<input type="text" style="width:50px" id="CHEST_G">%</div>
+        <div class="d-flex justify-content-around"><span id="CHEST_W_aff">Arme: </span>			<input type="text" style="width:50px" id="CHEST_W">%</div>
+        <div class="d-flex justify-content-around"><span id="CHEST_A_aff">Armure: </span>			<input type="text" style="width:50px" id="CHEST_A">%</div>
+        <div class="d-flex justify-content-around"><span id="CHEST_D_aff">Diagramme: </span>		<input type="text" style="width:50px" id="CHEST_D">%</div>
+        <div class="d-flex justify-content-around"><span id="CHEST_F_aff">Formule: </span>		<input type="text" style="width:50px" id="CHEST_F">%</div>
+        <div class="d-flex justify-content-around"><span id="CHEST_Al_aff">Alchemie: </span>		<input type="text" style="width:50px" id="CHEST_Al">%</div>
+        <div class="d-flex justify-content-around"><span id="CHEST_Gl_aff">Glyphe: </span>			<input type="text" style="width:50px" id="CHEST_Gl">%</div>
+        <div class="d-flex justify-content-around"><span id="CHEST_R_aff">Rune: </span>			<input type="text" style="width:50px" id="CHEST_R">%</div>
+        <div class="d-flex justify-content-around"><span id="CHEST_EFW_aff">Arme Ancienne: </span>	<input type="text" style="width:50px" id="CHEST_EFW">%</div>
+        <div class="d-flex justify-content-around"><span id="CHEST_EFA_aff">Armure Ancienne: </span>		<input type="text" style="width:50px" id="CHEST_EFA">%</div>
+        <div class="d-flex justify-content-around"><span id="CHEST_Re_aff">Relique: </span>			<input type="text" style="width:50px" id="CHEST_Re">‰</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Sauvegarder</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="d-flex justify-content-center">
+	  <button type="button" class="btn btn-primary btn-lg" onclick="coffre()">Générer</button>
+  </div>
+  <br>
+  <div id="résultat_aff11" style="margin-right:10%;margin-left:10%"></div>
+
+  <br>
+  <div style="text-align: center;">
+	<h1>Rencontre modulaire aléatoire</h1>
+	<br>
+	<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalRE" onclick="ModularRE_aff()">
+  Modifier les taux
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="ModalRE" tabindex="-1" role="dialog" aria-labelledby="ModalRELabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalRELabel">Modifier les taux</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="ici"></div>
+        <span id="ModularRE_Memo" style="display: none;"></span>
+        <div id="slider-range"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Sauvegarder</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="d-flex justify-content-center">
+	  <button type="button" class="btn btn-primary btn-lg" onclick="ModularRE()">Générer</button>
+  </div>
+  <br>
+  <div id="résultat_aff12" style="margin-right:10%;margin-left:10%"></div>
