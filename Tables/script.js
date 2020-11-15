@@ -621,6 +621,8 @@ function ModularRE_aff(){
 			var B = Math.abs(Number(100-C-A));			
 		}
 	}
+	console.log('A:'+A+'<br>B:'+B+'<br>C:'+C);
+	console.log($("#slider-range").slider());
 	if(langue == "1"){document.getElementById('ici').innerHTML = "Good: "+A+"%<br>Neutral: "+B+"%<br>Bad: "+C+"%";}
 	else{document.getElementById('ici').innerHTML = "Bon: "+A+"%<br>Neutre: "+B+"%<br>Mauvais: "+C+"%";}
 }
