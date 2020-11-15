@@ -129,12 +129,7 @@ Partout / ChampsDeBataille / Cimetière / Ruines / Grottes / Marin / Egouts /Mon
 
 <script>
 $(document).ready(function(){
-	console.log('Ready');
 	a();
-	$.getJSON('rencontre.json', function(jd) {
-		JSON_Bestiaire = jd;
-	});
-	console.log(JSON_Bestiaire);
   $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $("tbody tr").filter(function() {

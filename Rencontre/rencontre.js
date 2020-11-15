@@ -1,4 +1,4 @@
-{
+var Rencontre = {
 	"Humain": [
 		{
 		  "Nom": "ARCHERS SCOIA’TAEL",
