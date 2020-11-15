@@ -21,32 +21,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">  
   </head>
   <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="../index.html">Random Table</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
-        <a class="nav-link" href="randomM.html">Monster</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="table.html">Table</a>
-      </li>
-	  <li class="nav-item active">
-        <a class="nav-link" href="">Combat</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="map.html">Map</a>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link" href="https://macnaab.github.io/Easy-Battlemap-Creator/index_en.html">Battlemap Creator</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+	<div id="la-nav-bar"></div>
 <br>
 
 <div id="tableau_1" class="tableau">
@@ -512,6 +487,10 @@
 </div>
 	</div>
 </div>
-
   </body>
+<script>
+$(document).ready(function(){
+	$('#la-nav-bar').load("nav.htm");
+});
+</script>
 </html>
