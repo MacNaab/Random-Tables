@@ -1285,7 +1285,6 @@
 		  "Taille": "Taille humaine",
 		  "Poids": "Intangible",
 					"Environnement": ["Ville"],
-		  "Environnement": "Zones urbaines, ou touchées par la peste",
 		  "Intelligence": "Consumé par l’amertume ou la colère",
 		  "Organisation": "Solitaire",
 		  "Note": ""
