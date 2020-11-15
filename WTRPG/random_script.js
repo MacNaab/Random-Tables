@@ -79,6 +79,8 @@ $.getJSON('rencontre.json', function(jd) {
 		});
 		$('#Aff_Table').append('<tr><th scope="row">'+e.Nom+'</th><td>'+e.Type+'</td><td>'+e.Menace+'</td><td>'+e.Récompense+'</td><td>'+e.Environnement+'</td><td>'+e.Organisation+'</td><td>'+e.Intelligence+'</td><td>'+e.Taille+'</td><td>'+e.Poids+'</td></th>');
 	});
+	console.log(Humain);
+	console.log(Monstre);
 });
 
 function OP(){
@@ -98,19 +100,19 @@ var CheckInvocation = document.getElementById('Check Invocation');
 var CheckUrbain = document.getElementById('Check Urbain');
   
   var DataB = Monstre.Partout;
-  if(CheckChampsDeBataille.checked == true){DataB = DataB.concat(ChampsDeBataille);}
-  if(CheckCimetière.checked == true){DataB = DataB.concat(Cimetière);}
-  if(CheckRuines.checked == true){DataB = DataB.concat(Ruines);}
-  if(CheckGrottes.checked == true){DataB = DataB.concat(Grottes);}
-  if(CheckMarin.checked == true){DataB = DataB.concat(Marin);}
-  if(CheckEgouts.checked == true){DataB = DataB.concat(Egouts);}
-  if(CheckMontagnes.checked == true){DataB = DataB.concat(Montagnes);}
-  if(CheckForêts.checked == true){DataB = DataB.concat(Forêts);}
-  if(CheckPlaines.checked == true){DataB = DataB.concat(Plaines);}
-  if(CheckDéserts.checked == true){DataB = DataB.concat(Déserts);}
-  if(CheckMarécages.checked == true){DataB = DataB.concat(Marécages);}
-  if(CheckInvocation.checked == true){DataB = DataB.concat(Invocation);}
-  if(CheckUrbain.checked == true){DataB = DataB.concat(Urbain);}
+  if(CheckChampsDeBataille.checked == true){DataB = DataB.concat(Monstre.ChampsDeBataille);}
+  if(CheckCimetière.checked == true){DataB = DataB.concat(Monstre.Cimetière);}
+  if(CheckRuines.checked == true){DataB = DataB.concat(Monstre.Ruines);}
+  if(CheckGrottes.checked == true){DataB = DataB.concat(Monstre.Grottes);}
+  if(CheckMarin.checked == true){DataB = DataB.concat(Monstre.Marin);}
+  if(CheckEgouts.checked == true){DataB = DataB.concat(Monstre.Egouts);}
+  if(CheckMontagnes.checked == true){DataB = DataB.concat(Monstre.Montagnes);}
+  if(CheckForêts.checked == true){DataB = DataB.concat(Monstre.Forêts);}
+  if(CheckPlaines.checked == true){DataB = DataB.concat(Monstre.Plaines);}
+  if(CheckDéserts.checked == true){DataB = DataB.concat(Monstre.Déserts);}
+  if(CheckMarécages.checked == true){DataB = DataB.concat(Monstre.Marécages);}
+  if(CheckInvocation.checked == true){DataB = DataB.concat(Monstre.Invocation);}
+  if(CheckUrbain.checked == true){DataB = DataB.concat(Monstre.Urbain);}
 
   if(CheckPartout.checked == true){DataB = DataB.concat(ChampsDeBataille, Cimetière, Ruines, Grottes, Marin, Egouts, Montagnes, Forêts, Plaines, Déserts, Marécages, Invocation, Urbain);}
 
