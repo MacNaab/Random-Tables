@@ -89,6 +89,9 @@ function a(){
 	$.getJSON('rencontre.json', function(jd) {
 		alert('AA');
 	});
+	$.getJSON( "ajax/rencontre.json", function( data ) {
+		console.log('alpha');
+	});
 }
 
 function OP(){
