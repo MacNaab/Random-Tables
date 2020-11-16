@@ -491,7 +491,41 @@ function coffre(){
 		var EF_ArmorList = ["Halfling Protective Doublet","Gnomish Chain","Scoia’tael Armor","Gnomish Dragoon","Mahakaman","Gnomish Buckler","Elven Shield","Mahakaman Pavise"];
 		var RelicList = ["Relic"];
 	}else{
-		var GearList = ["Sac de couchage","Bougies (x5)","Craie","Tableau de poker de dés","Silex et acier","Grappin","Gwent","Miroir à main","Symbole sacré","Sablier","Sablier, minute","Instrument","Journal / grand livre","Lanterne","Lanterne, Bullseye","Dés chargés","Fermer à clé","Serrure, forte","Fers","Carte du continent","Parfum / Cologne","Tuyau","Pitons (x5)","Prothétique, basique","Prothèse, qualité","Corde, 20m","Chaînes","Savon","Bâche","Tente","Tente, grande","le tabac","Torche","Gourde","Vêtements basiques","Vêtements pour temps froid","Vêtements à la mode","Bijoux","Vêtements de voleur","Bonbons","Rations de survie (1 jour)","Alcool","Bière","Spiritueux (alcool)","Vin","Ensemble d'alchimie","Amulette, pierre précieuse","Amulette, simple","Outils de cuisson","Outils d'artisanat","Kit de déguisement","Outils de beaux-arts","Matériel de pêche","Kit de falsification","Kit de maquillage","Outils du marchand","Kit de chirurgien","Télécommunicateur","Outils des voleurs","Tinker’s Forge","Kit d'écriture"];
+		var GearList = [];
+		var WeaponList = [];
+		var ArmorList = [];
+		var DiagramList = [];
+		var FormulaList = [];
+		var AlchemyList = [];
+		var EF_WeaponList = [];
+		var EF_ArmorList = [];
+		
+		var GlyphList = ["Glyphe de magie","Glyphe d'air","Glyphe de terre","Glyphe de feu","Glyphe d'eau"];
+		var RuneList = ["Chemobog","Dazhbog","Devanna","Morana","Perun","Stribog","Svarog","Triglav","Veles","Zoria"];
+		var RelicList = ["Relique"];
+		try {
+		  $.getJSON('Fiche/dtb/item.json', function(jd) {
+			jd.Item.forEach(function(e){GearList.push(e.Nom);});
+			jd.Arme.forEach(function(e){
+				if(e.Race == 'Humain'){WeaponList.push(e.Nom);}
+				else{EF_WeaponList.push(e.Nom);}
+			});
+			jd.Armure.forEach(function(e){
+				if(e.Race == 'Humain'){WeaponList.push(e.Nom);}
+				else{EF_WeaponList.push(e.Nom);}
+			});
+			jd.Potion.forEach(function(e){AlchemyList.push(e.Nom);});
+			jd.Formule.forEach(function(e){FormulaList.push(e.Nom);});
+			jd.Schéma.forEach(function(e){DiagramList.push(e.Nom);});
+			jd.Composants.forEach(function(e){GearList.push(e.Nom);});
+		  });
+		} catch (error) {
+		  console.error(error);
+		  // expected output: ReferenceError: nonExistentFunction is not defined
+		  // Note - error messages will vary depending on browser
+		}
+/*		
+		var GearList = ["Sac de couchage","Bougies (x5)","Craie","Tableau de poker de dés","Silex et acier","Grappin","Gwent","Miroir de poche","Symbole sacré","Sablier","Sablier, minute","Instrument","Journal / grand livre","Lanterne","Lanterne, Bullseye","Dés chargés","Fermer à clé","Serrure, forte","Fers","Carte du continent","Parfum / Cologne","Tuyau","Pitons (x5)","Prothétique, basique","Prothèse, qualité","Corde, 20m","Chaînes","Savon","Bâche","Tente","Tente, grande","le tabac","Torche","Gourde","Vêtements basiques","Vêtements pour temps froid","Vêtements à la mode","Bijoux","Vêtements de voleur","Bonbons","Rations de survie (1 jour)","Alcool","Bière","Spiritueux (alcool)","Vin","Ensemble d'alchimie","Amulette, pierre précieuse","Amulette, simple","Outils de cuisson","Outils d'artisanat","Kit de déguisement","Outils de beaux-arts","Matériel de pêche","Kit de falsification","Kit de maquillage","Outils du marchand","Kit de chirurgien","Télécommunicateur","Outils des voleurs","Tinker’s Forge","Kit d'écriture"];
 		var WeaponList = ["Iron Long Sword","Arming Sword","Gleddyf","Hunter’s Falchion","Krigsverd","Esboda","Kord","Vicovarian Blade","Torrwr","Dagger","Stiletto","Poniard","Jambiya","Hand Axe","Battle Axe","Berserker’s Axe","Brass Knuckles","Mace","Highland Mauler","Spear","Pole Axe","Red Halberd","Staff","Hooked Staff","Iron Staff","Crystal Staff","Throwing Knife","Throwing Axe","Orion","Short Bow","Long Bow","War Bow","Hand Crossbow","Crossbow","Monster Hunter’s Crossbow"];
 		var ArmorList = ["Verden Archer’s Hood","Double Woven Hood","Spectacled Helm","Chain Coif","Armored Hood","Temerian Armet","Great Helm","Skellige Helm","Nilfgaardian Helm","Gambeson","Aedirnian Gambeson","Double Woven Gambeson","Brigandine","Redanian Halberdier’s Armor","Lyrian Leather Jacket","Plate Armor","Hindarsfjall Heavy Armor","Nilfgaardian Plate Armor","Cavalry Trousers","Padded Trousers","Double Woven Trousers","Armored Trousers","Redanian Greaves","Lyrian Leather Trousers","Plate Greaves","Hindarsfjall Heavy Chausses","Nilfgaardian Greaves","Leather Shield","Steel Buckler","Temerian Shield","Skellige Raider Shield","Kaedweni Shield","Steel Kite Shield","Pavise","Nilfgaardian Pavise"];
 		var DiagramList = ["Lin tissé double","Cuir durci","Bois durci","Cuir","Lin","Fil","Acier noir","Cuir Lyrian","Acier","Acier Tretogor","Diméritium","Cuir draconide","Diméritium de Mahakaman ","Acier de Mahakaman","Munitions: contondantes x5","Munitions: Standard x30","Armer l'épée","Bâton de matraque","Blunt Maul","Poing américain","Dague","Gleddyf","Hache à main","Fauchion du chasseur","Épée longue de fer","Orions x3","Arc traditionnel","Arc court","Lance","Haches de lancer x3","Couteaux à lancer x3","Hache de bûcheron","Munitions: Bodkin x10","Munitions: tête large x10","Hache de guerre","Arbalète","Esboda","Glaive","Arbalète à main","Bâton crochu","Krigsverd","Arc long","Masse","Hache de poteau","Poignard","Masse redanienne","Personnel","Stylet","Hache coulissante temerienne","Hache du berserker","Bâton de cristal","Masse du montagnard","Bâton de fer","Jambiya","Kord","Arbalète de chasseur de monstre","Hallebarde","Arbalète lourde","Torrwr","Lame vicovarienne","Arc de guerre","Gambison édirnien","Pantalons de cavalerie","Gambison tissé double","Capuche tissée double","Pantalon tissé double","Gambeson","Bouclier en cuir","Pantalon rembourré","Heaume à lunettes","Buckler en acier","Bouclier temerien","Capuche de Verden Archer","Capuche blindée","Pantalons blindés","Brigandine","Chaîne Coif","Heaume entrelacé","Interwoven Gambeson","Pantalon entrelacé","Bouclier Kaedweni","Veste en cuir Lyrian","Pantalon en cuir Lyrian","Grèves redaniennes","Armure de hallebardier redanien","Bouclier Skellige Raider","Bouclier de cerf-volant en acier","Armet temerien","Capuche fine en mailles","Chemise Fine Mail","Pantalon en fine maille","Grand heaume","Armure lourde Hindersfjall","Chausses lourdes Hindersfjall","Casquette de combat Koviri","Armure de combat Koviri","Grèves de combat Koviri","Grèves nilfgaardiennes","Heaume nilfgaardien","Pavise nilfgaardien","Armure de plaques nilfgaardienne","Pavise","Grèves en plaques","Armure de plaques","Heaume Skellige"];
@@ -502,6 +536,7 @@ function coffre(){
 		var EF_WeaponList = ["Elven Messer","Vrihedd Cavalry Sword","Meteorite Sword","Gnomish Gwyhyr","Tir Tochair Blade","Halfling Rondel","Dwarven Cleaver","Dwarven Axe","Gnomish Black Axe","Mahakaman Martell","Meteorite Chain Mace","Dwarven Pole Hammer","Elven Glaive","Gnomish Staff","Elven Walking Staff","Elven Travel Bow","Elven Zefhar","Gnomish Hand Crossbow","Dwarven Heavy Crossbow","Elven Burrower","Dwarven Impact"];
 		var EF_ArmorList = ["Halfling Protective Doublet","Gnomish Chain","Scoia’tael Armor","Gnomish Dragoon","Mahakaman","Gnomish Buckler","Elven Shield","Mahakaman Pavise"];
 		var RelicList = ["Relique"];
+*/
 	}
 
 var Crown = document.getElementById('CHEST_C').value;
