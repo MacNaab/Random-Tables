@@ -538,7 +538,7 @@ function coffre(){
 		var EF_ArmorList = ["Halfling Protective Doublet","Gnomish Chain","Scoia’tael Armor","Gnomish Dragoon","Mahakaman","Gnomish Buckler","Elven Shield","Mahakaman Pavise"];
 		var RelicList = ["Relique"];
 */
-		console.log(GearList);
+		console.log(GearList.length);
 	}
 
 var Crown = document.getElementById('CHEST_C').value;
@@ -593,12 +593,18 @@ if(Relic == ""){var Relic = 1;}
 	}else{var El1 = Rand0+" couronnes<br>";}
 if(Rand1 < Gear){
 	var Rand1x = Math.floor(Math.random() * Math.floor(GearList.length));	// Gear	
+		console.log(Rand1x);
+		console.log(GearList[Rand1x]);
 	var El1 = El1+GearList[Rand1x]+"<br>";}
 if(Rand12 < Gear){
 	var Rand1x = Math.floor(Math.random() * Math.floor(GearList.length));	// Gear	
+		console.log(Rand1x);
+		console.log(GearList[Rand1x]);
 	var El1 = El1+GearList[Rand1x]+"<br>";}
 if(Rand13 < Gear){
 	var Rand1x = Math.floor(Math.random() * Math.floor(GearList.length));	// Gear	
+		console.log(Rand1x);
+		console.log(GearList[Rand1x]);
 	var El1 = El1+GearList[Rand1x]+"<br>";}
 if(Rand2 < Weapon){
 	var Rand2x = Math.floor(Math.random() * Math.floor(WeaponList.length));	// Gear	
