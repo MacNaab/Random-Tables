@@ -246,6 +246,7 @@ Haut | `top: 5px;`
 Bas | `bottom: 5px;`
 Gauche | `left: 5px;`
 Droite | `right: 5px;`
+
 Par exemple je souhaite que mon image soit à 15 pixels du haut de la page et à 35 pixels sur la gauche:
 ``` HTML
 <img style="position:absolute;top:15px;left:35px;" src='mon_image.png'>
