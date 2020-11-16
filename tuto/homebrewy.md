@@ -11,7 +11,7 @@ Homebrewery naturalcrit est un editeur de texte en ligne permettant de créer du
     + [Backgound image](#Backgound-image)
     + [Page number](#Page-number)
     + [Auto-incrementing page number](#Auto-incrementing-page-number)
-    + [Image](#Link-to-page)
+    + [Link to page](#Link-to-page)
     + [Table of contents](#Table-of-contents)
   * [PHB](#PHB)
   * [Tables](#Tables)
@@ -19,11 +19,18 @@ Homebrewery naturalcrit est un editeur de texte en ligne permettant de créer du
     + [A4 pagesize](#A4-pagesize)
     + [Ink friendly](#Ink-friendly)
 - [Syntaxe de mise en forme](#syntaxe-de-mise-en-forme)
+  * [Titres](#Titres)
+  * [Style de police](#Style-de-police)
+  * [Tableau](#Tableau)
+  * [Lien](#Lien)
 - [Syntaxe avancée](#syntaxe-avancée)
-
-- [Fiche](#Fiche)
-  * [template_min.json](#template_minjson)
-    + [Nom](#Nom)
+  * [HTML](#HTML)
+  * [Style](#Style)
+    + [Image](#Image)
+    + [Image](#Image)
+    + [Image](#Image)
+    + [Image](#Image)
+    + [Image](#Image)
     
 ### Interface
 #### Editor
@@ -210,3 +217,53 @@ A gauche | Centré |  A droite
 [texte](lien)
 ```
 Vous pouvez créer un lien intégré en enveloppant le texte du lien entre `[ ]`, puis en enveloppant l'URL entre `( )`.
+
+### Syntaxe avancée
+Vous pouvez faire ce que vous voulez en utiliser les bases de html et css. N'hésitez pas à regarder les tutoriels de [mozilla](https://developer.mozilla.org/fr/docs/Web/CSS).
+Toutefois, si vous n'êtes pas web-developpeur je vais expliquer quelques bases de css pour améliorer votre mise en forme.
+#### HTML
+Pour moduler notre mise en page, on aura besoin d'un élément `<div>`, l'élément de division du contenu. Lorsque vous ouvrez une div, vous devez également la fermer avec `</div>`
+``` HTML
+<div>
+ texte dans la div
+</div>
+```
+A cette div, vous pouvez appliquer du style CSS (Feuilles de style en cascade) comprenant différentes valeurs que seront détaillé dans la section suivante. Pour appliquer du style il suffi de rajouter `style=" "` dans votre div.
+``` HTML
+<div style=" ">
+ texte dans la div
+</div>
+```
+Note: vous pouvez également mettre du style à tout autre élément HTML (comme `<img>` par exemple)
+#### Style
+##### position
+La propriété position définit la façon dont un élément est positionné dans un document. Les propriétés top, right, bottom et left déterminent l'emplacement final de l'élément positionné.
+> Source: [Mozilla](https://developer.mozilla.org/fr/docs/Web/CSS/position)
+Ici seule la position absolue nous intéresse, celle-ci va permettre de déplacer librement notre div (ou tout autre élément HTML). On peut ainsi choisir à quelle distance du haut ou bas de page elle se situe tout comme à gauche ou à droite.
+Position | Syntaxe
+--- | --- 
+Haut | `top: 5px;`
+Bas | `bottom: 5px;`
+Gauche | `left: 5px;`
+Droite | `right: 5px;`
+Par exemple je souhaite que mon image soit à 15 pixels du haut de la page et à 35 pixels sur la gauche:
+``` HTML
+<img style="position:absolute;top:15px;left:35px;" src='mon_image.png'>
+```
+##### text-align
+La propriété text-align définit l'alignement horizontal d'un élément de bloc ou de la boîte d'une cellule de tableau. Cette propriété fonctionne donc de façon analogue à vertical-align mais dans le sens horizontal.
+> Source: [Mozilla](https://developer.mozilla.org/fr/docs/Web/CSS/text-align)
+Alignement | Syntaxe
+--- | --- 
+A gauche | `text-align: left;`
+A droite | `text-align: right;`
+Centré | `text-align: center;`
+Justifier | `text-align: justify;`
+``` HTML
+<div style="text-align: justify;">
+ Ce texte dans la div prendra l'alignement "justifier".
+</div>
+```
+##### width
+La propriété width permet de définir la largeur de la boîte du contenu d'un élément. Par défaut, sa valeur est auto, c'est à dire la largeur automatiquement calculée de son contenu. Si box-sizing vaut border-box, la valeur appliquée incluera les dimensions de la boîte d'encadrement (border) et de la boîte de remplissage (padding).
+> Source: [Mozilla](https://developer.mozilla.org/fr/docs/Web/CSS/text-align)
