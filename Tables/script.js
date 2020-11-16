@@ -505,6 +505,7 @@ function coffre(){
 		var RelicList = ["Relique"];
 		try {
 		  $.getJSON('Fiche/dtb/item.json', function(jd) {
+			  console.log('DATABASE OPERATION')
 			jd.Item.forEach(function(e){GearList.push(e.Nom);});
 			jd.Arme.forEach(function(e){
 				if(e.Race == 'Humain'){WeaponList.push(e.Nom);}
@@ -537,6 +538,7 @@ function coffre(){
 		var EF_ArmorList = ["Halfling Protective Doublet","Gnomish Chain","Scoia’tael Armor","Gnomish Dragoon","Mahakaman","Gnomish Buckler","Elven Shield","Mahakaman Pavise"];
 		var RelicList = ["Relique"];
 */
+		console.log(GearList);
 	}
 
 var Crown = document.getElementById('CHEST_C').value;
