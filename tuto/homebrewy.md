@@ -26,11 +26,9 @@ Homebrewery naturalcrit est un editeur de texte en ligne permettant de créer du
 - [Syntaxe avancée](#syntaxe-avancée)
   * [HTML](#HTML)
   * [Style](#Style)
-    + [Image](#Image)
-    + [Image](#Image)
-    + [Image](#Image)
-    + [Image](#Image)
-    + [Image](#Image)
+    + [position](#position)
+    + [text-align](#text-align)
+    + [width](#width)
     
 ### Interface
 #### Editor
@@ -239,7 +237,9 @@ Note: vous pouvez également mettre du style à tout autre élément HTML (comme
 ##### position
 La propriété position définit la façon dont un élément est positionné dans un document. Les propriétés top, right, bottom et left déterminent l'emplacement final de l'élément positionné.
 > Source: [Mozilla](https://developer.mozilla.org/fr/docs/Web/CSS/position)
+
 Ici seule la position absolue nous intéresse, celle-ci va permettre de déplacer librement notre div (ou tout autre élément HTML). On peut ainsi choisir à quelle distance du haut ou bas de page elle se situe tout comme à gauche ou à droite.
+
 Position | Syntaxe
 --- | --- 
 Haut | `top: 5px;`
@@ -253,6 +253,7 @@ Par exemple je souhaite que mon image soit à 15 pixels du haut de la page et à
 ##### text-align
 La propriété text-align définit l'alignement horizontal d'un élément de bloc ou de la boîte d'une cellule de tableau. Cette propriété fonctionne donc de façon analogue à vertical-align mais dans le sens horizontal.
 > Source: [Mozilla](https://developer.mozilla.org/fr/docs/Web/CSS/text-align)
+
 Alignement | Syntaxe
 --- | --- 
 A gauche | `text-align: left;`
