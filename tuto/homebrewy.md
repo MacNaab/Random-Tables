@@ -269,3 +269,35 @@ Justifier | `text-align: justify;`
 ##### width
 La propriété width permet de définir la largeur de la boîte du contenu d'un élément. Par défaut, sa valeur est auto, c'est à dire la largeur automatiquement calculée de son contenu. Si box-sizing vaut border-box, la valeur appliquée incluera les dimensions de la boîte d'encadrement (border) et de la boîte de remplissage (padding).
 > Source: [Mozilla](https://developer.mozilla.org/fr/docs/Web/CSS/text-align)
+
+#### Template
+Un template totalement volé:
+``` HTML
+<img 
+  src='https://www.gmbinder.com/images/crqzfyp.png'
+  style='position:absolute;top: -115px;right:-45px; height:70%; transform:scaleX(1)' />
+<img 
+  src='https://www.gmbinder.com/images/h5HdqeC.png' 
+  style='position:absolute;top:470px;right:20px;width:130px;transform:rotate(90deg)' />  
+<img 
+  src='https://www.gmbinder.com/images/h5HdqeC.png' 
+  style='position:absolute;top:475px;right:105px;width:140px;transform:rotate(10deg)' />  
+<img 
+  src='https://www.gmbinder.com/images/h5HdqeC.png' 
+  style='position:absolute;top:-55px ;right:415px;width:190px;transform:rotate(-100deg)' />  
+<img 
+  src='https://www.gmbinder.com/images/h5HdqeC.png' 
+  style='position:absolute;top:505px ;right:-30px;width:150px;transform:rotate(150deg)' />  
+<img 
+  src='https://www.gmbinder.com/images/h5HdqeC.png' 
+  style='position:absolute;top:500px;right:20px; width:100px;height:100px;' /> 
+<img 
+  src='https://www.gmbinder.com/images/h5HdqeC.png' 
+  style='position:absolute;top:-15px;right:410px; width:90px;height:170px;transform:rotate(0deg)' />
+<img 
+  src='https://www.gmbinder.com/images/h5HdqeC.png' 
+  style='position:absolute;top:-25px;right:410px; width:85px;height:130px;' />  
+<img 
+  src='https://www.gmbinder.com/images/60YwJDt.png' 
+  style='position:absolute;top:0px;left:0px;width:110%; height:129%' />
+```
