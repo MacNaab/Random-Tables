@@ -1,11 +1,25 @@
-# Comment utiliser homebrewery.naturalcrit
+# Comment utiliser [homebrewery.naturalcrit](https://homebrewery.naturalcrit.com/)
 Homebrewery naturalcrit est un editeur de texte en ligne permettant de créer du contenu dans le style dnd 5e édition.
 ## Sommaire
 - [Interface](#Interface)
   * [Editor](#Editor)
+    + [Colomn break](#colomn-break)
+    + [New page](#New-page)
+    + [Vertical spacing](#Vertical-spacing)
+    + [Wide block](#Wide-block)
+    + [Image](#Image)
+    + [Backgound image](#Backgound-image)
+    + [Page number](#Page-number)
+    + [Auto-incrementing page number](#Auto-incrementing-page-number)
+    + [Image](#Link-to-page)
+    + [Table of contents](#Table-of-contents)
   * [PHB](#PHB)
   * [Tables](#Tables)
   * [Print](#Print)
+    + [A4 pagesize](#A4-pagesize)
+    + [Ink friendly](#Ink-friendly)
+- [Syntaxe de mise en forme](#syntaxe-de-mise-en-forme)
+- [Syntaxe avancée](#syntaxe-avancée)
 
 - [Fiche](#Fiche)
   * [template_min.json](#template_minjson)
@@ -78,7 +92,10 @@ Crée une mise en page d'une liste de sorts pour dnd 5e génération.
 ##### Table
 Crée une mise en page des caractéristiques de classe pour dnd 5e génération.
 ##### Note
-Crée une mise en page de note.
+```
+>
+```
+Crée une mise en page de note. Il est possible de mettre une note dans une note.
 ##### Descriptive text box
 Crée une mise en page de description.
 ##### Note
@@ -162,3 +179,34 @@ Permet de rendre les pages en format A4. Je recommande de l'utiliser au début d
 </style>
 ```
 Rends le document compatible avec l'impression. (retire les images et les couleurs)
+
+### Syntaxe de mise en forme
+La [documentation complète](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax) est disponible en anglais. Je vais ici parler de celles que je juge le plus important.
+#### Titres
+Pour créer un titre, ajoutez un à six symboles `#` avant le texte de votre titre. Le nombre de # que vous utilisez déterminera la taille et le style du titre.
+#### Style de police
+Style | Syntaxe 
+----- | -------
+**Gras**  | `**texte**`
+*Italique* | `*texte*`
+**Gras et _italique imbriqué_** | `**texte _italique_ texte**`
+***Gras et Italique*** | `***texte***`
+<ins>Souligné</ins> | `<u>texte</u>`
+~~Barré~~ | `~~texte~~`
+#### Tableau
+```
+Titre 1 | Titre 2 |  Titre 3
+:--- | :---: | ---:
+Cellule 1 | Cellule 2 | Cellule 3
+Première colonne | 2e Colonne | 3e Colonne
+```
+Vous pouvez utiliser les pré-construits de la rubrique [Tables](#Tables) ou crée votre tableau vous même comme ci dessus.
+Pour choisir le type d'alignement d'une colonne, modifier la 2e ligne par les valeurs ci-dessous
+A gauche | Centré |  A droite
+:--- | :---: | ---:
+`:---` | `:---:` | `---:`
+#### Lien
+```
+[texte](lien)
+```
+Vous pouvez créer un lien intégré en enveloppant le texte du lien entre `[ ]`, puis en enveloppant l'URL entre `( )`.
