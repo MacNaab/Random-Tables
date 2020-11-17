@@ -181,12 +181,14 @@ Permet de rendre les pages en format A4. Je recommande de l'utiliser au début d
 ##### Ink friendly
 ``` HTML
 <style>
-  .phb{ background : white;}
-  .phb img{ display : none;}
+  .phb{background : white;}
+  .phb img{display : none;}
   .phb hr+blockquote{background : white;}
 </style>
 ```
-Rends le document compatible avec l'impression. (retire les images et les couleurs)
+Rends le document compatible avec l'impression:
+- `.phb{background: white;}` et `.phb hr+blockquote{background: white;}` rendent le fond blanc
+- `.phb img{display: none;}` retire l'affichage des images
 
 ### Syntaxe de mise en forme
 La [documentation complète](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax) est disponible en anglais. Je vais ici parler de celles que je juge le plus important.
