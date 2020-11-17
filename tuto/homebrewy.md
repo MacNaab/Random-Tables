@@ -29,6 +29,9 @@ Homebrewery naturalcrit est un editeur de texte en ligne permettant de créer du
     + [position](#position)
     + [text-align](#text-align)
     + [width](#width)
+    + [Template](#Template)
+- [Exportation](#Exportation)
+
     
 ### Interface
 #### Editor
@@ -92,9 +95,9 @@ Permet de crée automatiquement une table des matières renvoyant aux différent
 #### PHB
 ##### Spell
 Crée une mise en page de sort pour dnd 5e génération.
-##### Table
+##### Spell list
 Crée une mise en page d'une liste de sorts pour dnd 5e génération.
-##### Table
+##### Class feature
 Crée une mise en page des caractéristiques de classe pour dnd 5e génération.
 ##### Note
 ```
@@ -103,9 +106,9 @@ Crée une mise en page des caractéristiques de classe pour dnd 5e génération.
 Crée une mise en page de note. Il est possible de mettre une note dans une note.
 ##### Descriptive text box
 Crée une mise en page de description.
-##### Note
+##### Monster stat block
 Crée une mise en page de monstre pour dnd 5e génération.
-##### Note
+##### Wide monster stat block
 Crée une mise en page des statistiques de monstre pour dnd 5e génération.
 ##### Cover page
 Crée une page de couverture.
@@ -301,3 +304,9 @@ Un template totalement volé:
   src='https://www.gmbinder.com/images/60YwJDt.png' 
   style='position:absolute;top:0px;left:0px;width:110%; height:129%' />
 ```
+### Exportation
+Avant d'exporter votre document en pdf, pensez à le mettre en [format A4](#A4-pagesize).
+- Cliquez sur "GET PDF"
+- Destination: Enregistrer au format pdf
+A noter que dans certaines situation, vous aurez à modifier les marges (plus de paramètres, marges).
+- Enregistrer
