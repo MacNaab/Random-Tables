@@ -309,6 +309,7 @@ Un template totalement volé:
 ### Exportation
 Avant d'exporter votre document en pdf, pensez à le mettre en [format A4](#A4-pagesize).
 - Cliquez sur "GET PDF"
-- Destination: Enregistrer au format pdf  
-A noter que dans certaines situation, vous aurez à modifier les marges (plus de paramètres, marges).
+- Destination: Enregistrer au format pdf
+  - Pensez à mettre votre papier en format A4 (Plus de paramètres, Taille du papier)  
+A noter que dans certaines situation, vous aurez à modifier les marges (Plus de paramètres, Marges).
 - Enregistrer
