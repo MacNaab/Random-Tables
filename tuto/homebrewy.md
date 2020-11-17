@@ -276,6 +276,55 @@ La propriété width permet de définir la largeur de la boîte du contenu d'un 
 > Source: [Mozilla](https://developer.mozilla.org/fr/docs/Web/CSS/text-align)
 
 #### Template
+Un template de créature:
+``` HTML
+___
+___
+> ## Nom
+>*Small cutie, chaotic gossipy*
+> ___
+> - **Menace** 14
+> - **Récompense** 44(1d4 + 5)
+> - **Armure** 50ft.
+>___
+> ### Caractéristiques
+>|INT|DEX|DEX|COR|VIT|EMP|TEC|VOL|CHA
+>|:---:|:---:|:---:|:---:|:---:|:---:|:--:|:--:|:--:
+>|1|2|3|4|5|6|7|8|9|
+>|**ETOU**|**COU**|**SAUT**|**END**|**ENC**|**REC**|**PS**|**VIG**
+>|1|2|3|4|5|6|7|8|
+>___
+> ### Compétences
+> - **Condition Immunities** groovy, groggy, weak-kneed
+> - **Senses** passive Perception 17
+> - **Languages** Common
+> - **Challenge** 7 (5708 XP)
+> ___
+> ### Butins
+> 
+>
+> ### Vulnérabilités
+> ***Atomic Death Throw.*** *Melee Weapon Attack:* +4 to hit, reach 5ft., one target. *Hit* 5 (1d6 + 2) 
+>
+> ### Capacités
+> ***Open Chin Choke.*** *Melee Weapon Attack:* +4 to hit, reach 5ft., one target. *Hit* 5 (1d6 + 2) 
+>
+> ***Dual Throw.*** *Melee Weapon Attack:* +4 to hit, reach 5ft., one target. *Hit* 5 (1d6 + 2) 
+>
+> ***Team Elbow.*** *Melee Weapon Attack:* +4 to hit, reach 5ft., one target. *Hit* 5 (1d6 + 2) 
+>
+> ***Abdominal Drop.*** *Melee Weapon Attack:* +4 to hit, reach 5ft., one target. *Hit* 5 (1d6 + 2) 
+>
+> ***Team Foot.*** *Melee Weapon Attack:* +4 to hit, reach 5ft., one target. *Hit* 5 (1d6 + 2) 
+>
+> ### ARMES
+> | Nom | DEG | Effet | Att/tour
+> |:----:|:--:|:--:|:--:
+> | Nom  | 4 | - | 3
+>
+> ### Note
+```
+
 Un template totalement volé:
 ``` HTML
 <img 
