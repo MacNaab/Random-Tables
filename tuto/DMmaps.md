@@ -10,6 +10,10 @@ Toutes les vidéos présentes dans ce guide sont issues du [Github des développ
 - [Commencer sa campagne](#Commencer)
   * [Carte](#Carte)
     + [Importer sa carte](#importer-sa-carte)
+    - [Contrôles](#Contrôles)
+    - [Modes](#Modes)
+      - [Sélection](#Sélection)
+      - [Mesure](#Mesure)
 ### Télécharger
 Allez sur la page de téléchargement et choisissez la [Latest release](https://github.com/Bonkahe/DMmaps/releases/). Dans l'onglet "Assets", télécharger `dmmaps-Setup-[version].exe` et installer le logiciel.  
 Vous n'aurez plus besoin de le télécharger de cette manière, le logiciel se mettra a jour automatiquement.
@@ -21,7 +25,23 @@ Vous pouvez retrouver la [documentation des développeurs](https://github.com/Bo
 
 ### Commencer
 #### Carte
-##### Importer sa carte
+##### Importer sa carte  
+Deux possibilitées:
+- Charger l'image d'arrière-plan
+- Clic droit > Charger l'image d'arrière plan (Load Background Image)
 ![](https://raw.githubusercontent.com/Bonkahe/DMmaps/master/gifs/MapControls.gif)
 A noter qu'une seule carte peut être active à la fois.
-##### 
+##### Contrôles
+Le bouton central de la souris permet de faire un panoramique. La molette permet d'effectuer un zoom avant et arrière.  
+Vous pouvez cliquer avec le bouton droit de la souris et sélectionner "Réinitialiser la carte" (Reset Map) pour retourner au point d'origine.
+##### Modes
+Afin d'accéder aux modes, clic droit de la souris.
+![](https://raw.githubusercontent.com/Bonkahe/DMmaps/master/gifs/SelectionModes.gif)
+###### Sélection
+Ce mode permet de sélectionner des noeuds sur la carte.
+###### Mesure
+Ce mode permet de mesurer une distance entre plusieurs points sur la carte. 
+Vous pouvez cliquer et faire glisser pour mesurer la distance d'un emplacement à un autre.  
+Afin de mesurer la distance entre plusieurs emplacement, maintenez la touche MAJ tout en faisant glisser et cliquez pour placer un emplacement. Double-cliquez pour quitter la mesure.
+###### Détourage
+Ce mode est uniquement disponible lorsqu'un document a été sélectionné, il permet de créer un détourage sur la carte.
