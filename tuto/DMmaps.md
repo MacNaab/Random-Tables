@@ -14,34 +14,50 @@ Toutes les vidéos présentes dans ce guide sont issues du [Github des développ
     - [Modes](#Modes)
       - [Sélection](#Sélection)
       - [Mesure](#Mesure)
-### Télécharger
+## Télécharger
 Allez sur la page de téléchargement et choisissez la [Latest release](https://github.com/Bonkahe/DMmaps/releases/). Dans l'onglet "Assets", télécharger `dmmaps-Setup-[version].exe` et installer le logiciel.  
 Vous n'aurez plus besoin de le télécharger de cette manière, le logiciel se mettra a jour automatiquement.
 
-### Documentation
+## Documentation
 Vous pouvez retrouver la [documentation des développeurs](https://github.com/Bonkahe/DMmaps/blob/master/README.md), celle-ci est en anglais mais comprends quelques vidéos et les raccourcis.
 
-### Interface
-
-### Commencer
-#### Carte
-##### Importer sa carte  
+## Interface
+### Barre de navigation supérieure
+#### Fichier
+Permet de sauvegarder et charger votre projet.
+#### Fenêtre
+##### Options (Ctrl+W ou F3)
+###### Thèmes
+###### Gestion de fichiers
+###### Outils de mesure
+Permet de d'étalonner une distance entre deux points en `Miles`, `Kilomètres` ou `Mètres` afin d'utiliser l'[outil de mesure](#Mesure).
+##### Créateur de personnages (F5)
+Ouvre une fênetre avec un générateur de personnage pour DnD 5. On peut noter la grande possibilité de nom.
+#### Aide
+##### Recherche des mises à jours
+Permet de rechercher de nouvelles mises à jour.
+#### Faire un don
+Permet de faire un don aux développeurs via Paypal.
+## Commencer
+### Carte
+#### Importer sa carte  
 Deux possibilitées:
 - Charger l'image d'arrière-plan
 - Clic droit > Charger l'image d'arrière plan (Load Background Image)
 ![](https://raw.githubusercontent.com/Bonkahe/DMmaps/master/gifs/MapControls.gif)
 A noter qu'une seule carte peut être active à la fois.
-##### Contrôles
+#### Contrôles
 Le bouton central de la souris permet de faire un panoramique. La molette permet d'effectuer un zoom avant et arrière.  
 Vous pouvez cliquer avec le bouton droit de la souris et sélectionner "Réinitialiser la carte" (Reset Map) pour retourner au point d'origine.
-##### Modes
+#### Modes
 Afin d'accéder aux modes, clic droit de la souris.
 ![](https://raw.githubusercontent.com/Bonkahe/DMmaps/master/gifs/SelectionModes.gif)
-###### Sélection
+##### Sélection
 Ce mode permet de sélectionner des noeuds sur la carte.
-###### Mesure
+##### Mesure
 Ce mode permet de mesurer une distance entre plusieurs points sur la carte. 
 Vous pouvez cliquer et faire glisser pour mesurer la distance d'un emplacement à un autre.  
 Afin de mesurer la distance entre plusieurs emplacement, maintenez la touche MAJ tout en faisant glisser et cliquez pour placer un emplacement. Double-cliquez pour quitter la mesure.
-###### Détourage
+##### Détourage
 Ce mode est uniquement disponible lorsqu'un document a été sélectionné, il permet de créer un détourage sur la carte.
+
