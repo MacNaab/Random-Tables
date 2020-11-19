@@ -30,9 +30,12 @@ Permet de sauvegarder et charger votre projet.
 ###### Thèmes
 ###### Gestion de fichiers
 ###### Outils de mesure
-Permet de d'étalonner une distance entre deux points en `Miles`, `Kilomètres` ou `Mètres` afin d'utiliser l'[outil de mesure](#Mesure).
+Permet de d'étalonner une distance entre deux points en `Miles`, `Kilomètres` ou `Mètres` afin d'utiliser l'[outil de mesure](#Mesure).  
+![](https://raw.githubusercontent.com/Bonkahe/DMmaps/master/gifs/MeasurementTools.gif)
 ##### Créateur de personnages (F5)
-Ouvre une fênetre avec un générateur de personnage pour DnD 5. On peut noter la grande possibilité de nom.
+Ouvre une fênetre avec un générateur de personnage pour DnD 5. On peut noter la grande possibilité de nom.  
+A noter que si vous l'utilisez avec noeud actif, le résultat de cette génération sera mis dans le contenu de ce noeud.  
+![](https://raw.githubusercontent.com/Bonkahe/DMmaps/master/gifs/ChargenControls.gif)
 #### Aide
 ##### Recherche des mises à jours
 Permet de rechercher de nouvelles mises à jour.
