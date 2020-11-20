@@ -54,7 +54,8 @@ Permet de rechercher de nouvelles mises à jour.
 Permet de faire un don aux développeurs via Paypal.
 ### Principal
 #### Gauche
-Permet de créer de nouveaux documents (noeud) ou d'en supprimer. Possède également une fonction de recherche dans les documents (soit dans les titres, soit dans le contenu)
+Correspond à l'éditeur de hiérarchie.  
+Permet de créer de nouveaux documents (noeud) ou d'en supprimer. Possède également une fonction de recherche dans les documents (soit dans les titres, soit dans le contenu).
 ![](https://raw.githubusercontent.com/Bonkahe/DMmaps/master/gifs/ChargenControls.gif)
 #### Central
 Contient la carte et les jetons.
@@ -70,12 +71,13 @@ Afin de mesurer la distance entre plusieurs emplacement, maintenez la touche MAJ
 ###### Détourage
 Ce mode est uniquement disponible lorsqu'un document a été sélectionné, il permet de créer un détourage sur la carte.
 #### Droite
+Correspond à l'éditeur de document ou la boîte à outil.  
 Permet de modifier le titre d'un document et son contenu. Possède également l'option "boite à outils".
 ##### Boîte à outils
 ![](https://raw.githubusercontent.com/Bonkahe/DMmaps/master/src/images/ToolBox.png)
 Ouvre un menu de gestion des noeuds. Celui-ci permet de gérer la taille du jeton ou le détourage.
 ![](https://raw.githubusercontent.com/Bonkahe/DMmaps/master/gifs/ToolboxControls.gif)
-A noter qu'en appuyant sur le symbole "document", vous pouvez retrouver l'option de formatage du texte.
+A noter qu'en appuyant sur le symbole "document", vous pouvez retourner à l'éditeur de document.
 ![](https://github.com/Bonkahe/DMmaps/blob/master/src/images/Documents.png?raw=true)
 ## Commencer
 ### Carte
@@ -90,3 +92,10 @@ Le bouton central de la souris permet de faire un panoramique. La molette permet
 Vous pouvez cliquer avec le bouton droit de la souris et sélectionner "Réinitialiser la carte" (Reset Map) pour retourner au point d'origine.
 ![](https://raw.githubusercontent.com/Bonkahe/DMmaps/master/gifs/NodeControls.gif)
 ## Raccourcis
+- Ctrl + S: Enregistrer
+- Ctrl + Maj + S: Enregistrer sous
+- F1 ou Ctrl + B: Ouvrir l'éditeur de hiérarchie
+- F2 ou Ctrl + E: Ouvrir l'éditeur de document
+- F3: Ouvrir la boîte à outil
+- F5: Ouvrir le générateur de personnage
+- Ctrl + D: Désélectionner le document actuel
