@@ -13,18 +13,20 @@
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 		<script src="script.js"></script>
 		<style>
-			body{background-color:#e9ecef;}
-      @media (max-width: 600px) {
-        body{margin:0;}
-      }
-     @media (min-width: 600px) {
+body{background-color:#e9ecef;}
+@media (max-width: 600px) {
+    body{margin:0;}
+}
+@media (min-width: 600px) {
+    body{
         margin-left:5%;
         margin-right:5%;
-      }
+    }
+}
 		</style>
 	</head>
 	<body>
-    <div style='margin-top:15px;max-width=75%;'>
+    <div style="max-width:75%;margin:auto;margin-top:15px;">
       <select class="custom-select" onchange="gen(this.value)">
         <option value="" disabled selected>Monstre légendaire à générer</option>
         <option value="1">Dragon</option>
