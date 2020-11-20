@@ -86,6 +86,16 @@ function gen(e){
           }
           return résultat;
         };
+       
+                 var rand1 = Math.floor(Math.random() * Math.floor(Capacité.length));
+                 var rand2 = Math.floor(Math.random() * Math.floor(10));
+                 var rand3 = Math.floor(Math.random() * Math.floor(Jeunesse.length));
+                 var rand4 = Math.floor(Math.random() * Math.floor(Caractère.length));
+                 var rand5 = Math.floor(Math.random() * Math.floor(Fierté.length));
+                 var rand6 = Math.floor(Math.random() * Math.floor(Haine.length));
+                 var rand7 = Math.floor(Math.random() * Math.floor(Sang.length));
+                 var rand8 = Math.floor(Math.random() * Math.floor(Intérêt.length));
+                 var rand9 = Math.floor(Math.random() * Math.floor(Style.length));    
     
       if(rand2<2){
         var Ag = Age[0];var Ev = event(1);
@@ -104,16 +114,8 @@ function gen(e){
         var Je = Jeunesse[4];
       }else{
         var Je = Jeunesse[5];
-      }    
-                 var rand1 = Math.floor(Math.random() * Math.floor(Capacité.length));
-                 var rand2 = Math.floor(Math.random() * Math.floor(10));
-                 var rand3 = Math.floor(Math.random() * Math.floor(Jeunesse.length));
-                 var rand4 = Math.floor(Math.random() * Math.floor(Caractère.length));
-                 var rand5 = Math.floor(Math.random() * Math.floor(Fierté.length));
-                 var rand6 = Math.floor(Math.random() * Math.floor(Haine.length));
-                 var rand7 = Math.floor(Math.random() * Math.floor(Sang.length));
-                 var rand8 = Math.floor(Math.random() * Math.floor(Intérêt.length));
-                 var rand9 = Math.floor(Math.random() * Math.floor(Style.length));    
+      } 
+        
     var R = "<h3>Vampire supérieur</h3>Capacité: "+Capacité[rand1]+"<br>Age: "+Ag+"<br>Jeunesse: "+Je+"<br>Caractère: "+Caractère[rand4]+"<br>Objet de fierté: "+Fierté[rand5]+"<br>Objet de haine: "+Haine[rand6]+"<br>Consommation de sang: "+Sang[rand7]+"<br>Centres d’intérêt: "+Intérêt[rand8]+"<br>Style de combat: "+Style[rand9]+"<br>Événements:<br>"+Ev;
     $("#aff").html(R);  
   }
