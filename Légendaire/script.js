@@ -63,7 +63,7 @@ function gen(e){
       }else{
         var Je = Jeunesse[6];
       }
-    var R = "<h3>Vrai dragon</h3>Espèce: "+Es+"<br>Age: "+Ag+"<br>Jeunesse: "+Je+"<br>Caractère: "+Caractère[rand4]+"<br>Objet de fierté: "+Fierté[rand5]+"Objet de haine: "+Haine[rand6]+"<br>Trésor: "+Trésor[rand7]+"<br>Centres d’intérêt: "+Intérêt[rand8]+"<br>Style de combat: "+Style[rand9]+"<br>Événements:<br>"+Ev;
+    var R = "<h3>Vrai dragon</h3>Espèce: "+Es+"<br>Age: "+Ag+"<br>Jeunesse: "+Je+"<br>Caractère: "+Caractère[rand4]+"<br>Objet de fierté: "+Fierté[rand5]+"<br>Objet de haine: "+Haine[rand6]+"<br>Trésor: "+Trésor[rand7]+"<br>Centres d’intérêt: "+Intérêt[rand8]+"<br>Style de combat: "+Style[rand9]+"<br>Événements:<br>"+Ev;
     $("#aff").html(R);
               
   }else{
@@ -114,7 +114,7 @@ function gen(e){
                  var rand7 = Math.floor(Math.random() * Math.floor(Sang.length));
                  var rand8 = Math.floor(Math.random() * Math.floor(Intérêt.length));
                  var rand9 = Math.floor(Math.random() * Math.floor(Style.length));    
-    var R = "<h3>Vampire supérieur</h3>Capacité: "+Capacité[rand1]+"<br>Age: "+Ag+"<br>Jeunesse: "+Je+"<br>Caractère: "+Caractère[rand4]+"<br>Objet de fierté: "+Fierté[rand5]+"Objet de haine: "+Haine[rand6]+"<br>Consommation de sang: "+Sang[rand7]+"<br>Centres d’intérêt: "+Intérêt[rand8]+"<br>Style de combat: "+Style[rand9]+"<br>Événements:<br>"+Ev;
+    var R = "<h3>Vampire supérieur</h3>Capacité: "+Capacité[rand1]+"<br>Age: "+Ag+"<br>Jeunesse: "+Je+"<br>Caractère: "+Caractère[rand4]+"<br>Objet de fierté: "+Fierté[rand5]+"<br>Objet de haine: "+Haine[rand6]+"<br>Consommation de sang: "+Sang[rand7]+"<br>Centres d’intérêt: "+Intérêt[rand8]+"<br>Style de combat: "+Style[rand9]+"<br>Événements:<br>"+Ev;
     $("#aff").html(R);  
   }
 }
