@@ -22,6 +22,7 @@ Toutes les vidéos présentes dans ce guide sont issues du [Github des développ
   * [Carte](#Carte)
     + [Importer sa carte](#importer-sa-carte)
     - [Contrôles](#Contrôles)
+  * [Raccourcis](#Raccourcis)
 ## Télécharger
 Allez sur la page de téléchargement et choisissez la [Latest release](https://github.com/Bonkahe/DMmaps/releases/). Dans l'onglet "Assets", télécharger `dmmaps-Setup-[version].exe` et installer le logiciel.  
 Vous n'aurez plus besoin de le télécharger de cette manière, le logiciel se mettra a jour automatiquement.
@@ -44,7 +45,7 @@ Permet de d'étalonner une distance entre deux points en `Miles`, `Kilomètres` 
 ![](https://raw.githubusercontent.com/Bonkahe/DMmaps/master/gifs/MeasurementTools.gif)
 ##### Créateur de personnages (F5)
 Ouvre une fênetre avec un générateur de personnage pour DnD 5. On peut noter la grande possibilité de nom.  
-A noter que si vous l'utilisez avec noeud actif, le résultat de cette génération sera mis dans le contenu de ce noeud.  
+A noter que lorsque vous l'utilisez, le résultat est automatiquement copier dans le presse-papier, vous n'avez plus qu'à le coller dans un document. 
 ![](https://raw.githubusercontent.com/Bonkahe/DMmaps/master/gifs/DocumentControls.gif)
 #### Aide
 ##### Recherche des mises à jours
@@ -88,3 +89,4 @@ A noter qu'une seule carte peut être active à la fois.
 Le bouton central de la souris permet de faire un panoramique. La molette permet d'effectuer un zoom avant et arrière.  
 Vous pouvez cliquer avec le bouton droit de la souris et sélectionner "Réinitialiser la carte" (Reset Map) pour retourner au point d'origine.
 ![](https://raw.githubusercontent.com/Bonkahe/DMmaps/master/gifs/NodeControls.gif)
+## Raccourcis
