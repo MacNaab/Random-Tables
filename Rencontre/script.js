@@ -48,7 +48,6 @@ var Monstre = {
 
 var JSON_Bestiaire = "";
 function a(){
-	console.log('A');
 		Rencontre.Humain.forEach(function(e){
 			e.Environnement.forEach(function(f){
 				if(f == "Partout"){Humain.Partout.push(e.Nom)};
@@ -80,8 +79,6 @@ function a(){
 			});
 			$('#Aff_Table').append('<tr><th scope="row">'+e.Nom+'</th><td>'+e.Type+'</td><td>'+e.Menace+'</td><td>'+e.Récompense+'</td><td>'+e.Environnement+'</td><td>'+e.Organisation+'</td><td>'+e.Intelligence+'</td><td>'+e.Taille+'</td><td>'+e.Poids+'</td></th>');
 		});
-	console.log(Humain);
-	console.log(Monstre);
 }
 
 function OP(){
@@ -115,10 +112,8 @@ var CheckUrbain = document.getElementById('Check Urbain');
   if(CheckInvocation.checked == true){DataB = DataB.concat(Monstre.Invocation);}
   if(CheckUrbain.checked == true){DataB = DataB.concat(Monstre.Urbain);}
 
-  if(CheckPartout.checked == true){DataB = DataB.concat(ChampsDeBataille, Cimetière, Ruines, Grottes, Marin, Egouts, Montagnes, Forêts, Plaines, Déserts, Marécages, Invocation, Urbain);}
-
+  if(CheckPartout.checked == true){DataB = DataB.concat(Monstre.ChampsDeBataille, Monstre.Cimetière, Monstre.Ruines, Monstre.Grottes, Monstre.Marin, Monstre.Egouts, Monstre.Montagnes, Monstre.Forêts, Monstre.Plaines, Monstre.Déserts, Monstre.Marécages, Monstre.Invocation, Monstre.Urbain);}
 	var Rand = Math.floor(Math.random() * Math.floor(DataB.length));
-  
 	document.getElementById("Résultat Rand").innerHTML = DataB[Rand];
 }
 
