@@ -1,5 +1,5 @@
 # Comment utiliser [homebrewery.naturalcrit](https://homebrewery.naturalcrit.com/)
-Homebrewery naturalcrit est un editeur de texte en ligne permettant de créer du contenu dans le style dnd 5e édition.
+Homebrewery naturalcrit est un éditeur de texte en ligne permettant de créer du contenu dans le style DnD 5e édition.
 ## Sommaire
 - [Interface](#Interface)
   * [Editor](#Editor)
@@ -29,7 +29,9 @@ Homebrewery naturalcrit est un editeur de texte en ligne permettant de créer du
     + [position](#position)
     + [text-align](#text-align)
     + [width](#width)
-    + [Template](#Template)
+    + [width](#width)
+    + [columns](#columns)
+  * [Template](#Template)
 - [Exportation](#Exportation)
 
     
@@ -274,7 +276,21 @@ Justifier | `text-align: justify;`
 ##### width
 La propriété width permet de définir la largeur de la boîte du contenu d'un élément. Par défaut, sa valeur est auto, c'est à dire la largeur automatiquement calculée de son contenu. Si box-sizing vaut border-box, la valeur appliquée incluera les dimensions de la boîte d'encadrement (border) et de la boîte de remplissage (padding).
 > Source: [Mozilla](https://developer.mozilla.org/fr/docs/Web/CSS/text-align)
-
+##### columns
+La propriété columns est une propriété raccourcie permettant de définir les deux propriétés column-width (qui définit la largeur des colonnes) et column-count (qui définit le nombre de colonnes) en même temps.  
+> Source: [Mozilla](https://developer.mozilla.org/fr/docs/Web/CSS/columns)  
+Cette propriété permet de modifier le nombre de colonnes d'une `<div>`.
+``` HTML
+<div style="columns: 3;">
+ Cette div possède 3 colonnes.
+</div>
+```
+Pour changer de colonnes, utilisez la fonction [Colomn break](#Colomn-break). A noter que de base, cette `<div>` est compris dans la demi-page. Pour avoir un nombre de colonne personnalisé prenant toute la largeur de la page vous pouvez utiliser cette technique:
+``` HTML
+<div class='wide' style="columns: 3;">
+ Cette div possède 3 colonnes sur toute la largeur de la page.
+</div>
+```
 #### Template
 Un template de créature:
 ``` HTML
