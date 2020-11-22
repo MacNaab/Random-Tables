@@ -237,7 +237,8 @@
 		</div>
 		<div class="col-sm">
 			<span><b>Frappe puissante:</b> -3 attaque, dégâts x2</span><br>
-			<span><b>Frappe rapide:</b> 2 attaques</span>
+			<span><b>Frappe rapide:</b> 2 attaques</span><br>
+			<span><b>Monstre:</b> utilisent Mêlée</span>
 		</div>
 	  </div>
 	</div>
@@ -272,10 +273,10 @@
 		  <small class="form-text text-muted">Modificateur:</small>
 		  <input class="form-control number-perso" type="text" id="ATQ_Mod" placeholder="Modificateur">
     </div>
-    <div class="col" style="margin-top:23px;">
+</div>
+    <div class="col" style="margin-top:23px;text-align:center;">
 		  <input class="btn btn-primary" type="button" value="Calculer !" onclick="ATQ()">
     </div>
-</div>
     <div style="text-align:center" id="ATQ_aff"></div>
 </div>
 <button class="collapsible_perso">Etape 3 - Jet défense</button>
@@ -332,9 +333,9 @@
 		<small class="form-text text-muted">Modificateur:</small>
 		<input class="form-control number-perso" type="text" id="DEF_Mod" placeholder="Modificateur">
     </div>
-    <div class="col" style="margin-top:23px;">
+</div>
+<div class="col" style="margin-top:23px;text-align:center;">
 		<input class="btn btn-primary" type="button" value="Calculer !" onclick="DEF()">
-    </div>
 </div>
     <div style="text-align:center" id="DEF_aff"></div>
 </div>
@@ -427,6 +428,7 @@
           <option value="10">CC Mortel</option>
         </select>
     </div>
+    <div class="col"></div>
     <div class="col">
 		<small class="form-text text-muted">Résistance|Vulnérabilité:</small>
         <select id="dom_7" class="custom-select number-perso">
