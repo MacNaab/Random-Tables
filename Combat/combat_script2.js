@@ -427,6 +427,9 @@ function dommage_calcul(){
         for (let i = 0; i < splited2[0]; i++) {Y.push(Math.floor(Math.random() * Math.floor(splited2[1]))+1);}
 		for (let i = 0; i < Y.length; i++) {var Z = Z+Number(Y[i]);}
 		var Arme = Number(Z)+Number(Z2);
+if (isNaN(Arme)) {
+    Arme = document.getElementById('dom_1').value;
+}
     var loca = Number(document.getElementById('dom_2').value);
 		if(loca == 0){var localisation = Localisation(Monstre);var loca = localisation[0];var loca_text = localisation[1];}
     var Corps = Number(document.getElementById('dom_3').value);if(!Corps){var Type = 'Dist';};
