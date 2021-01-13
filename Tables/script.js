@@ -632,9 +632,13 @@ function RandomTable(){
             var Rand34 = Math.floor(Math.random() * Math.floor(Habitude.length)); 
             var Rand35 = Math.floor(Math.random() * Math.floor(HandicapV.length)); 
             var Rand36 = Math.floor(Math.random() * Math.floor(HandicapI.length)); 
+		
+		if(Rand2 == 0){var CoupeCheveux = CheveuxHomme[Rand8];}else{var CoupeCheveux = CheveuxFemme[Rand9];}
+		
+		var texte = "<div><b>Race:</b> "+Race[Rand1]+"<br><b>Sexe:</b> "+Sexe[Rand2]+"<br><br><b><u>Morphologie</u></b><br>&emsp;<b>Poids:</b> "+Poids[Rand3]+"<br>&emsp;<b>Taille:</b> "+Taille[Rand4]+"<br>&emsp;<b>Physique:</b> "+Physique[Rand16]+"<br>&emsp;<b>Particularité:</b> "+Particularité[Rand15]+"<br>&emsp;<b>Peau:</b> "+Peau[Rand17]+"<br>&emsp;<b>Geste:</b> "+Geste[Rand25]+"<br>&emsp;<b>Marche:</b> "+Marche[Rand26]+"<br><br><b><u>Visage</u></b><br>&emsp;<b>Tête:</b> "+Tête[Rand5]+"<br>&emsp;<b><u>Cheveux</u></b><br>&emsp;&emsp;<b>Coupe:</b> "+CoupeCheveux+"<br>&emsp;&emsp;<b>Teinte:</b> "+CheveuxT[Rand10]+"<br>&emsp;<b>Front:</b> "+Front[Rand19]+"<br>&emsp;<b><u>Yeux</u></b><br>&emsp;&emsp;<b>Regard:</b> "+Regard[Rand14]+"<br>&emsp;&emsp;<b>Couleur:</b> "+YeuxC[Rand11]+"<br>&emsp;&emsp;<b>Forme:</b> "+YeuxF[Rand13]+"<br>&emsp;&emsp;<b>Eclat:</b> "+YeuxE[Rand12]+"<br>&emsp;<b>Nez:</b> "+Nez[Rand20]+"<br>&emsp;<b>Bouche:</b> "+Bouche[Rand21]+"<br>&emsp;<b>Dents:</b> "+Dents[Rand22]+"<br>&emsp;<b>Lèvres:</b> "+Lèvres[Rand23]+"<br><br><b>Personnalité:</b> "+Personnalité[Rand6]+"<br><b>Métier:</b> "+Métier[Rand7]+"<br><b>Allure:</b> "+Allure[Rand18]+"<br><b>Habitude:</b> "+Habitude[Rand34]+"<br><b>Handicap visible:</b> "+HandicapV[Rand35]+"<br><b>Handicap invisible:</b> "+HandicapI[Rand36]+"<br><br><b><u>Vocal</u></b><br>&emsp;<b>Voix:</b> "+Voix[Rand30]+"<br>&emsp;&emsp;<b>Timbre:</b> "+VoixT[Rand31]+"<br>&emsp;&emsp;<b>Intensité:</b> "+VoixI[Rand32]+"<br>&emsp;&emsp;<b>Hauteur:</b> "+VoixH[Rand33]+"<br>&emsp;<b>Language:</b> "+Language[Rand27]+"<br>&emsp;<b>Elocution:</b> "+Elocution[Rand28]+"<br>&emsp;<b>Articulation:</b> "+Articulation[Rand29]+"<br></div>";
 
 		var auteur = 'Based on the original creation of <a href="https://www.black-book-editions.fr/forums.php?a=last&topic_id=13792">Formol / Alexis Baugas</a><br><br>';
-		document.getElementById('aff_random_result').innerHTML = auteur+X[Rand1];
+		document.getElementById('aff_random_result').innerHTML = auteur+texte;
 	}
 	//	var auteur = '<br><br>';
 	// aff_random_result
