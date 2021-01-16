@@ -43,7 +43,7 @@ var Rencontre = {
 		  "Armure": "15",
 		  "Taille": "Au moins 2 mètres de hauteur",
 		  "Poids": "Au moins 200 Kg",
-		  "Environnement": ["Fôrets","Montagnes"],
+		  "Environnement": ["Skellige","Montagnes","Skellige"],
 		  "Intelligence": "Fureur, combatif, animal",
 		  "Organisation": "Solitaire ou en petite meute",
 		  "Note": ""
@@ -55,7 +55,7 @@ var Rencontre = {
 		  "Armure": "20",
 		  "Taille": "Au moins 2 mètres de hauteur",
 		  "Poids": "Au moins 200 Kg",
-		  "Environnement": ["Fôrets","Montagnes"],
+		  "Environnement": ["Skellige","Montagnes","Skellige"],
 		  "Intelligence": "Fureur, combatif, animal",
 		  "Organisation": "Solitaire ou en petite meute",
 		  "Note": ""
@@ -67,7 +67,7 @@ var Rencontre = {
 		  "Armure": "10",
 		  "Taille": "Environ 1,5 mètres de hauteur",
 		  "Poids": "Au moins 100 Kg",
-		  "Environnement": ["Fôrets","Montagnes"],
+		  "Environnement": ["Skellige","Montagnes","Skellige"],
 		  "Intelligence": "Fureur, combatif, animal",
 		  "Organisation": "Solitaire ou en petite meute",
 		  "Note": ""

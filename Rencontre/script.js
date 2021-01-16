@@ -75,7 +75,9 @@ function a(){
 				if(f == "Déserts"){Monstre.Déserts.push(e.Nom)};
 				if(f == "Marécages"){Monstre.Marécages.push(e.Nom)};
 				if(f == "Invocation"){Monstre.Invocation.push(e.Nom)};
-				if(f == "Ville"){Monstre.Urbain.push(e.Nom)};		
+				if(f == "Ville"){Monstre.Urbain.push(e.Nom)};
+				// Skellige
+				// Nilfgaard
 			});
 			$('#Aff_Table').append('<tr><th scope="row">'+e.Nom+'</th><td>'+e.Type+'</td><td>'+e.Menace+'</td><td>'+e.Récompense+'</td><td>'+e.Environnement+'</td><td>'+e.Organisation+'</td><td>'+e.Intelligence+'</td><td>'+e.Taille+'</td><td>'+e.Poids+'</td></th>');
 		});
