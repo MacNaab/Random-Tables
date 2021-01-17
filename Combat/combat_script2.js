@@ -187,6 +187,10 @@ function Combat(){
 
         var newContent = document.createTextNode("\n#LOG"+Nbre+": Perte de "+PV+" PV, Perte de "+STA+" points d'endurance.");
     }
+
+	document.getElementById('Combat_Nom').value = "";
+	document.getElementById('Combat_PV').value = "";
+	document.getElementById('Combat_STA').value = "";
 }
 
 function trie1(){
