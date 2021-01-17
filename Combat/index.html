@@ -159,20 +159,19 @@
   </div>
 </div>
 <h1>Combat Tracker:</h1>
-<div class="">
-  <div id="EN_nbre" style="display: none;">0</div>
+<div class="position-sticky">
     <div class="grid-container4">
         <div class="col">
 			<small class="form-text text-muted">Personnage:</small>
-    <select class="custom-select" id="Combat_Nom">
-      <option value="" disabled selected>Ennemie</option>
-    </select>          
+			<select class="custom-select" id="Combat_Nom">
+			  <option value="" disabled selected>Ennemie</option>
+			</select>          
         </div>
         <div class="col"><small class="form-text text-muted">Points de santé:</small><input class="form-control" type="number" id="Combat_PV" placeholder="PS"></div>
 		    <div class="col"><small class="form-text text-muted">Endurance:</small><input class="form-control" type="number" id="Combat_STA" placeholder="Endurance"></div>
         <div class="col" style="margin-top:23px;"><input class="input-group-text" onclick="Combat()" type="button" value="Combat !"></div>
     </div>
-   </div>
+</div>
    <i>En cas de régénération de PV / Endurance : mettre la valeur en négatif.</i>
   <br>
   <div>

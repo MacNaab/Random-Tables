@@ -64,6 +64,8 @@ function AutoStuff(){
 
 var DTB = [{PS:'test',END:'test'}];
 
+var EN_nbre = 0;
+
 function fn_red(e){
 	const regex = / /gi;
 	const regex2 = /-/gi;
@@ -79,11 +81,8 @@ function fn_red(e){
 
 function Add_Méchant(){
     // crée un nouvel élément div
-    var Nbre = Number(EN_nbre.innerHTML)+1;
-    EN_nbre.innerHTML = Nbre;
-
-  var newDiv = document.createElement("div");
-  newDiv.id = "Ennemie"+Nbre;
+    var Nbre = Number(EN_nbre)+1;
+    EN_nbre = Nbre;
 
     var Nom = EN_nom.value;
     var Initiative = EN_initiative.value;
@@ -117,11 +116,9 @@ function Add_Méchant_PNJ(){
 
 	for(let i=1;i <= e;i++){
 		// crée un nouvel élément div
-		var Nbre = Number(EN_nbre.innerHTML)+1;
-		EN_nbre.innerHTML = Nbre;
+		var Nbre = Number(EN_nbre)+1;
+		EN_nbre = Nbre;
 		
-		var newDiv = document.createElement("div");
-		newDiv.id = "Ennemie"+Nbre;		
 		var Nom = EN_nom_PNJ.value+" "+i;
 		function ini_PNJ(){
 			var REF = found.Caract.RÉF;if(REF==undefined){REF = found.Caract.REF;}
@@ -189,11 +186,6 @@ function Combat(){
         document.getElementById('Ennemie_Nombre_'+nom).innerHTML = Nbre;
 
         var newContent = document.createTextNode("\n#LOG"+Nbre+": Perte de "+PV+" PV, Perte de "+STA+" points d'endurance.");
-        
-        var newDiv = document.createElement("div");
-        newDiv.appendChild(newContent);
-        // ajoute le nœud texte au nouveau div créé
-        document.getElementById('Ennemie'+nom).appendChild(newDiv);
     }
 }
 
@@ -386,11 +378,11 @@ function cc_calcul(){
 			}			
         }
     }
-	document.getElementById('dom_6').selectedIndex = 0;
-	if(cc < "10"){document.getElementById('dom_6').selectedIndex = 1;}
-	if(cc > "9" && cc < "13"){document.getElementById('dom_6').selectedIndex = 2;}
-	if(cc > "12" && cc < "15"){document.getElementById('dom_6').selectedIndex = 3;}
-	if(cc > "14"){document.getElementById('dom_6').selectedIndex = 4;}
+	document.getElementById('dom_6').value = 0;
+	if(cc < "10"){document.getElementById('dom_6').value = 3;}
+	if(cc > "9" && cc < "13"){document.getElementById('dom_6').value = 5;}
+	if(cc > "12" && cc < "15"){document.getElementById('dom_6').value = 8;}
+	if(cc > "14"){document.getElementById('dom_6').value = 10;}
 
 	$("#attaque_aff").html(cc_aff);
 	var content = document.getElementById('attaque_aff').parentNode;
