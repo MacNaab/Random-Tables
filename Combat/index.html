@@ -159,21 +159,6 @@
   </div>
 </div>
 <h1>Combat Tracker:</h1>
-<div class="position-sticky">
-    <div class="grid-container4">
-        <div class="col">
-			<small class="form-text text-muted">Personnage:</small>
-			<select class="custom-select" id="Combat_Nom">
-			  <option value="" disabled selected>Ennemie</option>
-			</select>          
-        </div>
-        <div class="col"><small class="form-text text-muted">Points de santé:</small><input class="form-control" type="number" id="Combat_PV" placeholder="PS"></div>
-		    <div class="col"><small class="form-text text-muted">Endurance:</small><input class="form-control" type="number" id="Combat_STA" placeholder="Endurance"></div>
-        <div class="col" style="margin-top:23px;"><input class="input-group-text" onclick="Combat()" type="button" value="Combat !"></div>
-    </div>
-</div>
-   <i>En cas de régénération de PV / Endurance : mettre la valeur en négatif.</i>
-  <br>
   <div>
 	PS = 0 → mourant (stat divisé par 3): chaque tour jet Sauvegarde.<br>END = 0 → inconscient, jet de SAUVEGARDE.
   </div>
@@ -368,6 +353,22 @@
     <div style="text-align:center" id="attaque_aff"></div>
 </div>
 <button class="collapsible_perso">Etape 5 - Dommages</button>
+
+<div>
+    <div class="grid-container4">
+        <div class="col">
+			<small class="form-text text-muted">Personnage:</small>
+			<select class="custom-select" id="Combat_Nom">
+			  <option value="" disabled selected>Ennemie</option>
+			</select>          
+        </div>
+        <div class="col"><small class="form-text text-muted">Points de santé:</small><input class="form-control" type="number" id="Combat_PV" placeholder="PS"></div>
+		    <div class="col"><small class="form-text text-muted">Endurance:</small><input class="form-control" type="number" id="Combat_STA" placeholder="Endurance"></div>
+        <div class="col" style="margin-top:23px;"><input class="input-group-text" onclick="Combat()" type="button" value="Combat !"></div>
+    </div>
+   <i>En cas de régénération de PV / Endurance : mettre la valeur en négatif.</i>
+</div>
+
 <div class="content_perso">
 	<h6>
 		<svg onclick="aff_info('tableau_3')" style="cursor:pointer;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
