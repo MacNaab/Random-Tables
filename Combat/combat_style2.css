@@ -97,4 +97,7 @@
       }
   }
 
-	.progress{background-color: white;}
+	.progress{
+		background-color: white;
+		border: 1px solid;
+	}
