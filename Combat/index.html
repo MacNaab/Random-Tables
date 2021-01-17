@@ -353,22 +353,6 @@
     <div style="text-align:center" id="attaque_aff"></div>
 </div>
 <button class="collapsible_perso">Etape 5 - Dommages</button>
-
-<div>
-    <div class="grid-container4">
-        <div class="col">
-			<small class="form-text text-muted">Personnage:</small>
-			<select class="custom-select" id="Combat_Nom">
-			  <option value="" disabled selected>Ennemie</option>
-			</select>          
-        </div>
-        <div class="col"><small class="form-text text-muted">Points de santé:</small><input class="form-control" type="number" id="Combat_PV" placeholder="PS"></div>
-		<div class="col"><small class="form-text text-muted">Endurance:</small><input class="form-control" type="number" id="Combat_STA" placeholder="Endurance"></div>
-        <div class="col" style="margin-top:23px;"><input class="input-group-text" onclick="Combat()" type="button" value="Combat !"></div>
-    </div>
-   <i>En cas de régénération de PV / Endurance : mettre la valeur en négatif.</i>
-</div>
-
 <div class="content_perso">
 	<h6>
 		<svg onclick="aff_info('tableau_3')" style="cursor:pointer;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -443,6 +427,22 @@
 </div>
     <div style="text-align:center" id="dommage_aff"></div>
 </div>
+
+<div>
+    <div class="grid-container4">
+        <div class="col">
+			<small class="form-text text-muted">Personnage:</small>
+			<select class="custom-select" id="Combat_Nom">
+			  <option value="" disabled selected>Ennemie</option>
+			</select>          
+        </div>
+        <div class="col"><small class="form-text text-muted">Points de santé:</small><input class="form-control" type="number" id="Combat_PV" placeholder="PS"></div>
+		<div class="col"><small class="form-text text-muted">Endurance:</small><input class="form-control" type="number" id="Combat_STA" placeholder="Endurance"></div>
+        <div class="col" style="margin-top:23px;"><input class="input-group-text" onclick="Combat()" type="button" value="Combat !"></div>
+    </div>
+   <i>En cas de régénération de PV / Endurance : mettre la valeur en négatif.</i>
+</div>
+
 	<div style="margin-left:5%;margin-right:5%;margin-top:5px;">
 <button class="collapsible_perso">Bestiaire</button>
 <div class="content_perso">
