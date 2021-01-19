@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Sortable - Drop placeholder</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+  
+  #sortable1, #sortable2 { list-style-type: none; margin: 0; padding: 0; }
+  #sortable1 li,#sortable2 li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; height: 1.5em; }
+  html>body #sortable1 li, html>body #sortable2 li { height: 1.5em; line-height: 1.2em; }
+  .ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+  
+  .grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#sortable1, #sortable2" ).sortable({
+      placeholder: "ui-state-highlight"
+    });
+    $( "#sortable1, #sortable2").disableSelection();
+  } );
+  </script>
+  <script>
+  $( function() {
+    $( "#sortable1, #sortable2" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+  } );
+  </script>
+</head>
+<body>
+ 
+<ul id="sortable1" class="grid-container connectedSortable">
+  <li class="ui-state-default">Item 1</li>
+  <li class="ui-state-default">Item 2</li>
+  <li class="ui-state-default">Item 3</li>
+  <li class="ui-state-default">Item 4</li>
+</ul>
+<hr>
+<ul id="sortable2" class="grid-container connectedSortable">
+  <li class="ui-state-default">Item 5</li>
+  <li class="ui-state-default">Item 6</li>
+  <li class="ui-state-default">Item 7</li>
+</ul>
+ 
+ 
+</body>
+</html>
