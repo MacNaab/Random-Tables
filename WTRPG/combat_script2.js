@@ -388,7 +388,7 @@ function cc_calcul(){
         }
     }
 	document.getElementById('dom_6').selectedIndex = 0;
-	if(cc < "10"){document.getElementById('dom_6').selectedIndex = 1;}
+	if(cc > 6 && cc < "10"){document.getElementById('dom_6').selectedIndex = 1;}
 	if(cc > "9" && cc < "13"){document.getElementById('dom_6').selectedIndex = 2;}
 	if(cc > "12" && cc < "15"){document.getElementById('dom_6').selectedIndex = 3;}
 	if(cc > "14"){document.getElementById('dom_6').selectedIndex = 4;}
