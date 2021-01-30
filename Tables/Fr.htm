@@ -30,6 +30,7 @@
       </select>
       <div class="d-flex justify-content-center">
         <button type="button" class="btn btn-primary btn-lg" onclick="RandomTable()">Générer</button>
+        <button type="button" class="btn btn-secondary" onclick="Copy()">Copier</button>
       </div>
     </div>
     <div id="aff_random_result" style="margin-right:10%;margin-left:10%"></div>
@@ -144,4 +145,15 @@ $( function() {
 		var C = Number(100-$("#slider-range").slider("values", 1));
 		var B = Math.abs(Number(100-C-A));
 } );
+</script>
+
+<script>
+function Copy(){
+	var r = document.createRange();
+		r.selectNode(document.getElementById('aff_random_result'));
+	window.getSelection().removeAllRanges();
+	window.getSelection().addRange(r);
+	document.execCommand('copy');
+	window.getSelection().removeAllRanges();
+}
 </script>
