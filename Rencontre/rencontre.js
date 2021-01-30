@@ -107,7 +107,7 @@ var Rencontre = {
       "Intelligence": "Humaine",
       "Organisation": "En groupes",
       "Note": "Les recrues peuvent venir de n’importe quelle nation, l’entrée incluse ici est un exemple et les MJs devraient se sentir libres de redéfinir leurs équipements, leurs statistiques et même leurs capacités, pour mieux répondre à leurs préférences. Comme pour les bandits, les recrues peuvent être plus difficiles à combattre en améliorant leurs statistiques ou leurs PS. Le MJ peut aussi leur donner une meilleure armure ou de meilleures armes.<br>Les recrues seront parfois des unités criminelles. Sauf ordre direct, ils ne se battent généralement pas jusqu’à la mort. La plupart des déserteurs des différentes armées sont issus d’unités de recrues."
-    },
+		},
 		{
 		  "Nom": "BANDITS DE GRAND CHEMIN",
 		  "Menace": "Faible Complexe",
@@ -870,7 +870,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "BARGHEST",
+		  "Nom": "BARGHEST (fan)",
 			  "Type": "SPECTRE",
 		  "Menace": "Facile Complexe",
 		  "Récompense": "50 couronnes",
@@ -896,7 +896,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "BRUMELIN",
+		  "Nom": "BRUMELIN (fan)",
 			  "Type": "NÉCROPHAGE",
 		  "Menace": "Moyen Complexe",
 		  "Récompense": "450 couronnes",
@@ -909,7 +909,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "COCATRIX",
+		  "Nom": "COCATRIX (fan)",
 		  "Menace": "Moyen Complexe",
 			  "Type": "DRACONIDE",
 		  "Récompense": "600 couronnes",
@@ -922,7 +922,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "COUVIN",
+		  "Nom": "COUVIN (fan)",
 			  "Type": "CRÉATURE MAUDITE",
 		  "Menace": "Moyen Complexe",
 		  "Récompense": "500 couronnes",
@@ -935,7 +935,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "COUVIN TRANSFORMÉ",
+		  "Nom": "COUVIN TRANSFORMÉ (fan)",
 			  "Type": "CRÉATURE MAUDITE",
 		  "Menace": "Moyen Complexe",
 		  "Récompense": "500 couronnes",
@@ -948,7 +948,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "CYCLOPE",
+		  "Nom": "CYCLOPE (fan)",
 			  "Type": "OGROÏDE",
 		  "Menace": "Difficile Complexe",
 		  "Récompense": "1750 couronnes",
@@ -986,7 +986,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "DRAGON NOIR",
+		  "Nom": "DRAGON NOIR (fan)",
 			  "Type": "DRACONIDE",
 		  "Menace": "Fort Difficile",
 		  "Récompense": "1500+ couronnes",
@@ -999,7 +999,7 @@ var Rencontre = {
 		  "Note": "Les dragons se présentent sous différentes espèces, représentées par des couleurs. Les plus connues sont : le noir, le rouge, le blanc et le vert. Les dragons dorés n’existent presque exclusivement que dans les légendes, et les dragons de roche sont considérés comme éteints. Les statistiques et les compétences indiquées représentent les plus petites couleurs de dragons telles que le vert, le noir et le blanc ; le MJ devrait se sentir libre d’en ajouter pour représenter les plus grandes variétés. \nLes dragons noirs soufflent un gaz nocif, infligeant 5d6 dégâts et 2d6 d’ablation. Ils ont également une armure deux fois plus importante que celle indiquée."
 		},
 		{
-		  "Nom": "DRAGON VERT",
+		  "Nom": "DRAGON VERT (fan)",
 			  "Type": "DRACONIDE",
 		  "Menace": "Fort Difficile",
 		  "Récompense": "1500+ couronnes",
@@ -1012,7 +1012,7 @@ var Rencontre = {
 		  "Note": "Les dragons se présentent sous différentes espèces, représentées par des couleurs. Les plus connues sont : le noir, le rouge, le blanc et le vert. Les dragons dorés n’existent presque exclusivement que dans les légendes, et les dragons de roche sont considérés comme éteints. Les statistiques et les compétences indiquées représentent les plus petites couleurs de dragons telles que le vert, le noir et le blanc ; le MJ devrait se sentir libre d’en ajouter pour représenter les plus grandes variétés.\nLes dragons verts soufflent de la vapeur, infligeant 6d6 dégâts qui sont également stupéfiants. Ils sont amphibies."
 		},
 		{
-		  "Nom": "DRAGON BLANC",
+		  "Nom": "DRAGON BLANC (fan)",
 			  "Type": "DRACONIDE",
 		  "Menace": "Fort Difficile",
 		  "Récompense": "1500+ couronnes",
@@ -1025,7 +1025,7 @@ var Rencontre = {
 		  "Note": "Les dragons se présentent sous différentes espèces, représentées par des couleurs. Les plus connues sont : le noir, le rouge, le blanc et le vert. Les dragons dorés n’existent presque exclusivement que dans les légendes, et les dragons de roche sont considérés comme éteints. Les statistiques et les compétences indiquées représentent les plus petites couleurs de dragons telles que le vert, le noir et le blanc ; le MJ devrait se sentir libre d’en ajouter pour représenter les plus grandes variétés. \nLes dragons blancs soufflent un brouillard glacial, infligeant 6d6 dégâts et provoquant l’effet Gel."
 		},
 		{
-		  "Nom": "DRAGON ROUGE",
+		  "Nom": "DRAGON ROUGE (fan)",
 			  "Type": "DRACONIDE",
 		  "Menace": "Fort Difficile",
 		  "Récompense": "1500+ couronnes",
@@ -1038,7 +1038,7 @@ var Rencontre = {
 		  "Note": "Les dragons se présentent sous différentes espèces, représentées par des couleurs. Les plus connues sont : le noir, le rouge, le blanc et le vert. Les dragons dorés n’existent presque exclusivement que dans les légendes, et les dragons de roche sont considérés comme éteints. Les statistiques et les compétences indiquées représentent les plus petites couleurs de dragons telles que le vert, le noir et le blanc ; le MJ devrait se sentir libre d’en ajouter pour représenter les plus grandes variétés. \nLes dragons rouges et les dorés crachent du feu, infligeant 6d6 dégâts et l’effet Incinération."
 		},
 		{
-		  "Nom": "DRAGON DORÉ",
+		  "Nom": "DRAGON DORÉ (fan)",
 			  "Type": "DRACONIDE",
 		  "Menace": "Fort Difficile",
 		  "Récompense": "1500+ couronnes",
@@ -1090,7 +1090,7 @@ var Rencontre = {
 		  "Note": "Les statistiques et les compétences représentées ici concernent les dryades de sang pur. Les dryades transformées sont susceptibles d’être légèrement moins puissantes, à discrétion du MJ."
 		},
 		{
-		  "Nom": "ELEMENTAIRE FEU",
+		  "Nom": "ELEMENTAIRE FEU (fan)",
 			  "Type": "ÉLÉMENTAIRE",
 		  "Menace": "Difficile Complexe",
 		  "Récompense": "1350 couronnes",
@@ -1103,7 +1103,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "ELEMENTAIRE GLACE",
+		  "Nom": "ELEMENTAIRE GLACE (fan)",
 			  "Type": "ÉLÉMENTAIRE",
 		  "Menace": "Difficile Complexe",
 		  "Récompense": "1350 couronnes",
@@ -1116,7 +1116,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "ELEMENTAIRE TERRE",
+		  "Nom": "ELEMENTAIRE TERRE (fan)",
 			  "Type": "ÉLÉMENTAIRE",
 		  "Difficile": "Simple Récompense",
 		  "1200 couronnes": "Armure",
@@ -1173,7 +1173,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "HARPIE",
+		  "Nom": "HARPIE (fan)",
 			  "Type": "HYBRIDE",
 		  "Menace": "Facile Complexe",
 		  "Récompense": "20 couronnes",
@@ -1186,7 +1186,7 @@ var Rencontre = {
 		   "Note": "Comme les pies, les harpies sont très attirées par les objets brillants. Leurs nids sont susceptibles de contenir divers objets métalliques comme des bijoux, des pièces de monnaie, ou même parfois des armes et des armures volées."
 		},
 		{
-		  "Nom": "LESHEN",
+		  "Nom": "LESHEN (fan)",
 			  "Type": "VESTIGE",
 		  "Menace": "Fort Difficile",
 		  "Récompense": "1750 couronnes",
@@ -1199,7 +1199,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "MANTICORE",
+		  "Nom": "MANTICORE (fan)",
 			  "Type": "HYBRIDE",
 		  "Menace": "Moyen Complexe",
 		  "Récompense": "750 couronnes",
@@ -1277,7 +1277,7 @@ var Rencontre = {
 			"Note": "Les ogres sont une race intelligente. Bien que stupides et violents, ils ont beaucoup plus de points communs avec les humains et les races anciennes que la plupart des monstres que les sorceleurs peuvent rencontrer."
 		},
 		{
-		  "Nom": "PESTA",
+		  "Nom": "PESTA (fan)",
 			  "Type": "SPECTRE",
 		  "Menace": "Fort Complexe",
 		  "Récompense": "1000 couronnes",
@@ -1290,7 +1290,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "PHENIX",
+		  "Nom": "PHENIX (fan)",
 		  "Menace": "Fort Complexe",
 			  "Type": "DRACONIDE",
 		  "Récompense": "1000 couronnes",
@@ -1303,7 +1303,7 @@ var Rencontre = {
 		 "Note": ""
 		},
 		{
-		  "Nom": "PUTRÉFACTEUR",
+		  "Nom": "PUTRÉFACTEUR (fan)",
 			  "Type": "NÉCROPHAGE",
 		  "Menace": "Facile Difficile",
 		  "Récompense": "30 couronnes",
@@ -1316,7 +1316,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "SHAELMAAR",
+		  "Nom": "SHAELMAAR (fan)",
 		  "Menace": "Moyen Complexe",
 			  "Type": "VESTIGE",
 		  "Récompense": "600 couronnes",
@@ -1381,7 +1381,7 @@ var Rencontre = {
 		  "Note": ""
 		},
 		{
-		  "Nom": "VAMPIRE SUPERIEUR",
+		  "Nom": "VAMPIRE SUPERIEUR (fan)",
 			  "Type": "VAMPIRE",
 		  "Menace": "Fort Difficile",
 		  "Récompense": "2000+ couronnes",
