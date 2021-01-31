@@ -201,8 +201,8 @@ function Combat(){
 }
 
 function trie1(){
-	var data = Ren
-	posts = [];
+	var data = Ren;
+	var posts = [];
     posts = sortByKeyDesc(data, "INI");
     var Aff = "";
 	for (let i = 0; i < posts.length; i++) {
