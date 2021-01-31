@@ -547,9 +547,11 @@ $( document ).ready(function() {
 var SVG_name = "";
 function change(e){
 	SVG_name = e;
+	var Nbre = e.replace('Ennemie_Nom_','');
 	$('#myModal').modal('show');
     $('#exampleInputEmail1').val($('#'+SVG_name).text());
     $('#SaveSave').on('click', function(){
     	$('#'+SVG_name).text($('#exampleInputEmail1').val());
+		$('#Combat_Nom option').eq(Nbre).text($('#exampleInputEmail1').val());
     });
 }
