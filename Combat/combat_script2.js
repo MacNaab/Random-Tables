@@ -63,6 +63,7 @@ function AutoStuff(){
 }
 
 var DTB = [{PS:'test',END:'test'}];
+var Ren = [];
 
 var EN_nbre = 0;
 
@@ -92,8 +93,11 @@ function Add_Méchant(){
 	DTB.push({PS:PV,END:Endurance});
 
     // Ajout ATK
-    var ATK = document.getElementById('ordre_atk0').innerHTML;
-    document.getElementById('ordre_atk0').innerHTML = ATK+'-'+Initiative+','+Nom;    
+    Ren.push({
+		"ID":Ren.length,
+		"Nom":Nom,
+		"INI":Initiative,
+	});
 
 	var barre1 = '<div class="progress"><div id="Barre1_ennemie_'+Nbre+'" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%">PS</div></div>';
 	var barre2 = '<div class="progress"><div id="Barre2_ennemie_'+Nbre+'" class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%">END</div></div>';
@@ -135,8 +139,11 @@ function Add_Méchant_PNJ(){
 		DTB.push({PS:PV,END:Endurance});
 	
 		// Ajout ATK
-		var ATK = document.getElementById('ordre_atk0').innerHTML;
-		document.getElementById('ordre_atk0').innerHTML = ATK+'-'+Initiative+','+Nom;    
+		Ren.push({
+			"ID":Ren.length,
+			"Nom":Nom,
+			"INI":Initiative,
+		});
 	
 		var barre1 = '<div class="progress"><div id="Barre1_ennemie_'+Nbre+'" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%">PS</div></div>';
 		var barre2 = '<div class="progress"><div id="Barre2_ennemie_'+Nbre+'" class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%">END</div></div>';
@@ -194,25 +201,18 @@ function Combat(){
 }
 
 function trie1(){
-    var liste = document.getElementById('ordre_atk0').innerHTML;
-    let Splite0 = liste.split('-');
-    var Lan0 = Splite0.length;   
-   
-    var arr = [];
-    for (let i = 1; i < Lan0; i++) {
-        var AAA = Splite0[i].split(',');
-        var AAAA = [];
-        AAAA.push(AAA[0]);
-        AAAA.push(AAA[1]);
-        arr.push(AAAA);
+	var data = Ren
+	posts = [];
+    posts = sortByKeyDesc(data, "INI");
+    var Aff = "";
+	for (let i = 0; i < posts.length; i++) {
+		if(i < Number(posts.length)-1){
+			Aff += "<b>"+Number(i+1)+"</b> "+posts[i].Nom+" | ";			
+		}else{
+			Aff += "<b>"+Number(i+1)+"</b> "+posts[i].Nom;
+		}
     }
-    var XYZ = arr.sort(function(a,b) {return b[0]-a[0]});
-    
-    var aff = "";
-    for (let i = 0; i < (Lan0-1); i++) {
-        var aff = aff+'\n<b>'+(i+1)+':</b> '+XYZ[i][1];
-    }
-    document.getElementById('ordre_atk').innerHTML = aff;
+    document.getElementById('ordre_atk').innerHTML = Aff;	
 }
 
 function getRandomInt(max) {
@@ -544,6 +544,13 @@ $( document ).ready(function() {
 	});
 });
 
+function sortByKeyDesc(array, key) {
+	return array.sort(function (a, b) {
+		var x = a[key]; var y = b[key];
+		return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+	});
+}
+
 var SVG_name = "";
 function change(e){
 	SVG_name = e;
@@ -553,5 +560,7 @@ function change(e){
     $('#SaveSave').on('click', function(){
     	$('#'+SVG_name).text($('#exampleInputEmail1').val());
 		$('#Combat_Nom option').eq(Nbre).text($('#exampleInputEmail1').val());
+		Ren[Number(Number(Nbre)-1)].Nom = $('#exampleInputEmail1').val();
+		trie1();
     });
 }
