@@ -98,7 +98,7 @@ function Add_Méchant(){
 	var barre1 = '<div class="progress"><div id="Barre1_ennemie_'+Nbre+'" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%">PS</div></div>';
 	var barre2 = '<div class="progress"><div id="Barre2_ennemie_'+Nbre+'" class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%">END</div></div>';
 
-$("#sortable1").append('<li id="Ennemie'+Nbre+'" class="ui-state-default"><div class="grid-container">'+barre1+barre2+'</div><b><span id="Ennemie_Nom_'+Nbre+'">'+Nom+'</span></b>, initiative : <span id="Ennemie_Ini_'+Nbre+'">'+Initiative+'</span>, PS: <span id="Ennemie_PV_'+Nbre+'">'+PV+'</span>/'+PV+', Endurance: <span id="Ennemie_STA_'+Nbre+'">'+Endurance+'</span>/'+Endurance+'<span id="Ennemie_Nombre_'+Nbre+'" style="display: none;">0</span></li>');
+$("#sortable1").append('<li id="Ennemie'+Nbre+'" class="ui-state-default"><div class="grid-container">'+barre1+barre2+'</div><b><span onclick="spanSwitch(this)" id="Ennemie_Nom_'+Nbre+'">'+Nom+'</span></b>, initiative : <span id="Ennemie_Ini_'+Nbre+'">'+Initiative+'</span>, PS: <span id="Ennemie_PV_'+Nbre+'">'+PV+'</span>/'+PV+', Endurance: <span id="Ennemie_STA_'+Nbre+'">'+Endurance+'</span>/'+Endurance+'<span id="Ennemie_Nombre_'+Nbre+'" style="display: none;">0</span></li>');
 
   document.getElementById("Ennemie"+Nbre).style.paddingBottom = "25px";
   
@@ -141,7 +141,7 @@ function Add_Méchant_PNJ(){
 		var barre1 = '<div class="progress"><div id="Barre1_ennemie_'+Nbre+'" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%">PS</div></div>';
 		var barre2 = '<div class="progress"><div id="Barre2_ennemie_'+Nbre+'" class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%">END</div></div>';
 	
-		$("#sortable2").append('<li id="Ennemie'+Nbre+'" class="ui-state-default"><div class="grid-container">'+barre1+barre2+'</div><b><span id="Ennemie_Nom_'+Nbre+'">'+Nom+'</span></b>, initiative : <span id="Ennemie_Ini_'+Nbre+'">'+Initiative+'</span>, PS: <span id="Ennemie_PV_'+Nbre+'">'+PV+'</span>/'+PV+', Endurance: <span id="Ennemie_STA_'+Nbre+'">'+Endurance+'</span>/'+Endurance+'<span id="Ennemie_Nombre_'+Nbre+'" style="display: none;">0</span></li>');
+		$("#sortable2").append('<li id="Ennemie'+Nbre+'" class="ui-state-default"><div class="grid-container">'+barre1+barre2+'</div><b><span onclick="spanSwitch(this)" id="Ennemie_Nom_'+Nbre+'">'+Nom+'</span></b>, initiative : <span id="Ennemie_Ini_'+Nbre+'">'+Initiative+'</span>, PS: <span id="Ennemie_PV_'+Nbre+'">'+PV+'</span>/'+PV+', Endurance: <span id="Ennemie_STA_'+Nbre+'">'+Endurance+'</span>/'+Endurance+'<span id="Ennemie_Nombre_'+Nbre+'" style="display: none;">0</span></li>');
 		document.getElementById("Ennemie"+Nbre).style.paddingBottom = "25px";
 	  	var option = document.createElement("option");
 	  		option.text = Nom;option.value = Nbre;
@@ -544,3 +544,15 @@ $( document ).ready(function() {
 	});
 });
 
+function spanSwitch(e) {
+	let txt = e.innerText;
+	let element = document.getElementById(e.parentNode.id);
+	element.innerHTML = `<input onblur='spanReset(this)' value='${txt}' />`;
+	document.getElementsByTagName('input')[0].focus();
+}
+
+function spanReset(e) {
+	let txt = e.value;
+	let element = document.getElementById(e.parentNode.id);
+	element.innerHTML = `<span onclick='spanSwitch(this)'> ${txt} </span>`;
+}

@@ -2120,6 +2120,19 @@ var Rencontre = {
     "Intelligence": "Pensant",
     "Organisation": "Solitaire",
     "Note": ""
+  },
+  {
+    "Nom": "VYPPER",
+		  "Type": "HYBRIDE",
+    "Menace": "Fort Complexe",
+    "Récompense": "1 400 couronnes",
+    "Armure": "0",
+    "Taille": "4 m",
+    "Poids": "250 kg",
+    "Environnement": ["Cimetière"],
+    "Intelligence": "Sauvage",
+    "Organisation": "Solitaire",
+    "Note": ""
   }
 
 	]
