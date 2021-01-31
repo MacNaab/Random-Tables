@@ -546,13 +546,13 @@ $( document ).ready(function() {
 
 function spanSwitch(e) {
 	let txt = e.innerText;
-	let element = document.getElementById(e.parentNode.id);
+	let element = document.getElementById(e.parentNode.parentNode.id);
 	element.innerHTML = `<input onblur='spanReset(this)' value='${txt}' />`;
 	document.getElementsByTagName('input')[0].focus();
 }
 
 function spanReset(e) {
 	let txt = e.value;
-	let element = document.getElementById(e.parentNode.id);
+	let element = document.getElementById(e.parentNode.parentNode.id);
 	element.innerHTML = `<span onclick='spanSwitch(this)'> ${txt} </span>`;
 }
