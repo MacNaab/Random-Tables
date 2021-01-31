@@ -543,6 +543,9 @@ $( document ).ready(function() {
 		}).disableSelection();
 	});
 	$('#SaveSave').on('click', function(){
+		var data = Ren;
+		var posts = [];
+		posts = sortByKeyDesc(data, "INI");
 		console.log(Ren);
 		console.log(SVG_nbre+": "+$('#'+SVG_name).text());
 		$('#'+SVG_name).text($('#exampleInputEmail1').val());
@@ -557,6 +560,12 @@ function sortByKeyDesc(array, key) {
 	return array.sort(function (a, b) {
 		var x = a[key]; var y = b[key];
 		return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+	});
+}
+function sortByKeyAsc(array, key) {
+	return array.sort(function (a, b) {
+		var x = a[key]; var y = b[key];
+		return ((x < y) ? -1 : ((x > y) ? 1 : 0));
 	});
 }
 
