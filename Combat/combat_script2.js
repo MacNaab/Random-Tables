@@ -543,9 +543,12 @@ $( document ).ready(function() {
 		}).disableSelection();
 	});
 	$('#SaveSave').on('click', function(){
+		console.log(Ren);
+		console.log(SVG_nbre+": "+$('#'+SVG_name).text());
 		$('#'+SVG_name).text($('#exampleInputEmail1').val());
 		$('#Combat_Nom option').eq(SVG_nbre).text($('#exampleInputEmail1').val());
 		Ren[Number(Number(SVG_nbre)-1)].Nom = $('#exampleInputEmail1').val();
+		console.log(Ren);
 		return trie1();
 	});
 });
