@@ -542,6 +542,12 @@ $( document ).ready(function() {
 		  connectWith: ".connectedSortable"
 		}).disableSelection();
 	});
+	$('#SaveSave').on('click', function(){
+		$('#'+SVG_name).text($('#exampleInputEmail1').val());
+		$('#Combat_Nom option').eq(SVG_nbre).text($('#exampleInputEmail1').val());
+		Ren[Number(Number(SVG_nbre)-1)].Nom = $('#exampleInputEmail1').val();
+		return trie1();
+	});
 });
 
 function sortByKeyDesc(array, key) {
@@ -552,15 +558,10 @@ function sortByKeyDesc(array, key) {
 }
 
 var SVG_name = "";
+var SVG_nbre = "";
 function change(e){
 	SVG_name = e;
-	var Nbre = e.replace('Ennemie_Nom_','');
+	SVG_nbre = e.replace('Ennemie_Nom_','');
 	$('#myModal').modal('show');
     $('#exampleInputEmail1').val($('#'+SVG_name).text());
-    $('#SaveSave').on('click', function(){
-    	$('#'+SVG_name).text($('#exampleInputEmail1').val());
-		$('#Combat_Nom option').eq(Nbre).text($('#exampleInputEmail1').val());
-		Ren[Number(Number(Nbre)-1)].Nom = $('#exampleInputEmail1').val();
-		return trie1();
-    });
 }
