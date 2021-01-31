@@ -561,6 +561,6 @@ function change(e){
     	$('#'+SVG_name).text($('#exampleInputEmail1').val());
 		$('#Combat_Nom option').eq(Nbre).text($('#exampleInputEmail1').val());
 		Ren[Number(Number(Nbre)-1)].Nom = $('#exampleInputEmail1').val();
-		trie1();
+		return trie1();
     });
 }
