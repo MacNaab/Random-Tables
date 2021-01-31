@@ -545,7 +545,7 @@ $( document ).ready(function() {
 	$('#SaveSave').on('click', function(){
 		var data = Ren;
 		var posts = [];
-		posts = sortByKeyDesc(data, "INI");
+		posts = sortByKeyAsc(data, "ID");
 		console.log(Ren);
 		console.log(SVG_nbre+": "+$('#'+SVG_name).text());
 		$('#'+SVG_name).text($('#exampleInputEmail1').val());
