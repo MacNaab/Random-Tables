@@ -151,19 +151,18 @@ try {
 					}
 				}else if(d.name == "Tableau d’affichage"){
 					object = d.object;
-					r = 1;
 				}
 			
-				var AntiR = [];
+				AntiR = [];
 				var Listed = [];
-				for (let i = 0; i < r; i++) {
-					var r2 = random(object.length,AntiR);				
+				for (let i = 0; i <= r; i++) {
+					var r2 = random2(object.length,AntiR);
 						Listed.push(object[r2]);
 				}
 				Listed.sort((a, b) => (a.name > b.name) ? 1 : (a.name === b.name) ? ((a.objectType > b.objectType) ? 1 : -1) : -1 )
 				Listed.sort((a, b) => (a.objectType > b.objectType) ? 1 : (a.objectType === b.objectType) ? ((a.name > b.name) ? 1 : -1) : -1 )
 				Listed.forEach(function(ee){
-					aff2 += '<br>'+ee.name+' '+ee.objectType;					
+					if(ee != undefined){aff2 += '<br>'+ee.name+' '+ee.objectType;}
 				});
 			aff2 += "<div class='t3'><hr><hr></div>";
 		});
@@ -182,6 +181,7 @@ function random(e){
 	return Math.floor(Math.random() * Math.floor(e));	
 }
 
+var AntiR = [];
 function random2(e,f){
   	var a = Math.floor(Math.random() * Math.floor(e)); 
   		var found = f.find(element => element == a);
