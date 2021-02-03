@@ -123,6 +123,7 @@ try {
 						Mer.C.forEach(function(ee){object.push(ee);});
 						Mer.Novice.forEach(function(ee){object.push(ee);});
 						Mer.Compagnon.forEach(function(ee){object.push(ee);});
+						Mer.I.forEach(function(ee){object.push(ee);});
 					}else if(b==2){
 						Mer.P.forEach(function(ee){object.push(ee);});
 						Mer.Novice.forEach(function(ee){object.push(ee);});
