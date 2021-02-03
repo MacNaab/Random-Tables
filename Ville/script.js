@@ -253,7 +253,7 @@ item.Item.forEach(function(ee){
 });
 item.Arme.forEach(function(ee){
 	if(ee.Catégorie == 'Outils'){
-		Mag[ee.Dispo].push({"name":'&#9878; '+ee.Nom+' - '+ee.Catégorie,"objectType":'('+ee.Catégorie+')'});
+		Mag[ee.Dispo].push({"name":'&#9878; '+ee.Nom,"objectType":'('+ee.Catégorie+')'});
 	}
 });
 
