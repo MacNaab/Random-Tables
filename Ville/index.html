@@ -1,7 +1,76 @@
-<link href="Ville/style.css" rel="stylesheet">
-<script src="Ville/data.js"></script>
-<script src="Ville/item.js"></script>
-<script src="Ville/script.js"></script>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- include libraries(jQuery, bootstrap) -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		
+    <link href="style.css" rel="stylesheet">
+	<script src="data.js"></script>
+	<script src="item.js"></script>
+	<script src="script.js"></script>
+
+    <title>Générateur d'environnement urbain - The Witcher TRPG</title>
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="" onclick="Nav(0)">Witcher TRPG</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link"  href="https://macnaab.github.io/Random-Tables/">Tables aléatoires</span></a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="">Environnement urbain aléatoires</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  href="https://macnaab.github.io/Random-Tables/">Générateur Rencontres</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://macnaab.github.io/Random-Tables/WTRPG/table.html">Tableaux comparatifs</a>
+      </li>
+	  <li class="nav-item">
+		<div class="dropdown">
+		  <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink 1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Gestionnaire de Combats
+		  </a>
+		  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink 1">
+			<a class="dropdown-item" href="https://macnaab.github.io/Random-Tables/WTRPG/combat.html">Version 1</a>
+			<a class="dropdown-item" href="https://macnaab.github.io/Random-Tables/WTRPG/combat2.html">Version 2</a>
+			<a class="dropdown-item" href="https://macnaab.github.io/Random-Tables/">Version 3 (dernière)</a>
+		  </div>
+		</div>	  
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://macnaab.github.io/Random-Tables/WTRPG/map.html">Gestionnaire de trajets</a>
+      </li>
+	  <li class="nav-item">
+		<div class="dropdown">
+		  <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink 1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Générateur de Fiches PJ
+		  </a>
+		  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink 1">
+			<a class="dropdown-item" href="https://macnaab.github.io/Random-Tables/Fiche/Witcher.html">Normale</a>
+			<a class="dropdown-item" href="https://macnaab.github.io/Random-Tables/Fiche/W2.html">Avancée</a>
+		  </div>
+		</div>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="https://macnaab.github.io/Easy-Battlemap-Creator/index_en.html">Battlemap Creator</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
 <div class="bg-light p-4">
   <h1>Générateur d'environnement urbain</h1>
@@ -100,3 +169,16 @@
 <div>	
 	<div id="Sortie"></div>
 </div>
+
+<footer class="footer" style="margin-top:15px;">
+	<div class="pos-f-t">
+		<div class="bg-dark p-4">
+			<h5 class="text-white h4">Un problème ?</h5>
+			<span class="text-muted">
+				Si vous rencontez un problème, n'hésitez pas à m'en faire part via <a href="https://github.com/MacNaab/Random-Tables/issues">Github</a>, <a href="https://www.reddit.com/user/mac-hareng">Reddit</a> ou sur le <a href="https://discord.gg/zTDwBJA">discord</a> <span class="text-white">@Mac Hareng</span>.
+			</span>
+		</div>
+	</div>
+</footer>
+  </body>
+</html>
