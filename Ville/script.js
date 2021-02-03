@@ -151,6 +151,23 @@ try {
 					}
 				}else if(d.name == "Tableau d’affichage"){
 					object = d.object;
+				}else if(d.name == "Écurie"){
+					aff2 += '<br>Box d’écurie (Logement)';
+					if(b==0){
+						Ecu.P.forEach(function(ee){object.push(ee);});
+						Ecu.C.forEach(function(ee){object.push(ee);});
+						Ecu.I.forEach(function(ee){object.push(ee);});
+						Ecu.R.forEach(function(ee){object.push(ee);});
+					}else if(b==1){
+						Ecu.P.forEach(function(ee){object.push(ee);});
+						Ecu.C.forEach(function(ee){object.push(ee);});
+					}else if(b==2){
+						Ecu.P.forEach(function(ee){object.push(ee);});
+					}else{
+						Ecu.P.forEach(function(ee){object.push(ee);});
+						Ecu.C.forEach(function(ee){object.push(ee);});
+						Ecu.I.forEach(function(ee){object.push(ee);});
+					}
 				}
 			
 				AntiR = [];
@@ -219,7 +236,7 @@ item.SchémaA.forEach(function(ee){
 
 var Mag = {'P': [],'C': [],'I': [],'R': []};
 item.Item.forEach(function(ee){
-	if(ee.Catégorie != 'Logements' && ee.Catégorie != "Services" && ee.Catégorie != "Vêtements" && ee.Catégorie != "Nourritures"){
+	if(ee.Catégorie != 'Logements' && ee.Catégorie != "Services" && ee.Catégorie != "Vêtements" && ee.Catégorie != "Nourritures" && ee.Catégorie != "Montures"){
 		Mag[ee.Dispo].push({"name":ee.Nom,"objectType":'('+ee.Catégorie+')'});
 	}
 });
@@ -256,6 +273,19 @@ item.Item.forEach(function(ee){
 		Tai[ee.Dispo].push({"name":ee.Nom,"objectType":'('+ee.Catégorie+')'});
 	}
 });
+item.Armure.forEach(function(ee){
+	if(ee.Catégorie == "Légères" && ee.Nom != "Spangenhelm"){
+		Tai[ee.Dispo].push({"name":ee.Nom+' - '+ee.Catégorie,"objectType":'(Armure)'});
+	}
+});
+
+var Ecu = {'P': [],'C': [],'I': [],'R': []};
+item.Item.forEach(function(ee){
+	if(ee.Catégorie == 'Montures'){
+		Ecu[ee.Dispo].push({"name":ee.Nom,"objectType":'(Fourniture pour monture)'});
+	}
+});
+
 
 function imprimer(divName) {
 	var printContents = document.getElementById(divName).innerHTML;    
