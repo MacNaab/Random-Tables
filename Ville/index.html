@@ -1,0 +1,102 @@
+<link href="style.css" rel="stylesheet">
+<script src="data.js"></script>
+<script src="item.js"></script>
+<script src="script.js"></script>
+
+<div class="bg-light p-4">
+  <h1>Générateur d'environnement urbain</h1>
+  <p class="lead">
+	Il s’agit de la transcription de l’application Android <a target="_blank" href="https://play.google.com/store/apps/details?id=com.calabrese.witcherrpglocationgenerator">The Witcher’s Path</a> en format web.
+  </p>
+  <hr class="my-4">
+  <p>
+	Pour plus d’informations sur la génération cliquez sur le bouton ci-dessous.
+  </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="color:white" role="button">En savoir plus</a>
+  </p>
+</div>  
+
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+	4 environnements possibles:
+<div class="row">
+  <div class="col-4">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Capitale</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Cité</a>
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Village</a>
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Forteresse</a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+		Composé d'un Alchimiste, Armurier, Magasin, Librairie, Logements (7), Mercerie, Tailleur et Tableau d’affichage.
+		<br> Peut avoir des items allant jusqu'à la Disponibilité Rare et de Niveau Maître.
+	  </div>
+      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+		Composé d'un Alchimiste, Armurier, Magasin, Librairie, Logements (5), Mercerie, Tailleur et Tableau d’affichage.
+		<br> Peut avoir des items allant jusqu'à la Disponibilité Commune et de Niveau Compagnon.
+	  </div>
+      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+		Composé d'un Alchimiste, Armurier, Magasin, Logements (4), Mercerie et Tableau d’affichage.
+		<br> Peut avoir des items allant jusqu'à la Disponibilité Partout et de Niveau Novice.
+	  </div>
+      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+		Composé d'un Alchimiste, Armurier, Magasin, Logements (2) et Tableau d’affichage.
+		<br> Peut avoir des items allant jusqu'à la Disponibilité Inhabituelle et de Niveau Compagnon.
+	  </div>
+    </div>
+  </div>
+</div>	
+	<hr>8 bâtiments différents possibles:
+<div class="row">
+  <div class="col-4">
+    <div class="list-group" id="list-tab2" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-b1-list" data-toggle="list" href="#list-b1" role="tab" aria-controls="b1">Alchimiste</a>
+      <a class="list-group-item list-group-item-action" id="list-b2-list" data-toggle="list" href="#list-b2" role="tab" aria-controls="b2">Armurier</a>
+      <a class="list-group-item list-group-item-action" id="list-b3-list" data-toggle="list" href="#list-b3" role="tab" aria-controls="b3">Magasin</a>
+      <a class="list-group-item list-group-item-action" id="list-b4-list" data-toggle="list" href="#list-b4" role="tab" aria-controls="b4">Librairie</a>
+      <a class="list-group-item list-group-item-action" id="list-b5-list" data-toggle="list" href="#list-b5" role="tab" aria-controls="b5">Logement</a>
+      <a class="list-group-item list-group-item-action" id="list-b6-list" data-toggle="list" href="#list-b6" role="tab" aria-controls="b6">Mercerie</a>
+      <a class="list-group-item list-group-item-action" id="list-b7-list" data-toggle="list" href="#list-b7" role="tab" aria-controls="b7">Tailleur</a>
+      <a class="list-group-item list-group-item-action" id="list-b8-list" data-toggle="list" href="#list-b8" role="tab" aria-controls="b8">Tableau d’affichage</a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent2">
+      <div class="tab-pane fade show active" id="list-b1" role="tabpanel" aria-labelledby="list-b1-list">Vend des articles, composants et formules alchimiques.</div>
+      <div class="tab-pane fade" id="list-b2" role="tabpanel" aria-labelledby="list-b2-list">Vend des armes, armures et schémas.</div>
+      <div class="tab-pane fade" id="list-b3" role="tabpanel" aria-labelledby="list-b3-list">Vend des contenants, équipement général et outils</div>
+      <div class="tab-pane fade" id="list-b4" role="tabpanel" aria-labelledby="list-b4-list">Vend des sorts, livres et bâtons.</div>
+      <div class="tab-pane fade" id="list-b5" role="tabpanel" aria-labelledby="list-b5-list">Vend nourriture et boisson.</div>
+      <div class="tab-pane fade" id="list-b6" role="tabpanel" aria-labelledby="list-b6-list">Vend des composants et recettes d’artisanat.</div>
+      <div class="tab-pane fade" id="list-b7" role="tabpanel" aria-labelledby="list-b7-list">Vend des vêtements et armure légère.</div>
+      <div class="tab-pane fade" id="list-b8" role="tabpanel" aria-labelledby="list-b8-list">Un contrat aléatoire.</div>
+    </div>
+  </div>
+</div>	
+  </div>
+</div>
+
+<div style="margin:25px">
+	<div class="grid-container">
+	  <input type="text" class="form-control" id="Nom" placeholder="Nom de l'environnement">
+	  <select id="Urbain" class="custom-select">
+		<option disabled selected>Type d'environnement urbain</option>
+	  </select>
+	</div>
+	<div style="text-align:center;margin-top:15px;">
+		<button id="Val" type="button" class="btn btn-outline-success" title="Générer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/></svg>
+		</button>
+		<button href="#" onClick="imprimer('Sortie')" type="button" class="btn btn-outline-dark" title="Imprimer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16"><path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/><path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/></svg>
+		</button>
+	</div>
+</div>
+
+<div>	
+	<div id="Sortie"></div>
+</div>
