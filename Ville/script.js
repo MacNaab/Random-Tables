@@ -182,7 +182,7 @@ try {
 				Listed.forEach(function(ee){
 					if(ee != undefined){aff2 += '<br>'+ee.name+' '+ee.objectType;}
 				});
-			aff2 += "<div class='t3'><hr><hr></div>";
+			aff2 += "<div class='t3'><hr></div>";
 		});
 			aff += "<div class='t1'>"+aff2+"</div>";
 			
@@ -287,11 +287,18 @@ item.Item.forEach(function(ee){
 	}
 });
 
+function mobilecheck() {
+    return (typeof window.orientation !== "undefined") 
+      || (navigator.userAgent.indexOf('IEMobile') !== -1
+      );
+};
 
 function imprimer(divName) {
 	var printContents = document.getElementById(divName).innerHTML;    
 	var originalContents = document.body.innerHTML;      
+	window.addEventListener('afterprint', (event) => {
+		  return document.body.innerHTML = originalContents;
+	});	
 	document.body.innerHTML = printContents;     
-	window.print();     
-	document.body.innerHTML = originalContents;
+	window.print();
 }
