@@ -81,7 +81,13 @@ try {
 						Mag.I.forEach(function(ee){object.push(ee);});
 					}
 				}else if(d.name == "Librairie"){
-					object = d.object;
+					d.object.forEach(function(ee){
+						if(ee.objectType == '(Grimoire)'){
+							object.push({'name': '&#128302; '+ee.name,'objectType':ee.objectType});
+						}else{
+							object.push({'name': '&#128214; '+ee.name,'objectType':ee.objectType});
+						}						
+					});
 					if(b==0){
 						Lib.P.forEach(function(ee){object.push(ee);});
 						Lib.C.forEach(function(ee){object.push(ee);});
@@ -107,7 +113,9 @@ try {
 					}
 				}else if(d.name == "Auberge de Luxe" || d.name == "Auberge de Qualité" || d.name == "Auberge Correcte" || d.name == "Auberge de Bon marché" || d.name == "Auberge Douteuse"){
 					var r00 = random(d.standardObjects.length);
-					object = d.standardObjects[r00].object;
+					d.standardObjects[r00].object.forEach(function(ee){
+						object.push({'name': '&#127858; '+ee.name,'objectType':ee.objectType});
+					});
 					r = object.length;
 				}else if(d.name == "Mercerie"){
 					if(b==0){
@@ -151,9 +159,11 @@ try {
 						Tai.I.forEach(function(ee){object.push(ee);});
 					}
 				}else if(d.name == "Tableau d’affichage"){
-					object = d.object;
+					d.object.forEach(function(ee){
+						object.push({'name': '&#128205; '+ee.name,'objectType':ee.objectType});					
+					});
 				}else if(d.name == "Écurie"){
-					aff2 += '<br>Box d’écurie (Logement)';
+					aff2 += '<br>&#127968; Box d’écurie (Logement)';
 					if(b==0){
 						Ecu.P.forEach(function(ee){object.push(ee);});
 						Ecu.C.forEach(function(ee){object.push(ee);});
@@ -213,77 +223,76 @@ function random2(e,f){
 var Alchi = {'P': [],'C': [],'I': [],'R': []};
 item.Potion.forEach(function(ee){
 	if(ee.Type == 'Articles'){
-		Alchi[ee.Dispo].push({"name":ee.Nom,"objectType":'(Article)'},{"name":ee.Nom,"objectType":'(Formule)'});
+		Alchi[ee.Dispo].push({"name":'&#9879; '+ee.Nom,"objectType":'(Article)'},{"name":'&#128220; '+ee.Nom,"objectType":'(Formule)'});
 	}
 });
 item.Composants.forEach(function(ee){
 	if(ee.Substance){
-		Alchi[ee.Rareté].push({"name":ee.Nom+' - '+ee.Substance,"objectType":'(Composant)'});		
+		Alchi[ee.Rareté].push({"name":'&#9883; '+ee.Nom+' - '+ee.Substance,"objectType":'(Composant)'});		
 	}
 });
 
 var Armu = {'P': [],'C': [],'I': [],'R': [],'Novice': [],'Compagnon': [],'Maître': [],'grand maître':[]};
 item.Arme.forEach(function(ee){
 	if(ee.Catégorie != 'Outils'){
-		Armu[ee.Dispo].push({"name":ee.Nom+' - '+ee.Catégorie,"objectType":'(Arme)'});		
+		Armu[ee.Dispo].push({"name":'&#9876; '+ee.Nom+' - '+ee.Catégorie,"objectType":'(Arme)'});		
 	}
 });
 item.Armure.forEach(function(ee){
-	Armu[ee.Dispo].push({"name":ee.Nom+' - '+ee.Catégorie,"objectType":'(Armure)'});
+	Armu[ee.Dispo].push({"name":'&#x26E8; '+ee.Nom+' - '+ee.Catégorie,"objectType":'(Armure)'});
 });
 item.SchémaA.forEach(function(ee){
-	Armu[ee.Type].push({"name":ee.Nom+' - '+ee.Type,"objectType":'(Schéma)'});
+	Armu[ee.Type].push({"name":'&#128220; '+ee.Nom+' - '+ee.Type,"objectType":'(Schéma)'});
 });
 
 var Mag = {'P': [],'C': [],'I': [],'R': []};
 item.Item.forEach(function(ee){
 	if(ee.Catégorie != 'Logements' && ee.Catégorie != "Services" && ee.Catégorie != "Vêtements" && ee.Catégorie != "Nourritures" && ee.Catégorie != "Montures"){
-		Mag[ee.Dispo].push({"name":ee.Nom,"objectType":'('+ee.Catégorie+')'});
+		Mag[ee.Dispo].push({"name":'&#9878; '+ee.Nom,"objectType":'('+ee.Catégorie+')'});
 	}
 });
 item.Arme.forEach(function(ee){
 	if(ee.Catégorie == 'Outils'){
-		Mag[ee.Dispo].push({"name":ee.Nom+' - '+ee.Catégorie,"objectType":'('+ee.Catégorie+')'});
+		Mag[ee.Dispo].push({"name":'&#9878; '+ee.Nom+' - '+ee.Catégorie,"objectType":'('+ee.Catégorie+')'});
 	}
 });
 
 var Lib = {'P': [],'C': [],'I': [],'R': [],'Novice': [],'Compagnon': [],'Maître': [],'grand maître':[]};
 item.Arme.forEach(function(ee){
 	if(ee.Catégorie == 'Bâton'){
-		Lib[ee.Dispo].push({"name":ee.Nom+' - '+ee.Catégorie,"objectType":'(Arme)'});
+		Lib[ee.Dispo].push({"name":'&#9882; '+ee.Nom+' - '+ee.Catégorie,"objectType":'(Arme)'});
 	}
 });
 item.SchémaB.forEach(function(ee){
-	Lib[ee.Type].push({"name":ee.Nom+' - '+ee.Type,"objectType":'(Schéma)'});
+	Lib[ee.Type].push({"name":'&#128220; '+ee.Nom+' - '+ee.Type,"objectType":'(Schéma)'});
 });
 
 var Mer = {'P': [],'C': [],'I': [],'R': [],'Novice': [],'Compagnon': [],'Maître': [],'grand maître':[]};
 item.Schéma.forEach(function(ee){
-	Mer[ee.Type].push({"name":ee.Nom+' - '+ee.Type,"objectType":'(Schéma)'});
+	Mer[ee.Type].push({"name":'&#128220; '+ee.Nom+' - '+ee.Type,"objectType":'(Schéma)'});
 });
 item.Composants.forEach(function(ee){
 	if(!ee.Substance){
-		Mer[ee.Rareté].push({"name":ee.Nom,"objectType":'(Composant)'});		
+		Mer[ee.Rareté].push({"name":'&#128295; '+ee.Nom,"objectType":'(Composant)'});		
 	}
 });
 
-
-var Tai = {'P': [{"name":"Fibre - Novice","objectType":"(Schéma)"},{"name":"Fil - Novice","objectType":"(Schéma)"},{"name":"Lin - Novice","objectType":"(Schéma)"},{"name":"Toile de lin - Novice","objectType":"(Schéma)"}],'C': [{"name":"Coton","objectType":"(Composant)"},{"name":"Fil","objectType":"(Composant)"}],'I': [{"name":"Soie","objectType":"(Composant)"},{"name":"Toile de lin","objectType":"(Composant)"}],'R': []};
+var Tai = {'P': [{"name":"&#128220; Fibre - Novice","objectType":"(Schéma)"},{"name":"&#128220; Fil - Novice","objectType":"(Schéma)"},{"name":"&#128220; Lin - Novice","objectType":"(Schéma)"},{"name":"&#128220; Toile de lin - Novice","objectType":"(Schéma)"}],'C': [{"name":"'&#9883; Coton","objectType":"(Composant)"},{"name":"'&#9883; Fil","objectType":"(Composant)"}],'I': [{"name":"'&#9883; Soie","objectType":"(Composant)"},{"name":"'&#9883; Toile de lin","objectType":"(Composant)"}],'R': []};
 item.Item.forEach(function(ee){
 	if(ee.Catégorie == "Vêtements"){
-		Tai[ee.Dispo].push({"name":ee.Nom,"objectType":'('+ee.Catégorie+')'});
+		Tai[ee.Dispo].push({"name":'&#9986; '+ee.Nom,"objectType":'('+ee.Catégorie+')'});
 	}
 });
 item.Armure.forEach(function(ee){
 	if(ee.Catégorie == "Légères" && ee.Nom != "Spangenhelm"){
-		Tai[ee.Dispo].push({"name":ee.Nom+' - '+ee.Catégorie,"objectType":'(Armure)'});
+		Tai[ee.Dispo].push({"name":'&#128090; '+ee.Nom+' - '+ee.Catégorie,"objectType":'(Armure)'});
 	}
 });
 
 var Ecu = {'P': [],'C': [],'I': [],'R': []};
 item.Item.forEach(function(ee){
 	if(ee.Catégorie == 'Montures'){
-		Ecu[ee.Dispo].push({"name":ee.Nom,"objectType":'(Fourniture pour monture)'});
+		Ecu[ee.Dispo].push({"name":'&#128014; '+ee.Nom,"objectType":'(Fourniture pour monture)'});
 	}
 });
 
