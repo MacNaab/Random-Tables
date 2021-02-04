@@ -81,6 +81,9 @@ var Data = {
         10,
         5
       ],
+	  "min":[
+		10,5,1,1
+	  ],
       "object": [
         {
           "name": "Bryone - Caelum",
@@ -541,6 +544,9 @@ var Data = {
         0,
         30
       ],
+	  "min":[
+		5,3,0,10
+	  ],
       "object": [
         {
           "name": "Epée de Fer",
@@ -1165,6 +1171,9 @@ var Data = {
         10,
         0
       ],
+	  "min":[
+		0,0,1,0
+	  ],
       "object": [
         {
           "name": "Epée de Fer",
@@ -1315,8 +1324,11 @@ var Data = {
         30,
         20,
         10,
-        2
+        5
       ],
+	  "min":[
+		10,5,1,1
+	  ],
       "object": [
         {
           "name": "Amulette avec Gemme",
@@ -1622,6 +1634,9 @@ var Data = {
         0,
         0
       ],
+	  "min":[
+		10,5,0,0
+	  ],
       "object": [
         {
           "name": "Compas Magique - Eléments Mixtes",
@@ -3464,7 +3479,10 @@ var Data = {
         0,
         0,
         0
-      ]
+      ],
+	  "min":[
+		0,0,0,0
+	  ]
     },
     {
       "name": "Écurie",
@@ -3474,7 +3492,10 @@ var Data = {
         3,
         1,
         3
-      ]
+      ],
+	  "min":[
+		1,1,1,1
+	  ]
     },
     {
       "name": "Auberge de Luxe",
@@ -3518,6 +3539,9 @@ var Data = {
         0,
         0
       ],
+	  "min":[
+		0,0,0,0
+	  ],
       "standardObjects": [
         {
           "object": [
@@ -3688,6 +3712,7 @@ var Data = {
         "La Lacrima dell'Orso",
         "Ragoût et Bière dans la grotte",
         "Il Tesoro de Brennen",
+		"Guide Spiritueux",
         "Vallée enchantée",
         "Cheval blanc",
         "Il Pozzo",
@@ -3699,6 +3724,7 @@ var Data = {
         "Cornes origineles",
         "Oasis du Goût",
         "Au romarin",
+		"Lady glou glou",
         "Les frères Airik",
         "À la mouette",
         "Villa dei Melograni",
@@ -3729,6 +3755,9 @@ var Data = {
         0,
         0
       ],
+	  "min":[
+		0,0,0,0
+	  ],
       "standardObjects": [
         {
           "object": [
@@ -3866,7 +3895,9 @@ var Data = {
       "buildingRandomNames": [
         "Vieilles épées",
         "rivière de Bière",
-        "la tour du magicien",
+		"Cri vain",
+		"Céphalique",
+        "La tour du magicien",
         "méduses souriantes",
         "mers et montagnes",
         "la grande tortue",
@@ -3906,14 +3937,14 @@ var Data = {
         "Baam Bola",
         "Poulain sevré",
         "Alcool et autres poisons",
-        "The Chained StOrion",
+        "L'Étoile enchaînée",
         "Lit tordu",
         "Green Valley",
         "Arguta Maiden",
         "Fenêtre ouverte",
         "Pied droit",
         "Patte de bois",
-        "Broken Poignard",
+        "Poignard brisé",
         "Vampire Ship",
         "Eagle's Beak",
         "Hypnotic Bull",
@@ -3931,7 +3962,12 @@ var Data = {
         "Refuge du marchand",
         "Table carrée",
         "Souris perdue",
-        "Canard"
+        "Canard",
+		"Sac à gnôle",
+		"Chameau assoiffé",
+		"La barrique",
+		"Trou sans fond",
+		"Wine Not",
       ],
       "maxObjectsDisplayedPerEnvironmentType": [
         0,
@@ -3939,6 +3975,9 @@ var Data = {
         0,
         0
       ],
+	  "min":[
+		0,0,0,0
+	  ],
       "standardObjects": [
         {
           "object": [
@@ -4043,6 +4082,8 @@ var Data = {
       "buildingType": "Inn_cheap_quality",
       "buildingRandomNames": [
         "Taverna  du chasseur",
+		"Lait de vache",
+		"Pichet rien",
         "Burp libre",
         "Lanterne éteinte",
         "Bouclier de chêne",
@@ -4139,6 +4180,9 @@ var Data = {
         0,
         0
       ],
+	  "min":[
+		0,0,0,0
+	  ],
       "standardObjects": [
         {
           "object": [
@@ -4227,9 +4271,14 @@ var Data = {
       "buildingType": "Inn_infamous_quality",
       "buildingRandomNames": [
         "Broche sirène",
+		"Téteur de goulot",
+		"Gosier à pinard",
+		"Tonneau à piquette",
+		"Mojitocratie",
+		"Bibinocratie",
         "Oreille de Brigand",
         "Nino le danseur",
-        "Bigheader",
+        "Grosse tête",
         "Dent de canard",
         "Sacoche perforée",
         "Baril ivre",
@@ -4237,7 +4286,8 @@ var Data = {
         "Brise-pied",
         "Diviseur d'os",
         "Pied de corbeau",
-        "Pain",
+        "Douleur",
+		"Gueule de bois",
         "Strophe  Cinétique",
         "Feu allumé",
         "Chaise bancale",
@@ -4267,7 +4317,8 @@ var Data = {
 		"Le poney qui tousse",
 		"Le poney lubrique",
 		"Chopine tiède",
-		"Rat d'égoûts"
+		"Rat d'égoûts",
+		"Corbeau ravagé"
       ],
       "maxObjectsDisplayedPerEnvironmentType": [
         0,
@@ -4275,6 +4326,9 @@ var Data = {
         0,
         0
       ],
+	  "min":[
+		0,0,0,0
+	  ],
       "standardObjects": [
         {
           "object": [
@@ -4351,6 +4405,9 @@ var Data = {
         10,
         0
       ],
+	  "min":[
+		10,5,3,0
+	  ],
       "object": [
         {
           "name": "Carbone - Materiel pour les envoutements",
@@ -4603,6 +4660,9 @@ var Data = {
         0,
         0
       ],
+	  "min":[
+		3,1,0,0
+	  ],
       "object": [
         {
           "name": "Vêtements basiques",
@@ -4648,6 +4708,9 @@ var Data = {
         1,
         1
       ],
+	  "min":[
+		1,1,1,1
+	  ],
       "object": [
         {
           "name": "Contrat sur des bandits",

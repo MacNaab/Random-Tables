@@ -7,7 +7,7 @@ try {
 		var a = $("#Nom").val();
 		var b = $("#Urbain").val();
 		var c = Data.environment[b];
-		var aff = "<b>"+a+"</b><br>~"+c.name+"~";
+		var aff = "<b>"+a+"</b><br>~ "+c.name+" ~";
 			aff = "<div class='t0'>"+aff+"</div><div class='t3'><hr><hr></div>";
 			
 		var aff2 = "";
@@ -23,6 +23,7 @@ try {
 			aff2 += "<b>"+Bname+":</b>";
 
 			var r = random(d.maxObjectsDisplayedPerEnvironmentType[b]);	// = Nbre item
+				if(r < d.min[b]){r=Number(d.min[b]);}
 			var object = [];
 				if(d.name == "Alchimiste"){
 					if(b==0){
@@ -160,7 +161,8 @@ try {
 					}
 				}else if(d.name == "Tableau d’affichage"){
 					d.object.forEach(function(ee){
-						object.push({'name': '&#128205; '+ee.name,'objectType':ee.objectType});					
+						object.push({'name': '&#128205; '+ee.name,'objectType':ee.objectType});
+						r = 0;
 					});
 				}else if(d.name == "Écurie"){
 					aff2 += '<br>&#127968; Box d’écurie (Logement)';
@@ -253,7 +255,7 @@ item.Item.forEach(function(ee){
 });
 item.Arme.forEach(function(ee){
 	if(ee.Catégorie == 'Outils'){
-		Mag[ee.Dispo].push({"name":'&#9878; '+ee.Nom,"objectType":'('+ee.Catégorie+')'});
+		Mag[ee.Dispo].push({"name":'&#9878; '+ee.Nom+' - '+ee.Catégorie,"objectType":'('+ee.Catégorie+')'});
 	}
 });
 
@@ -269,7 +271,7 @@ item.SchémaB.forEach(function(ee){
 
 var Mer = {'P': [],'C': [],'I': [],'R': [],'Novice': [],'Compagnon': [],'Maître': [],'grand maître':[]};
 item.Schéma.forEach(function(ee){
-	Mer[ee.Type].push({"name":'&#128220; '+ee.Nom+' - '+ee.Type,"objectType":'(Schéma)'});
+	Mer[ee.Type].push({"name":'&#128220; '+ee.Nom,"objectType":'(Schéma)'});
 });
 item.Composants.forEach(function(ee){
 	if(!ee.Substance){
