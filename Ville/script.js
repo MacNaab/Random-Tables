@@ -279,14 +279,15 @@ item.Composants.forEach(function(ee){
 	}
 });
 
-var Tai = {'P': [{"name":"&#128220; Fibre - Novice","objectType":"(Schéma)"},{"name":"&#128220; Fil - Novice","objectType":"(Schéma)"},{"name":"&#128220; Lin - Novice","objectType":"(Schéma)"},{"name":"&#128220; Toile de lin - Novice","objectType":"(Schéma)"}],'C': [{"name":"'&#9883; Coton","objectType":"(Composant)"},{"name":"'&#9883; Fil","objectType":"(Composant)"}],'I': [{"name":"'&#9883; Soie","objectType":"(Composant)"},{"name":"'&#9883; Toile de lin","objectType":"(Composant)"}],'R': []};
+var Tai = {'P': [{"name":"&#128220; Fibre - Novice","objectType":"(Schéma)"},{"name":"&#128220; Fil - Novice","objectType":"(Schéma)"},{"name":"&#128220; Lin - Novice","objectType":"(Schéma)"},{"name":"&#128220; Toile de lin - Novice","objectType":"(Schéma)"}],'C': [{"name":"&#9883; Coton","objectType":"(Composant)"},{"name":"&#9883; Fil","objectType":"(Composant)"}],'I': [{"name":"&#9883; Soie","objectType":"(Composant)"},{"name":"&#9883; Toile de lin","objectType":"(Composant)"}],'R': []};
 item.Item.forEach(function(ee){
 	if(ee.Catégorie == "Vêtements"){
 		Tai[ee.Dispo].push({"name":'&#9986; '+ee.Nom,"objectType":'('+ee.Catégorie+')'});
 	}
 });
 item.Armure.forEach(function(ee){
-	if(ee.Catégorie == "Légères" && ee.Nom != "Spangenhelm"){
+	if(ee.Catégorie == "Légères"){
+		if(ee.Nom == "Spangenhelm" || ee.Nom == "Bouclier de peau" || ee.Nom == "Bocle d'acier" || ee.Nom == "Bouclier témérien" || ee.Nom == "Bocle gnome" || ee.Nom == "Cotte de mailles gnome"){return;}
 		Tai[ee.Dispo].push({"name":'&#128090; '+ee.Nom+' - '+ee.Catégorie,"objectType":'(Armure)'});
 	}
 });
