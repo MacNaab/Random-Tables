@@ -1,6 +1,12 @@
+var ii = 0;
 $( document ).ready(function() {
 	Data.environment.forEach(function(e){
 		$("#Urbain").append('<option value="'+e.ID+'">'+e.name+'</option>')
+	});
+	Data.building.forEach(function(e){
+		if(e.buildingType == 'Armorer_village'){return ii += 1;}
+		$("#Bat-2").append('<option value="'+ii+'">'+e.name+'</option>')
+		ii += 1;
 	});
 	$("#Val").on('click', function(){
 try {
@@ -205,6 +211,109 @@ try {
 }		
 		
 	});
+	
+		$("#Val-2").on('click', function(){
+try {
+		var r = $("#Nombre-2").val();
+			if(r < 1){r = 1;}
+		var b = $("#Bat-2").val();
+		var d = Data.building[b];
+		var aff = "";
+		var aff2 = "";
+		
+			var Bname = d.name;
+			if(d.name == "Auberge de Luxe" || d.name == "Auberge de Qualité" || d.name == "Auberge Correcte" || d.name == "Auberge de Bon marché" || d.name == "Auberge Douteuse"){			
+				var r0 = random(d.buildingRandomNames.length);
+				Bname += ' «'+d.buildingRandomNames[r0]+'»';
+			}
+			aff = "<b>"+Bname+":</b>";		
+			aff = "<div class='t0'>"+aff+"</div><div class='t3'><hr></div>";
+		
+			var object = [];
+				if(d.name == "Alchimiste"){
+					Alchi.P.forEach(function(ee){object.push(ee);});
+					Alchi.C.forEach(function(ee){object.push(ee);});
+					Alchi.I.forEach(function(ee){object.push(ee);});
+					Alchi.R.forEach(function(ee){object.push(ee);});
+				}else if(d.name == "Armurier"){
+					Armu.P.forEach(function(ee){object.push(ee);});
+					Armu.C.forEach(function(ee){object.push(ee);});
+					Armu.I.forEach(function(ee){object.push(ee);});
+					Armu.R.forEach(function(ee){object.push(ee);});
+					Armu.Novice.forEach(function(ee){object.push(ee);});
+					Armu.Compagnon.forEach(function(ee){object.push(ee);});
+					Armu.Maître.forEach(function(ee){object.push(ee);});
+				}else if(d.name == "Magasin"){
+						Mag.P.forEach(function(ee){object.push(ee);});
+						Mag.C.forEach(function(ee){object.push(ee);});
+						Mag.I.forEach(function(ee){object.push(ee);});
+						Mag.R.forEach(function(ee){object.push(ee);});
+				}else if(d.name == "Librairie"){
+					d.object.forEach(function(ee){
+						if(ee.objectType == '(Grimoire)'){
+							object.push({'name': '&#128302; '+ee.name,'objectType':ee.objectType});
+						}else{
+							object.push({'name': '&#128214; '+ee.name,'objectType':ee.objectType});
+						}						
+					});
+					Lib.P.forEach(function(ee){object.push(ee);});
+					Lib.C.forEach(function(ee){object.push(ee);});
+					Lib.I.forEach(function(ee){object.push(ee);});
+					Lib.R.forEach(function(ee){object.push(ee);});
+					Lib.Novice.forEach(function(ee){object.push(ee);});
+					Lib.Compagnon.forEach(function(ee){object.push(ee);});
+					Lib.Maître.forEach(function(ee){object.push(ee);});
+				}else if(d.name == "Auberge de Luxe" || d.name == "Auberge de Qualité" || d.name == "Auberge Correcte" || d.name == "Auberge de Bon marché" || d.name == "Auberge Douteuse"){
+					var r00 = random(d.standardObjects.length);
+					d.standardObjects[r00].object.forEach(function(ee){
+						object.push({'name': '&#127858; '+ee.name,'objectType':ee.objectType});
+					});
+				}else if(d.name == "Mercerie"){
+						Mer.P.forEach(function(ee){object.push(ee);});
+						Mer.C.forEach(function(ee){object.push(ee);});
+						Mer.I.forEach(function(ee){object.push(ee);});
+						Mer.R.forEach(function(ee){object.push(ee);});
+						Mer.Novice.forEach(function(ee){object.push(ee);});
+						Mer.Compagnon.forEach(function(ee){object.push(ee);});
+						Mer.Maître.forEach(function(ee){object.push(ee);});
+				}else if(d.name == "Tailleur"){
+					Tai.P.forEach(function(ee){object.push(ee);});
+					Tai.C.forEach(function(ee){object.push(ee);});
+					Tai.I.forEach(function(ee){object.push(ee);});
+					Tai.R.forEach(function(ee){object.push(ee);});
+				}else if(d.name == "Tableau d’affichage"){
+					d.object.forEach(function(ee){
+						object.push({'name': '&#128205; '+ee.name,'objectType':ee.objectType});
+					});
+				}else if(d.name == "Écurie"){
+					aff2 += '<br>&#127968; Box d’écurie (Logement)';
+						Ecu.P.forEach(function(ee){object.push(ee);});
+						Ecu.C.forEach(function(ee){object.push(ee);});
+						Ecu.I.forEach(function(ee){object.push(ee);});
+						Ecu.R.forEach(function(ee){object.push(ee);});
+				}
+			
+				AntiR = [];
+				var Listed = [];
+				for (let i = 0; i < r; i++) {
+					var r2 = random2(object.length,AntiR);
+						Listed.push(object[r2]);
+				}
+				Listed.sort((a, b) => (a.name > b.name) ? 1 : (a.name === b.name) ? ((a.objectType > b.objectType) ? 1 : -1) : -1 )
+				Listed.sort((a, b) => (a.objectType > b.objectType) ? 1 : (a.objectType === b.objectType) ? ((a.name > b.name) ? 1 : -1) : -1 )
+				Listed.forEach(function(ee){
+					if(ee != undefined){aff2 += ee.name+' '+ee.objectType+'<br>';}
+				});
+			aff2 += "<div class='t3'><hr></div>";
+			aff += "<div class='t1'>"+aff2+"</div>";
+			
+		$("#Sortie-2").html(aff);
+} catch (error) {
+		console.log(error);
+		$("#Sortie-2").html("Une erreur s'est produite.");
+}		
+		
+	});
 });
 
 function random(e){
@@ -313,4 +422,13 @@ function imprimer(divName) {
 	});	
 	document.body.innerHTML = printContents;     
 	window.print();
+}
+
+function Copy(){
+	var r = document.createRange();
+		r.selectNode(document.getElementById('Sortie-2'));
+	window.getSelection().removeAllRanges();
+	window.getSelection().addRange(r);
+	document.execCommand('copy');
+	window.getSelection().removeAllRanges();
 }
