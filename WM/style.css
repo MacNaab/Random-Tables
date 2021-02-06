@@ -5,13 +5,13 @@ div#footer,div#lang,div#text,ul#nav,ul#nav li{text-align:center}
 @font-face{font-family:PFDinTextCondPro;src:url(https://witcher3map.com/files/fonts/2B84B5_1_0.eot);src:url(https://witcher3map.com/files/fonts/2B84B5_1_0.eot?#iefix) format("embedded-opentype"),url(font/2B84B5_1_0.woff) format("woff"),url(font/2B84B5_1_0.ttf) format("truetype");font-weight:400;font-style:normal}
 @font-face{font-family:PFDinTextCondPro;src:url(https://witcher3map.com/files/fonts/2B84B5_2_0.eot);src:url(https://witcher3map.com/files/fonts/2B84B5_2_0.eot?#iefix) format("embedded-opentype"),url(https://witcher3map.com/files/fonts/2B84B5_2_0.woff) format("woff"),url(https://witcher3map.com/files/fonts/2B84B5_2_0.ttf) format("truetype");font-weight:400;font-style:italic}
 *{margin:0;padding:0;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;outline:0}
-body{background:url(https://witcher3map.com/files/images/homebg.jpg) bottom right no-repeat fixed #040404}
+body{background:url(files/homebg.jpg) bottom right no-repeat fixed #040404}
 div#wrap{min-height:100%;margin:0 auto -40px;display:table;width:100%}
 div#wrap2{display:table-cell;vertical-align:middle;padding-bottom:60px}
 div#content{margin:0 auto 30px}
 div#text{color:#bbb;font-size:20px;margin:25px 0 20px;text-shadow:1px 1px #000;cursor:default}
 div#logo{margin:10px auto;background:url(TheWitcherTRPG.png) no-repeat;width:389px;height:368px}
-ul#nav li{display:inline-block;margin:20px 10px 0;width:245px;height:79px;background:url(https://witcher3map.com/files/images/homenav.png) bottom no-repeat;text-transform:uppercase;font-size:21px;line-height:80px;cursor:pointer;color:#4F3C2F}
+ul#nav li{display:inline-block;margin:20px 10px 0;width:245px;height:79px;background:url(files/homenav.png) bottom no-repeat;text-transform:uppercase;font-size:21px;line-height:80px;cursor:pointer;color:#4F3C2F}
 #nav li a{color:#4F3C2F;text-decoration:none;display:block;position:relative}
 #nav li a img{position:absolute;bottom:-10px;right:0;width:160px;opacity:0;left:0;margin:auto;transition:all .3s ease-in}
 #nav li a:hover{color:#020202}
