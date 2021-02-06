@@ -4,7 +4,7 @@ function Trajectoire(e,f){
         réserve = [];
         console.log('Distance brut: '+e);
     var t = Math.round(e*rapport);
-    var aff = "<button onclick='OuvrirModal()'>+</button><br>";
+    var aff = "<button class='ledecl' title='Ouvrir le menu d\'action' onclick='OuvrirModal()'>+</button><br>";
         aff += '<b><u>Distance totale:</u> '+t+' km</b>';
     var a = KtoT(t);
         aff += "<br><br><u><b>Terreste:</b></u><ul>";
@@ -99,3 +99,46 @@ function Updated(){
     }else{return;}
 }
 
+function modificateur_aff(e){
+	var type = e.alt;
+	if(type == "fermer"){
+		e.alt = "ouvert";
+		e.style.transform = "rotate(0deg)";
+        document.getElementById('modificateur').style.display = 'block';
+	}else{
+		e.alt = "fermer";
+		e.style.transform = "rotate(180deg)";
+        document.getElementById('modificateur').style.display = 'none';
+	}
+}
+
+function ModifTrajet(e){
+    var aff = '';
+    if(e==0 || e==undefined){return $('#R_mt').html('');}else if(e>0){
+        aff = "<i style='color:green'>Il s'agit d'un bonus.</i>";
+    }else{
+        aff = "<i style='color:red'>Il s'agit d'un malus.</i>";
+    }
+    var R = [];
+    for (let i = 1; i < réserve.length; i++){
+        var a = $('input[name=section_'+i+']:checked').val()
+        if(a != undefined){R.push(a);}else{return $('#R_mt').html("Vous devez choisir un mode de transport pour chaque étape.");}
+    }
+    var m = (100-Number(e))/100;
+    if(R.length == Number(réserve.length-1)){
+        var N = 0;
+        aff += '<ul>';
+        for(let i=0;i<R.length;i++){
+            var a = Number(réserve[i+1][R[i]])*m;
+            var h = Math.round((Number(a) - Number(Math.floor(a)))*24);
+            N += Number(a);
+            aff += "<li><b>Segment "+Number(i+1)+":</b> "+Math.floor(a)+" jour(s) et "+h+" heure(s).</li>";
+        }
+        aff += '</ul>';
+        var h = Math.round((Number(N) - Number(Math.floor(N)))*24);
+        aff += "<b><u>Temps total:</u> "+Math.floor(N)+" jour(s) et "+h+" heure(s).</b>";
+    }else{
+        aff = "Vous devez choisir un mode de transport pour chaque étape.";
+    }
+    $('#R_mt').html(aff);
+}

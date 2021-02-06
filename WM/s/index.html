@@ -93,6 +93,7 @@
         <div class="modal-header">
         <span class="close" onclick="FermerModal()">&times;</span>
         <h2>Détails</h2>
+        <hr>
         </div>
         <div class="modal-body">
             <p>Distance par trajet:</p>
@@ -100,7 +101,15 @@
             <div id="modal-fin"></div>
         </div>
         <div class="modal-footer">
-        <h3>Tableaux</h3>
+            <img title="Afficher des exemples de modificateurs" alt="fermer" onclick="modificateur_aff(this)" style="transform: rotate(180deg);margin:auto;" src="https://www.linuxtricks.fr/upload/to_top.png"/>
+            <div class="content">
+                <table id='modificateur'> <tr> <th>Type</th> <th>Nom</th> <th>Valeur</th> </tr> <tr> <td>Terrestre</td> <td>Route de montagne</td> <td>-75%</td> </tr> <tr> <td>Terrestre</td> <td>Hors piste</td> <td>-50%</td> </tr> <tr> <td>Terrestre</td> <td>Route mal entretenue</td> <td>-25%</td> </tr> <tr> <td>Terrestre</td> <td>Chargé</td> <td>-20%</td> </tr> <tr> <td>Terrestre</td> <td>Météo défavorable</td> <td>-20%</td> </tr> <tr> <td>Terrestre</td> <td>Route inconnue</td> <td>-20%</td> </tr> <tr> <td>Terrestre</td> <td>Route très fréquentée</td> <td>-10%</td> </tr> <tr> <td>Terrestre</td> <td>Route pratiquée</td> <td>+10%</td> </tr> <tr> <td>Terrestre</td> <td>Route pavée</td> <td>+20%</td> </tr> <tr> <td>Navigation</td> <td>Contre-vent</td> <td>-50%</td> </tr> <tr> <td>Navigation</td> <td>Météo défavorable</td> <td>-25%</td> </tr> <tr> <td>Navigation</td> <td>Vent bénéfique</td> <td>+50%</td> </tr></table>
+            </div>
+            <div>
+                <b>Ajouter un modificateur:</b>
+                <input type="number" id="modif_temps" onchange="ModifTrajet(this.value)">
+                <div id="R_mt"></div>
+            </div>
         </div>
     </div>
 

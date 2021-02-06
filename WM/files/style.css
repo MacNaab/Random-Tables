@@ -307,3 +307,32 @@ body{margin:0;}
     background: #ece8e1;
   }
   
+  #modificateur {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    display: none;
+    transition-duration: 2s;
+  }
+  
+  #modificateur td, #modificateur th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #modificateur tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #modificateur tr:hover {background-color: #ddd;}
+  
+  #modificateur th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #008CBA;
+    color: white;
+  }
+
+  .ledecl { position: absolute; right: 50px; border: 1px solid; border-radius: 10px; background: none; color: whitesmoke; }
+  #modif_temps {
+    border: 1px solid; border-radius: 5px; vertical-align: sub; outline-style: none; box-shadow: none;
+  }
