@@ -22,6 +22,11 @@ map.on(L.Draw.Event.CREATED, function (event) {
         var layer = event.layer;
 		drawnItems.clearLayers().addLayer(layer);
 });	
+
+map.on('contextmenu', function(){
+    document.getElementsByClassName('leaflet-draw-actions leaflet-draw-actions-top leaflet-draw-actions-bottom')[0].children[1].firstChild.click();
+    document.getElementsByClassName('leaflet-draw-actions leaflet-draw-actions-top leaflet-draw-actions-bottom')[0].firstChild.firstChild.click();
+});
 });
 var drawnItems;
 var Dist = [];

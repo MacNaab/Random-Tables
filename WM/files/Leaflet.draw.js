@@ -134,7 +134,7 @@ L.drawLocal = {
 				tooltip: {
 					start: 'Clickez pour débuter votre tracé.',
 					cont: 'Clickez pour continuer votre tracé.',
-					end: 'Clickez sur Finir pour arrêter votre tracé.'
+					end: 'Click droit pour arrêter votre tracé.'
 				}
 			},
 			rectangle: {
