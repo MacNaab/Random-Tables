@@ -132,9 +132,9 @@ L.drawLocal = {
 			polyline: {
 				error: '<strong>Erreur:</strong> les arrêtes ne peuvent pas se croiser!',
 				tooltip: {
-					start: 'Clickez pour débuter votre tracé.',
-					cont: 'Clickez pour continuer votre tracé.',
-					end: 'Click droit pour arrêter votre tracé.'
+					start: 'Clickez sur la carte pour débuter le tracé.',
+					cont: 'Clickez encore pour continuer le tracé.',
+					end: 'Click droit pour arrêter le tracé.'
 				}
 			},
 			rectangle: {
@@ -181,7 +181,7 @@ L.drawLocal = {
 			},
 			remove: {
 				tooltip: {
-					text: 'Cliquez sur une fonctionnalité à supprimer.'
+					text: 'Cliquez sur Nettoyer pour supprimer le tracé.'
 				}
 			}
 		}

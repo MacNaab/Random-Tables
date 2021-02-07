@@ -20,12 +20,25 @@ map.addControl(drawControl);
 
 map.on(L.Draw.Event.CREATED, function (event) {
         var layer = event.layer;
-		drawnItems.clearLayers().addLayer(layer);
+		drawnItems.addLayer(layer);
 });	
 
 map.on('contextmenu', function(){
-    document.getElementsByClassName('leaflet-draw-actions leaflet-draw-actions-top leaflet-draw-actions-bottom')[0].children[1].firstChild.click();
-    document.getElementsByClassName('leaflet-draw-actions leaflet-draw-actions-top leaflet-draw-actions-bottom')[0].firstChild.firstChild.click();
+    try {
+        document.getElementsByClassName('leaflet-draw-actions leaflet-draw-actions-top leaflet-draw-actions-bottom')[0].children[1].firstChild.click();
+        document.getElementsByClassName('leaflet-draw-actions leaflet-draw-actions-top leaflet-draw-actions-bottom')[0].firstChild.firstChild.click();            
+    } catch (err) {console.log(err);}
+});
+
+$('.leaflet-draw-draw-polyline').on('click', function(){
+    drawnItems.clearLayers();
+});
+
+$('.leaflet-draw-edit-remove').on('click', function(){
+	document.getElementsByClassName('leaflet-draw-actions leaflet-draw-actions-bottom')[0].children[0].style.display = "none";
+
+	document.getElementsByClassName('leaflet-draw-actions leaflet-draw-actions-bottom')[0].children[1].style.display = "none";
+
 });
 });
 var drawnItems;

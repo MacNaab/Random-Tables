@@ -81,7 +81,6 @@ function OuvrirModal(){
 }
 function FermerModal(){document.getElementById("myModal").style.display = "none";}
 
-var NUp = 0;
 function Updated(){
     var R = [];
     for (let i = 1; i < réserve.length; i++){
@@ -93,7 +92,6 @@ function Updated(){
         for(let i=0;i<R.length;i++){
             N += Number(réserve[i+1][R[i]]);
         }
-        NUp = N;
         var h = Math.round((Number(N) - Number(Math.floor(N)))*24);
         $("#modal-fin").html("<b><u>Temps total:</u> "+Math.floor(N)+" jour(s) et "+h+" heure(s).</b>");
     }else{return;}
@@ -142,3 +140,18 @@ function ModifTrajet(e){
     }
     $('#R_mt').html(aff);
 }
+
+$(document).ready(function(){
+    $('body').append("<div id='montrer' alt='ouvrir'>☰</div>");
+    $('#montrer').on('click', function(){
+        var e = $('#montrer').attr('alt');
+        if(e == 'ouvrir'){
+            document.getElementById('sidebar').style.display = 'block';
+            $('#montrer').attr('alt','fermer');
+            
+        }else{
+            document.getElementById('sidebar').style.display = 'none';
+            $('#montrer').attr('alt','ouvrir');
+        }
+    });
+});

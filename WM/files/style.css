@@ -1,4 +1,39 @@
+@media only screen and (max-width: 800px) {
+  .modal{
+    z-index: 5; /* Sit on top */
+    width: 100%; /* Full width */
+  }
+  .modal-content{
+    width: 80%;
+  }
+  #sidebar{display: none;}
+}
+@media only screen and (min-width: 800px) {
+  .modal{
+    z-index: 1; /* Sit on top */
+    width: calc(100% - 302px); /* Full width */
+  }
+  .modal-content{
+    width: 66%;
+  }
+  #montrer{display: none;}
+}
+@media only screen and (min-width: 1075px) {
+  .modal{
+    z-index: 1; /* Sit on top */
+    width: calc(100% - 302px); /* Full width */
+  }
+  .modal-content{
+    width: 50%;
+  }
+}
+
 body{margin:0;}
+::-webkit-scrollbar {width: 10px;height: 10px;}
+::-webkit-scrollbar-track {box-shadow: none;border-radius: 10px;}
+::-webkit-scrollbar-thumb {background: white;border-radius: 10px;}
+::-webkit-scrollbar-thumb:hover {background: whitesmoke;}
+
 #sidebar{width: 300px;right: 0;top:0;height: 100vh;position: fixed;background-color: rgba(0, 0, 0, 0.5);z-index: 3;border-radius: 15px 0 0 15px;border: solid darkgrey;overflow: auto;}
 #sortie{
   color: blanchedalmond;
@@ -9,55 +44,16 @@ body{margin:0;}
   overflow: auto;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: none; 
-  border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: white; 
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: whitesmoke; 
-}
-
-@media all and (max-width: 800px) {
-  .modal{
-    z-index: 5; /* Sit on top */
-    width: 100%; /* Full width */
-  }
-  .modal-content{
-    width: 80%;
-  }
-}
-@media all and (max-width: 1075px) {
-  .modal{
-    z-index: 1; /* Sit on top */
-    width: calc(100% - 302px); /* Full width */
-  }
-  .modal-content{
-    width: 66%;
-  }
-}
-@media all and (min-width: 1075px) {
-  .modal{
-    z-index: 1; /* Sit on top */
-    width: calc(100% - 302px); /* Full width */
-  }
-  .modal-content{
-    width: 50%;
-  }
+#montrer{
+  position:absolute;
+  z-index:5;
+  right:5px;
+  top:3px;
+  cursor:pointer;
+  border:blanchedalmond 3px solid;
+  background:blanchedalmond;
+  box-shadow:none;
+  border-radius: 7px;
 }
 
 #modal-body ul, #sortie ul {
