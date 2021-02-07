@@ -4,7 +4,7 @@ function Trajectoire(e,f){
         réserve = [];
         console.log('Distance brut: '+e);
     var t = Math.round(e*rapport);
-    var aff = "<button class='ledecl' title='Ouvrir le menu d\'action' onclick='OuvrirModal()'>+</button><br>";
+    var aff = "<button class='ledecl' title='Ouvrir le menu d\'action' onclick='OuvrirModal()'>détail</button><br>";
         aff += '<b><u>Distance totale:</u> '+t+' km</b>';
     var a = KtoT(t);
         aff += "<br><br><u><b>Terreste:</b></u><ul>";

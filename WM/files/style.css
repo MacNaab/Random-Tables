@@ -32,7 +32,7 @@ body{margin:0;}
   background: whitesmoke; 
 }
 
-@media (max-width: 800px) {
+@media all and (max-width: 800px) {
   .modal{
     z-index: 5; /* Sit on top */
     width: 100%; /* Full width */
@@ -41,7 +41,7 @@ body{margin:0;}
     width: 80%;
   }
 }
-@media (max-width: 1075px) {
+@media all and (max-width: 1075px) {
   .modal{
     z-index: 1; /* Sit on top */
     width: calc(100% - 302px); /* Full width */
@@ -50,7 +50,7 @@ body{margin:0;}
     width: 66%;
   }
 }
-@media (min-width: 1075px) {
+@media all and (min-width: 1075px) {
   .modal{
     z-index: 1; /* Sit on top */
     width: calc(100% - 302px); /* Full width */
@@ -104,10 +104,10 @@ body{margin:0;}
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   padding-top: 15px; /* Location of the box */
+  padding-bottom: 15px;
   left: 0;
   top: 0;
-  height: calc(100% - 15px); /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  height: calc(100% - 30px); /* Full height */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
@@ -118,13 +118,20 @@ body{margin:0;}
   background-color: #fefefe;
   margin: auto;
   padding: 0;
+  overflow: auto;
+  height: 100%;
   border: 1px solid #888;
   border-radius: 30px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: black; 
+  margin-top: 5px;
 }
 
 /* Add Animation */
@@ -139,23 +146,22 @@ body{margin:0;}
 
 /* The Close Button */
 .close {
-  color: white;
+  color: black;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 .close:hover,
 .close:focus {
-  color: #000;
+  color: grey;
   text-decoration: none;
   cursor: pointer;
 }
-.modal-header {
-  padding: 2px 16px;
-}
+.modal-header {padding: 2px 16px;}
 .modal-body {padding: 2px 16px;}
 .modal-footer {
   padding: 2px 16px;
+  margin-bottom: 15px;
 }
 
 /* PLAY */
@@ -186,16 +192,12 @@ body{margin:0;}
     margin: 10px 0;
     cursor:pointer;
   }
-  .white:hover > p {
-    color: #ece8e1;
-  }
+  .white:hover > p {color: #ece8e1;}
   .white > p {
   /*  background: #ece8e1;	*/
     color: #01d758;
   }
-  .white > p span.base {
-    border: 1px solid #01d758;
-  }
+  .white > p span.base {border: 1px solid #01d758;}
   .blue:hover > p {
     color: #ece8e1;
   }
@@ -203,22 +205,14 @@ body{margin:0;}
   /*  background: #ece8e1;	*/
     color: #0f056b;
   }
-  .blue > p span.base {
-    border: 1px solid #0f056b;
-  }
-  .transparent:hover > p {
-    color: #ece8e1;
-  }
-  .transparent:hover > p span.text {
-    box-shadow: 0 0 0 1px #ece8e1;
-  }
+  .blue > p span.base {border: 1px solid #0f056b;}
+  .transparent:hover > p {color: #ece8e1;}
+  .transparent:hover > p span.text {box-shadow: 0 0 0 1px #ece8e1;}
   .transparent > p {
     background: #0f1923;
     color: #ece8e1;
   }
-  .transparent > p span.base {
-    border: 1px solid #ece8e1;
-  }
+  .transparent > p span.base {border: 1px solid #ece8e1;}
   .play_2:after, .play_2:before {
     content: "";
     width: 1px;
@@ -297,15 +291,9 @@ body{margin:0;}
     transition: 0.3s ease-out all;
     z-index: 5;
   }
-  div a:hover {
-    color: #ece8e1;
-  }
-  div a:hover span.bg {
-    width: 110%;
-  }
-  div a:hover span.text:after {
-    background: #ece8e1;
-  }
+  div a:hover {color: #ece8e1;}
+  div a:hover span.bg {width: 110%;}
+  div a:hover span.text:after {background: #ece8e1;}
   
   #modificateur {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -321,9 +309,7 @@ body{margin:0;}
   }
   
   #modificateur tr:nth-child(even){background-color: #f2f2f2;}
-  
   #modificateur tr:hover {background-color: #ddd;}
-  
   #modificateur th {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -332,7 +318,11 @@ body{margin:0;}
     color: white;
   }
 
-  .ledecl { position: absolute; right: 50px; border: 1px solid; border-radius: 10px; background: none; color: whitesmoke; }
+  .ledecl {
+    position: absolute; right: 50px; border: 1px solid; border-radius: 10px; background: none; color: whitesmoke;
+    cursor: pointer; font-size: 12px;font-style: italic;
+  }
   #modif_temps {
     border: 1px solid; border-radius: 5px; vertical-align: sub; outline-style: none; box-shadow: none;
+    max-width: 100%;
   }
