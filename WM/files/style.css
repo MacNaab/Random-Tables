@@ -32,7 +32,7 @@ body{margin:0;}
   background: whitesmoke; 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .modal{
     z-index: 5; /* Sit on top */
     width: 100%; /* Full width */
@@ -41,7 +41,7 @@ body{margin:0;}
     width: 80%;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1075px) {
   .modal{
     z-index: 1; /* Sit on top */
     width: calc(100% - 302px); /* Full width */
@@ -50,7 +50,7 @@ body{margin:0;}
     width: 66%;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 1075px) {
   .modal{
     z-index: 1; /* Sit on top */
     width: calc(100% - 302px); /* Full width */
