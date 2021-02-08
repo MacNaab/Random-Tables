@@ -408,20 +408,13 @@ item.Item.forEach(function(ee){
 	}
 });
 
-function mobilecheck() {
-    return (typeof window.orientation !== "undefined") 
-      || (navigator.userAgent.indexOf('IEMobile') !== -1
-      );
-};
-
-function imprimer(divName) {
-	var printContents = document.getElementById(divName).innerHTML;    
-	var originalContents = document.body.innerHTML;      
-	window.addEventListener('afterprint', (event) => {
-		  return document.body.innerHTML = originalContents;
-	});	
-	document.body.innerHTML = printContents;     
-	window.print();
+function imprimer(e){
+	var A1 = ".grid-container { display: grid; grid-template-columns: 50% 50%; } .t0 { text-align:center; } .t1 { column-count: 2; column-gap: 40px; column-rule-style: solid; column-rule-color: lightgray; margin-left:15px; margin-right:15px; } .t3 { margin-top: 15px; margin-bottom: 15px; margin-left: 30px; margin-right: 30px; }";
+	var printWindow = window.open('_blank','PRINT');
+	printWindow.document.write('<html><head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><style>'+A1+'</style></head><body>');
+    printWindow.document.write(document.getElementById(e).innerHTML);
+	printWindow.document.write('</body></html>');
+	printWindow.document.close().focus().print();
 }
 
 function Copy(){
