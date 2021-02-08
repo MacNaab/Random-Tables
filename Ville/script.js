@@ -414,7 +414,9 @@ function imprimer(e){
 	printWindow.document.write('<html><head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><style>'+A1+'</style></head><body>');
     printWindow.document.write(document.getElementById(e).innerHTML);
 	printWindow.document.write('</body></html>');
-	printWindow.document.close().focus().print();
+	printWindow.document.close();
+	printWindow.focus();
+	printWindow.print();
 }
 
 function Copy(){
