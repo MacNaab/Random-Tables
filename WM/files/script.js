@@ -138,6 +138,7 @@ function ModifTrajet(e){
     }else{
         aff = "Vous devez choisir un mode de transport pour chaque étape.";
     }
+        aff += "<hr>";
     $('#R_mt').html(aff);
 }
 
