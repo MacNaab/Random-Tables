@@ -16,7 +16,6 @@
   .modal-content{
     width: 66%;
   }
-  #montrer{display: none;}
 }
 @media only screen and (min-width: 1075px) {
   .modal{
@@ -26,6 +25,7 @@
   .modal-content{
     width: 50%;
   }
+  #montrer{display: none;}
 }
 
 body{margin:0;}
