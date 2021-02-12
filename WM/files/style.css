@@ -49,6 +49,7 @@ body{margin:0;}
   z-index:5;
   right:5px;
   top:3px;
+  padding: 5px;
   cursor:pointer;
   border:blanchedalmond 3px solid;
   background:blanchedalmond;
