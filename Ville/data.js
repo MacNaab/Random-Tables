@@ -262,7 +262,7 @@ var Data = {
           "objectType": "Alchemical_substance"
         },
         {
-          "name": "Pierre de Vin - Rebis",
+          "name": "Pierre de Vin ~ &#128176; 8 couronnes - Rebis",
           "objectType": "Alchemical_substance"
         },
         {
@@ -3546,39 +3546,39 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bon Repas",
+              "name": "Bon Repas ~ &#128176; 30 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Festin",
+              "name": "Festin ~ &#128176; 100 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bonbons",
+              "name": "Confiseries ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Spiritueux",
+              "name": "Liqueur ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Vin",
+              "name": "Vin ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -3586,39 +3586,39 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bon Repas",
+              "name": "Bon Repas ~ &#128176; 30 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Festin",
+              "name": "Festin ~ &#128176; 100 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bonbons",
+              "name": "Confiseries ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Spiritueux",
+              "name": "Liqueur ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Vin",
+              "name": "Vin ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -3626,39 +3626,39 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bon Repas",
+              "name": "Bon Repas ~ &#128176; 30 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Festin",
+              "name": "Festin ~ &#128176; 100 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bonbons",
+              "name": "Confiseries ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Spiritueux",
+              "name": "Liqueur ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Vin",
+              "name": "Vin ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -3666,39 +3666,39 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bon Repas",
+              "name": "Bon Repas ~ &#128176; 30 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Festin",
+              "name": "Festin ~ &#128176; 100 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bonbons",
+              "name": "Confiseries ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Spiritueux",
+              "name": "Liqueur ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Vin",
+              "name": "Vin ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -3710,16 +3710,16 @@ var Data = {
       "buildingType": "Inn_standard_quality",
       "buildingRandomNames": [
         "La Lacrima dell'Orso",
-        "Ragoût et Bière dans la grotte",
+        "Ragoût et Bière ~ &#128176; 5 couronnes dans la grotte",
         "Il Tesoro de Brennen",
-		"Guide Spiritueux",
+		"Guide Liqueur ~ &#128176; 10 couronnes",
         "Vallée enchantée",
         "Cheval blanc",
         "Il Pozzo",
         "Cal Darrost",
         "Riposo de Harven",
         "The Magic Pen",
-        "Université de Bière",
+        "Université de Bière ~ &#128176; 5 couronnes",
         "Château endormi",
         "Cornes origineles",
         "Oasis du Goût",
@@ -3762,31 +3762,31 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bon Repas",
+              "name": "Bon Repas ~ &#128176; 30 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bonbons",
+              "name": "Confiseries ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Spiritueux",
+              "name": "Liqueur ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -3794,31 +3794,31 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bon Repas",
+              "name": "Bon Repas ~ &#128176; 30 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bonbons",
+              "name": "Confiseries ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Spiritueux",
+              "name": "Liqueur ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -3826,31 +3826,31 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bon Repas",
+              "name": "Bon Repas ~ &#128176; 30 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bonbons",
+              "name": "Confiseries ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Spiritueux",
+              "name": "Liqueur ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -3858,31 +3858,31 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bon Repas",
+              "name": "Bon Repas ~ &#128176; 30 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bonbons",
+              "name": "Confiseries ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Spiritueux",
+              "name": "Liqueur ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -3894,7 +3894,7 @@ var Data = {
       "buildingType": "Inn_medium_quality",
       "buildingRandomNames": [
         "Vieilles épées",
-        "rivière de Bière",
+        "rivière de Bière ~ &#128176; 5 couronnes",
 		"Cri vain",
 		"Céphalique",
         "La tour du magicien",
@@ -3982,23 +3982,23 @@ var Data = {
         {
           "object": [
             {
-              "name": "Spiritueux",
+              "name": "Liqueur ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -4006,23 +4006,23 @@ var Data = {
         {
           "object": [
             {
-              "name": "Spiritueux",
+              "name": "Liqueur ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -4030,23 +4030,23 @@ var Data = {
         {
           "object": [
             {
-              "name": "Spiritueux",
+              "name": "Liqueur ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -4054,23 +4054,23 @@ var Data = {
         {
           "object": [
             {
-              "name": "Spiritueux",
+              "name": "Liqueur ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -4117,7 +4117,7 @@ var Data = {
         "Escargot  Brun",
         "Fourrure dorée",
         "Blaireau rouge",
-        "Vin Vito",
+        "Vin ~ &#128176; 8 couronnes Vito",
         "Loup puant",
         "Forêt triste",
         "Savoir vert",
@@ -4187,19 +4187,19 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -4207,19 +4207,19 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -4227,19 +4227,19 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -4247,19 +4247,19 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Viande Crue",
+              "name": "Viande Crue ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -4333,15 +4333,15 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -4349,15 +4349,15 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -4365,15 +4365,15 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
@@ -4381,15 +4381,15 @@ var Data = {
         {
           "object": [
             {
-              "name": "Bière",
+              "name": "Bière ~ &#128176; 5 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Alcahest",
+              "name": "Alcahest ~ &#128176; 8 couronnes",
               "objectType": "(Nourriture)"
             },
             {
-              "name": "Repas Simple",
+              "name": "Repas Simple ~ &#128176; 10 couronnes",
               "objectType": "(Nourriture)"
             }
           ]
