@@ -498,10 +498,11 @@ function imprimer(e){
 	printWindow.print();
 }
 
-function Copy(){
+function Copy(e){
 	var r = document.createRange();
-		r.selectNode(document.getElementById('Sortie-2'));
-	window.getSelection().removeAllRanges();
+//		r.selectNode(document.getElementById('Sortie-2'));
+		r.selectNode(document.getElementById(e));
+window.getSelection().removeAllRanges();
 	window.getSelection().addRange(r);
 	document.execCommand('copy');
 	window.getSelection().removeAllRanges();
