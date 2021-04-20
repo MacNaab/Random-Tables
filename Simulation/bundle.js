@@ -178,11 +178,11 @@ module.exports = function(){
 			let atkRoll = combatant.attackRoll();
 			let defRoll = target.defRoll();
 			if (target.isHit(atkRoll,defRoll)){
-			  let damage = combatant.damageRoll(atkRoll,defRoll);
+			  let damage = combatant.damageRoll(atkRoll,defRoll,target.ac);
 			  target.takeDamage(damage);
-			  $('#moche').append('<div><b>'+combatant.id + '</b> touche <b>' + target.id + '</b> et inflige ' + damage + ' points de dégâts.</div>');
+			  $('#moche').append('<div><b>'+combatant.id + '</b> touche <b>' + target.id + '</b> et inflige ' + damage + ' points de dégâts. Jet: '+atkRoll+' VS '+defRoll+'</div>');
 			} else {
-				$('#moche').append('<div><b>'+combatant.id + '</b> rate <b>' + target.id + '</b>.</div>');
+				$('#moche').append('<div><b>'+combatant.id + '</b> rate <b>' + target.id + '</b>. Jet: '+atkRoll+' VS '+defRoll+'</div>');
 			}
 		}
       }
@@ -283,12 +283,12 @@ module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,
   this.defRoll = function(){
     return dice(10, def, 'Expl');
   };
-  this.damageRoll = function(attackRoll,defRoll){
+  this.damageRoll = function(attackRoll,defRoll,PA){
     let sum = 0;
     for(let i = 0; i < this.dmg_dice; i++){
       sum += dice(this.dmg, 0);
     }
-	sum = sum + this.dmg_bonus - this.ac;
+	sum = sum + this.dmg_bonus - PA;
 	if(sum<0){sum=0;}
 	if(this.FP){sum *= 2;}
 

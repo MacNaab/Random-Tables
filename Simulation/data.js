@@ -30,6 +30,8 @@ $(document).ready(function() {
             $('#d1').val(nbre);
             $('#d2').val(face);
             $('#d3').val(add);
+            $('#FP').prop('checked', false);
+            $('#FR').prop('checked', false);
             $('#Monster').prop('checked', true);
             $('#RoF').val(found.Arme[0]['Att/tour']);
         }else{
@@ -52,6 +54,7 @@ function GrPréDef(){
         var a = adresseActuelle.split('?!?');   // Chaque Ligne
         a.splice(0,1);
         a.forEach(function(e){
+            $('#character_form').trigger('reset');
             var b = e.split('?&?'); // Chaque Elem
             $('#floatingInput').val(b[0]);  // Groupe
             $('#floatingInput2').val(b[1]); // Nom
