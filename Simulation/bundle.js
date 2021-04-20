@@ -56,9 +56,13 @@ for (let party_id in combat.parties){
 let count = 1;
 var Survivant = '';
 winners.forEach(function(winner_party){
-	Survivant +=('Combat ' + count + ': ' + winner_party[0].party_id+'<br>');
-  count++;
-  parties[winner_party[0].party_id] += 1;
+	Survivant +=('Combat ' + count + ': ' + winner_party[0].party_id);
+	winner_party.forEach(function(e){
+		Survivant +=(', '+e.combatant.id);
+	});
+	Survivant +=('<br>');
+	count++;
+  	parties[winner_party[0].party_id] += 1;
 });
 $('#aff_survivant').html(Survivant);
 
@@ -160,9 +164,9 @@ module.exports = function(){
         if (target.isHit(atkRoll,defRoll)){
           let damage = combatant.damageRoll(atkRoll,defRoll);
           target.takeDamage(damage);
-		  $('#moche').append('<div>'+combatant.id + ' touche ' + target.id + ' et inflige ' + damage + ' points de dégâts.</div>');
+		  $('#moche').append('<div><b>'+combatant.id + '</b> touche <b>' + target.id + '</b> et inflige ' + damage + ' points de dégâts.</div>');
         } else {
-			$('#moche').append('<div>'+combatant.id + ' rate ' + target.id + '.</div>');
+			$('#moche').append('<div><b>'+combatant.id + '</b> rate <b>' + target.id + '</b>.</div>');
         }
       }
     });
@@ -190,8 +194,10 @@ module.exports = function(){
   };
   this.survivors = function(){
     let alive = [];
+	$('#moche').append('<br><div><u>Survivants:</u></div>')
     for ( c in this.turnList ) {
       if (!this.turnList[c].combatant.isDead()){
+		$('#moche').append('<div><b>'+this.turnList[c].combatant.id+':</b> '+this.turnList[c].combatant.hp+'/'+this.turnList[c].combatant.max_hp+' PS</div>');
         alive.push(this.turnList[c]);
       }
     }
