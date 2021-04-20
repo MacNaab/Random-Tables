@@ -14,6 +14,10 @@ $("#character_form").on("submit", function(event) {
   let dmg = Number($(this).find('[name=dmg]').val());	// Y	XdY+Z
   let dmg_dice = Number($(this).find('[name=dmg_dice]').val());	// X	XdY+Z
   let dmg_bonus = Number($(this).find('[name=dmg_bonus]').val());	// Z	XdY+Z
+  let FR = $('#FR').is(':checked');
+  let FP = $('#FP').is(':checked');
+  let Monster = $('#Monster').is(':checked');
+  let RoF = Number($('#RoF').val());
 
   let party_id = $(this).find('[name=party_id]').val();
   // check if party exists
@@ -29,7 +33,7 @@ $("#character_form").on("submit", function(event) {
 		doublon = combat.parties[party_id].members.find(f => f.id === id);
 	}
  
-  let new_combatant = new dnd.Combatant(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,def);
+  let new_combatant = new dnd.Combatant(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF);
 
   console.log(new_combatant);
 
@@ -101,6 +105,17 @@ $('#reini').on('click',function(){
 	afficher_gens(combat);
 });
 
+$('#link').on('click',function(){
+	var Gr = Object.keys(combat.parties);
+	var url = "";
+	Gr.forEach(function(e){
+		combat.parties[e].members.forEach(function(f){
+			url += "?!?"+e+"?&?"+f.id+'?&?'+f.max_hp+'?&?'+f.ac+'?&?'+f.initiative+'?&?'+f.atk+'?&?'+f.def+'?&?'+f.dmg_dice+'?&?'+f.dmg+'?&?'+f.dmg_bonus+'?&?'+f.FR+'?&?'+f.FP+'?&?'+f.Monster+'?&?'+f.RoF;
+		});
+	});
+	copyToClipboard(url);
+});
+
 let combat = new dnd.Combat();
 
 },{"dnd-combat-simulator":5,"jquery":7}],2:[function(require,module,exports){
@@ -159,15 +174,17 @@ module.exports = function(){
         if (typeof target == 'undefined'){
           return;
         }
-        let atkRoll = combatant.attackRoll();
-        let defRoll = target.defRoll();
-        if (target.isHit(atkRoll,defRoll)){
-          let damage = combatant.damageRoll(atkRoll,defRoll);
-          target.takeDamage(damage);
-		  $('#moche').append('<div><b>'+combatant.id + '</b> touche <b>' + target.id + '</b> et inflige ' + damage + ' points de dégâts.</div>');
-        } else {
-			$('#moche').append('<div><b>'+combatant.id + '</b> rate <b>' + target.id + '</b>.</div>');
-        }
+		for(let i=0; i < combatant.RoF; i++){
+			let atkRoll = combatant.attackRoll();
+			let defRoll = target.defRoll();
+			if (target.isHit(atkRoll,defRoll)){
+			  let damage = combatant.damageRoll(atkRoll,defRoll);
+			  target.takeDamage(damage);
+			  $('#moche').append('<div><b>'+combatant.id + '</b> touche <b>' + target.id + '</b> et inflige ' + damage + ' points de dégâts.</div>');
+			} else {
+				$('#moche').append('<div><b>'+combatant.id + '</b> rate <b>' + target.id + '</b>.</div>');
+			}
+		}
       }
     });
   };
@@ -239,7 +256,7 @@ const dice = require('./dice_roller')
  * @param {number} dmg_bonus
  *   Damage bonus from ability modifier.
  */
-module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def){
+module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF){
   this.id = id;
   this.hp = hp;
   this.max_hp = hp;
@@ -250,6 +267,13 @@ module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,
   this.dmg_dice = dmg_dice;
   this.dmg_bonus = dmg_bonus;
   this.def = def;
+  this.FP = FP;
+  this.FR = FR;
+  this.Monster = Monster;
+  this.RoF = RoF;
+  if(!Monster){
+	  if(FR){this.RoF=2;}else{this.RoF=1;}
+  }
   this.rollInitiative = function(){
     return dice(10, this.initiative, 'Expl');
   };
@@ -266,6 +290,7 @@ module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,
     }
 	sum = sum + this.dmg_bonus - this.ac;
 	if(sum<0){sum=0;}
+	if(this.FP){sum *= 2;}
 
 	let cc = 0;
 	let diff = Number(attackRoll)-Number(defRoll);

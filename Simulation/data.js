@@ -30,6 +30,8 @@ $(document).ready(function() {
             $('#d1').val(nbre);
             $('#d2').val(face);
             $('#d3').val(add);
+            $('#Monster').prop('checked', true);
+            $('#RoF').val(found.Arme[0]['Att/tour']);
         }else{
             $('#ptr').val('Erreur: pas de créature à ce nom');
         }
@@ -39,4 +41,55 @@ $(document).ready(function() {
     JSON_Bestiaire.Unofficiel.forEach(function(e){$('#prétire').append('<option>'+e.Nom+'</option>');});
     JSON_Bestiaire.Extended.forEach(function(e){$('#prétire').append('<option>'+e.Nom+'</option>');});
     JSON_Bestiaire.Site.forEach(function(e){$('#prétire').append('<option>'+e.Nom+'</option>');});
+    GrPréDef();
 });
+
+function GrPréDef(){
+    var adresseActuelle = window.location.search;
+    if(adresseActuelle){
+        // Retour à la ligne:   ?!?
+        // Elem suivant:        ?&?
+        var a = adresseActuelle.split('?!?');   // Chaque Ligne
+        a.splice(0,1);
+        a.forEach(function(e){
+            var b = e.split('?&?'); // Chaque Elem
+            $('#floatingInput').val(b[0]);  // Groupe
+            $('#floatingInput2').val(b[1]); // Nom
+            $('#PS').val(b[2]);
+            $('#PA').val(b[3]); 
+            $('#INI').val(b[4]);
+            $('#ATQ').val(b[5]);  
+            $('#DÉF').val(b[6]);   
+            $('#d1').val(b[7]);   // Xdy+z
+            $('#d2').val(b[8]);        // xdY+z
+            $('#d3').val(b[9]);  // xdy+Z
+            if(b[10]=='true'){
+                $('#FR').prop('checked', true);    // Frappe Rapide
+            }
+            if(b[11]=='true'){
+                $('#FP').prop('checked', true);    // Frappe Puisssante
+            }
+            if(b[12]=='true'){
+                $('#Monster').prop('checked', true);    // Monstre
+            }
+            $('#RoF').val(b[13]);   // RoF
+            document.getElementById('addform').click();
+        });
+    }else{
+        return;
+    }
+}
+
+function copyToClipboard(text) {
+    var adresseActuelle = window.location.origin+window.location.pathname;
+    var dummy = document.createElement("textarea");
+    // to avoid breaking orgain page when copying more words
+    // cant copy when adding below this code
+    // dummy.style.display = 'none'
+    document.body.appendChild(dummy);
+    //Be careful if you use texarea. setAttribute('value', value), which works with "input" does not work with "textarea". – Eduard
+    dummy.value = adresseActuelle+text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+}
