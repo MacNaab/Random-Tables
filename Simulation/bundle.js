@@ -14,29 +14,39 @@ $("#character_form").on("submit", function(event) {
   let dmg = Number($(this).find('[name=dmg]').val());	// Y	XdY+Z
   let dmg_dice = Number($(this).find('[name=dmg_dice]').val());	// X	XdY+Z
   let dmg_bonus = Number($(this).find('[name=dmg_bonus]').val());	// Z	XdY+Z
-  let new_combatant = new dnd.Combatant(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,def);
 
-  console.log(new_combatant);
-
-  // check if party exists
   let party_id = $(this).find('[name=party_id]').val();
+  // check if party exists
   if (!combat.parties.hasOwnProperty(party_id)) {
     // create and add party
     let p = new dnd.Party();
     combat.addParty(p, party_id);
   }
+	// vérifier si l'id n'est pas double
+	var doublon = combat.parties[party_id].members.find(f => f.id === id);
+	while(doublon){
+		id += " bis";
+		doublon = combat.parties[party_id].members.find(f => f.id === id);
+	}
+ 
+  let new_combatant = new dnd.Combatant(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,def);
+
+  console.log(new_combatant);
+
   // add new combatant to party
   combat.parties[party_id].addMember(new_combatant);
   afficher_gens(combat);
 });
 
 $("#run_simulation").on("click", function(event) {
-let winners = [];
-
-for (let i = 0; i < 100; i++){
-  winners.push(combat.runFight(console.log));
-  combat.reset();
-}
+	let winners = [];
+	$('#moche').html('');
+	for (let i = 0; i < 100; i++){
+		$('#moche').append('<div>Combat '+Number(Number(i)+1)+'</div>');
+		winners.push(combat.runFight(console.log));
+		$('#moche').append('<hr>');
+		combat.reset();
+	}
 
 let parties = {};
 for (let party_id in combat.parties){
@@ -44,9 +54,9 @@ for (let party_id in combat.parties){
 }
 
 let count = 1;
-var Survivant = 'Survivant:';
+var Survivant = '';
 winners.forEach(function(winner_party){
-	Survivant +=('<br>Combat ' + count + ': ' + winner_party[0].party_id);
+	Survivant +=('Combat ' + count + ': ' + winner_party[0].party_id+'<br>');
   count++;
   parties[winner_party[0].party_id] += 1;
 });
@@ -66,11 +76,26 @@ function afficher_gens(combat){
 	Gr.forEach(function(e){
 		var aff = ' • '+e+':';
 		combat.parties[e].members.forEach(function(f){
-			aff += '<br> '+f.id;
+			aff += '<div>'+f.id+'<button Groupe="'+e+'" Nom="'+f.id+'" type="button" class="btn-close Dlt" data-bs-dismiss="modal" aria-label="Close"></button></div>';
 		});
 		$('#aff_char').append('<div>'+aff+'</div>');
 	});
+	$('.Dlt').on('click',function(e){
+		var Gr = e.target.attributes.Groupe.value;
+		var ID = e.target.attributes.Nom.value;
+		var index = combat.parties[Gr].members.findIndex(f => f.id === ID);
+		combat.parties[Gr].members.splice(index,1);
+		if(combat.parties[Gr].members.length == 0){
+			delete combat.parties[Gr];
+		}
+		afficher_gens(combat);
+	});
 }
+
+$('#reini').on('click',function(){
+	combat = new dnd.Combat();
+	afficher_gens(combat);
+});
 
 let combat = new dnd.Combat();
 
@@ -98,14 +123,14 @@ module.exports = function(){
     self.turnList.sort(function(a, b) {
       return (a.roll < b.roll) ?  1 : ((b.roll < a.roll) ? -1 : 0);
     });
-    logger('Turn Order:');
+	$('#moche').append('<div>Ordre du tour:');
     let n = 1;
     self.turnList.forEach(function(member){
-      logger(n + '. ' + member.combatant.id);
+	  $('#moche').append(n + '. ' + member.combatant.id+' ; ');
       n += 1;
     });
-    logger('\n');
-  };
+	$('#moche').append('</div><br><br>');
+};
   this.runRound = function(logger){
     let self = this;
     self.turnList.forEach(function(current_combatant){
@@ -135,9 +160,9 @@ module.exports = function(){
         if (target.isHit(atkRoll,defRoll)){
           let damage = combatant.damageRoll(atkRoll,defRoll);
           target.takeDamage(damage);
-          logger(combatant.id + ' touche ' + target.id + ' et inflige ' + damage + ' points de dégâts.');
+		  $('#moche').append('<div>'+combatant.id + ' touche ' + target.id + ' et inflige ' + damage + ' points de dégâts.</div>');
         } else {
-          logger(combatant.id + ' rate ' + target.id + '.');
+			$('#moche').append('<div>'+combatant.id + ' rate ' + target.id + '.</div>');
         }
       }
     });

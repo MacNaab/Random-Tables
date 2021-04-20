@@ -12,3 +12,8 @@ body {
     display: table;
     margin: 0 auto;
 }
+
+.Dlt{
+    display: inline-flex;
+    height: 100%;
+}
