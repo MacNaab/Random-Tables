@@ -21,6 +21,7 @@ $("#character_form").on("submit", function(event) {
 		let FP = $('#FP').is(':checked');
 		let Monster = $('#Monster').is(':checked');
 		let RoF = Number($('#RoF').val());
+		let Strat = ($('#Strat').val());
 		let party_id = $(this).find('[name=party_id]').val();
 		// check if party exists
 		if (!combat.parties.hasOwnProperty(party_id)) {
@@ -34,7 +35,7 @@ $("#character_form").on("submit", function(event) {
 			id += "1";
 			doublon = combat.parties[party_id].members.find(f => f.id === id);
 		}	   
-		let new_combatant = new dnd.Combatant(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF);
+		let new_combatant = new dnd.Combatant(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF, Strat);
 		console.log(new_combatant);
 
   		// add new combatant to party
@@ -96,6 +97,7 @@ function afficher_gens(combat){
 				if(f.FR){content += "<br>Frappe Rapide";}
 				if(f.FP){content += "<br>Frappe Puissante";}
 			}
+			content += "<br>Stratégie: "+f.Strat;
 			var button1 = '<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="focus" title="'+f.id+'" data-bs-placement="left" data-bs-content="'+content+'" data-bs-html="true">'+f.id+'</button>';
 			var button2 = '<button Groupe="'+e+'" Nom="'+f.id+'" type="button" class="btn-close Dlt" data-bs-dismiss="modal" aria-label="Close"></button>';
 			var edit = '<span class="trig" Groupe="'+e+'" Nom="'+f.id+'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></span>';
@@ -131,6 +133,7 @@ function afficher_gens(combat){
 		$('#Modald2').val(found.dmg);
 		$('#Modald3').val(found.dmg_bonus);
 		$('#modalRoF').val(found.RoF);
+		$('#ModalStrat').val(found.Strat);
 		if(found.FR){
 			$('#ModalFR').prop('checked', true);
 		}else{$('#ModalFR').prop('checked', false);}
@@ -152,6 +155,7 @@ function afficher_gens(combat){
 			combat.parties[Gr].members[index].dmg = $('#Modald2').val();
 			combat.parties[Gr].members[index].dmg_bonus = $('#Modald3').val();
 			combat.parties[Gr].members[index].RoF = $('#modalRoF').val();
+			combat.parties[Gr].members[index].Strat = $('#ModalStrat').val();
 			combat.parties[Gr].members[index].FR = $('#ModalFR').is(':checked');
 			combat.parties[Gr].members[index].FP = $('#ModalFP').is(':checked');
 			combat.parties[Gr].members[index].Monster = $('#ModalMo').is(':checked');
@@ -170,7 +174,7 @@ $('#link').on('click',function(){
 	var url = "";
 	Gr.forEach(function(e){
 		combat.parties[e].members.forEach(function(f){
-			url += "?!?"+e+"?&?"+f.id+'?&?'+f.max_hp+'?&?'+f.ac+'?&?'+f.initiative+'?&?'+f.atk+'?&?'+f.def+'?&?'+f.dmg_dice+'?&?'+f.dmg+'?&?'+f.dmg_bonus+'?&?'+f.FR+'?&?'+f.FP+'?&?'+f.Monster+'?&?'+f.RoF;
+			url += "?!?"+e+"?&?"+f.id+'?&?'+f.max_hp+'?&?'+f.ac+'?&?'+f.initiative+'?&?'+f.atk+'?&?'+f.def+'?&?'+f.dmg_dice+'?&?'+f.dmg+'?&?'+f.dmg_bonus+'?&?'+f.FR+'?&?'+f.FP+'?&?'+f.Monster+'?&?'+f.RoF+'?&?'+f.Strat;
 		});
 	});
 	copyToClipboard(url);
@@ -230,7 +234,13 @@ module.exports = function(){
             }
           });
         });
-        let target = self.parties[party_id].selectTarget(opponents);
+		if(combatant.Strat=='PS'){
+			var target = self.parties[party_id].selectTarget(opponents);
+		}else if(combatant.Strat=='PA'){
+			var target = self.parties[party_id].selectTargetPA(opponents);
+		}else{
+			var target = self.parties[party_id].selectTargetAlea(opponents);
+		}
         if (typeof target == 'undefined'){
           return;
         }
@@ -319,7 +329,7 @@ const dice = require('./dice_roller')
  * @param {number} dmg_bonus
  *   Damage bonus from ability modifier.
  */
-module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF){
+module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF, Strat){
   this.id = id;
   this.hp = hp;
   this.max_hp = hp;
@@ -334,6 +344,7 @@ module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,
   this.FR = FR;
   this.Monster = Monster;
   this.RoF = RoF;
+  this.Strat = Strat;	if(Strat==null){this.Strat='Aléatoire';}
   if(!Monster){
 	  if(FR){this.RoF=2;}else{this.RoF=1;}
   }
@@ -425,7 +436,10 @@ module.exports = function(){
     },
     highest_hp: function(combatantA, combatantB){
       return combatantB.hp - combatantA.hp;
-    }
+    },
+	lowest_ac: function(combatantA, combatantB){
+	  return combatantA.ac - combatantB.ac;
+	}
   };
   this.combatStrategy = this.combatStrategies.lowest_hp;
   this.addMember = function(combatant){
@@ -435,6 +449,14 @@ module.exports = function(){
     opponents.sort(this.combatStrategy);
     return opponents[0];
   };
+  this.selectTargetPA = function(opponents){
+    opponents.sort(this.combatStrategies.lowest_ac);
+    return opponents[0];
+  };
+  this.selectTargetAlea = function(opponents){
+	  var rand = Math.floor(Math.random() * opponents.length);
+	  return opponents[rand];
+  }
 }
 
 },{}],7:[function(require,module,exports){

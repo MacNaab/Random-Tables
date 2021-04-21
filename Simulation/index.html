@@ -100,9 +100,18 @@
               <span style="margin-left: 10px;">Monstre</span>
             </div>
             <span class="input-group-text"></span>
-            <div class="form-floating" data-bs-toggle="tooltip" title="Valeur prise en compte si Monstre coché">
+            <div class="form-floating" data-bs-toggle="tooltip" title="Valeur prise en compte si Monstre coché" style="width: 100px;">
               <input name="initiative" type="number" class="form-control" id="RoF" placeholder="a">
               <label for="RoF">Attaque/tour</label>
+            </div>
+            <span class="input-group-text"></span>
+            <div class="form-floating">
+              <select class="form-select" id="Strat" data-bs-toggle="tooltip" title="Cible choisi durant le combat">
+                <option value="Aléatoire" selected>Aléatoire</option>
+                <option value="PS">Moins de PS</option>
+                <option value="PA">Moins de PA</option>
+              </select>
+              <label for="Strat">Stratégie</label>
             </div>
           </div>
         </div>
@@ -179,7 +188,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
+            <h5 class="modal-title">Edition du participant</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -224,7 +233,7 @@
               <span class="input-group-text">+</span>
               <input id='Modald3' type="number" class="form-control">
             </div>
-            <div class="grid-container">
+            <div class="grid-container3">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="ModalFR">
                 <label class="form-check-label" for="ModalFR">
@@ -243,9 +252,19 @@
                   Monstre
                 </label>
               </div>
+            </div>
+            <div class="grid-container">
               <div class="form-floating">
                 <input type="number" class="form-control" id="modalRoF" placeholder="a">
                 <label for="modalRoF">Attaque par tour</label>
+              </div>
+              <div class="form-floating">
+                <select class="form-select" id="ModalStrat" data-bs-toggle="tooltip" title="Cible choisi durant le combat">
+                  <option value="Aléatoire" selected>Aléatoire</option>
+                  <option value="PS">Moins de PS</option>
+                  <option value="PA">Moins de PA</option>
+                </select>
+                <label for="ModalStrat">Stratégie</label>
               </div>
             </div>
           </div>

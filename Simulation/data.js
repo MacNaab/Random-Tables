@@ -34,6 +34,7 @@ $(document).ready(function() {
             $('#FR').prop('checked', false);
             $('#Monster').prop('checked', true);
             $('#RoF').val(found.Arme[0]['Att/tour']);
+            $('#Strat').val('Aléatoire');
         }else{
             $('#Alert1').append('<div class="alert alert-warning alert-dismissible fade show" role="alert"> <strong>Erreur:</strong> pas de prétiré à ce nom. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>');
         }
@@ -78,6 +79,7 @@ function GrPréDef(){
                 $('#Monster').prop('checked', true);    // Monstre
             }else{$('#Monster').prop('checked', false);}
             $('#RoF').val(b[13]);   // RoF
+            $('#Strat').val(b[14]); // Strat
             document.getElementById('addform').click();
         });
     }else{
@@ -131,7 +133,9 @@ function checkfulldata(){
     list.forEach(function(f){
         var e = f.id;
         if(e==NaN || e==null || e=='' || e==undefined || !e){
-            if(e==0||e=='0'){}else{
+            if(f.N == 'PA'){
+                if(e==0||e=='0'){}else{check = false;erreur += f.N+" ";}
+            }else{
                 check = false;
                 erreur += f.N+" ";
             }  
