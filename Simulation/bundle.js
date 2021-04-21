@@ -4,42 +4,45 @@ const $ = require('jquery');
 
 $("#character_form").on("submit", function(event) {
   event.preventDefault();
-  // create new combatant
-  let id = $(this).find('[name=char_id]').val();
-  let hp = Number($(this).find('[name=hp]').val());	// PS
-  let ac = Number($(this).find('[name=ac]').val());	// PA
-  let initiative = Number($(this).find('[name=initiative]').val());	// Base Init
-  let atk = Number($(this).find('[name=atk]').val());	// Base ATQ
-  let def = Number($(this).find('[name=def]').val());	// Base DEF
-  let dmg = Number($(this).find('[name=dmg]').val());	// Y	XdY+Z
-  let dmg_dice = Number($(this).find('[name=dmg_dice]').val());	// X	XdY+Z
-  let dmg_bonus = Number($(this).find('[name=dmg_bonus]').val());	// Z	XdY+Z
-  let FR = $('#FR').is(':checked');
-  let FP = $('#FP').is(':checked');
-  let Monster = $('#Monster').is(':checked');
-  let RoF = Number($('#RoF').val());
 
-  let party_id = $(this).find('[name=party_id]').val();
-  // check if party exists
-  if (!combat.parties.hasOwnProperty(party_id)) {
-    // create and add party
-    let p = new dnd.Party();
-    combat.addParty(p, party_id);
+  var ckd = checkfulldata();
+  if(ckd.type){
+		// create new combatant
+		let id = $(this).find('[name=char_id]').val();
+		let hp = Number($(this).find('[name=hp]').val());	// PS
+		let ac = Number($(this).find('[name=ac]').val());	// PA
+		let initiative = Number($(this).find('[name=initiative]').val());	// Base Init
+		let atk = Number($(this).find('[name=atk]').val());	// Base ATQ
+		let def = Number($(this).find('[name=def]').val());	// Base DEF
+		let dmg = Number($(this).find('[name=dmg]').val());	// Y	XdY+Z
+		let dmg_dice = Number($(this).find('[name=dmg_dice]').val());	// X	XdY+Z
+		let dmg_bonus = Number($(this).find('[name=dmg_bonus]').val());	// Z	XdY+Z
+		let FR = $('#FR').is(':checked');
+		let FP = $('#FP').is(':checked');
+		let Monster = $('#Monster').is(':checked');
+		let RoF = Number($('#RoF').val());
+		let party_id = $(this).find('[name=party_id]').val();
+		// check if party exists
+		if (!combat.parties.hasOwnProperty(party_id)) {
+		  // create and add party
+		  let p = new dnd.Party();
+		  combat.addParty(p, party_id);
+		}
+		// vérifier si l'id n'est pas double
+		var doublon = combat.parties[party_id].members.find(f => f.id === id);
+		while(doublon){
+			id += "1";
+			doublon = combat.parties[party_id].members.find(f => f.id === id);
+		}	   
+		let new_combatant = new dnd.Combatant(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF);
+		console.log(new_combatant);
+
+  		// add new combatant to party
+  		combat.parties[party_id].addMember(new_combatant);
+  		afficher_gens(combat);
+  }else{
+	  $('#Alert1').append('<div class="alert alert-danger alert-dismissible fade show" role="alert"> <strong>Erreur:</strong> fiche mal rempli.<br><b>'+ckd.err+'</b> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>');
   }
-	// vérifier si l'id n'est pas double
-	var doublon = combat.parties[party_id].members.find(f => f.id === id);
-	while(doublon){
-		id += " bis";
-		doublon = combat.parties[party_id].members.find(f => f.id === id);
-	}
- 
-  let new_combatant = new dnd.Combatant(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF);
-
-  console.log(new_combatant);
-
-  // add new combatant to party
-  combat.parties[party_id].addMember(new_combatant);
-  afficher_gens(combat);
 });
 
 $("#run_simulation").on("click", function(event) {
@@ -76,6 +79,7 @@ for (let p in parties){
 }
 $('#aff_ratio').html(Ratio);
 });
+var myModal = new bootstrap.Modal(document.getElementById('myModal'), {keyboard: false});
 
 function afficher_gens(combat){
 	$('#aff_char').html('');
@@ -83,11 +87,24 @@ function afficher_gens(combat){
 	DataGr(Gr);
 	Gr.forEach(function(e){
 		var aff = ' • '+e+':';
-		combat.parties[e].members.forEach(function(f){
-			aff += '<div>'+f.id+'<button Groupe="'+e+'" Nom="'+f.id+'" type="button" class="btn-close Dlt" data-bs-dismiss="modal" aria-label="Close"></button></div>';
+		combat.parties[e].members.forEach(function(f){		
+			var content = "PS: "+f.hp+"<br>PA: "+f.ac+"<br>Initiative: "+f.initiative+"<br>Attaque: "+f.atk+"<br>Défense: "+f.def+"<br>Dommages: "+f.dmg_dice+"d"+f.dmg+"+"+f.dmg_bonus;
+			if(f.Monster){
+				content += "<br> Monstre, Att/tour: "+f.RoF;
+				if(f.FP){content += "<br>Frappe Puissante";}
+			}else{
+				if(f.FR){content += "<br>Frappe Rapide";}
+				if(f.FP){content += "<br>Frappe Puissante";}
+			}
+			var button1 = '<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="focus" title="'+f.id+'" data-bs-placement="left" data-bs-content="'+content+'" data-bs-html="true">'+f.id+'</button>';
+			var button2 = '<button Groupe="'+e+'" Nom="'+f.id+'" type="button" class="btn-close Dlt" data-bs-dismiss="modal" aria-label="Close"></button>';
+			var edit = '<span class="trig" Groupe="'+e+'" Nom="'+f.id+'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></span>';
+			aff += '<div>'+button1+edit+button2+'</div>';
 		});
 		$('#aff_char').append('<div>'+aff+'</div>');
 	});
+	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+	var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {return new bootstrap.Popover(popoverTriggerEl)});
 	$('.Dlt').on('click',function(e){
 		var Gr = e.target.attributes.Groupe.value;
 		var ID = e.target.attributes.Nom.value;
@@ -97,6 +114,49 @@ function afficher_gens(combat){
 			delete combat.parties[Gr];
 		}
 		afficher_gens(combat);
+	});
+	$('.trig').on('click',function(e){
+		var Gr = e.currentTarget.attributes.Groupe.value;
+		var ID = e.currentTarget.attributes.Nom.value;
+		var index = combat.parties[Gr].members.findIndex(f => f.id === ID);
+		var found = combat.parties[Gr].members[index];
+		$('#modalGroupe').val(Gr);
+		$('#modalNom').val(ID);
+		$('#modalPS').val(found.hp);
+		$('#modalPA').val(found.ac);
+		$('#modalINI').val(found.initiative);
+		$('#modalATQ').val(found.atk);
+		$('#modalDEF').val(found.def);
+		$('#Modald1').val(found.dmg_dice);
+		$('#Modald2').val(found.dmg);
+		$('#Modald3').val(found.dmg_bonus);
+		$('#modalRoF').val(found.RoF);
+		if(found.FR){
+			$('#ModalFR').prop('checked', true);
+		}else{$('#ModalFR').prop('checked', false);}
+		if(found.FP){
+			$('#ModalFP').prop('checked', true);
+		}else{$('#ModalFP').prop('checked', false);}
+		if(found.Monster){
+			$('#ModalMo').prop('checked', true);
+		}else{$('#ModalMo').prop('checked', false);}
+		myModal.toggle();
+		$('#SaveModal').on('click', function(){
+			combat.parties[Gr].members[index].id = $('#modalNom').val();
+			combat.parties[Gr].members[index].hp = $('#modalPS').val();
+			combat.parties[Gr].members[index].ac = $('#modalPA').val();
+			combat.parties[Gr].members[index].initiative = $('#modalINI').val();
+			combat.parties[Gr].members[index].atk = $('#modalATQ').val();
+			combat.parties[Gr].members[index].def = $('#modalDEF').val();
+			combat.parties[Gr].members[index].dmg_dice = $('#Modald1').val();
+			combat.parties[Gr].members[index].dmg = $('#Modald2').val();
+			combat.parties[Gr].members[index].dmg_bonus = $('#Modald3').val();
+			combat.parties[Gr].members[index].RoF = $('#modalRoF').val();
+			combat.parties[Gr].members[index].FR = $('#ModalFR').is(':checked');
+			combat.parties[Gr].members[index].FP = $('#ModalFP').is(':checked');
+			combat.parties[Gr].members[index].Monster = $('#ModalMo').is(':checked');
+			afficher_gens(combat);
+		});
 	});
 }
 
@@ -191,9 +251,12 @@ module.exports = function(){
   this.runFight = function(logger){
 
     this.initiateCombat(logger);
+	var compteur = 0;
     while(this.isFightOnGoing()){
       this.runRound(logger);
+	  compteur++;
     }
+	$('#moche').append('<div>Nombre de tour durant ce combat: <b>'+compteur+'</b></div>');
     return this.survivors();
 
   };

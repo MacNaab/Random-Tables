@@ -35,7 +35,7 @@ $(document).ready(function() {
             $('#Monster').prop('checked', true);
             $('#RoF').val(found.Arme[0]['Att/tour']);
         }else{
-            $('#ptr').val('Erreur: pas de créature à ce nom');
+            $('#Alert1').append('<div class="alert alert-warning alert-dismissible fade show" role="alert"> <strong>Erreur:</strong> pas de prétiré à ce nom. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>');
         }
 
     });
@@ -44,6 +44,8 @@ $(document).ready(function() {
     JSON_Bestiaire.Extended.forEach(function(e){$('#prétire').append('<option>'+e.Nom+'</option>');});
     JSON_Bestiaire.Site.forEach(function(e){$('#prétire').append('<option>'+e.Nom+'</option>');});
     GrPréDef();
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {return new bootstrap.Tooltip(tooltipTriggerEl)});
 });
 
 function GrPréDef(){
@@ -56,9 +58,9 @@ function GrPréDef(){
         a.forEach(function(e){
             $('#character_form').trigger('reset');
             var b = e.split('?&?'); // Chaque Elem
-            $('#floatingInput').val(b[0]);  // Groupe
-            $('#floatingInput2').val(b[1]); // Nom
-            $('#PS').val(b[2]);
+            $('#floatingInput').val(decodeURI(b[0]));  // Groupe   
+            $('#floatingInput2').val(decodeURI(b[1])); // Nom
+            $('#PS').val(b[2]); 
             $('#PA').val(b[3]); 
             $('#INI').val(b[4]);
             $('#ATQ').val(b[5]);  
@@ -68,13 +70,13 @@ function GrPréDef(){
             $('#d3').val(b[9]);  // xdy+Z
             if(b[10]=='true'){
                 $('#FR').prop('checked', true);    // Frappe Rapide
-            }
+            }else{$('#FR').prop('checked', false);}
             if(b[11]=='true'){
                 $('#FP').prop('checked', true);    // Frappe Puisssante
-            }
+            }else{$('#FP').prop('checked', false);}
             if(b[12]=='true'){
                 $('#Monster').prop('checked', true);    // Monstre
-            }
+            }else{$('#Monster').prop('checked', false);}
             $('#RoF').val(b[13]);   // RoF
             document.getElementById('addform').click();
         });
@@ -91,8 +93,53 @@ function copyToClipboard(text) {
     // dummy.style.display = 'none'
     document.body.appendChild(dummy);
     //Be careful if you use texarea. setAttribute('value', value), which works with "input" does not work with "textarea". – Eduard
-    dummy.value = adresseActuelle+text;
+    dummy.value = adresseActuelle+encodeURI(text);
     dummy.select();
     document.execCommand("copy");
     document.body.removeChild(dummy);
+}
+
+function checkfulldata(){
+    // create new combatant    
+  let party_id = $("#character_form").find('[name=party_id]').val();
+  let id = $("#character_form").find('[name=char_id]').val();
+  let hp = Number($("#character_form").find('[name=hp]').val());	// PS
+  let ac = Number($("#character_form").find('[name=ac]').val());	// PA
+  let initiative = Number($("#character_form").find('[name=initiative]').val());	// Base Init
+  let atk = Number($("#character_form").find('[name=atk]').val());	// Base ATQ
+  let def = Number($("#character_form").find('[name=def]').val());	// Base DEF
+  let dmg = Number($("#character_form").find('[name=dmg]').val());	// Y	XdY+Z
+  let dmg_dice = Number($("#character_form").find('[name=dmg_dice]').val());	// X	XdY+Z
+  let dmg_bonus = Number($("#character_form").find('[name=dmg_bonus]').val());	// Z	XdY+Z
+  let FR = $('#FR').is(':checked');
+  let FP = $('#FP').is(':checked');
+  let Monster = $('#Monster').is(':checked');
+  let RoF = Number($('#RoF').val());
+  
+    var list = [
+      {id:party_id,N:'Groupe'},
+      {id:id,N:'Nom'},
+      {id:hp,N:'PS'},
+      {id:ac,N:'PA'},
+      {id:initiative,N:'Initiative'},
+      {id:atk,N:'Attaque'},
+      {id:def,N:'Défense'},
+      {id:dmg,N:'Dommage (Nombre de faces du dé)'},
+      {id:dmg_dice,N:'Dommage (Nombre de dés)'}
+    ];
+    var check = true;var erreur = "";
+    list.forEach(function(f){
+        var e = f.id;
+        if(e==NaN || e==null || e=='' || e==undefined || !e){
+            if(e==0||e=='0'){}else{
+                check = false;
+                erreur += f.N+" ";
+            }  
+        }
+    });
+    if(dmg_bonus == NaN){check = false;erreur += "Dommage (Bonus brut) ";}
+    if(Monster){
+        if(RoF == NaN || RoF <= 0){check = false;erreur += "Attaque par tour";}
+    }  
+  return {type: check, err: erreur};
 }

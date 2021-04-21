@@ -42,12 +42,12 @@
     
         <div class="centrer">
           <div class="input-group" style="margin-top: 15px;">
-            <div class="form-floating" title="Nombre de Points de Santé">
+            <div class="form-floating" data-bs-toggle="tooltip" title="Nombre de Points de Santé">
               <input name="hp" type="text" class="form-control" id="PS" placeholder="a">
               <label for="PS">PS</label>
             </div>
             <span class="input-group-text"></span>
-            <div class="form-floating" title="Valeur de Protection d'Armure">
+            <div class="form-floating" data-bs-toggle="tooltip" title="Valeur de Protection d'Armure">
               <input name="ac" type="text" class="form-control" id="PA" placeholder="a">
               <label for="PA">PA</label>
             </div>
@@ -56,17 +56,17 @@
   
         <div class="centrer">
           <div class="input-group" style="margin-top: 15px;">
-            <div class="form-floating" title="Base d'initiative = RÉF">
+            <div class="form-floating" data-bs-toggle="tooltip" title="Base d'initiative = RÉF">
               <input name="initiative" type="text" class="form-control" id="INI" placeholder="a">
               <label for="INI">Initiative (Base)</label>
             </div>
             <span class="input-group-text"></span>
-            <div class="form-floating" title="Base d'attaque = Caractérisque + Compétence">
+            <div class="form-floating" data-bs-toggle="tooltip" title="Base d'attaque = Caractérisque + Compétence">
               <input name="atk" type="text" class="form-control" id="ATQ" placeholder="a">
               <label for="ATQ">Attaque (Base)</label>
             </div>
             <span class="input-group-text"></span>
-            <div class="form-floating" title="Base de défense = Caractérisque + Compétence">
+            <div class="form-floating" data-bs-toggle="tooltip" title="Base de défense = Caractérisque + Compétence">
               <input name="def" type="text" class="form-control" id="DÉF" placeholder="a">
               <label for="DÉF">Défense (Base)</label>
             </div>
@@ -100,12 +100,14 @@
               <span style="margin-left: 10px;">Monstre</span>
             </div>
             <span class="input-group-text"></span>
-            <div class="form-floating" title="Valeur prise en compte si Monstre coché">
-              <input name="initiative" type="text" class="form-control" id="RoF" placeholder="a">
+            <div class="form-floating" data-bs-toggle="tooltip" title="Valeur prise en compte si Monstre coché">
+              <input name="initiative" type="number" class="form-control" id="RoF" placeholder="a">
               <label for="RoF">Attaque/tour</label>
             </div>
           </div>
         </div>
+
+        <div id="Alert1"></div>
   
         <div style="margin-top: 15px;text-align: center;">
           <button id="addform" type="submit" class="btn btn-secondary btn-lg">Ajouter</button>
@@ -173,7 +175,87 @@
       </div>
     </div>
     
-
+    <div class="modal" id='myModal' tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="grid-container">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="modalGroupe" placeholder="a">
+                <label for="modalGroupe">Groupe</label>
+              </div>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="modalNom" placeholder="a">
+                <label for="modalNom">Nom</label>
+              </div>
+            </div>
+            <div class="grid-container">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="modalPS" placeholder="a">
+                <label for="modalPS">PS</label>
+              </div>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="modalPA" placeholder="a">
+                <label for="modalPA">PA</label>
+              </div>
+            </div>
+            <div class="grid-container3">
+              <div class="form-floating">
+                <input type="number" class="form-control" id="modalINI" placeholder="a">
+                <label for="modalINI">Initiative</label>
+              </div>
+              <div class="form-floating">
+                <input type="number" class="form-control" id="modalATQ" placeholder="a">
+                <label for="modalATQ">Attaque</label>
+              </div>
+              <div class="form-floating">
+                <input type="number" class="form-control" id="modalDEF" placeholder="a">
+                <label for="modalDEF">Défense</label>
+              </div>
+            </div>
+            <div class="input-group" style="margin-top: 15px;">
+              <input id='Modald1' type="number" class="form-control" style="width: 50px;">
+              <span class="input-group-text">d</span>
+              <input id='Modald2' type="number" class="form-control">
+              <span class="input-group-text">+</span>
+              <input id='Modald3' type="number" class="form-control">
+            </div>
+            <div class="grid-container">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="ModalFR">
+                <label class="form-check-label" for="ModalFR">
+                  Frappe Rapide
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="ModalFP">
+                <label class="form-check-label" for="ModalFP">
+                  Frappe Puissante
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="ModalMo">
+                <label class="form-check-label" for="ModalMo">
+                  Monstre
+                </label>
+              </div>
+              <div class="form-floating">
+                <input type="number" class="form-control" id="modalRoF" placeholder="a">
+                <label for="modalRoF">Attaque par tour</label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            <button id="SaveModal" type="button" class="btn btn-primary" data-bs-dismiss="modal">Sauvegarder les changements</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="bundle.js"></script>
