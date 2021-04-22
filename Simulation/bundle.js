@@ -21,6 +21,9 @@ $("#character_form").on("submit", function(event) {
 		let FP = $('#FP').is(':checked');
 		let Monster = $('#Monster').is(':checked');
 		let RoF = Number($('#RoF').val());
+		let loc = Number($('#Loc').val());
+		if(loc==3){loc={viser:-6,dmg:3};}else if(loc==1){loc={viser:-1,dmg:1};}else if(loc==0.5){loc={viser:-3,dmg:0.5};}else{loc={viser:null,dmg:null};}
+		let position = Number($('#Position').val());if(position==NaN||position<=1){position=1;}
 		let Strat = ($('#Strat').val());
 		let party_id = $(this).find('[name=party_id]').val();
 		// check if party exists
@@ -35,7 +38,7 @@ $("#character_form").on("submit", function(event) {
 			id += "1";
 			doublon = combat.parties[party_id].members.find(f => f.id === id);
 		}	   
-		let new_combatant = new dnd.Combatant(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF, Strat);
+		let new_combatant = new dnd.Combatant(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF, Strat, loc, position);
 		console.log(new_combatant);
 
   		// add new combatant to party
@@ -79,7 +82,7 @@ var Ratio = 'Ratios:';
 for (let p in parties){
   Ratio += '<br><b>'+p + '</b>: ' + parties[p] + '%';
 }
-$('#aff_ratio').html(Ratio+'<p>Nombre tour en moyenne: '+NombreDeTour.reduce(reducer)/100+'</p>');
+$('#aff_ratio').html(Ratio+'<p>Nombre tour en moyenne: '+Math.round(NombreDeTour.reduce(reducer)/100)+'</p>');
 });
 var myModal = new bootstrap.Modal(document.getElementById('myModal'), {keyboard: false});
 
@@ -98,19 +101,20 @@ function afficher_gens(combat){
 				if(f.FR){content += "<br>Frappe Rapide";}
 				if(f.FP){content += "<br>Frappe Puissante";}
 			}
-			content += "<br>Stratégie: "+f.Strat;
+			if(f.loc.dmg==3){content += "<br>Localisation: Tête"}else if(f.loc.dmg==1){content += "<br>Localisation: Torse"}else if(f.loc.dmg==0.5){content += "<br>Localisation: Membre"}else{content += "<br>Localisation: Aléatoire"}
+			content += "<br>Position: "+f.position+"<br>Stratégie: "+f.Strat;
 			var button1 = '<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="focus" title="'+f.id+'" data-bs-placement="left" data-bs-content="'+content+'" data-bs-html="true">'+f.id+'</button>';
-			var button2 = '<button Groupe="'+e+'" Nom="'+f.id+'" type="button" class="btn-close Dlt" data-bs-dismiss="modal" aria-label="Close"></button>';
+			var del = '<span Groupe="'+e+'" Nom="'+f.id+'" type="button" class="Dlt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16"> <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/> </svg></span>';
 			var edit = '<span class="trig" Groupe="'+e+'" Nom="'+f.id+'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></span>';
-			aff += '<div>'+button1+edit+button2+'</div>';
+			aff += '<div>'+button1+edit+del+'</div>';
 		});
 		$('#aff_char').append('<div>'+aff+'</div>');
 	});
 	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
 	var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {return new bootstrap.Popover(popoverTriggerEl)});
 	$('.Dlt').on('click',function(e){
-		var Gr = e.target.attributes.Groupe.value;
-		var ID = e.target.attributes.Nom.value;
+		var Gr = e.currentTarget.attributes.Groupe.value;
+		var ID = e.currentTarget.attributes.Nom.value;
 		var index = combat.parties[Gr].members.findIndex(f => f.id === ID);
 		combat.parties[Gr].members.splice(index,1);
 		if(combat.parties[Gr].members.length == 0){
@@ -135,6 +139,8 @@ function afficher_gens(combat){
 		$('#Modald3').val(found.dmg_bonus);
 		$('#modalRoF').val(found.RoF);
 		$('#ModalStrat').val(found.Strat);
+		$('#ModPosition').val(found.position);
+		$('#ModalLoc').val(found.loc.dmg);
 		if(found.FR){
 			$('#ModalFR').prop('checked', true);
 		}else{$('#ModalFR').prop('checked', false);}
@@ -146,6 +152,10 @@ function afficher_gens(combat){
 		}else{$('#ModalMo').prop('checked', false);}
 		myModal.toggle();
 		$('#SaveModal').on('click', function(){
+			let loc = Number($('#ModLoc').val());
+			if(loc==NaN){loc={viser:null,dmg:null};}else{
+				if(loc=3){loc={viser:-6,dmg:3};}else if(loc=1){loc={viser:-1,dmg:1};}else{loc={viser:-3,dmg:0.5};}
+			}
 			combat.parties[Gr].members[index].id = $('#modalNom').val();
 			combat.parties[Gr].members[index].hp = $('#modalPS').val();
 			combat.parties[Gr].members[index].ac = $('#modalPA').val();
@@ -157,6 +167,8 @@ function afficher_gens(combat){
 			combat.parties[Gr].members[index].dmg_bonus = $('#Modald3').val();
 			combat.parties[Gr].members[index].RoF = $('#modalRoF').val();
 			combat.parties[Gr].members[index].Strat = $('#ModalStrat').val();
+			combat.parties[Gr].members[index].position = $('#ModPosition').val();
+			combat.parties[Gr].members[index].loc = loc;
 			combat.parties[Gr].members[index].FR = $('#ModalFR').is(':checked');
 			combat.parties[Gr].members[index].FP = $('#ModalFP').is(':checked');
 			combat.parties[Gr].members[index].Monster = $('#ModalMo').is(':checked');
@@ -175,7 +187,7 @@ $('#link').on('click',function(){
 	var url = "";
 	Gr.forEach(function(e){
 		combat.parties[e].members.forEach(function(f){
-			url += "?!?"+e+"?&?"+f.id+'?&?'+f.max_hp+'?&?'+f.ac+'?&?'+f.initiative+'?&?'+f.atk+'?&?'+f.def+'?&?'+f.dmg_dice+'?&?'+f.dmg+'?&?'+f.dmg_bonus+'?&?'+f.FR+'?&?'+f.FP+'?&?'+f.Monster+'?&?'+f.RoF+'?&?'+f.Strat;
+			url += "?!?"+e+"?&?"+f.id+'?&?'+f.max_hp+'?&?'+f.ac+'?&?'+f.initiative+'?&?'+f.atk+'?&?'+f.def+'?&?'+f.dmg_dice+'?&?'+f.dmg+'?&?'+f.dmg_bonus+'?&?'+f.FR+'?&?'+f.FP+'?&?'+f.Monster+'?&?'+f.RoF+'?&?'+f.Strat+'?&?'+f.loc.dmg+'?&?'+f.position;
 		});
 	});
 	copyToClipboard(url);
@@ -200,7 +212,7 @@ module.exports = function(){
         self.turnList.push({
           party_id: party,
           combatant: combatant,
-          roll: combatant.rollInitiative()
+          roll: combatant.rollInitiative().total
         });
       });
     }
@@ -239,6 +251,10 @@ module.exports = function(){
 			var target = self.parties[party_id].selectTarget(opponents);
 		}else if(combatant.Strat=='PA'){
 			var target = self.parties[party_id].selectTargetPA(opponents);
+		}else if(combatant.Strat=='P1'){
+			var target = self.parties[party_id].selectTargetP1(opponents);
+		}else if(combatant.Strat=='P2'){
+			var target = self.parties[party_id].selectTargetP2(opponents);
 		}else{
 			var target = self.parties[party_id].selectTargetAlea(opponents);
 		}
@@ -246,14 +262,25 @@ module.exports = function(){
           return;
         }
 		for(let i=0; i < combatant.RoF; i++){
-			let atkRoll = combatant.attackRoll();
-			let defRoll = target.defRoll();
+			let atk = combatant.attackRoll();
+			let atkRoll = atk.total;
+			let def = target.defRoll();
+			let defRoll = def.total;
+			if(combatant.toucher[target.id]){
+				combatant.toucher[target.id].try ++
+			}else{
+				combatant.toucher[target.id] = {};
+				combatant.toucher[target.id].try=1;
+				combatant.toucher[target.id].suc = 0;
+			}
 			if (target.isHit(atkRoll,defRoll)){
-			  let damage = combatant.damageRoll(atkRoll,defRoll,target.ac);
+			  let damage = combatant.damageRoll(atkRoll,defRoll,target.ac,combatant.loc.dmg);
 			  target.takeDamage(damage);
-			  $('#moche').append('<div><b>'+combatant.id + '</b> touche <b>' + target.id + '</b> et inflige ' + damage + ' points de dégâts. Jet: '+atkRoll+' VS '+defRoll+'</div>');
+			  target.ac -= 1; if(target.ac <= 0){target.ac=0;}
+			  combatant.toucher[target.id].suc ++;
+			  $('#moche').append('<div>'+combatant.id + ' touche ' + target.id + ' et inflige ' + damage + ' points de dégâts. Jet: '+atkRoll+' ('+atk.roll+','+combatant.atk+') VS '+defRoll+'  ('+def.roll+','+target.def+')</div>');
 			} else {
-				$('#moche').append('<div><b>'+combatant.id + '</b> rate <b>' + target.id + '</b>. Jet: '+atkRoll+' VS '+defRoll+'</div>');
+				$('#moche').append('<div>'+combatant.id + ' rate ' + target.id + '. Jet: '+atkRoll+' ('+atk.roll+','+combatant.atk+') VS '+defRoll+'  ('+def.roll+','+target.def+')</div>');
 			}
 		}
       }
@@ -285,14 +312,35 @@ module.exports = function(){
     return false;
   };
   this.survivors = function(){
+	function statuch(e){
+		let obj = Object.keys(e.combatant.toucher);
+		let affi = "";
+		obj.forEach(function(f){
+			affi += f+', '+Math.round(Number(e.combatant.toucher[f].suc)/Number(e.combatant.toucher[f].try)*100)+"% ("+e.combatant.toucher[f].suc+'/'+e.combatant.toucher[f].try+") ; ";
+		});
+		return affi;
+	}
     let alive = [];
-	$('#moche').append('<br><div><u>Survivants:</u></div>')
+	let party = [];for(let party_id in this.parties){party.push(party_id);}
+	var aff = "";let grSur=1;var eff = "<br><div><u>Morts:</u></div>";
     for ( c in this.turnList ) {
       if (!this.turnList[c].combatant.isDead()){
-		$('#moche').append('<div><b>'+this.turnList[c].combatant.id+':</b> '+this.turnList[c].combatant.hp+'/'+this.turnList[c].combatant.max_hp+' PS</div>');
+		aff += ('<div><b>'+this.turnList[c].combatant.id+':</b> '+this.turnList[c].combatant.hp+'/'+this.turnList[c].combatant.max_hp+' PS, '+this.turnList[c].combatant.ac+' PA</div>');
+		aff += '<div>Satistiques de toucher: '+statuch(this.turnList[c])+'</div>';
         alive.push(this.turnList[c]);
-      }
+		var found = this.parties[party[0]].members.find(element => element.id == this.turnList[c].combatant.id);
+		if(found){grSur=0;}
+      }else{
+		eff += ('<div><b>'+this.turnList[c].combatant.id+':</b> '+this.turnList[c].combatant.hp+'/'+this.turnList[c].combatant.max_hp+' PS, '+this.turnList[c].combatant.ac+' PA</div>');
+		eff += '<div>Satistiques de toucher: '+statuch(this.turnList[c])+'</div>';
+	  }
     }
+	if(grSur==0){
+		$('#moche').append('<br><div><u>Survivants:</u> <svg style="color:forestgreen;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-fill" viewBox="0 0 16 16"> <path d="M5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/> </svg></div>')
+	}else{
+		$('#moche').append('<br><div><u>Survivants:</u> <svg style="color:darkred;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-slash-fill" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1.093 3.093c-.465 4.275.885 7.46 2.513 9.589a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.32 11.32 0 0 0 1.733-1.525L1.093 3.093zm12.215 8.215L3.128 1.128A61.369 61.369 0 0 1 5.073.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.483 3.626-.332 6.491-1.551 8.616zm.338 3.046-13-13 .708-.708 13 13-.707.707z"/> </svg></div>')
+	}
+	$('#moche').append(aff+eff);
     return alive;
   };
   this.reset = function(){
@@ -301,6 +349,8 @@ module.exports = function(){
     for (let party in self.parties){
       self.parties[party].members.forEach(function(combatant){
 		combatant.hp = combatant.max_hp;
+		combatant.ac = combatant.max_ac;
+		combatant.toucher = {};
       });
     }
   };
@@ -331,11 +381,11 @@ const dice = require('./dice_roller')
  * @param {number} dmg_bonus
  *   Damage bonus from ability modifier.
  */
-module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF, Strat){
+module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF, Strat, loc, position){
   this.id = id;
   this.hp = hp;
   this.max_hp = hp;
-  this.ac = ac;
+  this.ac = ac;this.max_ac = ac;
   this.initiative = initiative;
   this.atk = atk;
   this.dmg = dmg;
@@ -347,6 +397,9 @@ module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,
   this.Monster = Monster;
   this.RoF = RoF;
   this.Strat = Strat;	if(Strat==null){this.Strat='Aléatoire';}
+  this.loc = loc;	// viser & dmg
+  this.toucher = {};	// [nom du perso] try: nombre d'essaie, suc: nombre success
+  this.position = position;
   if(!Monster){
 	  if(FR){this.RoF=2;}else{this.RoF=1;}
   }
@@ -359,14 +412,22 @@ module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,
   this.defRoll = function(){
     return dice(10, def, 'Expl');
   };
-  this.damageRoll = function(attackRoll,defRoll,PA){
+  this.damageRoll = function(attackRoll,defRoll,PA,loc){
     let sum = 0;
     for(let i = 0; i < this.dmg_dice; i++){
-      sum += dice(this.dmg, 0);
+      sum += dice(this.dmg, 0).total;
     }
 	sum = sum + this.dmg_bonus - PA;
-	if(sum<0){sum=0;}
-	if(this.FP){sum *= 2;}
+	if(sum<=0){
+		sum=0;
+	}else{
+		if(this.FP){sum *= 2;}
+		if(!loc){
+			loc = dice(10,0).total;
+			if(loc=1){loc=3;}else if(loc<=4){loc=1;}else{loc=0.5;}
+		}
+		sum *= loc;
+	}
 
 	let cc = 0;
 	let diff = Number(attackRoll)-Number(defRoll);
@@ -413,7 +474,7 @@ module.exports = function(e, modifier, type){
 	if(type == 'Expl'){
 		if(rand == 1){rand = -Expl(e);}else if(rand == 10){rand += Expl(e);}else{}
 	}	
-	return rand+modifier;
+	return {roll:rand,total:rand+modifier};
 };
 
 },{}],5:[function(require,module,exports){
@@ -441,6 +502,12 @@ module.exports = function(){
     },
 	lowest_ac: function(combatantA, combatantB){
 	  return combatantA.ac - combatantB.ac;
+	},
+	lowest_position: function(combatantA, combatantB){
+		return combatantA.position - combatantB.position;
+	},
+	highest_position: function(combatantA, combatantB){
+		return combatantB.position - combatantA.position;
 	}
   };
   this.combatStrategy = this.combatStrategies.lowest_hp;
@@ -453,6 +520,14 @@ module.exports = function(){
   };
   this.selectTargetPA = function(opponents){
     opponents.sort(this.combatStrategies.lowest_ac);
+    return opponents[0];
+  };
+  this.selectTargetP1 = function(opponents){
+    opponents.sort(this.combatStrategies.lowest_position);
+    return opponents[0];
+  };
+  this.selectTargetP2 = function(opponents){
+    opponents.sort(this.combatStrategies.highest_position);
     return opponents[0];
   };
   this.selectTargetAlea = function(opponents){

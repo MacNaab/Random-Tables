@@ -15,6 +15,7 @@ $(document).ready(function() {
         if(!found){found = JSON_Bestiaire.Extended.find(e => e.Nom == $('#ptr').val());}
         if(!found){found = JSON_Bestiaire.Site.find(e => e.Nom == $('#ptr').val());}
         if(found){
+            $('#floatingInput2').val($('#ptr').val());
             var arme = found.Arme[0].DMG;
                 var neg = false;
                 var d = arme.split('d');
@@ -38,6 +39,8 @@ $(document).ready(function() {
             $('#Monster').prop('checked', true);
             $('#RoF').val(found.Arme[0]['Att/tour']);
             $('#Strat').val('Aléatoire');
+            $('#Loc').val('null');
+            $('#Position').val(1);
         }else{
             $('#Alert1').append('<div class="alert alert-warning alert-dismissible fade show" role="alert"> <strong>Erreur:</strong> pas de prétiré à ce nom. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>');
         }
@@ -83,6 +86,8 @@ function GrPréDef(){
             }else{$('#Monster').prop('checked', false);}
             $('#RoF').val(b[13]);   // RoF
             $('#Strat').val(b[14]); // Strat
+            $('#Loc').val(b[15]); // Loc
+            $('#Position').val(b[16]); // Position
             document.getElementById('addform').click();
         });
     }else{

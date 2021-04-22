@@ -104,12 +104,33 @@
               <input name="initiative" type="number" class="form-control" id="RoF" placeholder="a">
               <label for="RoF">Attaque/tour</label>
             </div>
+          </div>
+        </div>
+
+        <div class="centrer" style="margin-top: 15px;">
+          <div class="input-group mb-3">
+            <div class="form-floating" style="width: 150px;">
+              <select class="form-select" id="Loc" data-bs-toggle="tooltip" title="Localisation choisi durant le combat">
+                <option value="null" selected>Aléatoire</option>
+                <option value="3">Tête</option>
+                <option value="1">Torse</option>
+                <option value="0.5">Membre</option>
+              </select>
+              <label for="Loc">Localisation</label>
+            </div>
             <span class="input-group-text"></span>
-            <div class="form-floating">
+            <div class="form-floating" data-bs-toggle="tooltip" title="Ligne où le participant se positionne" style="width: 100px;">
+              <input type="number" class="form-control" id="Position" placeholder="a" min="1">
+              <label for="Position">Position</label>
+            </div>
+            <span class="input-group-text"></span>
+            <div class="form-floating" style="width: 150px;">
               <select class="form-select" id="Strat" data-bs-toggle="tooltip" title="Cible choisi durant le combat">
                 <option value="Aléatoire" selected>Aléatoire</option>
                 <option value="PS">Moins de PS</option>
                 <option value="PA">Moins de PA</option>
+                <option value="P1">Première ligne</option>
+                <option value="P2">Dernière ligne</option>
               </select>
               <label for="Strat">Stratégie</label>
             </div>
@@ -263,8 +284,23 @@
                   <option value="Aléatoire" selected>Aléatoire</option>
                   <option value="PS">Moins de PS</option>
                   <option value="PA">Moins de PA</option>
+                  <option value="P1">Première ligne</option>
+                  <option value="P2">Dernière ligne</option>
                 </select>
                 <label for="ModalStrat">Stratégie</label>
+              </div>
+              <div class="form-floating">
+                <select class="form-select" id="ModLoc" data-bs-toggle="tooltip" title="Localisation choisi durant le combat">
+                  <option value="null" selected>Aléatoire</option>
+                  <option value="3">Tête</option>
+                  <option value="1">Torse</option>
+                  <option value="0.5">Membre</option>
+                </select>
+                <label for="ModLoc">Localisation</label>
+              </div>
+              <div class="form-floating" data-bs-toggle="tooltip" title="Ligne où le participant se positionne">
+                <input type="number" class="form-control" id="ModPosition" placeholder="a" min="1">
+                <label for="ModPosition">Position</label>
               </div>
             </div>
           </div>
