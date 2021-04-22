@@ -48,6 +48,7 @@ $("#character_form").on("submit", function(event) {
 
 $("#run_simulation").on("click", function(event) {
 	let winners = [];
+	NombreDeTour = [];
 	$('#moche').html('');
 	for (let i = 0; i < 100; i++){
 		$('#moche').append('<div>Combat '+Number(Number(i)+1)+'</div>');
@@ -76,9 +77,9 @@ $('#aff_survivant').html(Survivant);
 
 var Ratio = 'Ratios:';
 for (let p in parties){
-  Ratio += '<br>'+p + ': ' + parties[p] + '%';
+  Ratio += '<br><b>'+p + '</b>: ' + parties[p] + '%';
 }
-$('#aff_ratio').html(Ratio);
+$('#aff_ratio').html(Ratio+'<p>Nombre tour en moyenne: '+NombreDeTour.reduce(reducer)/100+'</p>');
 });
 var myModal = new bootstrap.Modal(document.getElementById('myModal'), {keyboard: false});
 
@@ -266,6 +267,7 @@ module.exports = function(){
       this.runRound(logger);
 	  compteur++;
     }
+	NombreDeTour.push(compteur);
 	$('#moche').append('<div>Nombre de tour durant ce combat: <b>'+compteur+'</b></div>');
     return this.survivors();
 

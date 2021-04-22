@@ -1,3 +1,6 @@
+var NombreDeTour = [];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
 function DataGr(e){
     $('#gr').html('');
     e.forEach(function(f){
