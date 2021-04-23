@@ -131,11 +131,12 @@ function afficher_gens(combat){
 		}
 		afficher_gens(combat);
 	});
+	var Gr,ID,index,found = "";
 	$('.trig').on('click',function(e){
-		var Gr = e.currentTarget.attributes.Groupe.value;
-		var ID = e.currentTarget.attributes.Nom.value;
-		var index = combat.parties[Gr].members.findIndex(f => f.id === ID);
-		var found = combat.parties[Gr].members[index];
+		Gr = e.currentTarget.attributes.Groupe.value;
+		ID = e.currentTarget.attributes.Nom.value;
+		index = combat.parties[Gr].members.findIndex(f => f.id === ID);
+		found = combat.parties[Gr].members[index];
 		$('#modalGroupe').val(Gr);
 		$('#modalNom').val(ID);
 		$('#modalPS').val(found.hp);
@@ -177,7 +178,7 @@ function afficher_gens(combat){
 			combat.parties[Gr].members[index].Strat = $('#ModalStrat').val();
 			combat.parties[Gr].members[index].position = $('#ModPosition').val();
 			combat.parties[Gr].members[index].loc = loc;
-			combat.parties[Gr].members[index].regen = $('#ModRegen').val();
+			combat.parties[Gr].members[index].regen = $('#ModalRegen').val();
 			combat.parties[Gr].members[index].FR = $('#ModalFR').is(':checked');
 			combat.parties[Gr].members[index].FP = $('#ModalFP').is(':checked');
 			combat.parties[Gr].members[index].Monster = $('#ModalMo').is(':checked');
@@ -283,14 +284,15 @@ module.exports = function(){
 				combatant.toucher[target.id].try=1;
 				combatant.toucher[target.id].suc = 0;
 			}
+			var lavisée = combatant.loc.viser;if(lavisée==null){lavisée=0;}
 			if (target.isHit(Number(atkRoll)-Number(combatant.loc.viser),defRoll)){
 			  let damage = combatant.damageRoll(atkRoll,defRoll,target.ac,combatant.loc.dmg);
 			  target.takeDamage(damage.total);
 			  target.ac -= 1; if(target.ac <= 0){target.ac=0;}
 			  combatant.toucher[target.id].suc ++;
-			  $('#moche').append('<div>'+combatant.id + ' touche ' + target.id + ' et inflige ' + damage.total + ' points de dégâts ('+damage.roll+') à '+damage.loc+'. Jet: '+atkRoll+' ('+atk.roll+','+combatant.atk+','+combatant.loc.viser+') VS '+defRoll+'  ('+def.roll+','+target.def+')</div>');
+			  $('#moche').append('<div>'+combatant.id + ' touche ' + target.id + ' et inflige ' + damage.total + ' points de dégâts ('+damage.roll+') à '+damage.loc+'. Jet: '+atkRoll+' ('+atk.roll+','+combatant.atk+','+lavisée+') VS '+defRoll+'  ('+def.roll+','+target.def+')</div>');
 			} else {
-				$('#moche').append('<div>'+combatant.id + ' rate ' + target.id + '. Jet: '+atkRoll+' ('+atk.roll+','+combatant.atk+','+combatant.loc.viser+') VS '+defRoll+'  ('+def.roll+','+target.def+')</div>');
+				$('#moche').append('<div>'+combatant.id + ' rate ' + target.id + '. Jet: '+atkRoll+' ('+atk.roll+','+combatant.atk+','+lavisée+') VS '+defRoll+'  ('+def.roll+','+target.def+')</div>');
 			}
 		}
 		if(combatant.regen!=0){combatant.regenHP(combatant.regen);}
@@ -428,13 +430,14 @@ module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,
     let sum = 0;let roll = "[";
     for(let i = 0; i < this.dmg_dice; i++){
 		let rand = dice(this.dmg, 0);
-      	sum += rand.total;
+      	sum += Number(rand.total);
 		roll+= rand.roll+","		
     }
-	sum = sum + this.dmg_bonus - PA;
-	roll+=this.dmg_bonus+","+PA+"]";
+	sum += Number(this.dmg_bonus) - Number(PA);
+	roll+=this.dmg_bonus+",-"+PA+"]";
 	if(sum<=0){
 		sum=0;
+		loc="|Armure > DMG|"
 	}else{
 		if(this.FP){sum *= 2;}
 		if(!loc){
@@ -449,7 +452,7 @@ module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,
 	let diff = Number(attackRoll)-Number(defRoll);
 	if(diff < 7){}else if(diff<10){cc=3;}else if(diff<13){cc=5;}else if(diff<15){cc=8;}else{cc=10;}
 	if(cc!=0){roll += ", crit:"+cc;}
-    return {total:Number(sum)+Number(cc),loc:loca,roll:roll};
+    return {total:Number(Number(sum)+Number(cc)),loc:loca,roll:roll};
   };
   this.isHit = function(attackRoll,defRoll){
     if(attackRoll > defRoll){
