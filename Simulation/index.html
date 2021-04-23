@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -7,203 +7,257 @@
     <title>Simulation de Combat</title>
   </head>
   <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://macnaab.github.io/Random-Tables/">Witcher TRPG</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link"  href="https://macnaab.github.io/Random-Tables/">Tables aléatoires</span></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link" href="https://macnaab.github.io/Random-Tables/Ville/">Environnement urbain aléatoires</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="https://macnaab.github.io/Random-Tables/">Générateur Rencontres</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://macnaab.github.io/Random-Tables/WTRPG/table.html">Tableaux comparatifs</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Gestionnaire de Combats
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="https://macnaab.github.io/Random-Tables/WTRPG/combat.html">Version 1</a></li>
+                <li><a class="dropdown-item" href="https://macnaab.github.io/Random-Tables/WTRPG/combat2.html">Version 2</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://macnaab.github.io/Random-Tables/">Version 3 (dernière)</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://macnaab.github.io/Random-Tables/WM/">Gestionnaire de trajets</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Création de Fiches PJ
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="https://macnaab.github.io/Random-Tables/Fiche/Witcher.html">Normale</a></li>
+                <li><a class="dropdown-item" href="https://macnaab.github.io/Random-Tables/Fiche/W2.html">Avancée</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="">Simulation</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <datalist id="prétire"></datalist>
     <datalist id="gr"></datalist>
 
-    <!-- Form -->
-    <form id="character_form">
-      <div style="margin-top:25px;">    
-        <div class="centrer">
-          <div class="input-group">
-            <div class="form-floating">
-              <input name="party_id" list="gr" type="text" class="form-control" id="floatingInput" placeholder="a">
-              <label for="floatingInput">Nom du groupe</label>
-            </div>
-            <span class="input-group-text"></span>
-            <div class="form-floating">
-              <input name="char_id" type="text" class="form-control" id="floatingInput2" placeholder="a">
-              <label for="floatingInput2">Nom</label>
-            </div>
-            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="visually-hidden">Toggle Dropdown</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><span class="dropdown-item">Pré-tiré</span></li>
-                <li><div class="dropdown-item">
-                  <input list="prétire" id="ptr" type="text" class="form-control">
-                </div></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><div class="dropdown-item" style="text-align:center">
-                    <button id="btn_ptr" type="button" class="btn btn-primary">Ajouter</button>
-                </div></li>
-              </ul>
-            </div>
+    <div style="margin: 15px;">
+ <!-- Form -->
+ <form id="character_form">
+  <div style="margin-top:25px;">    
+    <div class="centrer">
+      <div class="input-group">
+        <div class="form-floating">
+          <input name="party_id" list="gr" type="text" class="form-control" id="floatingInput" placeholder="a">
+          <label for="floatingInput">Nom du groupe</label>
         </div>
-    
-        <div class="centrer">
-          <div class="input-group" style="margin-top: 15px;">
-            <div class="form-floating" data-bs-toggle="tooltip" title="Nombre de Points de Santé">
-              <input name="hp" type="text" class="form-control" id="PS" placeholder="a">
-              <label for="PS">PS</label>
-            </div>
-            <span class="input-group-text"></span>
-            <div class="form-floating" data-bs-toggle="tooltip" title="Valeur de Protection d'Armure">
-              <input name="ac" type="text" class="form-control" id="PA" placeholder="a">
-              <label for="PA">PA</label>
-            </div>
-          </div>
+        <span class="input-group-text"></span>
+        <div class="form-floating">
+          <input name="char_id" type="text" class="form-control" id="floatingInput2" placeholder="a">
+          <label for="floatingInput2">Nom</label>
         </div>
-  
-        <div class="centrer">
-          <div class="input-group" style="margin-top: 15px;">
-            <div class="form-floating" data-bs-toggle="tooltip" title="Base d'initiative = RÉF">
-              <input name="initiative" type="text" class="form-control" id="INI" placeholder="a">
-              <label for="INI">Initiative (Base)</label>
-            </div>
-            <span class="input-group-text"></span>
-            <div class="form-floating" data-bs-toggle="tooltip" title="Base d'attaque = Caractérisque + Compétence">
-              <input name="atk" type="text" class="form-control" id="ATQ" placeholder="a">
-              <label for="ATQ">Attaque (Base)</label>
-            </div>
-            <span class="input-group-text"></span>
-            <div class="form-floating" data-bs-toggle="tooltip" title="Base de défense = Caractérisque + Compétence">
-              <input name="def" type="text" class="form-control" id="DÉF" placeholder="a">
-              <label for="DÉF">Défense (Base)</label>
-            </div>
-          </div>
+        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><span class="dropdown-item">Pré-tiré</span></li>
+            <li><div class="dropdown-item">
+              <input list="prétire" id="ptr" type="text" class="form-control">
+            </div></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><div class="dropdown-item" style="text-align:center">
+                <button id="btn_ptr" type="button" class="btn btn-primary">Ajouter</button>
+            </div></li>
+          </ul>
         </div>
+    </div>
 
-        <div class="centrer">
-          <div class="input-group" style="margin-top: 15px;">
-            <input name="dmg_dice" id='d1' type="number" class="form-control" style="width: 50px;">
-            <span class="input-group-text">d</span>
-            <input name="dmg" id='d2' type="number" class="form-control">
-            <span class="input-group-text">+</span>
-            <input name="dmg_bonus" id='d3' type="number" class="form-control">
-          </div>
+    <div class="centrer">
+      <div class="input-group" style="margin-top: 15px;">
+        <div class="form-floating" data-bs-toggle="tooltip" title="Nombre de Points de Santé">
+          <input name="hp" type="text" class="form-control" id="PS" placeholder="a">
+          <label for="PS">PS</label>
         </div>
-
-        <div class="centrer" style="margin-top: 15px;">
-          <div class="input-group mb-3">
-            <div class="input-group-text" style="background-color: white;">
-              <input id="FR" class="form-check-input mt-0" type="checkbox" value="">
-              <span style="margin-left: 10px;">Frappe Rapide</span>
-            </div>
-            <span class="input-group-text"></span>
-            <div class="input-group-text" style="background-color: white;">
-              <input id="FP" class="form-check-input mt-0" type="checkbox" value="">
-              <span style="margin-left: 10px;">Frappe Puissante</span>
-            </div>
-            <span class="input-group-text"></span>
-            <div class="input-group-text" style="background-color: white;">
-              <input id="Monster" class="form-check-input mt-0" type="checkbox" value="">
-              <span style="margin-left: 10px;">Monstre</span>
-            </div>
-            <span class="input-group-text"></span>
-            <div class="form-floating" data-bs-toggle="tooltip" title="Valeur prise en compte si Monstre coché" style="width: 100px;">
-              <input name="initiative" type="number" class="form-control" id="RoF" placeholder="a">
-              <label for="RoF">Attaque/tour</label>
-            </div>
-          </div>
+        <span class="input-group-text"></span>
+        <div class="form-floating" data-bs-toggle="tooltip" title="Valeur de Protection d'Armure">
+          <input name="ac" type="text" class="form-control" id="PA" placeholder="a">
+          <label for="PA">PA</label>
         </div>
-
-        <div class="centrer" style="margin-top: 15px;">
-          <div class="input-group mb-3">
-            <div class="form-floating" style="width: 150px;">
-              <select class="form-select" id="Loc" data-bs-toggle="tooltip" title="Localisation choisi durant le combat">
-                <option value="null" selected>Aléatoire</option>
-                <option value="3">Tête</option>
-                <option value="1">Torse</option>
-                <option value="0.5">Membre</option>
-              </select>
-              <label for="Loc">Localisation</label>
-            </div>
-            <span class="input-group-text"></span>
-            <div class="form-floating" data-bs-toggle="tooltip" title="Ligne où le participant se positionne" style="width: 100px;">
-              <input type="number" class="form-control" id="Position" placeholder="a" min="1">
-              <label for="Position">Position</label>
-            </div>
-            <span class="input-group-text"></span>
-            <div class="form-floating" style="width: 150px;">
-              <select class="form-select" id="Strat" data-bs-toggle="tooltip" title="Cible choisi durant le combat">
-                <option value="Aléatoire" selected>Aléatoire</option>
-                <option value="PS">Moins de PS</option>
-                <option value="PA">Moins de PA</option>
-                <option value="P1">Première ligne</option>
-                <option value="P2">Dernière ligne</option>
-              </select>
-              <label for="Strat">Stratégie</label>
-            </div>
-          </div>
-        </div>
-
-        <div id="Alert1"></div>
-  
-        <div style="margin-top: 15px;text-align: center;">
-          <button id="addform" type="submit" class="btn btn-primary btn-lg">Ajouter</button>
-        </div>
-      </div>
-    </form> 
-    
-
-     <!-- Affichage --> 
-     <div style="margin:25px">
-       <h3>Liste des participants:</h3>
-       <div class="grid-container" id="aff_char">
-       </div>
-       <div style="margin-top: 15px;text-align: center;">
-          <span style="padding: 10px;">
-            <button id="reini" type="button" class="btn btn-outline-danger btn-lg" data-bs-toggle="tooltip" title="Réinitialiser la configuration">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-                <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-              </svg>
-            </button>
-          </span>
-          <span style="padding: 10px;">
-            <button id="run_simulation" type="button" class="btn btn-outline-primary btn-lg">Simuler</button>
-          </span>
-          <span style="padding: 10px;">
-            <button id="link" type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="tooltip" title="Copier la configuration dans le presse-papier">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
-                <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
-              </svg>
-            </button>
-          </span>
-      </div>
-     </div>
-
-    <div style="margin-top: 25px;">
-      <div class="grid-container">
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Survivant par combat
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <div id="aff_survivant"></div>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Logs de la Simulation
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <div id="moche" style="column-count: 2;"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="aff_ratio"></div>
       </div>
     </div>
+
+    <div class="centrer">
+      <div class="input-group" style="margin-top: 15px;">
+        <div class="form-floating" data-bs-toggle="tooltip" title="Base d'initiative = RÉF">
+          <input name="initiative" type="text" class="form-control" id="INI" placeholder="a">
+          <label for="INI">Initiative (Base)</label>
+        </div>
+        <span class="input-group-text"></span>
+        <div class="form-floating" data-bs-toggle="tooltip" title="Base d'attaque = Caractérisque + Compétence">
+          <input name="atk" type="text" class="form-control" id="ATQ" placeholder="a">
+          <label for="ATQ">Attaque (Base)</label>
+        </div>
+        <span class="input-group-text"></span>
+        <div class="form-floating" data-bs-toggle="tooltip" title="Base de défense = Caractérisque + Compétence">
+          <input name="def" type="text" class="form-control" id="DÉF" placeholder="a">
+          <label for="DÉF">Défense (Base)</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="centrer">
+      <div class="input-group" style="margin-top: 15px;">
+        <input name="dmg_dice" id='d1' type="number" class="form-control" style="width: 50px;">
+        <span class="input-group-text">d</span>
+        <input name="dmg" id='d2' type="number" class="form-control">
+        <span class="input-group-text">+</span>
+        <input name="dmg_bonus" id='d3' type="number" class="form-control">
+      </div>
+    </div>
+
+    <div class="centrer" style="margin-top: 15px;">
+      <div class="input-group mb-3">
+        <div class="input-group-text" style="background-color: white;">
+          <input id="FR" class="form-check-input mt-0" type="checkbox" value="">
+          <span style="margin-left: 10px;">Frappe Rapide</span>
+        </div>
+        <span class="input-group-text"></span>
+        <div class="input-group-text" style="background-color: white;">
+          <input id="FP" class="form-check-input mt-0" type="checkbox" value="">
+          <span style="margin-left: 10px;">Frappe Puissante</span>
+        </div>
+        <span class="input-group-text"></span>
+        <div class="input-group-text" style="background-color: white;">
+          <input id="Monster" class="form-check-input mt-0" type="checkbox" value="">
+          <span style="margin-left: 10px;">Monstre</span>
+        </div>
+        <span class="input-group-text"></span>
+        <div class="form-floating" data-bs-toggle="tooltip" title="Valeur prise en compte si Monstre coché" style="width: 100px;">
+          <input name="initiative" type="number" class="form-control" id="RoF" placeholder="a">
+          <label for="RoF">Attaque/tour</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="centrer" style="margin-top: 15px;">
+      <div class="input-group mb-3">
+        <div class="form-floating" style="width: 150px;">
+          <select class="form-select" id="Loc" data-bs-toggle="tooltip" title="Localisation choisi durant le combat">
+            <option value="null" selected>Aléatoire</option>
+            <option value="3">Tête</option>
+            <option value="1">Torse</option>
+            <option value="0.5">Membre</option>
+          </select>
+          <label for="Loc">Localisation</label>
+        </div>
+        <span class="input-group-text"></span>
+        <div class="form-floating" data-bs-toggle="tooltip" title="Ligne où le participant se positionne" style="width: 100px;">
+          <input type="number" class="form-control" id="Position" placeholder="a" min="1">
+          <label for="Position">Position</label>
+        </div>
+        <span class="input-group-text"></span>
+        <div class="form-floating" style="width: 150px;">
+          <select class="form-select" id="Strat" data-bs-toggle="tooltip" title="Cible choisi durant le combat">
+            <option value="Aléatoire" selected>Aléatoire</option>
+            <option value="PS">Moins de PS</option>
+            <option value="PA">Moins de PA</option>
+            <option value="P1">Première ligne</option>
+            <option value="P2">Dernière ligne</option>
+          </select>
+          <label for="Strat">Stratégie</label>
+        </div>
+      </div>
+    </div>
+
+    <div id="Alert1"></div>
+
+    <div style="margin-top: 15px;text-align: center;">
+      <button id="addform" type="submit" class="btn btn-primary btn-lg">Ajouter</button>
+    </div>
+  </div>
+</form> 
+
+
+ <!-- Affichage --> 
+ <div style="margin:25px">
+   <h3>Liste des participants:</h3>
+   <div class="grid-container" id="aff_char">
+   </div>
+   <div style="margin-top: 15px;text-align: center;">
+      <span style="padding: 10px;">
+        <button id="reini" type="button" class="btn btn-outline-danger btn-lg" data-bs-toggle="tooltip" title="Réinitialiser la configuration">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+          </svg>
+        </button>
+      </span>
+      <span style="padding: 10px;">
+        <button id="run_simulation" type="button" class="btn btn-outline-primary btn-lg">Simuler</button>
+      </span>
+      <span style="padding: 10px;">
+        <button id="link" type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="tooltip" title="Copier la configuration dans le presse-papier">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
+            <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
+          </svg>
+        </button>
+      </span>
+  </div>
+ </div>
+
+<div style="margin-top: 25px;">
+  <div class="grid-container">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Survivant par combat
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div id="aff_survivant"></div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button  id="LogSim" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Logs de la Simulation
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div id="moche" style="column-count: 2;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="aff_ratio"></div>
+  </div>
+</div>
+    </div>
+
     
     <div class="modal" id='myModal' tabindex="-1">
       <div class="modal-dialog">

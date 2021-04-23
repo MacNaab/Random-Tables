@@ -54,25 +54,32 @@ $("#run_simulation").on("click", function(event) {
 	NombreDeTour = [];
 	$('#moche').html('');
 	for (let i = 0; i < 100; i++){
-		$('#moche').append('<div>Combat '+Number(Number(i)+1)+'</div>');
+		$('#moche').append('<div id="Combat '+Number(Number(i)+1)+'"><u>Combat '+Number(Number(i)+1)+'</u></div>');
 		winners.push(combat.runFight(console.log));
 		$('#moche').append('<hr>');
 		combat.reset();
 	}
 
 let parties = {};
+let party = [];
 for (let party_id in combat.parties){
   parties[party_id] = 0;
+  party.push(party_id);
 }
 
 let count = 1;
 var Survivant = '';
+
+let iconVic = '<svg style="color:forestgreen;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-fill" viewBox="0 0 16 16"> <path d="M5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/> </svg>';
+let iconDef = '<svg style="color:darkred;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-slash-fill" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1.093 3.093c-.465 4.275.885 7.46 2.513 9.589a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.32 11.32 0 0 0 1.733-1.525L1.093 3.093zm12.215 8.215L3.128 1.128A61.369 61.369 0 0 1 5.073.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.483 3.626-.332 6.491-1.551 8.616zm.338 3.046-13-13 .708-.708 13 13-.707.707z"/> </svg>';
+
 winners.forEach(function(winner_party){
-	Survivant +=('Combat ' + count + ': ' + winner_party[0].party_id);
+	Survivant +=('<div style="cursor: pointer;" onclick="scroller(\'Combat '+count+'\')">Combat ' + count + ': ' + winner_party[0].party_id);
+	if(winner_party[0].party_id == party[0]){Survivant += " "+iconVic;}else{Survivant += " "+iconDef;}
 	winner_party.forEach(function(e){
-		Survivant +=(', '+e.combatant.id);
+		Survivant +=(' '+e.combatant.id);
 	});
-	Survivant +=('<br>');
+	Survivant +=('</div>');
 	count++;
   	parties[winner_party[0].party_id] += 1;
 });
@@ -273,14 +280,14 @@ module.exports = function(){
 				combatant.toucher[target.id].try=1;
 				combatant.toucher[target.id].suc = 0;
 			}
-			if (target.isHit(atkRoll,defRoll)){
+			if (target.isHit(Number(atkRoll)-Number(combatant.loc.viser),defRoll)){
 			  let damage = combatant.damageRoll(atkRoll,defRoll,target.ac,combatant.loc.dmg);
-			  target.takeDamage(damage);
+			  target.takeDamage(damage.total);
 			  target.ac -= 1; if(target.ac <= 0){target.ac=0;}
 			  combatant.toucher[target.id].suc ++;
-			  $('#moche').append('<div>'+combatant.id + ' touche ' + target.id + ' et inflige ' + damage + ' points de dégâts. Jet: '+atkRoll+' ('+atk.roll+','+combatant.atk+') VS '+defRoll+'  ('+def.roll+','+target.def+')</div>');
+			  $('#moche').append('<div>'+combatant.id + ' touche ' + target.id + ' et inflige ' + damage.total + ' points de dégâts à '+damage.loc+'. Jet: '+atkRoll+' ('+atk.roll+','+combatant.atk+','+combatant.loc.viser+') VS '+defRoll+'  ('+def.roll+','+target.def+')</div>');
 			} else {
-				$('#moche').append('<div>'+combatant.id + ' rate ' + target.id + '. Jet: '+atkRoll+' ('+atk.roll+','+combatant.atk+') VS '+defRoll+'  ('+def.roll+','+target.def+')</div>');
+				$('#moche').append('<div>'+combatant.id + ' rate ' + target.id + '. Jet: '+atkRoll+' ('+atk.roll+','+combatant.atk+','+combatant.loc.viser+') VS '+defRoll+'  ('+def.roll+','+target.def+')</div>');
 			}
 		}
       }
@@ -424,15 +431,16 @@ module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,
 		if(this.FP){sum *= 2;}
 		if(!loc){
 			loc = dice(10,0).total;
-			if(loc=1){loc=3;}else if(loc<=4){loc=1;}else{loc=0.5;}
+			if(loc==1){loc=3;}else if(loc<=4){loc=1;}else{loc=0.5;}
 		}
 		sum *= loc;
 	}
+	if(loc==3){var loca="Tête";}else if(loc==1){var loca="Torse";}else{var loca="Membre";}
 
 	let cc = 0;
 	let diff = Number(attackRoll)-Number(defRoll);
 	if(diff < 7){}else if(diff<10){cc=3;}else if(diff<13){cc=5;}else if(diff<15){cc=8;}else{cc=10;}
-    return sum+cc;
+    return {total:sum+cc,loc:loca};
   };
   this.isHit = function(attackRoll,defRoll){
     if(attackRoll > defRoll){

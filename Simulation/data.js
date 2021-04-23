@@ -155,3 +155,8 @@ function checkfulldata(){
     }  
   return {type: check, err: erreur};
 }
+
+function scroller(e){
+    document.getElementById('LogSim').click();
+    setTimeout(function(){ document.getElementById(e).scrollIntoView(); },500);
+}
