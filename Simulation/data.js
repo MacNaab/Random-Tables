@@ -41,6 +41,11 @@ $(document).ready(function() {
             $('#Strat').val('Aléatoire');
             $('#Loc').val('null');
             $('#Position').val(1);
+            if(found.Régénération){
+                $('#Regen').val(found.Régénération);
+            }else{
+                $('#Regen').val(0);
+            }
         }else{
             $('#Alert1').append('<div class="alert alert-warning alert-dismissible fade show" role="alert"> <strong>Erreur:</strong> pas de prétiré à ce nom. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>');
         }
@@ -88,6 +93,7 @@ function GrPréDef(){
             $('#Strat').val(b[14]); // Strat
             $('#Loc').val(b[15]); // Loc
             $('#Position').val(b[16]); // Position
+            $('#Regen').val(b[17]); // Régénération 
             document.getElementById('addform').click();
         });
     }else{

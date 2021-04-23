@@ -25,6 +25,7 @@ $("#character_form").on("submit", function(event) {
 		if(loc==3){loc={viser:-6,dmg:3};}else if(loc==1){loc={viser:-1,dmg:1};}else if(loc==0.5){loc={viser:-3,dmg:0.5};}else{loc={viser:null,dmg:null};}
 		let position = Number($('#Position').val());if(position==NaN||position<=1){position=1;}
 		let Strat = ($('#Strat').val());
+		let regen = Number($('#Regen').val()); if(regen==NaN){regen=0;}
 		let party_id = $(this).find('[name=party_id]').val();
 		// check if party exists
 		if (!combat.parties.hasOwnProperty(party_id)) {
@@ -38,7 +39,7 @@ $("#character_form").on("submit", function(event) {
 			id += "1";
 			doublon = combat.parties[party_id].members.find(f => f.id === id);
 		}	   
-		let new_combatant = new dnd.Combatant(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF, Strat, loc, position);
+		let new_combatant = new dnd.Combatant(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF, Strat, loc, position, regen);
 		console.log(new_combatant);
 
   		// add new combatant to party
@@ -110,6 +111,7 @@ function afficher_gens(combat){
 			}
 			if(f.loc.dmg==3){content += "<br>Localisation: Tête"}else if(f.loc.dmg==1){content += "<br>Localisation: Torse"}else if(f.loc.dmg==0.5){content += "<br>Localisation: Membre"}else{content += "<br>Localisation: Aléatoire"}
 			content += "<br>Position: "+f.position+"<br>Stratégie: "+f.Strat;
+			if(f.regen!=0){content+="<br>Régénération:"+f.regen;}
 			var button1 = '<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="focus" title="'+f.id+'" data-bs-placement="left" data-bs-content="'+content+'" data-bs-html="true">'+f.id+'</button>';
 			var del = '<span Groupe="'+e+'" Nom="'+f.id+'" class="Dlt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16"> <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/> </svg></span>';
 			var edit = '<span class="trig" Groupe="'+e+'" Nom="'+f.id+'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"> <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/> <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/> </svg></span>';
@@ -148,6 +150,7 @@ function afficher_gens(combat){
 		$('#ModalStrat').val(found.Strat);
 		$('#ModPosition').val(found.position);
 		$('#ModalLoc').val(found.loc.dmg);
+		$('#ModalRegen').val(found.regen);
 		if(found.FR){
 			$('#ModalFR').prop('checked', true);
 		}else{$('#ModalFR').prop('checked', false);}
@@ -174,6 +177,7 @@ function afficher_gens(combat){
 			combat.parties[Gr].members[index].Strat = $('#ModalStrat').val();
 			combat.parties[Gr].members[index].position = $('#ModPosition').val();
 			combat.parties[Gr].members[index].loc = loc;
+			combat.parties[Gr].members[index].regen = $('#ModRegen').val();
 			combat.parties[Gr].members[index].FR = $('#ModalFR').is(':checked');
 			combat.parties[Gr].members[index].FP = $('#ModalFP').is(':checked');
 			combat.parties[Gr].members[index].Monster = $('#ModalMo').is(':checked');
@@ -193,7 +197,7 @@ $('#link').on('click',function(){
 	var url = "";
 	Gr.forEach(function(e){
 		combat.parties[e].members.forEach(function(f){
-			url += "?!?"+e+"?&?"+f.id+'?&?'+f.max_hp+'?&?'+f.ac+'?&?'+f.initiative+'?&?'+f.atk+'?&?'+f.def+'?&?'+f.dmg_dice+'?&?'+f.dmg+'?&?'+f.dmg_bonus+'?&?'+f.FR+'?&?'+f.FP+'?&?'+f.Monster+'?&?'+f.RoF+'?&?'+f.Strat+'?&?'+f.loc.dmg+'?&?'+f.position;
+			url += "?!?"+e+"?&?"+f.id+'?&?'+f.max_hp+'?&?'+f.ac+'?&?'+f.initiative+'?&?'+f.atk+'?&?'+f.def+'?&?'+f.dmg_dice+'?&?'+f.dmg+'?&?'+f.dmg_bonus+'?&?'+f.FR+'?&?'+f.FP+'?&?'+f.Monster+'?&?'+f.RoF+'?&?'+f.Strat+'?&?'+f.loc.dmg+'?&?'+f.position+'?&?'+f.regen;
 		});
 	});
 	copyToClipboard(url);
@@ -284,11 +288,12 @@ module.exports = function(){
 			  target.takeDamage(damage.total);
 			  target.ac -= 1; if(target.ac <= 0){target.ac=0;}
 			  combatant.toucher[target.id].suc ++;
-			  $('#moche').append('<div>'+combatant.id + ' touche ' + target.id + ' et inflige ' + damage.total + ' points de dégâts à '+damage.loc+'. Jet: '+atkRoll+' ('+atk.roll+','+combatant.atk+','+combatant.loc.viser+') VS '+defRoll+'  ('+def.roll+','+target.def+')</div>');
+			  $('#moche').append('<div>'+combatant.id + ' touche ' + target.id + ' et inflige ' + damage.total + ' points de dégâts ('+damage.roll+') à '+damage.loc+'. Jet: '+atkRoll+' ('+atk.roll+','+combatant.atk+','+combatant.loc.viser+') VS '+defRoll+'  ('+def.roll+','+target.def+')</div>');
 			} else {
 				$('#moche').append('<div>'+combatant.id + ' rate ' + target.id + '. Jet: '+atkRoll+' ('+atk.roll+','+combatant.atk+','+combatant.loc.viser+') VS '+defRoll+'  ('+def.roll+','+target.def+')</div>');
 			}
 		}
+		if(combatant.regen!=0){combatant.regenHP(combatant.regen);}
       }
     });
   };
@@ -387,7 +392,7 @@ const dice = require('./dice_roller')
  * @param {number} dmg_bonus
  *   Damage bonus from ability modifier.
  */
-module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF, Strat, loc, position){
+module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus, def, FR, FP, Monster, RoF, Strat, loc, position, regen){
   this.id = id;
   this.hp = hp;
   this.max_hp = hp;
@@ -406,6 +411,7 @@ module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,
   this.loc = loc;	// viser & dmg
   this.toucher = {};	// [nom du perso] try: nombre d'essaie, suc: nombre success
   this.position = position;
+  this.regen = regen;
   if(!Monster){
 	  if(FR){this.RoF=2;}else{this.RoF=1;}
   }
@@ -419,11 +425,14 @@ module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,
     return dice(10, def, 'Expl');
   };
   this.damageRoll = function(attackRoll,defRoll,PA,loc){
-    let sum = 0;
+    let sum = 0;let roll = "[";
     for(let i = 0; i < this.dmg_dice; i++){
-      sum += dice(this.dmg, 0).total;
+		let rand = dice(this.dmg, 0);
+      	sum += rand.total;
+		roll+= rand.roll+","		
     }
 	sum = sum + this.dmg_bonus - PA;
+	roll+=this.dmg_bonus+","+PA+"]";
 	if(sum<=0){
 		sum=0;
 	}else{
@@ -435,11 +444,12 @@ module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,
 		sum *= loc;
 	}
 	if(loc==3){var loca="Tête";}else if(loc==1){var loca="Torse";}else{var loca="Membre";}
-
+	roll+="*"+loc;
 	let cc = 0;
 	let diff = Number(attackRoll)-Number(defRoll);
 	if(diff < 7){}else if(diff<10){cc=3;}else if(diff<13){cc=5;}else if(diff<15){cc=8;}else{cc=10;}
-    return {total:sum+cc,loc:loca};
+	if(cc!=0){roll += ", crit:"+cc;}
+    return {total:Number(sum)+Number(cc),loc:loca,roll:roll};
   };
   this.isHit = function(attackRoll,defRoll){
     if(attackRoll > defRoll){
@@ -459,6 +469,14 @@ module.exports = function(id, hp, ac, initiative, atk, dmg, dmg_dice, dmg_bonus,
       return false;
     }
   };
+  this.regenHP = function(e){
+	  if(this.hp<=this.max_hp){
+		  this.hp+=e;
+	  }
+	  if(this.hp>this.max_hp){
+		  this.hp = this.max_hp;
+	  }
+  }
 };
 
 },{"./dice_roller":4}],4:[function(require,module,exports){
