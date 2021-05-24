@@ -42,5 +42,6 @@ The witcher TRPG table :
 * Random Human (The Witcher TRPG)
 * Table of all Monster & Human (The Witcher TRPG)
 --------------------------------
+To do list: https://github.com/MacNaab/Random-Tables/projects/3
 
 Try it at https://macnaab.github.io/Random-Tables/
