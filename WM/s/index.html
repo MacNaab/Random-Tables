@@ -59,7 +59,7 @@
 <body>
 
 <div id="hide-sidebar"></div>
-<div id="map" style="width:100vw; height:100vh;z-index: 1;background: #3C4540;"></div>
+<div id="map" style="width:100vw; height:100vh;z-index: 1;background: #3C5E5A;"></div>
 
     <div id="sidebar">
         <div style="margin-top:10px;margin-bottom:10px;">
@@ -116,8 +116,8 @@
     </div>
 </body>
 <script>
-    // 148.42396503188735 = 60 km;
-    var rapport = 60/148.42396503188735;
+    // 110 = 60 km;
+    var rapport = 60/110;
     var map = L.map('map', {zoomControl: false}).setView([0, 0], 3);
 		
     L.control.zoom({zoomInTitle:'Zoomer',zoomOutTitle:'Dézoomer'}).addTo(map);
@@ -126,8 +126,8 @@
     L.tileLayer('map/{z}/{x}/{y}.png', {
           continuousWorld: false,
           noWrap: true,  
-          minZoom: 1,
-          maxZoom: 3,
+          minZoom: 2,
+          maxZoom: 5,
     }).addTo(map);
 </script>
 </html>
