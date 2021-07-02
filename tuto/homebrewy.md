@@ -341,6 +341,38 @@ ___
 > ### Note
 ```
 
+Template "Norn":
+- 3 [templates](https://imgur.com/a/HsXRYwU):
+ - https://i.imgur.com/GlPXW8L.png
+ - https://i.imgur.com/cbsmlQm.png
+ - https://i.imgur.com/7um6b1A.png
+
+A placer dans le Brew Editor:
+``` HTML
+<div class="norn-bg">
+ <img 
+   src='https://s-media-cache-ak0.pinimg.com/736x/4a/81/79/4a8179462cfdf39054a418efd4cb743e.jpg' // votre image
+ />
+ <img 
+   src='https://i.imgur.com/GlPXW8L.png' // votre template
+ />	
+</div>
+```
+A placer dans le Style Editor:
+``` CSS
+.norn-bg{
+	width:100vw;
+}
+.norn-bg img{
+	position: absolute;
+	top:0;
+	right:0;
+}
+.norn-bg img:nth-child(2){
+ width:100%
+}
+```
+
 Un template totalement volé:
 ``` HTML
 <img 
