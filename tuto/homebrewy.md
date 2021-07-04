@@ -369,7 +369,7 @@ A placer dans le Style Editor:
 	right:0;
 }
 .norn-bg img:nth-child(2){
- width:100%
+ height:100%
 }
 ```
 
