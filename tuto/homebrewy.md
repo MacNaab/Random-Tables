@@ -343,9 +343,13 @@ ___
 
 Template "Norn":
 - 3 [templates](https://imgur.com/a/HsXRYwU):
- - https://i.imgur.com/GlPXW8L.png
- - https://i.imgur.com/cbsmlQm.png
- - https://i.imgur.com/7um6b1A.png
+ - https://i.imgur.com/GlPXW8L.png // grabd coin
+ - https://i.imgur.com/cbsmlQm.png // petit coin
+ - https://i.imgur.com/7um6b1A.png // ligne
+ - https://cdn.discordapp.com/attachments/694222248302608414/861276317415636992/final.png // centre
+ - https://cdn.discordapp.com/attachments/694222248302608414/861276339301253130/final100.png // centre centrer
+ - https://cdn.discordapp.com/attachments/694222248302608414/861276372291158056/final75.png // centre 75%
+ - https://cdn.discordapp.com/attachments/694222248302608414/861276381614309406/final50.png // centre 50%
 
 A placer dans le Brew Editor:
 ``` HTML
