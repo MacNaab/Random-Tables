@@ -343,7 +343,7 @@ ___
 
 Template "Norn":
 - 3 [templates](https://imgur.com/a/HsXRYwU):
- - https://i.imgur.com/GlPXW8L.png // grabd coin
+ - https://i.imgur.com/GlPXW8L.png // grand coin
  - https://i.imgur.com/cbsmlQm.png // petit coin
  - https://i.imgur.com/7um6b1A.png // ligne
  - https://cdn.discordapp.com/attachments/694222248302608414/861276317415636992/final.png // centre
@@ -406,6 +406,97 @@ Un template totalement volé:
 <img 
   src='https://www.gmbinder.com/images/60YwJDt.png' 
   style='position:absolute;top:0px;left:0px;width:110%; height:129%' />
+```
+
+Template page de garde && Sommaire
+```
+<style>
+  .phb#p1{ text-align:center; }
+  .phb#p1:after{ display:none; }
+</style>
+
+<div style='margin-top:450px;'></div>
+
+# étrange breuvage 
+
+<div style='margin-top:550px'></div>
+<div style='margin-top:325px'></div>
+<div class='wide'>
+##### Une aventure pour le jeux de rôle The Witcher crée par  u/pickleburns.
+##### <a href="https://www.reddit.com/r/WitcherTRPG/comments/jbbtk0/oneshot_strange_brew/">Version originale</a>
+##### Traduction par Mac Hareng.
+</div>
+<div style="position: absolute;bottom: 75px; left: 40px;">
+<img 
+  src='https://i1.wp.com/rtalsoriangames.com/wp-content/uploads/2018/09/WitcherLogoTransparent300dpi.png' 
+  style='width:325px;' /><br>
+R. TALSORIAN GAMES 
+</div>
+
+<div class='artist' style='top:675px;right:175px;'>
+##### Crédit: ???
+</div>
+
+<div class="norn-bg">
+ <img 
+   src='https://s-media-cache-ak0.pinimg.com/736x/4a/81/79/4a8179462cfdf39054a418efd4cb743e.jpg'
+		style='top:325px;left:50px'
+ />
+ <img src='https://cdn.discordapp.com/attachments/694222248302608414/861276381614309406/final50.png'
+ />	
+</div>
+<div style="position: absolute;top:50px; left: 530px;">
+  <img 
+  src='https://cdn.discordapp.com/attachments/697703780510203954/751147796178141275/The_Witcher_TRPG.png' 
+  style='width:200px' />
+  </div>
+
+\page
+<div class='toc'>
+## Sommaire
+- **[1 Histoire](#p3)**
+    - [1.1 LE RESTE DE L’HISTOIRE ](#p3)
+    - [1.2 SYNOPSIS](#p3)
+    - [1.3 LES PERSONNAGES JOUEURS](#p4)
+    - [1.4 LES ADVERSAIRES ](#p4)
+- **[2 Acte I](#p5)**
+    - [2.1 EN BREF](#p5)
+    - [2.2 ACCROCHE](#p5)
+    - [2.3 DEVELOPPEMENT](#p5)
+    - [2.4 TENSION](#p6)
+- **[3 Acte II](#p7)**
+    - [3.1 EN BREF](#p7)
+    - [3.2 TENSION](#p8)
+- **[4 Acte III](#p8)**
+    - [4.1 EN BREF](#p8)
+    - [4.2 APOTHEOSE](#p8)
+</div>
+
+```
+```
+
+## Ressources
+- Bestiaire
+ - [Bestiaire officiel](http://www.the-witcher-jdr.fr/bestiaire.php)
+ - [Bestiaire non officiel](https://www.the-witcher-jdr.fr/fichiers/ressources/bestiaires/bestiaire_etendu.pdf)
+ - [Bestiaire étendu](https://www.the-witcher-jdr.fr/fichiers/ressources/bestiaires/bestiaire_etendu.pdf)
+ - [Journal de Vesemir](http://www.the-witcher-jdr.fr/bestiaire.php)
+- Cartes
+ - [Pack de carte](https://www.the-witcher-jdr.fr/campagnes.php)
+
+### Liens
+- [Le site de la communautée francophone](http://www.the-witcher-jdr.fr/)
+- [La chaîne YouTube](https://www.youtube.com/channel/UCLDV3Qb9u4e8o6LrpOmQkfA/featured)
+- [Mon site d'aide à la masteurisation](https://macnaab.github.io/Random-Tables/)
+- [Le reddit](https://www.reddit.com/r/WitcherTRPG/)
+
+
+### Edition
+Crée avec homebrewery.naturalcrit.com<br>
+<t/>[Tuto / Template](https://github.com/MacNaab/Random-Tables/blob/master/tuto/homebrewy.md)
+
+<div class='pageNumber'>1</div>
+<div class='footnote'>SOMMAIRE</div>
 ```
 ### Exportation
 Avant d'exporter votre document en pdf, pensez à le mettre en [format A4](#A4-pagesize).
