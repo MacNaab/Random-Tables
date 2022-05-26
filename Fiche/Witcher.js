@@ -2567,6 +2567,7 @@ function langue_maternelle(e){
 var DTB_MAGIE = "";
 $.getJSON('dtb/magie.json', function(jd) {
 	DTB_MAGIE = jd;
+/*
 	$('#Sort_1').append('<optgroup label="Mixte">');$('#Sort_2').append('<optgroup label="Mixte">');$('#Sort_3').append('<optgroup label="Mixte">');$('#Sort_4').append('<optgroup label="Mixte">');$('#Sort_5').append('<optgroup label="Mixte">');
 	jd.Base.forEach(function(item){if(item.Niveau == "Novice"){if(item.Type == "Éléments mixtes"){$('#Sort_1').append('<option value="1">'+item.Nom+'</option>');$('#Sort_2').append('<option value="1">'+item.Nom+'</option>');$('#Sort_3').append('<option value="1">'+item.Nom+'</option>');$('#Sort_4').append('<option value="1">'+item.Nom+'</option>');$('#Sort_5').append('<option value="1">'+item.Nom+'</option>');}}});
 	jd.Unofficial.forEach(function(item){if(item.Niveau == "Novice"){if(item.Type == "Éléments mixtes"){$('#Sort_1').append('<option value="1">'+item.Nom+'</option>');$('#Sort_2').append('<option value="1">'+item.Nom+'</option>');$('#Sort_3').append('<option value="1">'+item.Nom+'</option>');$('#Sort_4').append('<option value="1">'+item.Nom+'</option>');$('#Sort_5').append('<option value="1">'+item.Nom+'</option>');}}});
@@ -2604,6 +2605,7 @@ $.getJSON('dtb/magie.json', function(jd) {
 	jd.Unofficial.forEach(function(item){if(item.Danger == "Faible"){if(item.Type == "Envoûtement"){$('#Malédiction_1').append('<option value="1">'+item.Nom+'</option>');$('#Malédiction_2').append('<option value="1">'+item.Nom+'</option>');}}});
 	
 	jd.Vampire.forEach(function(item){if(item.Niveau == "Novice"){$('#Sort_Vampire_1').append('<option value="1">'+item.Nom+'</option>');$('#Sort_Vampire_2').append('<option value="1">'+item.Nom+'</option>');}});	
+*/
 });
 
 const { PDFDocument } = PDFLib;
